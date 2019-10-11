@@ -31,9 +31,14 @@ namespace CapaPresentacion
 
         private void btnCompras_Click(object sender, EventArgs e)
         {
-            Compras com = new Compras();
+            Solicitud com = new Solicitud();
             com.MdiParent = this;
             com.Show();
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
