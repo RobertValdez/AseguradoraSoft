@@ -31,18 +31,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnCompras = new System.Windows.Forms.ToolStripMenuItem();
+            this.solicitudToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ventasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.siniestrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reclamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sdfsdfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cargoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
-            this.dadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ventasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.solicitudToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.siniestrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reclamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cargoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +63,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(1354, 54);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuStrip1_MouseDown);
             // 
             // btnCompras
             // 
@@ -80,12 +81,36 @@
             this.btnCompras.Size = new System.Drawing.Size(137, 54);
             this.btnCompras.Text = "Procesos";
             this.btnCompras.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
+            // 
+            // solicitudToolStripMenuItem
+            // 
+            this.solicitudToolStripMenuItem.Name = "solicitudToolStripMenuItem";
+            this.solicitudToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.solicitudToolStripMenuItem.Text = "Solicitud";
+            this.solicitudToolStripMenuItem.Click += new System.EventHandler(this.solicitudToolStripMenuItem_Click);
+            // 
+            // ventasToolStripMenuItem1
+            // 
+            this.ventasToolStripMenuItem1.Name = "ventasToolStripMenuItem1";
+            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.ventasToolStripMenuItem1.Text = "Ventas";
+            // 
+            // siniestrosToolStripMenuItem
+            // 
+            this.siniestrosToolStripMenuItem.Name = "siniestrosToolStripMenuItem";
+            this.siniestrosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.siniestrosToolStripMenuItem.Text = "Siniestros";
+            // 
+            // reclamosToolStripMenuItem
+            // 
+            this.reclamosToolStripMenuItem.Name = "reclamosToolStripMenuItem";
+            this.reclamosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.reclamosToolStripMenuItem.Text = "Reclamos";
             // 
             // sdfsdfToolStripMenuItem
             // 
             this.sdfsdfToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dadToolStripMenuItem,
+            this.empleadosToolStripMenuItem,
             this.clientesToolStripMenuItem1});
             this.sdfsdfToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sdfsdfToolStripMenuItem.ForeColor = System.Drawing.Color.White;
@@ -94,6 +119,29 @@
             this.sdfsdfToolStripMenuItem.Name = "sdfsdfToolStripMenuItem";
             this.sdfsdfToolStripMenuItem.Size = new System.Drawing.Size(194, 54);
             this.sdfsdfToolStripMenuItem.Text = "Mantenimientos";
+            // 
+            // empleadosToolStripMenuItem
+            // 
+            this.empleadosToolStripMenuItem.BackColor = System.Drawing.Color.Crimson;
+            this.empleadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cargoToolStripMenuItem});
+            this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
+            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.empleadosToolStripMenuItem.Text = "Empleados";
+            this.empleadosToolStripMenuItem.Click += new System.EventHandler(this.empleadosToolStripMenuItem_Click);
+            // 
+            // cargoToolStripMenuItem
+            // 
+            this.cargoToolStripMenuItem.Name = "cargoToolStripMenuItem";
+            this.cargoToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.cargoToolStripMenuItem.Text = "Cargo";
+            // 
+            // clientesToolStripMenuItem1
+            // 
+            this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.clientesToolStripMenuItem1.Text = "Clientes";
+            this.clientesToolStripMenuItem1.Click += new System.EventHandler(this.clientesToolStripMenuItem1_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -140,52 +188,7 @@
             this.btnCerrarSesion.UseVisualStyleBackColor = false;
             this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
-            // dadToolStripMenuItem
-            // 
-            this.dadToolStripMenuItem.BackColor = System.Drawing.Color.Crimson;
-            this.dadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cargoToolStripMenuItem});
-            this.dadToolStripMenuItem.Name = "dadToolStripMenuItem";
-            this.dadToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.dadToolStripMenuItem.Text = "Empleados";
-            // 
-            // ventasToolStripMenuItem1
-            // 
-            this.ventasToolStripMenuItem1.Name = "ventasToolStripMenuItem1";
-            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
-            this.ventasToolStripMenuItem1.Text = "Ventas";
-            // 
-            // solicitudToolStripMenuItem
-            // 
-            this.solicitudToolStripMenuItem.Name = "solicitudToolStripMenuItem";
-            this.solicitudToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.solicitudToolStripMenuItem.Text = "Solicitud";
-            // 
-            // siniestrosToolStripMenuItem
-            // 
-            this.siniestrosToolStripMenuItem.Name = "siniestrosToolStripMenuItem";
-            this.siniestrosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.siniestrosToolStripMenuItem.Text = "Siniestros";
-            // 
-            // reclamosToolStripMenuItem
-            // 
-            this.reclamosToolStripMenuItem.Name = "reclamosToolStripMenuItem";
-            this.reclamosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.reclamosToolStripMenuItem.Text = "Reclamos";
-            // 
-            // clientesToolStripMenuItem1
-            // 
-            this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
-            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
-            this.clientesToolStripMenuItem1.Text = "Clientes";
-            // 
-            // cargoToolStripMenuItem
-            // 
-            this.cargoToolStripMenuItem.Name = "cargoToolStripMenuItem";
-            this.cargoToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.cargoToolStripMenuItem.Text = "Cargo";
-            // 
-            // MenuPrincipal
+            // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -198,7 +201,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "MenuPrincipal";
+            this.Name = "frmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MenuPrincipal_MouseDown);
@@ -217,7 +220,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
         private System.Windows.Forms.Button btnCerrarSesion;
-        private System.Windows.Forms.ToolStripMenuItem dadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem solicitudToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem siniestrosToolStripMenuItem;

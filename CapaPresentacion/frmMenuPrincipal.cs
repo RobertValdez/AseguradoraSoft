@@ -29,16 +29,36 @@ namespace CapaPresentacion
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void btnCompras_Click(object sender, EventArgs e)
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEmpleados frmEmpl = new frmEmpleados();
+            frmEmpl.MdiParent = this;
+            frmEmpl.Show();
+        }
+
+        private void menuStrip1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void solicitudToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmSolicitud com = new frmSolicitud();
             com.MdiParent = this;
             com.Show();
         }
 
-        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            frmCliente Clie = new frmCliente();
+            Clie.MdiParent = this;
+            Clie.Show();
         }
     }
 }

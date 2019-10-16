@@ -211,9 +211,9 @@
             // pnlModificar
             // 
             this.pnlModificar.Controls.Add(this.groupBox2);
-            this.pnlModificar.Location = new System.Drawing.Point(12, 86);
+            this.pnlModificar.Location = new System.Drawing.Point(15, 86);
             this.pnlModificar.Name = "pnlModificar";
-            this.pnlModificar.Size = new System.Drawing.Size(1174, 582);
+            this.pnlModificar.Size = new System.Drawing.Size(1171, 582);
             this.pnlModificar.TabIndex = 12;
             this.pnlModificar.Visible = false;
             // 
