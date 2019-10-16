@@ -11,14 +11,14 @@ using System.Runtime.InteropServices;
 
 namespace CapaPresentacion
 {
-    public partial class MenuPrincipal : Form
+    public partial class frmMenuPrincipal : Form
     {
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd,
             int wmsg, int wparam, int lparam);
-        public MenuPrincipal()
+        public frmMenuPrincipal()
         {
             InitializeComponent();
         }
@@ -31,7 +31,7 @@ namespace CapaPresentacion
 
         private void btnCompras_Click(object sender, EventArgs e)
         {
-            Solicitud com = new Solicitud();
+            frmSolicitud com = new frmSolicitud();
             com.MdiParent = this;
             com.Show();
         }

@@ -11,14 +11,14 @@ using System.Runtime.InteropServices;
 
 namespace CapaPresentacion
 {
-    public partial class Login : Form
+    public partial class frmLogin : Form
     {
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd,
             int wmsg, int wparam, int lparam);
-        public Login()
+        public frmLogin()
         {
             InitializeComponent();
         }
@@ -46,9 +46,19 @@ namespace CapaPresentacion
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            MenuPrincipal mp = new MenuPrincipal();
+            frmMenuPrincipal mp = new frmMenuPrincipal();
             mp.Show();
             this.Hide();
+        }
+
+        private void lblCerrarRegistrarse_Click(object sender, EventArgs e)
+        {
+            pnlRegistrarse.Visible = false;
+        }
+
+        private void lblRegistrarse_Click(object sender, EventArgs e)
+        {
+            pnlRegistrarse.Visible = true;
         }
     }
 }

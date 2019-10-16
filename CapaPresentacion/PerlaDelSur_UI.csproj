@@ -46,34 +46,67 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Compras.cs">
+    <Compile Include="frmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Compras.Designer.cs">
-      <DependentUpon>Compras.cs</DependentUpon>
+    <Compile Include="frmCliente.Designer.cs">
+      <DependentUpon>frmCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="frmEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="frmEmpleados.Designer.cs">
+      <DependentUpon>frmEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuPrincipal.cs">
+    <Compile Include="frmSolicitud.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuPrincipal.Designer.cs">
-      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    <Compile Include="frmSolicitud.Designer.cs">
+      <DependentUpon>frmSolicitud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuPrincipal.Designer.cs">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Compras.resx">
-      <DependentUpon>Compras.cs</DependentUpon>
+    <Compile Include="frmReclamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReclamos.Designer.cs">
+      <DependentUpon>frmReclamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSiniestros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSiniestros.Designer.cs">
+      <DependentUpon>frmSiniestros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuarios.Designer.cs">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmCliente.resx">
+      <DependentUpon>frmCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="frmSolicitud.resx">
+      <DependentUpon>frmSolicitud.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuPrincipal.resx">
-      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuPrincipal.resx">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -98,13 +131,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaEntidad\CapaEntidad.csproj">
+    <ProjectReference Include="..\CapaEntidad\PerlaDelSur_Entity.csproj">
       <Project>{fb7ce717-4964-434e-9556-2be7d9b3906c}</Project>
-      <Name>CapaEntidad</Name>
+      <Name>PerlaDelSur_Entity</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+    <ProjectReference Include="..\CapaNegocio\PerlaDelSur_BLL.csproj">
       <Project>{ff66c60e-43d1-4bc8-b7e3-c719be2e5c41}</Project>
-      <Name>CapaNegocio</Name>
+      <Name>PerlaDelSur_BLL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
