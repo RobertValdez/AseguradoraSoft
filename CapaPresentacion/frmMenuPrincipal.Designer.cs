@@ -33,7 +33,6 @@
             this.btnCompras = new System.Windows.Forms.ToolStripMenuItem();
             this.solicitudToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.siniestrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reclamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sdfsdfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,6 +42,7 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.devolucionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,8 +70,8 @@
             this.btnCompras.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.solicitudToolStripMenuItem,
             this.ventasToolStripMenuItem1,
-            this.siniestrosToolStripMenuItem,
-            this.reclamosToolStripMenuItem});
+            this.reclamosToolStripMenuItem,
+            this.devolucionesToolStripMenuItem});
             this.btnCompras.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCompras.ForeColor = System.Drawing.Color.White;
             this.btnCompras.Image = ((System.Drawing.Image)(resources.GetObject("btnCompras.Image")));
@@ -85,27 +85,21 @@
             // solicitudToolStripMenuItem
             // 
             this.solicitudToolStripMenuItem.Name = "solicitudToolStripMenuItem";
-            this.solicitudToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.solicitudToolStripMenuItem.Size = new System.Drawing.Size(199, 24);
             this.solicitudToolStripMenuItem.Text = "Solicitud";
             this.solicitudToolStripMenuItem.Click += new System.EventHandler(this.solicitudToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem1
             // 
             this.ventasToolStripMenuItem1.Name = "ventasToolStripMenuItem1";
-            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(199, 24);
             this.ventasToolStripMenuItem1.Text = "Ventas";
-            // 
-            // siniestrosToolStripMenuItem
-            // 
-            this.siniestrosToolStripMenuItem.Name = "siniestrosToolStripMenuItem";
-            this.siniestrosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.siniestrosToolStripMenuItem.Text = "Siniestros";
             // 
             // reclamosToolStripMenuItem
             // 
             this.reclamosToolStripMenuItem.Name = "reclamosToolStripMenuItem";
-            this.reclamosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.reclamosToolStripMenuItem.Text = "Reclamos";
+            this.reclamosToolStripMenuItem.Size = new System.Drawing.Size(199, 24);
+            this.reclamosToolStripMenuItem.Text = "Reclamaciones";
             // 
             // sdfsdfToolStripMenuItem
             // 
@@ -133,7 +127,7 @@
             // cargoToolStripMenuItem
             // 
             this.cargoToolStripMenuItem.Name = "cargoToolStripMenuItem";
-            this.cargoToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.cargoToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
             this.cargoToolStripMenuItem.Text = "Cargo";
             // 
             // clientesToolStripMenuItem1
@@ -188,6 +182,12 @@
             this.btnCerrarSesion.UseVisualStyleBackColor = false;
             this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
+            // devolucionesToolStripMenuItem
+            // 
+            this.devolucionesToolStripMenuItem.Name = "devolucionesToolStripMenuItem";
+            this.devolucionesToolStripMenuItem.Size = new System.Drawing.Size(199, 24);
+            this.devolucionesToolStripMenuItem.Text = "Devoluciones";
+            // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -223,9 +223,9 @@
         private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem solicitudToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem siniestrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reclamosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cargoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem devolucionesToolStripMenuItem;
     }
 }

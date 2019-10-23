@@ -40,21 +40,21 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.pnlRegistrarse = new System.Windows.Forms.Panel();
-            this.lblCerrarRegistrarse = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.btnRegistrar = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.btnProbarCodigo = new System.Windows.Forms.Button();
             this.btnInfoValidacion = new System.Windows.Forms.Button();
             this.lblComprobarCod = new System.Windows.Forms.Label();
+            this.lblCerrarRegistrarse = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlRegistrarse.SuspendLayout();
             this.SuspendLayout();
@@ -187,116 +187,11 @@
             this.pnlRegistrarse.Controls.Add(this.btnRegistrar);
             this.pnlRegistrarse.Controls.Add(this.label6);
             this.pnlRegistrarse.Controls.Add(this.label5);
-            this.pnlRegistrarse.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlRegistrarse.Location = new System.Drawing.Point(0, 0);
             this.pnlRegistrarse.Name = "pnlRegistrarse";
             this.pnlRegistrarse.Size = new System.Drawing.Size(372, 480);
             this.pnlRegistrarse.TabIndex = 5;
             this.pnlRegistrarse.Visible = false;
-            // 
-            // lblCerrarRegistrarse
-            // 
-            this.lblCerrarRegistrarse.AutoSize = true;
-            this.lblCerrarRegistrarse.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblCerrarRegistrarse.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCerrarRegistrarse.Location = new System.Drawing.Point(337, 2);
-            this.lblCerrarRegistrarse.Name = "lblCerrarRegistrarse";
-            this.lblCerrarRegistrarse.Size = new System.Drawing.Size(35, 36);
-            this.lblCerrarRegistrarse.TabIndex = 9;
-            this.lblCerrarRegistrarse.Text = "X";
-            this.lblCerrarRegistrarse.Click += new System.EventHandler(this.lblCerrarRegistrarse_Click);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(138, 155);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(203, 27);
-            this.textBox3.TabIndex = 1;
-            // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.BackColor = System.Drawing.Color.Crimson;
-            this.btnRegistrar.FlatAppearance.BorderSize = 0;
-            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrar.Location = new System.Drawing.Point(175, 406);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(166, 37);
-            this.btnRegistrar.TabIndex = 2;
-            this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.UseVisualStyleBackColor = false;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(138, 199);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(203, 27);
-            this.textBox4.TabIndex = 1;
-            this.textBox4.UseSystemPasswordChar = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(107, 55);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(168, 36);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Registrarse";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 140);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 42);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Nombre\r\nde Usuario:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 200);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(107, 21);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Contraseña:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(25, 233);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(104, 42);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Repetir\r\ncontraseña:";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(138, 248);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(203, 27);
-            this.textBox5.TabIndex = 1;
-            this.textBox5.UseSystemPasswordChar = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(25, 343);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(97, 21);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Validación:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(128, 340);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(190, 27);
-            this.textBox6.TabIndex = 1;
-            this.textBox6.UseSystemPasswordChar = true;
             // 
             // btnProbarCodigo
             // 
@@ -337,6 +232,76 @@
             this.lblComprobarCod.Text = "Correcto/Incorrecto";
             this.lblComprobarCod.Visible = false;
             // 
+            // lblCerrarRegistrarse
+            // 
+            this.lblCerrarRegistrarse.AutoSize = true;
+            this.lblCerrarRegistrarse.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblCerrarRegistrarse.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCerrarRegistrarse.Location = new System.Drawing.Point(337, 2);
+            this.lblCerrarRegistrarse.Name = "lblCerrarRegistrarse";
+            this.lblCerrarRegistrarse.Size = new System.Drawing.Size(35, 36);
+            this.lblCerrarRegistrarse.TabIndex = 9;
+            this.lblCerrarRegistrarse.Text = "X";
+            this.lblCerrarRegistrarse.Click += new System.EventHandler(this.lblCerrarRegistrarse_Click);
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(128, 340);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(190, 27);
+            this.textBox6.TabIndex = 1;
+            this.textBox6.UseSystemPasswordChar = true;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(138, 248);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(203, 27);
+            this.textBox5.TabIndex = 1;
+            this.textBox5.UseSystemPasswordChar = true;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(138, 199);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(203, 27);
+            this.textBox4.TabIndex = 1;
+            this.textBox4.UseSystemPasswordChar = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(25, 343);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(97, 21);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Validación:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(25, 233);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(104, 42);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Repetir\r\ncontraseña:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(138, 155);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(203, 27);
+            this.textBox3.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(25, 200);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 21);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Contraseña:";
+            // 
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Crimson;
@@ -351,6 +316,40 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.lblCerrarRegistrarse_Click);
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.BackColor = System.Drawing.Color.Crimson;
+            this.btnRegistrar.FlatAppearance.BorderSize = 0;
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.Color.White;
+            this.btnRegistrar.Location = new System.Drawing.Point(175, 406);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(166, 37);
+            this.btnRegistrar.TabIndex = 2;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(25, 140);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(95, 42);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Nombre\r\nde Usuario:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(107, 55);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(168, 36);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Registrarse";
             // 
             // frmLogin
             // 
