@@ -55,7 +55,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
@@ -63,7 +62,6 @@
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -100,8 +98,8 @@
             this.btnSeguroTodoRiesgo = new System.Windows.Forms.Button();
             this.btnSeguroObligatorio = new System.Windows.Forms.Button();
             this.btnSeguroVoluntario = new System.Windows.Forms.Button();
-            this.pnlSeguroTodoRiesgo = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.pnlVEHSeguroTodoRiesgo = new System.Windows.Forms.Panel();
+            this.lblCerrarTodoRiesgo = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -117,8 +115,8 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
-            this.pnlSeguroObligatorio = new System.Windows.Forms.Panel();
-            this.label42 = new System.Windows.Forms.Label();
+            this.pnlVEHSeguroObligatorio = new System.Windows.Forms.Panel();
+            this.lblCerrarSeguroOb = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
@@ -135,7 +133,7 @@
             this.label49 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.pnlMueblesInmEdificaciones = new System.Windows.Forms.Panel();
-            this.label51 = new System.Windows.Forms.Label();
+            this.lblCerrarSegInmEdif = new System.Windows.Forms.Label();
             this.textBox29 = new System.Windows.Forms.TextBox();
             this.textBox30 = new System.Windows.Forms.TextBox();
             this.textBox31 = new System.Windows.Forms.TextBox();
@@ -152,7 +150,7 @@
             this.label58 = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
             this.pnlMueblesInmContenido = new System.Windows.Forms.Panel();
-            this.label60 = new System.Windows.Forms.Label();
+            this.lblCerrarInmContenido = new System.Windows.Forms.Label();
             this.textBox36 = new System.Windows.Forms.TextBox();
             this.textBox37 = new System.Windows.Forms.TextBox();
             this.textBox38 = new System.Windows.Forms.TextBox();
@@ -169,7 +167,7 @@
             this.label67 = new System.Windows.Forms.Label();
             this.label68 = new System.Windows.Forms.Label();
             this.pnlNegociosEmpresas = new System.Windows.Forms.Panel();
-            this.label69 = new System.Windows.Forms.Label();
+            this.lblCerrarNegocioEmp = new System.Windows.Forms.Label();
             this.textBox43 = new System.Windows.Forms.TextBox();
             this.textBox44 = new System.Windows.Forms.TextBox();
             this.textBox45 = new System.Windows.Forms.TextBox();
@@ -220,7 +218,7 @@
             this.label94 = new System.Windows.Forms.Label();
             this.label95 = new System.Windows.Forms.Label();
             this.pnlVidaRiesgoMuerte = new System.Windows.Forms.Panel();
-            this.label96 = new System.Windows.Forms.Label();
+            this.lblCerrarRiesgoMuerte = new System.Windows.Forms.Label();
             this.textBox64 = new System.Windows.Forms.TextBox();
             this.textBox65 = new System.Windows.Forms.TextBox();
             this.textBox66 = new System.Windows.Forms.TextBox();
@@ -254,22 +252,38 @@
             this.label112 = new System.Windows.Forms.Label();
             this.label113 = new System.Windows.Forms.Label();
             this.pnlInmuebles = new System.Windows.Forms.Panel();
-            this.label114 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.lblCerrar_pnlInmuebles = new System.Windows.Forms.Label();
+            this.btnInmEdificaciones = new System.Windows.Forms.Button();
+            this.btnInmContenido = new System.Windows.Forms.Button();
             this.pnlVida = new System.Windows.Forms.Panel();
             this.lblCerrar_pnlVida = new System.Windows.Forms.Label();
-            this.btnRiesgoMuerte = new System.Windows.Forms.Button();
-            this.btnSeguroSalud = new System.Windows.Forms.Button();
             this.btnDependientes = new System.Windows.Forms.Button();
             this.btnRiesgosLaborales = new System.Windows.Forms.Button();
+            this.btnSeguroSalud = new System.Windows.Forms.Button();
+            this.btnRiesgoMuerte = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnSiguienteSeguroOblig = new System.Windows.Forms.Button();
+            this.textBox78 = new System.Windows.Forms.TextBox();
+            this.textBox79 = new System.Windows.Forms.TextBox();
+            this.textBox80 = new System.Windows.Forms.TextBox();
+            this.textBox81 = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox82 = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.pnlCrearCuenta.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.pnlVEHSeguroVoluntario.SuspendLayout();
             this.pnlVehiculo.SuspendLayout();
-            this.pnlSeguroTodoRiesgo.SuspendLayout();
-            this.pnlSeguroObligatorio.SuspendLayout();
+            this.pnlVEHSeguroTodoRiesgo.SuspendLayout();
+            this.pnlVEHSeguroObligatorio.SuspendLayout();
             this.pnlMueblesInmEdificaciones.SuspendLayout();
             this.pnlMueblesInmContenido.SuspendLayout();
             this.pnlNegociosEmpresas.SuspendLayout();
@@ -279,12 +293,14 @@
             this.pnlVidaSaludDependientes.SuspendLayout();
             this.pnlInmuebles.SuspendLayout();
             this.pnlVida.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Firebrick;
             this.label5.Location = new System.Drawing.Point(7, 29);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
@@ -463,6 +479,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Firebrick;
             this.label9.Location = new System.Drawing.Point(27, 187);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
@@ -473,6 +490,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Firebrick;
             this.label1.Location = new System.Drawing.Point(164, 466);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -483,6 +501,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
+            this.label15.ForeColor = System.Drawing.Color.Firebrick;
             this.label15.Location = new System.Drawing.Point(173, 402);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
@@ -493,6 +512,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.Firebrick;
             this.label14.Location = new System.Drawing.Point(31, 403);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
@@ -503,6 +523,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.Firebrick;
             this.label12.Location = new System.Drawing.Point(31, 333);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
@@ -513,6 +534,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.Firebrick;
             this.label11.Location = new System.Drawing.Point(198, 257);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
@@ -523,6 +545,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Firebrick;
             this.label8.Location = new System.Drawing.Point(168, 119);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
@@ -533,6 +556,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.Firebrick;
             this.label10.Location = new System.Drawing.Point(31, 260);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
@@ -543,6 +567,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Firebrick;
             this.label7.Location = new System.Drawing.Point(31, 119);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
@@ -554,6 +579,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Firebrick;
             this.label13.Location = new System.Drawing.Point(34, 10);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
@@ -561,46 +587,42 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Datos del Cliente";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Crimson;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(868, 634);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(440, 57);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Solicitar";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.groupBox2);
+            this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.textBox15);
             this.panel2.Controls.Add(this.textBox17);
+            this.panel2.Controls.Add(this.label28);
             this.panel2.Controls.Add(this.textBox16);
             this.panel2.Controls.Add(this.textBox13);
             this.panel2.Controls.Add(this.label22);
             this.panel2.Controls.Add(this.label27);
             this.panel2.Controls.Add(this.label23);
-            this.panel2.Controls.Add(this.label28);
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label29);
             this.panel2.Controls.Add(this.label30);
-            this.panel2.Location = new System.Drawing.Point(482, 579);
+            this.panel2.Controls.Add(this.textBox81);
+            this.panel2.Controls.Add(this.textBox80);
+            this.panel2.Controls.Add(this.textBox79);
+            this.panel2.Controls.Add(this.textBox78);
+            this.panel2.Controls.Add(this.label69);
+            this.panel2.Controls.Add(this.label60);
+            this.panel2.Controls.Add(this.label51);
+            this.panel2.Controls.Add(this.label42);
+            this.panel2.Location = new System.Drawing.Point(482, 6);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(98, 73);
+            this.panel2.Size = new System.Drawing.Size(829, 685);
             this.panel2.TabIndex = 6;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(379, 83);
+            this.comboBox1.Location = new System.Drawing.Point(650, 92);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(138, 32);
@@ -612,7 +634,7 @@
             this.textBox15.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.AllUrl;
             this.textBox15.BackColor = System.Drawing.Color.LightPink;
             this.textBox15.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox15.Location = new System.Drawing.Point(253, 243);
+            this.textBox15.Location = new System.Drawing.Point(545, 476);
             this.textBox15.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox15.Name = "textBox15";
             this.textBox15.ReadOnly = true;
@@ -624,7 +646,7 @@
             // textBox17
             // 
             this.textBox17.BackColor = System.Drawing.Color.LightPink;
-            this.textBox17.Location = new System.Drawing.Point(370, 203);
+            this.textBox17.Location = new System.Drawing.Point(662, 436);
             this.textBox17.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox17.Name = "textBox17";
             this.textBox17.ReadOnly = true;
@@ -636,7 +658,7 @@
             // textBox16
             // 
             this.textBox16.BackColor = System.Drawing.Color.LightPink;
-            this.textBox16.Location = new System.Drawing.Point(370, 164);
+            this.textBox16.Location = new System.Drawing.Point(662, 397);
             this.textBox16.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox16.Name = "textBox16";
             this.textBox16.ReadOnly = true;
@@ -648,7 +670,7 @@
             // textBox13
             // 
             this.textBox13.BackColor = System.Drawing.Color.LightPink;
-            this.textBox13.Location = new System.Drawing.Point(379, 45);
+            this.textBox13.Location = new System.Drawing.Point(723, 9);
             this.textBox13.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox13.Name = "textBox13";
             this.textBox13.ReadOnly = true;
@@ -660,28 +682,18 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(281, 167);
+            this.label22.Location = new System.Drawing.Point(549, 400);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(81, 25);
+            this.label22.Size = new System.Drawing.Size(103, 25);
             this.label22.TabIndex = 0;
-            this.label22.Text = "Precio:";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(221, 86);
-            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(150, 24);
-            this.label27.TabIndex = 0;
-            this.label27.Text = "Tipo de pago:";
+            this.label22.Text = "SubTotal:";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(3, 248);
+            this.label23.Location = new System.Drawing.Point(295, 481);
             this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(252, 41);
@@ -692,7 +704,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(236, 206);
+            this.label28.Location = new System.Drawing.Point(528, 439);
             this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(126, 25);
@@ -702,7 +714,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(288, 49);
+            this.label29.Location = new System.Drawing.Point(612, 12);
             this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(91, 24);
@@ -713,17 +725,18 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(33, 9);
+            this.label30.Location = new System.Drawing.Point(51, 18);
             this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(265, 32);
+            this.label30.Size = new System.Drawing.Size(293, 32);
             this.label30.TabIndex = 0;
-            this.label30.Text = "Detalle de Solicitud";
+            this.label30.Text = "Resumen de Solicitud";
             // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Century Gothic", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.Firebrick;
             this.label25.Location = new System.Drawing.Point(7, 56);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
@@ -746,7 +759,8 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Century Gothic", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(333, 56);
+            this.label31.ForeColor = System.Drawing.Color.Firebrick;
+            this.label31.Location = new System.Drawing.Point(317, 32);
             this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(84, 23);
@@ -757,7 +771,7 @@
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(425, 57);
+            this.label32.Location = new System.Drawing.Point(317, 55);
             this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(121, 22);
@@ -775,7 +789,7 @@
             this.groupBox1.Controls.Add(this.label31);
             this.groupBox1.Location = new System.Drawing.Point(20, 11);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(596, 84);
+            this.groupBox1.Size = new System.Drawing.Size(454, 84);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             // 
@@ -1001,6 +1015,7 @@
             this.btnMueblesEInmuebles.TabIndex = 7;
             this.btnMueblesEInmuebles.Text = "Muebles e Inmuebles";
             this.btnMueblesEInmuebles.UseVisualStyleBackColor = false;
+            this.btnMueblesEInmuebles.Click += new System.EventHandler(this.btnMueblesEInmuebles_Click);
             // 
             // btnNegocioEmpresa
             // 
@@ -1016,17 +1031,19 @@
             this.btnNegocioEmpresa.TabIndex = 7;
             this.btnNegocioEmpresa.Text = "Negocio y Empresa";
             this.btnNegocioEmpresa.UseVisualStyleBackColor = false;
+            this.btnNegocioEmpresa.Click += new System.EventHandler(this.btnNegocioEmpresa_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(777, 109);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Firebrick;
+            this.label3.Location = new System.Drawing.Point(657, 78);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(397, 28);
+            this.label3.Size = new System.Drawing.Size(622, 36);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Seleccione el seguro a contratar:";
+            this.label3.Text = "Seleccione el seguro que desea contratar:";
             // 
             // pnlVehiculo
             // 
@@ -1035,9 +1052,9 @@
             this.pnlVehiculo.Controls.Add(this.btnSeguroTodoRiesgo);
             this.pnlVehiculo.Controls.Add(this.btnSeguroObligatorio);
             this.pnlVehiculo.Controls.Add(this.btnSeguroVoluntario);
-            this.pnlVehiculo.Location = new System.Drawing.Point(610, 101);
+            this.pnlVehiculo.Location = new System.Drawing.Point(665, 147);
             this.pnlVehiculo.Name = "pnlVehiculo";
-            this.pnlVehiculo.Size = new System.Drawing.Size(406, 207);
+            this.pnlVehiculo.Size = new System.Drawing.Size(630, 272);
             this.pnlVehiculo.TabIndex = 9;
             this.pnlVehiculo.Visible = false;
             // 
@@ -1067,6 +1084,7 @@
             this.btnSeguroTodoRiesgo.TabIndex = 7;
             this.btnSeguroTodoRiesgo.Text = "Seguro Todo Riesgo";
             this.btnSeguroTodoRiesgo.UseVisualStyleBackColor = false;
+            this.btnSeguroTodoRiesgo.Click += new System.EventHandler(this.btnSeguroTodoRiesgo_Click);
             // 
             // btnSeguroObligatorio
             // 
@@ -1082,6 +1100,7 @@
             this.btnSeguroObligatorio.TabIndex = 7;
             this.btnSeguroObligatorio.Text = "Seguro Obligatorio";
             this.btnSeguroObligatorio.UseVisualStyleBackColor = false;
+            this.btnSeguroObligatorio.Click += new System.EventHandler(this.btnSeguroObligatorio_Click);
             // 
             // btnSeguroVoluntario
             // 
@@ -1097,46 +1116,46 @@
             this.btnSeguroVoluntario.TabIndex = 7;
             this.btnSeguroVoluntario.Text = "Seguro Voluntario";
             this.btnSeguroVoluntario.UseVisualStyleBackColor = false;
-            this.btnSeguroVoluntario.Click += new System.EventHandler(this.btnSeguroVoluntario_Click);
+            this.btnSeguroVoluntario.Click += new System.EventHandler(this.btnSeguroVoluntario_Click_1);
             // 
-            // pnlSeguroTodoRiesgo
+            // pnlVEHSeguroTodoRiesgo
             // 
-            this.pnlSeguroTodoRiesgo.BackColor = System.Drawing.Color.White;
-            this.pnlSeguroTodoRiesgo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlSeguroTodoRiesgo.Controls.Add(this.label4);
-            this.pnlSeguroTodoRiesgo.Controls.Add(this.textBox1);
-            this.pnlSeguroTodoRiesgo.Controls.Add(this.textBox2);
-            this.pnlSeguroTodoRiesgo.Controls.Add(this.textBox3);
-            this.pnlSeguroTodoRiesgo.Controls.Add(this.textBox5);
-            this.pnlSeguroTodoRiesgo.Controls.Add(this.textBox7);
-            this.pnlSeguroTodoRiesgo.Controls.Add(this.textBox8);
-            this.pnlSeguroTodoRiesgo.Controls.Add(this.textBox10);
-            this.pnlSeguroTodoRiesgo.Controls.Add(this.label16);
-            this.pnlSeguroTodoRiesgo.Controls.Add(this.label17);
-            this.pnlSeguroTodoRiesgo.Controls.Add(this.label18);
-            this.pnlSeguroTodoRiesgo.Controls.Add(this.label19);
-            this.pnlSeguroTodoRiesgo.Controls.Add(this.label20);
-            this.pnlSeguroTodoRiesgo.Controls.Add(this.label21);
-            this.pnlSeguroTodoRiesgo.Controls.Add(this.label24);
-            this.pnlSeguroTodoRiesgo.Controls.Add(this.label34);
-            this.pnlSeguroTodoRiesgo.Location = new System.Drawing.Point(484, 477);
-            this.pnlSeguroTodoRiesgo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pnlSeguroTodoRiesgo.Name = "pnlSeguroTodoRiesgo";
-            this.pnlSeguroTodoRiesgo.Size = new System.Drawing.Size(272, 42);
-            this.pnlSeguroTodoRiesgo.TabIndex = 6;
-            this.pnlSeguroTodoRiesgo.Visible = false;
+            this.pnlVEHSeguroTodoRiesgo.BackColor = System.Drawing.Color.White;
+            this.pnlVEHSeguroTodoRiesgo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.lblCerrarTodoRiesgo);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.textBox1);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.textBox2);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.textBox3);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.textBox5);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.textBox7);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.textBox8);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.textBox10);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label16);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label17);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label18);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label19);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label20);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label21);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label24);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label34);
+            this.pnlVEHSeguroTodoRiesgo.Location = new System.Drawing.Point(484, 477);
+            this.pnlVEHSeguroTodoRiesgo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pnlVEHSeguroTodoRiesgo.Name = "pnlVEHSeguroTodoRiesgo";
+            this.pnlVEHSeguroTodoRiesgo.Size = new System.Drawing.Size(272, 42);
+            this.pnlVEHSeguroTodoRiesgo.TabIndex = 6;
+            this.pnlVEHSeguroTodoRiesgo.Visible = false;
             // 
-            // label4
+            // lblCerrarTodoRiesgo
             // 
-            this.label4.AutoSize = true;
-            this.label4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(220, 2);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 36);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "X";
-            this.label4.Click += new System.EventHandler(this.lblCerrarSV_Click);
+            this.lblCerrarTodoRiesgo.AutoSize = true;
+            this.lblCerrarTodoRiesgo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblCerrarTodoRiesgo.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCerrarTodoRiesgo.Location = new System.Drawing.Point(220, 2);
+            this.lblCerrarTodoRiesgo.Name = "lblCerrarTodoRiesgo";
+            this.lblCerrarTodoRiesgo.Size = new System.Drawing.Size(35, 36);
+            this.lblCerrarTodoRiesgo.TabIndex = 10;
+            this.lblCerrarTodoRiesgo.Text = "X";
+            this.lblCerrarTodoRiesgo.Click += new System.EventHandler(this.lblCerrarTodoRiesgo_Click);
             // 
             // textBox1
             // 
@@ -1275,96 +1294,98 @@
             this.label34.TabIndex = 0;
             this.label34.Text = "Seguro Todo Riesgo";
             // 
-            // pnlSeguroObligatorio
+            // pnlVEHSeguroObligatorio
             // 
-            this.pnlSeguroObligatorio.BackColor = System.Drawing.Color.White;
-            this.pnlSeguroObligatorio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlSeguroObligatorio.Controls.Add(this.label42);
-            this.pnlSeguroObligatorio.Controls.Add(this.textBox11);
-            this.pnlSeguroObligatorio.Controls.Add(this.textBox12);
-            this.pnlSeguroObligatorio.Controls.Add(this.textBox14);
-            this.pnlSeguroObligatorio.Controls.Add(this.textBox18);
-            this.pnlSeguroObligatorio.Controls.Add(this.textBox26);
-            this.pnlSeguroObligatorio.Controls.Add(this.textBox27);
-            this.pnlSeguroObligatorio.Controls.Add(this.textBox28);
-            this.pnlSeguroObligatorio.Controls.Add(this.label43);
-            this.pnlSeguroObligatorio.Controls.Add(this.label44);
-            this.pnlSeguroObligatorio.Controls.Add(this.label45);
-            this.pnlSeguroObligatorio.Controls.Add(this.label46);
-            this.pnlSeguroObligatorio.Controls.Add(this.label47);
-            this.pnlSeguroObligatorio.Controls.Add(this.label48);
-            this.pnlSeguroObligatorio.Controls.Add(this.label49);
-            this.pnlSeguroObligatorio.Controls.Add(this.label50);
-            this.pnlSeguroObligatorio.Location = new System.Drawing.Point(484, 429);
-            this.pnlSeguroObligatorio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pnlSeguroObligatorio.Name = "pnlSeguroObligatorio";
-            this.pnlSeguroObligatorio.Size = new System.Drawing.Size(272, 42);
-            this.pnlSeguroObligatorio.TabIndex = 6;
-            this.pnlSeguroObligatorio.Visible = false;
+            this.pnlVEHSeguroObligatorio.BackColor = System.Drawing.Color.White;
+            this.pnlVEHSeguroObligatorio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.btnSiguienteSeguroOblig);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.lblCerrarSeguroOb);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.textBox11);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.textBox12);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.textBox14);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.textBox18);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.textBox26);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.textBox27);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.textBox28);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.label43);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.label44);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.label45);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.label46);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.label47);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.label48);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.label49);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.label4);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.label50);
+            this.pnlVEHSeguroObligatorio.Location = new System.Drawing.Point(481, 24);
+            this.pnlVEHSeguroObligatorio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pnlVEHSeguroObligatorio.Name = "pnlVEHSeguroObligatorio";
+            this.pnlVEHSeguroObligatorio.Size = new System.Drawing.Size(840, 413);
+            this.pnlVEHSeguroObligatorio.TabIndex = 6;
+            this.pnlVEHSeguroObligatorio.Visible = false;
             // 
-            // label42
+            // lblCerrarSeguroOb
             // 
-            this.label42.AutoSize = true;
-            this.label42.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label42.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(220, 2);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(35, 36);
-            this.label42.TabIndex = 10;
-            this.label42.Text = "X";
-            this.label42.Click += new System.EventHandler(this.lblCerrarSV_Click);
+            this.lblCerrarSeguroOb.AutoSize = true;
+            this.lblCerrarSeguroOb.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblCerrarSeguroOb.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCerrarSeguroOb.Location = new System.Drawing.Point(800, 3);
+            this.lblCerrarSeguroOb.Name = "lblCerrarSeguroOb";
+            this.lblCerrarSeguroOb.Size = new System.Drawing.Size(35, 36);
+            this.lblCerrarSeguroOb.TabIndex = 10;
+            this.lblCerrarSeguroOb.Text = "X";
+            this.lblCerrarSeguroOb.Click += new System.EventHandler(this.lblCerrarSeguroOb_Click);
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(38, 287);
+            this.textBox11.Location = new System.Drawing.Point(182, 343);
             this.textBox11.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(216, 33);
+            this.textBox11.Size = new System.Drawing.Size(200, 33);
             this.textBox11.TabIndex = 4;
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(41, 223);
+            this.textBox12.Location = new System.Drawing.Point(182, 279);
             this.textBox12.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(205, 33);
+            this.textBox12.Size = new System.Drawing.Size(200, 33);
             this.textBox12.TabIndex = 4;
             // 
             // textBox14
             // 
-            this.textBox14.Location = new System.Drawing.Point(195, 160);
+            this.textBox14.Location = new System.Drawing.Point(408, 216);
             this.textBox14.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(184, 33);
+            this.textBox14.Size = new System.Drawing.Size(217, 33);
             this.textBox14.TabIndex = 4;
             // 
             // textBox18
             // 
-            this.textBox18.Location = new System.Drawing.Point(254, 223);
+            this.textBox18.Location = new System.Drawing.Point(408, 279);
             this.textBox18.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(216, 33);
+            this.textBox18.Size = new System.Drawing.Size(217, 33);
             this.textBox18.TabIndex = 3;
             // 
             // textBox26
             // 
-            this.textBox26.Location = new System.Drawing.Point(255, 97);
+            this.textBox26.Location = new System.Drawing.Point(408, 153);
             this.textBox26.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(149, 33);
+            this.textBox26.Size = new System.Drawing.Size(217, 33);
             this.textBox26.TabIndex = 2;
             // 
             // textBox27
             // 
-            this.textBox27.Location = new System.Drawing.Point(38, 160);
+            this.textBox27.Location = new System.Drawing.Point(182, 216);
             this.textBox27.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(149, 33);
+            this.textBox27.Size = new System.Drawing.Size(200, 33);
             this.textBox27.TabIndex = 1;
             // 
             // textBox28
             // 
-            this.textBox28.Location = new System.Drawing.Point(38, 97);
+            this.textBox28.Location = new System.Drawing.Point(182, 153);
             this.textBox28.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox28.Name = "textBox28";
             this.textBox28.Size = new System.Drawing.Size(200, 33);
@@ -1373,7 +1394,8 @@
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(255, 70);
+            this.label43.ForeColor = System.Drawing.Color.Firebrick;
+            this.label43.Location = new System.Drawing.Point(409, 126);
             this.label43.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(98, 24);
@@ -1383,7 +1405,8 @@
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(38, 260);
+            this.label44.ForeColor = System.Drawing.Color.Firebrick;
+            this.label44.Location = new System.Drawing.Point(182, 316);
             this.label44.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(66, 24);
@@ -1393,7 +1416,8 @@
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(38, 196);
+            this.label45.ForeColor = System.Drawing.Color.Firebrick;
+            this.label45.Location = new System.Drawing.Point(182, 252);
             this.label45.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(45, 24);
@@ -1403,7 +1427,8 @@
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(198, 133);
+            this.label46.ForeColor = System.Drawing.Color.Firebrick;
+            this.label46.Location = new System.Drawing.Point(406, 189);
             this.label46.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(120, 24);
@@ -1413,7 +1438,8 @@
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(38, 133);
+            this.label47.ForeColor = System.Drawing.Color.Firebrick;
+            this.label47.Location = new System.Drawing.Point(182, 189);
             this.label47.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(57, 24);
@@ -1423,7 +1449,8 @@
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(254, 196);
+            this.label48.ForeColor = System.Drawing.Color.Firebrick;
+            this.label48.Location = new System.Drawing.Point(408, 252);
             this.label48.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(125, 24);
@@ -1433,7 +1460,8 @@
             // label49
             // 
             this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(38, 70);
+            this.label49.ForeColor = System.Drawing.Color.Firebrick;
+            this.label49.Location = new System.Drawing.Point(182, 126);
             this.label49.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(215, 24);
@@ -1443,19 +1471,20 @@
             // label50
             // 
             this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.Location = new System.Drawing.Point(34, 10);
+            this.label50.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.ForeColor = System.Drawing.Color.Firebrick;
+            this.label50.Location = new System.Drawing.Point(268, 13);
             this.label50.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(173, 23);
+            this.label50.Size = new System.Drawing.Size(230, 28);
             this.label50.TabIndex = 0;
-            this.label50.Text = "Seguro Voluntario";
+            this.label50.Text = "Seguro Obligatorio";
             // 
             // pnlMueblesInmEdificaciones
             // 
             this.pnlMueblesInmEdificaciones.BackColor = System.Drawing.Color.White;
             this.pnlMueblesInmEdificaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlMueblesInmEdificaciones.Controls.Add(this.label51);
+            this.pnlMueblesInmEdificaciones.Controls.Add(this.lblCerrarSegInmEdif);
             this.pnlMueblesInmEdificaciones.Controls.Add(this.textBox29);
             this.pnlMueblesInmEdificaciones.Controls.Add(this.textBox30);
             this.pnlMueblesInmEdificaciones.Controls.Add(this.textBox31);
@@ -1478,17 +1507,17 @@
             this.pnlMueblesInmEdificaciones.TabIndex = 6;
             this.pnlMueblesInmEdificaciones.Visible = false;
             // 
-            // label51
+            // lblCerrarSegInmEdif
             // 
-            this.label51.AutoSize = true;
-            this.label51.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label51.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.Location = new System.Drawing.Point(220, 2);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(35, 36);
-            this.label51.TabIndex = 10;
-            this.label51.Text = "X";
-            this.label51.Click += new System.EventHandler(this.lblCerrarSV_Click);
+            this.lblCerrarSegInmEdif.AutoSize = true;
+            this.lblCerrarSegInmEdif.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblCerrarSegInmEdif.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCerrarSegInmEdif.Location = new System.Drawing.Point(220, 2);
+            this.lblCerrarSegInmEdif.Name = "lblCerrarSegInmEdif";
+            this.lblCerrarSegInmEdif.Size = new System.Drawing.Size(35, 36);
+            this.lblCerrarSegInmEdif.TabIndex = 10;
+            this.lblCerrarSegInmEdif.Text = "X";
+            this.lblCerrarSegInmEdif.Click += new System.EventHandler(this.lblCerrarSegInmEdif_Click);
             // 
             // textBox29
             // 
@@ -1623,15 +1652,15 @@
             this.label59.Location = new System.Drawing.Point(34, 10);
             this.label59.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(274, 23);
+            this.label59.Size = new System.Drawing.Size(202, 23);
             this.label59.TabIndex = 0;
-            this.label59.Text = "Seguro Muebles e Inmuebles";
+            this.label59.Text = "Seguro Edificaciones";
             // 
             // pnlMueblesInmContenido
             // 
             this.pnlMueblesInmContenido.BackColor = System.Drawing.Color.White;
             this.pnlMueblesInmContenido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlMueblesInmContenido.Controls.Add(this.label60);
+            this.pnlMueblesInmContenido.Controls.Add(this.lblCerrarInmContenido);
             this.pnlMueblesInmContenido.Controls.Add(this.textBox36);
             this.pnlMueblesInmContenido.Controls.Add(this.textBox37);
             this.pnlMueblesInmContenido.Controls.Add(this.textBox38);
@@ -1654,17 +1683,17 @@
             this.pnlMueblesInmContenido.TabIndex = 6;
             this.pnlMueblesInmContenido.Visible = false;
             // 
-            // label60
+            // lblCerrarInmContenido
             // 
-            this.label60.AutoSize = true;
-            this.label60.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label60.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.Location = new System.Drawing.Point(220, 2);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(35, 36);
-            this.label60.TabIndex = 10;
-            this.label60.Text = "X";
-            this.label60.Click += new System.EventHandler(this.lblCerrarSV_Click);
+            this.lblCerrarInmContenido.AutoSize = true;
+            this.lblCerrarInmContenido.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblCerrarInmContenido.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCerrarInmContenido.Location = new System.Drawing.Point(220, 2);
+            this.lblCerrarInmContenido.Name = "lblCerrarInmContenido";
+            this.lblCerrarInmContenido.Size = new System.Drawing.Size(35, 36);
+            this.lblCerrarInmContenido.TabIndex = 10;
+            this.lblCerrarInmContenido.Text = "X";
+            this.lblCerrarInmContenido.Click += new System.EventHandler(this.lblCerrarInmContenido_Click);
             // 
             // textBox36
             // 
@@ -1799,15 +1828,15 @@
             this.label68.Location = new System.Drawing.Point(34, 10);
             this.label68.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(274, 23);
+            this.label68.Size = new System.Drawing.Size(176, 23);
             this.label68.TabIndex = 0;
-            this.label68.Text = "Seguro Muebles e Inmuebles";
+            this.label68.Text = "Seguro Contenido";
             // 
             // pnlNegociosEmpresas
             // 
             this.pnlNegociosEmpresas.BackColor = System.Drawing.Color.White;
             this.pnlNegociosEmpresas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlNegociosEmpresas.Controls.Add(this.label69);
+            this.pnlNegociosEmpresas.Controls.Add(this.lblCerrarNegocioEmp);
             this.pnlNegociosEmpresas.Controls.Add(this.textBox43);
             this.pnlNegociosEmpresas.Controls.Add(this.textBox44);
             this.pnlNegociosEmpresas.Controls.Add(this.textBox45);
@@ -1830,17 +1859,17 @@
             this.pnlNegociosEmpresas.TabIndex = 6;
             this.pnlNegociosEmpresas.Visible = false;
             // 
-            // label69
+            // lblCerrarNegocioEmp
             // 
-            this.label69.AutoSize = true;
-            this.label69.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label69.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label69.Location = new System.Drawing.Point(220, 2);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(35, 36);
-            this.label69.TabIndex = 10;
-            this.label69.Text = "X";
-            this.label69.Click += new System.EventHandler(this.lblCerrarSV_Click);
+            this.lblCerrarNegocioEmp.AutoSize = true;
+            this.lblCerrarNegocioEmp.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblCerrarNegocioEmp.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCerrarNegocioEmp.Location = new System.Drawing.Point(220, 2);
+            this.lblCerrarNegocioEmp.Name = "lblCerrarNegocioEmp";
+            this.lblCerrarNegocioEmp.Size = new System.Drawing.Size(35, 36);
+            this.lblCerrarNegocioEmp.TabIndex = 10;
+            this.lblCerrarNegocioEmp.Text = "X";
+            this.lblCerrarNegocioEmp.Click += new System.EventHandler(this.lblCerrarNegocioEmp_Click);
             // 
             // textBox43
             // 
@@ -2335,7 +2364,7 @@
             // 
             this.pnlVidaRiesgoMuerte.BackColor = System.Drawing.Color.White;
             this.pnlVidaRiesgoMuerte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlVidaRiesgoMuerte.Controls.Add(this.label96);
+            this.pnlVidaRiesgoMuerte.Controls.Add(this.lblCerrarRiesgoMuerte);
             this.pnlVidaRiesgoMuerte.Controls.Add(this.textBox64);
             this.pnlVidaRiesgoMuerte.Controls.Add(this.textBox65);
             this.pnlVidaRiesgoMuerte.Controls.Add(this.textBox66);
@@ -2358,17 +2387,17 @@
             this.pnlVidaRiesgoMuerte.TabIndex = 6;
             this.pnlVidaRiesgoMuerte.Visible = false;
             // 
-            // label96
+            // lblCerrarRiesgoMuerte
             // 
-            this.label96.AutoSize = true;
-            this.label96.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label96.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label96.Location = new System.Drawing.Point(220, 2);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(35, 36);
-            this.label96.TabIndex = 10;
-            this.label96.Text = "X";
-            this.label96.Click += new System.EventHandler(this.lblCerrarSV_Click);
+            this.lblCerrarRiesgoMuerte.AutoSize = true;
+            this.lblCerrarRiesgoMuerte.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblCerrarRiesgoMuerte.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCerrarRiesgoMuerte.Location = new System.Drawing.Point(220, 2);
+            this.lblCerrarRiesgoMuerte.Name = "lblCerrarRiesgoMuerte";
+            this.lblCerrarRiesgoMuerte.Size = new System.Drawing.Size(35, 36);
+            this.lblCerrarRiesgoMuerte.TabIndex = 10;
+            this.lblCerrarRiesgoMuerte.Text = "X";
+            this.lblCerrarRiesgoMuerte.Click += new System.EventHandler(this.lblCerrarRiesgoMuerte_Click);
             // 
             // textBox64
             // 
@@ -2503,9 +2532,9 @@
             this.label104.Location = new System.Drawing.Point(34, 10);
             this.label104.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(229, 23);
+            this.label104.Size = new System.Drawing.Size(239, 23);
             this.label104.TabIndex = 0;
-            this.label104.Text = "SeguroResgo de Muerte";
+            this.label104.Text = "Seguro Riesgo de Muerte";
             // 
             // pnlVidaSaludDependientes
             // 
@@ -2686,57 +2715,58 @@
             // pnlInmuebles
             // 
             this.pnlInmuebles.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlInmuebles.Controls.Add(this.label114);
-            this.pnlInmuebles.Controls.Add(this.button4);
-            this.pnlInmuebles.Controls.Add(this.button8);
-            this.pnlInmuebles.Location = new System.Drawing.Point(882, 5);
+            this.pnlInmuebles.Controls.Add(this.lblCerrar_pnlInmuebles);
+            this.pnlInmuebles.Controls.Add(this.btnInmEdificaciones);
+            this.pnlInmuebles.Controls.Add(this.btnInmContenido);
+            this.pnlInmuebles.Location = new System.Drawing.Point(664, 148);
             this.pnlInmuebles.Name = "pnlInmuebles";
-            this.pnlInmuebles.Size = new System.Drawing.Size(406, 207);
+            this.pnlInmuebles.Size = new System.Drawing.Size(630, 272);
             this.pnlInmuebles.TabIndex = 9;
             this.pnlInmuebles.Visible = false;
             // 
-            // label114
+            // lblCerrar_pnlInmuebles
             // 
-            this.label114.AutoSize = true;
-            this.label114.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label114.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label114.Location = new System.Drawing.Point(370, 0);
-            this.label114.Name = "label114";
-            this.label114.Size = new System.Drawing.Size(35, 36);
-            this.label114.TabIndex = 10;
-            this.label114.Text = "X";
-            this.label114.Click += new System.EventHandler(this.lblCerrarVeh_Click);
+            this.lblCerrar_pnlInmuebles.AutoSize = true;
+            this.lblCerrar_pnlInmuebles.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblCerrar_pnlInmuebles.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCerrar_pnlInmuebles.Location = new System.Drawing.Point(469, 5);
+            this.lblCerrar_pnlInmuebles.Name = "lblCerrar_pnlInmuebles";
+            this.lblCerrar_pnlInmuebles.Size = new System.Drawing.Size(35, 36);
+            this.lblCerrar_pnlInmuebles.TabIndex = 10;
+            this.lblCerrar_pnlInmuebles.Text = "X";
+            this.lblCerrar_pnlInmuebles.Click += new System.EventHandler(this.lblCerrar_pnlInmuebles_Click);
             // 
-            // button4
+            // btnInmEdificaciones
             // 
-            this.button4.BackColor = System.Drawing.Color.Crimson;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(64, 112);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(266, 73);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Edificaciones";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnInmEdificaciones.BackColor = System.Drawing.Color.Crimson;
+            this.btnInmEdificaciones.FlatAppearance.BorderSize = 0;
+            this.btnInmEdificaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInmEdificaciones.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInmEdificaciones.ForeColor = System.Drawing.Color.White;
+            this.btnInmEdificaciones.Location = new System.Drawing.Point(163, 117);
+            this.btnInmEdificaciones.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnInmEdificaciones.Name = "btnInmEdificaciones";
+            this.btnInmEdificaciones.Size = new System.Drawing.Size(266, 73);
+            this.btnInmEdificaciones.TabIndex = 7;
+            this.btnInmEdificaciones.Text = "Edificaciones";
+            this.btnInmEdificaciones.UseVisualStyleBackColor = false;
+            this.btnInmEdificaciones.Click += new System.EventHandler(this.btnInmEdificaciones_Click);
             // 
-            // button8
+            // btnInmContenido
             // 
-            this.button8.BackColor = System.Drawing.Color.Crimson;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(72, 33);
-            this.button8.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(252, 73);
-            this.button8.TabIndex = 7;
-            this.button8.Text = "Contenido";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.btnSeguroVoluntario_Click);
+            this.btnInmContenido.BackColor = System.Drawing.Color.Crimson;
+            this.btnInmContenido.FlatAppearance.BorderSize = 0;
+            this.btnInmContenido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInmContenido.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInmContenido.ForeColor = System.Drawing.Color.White;
+            this.btnInmContenido.Location = new System.Drawing.Point(171, 38);
+            this.btnInmContenido.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnInmContenido.Name = "btnInmContenido";
+            this.btnInmContenido.Size = new System.Drawing.Size(252, 73);
+            this.btnInmContenido.TabIndex = 7;
+            this.btnInmContenido.Text = "Contenido";
+            this.btnInmContenido.UseVisualStyleBackColor = false;
+            this.btnInmContenido.Click += new System.EventHandler(this.btnInmContenido_Click);
             // 
             // pnlVida
             // 
@@ -2746,7 +2776,7 @@
             this.pnlVida.Controls.Add(this.btnRiesgosLaborales);
             this.pnlVida.Controls.Add(this.btnSeguroSalud);
             this.pnlVida.Controls.Add(this.btnRiesgoMuerte);
-            this.pnlVida.Location = new System.Drawing.Point(503, 123);
+            this.pnlVida.Location = new System.Drawing.Point(663, 147);
             this.pnlVida.Name = "pnlVida";
             this.pnlVida.Size = new System.Drawing.Size(630, 272);
             this.pnlVida.TabIndex = 9;
@@ -2763,38 +2793,6 @@
             this.lblCerrar_pnlVida.TabIndex = 10;
             this.lblCerrar_pnlVida.Text = "X";
             this.lblCerrar_pnlVida.Click += new System.EventHandler(this.lblCerrar_pnlVida_Click);
-            // 
-            // btnRiesgoMuerte
-            // 
-            this.btnRiesgoMuerte.BackColor = System.Drawing.Color.Crimson;
-            this.btnRiesgoMuerte.FlatAppearance.BorderSize = 0;
-            this.btnRiesgoMuerte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRiesgoMuerte.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRiesgoMuerte.ForeColor = System.Drawing.Color.White;
-            this.btnRiesgoMuerte.Location = new System.Drawing.Point(15, 44);
-            this.btnRiesgoMuerte.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnRiesgoMuerte.Name = "btnRiesgoMuerte";
-            this.btnRiesgoMuerte.Size = new System.Drawing.Size(340, 73);
-            this.btnRiesgoMuerte.TabIndex = 7;
-            this.btnRiesgoMuerte.Text = "Seguro Riesgo de Muerte";
-            this.btnRiesgoMuerte.UseVisualStyleBackColor = false;
-            this.btnRiesgoMuerte.Click += new System.EventHandler(this.btnSeguroVoluntario_Click);
-            // 
-            // btnSeguroSalud
-            // 
-            this.btnSeguroSalud.BackColor = System.Drawing.Color.Crimson;
-            this.btnSeguroSalud.FlatAppearance.BorderSize = 0;
-            this.btnSeguroSalud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeguroSalud.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeguroSalud.ForeColor = System.Drawing.Color.White;
-            this.btnSeguroSalud.Location = new System.Drawing.Point(406, 56);
-            this.btnSeguroSalud.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnSeguroSalud.Name = "btnSeguroSalud";
-            this.btnSeguroSalud.Size = new System.Drawing.Size(171, 73);
-            this.btnSeguroSalud.TabIndex = 7;
-            this.btnSeguroSalud.Text = "Seguro de Salud";
-            this.btnSeguroSalud.UseVisualStyleBackColor = false;
-            this.btnSeguroSalud.Click += new System.EventHandler(this.btnSeguroSalud_Click);
             // 
             // btnDependientes
             // 
@@ -2828,23 +2826,237 @@
             this.btnRiesgosLaborales.UseVisualStyleBackColor = false;
             this.btnRiesgosLaborales.Click += new System.EventHandler(this.btnRiesgosLaborales_Click);
             // 
+            // btnSeguroSalud
+            // 
+            this.btnSeguroSalud.BackColor = System.Drawing.Color.Crimson;
+            this.btnSeguroSalud.FlatAppearance.BorderSize = 0;
+            this.btnSeguroSalud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeguroSalud.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeguroSalud.ForeColor = System.Drawing.Color.White;
+            this.btnSeguroSalud.Location = new System.Drawing.Point(406, 56);
+            this.btnSeguroSalud.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnSeguroSalud.Name = "btnSeguroSalud";
+            this.btnSeguroSalud.Size = new System.Drawing.Size(171, 73);
+            this.btnSeguroSalud.TabIndex = 7;
+            this.btnSeguroSalud.Text = "Seguro de Salud";
+            this.btnSeguroSalud.UseVisualStyleBackColor = false;
+            this.btnSeguroSalud.Click += new System.EventHandler(this.btnSeguroSalud_Click);
+            // 
+            // btnRiesgoMuerte
+            // 
+            this.btnRiesgoMuerte.BackColor = System.Drawing.Color.Crimson;
+            this.btnRiesgoMuerte.FlatAppearance.BorderSize = 0;
+            this.btnRiesgoMuerte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRiesgoMuerte.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRiesgoMuerte.ForeColor = System.Drawing.Color.White;
+            this.btnRiesgoMuerte.Location = new System.Drawing.Point(15, 44);
+            this.btnRiesgoMuerte.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnRiesgoMuerte.Name = "btnRiesgoMuerte";
+            this.btnRiesgoMuerte.Size = new System.Drawing.Size(340, 73);
+            this.btnRiesgoMuerte.TabIndex = 7;
+            this.btnRiesgoMuerte.Text = "Seguro Riesgo de Muerte";
+            this.btnRiesgoMuerte.UseVisualStyleBackColor = false;
+            this.btnRiesgoMuerte.Click += new System.EventHandler(this.btnSeguroVoluntario_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Firebrick;
+            this.label4.Location = new System.Drawing.Point(181, 67);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(407, 24);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Complete el formulario para continuar";
+            // 
+            // btnSiguienteSeguroOblig
+            // 
+            this.btnSiguienteSeguroOblig.BackColor = System.Drawing.Color.White;
+            this.btnSiguienteSeguroOblig.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnSiguienteSeguroOblig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSiguienteSeguroOblig.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguienteSeguroOblig.ForeColor = System.Drawing.Color.Crimson;
+            this.btnSiguienteSeguroOblig.Location = new System.Drawing.Point(617, 335);
+            this.btnSiguienteSeguroOblig.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSiguienteSeguroOblig.Name = "btnSiguienteSeguroOblig";
+            this.btnSiguienteSeguroOblig.Size = new System.Drawing.Size(157, 49);
+            this.btnSiguienteSeguroOblig.TabIndex = 11;
+            this.btnSiguienteSeguroOblig.Text = "Siguiente >>";
+            this.btnSiguienteSeguroOblig.UseVisualStyleBackColor = false;
+            // 
+            // textBox78
+            // 
+            this.textBox78.Location = new System.Drawing.Point(165, 154);
+            this.textBox78.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox78.Name = "textBox78";
+            this.textBox78.ReadOnly = true;
+            this.textBox78.Size = new System.Drawing.Size(239, 33);
+            this.textBox78.TabIndex = 1;
+            // 
+            // textBox79
+            // 
+            this.textBox79.Location = new System.Drawing.Point(165, 207);
+            this.textBox79.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox79.Name = "textBox79";
+            this.textBox79.ReadOnly = true;
+            this.textBox79.Size = new System.Drawing.Size(239, 33);
+            this.textBox79.TabIndex = 1;
+            // 
+            // textBox80
+            // 
+            this.textBox80.Location = new System.Drawing.Point(165, 260);
+            this.textBox80.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox80.Name = "textBox80";
+            this.textBox80.ReadOnly = true;
+            this.textBox80.Size = new System.Drawing.Size(239, 33);
+            this.textBox80.TabIndex = 1;
+            // 
+            // textBox81
+            // 
+            this.textBox81.Location = new System.Drawing.Point(165, 313);
+            this.textBox81.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox81.Name = "textBox81";
+            this.textBox81.ReadOnly = true;
+            this.textBox81.Size = new System.Drawing.Size(239, 33);
+            this.textBox81.TabIndex = 1;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.ForeColor = System.Drawing.Color.Firebrick;
+            this.label42.Location = new System.Drawing.Point(53, 158);
+            this.label42.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(88, 24);
+            this.label42.TabIndex = 0;
+            this.label42.Text = "Cliente:";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.ForeColor = System.Drawing.Color.Firebrick;
+            this.label51.Location = new System.Drawing.Point(53, 210);
+            this.label51.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(92, 24);
+            this.label51.TabIndex = 0;
+            this.label51.Text = "Cédula:";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.ForeColor = System.Drawing.Color.Firebrick;
+            this.label60.Location = new System.Drawing.Point(53, 246);
+            this.label60.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(107, 48);
+            this.label60.TabIndex = 0;
+            this.label60.Text = "Seguro a \r\nadquirir:";
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.ForeColor = System.Drawing.Color.Firebrick;
+            this.label69.Location = new System.Drawing.Point(53, 300);
+            this.label69.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(104, 48);
+            this.label69.TabIndex = 0;
+            this.label69.Text = "Efecto a \r\nasegurar:";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Crimson;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(513, 592);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(260, 57);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Solicitar";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Crimson;
+            this.button3.Location = new System.Drawing.Point(40, 592);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(171, 57);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "<< Atrás";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.textBox82);
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.ForeColor = System.Drawing.Color.Firebrick;
+            this.groupBox2.Location = new System.Drawing.Point(609, 207);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(203, 171);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Descontar:";
+            // 
+            // textBox82
+            // 
+            this.textBox82.Location = new System.Drawing.Point(39, 52);
+            this.textBox82.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox82.Name = "textBox82";
+            this.textBox82.Size = new System.Drawing.Size(140, 33);
+            this.textBox82.TabIndex = 1;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(646, 64);
+            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(150, 24);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "Tipo de pago:";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Crimson;
+            this.button2.Location = new System.Drawing.Point(39, 93);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(140, 42);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Descontar";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // frmSolicitud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1324, 707);
-            this.Controls.Add(this.pnlVida);
-            this.Controls.Add(this.pnlVehiculo);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnlVEHSeguroObligatorio);
             this.Controls.Add(this.pnlInmuebles);
+            this.Controls.Add(this.pnlVehiculo);
+            this.Controls.Add(this.pnlVida);
             this.Controls.Add(this.btnNegocioEmpresa);
             this.Controls.Add(this.btnMueblesEInmuebles);
             this.Controls.Add(this.btnVehiculo);
             this.Controls.Add(this.btnVida);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pnlCrearCuenta);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlNegociosEmpresas);
             this.Controls.Add(this.pnlMueblesInmContenido);
             this.Controls.Add(this.pnlVidaSaludDependientes);
@@ -2852,8 +3064,7 @@
             this.Controls.Add(this.pnlVidaSalud);
             this.Controls.Add(this.pnlVidaRiesgosLaborales);
             this.Controls.Add(this.pnlMueblesInmEdificaciones);
-            this.Controls.Add(this.pnlSeguroObligatorio);
-            this.Controls.Add(this.pnlSeguroTodoRiesgo);
+            this.Controls.Add(this.pnlVEHSeguroTodoRiesgo);
             this.Controls.Add(this.pnlVEHSeguroVoluntario);
             this.Controls.Add(this.label3);
             this.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2872,10 +3083,10 @@
             this.pnlVEHSeguroVoluntario.PerformLayout();
             this.pnlVehiculo.ResumeLayout(false);
             this.pnlVehiculo.PerformLayout();
-            this.pnlSeguroTodoRiesgo.ResumeLayout(false);
-            this.pnlSeguroTodoRiesgo.PerformLayout();
-            this.pnlSeguroObligatorio.ResumeLayout(false);
-            this.pnlSeguroObligatorio.PerformLayout();
+            this.pnlVEHSeguroTodoRiesgo.ResumeLayout(false);
+            this.pnlVEHSeguroTodoRiesgo.PerformLayout();
+            this.pnlVEHSeguroObligatorio.ResumeLayout(false);
+            this.pnlVEHSeguroObligatorio.PerformLayout();
             this.pnlMueblesInmEdificaciones.ResumeLayout(false);
             this.pnlMueblesInmEdificaciones.PerformLayout();
             this.pnlMueblesInmContenido.ResumeLayout(false);
@@ -2894,6 +3105,8 @@
             this.pnlInmuebles.PerformLayout();
             this.pnlVida.ResumeLayout(false);
             this.pnlVida.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2919,12 +3132,10 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
@@ -2971,8 +3182,8 @@
         private System.Windows.Forms.Button btnSeguroVoluntario;
         private System.Windows.Forms.Label lblCerrarVeh;
         private System.Windows.Forms.Label lblCerrarSV;
-        private System.Windows.Forms.Panel pnlSeguroTodoRiesgo;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel pnlVEHSeguroTodoRiesgo;
+        private System.Windows.Forms.Label lblCerrarTodoRiesgo;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
@@ -2988,8 +3199,8 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Panel pnlSeguroObligatorio;
-        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Panel pnlVEHSeguroObligatorio;
+        private System.Windows.Forms.Label lblCerrarSeguroOb;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.TextBox textBox14;
@@ -3006,7 +3217,7 @@
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Panel pnlMueblesInmEdificaciones;
-        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label lblCerrarSegInmEdif;
         private System.Windows.Forms.TextBox textBox29;
         private System.Windows.Forms.TextBox textBox30;
         private System.Windows.Forms.TextBox textBox31;
@@ -3023,7 +3234,7 @@
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.Panel pnlMueblesInmContenido;
-        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label lblCerrarInmContenido;
         private System.Windows.Forms.TextBox textBox36;
         private System.Windows.Forms.TextBox textBox37;
         private System.Windows.Forms.TextBox textBox38;
@@ -3040,7 +3251,7 @@
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.Panel pnlNegociosEmpresas;
-        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label lblCerrarNegocioEmp;
         private System.Windows.Forms.TextBox textBox43;
         private System.Windows.Forms.TextBox textBox44;
         private System.Windows.Forms.TextBox textBox45;
@@ -3091,7 +3302,7 @@
         private System.Windows.Forms.Label label94;
         private System.Windows.Forms.Label label95;
         private System.Windows.Forms.Panel pnlVidaRiesgoMuerte;
-        private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.Label lblCerrarRiesgoMuerte;
         private System.Windows.Forms.TextBox textBox64;
         private System.Windows.Forms.TextBox textBox65;
         private System.Windows.Forms.TextBox textBox66;
@@ -3125,14 +3336,30 @@
         private System.Windows.Forms.Label label112;
         private System.Windows.Forms.Label label113;
         private System.Windows.Forms.Panel pnlInmuebles;
-        private System.Windows.Forms.Label label114;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Label lblCerrar_pnlInmuebles;
+        private System.Windows.Forms.Button btnInmEdificaciones;
+        private System.Windows.Forms.Button btnInmContenido;
         private System.Windows.Forms.Panel pnlVida;
         private System.Windows.Forms.Label lblCerrar_pnlVida;
         private System.Windows.Forms.Button btnRiesgoMuerte;
         private System.Windows.Forms.Button btnSeguroSalud;
         private System.Windows.Forms.Button btnDependientes;
         private System.Windows.Forms.Button btnRiesgosLaborales;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnSiguienteSeguroOblig;
+        private System.Windows.Forms.TextBox textBox81;
+        private System.Windows.Forms.TextBox textBox80;
+        private System.Windows.Forms.TextBox textBox79;
+        private System.Windows.Forms.TextBox textBox78;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox textBox82;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -21,6 +21,7 @@ namespace CapaPresentacion
         public frmMenuPrincipal()
         {
             InitializeComponent();
+            FechaHora.Start();
         }
 
         private void MenuPrincipal_MouseDown(object sender, MouseEventArgs e)
@@ -59,6 +60,11 @@ namespace CapaPresentacion
             frmCliente Clie = new frmCliente();
             Clie.MdiParent = this;
             Clie.Show();
+        }
+
+        private void FechaHora_Tick(object sender, EventArgs e)
+        {
+            lblFechaHora.Text = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString(); 
         }
     }
 }
