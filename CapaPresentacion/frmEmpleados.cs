@@ -49,12 +49,12 @@ namespace CapaPresentacion
             dgvEmpleados.DataSource = B_Empleados.B_MostrarSolares();
         }
 
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
                 GuardarEmpleado();
+                MostrarEmpleados();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -93,6 +93,7 @@ namespace CapaPresentacion
             try
             {
                 ModificarEmpleado();
+                MostrarEmpleados();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -194,6 +195,27 @@ namespace CapaPresentacion
             {
                 chkSoloId.BackColor = Color.White;
                 chkSoloId.ForeColor = Color.Black;
+            }
+        }
+
+        private void btnEliminarMod_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EliminarEmpleado();
+                MostrarEmpleados();
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+        public void EliminarEmpleado()
+        {
+            E_Empleados.Id = Convert.ToInt32(txtIdMod.Text);
+            if (MessageBox.Show("Está seguro de eliminar a el Empleado seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (B_Empleados.B_EliminarEmpleado(E_Empleados) == 1)
+                {
+                    MessageBox.Show("Empleado Eliminado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
     }

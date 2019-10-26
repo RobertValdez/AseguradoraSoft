@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmpleados));
             this.pnlModificar = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chkSoloId = new System.Windows.Forms.CheckBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.cmbSexoMod = new System.Windows.Forms.ComboBox();
             this.txtCedulaMod = new System.Windows.Forms.MaskedTextBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -52,6 +54,7 @@
             this.txtTelefonoMod = new System.Windows.Forms.TextBox();
             this.txtDireccionMod = new System.Windows.Forms.TextBox();
             this.txtApellidoMod = new System.Windows.Forms.TextBox();
+            this.txtIdMod = new System.Windows.Forms.TextBox();
             this.txtNombreMod = new System.Windows.Forms.TextBox();
             this.txtBuscarEmpleado = new System.Windows.Forms.TextBox();
             this.pnlNuevo = new System.Windows.Forms.Panel();
@@ -77,9 +80,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.txtIdMod = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.chkSoloId = new System.Windows.Forms.CheckBox();
             this.pnlModificar.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
@@ -132,6 +132,32 @@
             this.groupBox2.Size = new System.Drawing.Size(1133, 567);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
+            // 
+            // chkSoloId
+            // 
+            this.chkSoloId.AutoSize = true;
+            this.chkSoloId.BackColor = System.Drawing.Color.White;
+            this.chkSoloId.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkSoloId.ForeColor = System.Drawing.Color.Crimson;
+            this.chkSoloId.Location = new System.Drawing.Point(457, 59);
+            this.chkSoloId.Name = "chkSoloId";
+            this.chkSoloId.Size = new System.Drawing.Size(108, 32);
+            this.chkSoloId.TabIndex = 23;
+            this.chkSoloId.Text = "solo Id";
+            this.chkSoloId.UseVisualStyleBackColor = false;
+            this.chkSoloId.CheckedChanged += new System.EventHandler(this.chkSoloId_CheckedChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label11.ForeColor = System.Drawing.Color.Crimson;
+            this.label11.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.label11.Location = new System.Drawing.Point(970, 31);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(50, 36);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Id:";
             // 
             // cmbSexoMod
             // 
@@ -205,6 +231,7 @@
             this.btnEliminarMod.TabIndex = 7;
             this.btnEliminarMod.Text = "Eliminar";
             this.btnEliminarMod.UseVisualStyleBackColor = false;
+            this.btnEliminarMod.Click += new System.EventHandler(this.btnEliminarMod_Click);
             // 
             // btnGuardarCambiosMod
             // 
@@ -373,6 +400,16 @@
             this.txtApellidoMod.Name = "txtApellidoMod";
             this.txtApellidoMod.Size = new System.Drawing.Size(319, 43);
             this.txtApellidoMod.TabIndex = 6;
+            // 
+            // txtIdMod
+            // 
+            this.txtIdMod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdMod.Location = new System.Drawing.Point(1027, 29);
+            this.txtIdMod.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtIdMod.Name = "txtIdMod";
+            this.txtIdMod.ReadOnly = true;
+            this.txtIdMod.Size = new System.Drawing.Size(96, 43);
+            this.txtIdMod.TabIndex = 6;
             // 
             // txtNombreMod
             // 
@@ -670,41 +707,6 @@
             this.btnModificar.Text = "Modificar/Eliminar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // txtIdMod
-            // 
-            this.txtIdMod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdMod.Location = new System.Drawing.Point(1027, 29);
-            this.txtIdMod.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtIdMod.Name = "txtIdMod";
-            this.txtIdMod.Size = new System.Drawing.Size(96, 43);
-            this.txtIdMod.TabIndex = 6;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label11.ForeColor = System.Drawing.Color.Crimson;
-            this.label11.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label11.Location = new System.Drawing.Point(970, 31);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 36);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Id:";
-            // 
-            // chkSoloId
-            // 
-            this.chkSoloId.AutoSize = true;
-            this.chkSoloId.BackColor = System.Drawing.Color.White;
-            this.chkSoloId.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkSoloId.ForeColor = System.Drawing.Color.Crimson;
-            this.chkSoloId.Location = new System.Drawing.Point(457, 59);
-            this.chkSoloId.Name = "chkSoloId";
-            this.chkSoloId.Size = new System.Drawing.Size(108, 32);
-            this.chkSoloId.TabIndex = 23;
-            this.chkSoloId.Text = "solo Id";
-            this.chkSoloId.UseVisualStyleBackColor = false;
-            this.chkSoloId.CheckedChanged += new System.EventHandler(this.chkSoloId_CheckedChanged);
             // 
             // frmEmpleados
             // 

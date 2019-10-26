@@ -26,5 +26,9 @@ namespace CapaNegocio.Empleados
         {
             return D_Empleados.ModificarEmpleado(eEmpl);
         }
+        public int B_EliminarEmpleado(E_Empleados eEmpl)
+        {
+            return D_Empleados.EliminarEmpleado(eEmpl);
+        }
     }
 }

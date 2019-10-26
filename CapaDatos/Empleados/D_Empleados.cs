@@ -13,7 +13,7 @@ namespace CapaDatos.Empleados
 {
     public class D_Empleados
     {
-        public DataTable D_MostrarEmpleados() 
+        public DataTable D_MostrarEmpleados()
         {
             SqlConnection strCon = new SqlConnection();
             strCon.ConnectionString = Conexion.Conexion.SqlConex;
@@ -22,6 +22,7 @@ namespace CapaDatos.Empleados
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            strCon.Close();
             return dt;
         }
 
@@ -90,14 +91,15 @@ namespace CapaDatos.Empleados
             parSexo.Value = eEmpl.Sexo;
             cmd.Parameters.Add(parSexo);
 
-            SqlParameter parFecha= new SqlParameter();
+            SqlParameter parFecha = new SqlParameter();
             parFecha.ParameterName = "@Fecha";
             parFecha.SqlDbType = SqlDbType.Date;
             parFecha.Value = eEmpl.Fecha;
             cmd.Parameters.Add(parFecha);
 
-
-            return cmd.ExecuteNonQuery();
+            int rsp = cmd.ExecuteNonQuery();
+            strcon.Close();
+            return rsp;
         }
 
         public int ModificarEmpleado(E_Empleados eEmpl)
@@ -177,8 +179,29 @@ namespace CapaDatos.Empleados
             parFecha.Value = eEmpl.Fecha;
             cmd.Parameters.Add(parFecha);
 
+            int rsp = cmd.ExecuteNonQuery();
+            strcon.Close();
+            return rsp;
+        }
+        public int EliminarEmpleado(E_Empleados eEmpl)
+        {
+            SqlConnection strcon = new SqlConnection();
+            strcon.ConnectionString = Conexion.Conexion.SqlConex;
+            strcon.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = strcon;
+            cmd.CommandText = "EliminarEmpleado";
+            cmd.CommandType = CommandType.StoredProcedure;
 
-            return cmd.ExecuteNonQuery();
+            SqlParameter parId = new SqlParameter();
+            parId.ParameterName = "@Id";
+            parId.SqlDbType = SqlDbType.Int;
+            parId.Value = eEmpl.Id;
+            cmd.Parameters.Add(parId);
+
+            int rsp = cmd.ExecuteNonQuery();
+            strcon.Close();
+            return rsp;
         }
     }
 }
