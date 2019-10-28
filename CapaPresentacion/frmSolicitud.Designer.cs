@@ -643,10 +643,10 @@
             this.pnlResumenSolicitud.Controls.Add(this.label60);
             this.pnlResumenSolicitud.Controls.Add(this.label51);
             this.pnlResumenSolicitud.Controls.Add(this.label42);
-            this.pnlResumenSolicitud.Location = new System.Drawing.Point(482, 662);
+            this.pnlResumenSolicitud.Location = new System.Drawing.Point(482, 645);
             this.pnlResumenSolicitud.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlResumenSolicitud.Name = "pnlResumenSolicitud";
-            this.pnlResumenSolicitud.Size = new System.Drawing.Size(829, 29);
+            this.pnlResumenSolicitud.Size = new System.Drawing.Size(829, 46);
             this.pnlResumenSolicitud.TabIndex = 6;
             this.pnlResumenSolicitud.Visible = false;
             // 
@@ -3599,6 +3599,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1324, 707);
+            this.Controls.Add(this.pnlResumenSolicitud);
             this.Controls.Add(this.pnlVidaRiesgoMuerte);
             this.Controls.Add(this.pnlVidaSalud);
             this.Controls.Add(this.pnlVidaSaludDependientes);
@@ -3608,7 +3609,6 @@
             this.Controls.Add(this.pnlMueblesInmContenido);
             this.Controls.Add(this.pnlVEHSeguroVoluntario);
             this.Controls.Add(this.pnlVEHSeguroTodoRiesgo);
-            this.Controls.Add(this.pnlResumenSolicitud);
             this.Controls.Add(this.pnlVEHSeguroObligatorio);
             this.Controls.Add(this.pnlInmuebles);
             this.Controls.Add(this.pnlVehiculo);
