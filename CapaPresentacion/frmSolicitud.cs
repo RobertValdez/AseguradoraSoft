@@ -24,6 +24,7 @@ namespace CapaPresentacion
 
         private void btnSeguroVoluntario_Click(object sender, EventArgs e)
         {
+            pnlVida.Visible = false;
             pnlVidaRiesgoMuerte.Visible = true;
         }
 

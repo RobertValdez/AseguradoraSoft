@@ -144,20 +144,6 @@
             this.label95 = new System.Windows.Forms.Label();
             this.pnlVidaRiesgoMuerte = new System.Windows.Forms.Panel();
             this.lblCerrarRiesgoMuerte = new System.Windows.Forms.Label();
-            this.textBox64 = new System.Windows.Forms.TextBox();
-            this.textBox65 = new System.Windows.Forms.TextBox();
-            this.textBox66 = new System.Windows.Forms.TextBox();
-            this.textBox67 = new System.Windows.Forms.TextBox();
-            this.textBox68 = new System.Windows.Forms.TextBox();
-            this.textBox69 = new System.Windows.Forms.TextBox();
-            this.textBox70 = new System.Windows.Forms.TextBox();
-            this.label97 = new System.Windows.Forms.Label();
-            this.label98 = new System.Windows.Forms.Label();
-            this.label99 = new System.Windows.Forms.Label();
-            this.label100 = new System.Windows.Forms.Label();
-            this.label101 = new System.Windows.Forms.Label();
-            this.label102 = new System.Windows.Forms.Label();
-            this.label103 = new System.Windows.Forms.Label();
             this.label104 = new System.Windows.Forms.Label();
             this.pnlVidaSaludDependientes = new System.Windows.Forms.Panel();
             this.lblCerrarSDepend = new System.Windows.Forms.Label();
@@ -310,6 +296,15 @@
             this.btnSiguiente_pnlVidaSaludDependientes = new System.Windows.Forms.Button();
             this.label84 = new System.Windows.Forms.Label();
             this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.textBox55 = new System.Windows.Forms.TextBox();
+            this.textBox56 = new System.Windows.Forms.TextBox();
+            this.textBox59 = new System.Windows.Forms.TextBox();
+            this.textBox60 = new System.Windows.Forms.TextBox();
+            this.label85 = new System.Windows.Forms.Label();
+            this.label86 = new System.Windows.Forms.Label();
+            this.label88 = new System.Windows.Forms.Label();
+            this.label91 = new System.Windows.Forms.Label();
             this.pnlCrearCuenta.SuspendLayout();
             this.pnlResumenSolicitud.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -1597,7 +1592,7 @@
             this.pnlNegociosEmpresas.Location = new System.Drawing.Point(482, 25);
             this.pnlNegociosEmpresas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlNegociosEmpresas.Name = "pnlNegociosEmpresas";
-            this.pnlNegociosEmpresas.Size = new System.Drawing.Size(841, 550);
+            this.pnlNegociosEmpresas.Size = new System.Drawing.Size(841, 557);
             this.pnlNegociosEmpresas.TabIndex = 6;
             this.pnlNegociosEmpresas.Visible = false;
             // 
@@ -1653,7 +1648,7 @@
             this.pnlVidaRiesgosLaborales.Location = new System.Drawing.Point(481, 24);
             this.pnlVidaRiesgosLaborales.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlVidaRiesgosLaborales.Name = "pnlVidaRiesgosLaborales";
-            this.pnlVidaRiesgosLaborales.Size = new System.Drawing.Size(842, 551);
+            this.pnlVidaRiesgosLaborales.Size = new System.Drawing.Size(842, 558);
             this.pnlVidaRiesgosLaborales.TabIndex = 6;
             this.pnlVidaRiesgosLaborales.Visible = false;
             // 
@@ -1796,26 +1791,21 @@
             // 
             this.pnlVidaRiesgoMuerte.BackColor = System.Drawing.Color.White;
             this.pnlVidaRiesgoMuerte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlVidaRiesgoMuerte.Controls.Add(this.button14);
+            this.pnlVidaRiesgoMuerte.Controls.Add(this.textBox55);
+            this.pnlVidaRiesgoMuerte.Controls.Add(this.textBox56);
+            this.pnlVidaRiesgoMuerte.Controls.Add(this.textBox59);
+            this.pnlVidaRiesgoMuerte.Controls.Add(this.textBox60);
+            this.pnlVidaRiesgoMuerte.Controls.Add(this.label85);
+            this.pnlVidaRiesgoMuerte.Controls.Add(this.label86);
+            this.pnlVidaRiesgoMuerte.Controls.Add(this.label88);
+            this.pnlVidaRiesgoMuerte.Controls.Add(this.label91);
             this.pnlVidaRiesgoMuerte.Controls.Add(this.lblCerrarRiesgoMuerte);
-            this.pnlVidaRiesgoMuerte.Controls.Add(this.textBox64);
-            this.pnlVidaRiesgoMuerte.Controls.Add(this.textBox65);
-            this.pnlVidaRiesgoMuerte.Controls.Add(this.textBox66);
-            this.pnlVidaRiesgoMuerte.Controls.Add(this.textBox67);
-            this.pnlVidaRiesgoMuerte.Controls.Add(this.textBox68);
-            this.pnlVidaRiesgoMuerte.Controls.Add(this.textBox69);
-            this.pnlVidaRiesgoMuerte.Controls.Add(this.textBox70);
-            this.pnlVidaRiesgoMuerte.Controls.Add(this.label97);
-            this.pnlVidaRiesgoMuerte.Controls.Add(this.label98);
-            this.pnlVidaRiesgoMuerte.Controls.Add(this.label99);
-            this.pnlVidaRiesgoMuerte.Controls.Add(this.label100);
-            this.pnlVidaRiesgoMuerte.Controls.Add(this.label101);
-            this.pnlVidaRiesgoMuerte.Controls.Add(this.label102);
-            this.pnlVidaRiesgoMuerte.Controls.Add(this.label103);
             this.pnlVidaRiesgoMuerte.Controls.Add(this.label104);
-            this.pnlVidaRiesgoMuerte.Location = new System.Drawing.Point(1049, 525);
+            this.pnlVidaRiesgoMuerte.Location = new System.Drawing.Point(482, 22);
             this.pnlVidaRiesgoMuerte.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlVidaRiesgoMuerte.Name = "pnlVidaRiesgoMuerte";
-            this.pnlVidaRiesgoMuerte.Size = new System.Drawing.Size(272, 42);
+            this.pnlVidaRiesgoMuerte.Size = new System.Drawing.Size(842, 329);
             this.pnlVidaRiesgoMuerte.TabIndex = 6;
             this.pnlVidaRiesgoMuerte.Visible = false;
             // 
@@ -1824,147 +1814,22 @@
             this.lblCerrarRiesgoMuerte.AutoSize = true;
             this.lblCerrarRiesgoMuerte.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblCerrarRiesgoMuerte.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCerrarRiesgoMuerte.Location = new System.Drawing.Point(220, 2);
+            this.lblCerrarRiesgoMuerte.Location = new System.Drawing.Point(805, 0);
             this.lblCerrarRiesgoMuerte.Name = "lblCerrarRiesgoMuerte";
             this.lblCerrarRiesgoMuerte.Size = new System.Drawing.Size(35, 36);
             this.lblCerrarRiesgoMuerte.TabIndex = 10;
             this.lblCerrarRiesgoMuerte.Text = "X";
             this.lblCerrarRiesgoMuerte.Click += new System.EventHandler(this.lblCerrarRiesgoMuerte_Click);
             // 
-            // textBox64
-            // 
-            this.textBox64.Location = new System.Drawing.Point(38, 287);
-            this.textBox64.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox64.Name = "textBox64";
-            this.textBox64.Size = new System.Drawing.Size(216, 33);
-            this.textBox64.TabIndex = 4;
-            // 
-            // textBox65
-            // 
-            this.textBox65.Location = new System.Drawing.Point(41, 223);
-            this.textBox65.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox65.Name = "textBox65";
-            this.textBox65.Size = new System.Drawing.Size(205, 33);
-            this.textBox65.TabIndex = 4;
-            // 
-            // textBox66
-            // 
-            this.textBox66.Location = new System.Drawing.Point(195, 160);
-            this.textBox66.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox66.Name = "textBox66";
-            this.textBox66.Size = new System.Drawing.Size(184, 33);
-            this.textBox66.TabIndex = 4;
-            // 
-            // textBox67
-            // 
-            this.textBox67.Location = new System.Drawing.Point(254, 223);
-            this.textBox67.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox67.Name = "textBox67";
-            this.textBox67.Size = new System.Drawing.Size(216, 33);
-            this.textBox67.TabIndex = 3;
-            // 
-            // textBox68
-            // 
-            this.textBox68.Location = new System.Drawing.Point(255, 97);
-            this.textBox68.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox68.Name = "textBox68";
-            this.textBox68.Size = new System.Drawing.Size(149, 33);
-            this.textBox68.TabIndex = 2;
-            // 
-            // textBox69
-            // 
-            this.textBox69.Location = new System.Drawing.Point(38, 160);
-            this.textBox69.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox69.Name = "textBox69";
-            this.textBox69.Size = new System.Drawing.Size(149, 33);
-            this.textBox69.TabIndex = 1;
-            // 
-            // textBox70
-            // 
-            this.textBox70.Location = new System.Drawing.Point(38, 97);
-            this.textBox70.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox70.Name = "textBox70";
-            this.textBox70.Size = new System.Drawing.Size(200, 33);
-            this.textBox70.TabIndex = 0;
-            // 
-            // label97
-            // 
-            this.label97.AutoSize = true;
-            this.label97.Location = new System.Drawing.Point(255, 70);
-            this.label97.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(98, 24);
-            this.label97.TabIndex = 0;
-            this.label97.Text = "Cilindros:";
-            // 
-            // label98
-            // 
-            this.label98.AutoSize = true;
-            this.label98.Location = new System.Drawing.Point(38, 260);
-            this.label98.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label98.Name = "label98";
-            this.label98.Size = new System.Drawing.Size(66, 24);
-            this.label98.TabIndex = 0;
-            this.label98.Text = "Nota:";
-            // 
-            // label99
-            // 
-            this.label99.AutoSize = true;
-            this.label99.Location = new System.Drawing.Point(38, 196);
-            this.label99.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label99.Name = "label99";
-            this.label99.Size = new System.Drawing.Size(45, 24);
-            this.label99.TabIndex = 0;
-            this.label99.Text = "Uso";
-            // 
-            // label100
-            // 
-            this.label100.AutoSize = true;
-            this.label100.Location = new System.Drawing.Point(198, 133);
-            this.label100.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label100.Name = "label100";
-            this.label100.Size = new System.Drawing.Size(120, 24);
-            this.label100.TabIndex = 0;
-            this.label100.Text = "Categoría:";
-            // 
-            // label101
-            // 
-            this.label101.AutoSize = true;
-            this.label101.Location = new System.Drawing.Point(38, 133);
-            this.label101.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label101.Name = "label101";
-            this.label101.Size = new System.Drawing.Size(57, 24);
-            this.label101.TabIndex = 0;
-            this.label101.Text = "Año:";
-            // 
-            // label102
-            // 
-            this.label102.AutoSize = true;
-            this.label102.Location = new System.Drawing.Point(254, 196);
-            this.label102.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label102.Name = "label102";
-            this.label102.Size = new System.Drawing.Size(125, 24);
-            this.label102.TabIndex = 0;
-            this.label102.Text = "Carrocería:";
-            // 
-            // label103
-            // 
-            this.label103.AutoSize = true;
-            this.label103.Location = new System.Drawing.Point(38, 70);
-            this.label103.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(215, 24);
-            this.label103.TabIndex = 0;
-            this.label103.Text = "Marca de Vehículo:";
-            // 
             // label104
             // 
             this.label104.AutoSize = true;
-            this.label104.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label104.Location = new System.Drawing.Point(34, 10);
+            this.label104.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label104.ForeColor = System.Drawing.Color.Firebrick;
+            this.label104.Location = new System.Drawing.Point(241, 14);
             this.label104.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(239, 23);
+            this.label104.Size = new System.Drawing.Size(265, 25);
             this.label104.TabIndex = 0;
             this.label104.Text = "Seguro Riesgo de Muerte";
             // 
@@ -1994,7 +1859,7 @@
             this.pnlVidaSaludDependientes.Location = new System.Drawing.Point(482, 24);
             this.pnlVidaSaludDependientes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlVidaSaludDependientes.Name = "pnlVidaSaludDependientes";
-            this.pnlVidaSaludDependientes.Size = new System.Drawing.Size(839, 525);
+            this.pnlVidaSaludDependientes.Size = new System.Drawing.Size(839, 558);
             this.pnlVidaSaludDependientes.TabIndex = 6;
             this.pnlVidaSaludDependientes.Visible = false;
             // 
@@ -3637,12 +3502,104 @@
             this.button13.Text = "Siguiente >>";
             this.button13.UseVisualStyleBackColor = false;
             // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.Color.White;
+            this.button14.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.ForeColor = System.Drawing.Color.Crimson;
+            this.button14.Location = new System.Drawing.Point(650, 238);
+            this.button14.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(157, 49);
+            this.button14.TabIndex = 116;
+            this.button14.Text = "Siguiente >>";
+            this.button14.UseVisualStyleBackColor = false;
+            // 
+            // textBox55
+            // 
+            this.textBox55.Location = new System.Drawing.Point(265, 178);
+            this.textBox55.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox55.Name = "textBox55";
+            this.textBox55.Size = new System.Drawing.Size(216, 33);
+            this.textBox55.TabIndex = 114;
+            // 
+            // textBox56
+            // 
+            this.textBox56.Location = new System.Drawing.Point(268, 114);
+            this.textBox56.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox56.Name = "textBox56";
+            this.textBox56.Size = new System.Drawing.Size(205, 33);
+            this.textBox56.TabIndex = 115;
+            // 
+            // textBox59
+            // 
+            this.textBox59.Location = new System.Drawing.Point(33, 177);
+            this.textBox59.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox59.Name = "textBox59";
+            this.textBox59.Size = new System.Drawing.Size(149, 33);
+            this.textBox59.TabIndex = 113;
+            // 
+            // textBox60
+            // 
+            this.textBox60.Location = new System.Drawing.Point(33, 114);
+            this.textBox60.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox60.Name = "textBox60";
+            this.textBox60.Size = new System.Drawing.Size(200, 33);
+            this.textBox60.TabIndex = 108;
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.ForeColor = System.Drawing.Color.Firebrick;
+            this.label85.Location = new System.Drawing.Point(265, 151);
+            this.label85.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(278, 24);
+            this.label85.TabIndex = 109;
+            this.label85.Text = "Antecedentes personales:";
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.ForeColor = System.Drawing.Color.Firebrick;
+            this.label86.Location = new System.Drawing.Point(265, 87);
+            this.label86.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(245, 24);
+            this.label86.TabIndex = 110;
+            this.label86.Text = "Instituto donde Labora:";
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.ForeColor = System.Drawing.Color.Firebrick;
+            this.label88.Location = new System.Drawing.Point(33, 150);
+            this.label88.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(111, 24);
+            this.label88.TabIndex = 111;
+            this.label88.Text = "Municipio:";
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.ForeColor = System.Drawing.Color.Firebrick;
+            this.label91.Location = new System.Drawing.Point(33, 87);
+            this.label91.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(107, 24);
+            this.label91.TabIndex = 112;
+            this.label91.Text = "Provincia:";
+            // 
             // frmSolicitud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1324, 707);
+            this.Controls.Add(this.pnlVidaRiesgoMuerte);
             this.Controls.Add(this.pnlVidaSalud);
             this.Controls.Add(this.pnlVidaSaludDependientes);
             this.Controls.Add(this.pnlVidaRiesgosLaborales);
@@ -3662,7 +3619,6 @@
             this.Controls.Add(this.btnVida);
             this.Controls.Add(this.pnlCrearCuenta);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.pnlVidaRiesgoMuerte);
             this.Controls.Add(this.label3);
             this.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6);
@@ -3812,20 +3768,6 @@
         private System.Windows.Forms.Label label95;
         private System.Windows.Forms.Panel pnlVidaRiesgoMuerte;
         private System.Windows.Forms.Label lblCerrarRiesgoMuerte;
-        private System.Windows.Forms.TextBox textBox64;
-        private System.Windows.Forms.TextBox textBox65;
-        private System.Windows.Forms.TextBox textBox66;
-        private System.Windows.Forms.TextBox textBox67;
-        private System.Windows.Forms.TextBox textBox68;
-        private System.Windows.Forms.TextBox textBox69;
-        private System.Windows.Forms.TextBox textBox70;
-        private System.Windows.Forms.Label label97;
-        private System.Windows.Forms.Label label98;
-        private System.Windows.Forms.Label label99;
-        private System.Windows.Forms.Label label100;
-        private System.Windows.Forms.Label label101;
-        private System.Windows.Forms.Label label102;
-        private System.Windows.Forms.Label label103;
         private System.Windows.Forms.Label label104;
         private System.Windows.Forms.Panel pnlVidaSaludDependientes;
         private System.Windows.Forms.Label lblCerrarSDepend;
@@ -3994,5 +3936,14 @@
         private System.Windows.Forms.Button btnSiguiente_pnlVidaSaludDependientes;
         private System.Windows.Forms.Label label84;
         private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.TextBox textBox55;
+        private System.Windows.Forms.TextBox textBox56;
+        private System.Windows.Forms.TextBox textBox59;
+        private System.Windows.Forms.TextBox textBox60;
+        private System.Windows.Forms.Label label85;
+        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.Label label91;
     }
 }
