@@ -10,21 +10,21 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class frmRegistroDeReclamos : Form
+    public partial class frmSiniestro : Form
     {
-        public frmRegistroDeReclamos()
+        public frmSiniestro()
         {
             InitializeComponent();
         }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
-            pnlBuscarClientes.Visible = true;
+            pnlBuscarCliente.Visible = true;
         }
 
         private void lblCerrar_Click(object sender, EventArgs e)
         {
-            pnlBuscarClientes.Visible = false;
+            pnlBuscarCliente.Visible = false;
         }
     }
 }

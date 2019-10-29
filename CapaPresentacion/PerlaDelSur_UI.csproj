@@ -58,11 +58,23 @@
     <Compile Include="frmEmpleados.Designer.cs">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPolizas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPolizas.Designer.cs">
+      <DependentUpon>frmPolizas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSeguroEmpresas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSeguroEmpresas.Designer.cs">
       <DependentUpon>frmSeguroEmpresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSiniestro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSiniestro.Designer.cs">
+      <DependentUpon>frmSiniestro.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSolicitud.cs">
       <SubType>Form</SubType>
@@ -108,11 +120,17 @@
     <EmbeddedResource Include="frmEmpleados.resx">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPolizas.resx">
+      <DependentUpon>frmPolizas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReclamos.resx">
       <DependentUpon>frmReclamos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSeguroEmpresas.resx">
       <DependentUpon>frmSeguroEmpresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSiniestro.resx">
+      <DependentUpon>frmSiniestro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSolicitud.resx">
       <DependentUpon>frmSolicitud.cs</DependentUpon>
