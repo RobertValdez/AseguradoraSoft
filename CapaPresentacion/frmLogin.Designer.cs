@@ -39,22 +39,22 @@
             this.lblRegistrarse = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.pnlRegistrarse = new System.Windows.Forms.Panel();
-            this.btnProbarCodigo = new System.Windows.Forms.Button();
-            this.btnInfoValidacion = new System.Windows.Forms.Button();
-            this.lblComprobarCod = new System.Windows.Forms.Label();
-            this.lblCerrarRegistrarse = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnRegistrar = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnRegistrar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.lblCerrarRegistrarse = new System.Windows.Forms.Label();
+            this.lblComprobarCod = new System.Windows.Forms.Label();
+            this.btnInfoValidacion = new System.Windows.Forms.Button();
+            this.btnProbarCodigo = new System.Windows.Forms.Button();
+            this.pnlRegistrarse = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlRegistrarse.SuspendLayout();
             this.SuspendLayout();
@@ -170,6 +170,164 @@
             this.label4.Text = "Seguros\r\nPerla del Sur";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(107, 55);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(168, 36);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Registrarse";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(25, 140);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(95, 42);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Nombre\r\nde Usuario:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.BackColor = System.Drawing.Color.Crimson;
+            this.btnRegistrar.FlatAppearance.BorderSize = 0;
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.Color.White;
+            this.btnRegistrar.Location = new System.Drawing.Point(175, 406);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(166, 37);
+            this.btnRegistrar.TabIndex = 2;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.Crimson;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Location = new System.Drawing.Point(29, 406);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(77, 37);
+            this.btnSalir.TabIndex = 2;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.lblCerrarRegistrarse_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(25, 200);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 21);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Contraseña:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(138, 155);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(203, 27);
+            this.textBox3.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(25, 233);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(104, 42);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Repetir\r\ncontraseña:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(25, 343);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(97, 21);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Validación:";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(138, 199);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(203, 27);
+            this.textBox4.TabIndex = 1;
+            this.textBox4.UseSystemPasswordChar = true;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(138, 248);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(203, 27);
+            this.textBox5.TabIndex = 1;
+            this.textBox5.UseSystemPasswordChar = true;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(128, 340);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(190, 27);
+            this.textBox6.TabIndex = 1;
+            this.textBox6.UseSystemPasswordChar = true;
+            // 
+            // lblCerrarRegistrarse
+            // 
+            this.lblCerrarRegistrarse.AutoSize = true;
+            this.lblCerrarRegistrarse.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblCerrarRegistrarse.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCerrarRegistrarse.Location = new System.Drawing.Point(337, 2);
+            this.lblCerrarRegistrarse.Name = "lblCerrarRegistrarse";
+            this.lblCerrarRegistrarse.Size = new System.Drawing.Size(35, 36);
+            this.lblCerrarRegistrarse.TabIndex = 9;
+            this.lblCerrarRegistrarse.Text = "X";
+            this.lblCerrarRegistrarse.Click += new System.EventHandler(this.lblCerrarRegistrarse_Click);
+            // 
+            // lblComprobarCod
+            // 
+            this.lblComprobarCod.AutoSize = true;
+            this.lblComprobarCod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblComprobarCod.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComprobarCod.Location = new System.Drawing.Point(179, 370);
+            this.lblComprobarCod.Name = "lblComprobarCod";
+            this.lblComprobarCod.Size = new System.Drawing.Size(160, 19);
+            this.lblComprobarCod.TabIndex = 10;
+            this.lblComprobarCod.Text = "Correcto/Incorrecto";
+            this.lblComprobarCod.Visible = false;
+            // 
+            // btnInfoValidacion
+            // 
+            this.btnInfoValidacion.BackColor = System.Drawing.Color.White;
+            this.btnInfoValidacion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInfoValidacion.FlatAppearance.BorderSize = 0;
+            this.btnInfoValidacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInfoValidacion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfoValidacion.ForeColor = System.Drawing.Color.White;
+            this.btnInfoValidacion.Image = ((System.Drawing.Image)(resources.GetObject("btnInfoValidacion.Image")));
+            this.btnInfoValidacion.Location = new System.Drawing.Point(322, 340);
+            this.btnInfoValidacion.Name = "btnInfoValidacion";
+            this.btnInfoValidacion.Size = new System.Drawing.Size(17, 27);
+            this.btnInfoValidacion.TabIndex = 11;
+            this.btnInfoValidacion.UseVisualStyleBackColor = false;
+            // 
+            // btnProbarCodigo
+            // 
+            this.btnProbarCodigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProbarCodigo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProbarCodigo.ForeColor = System.Drawing.Color.Crimson;
+            this.btnProbarCodigo.Location = new System.Drawing.Point(222, 310);
+            this.btnProbarCodigo.Name = "btnProbarCodigo";
+            this.btnProbarCodigo.Size = new System.Drawing.Size(117, 26);
+            this.btnProbarCodigo.TabIndex = 12;
+            this.btnProbarCodigo.Text = "Probar código";
+            this.btnProbarCodigo.UseVisualStyleBackColor = true;
+            // 
             // pnlRegistrarse
             // 
             this.pnlRegistrarse.Controls.Add(this.btnProbarCodigo);
@@ -187,169 +345,11 @@
             this.pnlRegistrarse.Controls.Add(this.btnRegistrar);
             this.pnlRegistrarse.Controls.Add(this.label6);
             this.pnlRegistrarse.Controls.Add(this.label5);
-            this.pnlRegistrarse.Location = new System.Drawing.Point(0, 0);
+            this.pnlRegistrarse.Location = new System.Drawing.Point(211, 0);
             this.pnlRegistrarse.Name = "pnlRegistrarse";
-            this.pnlRegistrarse.Size = new System.Drawing.Size(372, 480);
+            this.pnlRegistrarse.Size = new System.Drawing.Size(161, 480);
             this.pnlRegistrarse.TabIndex = 5;
             this.pnlRegistrarse.Visible = false;
-            // 
-            // btnProbarCodigo
-            // 
-            this.btnProbarCodigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProbarCodigo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProbarCodigo.ForeColor = System.Drawing.Color.Crimson;
-            this.btnProbarCodigo.Location = new System.Drawing.Point(222, 310);
-            this.btnProbarCodigo.Name = "btnProbarCodigo";
-            this.btnProbarCodigo.Size = new System.Drawing.Size(117, 26);
-            this.btnProbarCodigo.TabIndex = 12;
-            this.btnProbarCodigo.Text = "Probar código";
-            this.btnProbarCodigo.UseVisualStyleBackColor = true;
-            // 
-            // btnInfoValidacion
-            // 
-            this.btnInfoValidacion.BackColor = System.Drawing.Color.White;
-            this.btnInfoValidacion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInfoValidacion.FlatAppearance.BorderSize = 0;
-            this.btnInfoValidacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInfoValidacion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInfoValidacion.ForeColor = System.Drawing.Color.White;
-            this.btnInfoValidacion.Image = ((System.Drawing.Image)(resources.GetObject("btnInfoValidacion.Image")));
-            this.btnInfoValidacion.Location = new System.Drawing.Point(322, 340);
-            this.btnInfoValidacion.Name = "btnInfoValidacion";
-            this.btnInfoValidacion.Size = new System.Drawing.Size(17, 27);
-            this.btnInfoValidacion.TabIndex = 11;
-            this.btnInfoValidacion.UseVisualStyleBackColor = false;
-            // 
-            // lblComprobarCod
-            // 
-            this.lblComprobarCod.AutoSize = true;
-            this.lblComprobarCod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblComprobarCod.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblComprobarCod.Location = new System.Drawing.Point(179, 370);
-            this.lblComprobarCod.Name = "lblComprobarCod";
-            this.lblComprobarCod.Size = new System.Drawing.Size(160, 19);
-            this.lblComprobarCod.TabIndex = 10;
-            this.lblComprobarCod.Text = "Correcto/Incorrecto";
-            this.lblComprobarCod.Visible = false;
-            // 
-            // lblCerrarRegistrarse
-            // 
-            this.lblCerrarRegistrarse.AutoSize = true;
-            this.lblCerrarRegistrarse.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblCerrarRegistrarse.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCerrarRegistrarse.Location = new System.Drawing.Point(337, 2);
-            this.lblCerrarRegistrarse.Name = "lblCerrarRegistrarse";
-            this.lblCerrarRegistrarse.Size = new System.Drawing.Size(35, 36);
-            this.lblCerrarRegistrarse.TabIndex = 9;
-            this.lblCerrarRegistrarse.Text = "X";
-            this.lblCerrarRegistrarse.Click += new System.EventHandler(this.lblCerrarRegistrarse_Click);
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(128, 340);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(190, 27);
-            this.textBox6.TabIndex = 1;
-            this.textBox6.UseSystemPasswordChar = true;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(138, 248);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(203, 27);
-            this.textBox5.TabIndex = 1;
-            this.textBox5.UseSystemPasswordChar = true;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(138, 199);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(203, 27);
-            this.textBox4.TabIndex = 1;
-            this.textBox4.UseSystemPasswordChar = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(25, 343);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(97, 21);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Validación:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(25, 233);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(104, 42);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Repetir\r\ncontraseña:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(138, 155);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(203, 27);
-            this.textBox3.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 200);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(107, 21);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Contraseña:";
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.Color.Crimson;
-            this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(29, 406);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(77, 37);
-            this.btnSalir.TabIndex = 2;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.lblCerrarRegistrarse_Click);
-            // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.BackColor = System.Drawing.Color.Crimson;
-            this.btnRegistrar.FlatAppearance.BorderSize = 0;
-            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrar.Location = new System.Drawing.Point(175, 406);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(166, 37);
-            this.btnRegistrar.TabIndex = 2;
-            this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.UseVisualStyleBackColor = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 140);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 42);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Nombre\r\nde Usuario:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(107, 55);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(168, 36);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Registrarse";
             // 
             // frmLogin
             // 
@@ -393,22 +393,22 @@
         private System.Windows.Forms.Label lblRegistrarse;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel pnlRegistrarse;
-        private System.Windows.Forms.Label lblCerrarRegistrarse;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnRegistrar;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnProbarCodigo;
-        private System.Windows.Forms.Button btnInfoValidacion;
-        private System.Windows.Forms.Label lblComprobarCod;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label lblCerrarRegistrarse;
+        private System.Windows.Forms.Label lblComprobarCod;
+        private System.Windows.Forms.Button btnInfoValidacion;
+        private System.Windows.Forms.Button btnProbarCodigo;
+        private System.Windows.Forms.Panel pnlRegistrarse;
     }
 }
 

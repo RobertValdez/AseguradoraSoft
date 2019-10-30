@@ -66,5 +66,47 @@ namespace CapaPresentacion
         {
             lblFechaHora.Text = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString(); 
         }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUsuarios U = new frmUsuarios();
+            U.Show();
+        }
+
+        private void ventasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmVenta v = new frmVenta();
+            v.Show();
+        }
+
+        private void reclamosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRegistroDeReclamos RdR = new frmRegistroDeReclamos();
+            RdR.Show();
+        }
+
+        private void devolucionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDevoluciones dv = new frmDevoluciones();
+            dv.Show();
+        }
+
+        private void polizasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPolizas p = new frmPolizas();
+            p.Show();
+        }
+
+        private void seguroParaEmpresasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSeguroEmpresas sEmp = new frmSeguroEmpresas();
+            sEmp.Show();
+        }
+
+        private void siniestrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSiniestro S = new frmSiniestro();
+            S.Show();
+        }
     }
 }
