@@ -16,5 +16,38 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void btnPagoP_Click(object sender, EventArgs e)
+        {
+            pnlGestionarPolizas.Visible = false;
+            pnlPagoPolizas.Visible = true;
+
+            btnPagoP.BackColor = Color.LightPink;
+            btnGestionarP.BackColor = Color.White;
+        }
+
+        private void btnGestionarP_Click(object sender, EventArgs e)
+        {
+            pnlGestionarPolizas.Visible = true;
+            pnlPagoPolizas.Visible = false;
+
+            btnGestionarP.BackColor = Color.LightPink;
+            btnPagoP.BackColor = Color.White;
+        }
+
+        private void cmbTPago_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbTPago.Text == "Al contado")
+            {
+                lblParcial.Visible = false;
+                txtParcial.Visible = false;
+            }
+            else
+            {
+                lblParcial.Visible = true;
+                txtParcial.Visible = true;
+            }
+            
+        }
     }
 }
