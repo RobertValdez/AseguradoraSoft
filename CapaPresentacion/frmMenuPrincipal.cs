@@ -70,42 +70,49 @@ namespace CapaPresentacion
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmUsuarios U = new frmUsuarios();
+            U.MdiParent = this;
             U.Show();
         }
 
         private void ventasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmVenta v = new frmVenta();
+            v.MdiParent = this;
             v.Show();
         }
 
         private void reclamosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmRegistroDeReclamos RdR = new frmRegistroDeReclamos();
+            RdR.MdiParent = this;
             RdR.Show();
         }
 
         private void devolucionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmDevoluciones dv = new frmDevoluciones();
+            dv.MdiParent = this;
             dv.Show();
         }
 
         private void polizasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmPolizas p = new frmPolizas();
+            p.MdiParent = this;
             p.Show();
         }
 
         private void seguroParaEmpresasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmSeguroEmpresas sEmp = new frmSeguroEmpresas();
+            sEmp.MdiParent = this;
             sEmp.Show();
         }
 
         private void siniestrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmSiniestro S = new frmSiniestro();
+            S.MdiParent = this;
             S.Show();
         }
     }

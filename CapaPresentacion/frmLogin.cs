@@ -9,10 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
+using PerlaDelSur_Entity.Usuarios;
+using CapaNegocio.Usuarios;
+
 namespace CapaPresentacion
 {
     public partial class frmLogin : Form
     {
+        E_Usuarios E_Usuarios = new E_Usuarios();
+        B_Usuarios B_Usuarios = new B_Usuarios();
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -46,19 +52,32 @@ namespace CapaPresentacion
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            frmMenuPrincipal mp = new frmMenuPrincipal();
-            mp.Show();
-            this.Hide();
-        }
 
-        private void lblCerrarRegistrarse_Click(object sender, EventArgs e)
-        {
-            pnlRegistrarse.Visible = false;
-        }
+            try
+            {
+                if (txtUsuario.Text != "" && txtContrasena.Text != "")
+                {
+                    E_Usuarios.NombreUsuario = txtUsuario.Text;
+                    E_Usuarios.Contrasena = txtContrasena.Text;
 
-        private void lblRegistrarse_Click(object sender, EventArgs e)
-        {
-            pnlRegistrarse.Visible = true;
+                    if (B_Usuarios.ComprobarAcceso(E_Usuarios) == 1)
+                    {
+                        frmMenuPrincipal mp = new frmMenuPrincipal();
+                        mp.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El usuario o la contraseña no son correctos. Por favor intentelo de nuevo.", "Aviso",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                        txtUsuario.Text = "";
+                        txtContrasena.Text = "";
+                        txtUsuario.Focus();
+                    }
+                }
+            }catch(Exception ex) { MessageBox.Show(ex.Message); }
+
         }
     }
 }

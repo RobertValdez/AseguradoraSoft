@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Empleados\B_Empleados.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuarios\B_Usuarios.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaDatos\PerlaDelSur_DAL.csproj">
@@ -54,8 +55,6 @@
       <Name>PerlaDelSur_Entity</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Usuarios\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
