@@ -37,7 +37,6 @@
             this.txtCedulaMod = new System.Windows.Forms.MaskedTextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.btnLimpiarMod = new System.Windows.Forms.Button();
             this.btnEliminarMod = new System.Windows.Forms.Button();
             this.btnGuardarCambiosMod = new System.Windows.Forms.Button();
             this.txtCargoMod = new System.Windows.Forms.TextBox();
@@ -104,7 +103,6 @@
             this.groupBox2.Controls.Add(this.txtCedulaMod);
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.label21);
-            this.groupBox2.Controls.Add(this.btnLimpiarMod);
             this.groupBox2.Controls.Add(this.btnEliminarMod);
             this.groupBox2.Controls.Add(this.btnGuardarCambiosMod);
             this.groupBox2.Controls.Add(this.txtCargoMod);
@@ -201,21 +199,6 @@
             this.label21.Size = new System.Drawing.Size(114, 36);
             this.label21.TabIndex = 20;
             this.label21.Text = "Cargo:";
-            // 
-            // btnLimpiarMod
-            // 
-            this.btnLimpiarMod.BackColor = System.Drawing.Color.White;
-            this.btnLimpiarMod.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
-            this.btnLimpiarMod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiarMod.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarMod.ForeColor = System.Drawing.Color.Crimson;
-            this.btnLimpiarMod.Location = new System.Drawing.Point(663, 507);
-            this.btnLimpiarMod.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnLimpiarMod.Name = "btnLimpiarMod";
-            this.btnLimpiarMod.Size = new System.Drawing.Size(118, 49);
-            this.btnLimpiarMod.TabIndex = 7;
-            this.btnLimpiarMod.Text = "Limpiar";
-            this.btnLimpiarMod.UseVisualStyleBackColor = false;
             // 
             // btnEliminarMod
             // 
@@ -744,7 +727,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Button btnLimpiarMod;
         private System.Windows.Forms.Button btnEliminarMod;
         private System.Windows.Forms.Button btnGuardarCambiosMod;
         private System.Windows.Forms.TextBox txtCargoMod;

@@ -50,19 +50,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbSexo = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtNacionalidad = new System.Windows.Forms.TextBox();
             this.pnlModificar = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtIdMod = new System.Windows.Forms.TextBox();
             this.cmbSexoMod = new System.Windows.Forms.ComboBox();
             this.mskCedulaMod = new System.Windows.Forms.MaskedTextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.txtRNC_Mod = new System.Windows.Forms.TextBox();
-            this.btnLimpiarMod = new System.Windows.Forms.Button();
             this.btnEliminarMod = new System.Windows.Forms.Button();
             this.btnGuardarCambiosMod = new System.Windows.Forms.Button();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label18 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -70,20 +73,16 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.txtNacionalidadMod = new System.Windows.Forms.TextBox();
             this.txtCorreoElectronicoMod = new System.Windows.Forms.TextBox();
             this.txtTelefonoMod = new System.Windows.Forms.TextBox();
             this.txtDireccionMod = new System.Windows.Forms.TextBox();
             this.txtApellidoMod = new System.Windows.Forms.TextBox();
             this.txtNombreMod = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.txtNacionalidad = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.txtIdMod = new System.Windows.Forms.TextBox();
-            this.txtNacionalidadMod = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
             this.pnlNuevo.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.pnlModificar.SuspendLayout();
@@ -330,12 +329,31 @@
             this.cmbSexo.Size = new System.Drawing.Size(171, 32);
             this.cmbSexo.TabIndex = 19;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(14, 250);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(153, 24);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Nacionalidad:";
+            // 
+            // txtNacionalidad
+            // 
+            this.txtNacionalidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNacionalidad.Location = new System.Drawing.Point(175, 248);
+            this.txtNacionalidad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNacionalidad.Name = "txtNacionalidad";
+            this.txtNacionalidad.Size = new System.Drawing.Size(383, 33);
+            this.txtNacionalidad.TabIndex = 5;
+            // 
             // pnlModificar
             // 
             this.pnlModificar.Controls.Add(this.groupBox2);
             this.pnlModificar.Location = new System.Drawing.Point(15, 86);
             this.pnlModificar.Name = "pnlModificar";
-            this.pnlModificar.Size = new System.Drawing.Size(1171, 582);
+            this.pnlModificar.Size = new System.Drawing.Size(1161, 582);
             this.pnlModificar.TabIndex = 12;
             this.pnlModificar.Visible = false;
             // 
@@ -348,7 +366,6 @@
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.label21);
             this.groupBox2.Controls.Add(this.txtRNC_Mod);
-            this.groupBox2.Controls.Add(this.btnLimpiarMod);
             this.groupBox2.Controls.Add(this.btnEliminarMod);
             this.groupBox2.Controls.Add(this.btnGuardarCambiosMod);
             this.groupBox2.Controls.Add(this.dgvClientes);
@@ -377,6 +394,28 @@
             this.groupBox2.Size = new System.Drawing.Size(1145, 567);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label20.ForeColor = System.Drawing.Color.Crimson;
+            this.label20.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.label20.Location = new System.Drawing.Point(977, 24);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(50, 36);
+            this.label20.TabIndex = 23;
+            this.label20.Text = "Id:";
+            // 
+            // txtIdMod
+            // 
+            this.txtIdMod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdMod.Location = new System.Drawing.Point(1027, 22);
+            this.txtIdMod.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtIdMod.Name = "txtIdMod";
+            this.txtIdMod.ReadOnly = true;
+            this.txtIdMod.Size = new System.Drawing.Size(96, 43);
+            this.txtIdMod.TabIndex = 1;
             // 
             // cmbSexoMod
             // 
@@ -428,21 +467,6 @@
             this.txtRNC_Mod.Name = "txtRNC_Mod";
             this.txtRNC_Mod.Size = new System.Drawing.Size(374, 43);
             this.txtRNC_Mod.TabIndex = 9;
-            // 
-            // btnLimpiarMod
-            // 
-            this.btnLimpiarMod.BackColor = System.Drawing.Color.White;
-            this.btnLimpiarMod.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan;
-            this.btnLimpiarMod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiarMod.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarMod.ForeColor = System.Drawing.Color.Crimson;
-            this.btnLimpiarMod.Location = new System.Drawing.Point(663, 507);
-            this.btnLimpiarMod.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnLimpiarMod.Name = "btnLimpiarMod";
-            this.btnLimpiarMod.Size = new System.Drawing.Size(118, 49);
-            this.btnLimpiarMod.TabIndex = 12;
-            this.btnLimpiarMod.Text = "Limpiar";
-            this.btnLimpiarMod.UseVisualStyleBackColor = false;
             // 
             // btnEliminarMod
             // 
@@ -496,16 +520,16 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 44);
             this.comboBox1.TabIndex = 14;
             // 
-            // label18
+            // label22
             // 
-            this.label18.AutoSize = true;
-            this.label18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label18.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label18.Location = new System.Drawing.Point(656, 307);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(293, 36);
-            this.label18.TabIndex = 13;
-            this.label18.Text = "Correo electrónico:";
+            this.label22.AutoSize = true;
+            this.label22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label22.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.label22.Location = new System.Drawing.Point(657, 266);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(219, 36);
+            this.label22.TabIndex = 13;
+            this.label22.Text = "Nacionalidad:";
             // 
             // label17
             // 
@@ -584,6 +608,15 @@
             this.label10.TabIndex = 11;
             this.label10.Text = "Modificar/Eliminar Cliente";
             // 
+            // txtNacionalidadMod
+            // 
+            this.txtNacionalidadMod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNacionalidadMod.Location = new System.Drawing.Point(883, 264);
+            this.txtNacionalidadMod.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNacionalidadMod.Name = "txtNacionalidadMod";
+            this.txtNacionalidadMod.Size = new System.Drawing.Size(240, 43);
+            this.txtNacionalidadMod.TabIndex = 6;
+            // 
             // txtCorreoElectronicoMod
             // 
             this.txtCorreoElectronicoMod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -638,6 +671,17 @@
             this.textBox9.Size = new System.Drawing.Size(156, 43);
             this.textBox9.TabIndex = 6;
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label18.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.label18.Location = new System.Drawing.Point(656, 307);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(293, 36);
+            this.label18.TabIndex = 13;
+            this.label18.Text = "Correo electrónico:";
+            // 
             // btnNuevo
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.White;
@@ -669,67 +713,6 @@
             this.btnModificar.Text = "Modificar/Eliminar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // txtNacionalidad
-            // 
-            this.txtNacionalidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNacionalidad.Location = new System.Drawing.Point(175, 248);
-            this.txtNacionalidad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtNacionalidad.Name = "txtNacionalidad";
-            this.txtNacionalidad.Size = new System.Drawing.Size(383, 33);
-            this.txtNacionalidad.TabIndex = 5;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(14, 250);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(153, 24);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "Nacionalidad:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label20.ForeColor = System.Drawing.Color.Crimson;
-            this.label20.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label20.Location = new System.Drawing.Point(977, 24);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(50, 36);
-            this.label20.TabIndex = 23;
-            this.label20.Text = "Id:";
-            // 
-            // txtIdMod
-            // 
-            this.txtIdMod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdMod.Location = new System.Drawing.Point(1027, 22);
-            this.txtIdMod.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtIdMod.Name = "txtIdMod";
-            this.txtIdMod.ReadOnly = true;
-            this.txtIdMod.Size = new System.Drawing.Size(96, 43);
-            this.txtIdMod.TabIndex = 1;
-            // 
-            // txtNacionalidadMod
-            // 
-            this.txtNacionalidadMod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNacionalidadMod.Location = new System.Drawing.Point(883, 264);
-            this.txtNacionalidadMod.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtNacionalidadMod.Name = "txtNacionalidadMod";
-            this.txtNacionalidadMod.Size = new System.Drawing.Size(240, 43);
-            this.txtNacionalidadMod.TabIndex = 6;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label22.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label22.Location = new System.Drawing.Point(657, 266);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(219, 36);
-            this.label22.TabIndex = 13;
-            this.label22.Text = "Nacionalidad:";
             // 
             // frmCliente
             // 
@@ -803,7 +786,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtRNC_Mod;
-        private System.Windows.Forms.Button btnLimpiarMod;
         private System.Windows.Forms.Button btnEliminarMod;
         private System.Windows.Forms.Button btnGuardarCambiosMod;
         private System.Windows.Forms.MaskedTextBox mskCedulaMod;

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSolicitud));
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.pnlCrearCuenta = new System.Windows.Forms.Panel();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -298,29 +296,6 @@
             this.pnlInmuebles.SuspendLayout();
             this.pnlVida.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Firebrick;
-            this.label5.Location = new System.Drawing.Point(7, 29);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 23);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Usuario:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(95, 29);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(157, 22);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "nombre_usuario";
             // 
             // pnlCrearCuenta
             // 
@@ -595,7 +570,7 @@
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Century Gothic", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.Firebrick;
-            this.label25.Location = new System.Drawing.Point(7, 56);
+            this.label25.Location = new System.Drawing.Point(7, 38);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(111, 23);
@@ -606,7 +581,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(123, 57);
+            this.label26.Location = new System.Drawing.Point(123, 39);
             this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(187, 22);
@@ -639,8 +614,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label32);
             this.groupBox1.Controls.Add(this.label25);
             this.groupBox1.Controls.Add(this.label26);
@@ -3345,8 +3318,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel pnlCrearCuenta;
         private System.Windows.Forms.Button btnCrearCuenta;
         private System.Windows.Forms.TextBox txtRepContrasena;

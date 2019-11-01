@@ -18,14 +18,17 @@ namespace CapaNegocio.Empleados
         {
             return D_Empleados.InsertarEmpleado(eEmp);
         }
+
         public DataTable B_MostrarEmpleados()
         {
            return D_Empleados.D_MostrarEmpleados();
         }
+
         public int B_ModificarEmpleado(E_Empleados eEmpl)
         {
             return D_Empleados.ModificarEmpleado(eEmpl);
         }
+
         public int B_EliminarEmpleado(E_Empleados eEmpl)
         {
             return D_Empleados.EliminarEmpleado(eEmpl);

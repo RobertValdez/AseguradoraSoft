@@ -64,7 +64,6 @@
             this.pnlRegistrarse.Name = "pnlRegistrarse";
             this.pnlRegistrarse.Size = new System.Drawing.Size(396, 480);
             this.pnlRegistrarse.TabIndex = 6;
-            this.pnlRegistrarse.Visible = false;
             // 
             // comboBox1
             // 
@@ -217,7 +216,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1150, 549);
+            this.ClientSize = new System.Drawing.Size(434, 549);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnGestionarP);
             this.Controls.Add(this.pnlRegistrarse);

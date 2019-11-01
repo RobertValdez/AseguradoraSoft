@@ -60,31 +60,38 @@ namespace CapaPresentacion
         }
         public void GuardarEmpleado()
         {
-            string strSexo = "";
-            switch (cmbSexo.Text)
+            if (txtNombre.Text == "" || txtApellido.Text == "" || txtDireccion.Text == "" || txtCedula.Text == "" || txtTelefono.Text == "" || txtCorreoElectronico.Text == "" || txtCargo.Text == "" || cmbSexo.Text == "")
             {
-                case "Masculino":
-                    strSexo = "M";
-                    break;
-
-                case "Femenino":
-                    strSexo = "F";
-                    break;
+                MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-            E_Empleados.Nombre = txtNombre.Text;
-            E_Empleados.Apellido = txtApellido.Text;
-            E_Empleados.Direccion = txtDireccion.Text;
-            E_Empleados.Cedula = txtCedula.Text;
-            E_Empleados.Telefono = txtTelefono.Text;
-            E_Empleados.CorreoElectronico = txtCorreoElectronico.Text;
-            E_Empleados.IdCargo = Convert.ToInt32(txtCargo.Text);
-            E_Empleados.Sexo = strSexo;
-            E_Empleados.Fecha = DateTime.Now.Date;
-
-            if (B_Empleados.B_InsertarEmpleado(E_Empleados) == 1)
+            else
             {
-                MessageBox.Show("Nuevo Empleado creado correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string strSexo = "";
+                switch (cmbSexo.Text)
+                {
+                    case "Masculino":
+                        strSexo = "M";
+                        break;
+
+                    case "Femenino":
+                        strSexo = "F";
+                        break;
+                }
+
+                E_Empleados.Nombre = txtNombre.Text;
+                E_Empleados.Apellido = txtApellido.Text;
+                E_Empleados.Direccion = txtDireccion.Text;
+                E_Empleados.Cedula = txtCedula.Text;
+                E_Empleados.Telefono = txtTelefono.Text;
+                E_Empleados.CorreoElectronico = txtCorreoElectronico.Text;
+                E_Empleados.IdCargo = Convert.ToInt32(txtCargo.Text);
+                E_Empleados.Sexo = strSexo;
+                E_Empleados.Fecha = DateTime.Now.Date;
+
+                if (B_Empleados.B_InsertarEmpleado(E_Empleados) == 1)
+                {
+                    MessageBox.Show("Nuevo Empleado creado correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
@@ -99,6 +106,13 @@ namespace CapaPresentacion
         }
         public void ModificarEmpleado()
         {
+            if (txtNombreMod.Text == "" || txtApellidoMod.Text == "" || txtDireccionMod.Text == "" || txtCedulaMod.Text == "" || txtTelefonoMod.Text == "" || txtCorreoElectronicoMod.Text == "" || txtCargoMod.Text == "" || cmbSexoMod.Text == "")
+            {
+                MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            { 
+            
             string strSexo = "";
             switch (cmbSexoMod.Text)
             {
@@ -122,9 +136,10 @@ namespace CapaPresentacion
             E_Empleados.Sexo = strSexo;
             E_Empleados.Fecha = DateTime.Now.Date;
 
-            if (B_Empleados.B_ModificarEmpleado(E_Empleados) == 1)
-            {
-                MessageBox.Show("Empleado Modificado correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (B_Empleados.B_ModificarEmpleado(E_Empleados) == 1)
+                {
+                    MessageBox.Show("Empleado Modificado correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 

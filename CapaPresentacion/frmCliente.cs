@@ -56,30 +56,31 @@ namespace CapaPresentacion
         {
             try
             {
-                if (txtNombre.Text == "" && txtApellido.Text == "" && mskCedulaMod.Text == ""
-                    && txtDireccion.Text == "" && txtTelefono.Text == "" && txtNacionalidad.Text == ""
-                    && txtCorreoElectronico.Text == "" && cmbSexo.Text == "" && txtRNC.Text == "")
+                if (txtNombre.Text == "" || txtApellido.Text == "" || txtDireccion.Text == "" || mskCedula.Text == "" || txtTelefono.Text == "" || txtCorreoElectronico.Text == "" || txtNacionalidad.Text == "" || cmbSexo.Text == "")
                 {
-                    MessageBox.Show("Complete los campos faltantes.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                E_Clientes.Nombre = txtNombre.Text;
-                E_Clientes.Apellido = txtApellido.Text;
-                E_Clientes.Cedula = mskCedula.Text;
-                E_Clientes.Direccion = txtDireccion.Text;
-                E_Clientes.Telefono = txtTelefono.Text;
-                E_Clientes.Nacionalidad = txtNacionalidad.Text;
-                E_Clientes.CorreoElectronico = txtCorreoElectronico.Text;
-                E_Clientes.Sexo = cmbSexo.Text;
-                E_Clientes.RNC = txtRNC.Text;
-                E_Clientes.FechaHora = DateTime.Now;
-
-                if (B_Clientes.B_InsertarCliente(E_Clientes) == 1)
-                {
-                    MessageBox.Show("Se ha añadido el Cliente correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show("No se añadió el Cliente.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    E_Clientes.Nombre = txtNombre.Text;
+                    E_Clientes.Apellido = txtApellido.Text;
+                    E_Clientes.Cedula = mskCedula.Text;
+                    E_Clientes.Direccion = txtDireccion.Text;
+                    E_Clientes.Telefono = txtTelefono.Text;
+                    E_Clientes.Nacionalidad = txtNacionalidad.Text;
+                    E_Clientes.CorreoElectronico = txtCorreoElectronico.Text;
+                    E_Clientes.Sexo = cmbSexo.Text;
+                    E_Clientes.RNC = txtRNC.Text;
+                    E_Clientes.FechaHora = DateTime.Now;
+
+                    if (B_Clientes.B_InsertarCliente(E_Clientes) == 1)
+                    {
+                        MessageBox.Show("Se ha añadido el Cliente correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se añadió el Cliente.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -122,25 +123,32 @@ namespace CapaPresentacion
         {
             try
             {
-                E_Clientes.Id = Convert.ToInt32(txtIdMod.Text);
-                E_Clientes.Nombre = txtNombreMod.Text;
-                E_Clientes.Apellido = txtApellidoMod.Text;
-                E_Clientes.Cedula = mskCedulaMod.Text;
-                E_Clientes.Direccion = txtDireccionMod.Text;
-                E_Clientes.Telefono = txtTelefonoMod.Text;
-                E_Clientes.Nacionalidad = txtNacionalidadMod.Text;
-                E_Clientes.CorreoElectronico = txtCorreoElectronicoMod.Text;
-                E_Clientes.Sexo = cmbSexoMod.Text;
-                E_Clientes.RNC = txtRNC_Mod.Text;
-                E_Clientes.FechaHora = DateTime.Now;
-
-                if (B_Clientes.B_ModificarCliente(E_Clientes) == 1)
+                if (txtNombreMod.Text == "" || txtApellidoMod.Text == "" || txtDireccionMod.Text == "" || mskCedulaMod.Text == "" || txtTelefonoMod.Text == "" || txtCorreoElectronicoMod.Text == "" || txtNacionalidadMod.Text == "" || cmbSexoMod.Text == "")
                 {
-                    MessageBox.Show("Se ha modificado el Cliente correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo modificar el Cliente.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    E_Clientes.Id = Convert.ToInt32(txtIdMod.Text);
+                    E_Clientes.Nombre = txtNombreMod.Text;
+                    E_Clientes.Apellido = txtApellidoMod.Text;
+                    E_Clientes.Cedula = mskCedulaMod.Text;
+                    E_Clientes.Direccion = txtDireccionMod.Text;
+                    E_Clientes.Telefono = txtTelefonoMod.Text;
+                    E_Clientes.Nacionalidad = txtNacionalidadMod.Text;
+                    E_Clientes.CorreoElectronico = txtCorreoElectronicoMod.Text;
+                    E_Clientes.Sexo = cmbSexoMod.Text;
+                    E_Clientes.RNC = txtRNC_Mod.Text;
+                    E_Clientes.FechaHora = DateTime.Now;
+
+                    if (B_Clientes.B_ModificarCliente(E_Clientes) == 1)
+                    {
+                        MessageBox.Show("Se ha modificado el Cliente correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo modificar el Cliente.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
