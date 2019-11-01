@@ -167,5 +167,56 @@ namespace CapaPresentacion
             pnlVidaRiesgosLaborales_BuscarEmpresa.Visible = false;
             lblCerrar_pnlRiesgoLab.Visible = true;
         }
+
+        private void btnSiguientepnlVEHSeguroObligatorio_Click(object sender, EventArgs e)
+        {
+            MostrarFormFactura();
+        }
+
+        private void btnSIGUIENTEpnlVEHSeguroTodoRiesgo_Click(object sender, EventArgs e)
+        {
+            MostrarFormFactura();
+        }
+
+        private void btnSIGUIENTEpnlVEHSeguroVoluntario_Click(object sender, EventArgs e)
+        {
+            MostrarFormFactura();
+        }
+
+        private void btnSIGUIENTEpnlMueblesInmContenido_Click(object sender, EventArgs e)
+        {
+            MostrarFormFactura();
+        }
+
+        private void btnSIGUIENTEpnlMueblesInmEdificaciones_Click(object sender, EventArgs e)
+        {
+            MostrarFormFactura();
+        }
+
+        private void btnSIGUIENTEpnlNegociosEmpresas_Click(object sender, EventArgs e)
+        {
+            MostrarFormFactura();
+        }
+
+        private void btnSIGUIENTEpnlVidaSaludDependientes_Click(object sender, EventArgs e)
+        {
+            MostrarFormFactura();
+        }
+
+        private void btnSIGUIENTEpnlVidaSalud_Click(object sender, EventArgs e)
+        {
+            MostrarFormFactura();
+        }
+
+        private void btnSIGUIENTEpnlVidaRiesgoMuerte_Click(object sender, EventArgs e)
+        {
+            MostrarFormFactura();
+        }
+        
+        public void MostrarFormFactura()
+        {
+            frmFacturas f = new frmFacturas();
+            f.ShowDialog();
+        }
     }
 }

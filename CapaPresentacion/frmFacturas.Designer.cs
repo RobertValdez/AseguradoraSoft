@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFacturas));
             this.pnlResumenSolicitud = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnAtras = new System.Windows.Forms.Button();
+            this.btnCrearCuenta = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox82 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -54,13 +57,11 @@
             this.label60 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
-            this.btnCrearCuenta = new System.Windows.Forms.Button();
-            this.btnSiguiente_pnlVidaSaludDependientes = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.lblCerrar = new System.Windows.Forms.Label();
             this.pnlResumenSolicitud.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +70,7 @@
             // 
             this.pnlResumenSolicitud.BackColor = System.Drawing.Color.White;
             this.pnlResumenSolicitud.Controls.Add(this.button4);
-            this.pnlResumenSolicitud.Controls.Add(this.btnSiguiente_pnlVidaSaludDependientes);
+            this.pnlResumenSolicitud.Controls.Add(this.btnAtras);
             this.pnlResumenSolicitud.Controls.Add(this.btnCrearCuenta);
             this.pnlResumenSolicitud.Controls.Add(this.groupBox2);
             this.pnlResumenSolicitud.Controls.Add(this.button3);
@@ -98,6 +99,52 @@
             this.pnlResumenSolicitud.Name = "pnlResumenSolicitud";
             this.pnlResumenSolicitud.Size = new System.Drawing.Size(829, 550);
             this.pnlResumenSolicitud.TabIndex = 7;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.Gray;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(218, 485);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(100, 57);
+            this.button4.TabIndex = 107;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // btnAtras
+            // 
+            this.btnAtras.BackColor = System.Drawing.Color.White;
+            this.btnAtras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtras.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.ForeColor = System.Drawing.Color.Crimson;
+            this.btnAtras.Location = new System.Drawing.Point(4, 493);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(153, 49);
+            this.btnAtras.TabIndex = 107;
+            this.btnAtras.Text = "<< Atrás";
+            this.btnAtras.UseVisualStyleBackColor = false;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            // 
+            // btnCrearCuenta
+            // 
+            this.btnCrearCuenta.BackColor = System.Drawing.Color.Crimson;
+            this.btnCrearCuenta.FlatAppearance.BorderSize = 0;
+            this.btnCrearCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrearCuenta.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearCuenta.ForeColor = System.Drawing.Color.White;
+            this.btnCrearCuenta.Location = new System.Drawing.Point(323, 485);
+            this.btnCrearCuenta.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnCrearCuenta.Name = "btnCrearCuenta";
+            this.btnCrearCuenta.Size = new System.Drawing.Size(494, 57);
+            this.btnCrearCuenta.TabIndex = 14;
+            this.btnCrearCuenta.Text = "Solicitar";
+            this.btnCrearCuenta.UseVisualStyleBackColor = false;
             // 
             // groupBox2
             // 
@@ -151,13 +198,16 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Al contado",
+            "Parcial"});
             this.comboBox1.Location = new System.Drawing.Point(650, 92);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(138, 32);
             this.comboBox1.TabIndex = 5;
-            this.comboBox1.Text = "Al contado";
             // 
             // textBox15
             // 
@@ -211,7 +261,7 @@
             // textBox13
             // 
             this.textBox13.BackColor = System.Drawing.Color.LightPink;
-            this.textBox13.Location = new System.Drawing.Point(723, 9);
+            this.textBox13.Location = new System.Drawing.Point(723, 15);
             this.textBox13.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox13.Name = "textBox13";
             this.textBox13.ReadOnly = true;
@@ -269,7 +319,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(612, 12);
+            this.label29.Location = new System.Drawing.Point(612, 18);
             this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(91, 24);
@@ -367,36 +417,6 @@
             this.label42.TabIndex = 0;
             this.label42.Text = "Cliente:";
             // 
-            // btnCrearCuenta
-            // 
-            this.btnCrearCuenta.BackColor = System.Drawing.Color.Crimson;
-            this.btnCrearCuenta.FlatAppearance.BorderSize = 0;
-            this.btnCrearCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrearCuenta.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearCuenta.ForeColor = System.Drawing.Color.White;
-            this.btnCrearCuenta.Location = new System.Drawing.Point(323, 485);
-            this.btnCrearCuenta.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnCrearCuenta.Name = "btnCrearCuenta";
-            this.btnCrearCuenta.Size = new System.Drawing.Size(494, 57);
-            this.btnCrearCuenta.TabIndex = 14;
-            this.btnCrearCuenta.Text = "Solicitar";
-            this.btnCrearCuenta.UseVisualStyleBackColor = false;
-            // 
-            // btnSiguiente_pnlVidaSaludDependientes
-            // 
-            this.btnSiguiente_pnlVidaSaludDependientes.BackColor = System.Drawing.Color.White;
-            this.btnSiguiente_pnlVidaSaludDependientes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
-            this.btnSiguiente_pnlVidaSaludDependientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSiguiente_pnlVidaSaludDependientes.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSiguiente_pnlVidaSaludDependientes.ForeColor = System.Drawing.Color.Crimson;
-            this.btnSiguiente_pnlVidaSaludDependientes.Location = new System.Drawing.Point(4, 493);
-            this.btnSiguiente_pnlVidaSaludDependientes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSiguiente_pnlVidaSaludDependientes.Name = "btnSiguiente_pnlVidaSaludDependientes";
-            this.btnSiguiente_pnlVidaSaludDependientes.Size = new System.Drawing.Size(153, 49);
-            this.btnSiguiente_pnlVidaSaludDependientes.TabIndex = 107;
-            this.btnSiguiente_pnlVidaSaludDependientes.Text = "<< Atrás";
-            this.btnSiguiente_pnlVidaSaludDependientes.UseVisualStyleBackColor = false;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Crimson;
@@ -429,20 +449,17 @@
             this.panel4.Size = new System.Drawing.Size(10, 714);
             this.panel4.TabIndex = 108;
             // 
-            // button4
+            // lblCerrar
             // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Gray;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(218, 485);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 57);
-            this.button4.TabIndex = 107;
-            this.button4.UseVisualStyleBackColor = false;
+            this.lblCerrar.AutoSize = true;
+            this.lblCerrar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblCerrar.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCerrar.Location = new System.Drawing.Point(827, 4);
+            this.lblCerrar.Name = "lblCerrar";
+            this.lblCerrar.Size = new System.Drawing.Size(35, 36);
+            this.lblCerrar.TabIndex = 108;
+            this.lblCerrar.Text = "X";
+            this.lblCerrar.Click += new System.EventHandler(this.lblCerrar_Click);
             // 
             // frmFacturas
             // 
@@ -455,6 +472,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlResumenSolicitud);
+            this.Controls.Add(this.lblCerrar);
             this.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6);
@@ -466,6 +484,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -497,11 +516,12 @@
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Button btnCrearCuenta;
-        private System.Windows.Forms.Button btnSiguiente_pnlVidaSaludDependientes;
+        private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label lblCerrar;
     }
 }

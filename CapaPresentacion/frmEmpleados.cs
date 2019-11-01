@@ -46,7 +46,7 @@ namespace CapaPresentacion
 
         public void MostrarEmpleados()
         {
-            dgvEmpleados.DataSource = B_Empleados.B_MostrarSolares();
+            dgvEmpleados.DataSource = B_Empleados.B_MostrarEmpleados();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -215,6 +215,10 @@ namespace CapaPresentacion
                 if (B_Empleados.B_EliminarEmpleado(E_Empleados) == 1)
                 {
                     MessageBox.Show("Empleado Eliminado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo eliminar el Empleado.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

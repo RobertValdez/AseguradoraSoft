@@ -16,5 +16,15 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void btnBuscarCliente_Click(object sender, EventArgs e)
+        {
+            pnlBuscarClientes.Visible = true;
+        }
+
+        private void lblCerrar_Click(object sender, EventArgs e)
+        {
+            pnlBuscarClientes.Visible = false;
+        }
     }
 }

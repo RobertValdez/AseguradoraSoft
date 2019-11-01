@@ -18,7 +18,7 @@ namespace CapaNegocio.Empleados
         {
             return D_Empleados.InsertarEmpleado(eEmp);
         }
-        public DataTable B_MostrarSolares()
+        public DataTable B_MostrarEmpleados()
         {
            return D_Empleados.D_MostrarEmpleados();
         }

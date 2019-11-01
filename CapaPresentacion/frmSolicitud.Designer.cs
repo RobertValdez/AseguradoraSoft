@@ -61,7 +61,7 @@
             this.label32 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pnlVEHSeguroVoluntario = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnSIGUIENTEpnlVEHSeguroVoluntario = new System.Windows.Forms.Button();
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.textBox21 = new System.Windows.Forms.TextBox();
@@ -90,7 +90,7 @@
             this.btnSeguroObligatorio = new System.Windows.Forms.Button();
             this.btnSeguroVoluntario = new System.Windows.Forms.Button();
             this.pnlVEHSeguroTodoRiesgo = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -109,7 +109,7 @@
             this.lblCerrarTodoRiesgo = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.pnlVEHSeguroObligatorio = new System.Windows.Forms.Panel();
-            this.btnSiguienteSeguroOblig = new System.Windows.Forms.Button();
+            this.btnSiguientepnlVEHSeguroObligatorio = new System.Windows.Forms.Button();
             this.lblCerrarSeguroOb = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
@@ -131,7 +131,7 @@
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnSIGUIENTEpnlMueblesInmEdificaciones = new System.Windows.Forms.Button();
             this.textBox34 = new System.Windows.Forms.TextBox();
             this.textBox36 = new System.Windows.Forms.TextBox();
             this.textBox35 = new System.Windows.Forms.TextBox();
@@ -158,7 +158,7 @@
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.cmbSiNo = new System.Windows.Forms.ComboBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnSIGUIENTEpnlMueblesInmContenido = new System.Windows.Forms.Button();
             this.textBox84 = new System.Windows.Forms.TextBox();
             this.textBox83 = new System.Windows.Forms.TextBox();
             this.textBox39 = new System.Windows.Forms.TextBox();
@@ -182,7 +182,7 @@
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btnSIGUIENTEpnlNegociosEmpresas = new System.Windows.Forms.Button();
             this.textBox44 = new System.Windows.Forms.TextBox();
             this.textBox43 = new System.Windows.Forms.TextBox();
             this.textBox37 = new System.Windows.Forms.TextBox();
@@ -210,7 +210,7 @@
             this.button26 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
             this.btnVidaRLab_BuscarEmpresa = new System.Windows.Forms.Button();
-            this.button31 = new System.Windows.Forms.Button();
+            this.btnSIGUIENTEpnlVidaRiesgosLaborales = new System.Windows.Forms.Button();
             this.label137 = new System.Windows.Forms.Label();
             this.textBox92 = new System.Windows.Forms.TextBox();
             this.textBox91 = new System.Windows.Forms.TextBox();
@@ -226,7 +226,7 @@
             this.label126 = new System.Windows.Forms.Label();
             this.lblCerrar_pnlRiesgoLab = new System.Windows.Forms.Label();
             this.pnlVidaSalud = new System.Windows.Forms.Panel();
-            this.button13 = new System.Windows.Forms.Button();
+            this.btnSIGUIENTEpnlVidaSalud = new System.Windows.Forms.Button();
             this.lblCerrar_pnlVidaSalud = new System.Windows.Forms.Label();
             this.textBox57 = new System.Windows.Forms.TextBox();
             this.textBox58 = new System.Windows.Forms.TextBox();
@@ -239,7 +239,7 @@
             this.label94 = new System.Windows.Forms.Label();
             this.label95 = new System.Windows.Forms.Label();
             this.pnlVidaRiesgoMuerte = new System.Windows.Forms.Panel();
-            this.button14 = new System.Windows.Forms.Button();
+            this.btnSIGUIENTEpnlVidaRiesgoMuerte = new System.Windows.Forms.Button();
             this.textBox55 = new System.Windows.Forms.TextBox();
             this.textBox56 = new System.Windows.Forms.TextBox();
             this.textBox59 = new System.Windows.Forms.TextBox();
@@ -251,7 +251,7 @@
             this.lblCerrarRiesgoMuerte = new System.Windows.Forms.Label();
             this.label104 = new System.Windows.Forms.Label();
             this.pnlVidaSaludDependientes = new System.Windows.Forms.Panel();
-            this.btnSiguiente_pnlVidaSaludDependientes = new System.Windows.Forms.Button();
+            this.btnSIGUIENTEpnlVidaSaludDependientes = new System.Windows.Forms.Button();
             this.lblCerrarSDepend = new System.Windows.Forms.Label();
             this.label113 = new System.Windows.Forms.Label();
             this.label83 = new System.Windows.Forms.Label();
@@ -655,7 +655,7 @@
             // 
             this.pnlVEHSeguroVoluntario.BackColor = System.Drawing.Color.White;
             this.pnlVEHSeguroVoluntario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlVEHSeguroVoluntario.Controls.Add(this.button5);
+            this.pnlVEHSeguroVoluntario.Controls.Add(this.btnSIGUIENTEpnlVEHSeguroVoluntario);
             this.pnlVEHSeguroVoluntario.Controls.Add(this.textBox19);
             this.pnlVEHSeguroVoluntario.Controls.Add(this.textBox20);
             this.pnlVEHSeguroVoluntario.Controls.Add(this.textBox21);
@@ -673,27 +673,28 @@
             this.pnlVEHSeguroVoluntario.Controls.Add(this.label87);
             this.pnlVEHSeguroVoluntario.Controls.Add(this.lblCerrarSV);
             this.pnlVEHSeguroVoluntario.Controls.Add(this.label41);
-            this.pnlVEHSeguroVoluntario.Location = new System.Drawing.Point(482, 26);
+            this.pnlVEHSeguroVoluntario.Location = new System.Drawing.Point(482, 28);
             this.pnlVEHSeguroVoluntario.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlVEHSeguroVoluntario.Name = "pnlVEHSeguroVoluntario";
-            this.pnlVEHSeguroVoluntario.Size = new System.Drawing.Size(839, 411);
+            this.pnlVEHSeguroVoluntario.Size = new System.Drawing.Size(841, 411);
             this.pnlVEHSeguroVoluntario.TabIndex = 6;
             this.pnlVEHSeguroVoluntario.Visible = false;
             // 
-            // button5
+            // btnSIGUIENTEpnlVEHSeguroVoluntario
             // 
-            this.button5.BackColor = System.Drawing.Color.White;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.Crimson;
-            this.button5.Location = new System.Drawing.Point(633, 339);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(157, 49);
-            this.button5.TabIndex = 44;
-            this.button5.Text = "Siguiente >>";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnSIGUIENTEpnlVEHSeguroVoluntario.BackColor = System.Drawing.Color.White;
+            this.btnSIGUIENTEpnlVEHSeguroVoluntario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnSIGUIENTEpnlVEHSeguroVoluntario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSIGUIENTEpnlVEHSeguroVoluntario.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSIGUIENTEpnlVEHSeguroVoluntario.ForeColor = System.Drawing.Color.Crimson;
+            this.btnSIGUIENTEpnlVEHSeguroVoluntario.Location = new System.Drawing.Point(633, 339);
+            this.btnSIGUIENTEpnlVEHSeguroVoluntario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSIGUIENTEpnlVEHSeguroVoluntario.Name = "btnSIGUIENTEpnlVEHSeguroVoluntario";
+            this.btnSIGUIENTEpnlVEHSeguroVoluntario.Size = new System.Drawing.Size(157, 49);
+            this.btnSIGUIENTEpnlVEHSeguroVoluntario.TabIndex = 44;
+            this.btnSIGUIENTEpnlVEHSeguroVoluntario.Text = "Siguiente >>";
+            this.btnSIGUIENTEpnlVEHSeguroVoluntario.UseVisualStyleBackColor = false;
+            this.btnSIGUIENTEpnlVEHSeguroVoluntario.Click += new System.EventHandler(this.btnSIGUIENTEpnlVEHSeguroVoluntario_Click);
             // 
             // textBox19
             // 
@@ -947,9 +948,9 @@
             this.pnlVehiculo.Controls.Add(this.btnSeguroTodoRiesgo);
             this.pnlVehiculo.Controls.Add(this.btnSeguroObligatorio);
             this.pnlVehiculo.Controls.Add(this.btnSeguroVoluntario);
-            this.pnlVehiculo.Location = new System.Drawing.Point(665, 147);
+            this.pnlVehiculo.Location = new System.Drawing.Point(739, 147);
             this.pnlVehiculo.Name = "pnlVehiculo";
-            this.pnlVehiculo.Size = new System.Drawing.Size(630, 272);
+            this.pnlVehiculo.Size = new System.Drawing.Size(460, 221);
             this.pnlVehiculo.TabIndex = 9;
             this.pnlVehiculo.Visible = false;
             // 
@@ -958,7 +959,7 @@
             this.lblCerrarVeh.AutoSize = true;
             this.lblCerrarVeh.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblCerrarVeh.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCerrarVeh.Location = new System.Drawing.Point(370, 0);
+            this.lblCerrarVeh.Location = new System.Drawing.Point(425, -1);
             this.lblCerrarVeh.Name = "lblCerrarVeh";
             this.lblCerrarVeh.Size = new System.Drawing.Size(35, 36);
             this.lblCerrarVeh.TabIndex = 10;
@@ -972,7 +973,7 @@
             this.btnSeguroTodoRiesgo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeguroTodoRiesgo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeguroTodoRiesgo.ForeColor = System.Drawing.Color.White;
-            this.btnSeguroTodoRiesgo.Location = new System.Drawing.Point(15, 118);
+            this.btnSeguroTodoRiesgo.Location = new System.Drawing.Point(56, 115);
             this.btnSeguroTodoRiesgo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSeguroTodoRiesgo.Name = "btnSeguroTodoRiesgo";
             this.btnSeguroTodoRiesgo.Size = new System.Drawing.Size(343, 73);
@@ -988,7 +989,7 @@
             this.btnSeguroObligatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeguroObligatorio.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeguroObligatorio.ForeColor = System.Drawing.Color.White;
-            this.btnSeguroObligatorio.Location = new System.Drawing.Point(187, 44);
+            this.btnSeguroObligatorio.Location = new System.Drawing.Point(228, 41);
             this.btnSeguroObligatorio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSeguroObligatorio.Name = "btnSeguroObligatorio";
             this.btnSeguroObligatorio.Size = new System.Drawing.Size(171, 73);
@@ -1004,7 +1005,7 @@
             this.btnSeguroVoluntario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeguroVoluntario.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeguroVoluntario.ForeColor = System.Drawing.Color.White;
-            this.btnSeguroVoluntario.Location = new System.Drawing.Point(15, 44);
+            this.btnSeguroVoluntario.Location = new System.Drawing.Point(56, 41);
             this.btnSeguroVoluntario.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSeguroVoluntario.Name = "btnSeguroVoluntario";
             this.btnSeguroVoluntario.Size = new System.Drawing.Size(171, 73);
@@ -1017,7 +1018,7 @@
             // 
             this.pnlVEHSeguroTodoRiesgo.BackColor = System.Drawing.Color.White;
             this.pnlVEHSeguroTodoRiesgo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.button4);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo);
             this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.textBox1);
             this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.textBox2);
             this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.textBox3);
@@ -1035,27 +1036,28 @@
             this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label78);
             this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.lblCerrarTodoRiesgo);
             this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label34);
-            this.pnlVEHSeguroTodoRiesgo.Location = new System.Drawing.Point(482, 25);
+            this.pnlVEHSeguroTodoRiesgo.Location = new System.Drawing.Point(482, 27);
             this.pnlVEHSeguroTodoRiesgo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlVEHSeguroTodoRiesgo.Name = "pnlVEHSeguroTodoRiesgo";
-            this.pnlVEHSeguroTodoRiesgo.Size = new System.Drawing.Size(839, 412);
+            this.pnlVEHSeguroTodoRiesgo.Size = new System.Drawing.Size(842, 412);
             this.pnlVEHSeguroTodoRiesgo.TabIndex = 6;
             this.pnlVEHSeguroTodoRiesgo.Visible = false;
             // 
-            // button4
+            // btnSIGUIENTEpnlVEHSeguroTodoRiesgo
             // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Crimson;
-            this.button4.Location = new System.Drawing.Point(633, 340);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(157, 49);
-            this.button4.TabIndex = 27;
-            this.button4.Text = "Siguiente >>";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.BackColor = System.Drawing.Color.White;
+            this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.ForeColor = System.Drawing.Color.Crimson;
+            this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.Location = new System.Drawing.Point(633, 340);
+            this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.Name = "btnSIGUIENTEpnlVEHSeguroTodoRiesgo";
+            this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.Size = new System.Drawing.Size(157, 49);
+            this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.TabIndex = 27;
+            this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.Text = "Siguiente >>";
+            this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.UseVisualStyleBackColor = false;
+            this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.Click += new System.EventHandler(this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo_Click);
             // 
             // textBox1
             // 
@@ -1230,7 +1232,7 @@
             // 
             this.pnlVEHSeguroObligatorio.BackColor = System.Drawing.Color.White;
             this.pnlVEHSeguroObligatorio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlVEHSeguroObligatorio.Controls.Add(this.btnSiguienteSeguroOblig);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.btnSiguientepnlVEHSeguroObligatorio);
             this.pnlVEHSeguroObligatorio.Controls.Add(this.lblCerrarSeguroOb);
             this.pnlVEHSeguroObligatorio.Controls.Add(this.textBox11);
             this.pnlVEHSeguroObligatorio.Controls.Add(this.textBox12);
@@ -1248,27 +1250,28 @@
             this.pnlVEHSeguroObligatorio.Controls.Add(this.label49);
             this.pnlVEHSeguroObligatorio.Controls.Add(this.label4);
             this.pnlVEHSeguroObligatorio.Controls.Add(this.label50);
-            this.pnlVEHSeguroObligatorio.Location = new System.Drawing.Point(481, 24);
+            this.pnlVEHSeguroObligatorio.Location = new System.Drawing.Point(481, 26);
             this.pnlVEHSeguroObligatorio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlVEHSeguroObligatorio.Name = "pnlVEHSeguroObligatorio";
-            this.pnlVEHSeguroObligatorio.Size = new System.Drawing.Size(840, 413);
+            this.pnlVEHSeguroObligatorio.Size = new System.Drawing.Size(843, 413);
             this.pnlVEHSeguroObligatorio.TabIndex = 6;
             this.pnlVEHSeguroObligatorio.Visible = false;
             // 
-            // btnSiguienteSeguroOblig
+            // btnSiguientepnlVEHSeguroObligatorio
             // 
-            this.btnSiguienteSeguroOblig.BackColor = System.Drawing.Color.White;
-            this.btnSiguienteSeguroOblig.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
-            this.btnSiguienteSeguroOblig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSiguienteSeguroOblig.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSiguienteSeguroOblig.ForeColor = System.Drawing.Color.Crimson;
-            this.btnSiguienteSeguroOblig.Location = new System.Drawing.Point(617, 335);
-            this.btnSiguienteSeguroOblig.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSiguienteSeguroOblig.Name = "btnSiguienteSeguroOblig";
-            this.btnSiguienteSeguroOblig.Size = new System.Drawing.Size(157, 49);
-            this.btnSiguienteSeguroOblig.TabIndex = 11;
-            this.btnSiguienteSeguroOblig.Text = "Siguiente >>";
-            this.btnSiguienteSeguroOblig.UseVisualStyleBackColor = false;
+            this.btnSiguientepnlVEHSeguroObligatorio.BackColor = System.Drawing.Color.White;
+            this.btnSiguientepnlVEHSeguroObligatorio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnSiguientepnlVEHSeguroObligatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSiguientepnlVEHSeguroObligatorio.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguientepnlVEHSeguroObligatorio.ForeColor = System.Drawing.Color.Crimson;
+            this.btnSiguientepnlVEHSeguroObligatorio.Location = new System.Drawing.Point(617, 335);
+            this.btnSiguientepnlVEHSeguroObligatorio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSiguientepnlVEHSeguroObligatorio.Name = "btnSiguientepnlVEHSeguroObligatorio";
+            this.btnSiguientepnlVEHSeguroObligatorio.Size = new System.Drawing.Size(157, 49);
+            this.btnSiguientepnlVEHSeguroObligatorio.TabIndex = 11;
+            this.btnSiguientepnlVEHSeguroObligatorio.Text = "Siguiente >>";
+            this.btnSiguientepnlVEHSeguroObligatorio.UseVisualStyleBackColor = false;
+            this.btnSiguientepnlVEHSeguroObligatorio.Click += new System.EventHandler(this.btnSiguientepnlVEHSeguroObligatorio_Click);
             // 
             // lblCerrarSeguroOb
             // 
@@ -1446,7 +1449,7 @@
             this.pnlMueblesInmEdificaciones.Controls.Add(this.comboBox6);
             this.pnlMueblesInmEdificaciones.Controls.Add(this.comboBox7);
             this.pnlMueblesInmEdificaciones.Controls.Add(this.comboBox8);
-            this.pnlMueblesInmEdificaciones.Controls.Add(this.button8);
+            this.pnlMueblesInmEdificaciones.Controls.Add(this.btnSIGUIENTEpnlMueblesInmEdificaciones);
             this.pnlMueblesInmEdificaciones.Controls.Add(this.textBox34);
             this.pnlMueblesInmEdificaciones.Controls.Add(this.textBox36);
             this.pnlMueblesInmEdificaciones.Controls.Add(this.textBox35);
@@ -1469,10 +1472,10 @@
             this.pnlMueblesInmEdificaciones.Controls.Add(this.label117);
             this.pnlMueblesInmEdificaciones.Controls.Add(this.lblCerrarSegInmEdif);
             this.pnlMueblesInmEdificaciones.Controls.Add(this.label59);
-            this.pnlMueblesInmEdificaciones.Location = new System.Drawing.Point(482, 26);
+            this.pnlMueblesInmEdificaciones.Location = new System.Drawing.Point(482, 28);
             this.pnlMueblesInmEdificaciones.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlMueblesInmEdificaciones.Name = "pnlMueblesInmEdificaciones";
-            this.pnlMueblesInmEdificaciones.Size = new System.Drawing.Size(839, 513);
+            this.pnlMueblesInmEdificaciones.Size = new System.Drawing.Size(842, 513);
             this.pnlMueblesInmEdificaciones.TabIndex = 6;
             this.pnlMueblesInmEdificaciones.Visible = false;
             // 
@@ -1515,20 +1518,21 @@
             this.comboBox8.Size = new System.Drawing.Size(194, 32);
             this.comboBox8.TabIndex = 82;
             // 
-            // button8
+            // btnSIGUIENTEpnlMueblesInmEdificaciones
             // 
-            this.button8.BackColor = System.Drawing.Color.White;
-            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.Crimson;
-            this.button8.Location = new System.Drawing.Point(662, 446);
-            this.button8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(157, 49);
-            this.button8.TabIndex = 80;
-            this.button8.Text = "Siguiente >>";
-            this.button8.UseVisualStyleBackColor = false;
+            this.btnSIGUIENTEpnlMueblesInmEdificaciones.BackColor = System.Drawing.Color.White;
+            this.btnSIGUIENTEpnlMueblesInmEdificaciones.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnSIGUIENTEpnlMueblesInmEdificaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSIGUIENTEpnlMueblesInmEdificaciones.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSIGUIENTEpnlMueblesInmEdificaciones.ForeColor = System.Drawing.Color.Crimson;
+            this.btnSIGUIENTEpnlMueblesInmEdificaciones.Location = new System.Drawing.Point(662, 446);
+            this.btnSIGUIENTEpnlMueblesInmEdificaciones.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSIGUIENTEpnlMueblesInmEdificaciones.Name = "btnSIGUIENTEpnlMueblesInmEdificaciones";
+            this.btnSIGUIENTEpnlMueblesInmEdificaciones.Size = new System.Drawing.Size(157, 49);
+            this.btnSIGUIENTEpnlMueblesInmEdificaciones.TabIndex = 80;
+            this.btnSIGUIENTEpnlMueblesInmEdificaciones.Text = "Siguiente >>";
+            this.btnSIGUIENTEpnlMueblesInmEdificaciones.UseVisualStyleBackColor = false;
+            this.btnSIGUIENTEpnlMueblesInmEdificaciones.Click += new System.EventHandler(this.btnSIGUIENTEpnlMueblesInmEdificaciones_Click);
             // 
             // textBox34
             // 
@@ -1758,7 +1762,7 @@
             this.pnlMueblesInmContenido.Controls.Add(this.comboBox5);
             this.pnlMueblesInmContenido.Controls.Add(this.comboBox4);
             this.pnlMueblesInmContenido.Controls.Add(this.cmbSiNo);
-            this.pnlMueblesInmContenido.Controls.Add(this.button6);
+            this.pnlMueblesInmContenido.Controls.Add(this.btnSIGUIENTEpnlMueblesInmContenido);
             this.pnlMueblesInmContenido.Controls.Add(this.textBox84);
             this.pnlMueblesInmContenido.Controls.Add(this.textBox83);
             this.pnlMueblesInmContenido.Controls.Add(this.textBox39);
@@ -1777,10 +1781,10 @@
             this.pnlMueblesInmContenido.Controls.Add(this.label96);
             this.pnlMueblesInmContenido.Controls.Add(this.lblCerrarInmContenido);
             this.pnlMueblesInmContenido.Controls.Add(this.label68);
-            this.pnlMueblesInmContenido.Location = new System.Drawing.Point(481, 26);
+            this.pnlMueblesInmContenido.Location = new System.Drawing.Point(481, 28);
             this.pnlMueblesInmContenido.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlMueblesInmContenido.Name = "pnlMueblesInmContenido";
-            this.pnlMueblesInmContenido.Size = new System.Drawing.Size(840, 464);
+            this.pnlMueblesInmContenido.Size = new System.Drawing.Size(843, 464);
             this.pnlMueblesInmContenido.TabIndex = 6;
             this.pnlMueblesInmContenido.Visible = false;
             // 
@@ -1823,20 +1827,21 @@
             this.cmbSiNo.Size = new System.Drawing.Size(194, 32);
             this.cmbSiNo.TabIndex = 63;
             // 
-            // button6
+            // btnSIGUIENTEpnlMueblesInmContenido
             // 
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.Crimson;
-            this.button6.Location = new System.Drawing.Point(645, 398);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(157, 49);
-            this.button6.TabIndex = 62;
-            this.button6.Text = "Siguiente >>";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnSIGUIENTEpnlMueblesInmContenido.BackColor = System.Drawing.Color.White;
+            this.btnSIGUIENTEpnlMueblesInmContenido.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnSIGUIENTEpnlMueblesInmContenido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSIGUIENTEpnlMueblesInmContenido.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSIGUIENTEpnlMueblesInmContenido.ForeColor = System.Drawing.Color.Crimson;
+            this.btnSIGUIENTEpnlMueblesInmContenido.Location = new System.Drawing.Point(645, 398);
+            this.btnSIGUIENTEpnlMueblesInmContenido.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSIGUIENTEpnlMueblesInmContenido.Name = "btnSIGUIENTEpnlMueblesInmContenido";
+            this.btnSIGUIENTEpnlMueblesInmContenido.Size = new System.Drawing.Size(157, 49);
+            this.btnSIGUIENTEpnlMueblesInmContenido.TabIndex = 62;
+            this.btnSIGUIENTEpnlMueblesInmContenido.Text = "Siguiente >>";
+            this.btnSIGUIENTEpnlMueblesInmContenido.UseVisualStyleBackColor = false;
+            this.btnSIGUIENTEpnlMueblesInmContenido.Click += new System.EventHandler(this.btnSIGUIENTEpnlMueblesInmContenido_Click);
             // 
             // textBox84
             // 
@@ -2029,7 +2034,7 @@
             this.pnlNegociosEmpresas.Controls.Add(this.button12);
             this.pnlNegociosEmpresas.Controls.Add(this.button11);
             this.pnlNegociosEmpresas.Controls.Add(this.button10);
-            this.pnlNegociosEmpresas.Controls.Add(this.button9);
+            this.pnlNegociosEmpresas.Controls.Add(this.btnSIGUIENTEpnlNegociosEmpresas);
             this.pnlNegociosEmpresas.Controls.Add(this.textBox44);
             this.pnlNegociosEmpresas.Controls.Add(this.textBox43);
             this.pnlNegociosEmpresas.Controls.Add(this.textBox37);
@@ -2045,10 +2050,10 @@
             this.pnlNegociosEmpresas.Controls.Add(this.label124);
             this.pnlNegociosEmpresas.Controls.Add(this.lblCerrarNegocioEmp);
             this.pnlNegociosEmpresas.Controls.Add(this.label77);
-            this.pnlNegociosEmpresas.Location = new System.Drawing.Point(482, 25);
+            this.pnlNegociosEmpresas.Location = new System.Drawing.Point(482, 27);
             this.pnlNegociosEmpresas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlNegociosEmpresas.Name = "pnlNegociosEmpresas";
-            this.pnlNegociosEmpresas.Size = new System.Drawing.Size(841, 557);
+            this.pnlNegociosEmpresas.Size = new System.Drawing.Size(842, 557);
             this.pnlNegociosEmpresas.TabIndex = 6;
             this.pnlNegociosEmpresas.Visible = false;
             // 
@@ -2112,20 +2117,21 @@
             this.button10.Text = "Buscar Fotocopia";
             this.button10.UseVisualStyleBackColor = false;
             // 
-            // button9
+            // btnSIGUIENTEpnlNegociosEmpresas
             // 
-            this.button9.BackColor = System.Drawing.Color.White;
-            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.Crimson;
-            this.button9.Location = new System.Drawing.Point(639, 485);
-            this.button9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(157, 49);
-            this.button9.TabIndex = 105;
-            this.button9.Text = "Siguiente >>";
-            this.button9.UseVisualStyleBackColor = false;
+            this.btnSIGUIENTEpnlNegociosEmpresas.BackColor = System.Drawing.Color.White;
+            this.btnSIGUIENTEpnlNegociosEmpresas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnSIGUIENTEpnlNegociosEmpresas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSIGUIENTEpnlNegociosEmpresas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSIGUIENTEpnlNegociosEmpresas.ForeColor = System.Drawing.Color.Crimson;
+            this.btnSIGUIENTEpnlNegociosEmpresas.Location = new System.Drawing.Point(639, 485);
+            this.btnSIGUIENTEpnlNegociosEmpresas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSIGUIENTEpnlNegociosEmpresas.Name = "btnSIGUIENTEpnlNegociosEmpresas";
+            this.btnSIGUIENTEpnlNegociosEmpresas.Size = new System.Drawing.Size(157, 49);
+            this.btnSIGUIENTEpnlNegociosEmpresas.TabIndex = 105;
+            this.btnSIGUIENTEpnlNegociosEmpresas.Text = "Siguiente >>";
+            this.btnSIGUIENTEpnlNegociosEmpresas.UseVisualStyleBackColor = false;
+            this.btnSIGUIENTEpnlNegociosEmpresas.Click += new System.EventHandler(this.btnSIGUIENTEpnlNegociosEmpresas_Click);
             // 
             // textBox44
             // 
@@ -2291,7 +2297,7 @@
             this.pnlVidaRiesgosLaborales.Controls.Add(this.button26);
             this.pnlVidaRiesgosLaborales.Controls.Add(this.button25);
             this.pnlVidaRiesgosLaborales.Controls.Add(this.btnVidaRLab_BuscarEmpresa);
-            this.pnlVidaRiesgosLaborales.Controls.Add(this.button31);
+            this.pnlVidaRiesgosLaborales.Controls.Add(this.btnSIGUIENTEpnlVidaRiesgosLaborales);
             this.pnlVidaRiesgosLaborales.Controls.Add(this.label137);
             this.pnlVidaRiesgosLaborales.Controls.Add(this.textBox92);
             this.pnlVidaRiesgosLaborales.Controls.Add(this.textBox91);
@@ -2306,10 +2312,10 @@
             this.pnlVidaRiesgosLaborales.Controls.Add(this.label128);
             this.pnlVidaRiesgosLaborales.Controls.Add(this.label126);
             this.pnlVidaRiesgosLaborales.Controls.Add(this.lblCerrar_pnlRiesgoLab);
-            this.pnlVidaRiesgosLaborales.Location = new System.Drawing.Point(481, 24);
+            this.pnlVidaRiesgosLaborales.Location = new System.Drawing.Point(481, 26);
             this.pnlVidaRiesgosLaborales.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlVidaRiesgosLaborales.Name = "pnlVidaRiesgosLaborales";
-            this.pnlVidaRiesgosLaborales.Size = new System.Drawing.Size(842, 558);
+            this.pnlVidaRiesgosLaborales.Size = new System.Drawing.Size(843, 558);
             this.pnlVidaRiesgosLaborales.TabIndex = 6;
             this.pnlVidaRiesgosLaborales.Visible = false;
             // 
@@ -2322,7 +2328,7 @@
             this.pnlVidaRiesgosLaborales_BuscarEmpresa.Controls.Add(this.lblVidaRLab_BuscarEmpresaCerrar);
             this.pnlVidaRiesgosLaborales_BuscarEmpresa.Location = new System.Drawing.Point(25, 89);
             this.pnlVidaRiesgosLaborales_BuscarEmpresa.Name = "pnlVidaRiesgosLaborales_BuscarEmpresa";
-            this.pnlVidaRiesgosLaborales_BuscarEmpresa.Size = new System.Drawing.Size(810, 476);
+            this.pnlVidaRiesgosLaborales_BuscarEmpresa.Size = new System.Drawing.Size(815, 476);
             this.pnlVidaRiesgosLaborales_BuscarEmpresa.TabIndex = 178;
             this.pnlVidaRiesgosLaborales_BuscarEmpresa.Visible = false;
             // 
@@ -2342,7 +2348,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 97);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(810, 379);
+            this.dataGridView1.Size = new System.Drawing.Size(815, 379);
             this.dataGridView1.TabIndex = 142;
             // 
             // label125
@@ -2452,20 +2458,20 @@
             this.btnVidaRLab_BuscarEmpresa.UseVisualStyleBackColor = false;
             this.btnVidaRLab_BuscarEmpresa.Click += new System.EventHandler(this.btnVidaRLab_BuscarEmpresa_Click);
             // 
-            // button31
+            // btnSIGUIENTEpnlVidaRiesgosLaborales
             // 
-            this.button31.BackColor = System.Drawing.Color.White;
-            this.button31.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
-            this.button31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button31.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button31.ForeColor = System.Drawing.Color.Crimson;
-            this.button31.Location = new System.Drawing.Point(658, 508);
-            this.button31.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(157, 49);
-            this.button31.TabIndex = 171;
-            this.button31.Text = "Siguiente >>";
-            this.button31.UseVisualStyleBackColor = false;
+            this.btnSIGUIENTEpnlVidaRiesgosLaborales.BackColor = System.Drawing.Color.White;
+            this.btnSIGUIENTEpnlVidaRiesgosLaborales.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnSIGUIENTEpnlVidaRiesgosLaborales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSIGUIENTEpnlVidaRiesgosLaborales.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSIGUIENTEpnlVidaRiesgosLaborales.ForeColor = System.Drawing.Color.Crimson;
+            this.btnSIGUIENTEpnlVidaRiesgosLaborales.Location = new System.Drawing.Point(658, 508);
+            this.btnSIGUIENTEpnlVidaRiesgosLaborales.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSIGUIENTEpnlVidaRiesgosLaborales.Name = "btnSIGUIENTEpnlVidaRiesgosLaborales";
+            this.btnSIGUIENTEpnlVidaRiesgosLaborales.Size = new System.Drawing.Size(157, 49);
+            this.btnSIGUIENTEpnlVidaRiesgosLaborales.TabIndex = 171;
+            this.btnSIGUIENTEpnlVidaRiesgosLaborales.Text = "Siguiente >>";
+            this.btnSIGUIENTEpnlVidaRiesgosLaborales.UseVisualStyleBackColor = false;
             // 
             // label137
             // 
@@ -2615,7 +2621,7 @@
             // 
             this.pnlVidaSalud.BackColor = System.Drawing.Color.White;
             this.pnlVidaSalud.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlVidaSalud.Controls.Add(this.button13);
+            this.pnlVidaSalud.Controls.Add(this.btnSIGUIENTEpnlVidaSalud);
             this.pnlVidaSalud.Controls.Add(this.lblCerrar_pnlVidaSalud);
             this.pnlVidaSalud.Controls.Add(this.textBox57);
             this.pnlVidaSalud.Controls.Add(this.textBox58);
@@ -2627,27 +2633,28 @@
             this.pnlVidaSalud.Controls.Add(this.label84);
             this.pnlVidaSalud.Controls.Add(this.label94);
             this.pnlVidaSalud.Controls.Add(this.label95);
-            this.pnlVidaSalud.Location = new System.Drawing.Point(481, 25);
+            this.pnlVidaSalud.Location = new System.Drawing.Point(481, 27);
             this.pnlVidaSalud.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlVidaSalud.Name = "pnlVidaSalud";
-            this.pnlVidaSalud.Size = new System.Drawing.Size(840, 326);
+            this.pnlVidaSalud.Size = new System.Drawing.Size(842, 326);
             this.pnlVidaSalud.TabIndex = 6;
             this.pnlVidaSalud.Visible = false;
             // 
-            // button13
+            // btnSIGUIENTEpnlVidaSalud
             // 
-            this.button13.BackColor = System.Drawing.Color.White;
-            this.button13.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.ForeColor = System.Drawing.Color.Crimson;
-            this.button13.Location = new System.Drawing.Point(658, 261);
-            this.button13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(157, 49);
-            this.button13.TabIndex = 107;
-            this.button13.Text = "Siguiente >>";
-            this.button13.UseVisualStyleBackColor = false;
+            this.btnSIGUIENTEpnlVidaSalud.BackColor = System.Drawing.Color.White;
+            this.btnSIGUIENTEpnlVidaSalud.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnSIGUIENTEpnlVidaSalud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSIGUIENTEpnlVidaSalud.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSIGUIENTEpnlVidaSalud.ForeColor = System.Drawing.Color.Crimson;
+            this.btnSIGUIENTEpnlVidaSalud.Location = new System.Drawing.Point(658, 261);
+            this.btnSIGUIENTEpnlVidaSalud.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSIGUIENTEpnlVidaSalud.Name = "btnSIGUIENTEpnlVidaSalud";
+            this.btnSIGUIENTEpnlVidaSalud.Size = new System.Drawing.Size(157, 49);
+            this.btnSIGUIENTEpnlVidaSalud.TabIndex = 107;
+            this.btnSIGUIENTEpnlVidaSalud.Text = "Siguiente >>";
+            this.btnSIGUIENTEpnlVidaSalud.UseVisualStyleBackColor = false;
+            this.btnSIGUIENTEpnlVidaSalud.Click += new System.EventHandler(this.btnSIGUIENTEpnlVidaSalud_Click);
             // 
             // lblCerrar_pnlVidaSalud
             // 
@@ -2765,7 +2772,7 @@
             // 
             this.pnlVidaRiesgoMuerte.BackColor = System.Drawing.Color.White;
             this.pnlVidaRiesgoMuerte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlVidaRiesgoMuerte.Controls.Add(this.button14);
+            this.pnlVidaRiesgoMuerte.Controls.Add(this.btnSIGUIENTEpnlVidaRiesgoMuerte);
             this.pnlVidaRiesgoMuerte.Controls.Add(this.textBox55);
             this.pnlVidaRiesgoMuerte.Controls.Add(this.textBox56);
             this.pnlVidaRiesgoMuerte.Controls.Add(this.textBox59);
@@ -2776,27 +2783,28 @@
             this.pnlVidaRiesgoMuerte.Controls.Add(this.label91);
             this.pnlVidaRiesgoMuerte.Controls.Add(this.lblCerrarRiesgoMuerte);
             this.pnlVidaRiesgoMuerte.Controls.Add(this.label104);
-            this.pnlVidaRiesgoMuerte.Location = new System.Drawing.Point(482, 22);
+            this.pnlVidaRiesgoMuerte.Location = new System.Drawing.Point(482, 24);
             this.pnlVidaRiesgoMuerte.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlVidaRiesgoMuerte.Name = "pnlVidaRiesgoMuerte";
             this.pnlVidaRiesgoMuerte.Size = new System.Drawing.Size(842, 329);
             this.pnlVidaRiesgoMuerte.TabIndex = 6;
             this.pnlVidaRiesgoMuerte.Visible = false;
             // 
-            // button14
+            // btnSIGUIENTEpnlVidaRiesgoMuerte
             // 
-            this.button14.BackColor = System.Drawing.Color.White;
-            this.button14.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.ForeColor = System.Drawing.Color.Crimson;
-            this.button14.Location = new System.Drawing.Point(650, 238);
-            this.button14.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(157, 49);
-            this.button14.TabIndex = 116;
-            this.button14.Text = "Siguiente >>";
-            this.button14.UseVisualStyleBackColor = false;
+            this.btnSIGUIENTEpnlVidaRiesgoMuerte.BackColor = System.Drawing.Color.White;
+            this.btnSIGUIENTEpnlVidaRiesgoMuerte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnSIGUIENTEpnlVidaRiesgoMuerte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSIGUIENTEpnlVidaRiesgoMuerte.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSIGUIENTEpnlVidaRiesgoMuerte.ForeColor = System.Drawing.Color.Crimson;
+            this.btnSIGUIENTEpnlVidaRiesgoMuerte.Location = new System.Drawing.Point(650, 238);
+            this.btnSIGUIENTEpnlVidaRiesgoMuerte.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSIGUIENTEpnlVidaRiesgoMuerte.Name = "btnSIGUIENTEpnlVidaRiesgoMuerte";
+            this.btnSIGUIENTEpnlVidaRiesgoMuerte.Size = new System.Drawing.Size(157, 49);
+            this.btnSIGUIENTEpnlVidaRiesgoMuerte.TabIndex = 116;
+            this.btnSIGUIENTEpnlVidaRiesgoMuerte.Text = "Siguiente >>";
+            this.btnSIGUIENTEpnlVidaRiesgoMuerte.UseVisualStyleBackColor = false;
+            this.btnSIGUIENTEpnlVidaRiesgoMuerte.Click += new System.EventHandler(this.btnSIGUIENTEpnlVidaRiesgoMuerte_Click);
             // 
             // textBox55
             // 
@@ -2902,7 +2910,7 @@
             // 
             this.pnlVidaSaludDependientes.BackColor = System.Drawing.Color.White;
             this.pnlVidaSaludDependientes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlVidaSaludDependientes.Controls.Add(this.btnSiguiente_pnlVidaSaludDependientes);
+            this.pnlVidaSaludDependientes.Controls.Add(this.btnSIGUIENTEpnlVidaSaludDependientes);
             this.pnlVidaSaludDependientes.Controls.Add(this.lblCerrarSDepend);
             this.pnlVidaSaludDependientes.Controls.Add(this.label113);
             this.pnlVidaSaludDependientes.Controls.Add(this.label83);
@@ -2921,27 +2929,28 @@
             this.pnlVidaSaludDependientes.Controls.Add(this.textBox49);
             this.pnlVidaSaludDependientes.Controls.Add(this.textBox51);
             this.pnlVidaSaludDependientes.Controls.Add(this.textBox46);
-            this.pnlVidaSaludDependientes.Location = new System.Drawing.Point(482, 24);
+            this.pnlVidaSaludDependientes.Location = new System.Drawing.Point(482, 26);
             this.pnlVidaSaludDependientes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlVidaSaludDependientes.Name = "pnlVidaSaludDependientes";
-            this.pnlVidaSaludDependientes.Size = new System.Drawing.Size(839, 558);
+            this.pnlVidaSaludDependientes.Size = new System.Drawing.Size(841, 558);
             this.pnlVidaSaludDependientes.TabIndex = 6;
             this.pnlVidaSaludDependientes.Visible = false;
             // 
-            // btnSiguiente_pnlVidaSaludDependientes
+            // btnSIGUIENTEpnlVidaSaludDependientes
             // 
-            this.btnSiguiente_pnlVidaSaludDependientes.BackColor = System.Drawing.Color.White;
-            this.btnSiguiente_pnlVidaSaludDependientes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
-            this.btnSiguiente_pnlVidaSaludDependientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSiguiente_pnlVidaSaludDependientes.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSiguiente_pnlVidaSaludDependientes.ForeColor = System.Drawing.Color.Crimson;
-            this.btnSiguiente_pnlVidaSaludDependientes.Location = new System.Drawing.Point(656, 456);
-            this.btnSiguiente_pnlVidaSaludDependientes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSiguiente_pnlVidaSaludDependientes.Name = "btnSiguiente_pnlVidaSaludDependientes";
-            this.btnSiguiente_pnlVidaSaludDependientes.Size = new System.Drawing.Size(157, 49);
-            this.btnSiguiente_pnlVidaSaludDependientes.TabIndex = 106;
-            this.btnSiguiente_pnlVidaSaludDependientes.Text = "Siguiente >>";
-            this.btnSiguiente_pnlVidaSaludDependientes.UseVisualStyleBackColor = false;
+            this.btnSIGUIENTEpnlVidaSaludDependientes.BackColor = System.Drawing.Color.White;
+            this.btnSIGUIENTEpnlVidaSaludDependientes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnSIGUIENTEpnlVidaSaludDependientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSIGUIENTEpnlVidaSaludDependientes.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSIGUIENTEpnlVidaSaludDependientes.ForeColor = System.Drawing.Color.Crimson;
+            this.btnSIGUIENTEpnlVidaSaludDependientes.Location = new System.Drawing.Point(656, 456);
+            this.btnSIGUIENTEpnlVidaSaludDependientes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSIGUIENTEpnlVidaSaludDependientes.Name = "btnSIGUIENTEpnlVidaSaludDependientes";
+            this.btnSIGUIENTEpnlVidaSaludDependientes.Size = new System.Drawing.Size(157, 49);
+            this.btnSIGUIENTEpnlVidaSaludDependientes.TabIndex = 106;
+            this.btnSIGUIENTEpnlVidaSaludDependientes.Text = "Siguiente >>";
+            this.btnSIGUIENTEpnlVidaSaludDependientes.UseVisualStyleBackColor = false;
+            this.btnSIGUIENTEpnlVidaSaludDependientes.Click += new System.EventHandler(this.btnSIGUIENTEpnlVidaSaludDependientes_Click);
             // 
             // lblCerrarSDepend
             // 
@@ -3127,7 +3136,7 @@
             this.pnlInmuebles.Controls.Add(this.btnInmContenido);
             this.pnlInmuebles.Location = new System.Drawing.Point(664, 148);
             this.pnlInmuebles.Name = "pnlInmuebles";
-            this.pnlInmuebles.Size = new System.Drawing.Size(630, 272);
+            this.pnlInmuebles.Size = new System.Drawing.Size(579, 272);
             this.pnlInmuebles.TabIndex = 9;
             this.pnlInmuebles.Visible = false;
             // 
@@ -3136,7 +3145,7 @@
             this.lblCerrar_pnlInmuebles.AutoSize = true;
             this.lblCerrar_pnlInmuebles.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblCerrar_pnlInmuebles.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCerrar_pnlInmuebles.Location = new System.Drawing.Point(469, 5);
+            this.lblCerrar_pnlInmuebles.Location = new System.Drawing.Point(540, -1);
             this.lblCerrar_pnlInmuebles.Name = "lblCerrar_pnlInmuebles";
             this.lblCerrar_pnlInmuebles.Size = new System.Drawing.Size(35, 36);
             this.lblCerrar_pnlInmuebles.TabIndex = 10;
@@ -3150,7 +3159,7 @@
             this.btnInmEdificaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInmEdificaciones.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInmEdificaciones.ForeColor = System.Drawing.Color.White;
-            this.btnInmEdificaciones.Location = new System.Drawing.Point(163, 117);
+            this.btnInmEdificaciones.Location = new System.Drawing.Point(163, 131);
             this.btnInmEdificaciones.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnInmEdificaciones.Name = "btnInmEdificaciones";
             this.btnInmEdificaciones.Size = new System.Drawing.Size(266, 73);
@@ -3166,7 +3175,7 @@
             this.btnInmContenido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInmContenido.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInmContenido.ForeColor = System.Drawing.Color.White;
-            this.btnInmContenido.Location = new System.Drawing.Point(171, 38);
+            this.btnInmContenido.Location = new System.Drawing.Point(171, 52);
             this.btnInmContenido.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnInmContenido.Name = "btnInmContenido";
             this.btnInmContenido.Size = new System.Drawing.Size(252, 73);
@@ -3439,8 +3448,8 @@
         private System.Windows.Forms.Button btnDependientes;
         private System.Windows.Forms.Button btnRiesgosLaborales;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnSiguienteSeguroOblig;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnSiguientepnlVEHSeguroObligatorio;
+        private System.Windows.Forms.Button btnSIGUIENTEpnlVEHSeguroTodoRiesgo;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
@@ -3456,7 +3465,7 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label78;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnSIGUIENTEpnlVEHSeguroVoluntario;
         private System.Windows.Forms.TextBox textBox19;
         private System.Windows.Forms.TextBox textBox20;
         private System.Windows.Forms.TextBox textBox21;
@@ -3472,7 +3481,7 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label87;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnSIGUIENTEpnlMueblesInmContenido;
         private System.Windows.Forms.TextBox textBox84;
         private System.Windows.Forms.TextBox textBox83;
         private System.Windows.Forms.TextBox textBox39;
@@ -3495,7 +3504,7 @@
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnSIGUIENTEpnlMueblesInmEdificaciones;
         private System.Windows.Forms.TextBox textBox34;
         private System.Windows.Forms.TextBox textBox36;
         private System.Windows.Forms.TextBox textBox35;
@@ -3516,7 +3525,7 @@
         private System.Windows.Forms.Label label105;
         private System.Windows.Forms.Label label116;
         private System.Windows.Forms.Label label117;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnSIGUIENTEpnlNegociosEmpresas;
         private System.Windows.Forms.TextBox textBox37;
         private System.Windows.Forms.TextBox textBox38;
         private System.Windows.Forms.TextBox textBox45;
@@ -3544,7 +3553,7 @@
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Button btnVidaRLab_BuscarEmpresa;
-        private System.Windows.Forms.Button button31;
+        private System.Windows.Forms.Button btnSIGUIENTEpnlVidaRiesgosLaborales;
         private System.Windows.Forms.Label label137;
         private System.Windows.Forms.TextBox textBox92;
         private System.Windows.Forms.TextBox textBox91;
@@ -3575,10 +3584,10 @@
         private System.Windows.Forms.TextBox textBox49;
         private System.Windows.Forms.TextBox textBox51;
         private System.Windows.Forms.TextBox textBox46;
-        private System.Windows.Forms.Button btnSiguiente_pnlVidaSaludDependientes;
+        private System.Windows.Forms.Button btnSIGUIENTEpnlVidaSaludDependientes;
         private System.Windows.Forms.Label label84;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnSIGUIENTEpnlVidaSalud;
+        private System.Windows.Forms.Button btnSIGUIENTEpnlVidaRiesgoMuerte;
         private System.Windows.Forms.TextBox textBox55;
         private System.Windows.Forms.TextBox textBox56;
         private System.Windows.Forms.TextBox textBox59;
