@@ -44,7 +44,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblDevoluciones = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -206,17 +206,17 @@
             this.label13.Size = new System.Drawing.Size(62, 56);
             this.label13.TabIndex = 30;
             // 
-            // label5
+            // lblDevoluciones
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Crimson;
-            this.label5.Location = new System.Drawing.Point(370, 9);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(209, 36);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "Devoluciones";
+            this.lblDevoluciones.AutoSize = true;
+            this.lblDevoluciones.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDevoluciones.ForeColor = System.Drawing.Color.Crimson;
+            this.lblDevoluciones.Location = new System.Drawing.Point(370, 9);
+            this.lblDevoluciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDevoluciones.Name = "lblDevoluciones";
+            this.lblDevoluciones.Size = new System.Drawing.Size(209, 36);
+            this.lblDevoluciones.TabIndex = 29;
+            this.lblDevoluciones.Text = "Devoluciones";
             // 
             // label4
             // 
@@ -391,7 +391,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnBuscarCliente);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblDevoluciones);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -434,7 +434,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblDevoluciones;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label14;

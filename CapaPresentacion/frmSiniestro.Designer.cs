@@ -46,7 +46,7 @@
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblRegistroSiniestros = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -175,7 +175,7 @@
             this.groupBox1.Controls.Add(this.btnBuscarCliente);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.lblRegistroSiniestros);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.btnGuardar);
@@ -235,17 +235,17 @@
             this.label3.Text = "Deducible:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label5
+            // lblRegistroSiniestros
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Crimson;
-            this.label5.Location = new System.Drawing.Point(103, -3);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(308, 36);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Registro de Siniestros";
+            this.lblRegistroSiniestros.AutoSize = true;
+            this.lblRegistroSiniestros.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistroSiniestros.ForeColor = System.Drawing.Color.Crimson;
+            this.lblRegistroSiniestros.Location = new System.Drawing.Point(103, -3);
+            this.lblRegistroSiniestros.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRegistroSiniestros.Name = "lblRegistroSiniestros";
+            this.lblRegistroSiniestros.Size = new System.Drawing.Size(308, 36);
+            this.lblRegistroSiniestros.TabIndex = 11;
+            this.lblRegistroSiniestros.Text = "Registro de Siniestros";
             // 
             // button1
             // 
@@ -427,7 +427,7 @@
         private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblRegistroSiniestros;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnGuardar;

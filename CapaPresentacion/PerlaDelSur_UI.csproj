@@ -76,11 +76,23 @@
     <Compile Include="frmPolizas.Designer.cs">
       <DependentUpon>frmPolizas.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmResumenVentaPoliza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmResumenVentaPoliza.Designer.cs">
+      <DependentUpon>frmResumenVentaPoliza.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSeguroEmpresas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSeguroEmpresas.Designer.cs">
       <DependentUpon>frmSeguroEmpresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSeguroVida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeguroVida.Designer.cs">
+      <DependentUpon>frmSeguroVida.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSiniestro.cs">
       <SubType>Form</SubType>
@@ -114,11 +126,11 @@
     <Compile Include="frmReclamos.Designer.cs">
       <DependentUpon>frmReclamos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmVenta.cs">
+    <Compile Include="frmConfirmacionSolicitud.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmVenta.Designer.cs">
-      <DependentUpon>frmVenta.cs</DependentUpon>
+    <Compile Include="frmConfirmacionSolicitud.Designer.cs">
+      <DependentUpon>frmConfirmacionSolicitud.cs</DependentUpon>
     </Compile>
     <Compile Include="frmUsuarios.cs">
       <SubType>Form</SubType>
@@ -144,8 +156,14 @@
     <EmbeddedResource Include="frmReclamos.resx">
       <DependentUpon>frmReclamos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmResumenVentaPoliza.resx">
+      <DependentUpon>frmResumenVentaPoliza.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSeguroEmpresas.resx">
       <DependentUpon>frmSeguroEmpresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeguroVida.resx">
+      <DependentUpon>frmSeguroVida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSiniestro.resx">
       <DependentUpon>frmSiniestro.cs</DependentUpon>
@@ -168,8 +186,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmVenta.resx">
-      <DependentUpon>frmVenta.cs</DependentUpon>
+    <EmbeddedResource Include="frmConfirmacionSolicitud.resx">
+      <DependentUpon>frmConfirmacionSolicitud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>

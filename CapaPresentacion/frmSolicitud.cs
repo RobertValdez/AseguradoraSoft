@@ -24,8 +24,7 @@ namespace CapaPresentacion
 
         private void btnSeguroVoluntario_Click(object sender, EventArgs e)
         {
-            pnlVida.Visible = false;
-            pnlVidaRiesgoMuerte.Visible = true;
+
         }
 
         private void lblCerrarVeh_Click(object sender, EventArgs e)
@@ -40,50 +39,47 @@ namespace CapaPresentacion
 
         private void btnVida_Click(object sender, EventArgs e)
         {
-            pnlVida.Visible = true;
+
         }
 
         private void btnDependientes_Click(object sender, EventArgs e)
         {
-            pnlVida.Visible = false;
-            pnlVidaSaludDependientes.Visible = true;
+
         }
 
         private void lblCerrarSDepend_Click(object sender, EventArgs e)
         {
-            pnlVidaSaludDependientes.Visible = false;
+
         }
 
         private void lblCerrar_pnlVida_Click(object sender, EventArgs e)
         {
-            pnlVida.Visible = false;
+
         }
 
         private void btnSeguroSalud_Click(object sender, EventArgs e)
         {
-            pnlVida.Visible = false;
-            pnlVidaSalud.Visible = true;
+
         }
 
         private void lblCerrar_pnlVidaSalud_Click(object sender, EventArgs e)
         {
-            pnlVidaSalud.Visible = false;
+
         }
 
         private void lblCerrar_pnlRiesgoLab_Click(object sender, EventArgs e)
         {
-            pnlVidaRiesgosLaborales.Visible = false; 
+
         }
 
         private void btnRiesgosLaborales_Click(object sender, EventArgs e)
         {
-            pnlVida.Visible = false;
-            pnlVidaRiesgosLaborales.Visible = true;
+          
         }
 
         private void lblCerrarRiesgoMuerte_Click(object sender, EventArgs e)
         {
-            pnlVidaRiesgoMuerte.Visible = false;
+
         }
 
         private void btnSeguroVoluntario_Click_1(object sender, EventArgs e)
@@ -158,14 +154,12 @@ namespace CapaPresentacion
 
         private void btnVidaRLab_BuscarEmpresa_Click(object sender, EventArgs e)
         {
-            lblCerrar_pnlRiesgoLab.Visible = false;
-            pnlVidaRiesgosLaborales_BuscarEmpresa.Visible = true;
+
         }
 
         private void lblVidaRLab_BuscarEmpresaCerrar_Click(object sender, EventArgs e)
         {
-            pnlVidaRiesgosLaborales_BuscarEmpresa.Visible = false;
-            lblCerrar_pnlRiesgoLab.Visible = true;
+
         }
 
         private void btnSiguientepnlVEHSeguroObligatorio_Click(object sender, EventArgs e)

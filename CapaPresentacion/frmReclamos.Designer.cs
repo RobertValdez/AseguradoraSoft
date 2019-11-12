@@ -38,7 +38,7 @@
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblRegistroReclamos = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -89,7 +89,7 @@
             this.groupBox1.Controls.Add(this.btnBuscarCliente);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.lblRegistroReclamos);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.btnGuardar);
@@ -207,17 +207,17 @@
             this.label3.Text = "Deducible:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label5
+            // lblRegistroReclamos
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Crimson;
-            this.label5.Location = new System.Drawing.Point(129, -4);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(323, 36);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Registro de Reclamos";
+            this.lblRegistroReclamos.AutoSize = true;
+            this.lblRegistroReclamos.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistroReclamos.ForeColor = System.Drawing.Color.Crimson;
+            this.lblRegistroReclamos.Location = new System.Drawing.Point(129, -4);
+            this.lblRegistroReclamos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRegistroReclamos.Name = "lblRegistroReclamos";
+            this.lblRegistroReclamos.Size = new System.Drawing.Size(323, 36);
+            this.lblRegistroReclamos.TabIndex = 11;
+            this.lblRegistroReclamos.Text = "Registro de Reclamos";
             // 
             // button1
             // 
@@ -497,7 +497,7 @@
         private System.Windows.Forms.Panel pnlRegistroReclamos;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblRegistroReclamos;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnGuardar;

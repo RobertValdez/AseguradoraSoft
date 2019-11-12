@@ -19,11 +19,13 @@ namespace CapaPresentacion
 
         private void btnBuscarCliente_Click_1(object sender, EventArgs e)
         {
+            lblRegistroSiniestros.Text = "Buscar Cliente";
             pnlBuscarCliente.Visible = true;
         }
 
         private void lblCerrar_Click_1(object sender, EventArgs e)
         {
+            lblRegistroSiniestros.Text = "Registro de Siniestros";
             pnlBuscarCliente.Visible = false;
         }
     }

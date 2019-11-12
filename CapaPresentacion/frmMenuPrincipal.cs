@@ -76,7 +76,7 @@ namespace CapaPresentacion
 
         private void ventasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frmVenta v = new frmVenta();
+            frmConfirmacionSolicitud v = new frmConfirmacionSolicitud();
             v.MdiParent = this;
             v.Show();
         }

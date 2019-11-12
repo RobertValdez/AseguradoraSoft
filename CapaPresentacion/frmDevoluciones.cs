@@ -19,11 +19,13 @@ namespace CapaPresentacion
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
+            lblDevoluciones.Text = "Buscar Cliente";
             pnlBuscarClientes.Visible = true;
         }
 
         private void lblCerrar_Click(object sender, EventArgs e)
         {
+            lblDevoluciones.Text = "Devoluciones";
             pnlBuscarClientes.Visible = false;
         }
     }

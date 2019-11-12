@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class frmVenta
+    partial class frmConfirmacionSolicitud
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVenta));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConfirmacionSolicitud));
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.dgvEmpleados.AllowUserToDeleteRows = false;
             this.dgvEmpleados.BackgroundColor = System.Drawing.Color.LightPink;
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Location = new System.Drawing.Point(20, 141);
+            this.dgvEmpleados.Location = new System.Drawing.Point(20, 146);
             this.dgvEmpleados.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.ReadOnly = true;
@@ -63,7 +63,7 @@
             this.label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label12.Image = ((System.Drawing.Image)(resources.GetObject("label12.Image")));
             this.label12.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label12.Location = new System.Drawing.Point(-3, 38);
+            this.label12.Location = new System.Drawing.Point(-3, 43);
             this.label12.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(106, 84);
@@ -74,17 +74,17 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Crimson;
-            this.label10.Location = new System.Drawing.Point(572, 9);
+            this.label10.Location = new System.Drawing.Point(365, 9);
             this.label10.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(123, 38);
+            this.label10.Size = new System.Drawing.Size(502, 38);
             this.label10.TabIndex = 25;
-            this.label10.Text = "Ventas";
+            this.label10.Text = "Confirmación de las Solicitudes";
             // 
             // txtBuscarEmpleado
             // 
             this.txtBuscarEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscarEmpleado.Location = new System.Drawing.Point(109, 99);
+            this.txtBuscarEmpleado.Location = new System.Drawing.Point(109, 104);
             this.txtBuscarEmpleado.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.txtBuscarEmpleado.Name = "txtBuscarEmpleado";
             this.txtBuscarEmpleado.Size = new System.Drawing.Size(407, 33);
@@ -99,7 +99,7 @@
             "Muebles e Inmuebles",
             "Empresas y negocios",
             "Vehiculos"});
-            this.comboBox1.Location = new System.Drawing.Point(109, 65);
+            this.comboBox1.Location = new System.Drawing.Point(109, 70);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(270, 32);
             this.comboBox1.TabIndex = 29;
@@ -109,14 +109,14 @@
             this.btnCrearCuenta.BackColor = System.Drawing.Color.Crimson;
             this.btnCrearCuenta.FlatAppearance.BorderSize = 0;
             this.btnCrearCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrearCuenta.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearCuenta.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnCrearCuenta.ForeColor = System.Drawing.Color.White;
-            this.btnCrearCuenta.Location = new System.Drawing.Point(924, 196);
+            this.btnCrearCuenta.Location = new System.Drawing.Point(924, 201);
             this.btnCrearCuenta.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCrearCuenta.Name = "btnCrearCuenta";
             this.btnCrearCuenta.Size = new System.Drawing.Size(199, 57);
             this.btnCrearCuenta.TabIndex = 30;
-            this.btnCrearCuenta.Text = "Aprobar solicitud y Crear Póliza";
+            this.btnCrearCuenta.Text = "Aprobar solicitud";
             this.btnCrearCuenta.UseVisualStyleBackColor = false;
             // 
             // button1
@@ -126,7 +126,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(924, 276);
+            this.button1.Location = new System.Drawing.Point(924, 281);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(199, 57);
@@ -137,7 +137,7 @@
             // textBox1
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(1024, 83);
+            this.textBox1.Location = new System.Drawing.Point(1024, 88);
             this.textBox1.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -148,7 +148,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.Firebrick;
-            this.label11.Location = new System.Drawing.Point(838, 72);
+            this.label11.Location = new System.Drawing.Point(838, 77);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(175, 48);
@@ -159,7 +159,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Firebrick;
-            this.label1.Location = new System.Drawing.Point(942, 135);
+            this.label1.Location = new System.Drawing.Point(942, 140);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 24);
@@ -169,7 +169,7 @@
             // textBox2
             // 
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(1024, 132);
+            this.textBox2.Location = new System.Drawing.Point(1024, 137);
             this.textBox2.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
@@ -180,7 +180,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.ForeColor = System.Drawing.Color.Firebrick;
-            this.radioButton1.Location = new System.Drawing.Point(526, 104);
+            this.radioButton1.Location = new System.Drawing.Point(526, 109);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(141, 28);
             this.radioButton1.TabIndex = 32;
@@ -192,7 +192,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.ForeColor = System.Drawing.Color.Firebrick;
-            this.radioButton2.Location = new System.Drawing.Point(526, 72);
+            this.radioButton2.Location = new System.Drawing.Point(526, 77);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(140, 28);
             this.radioButton2.TabIndex = 32;
@@ -200,7 +200,7 @@
             this.radioButton2.Text = "Pendientes";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // frmVenta
+            // frmConfirmacionSolicitud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -222,8 +222,8 @@
             this.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.MaximizeBox = false;
-            this.Name = "frmVenta";
-            this.Text = "Venta";
+            this.Name = "frmConfirmacionSolicitud";
+            this.Text = "Confirmación Solicitud";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
