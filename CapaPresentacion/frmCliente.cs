@@ -178,5 +178,48 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
+        {
+            BuscarClientes();
+        }
+        public void BuscarClientes() 
+        {
+            try
+            {
+                if (chkSoloId.Checked)
+                {
+                    BindingSource bs = new BindingSource();
+                    bs.DataSource = dgvClientes.DataSource;
+                    bs.Filter = "CONVERT(id, 'System.String') like '%" + txtBuscarCliente.Text + "%'";
+                    dgvClientes.DataSource = bs;
+                }
+                else
+                {
+                    BindingSource bs = new BindingSource();
+                    bs.DataSource = dgvClientes.DataSource;
+                    bs.Filter = "CONVERT(id, 'System.String') like '%" + txtBuscarCliente.Text + "%' OR Nombre like '%" + txtBuscarCliente.Text + "%' OR Apellido like '%" + txtBuscarCliente.Text +
+                        "%' OR Direccion like '%" + txtBuscarCliente.Text + "%' OR Cedula like '%" + txtBuscarCliente.Text +
+                        "%' OR Telefono like '%" + txtBuscarCliente.Text + "%' OR [Correo Electronico] like '%" + txtBuscarCliente.Text + "%'";
+                    dgvClientes.DataSource = bs;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void chkSoloId_CheckedChanged(object sender, EventArgs e)
+        {
+            BuscarClientes();
+            if (chkSoloId.Checked)
+            {
+                chkSoloId.BackColor = Color.DarkViolet;
+                chkSoloId.ForeColor = Color.White;
+            }
+            else
+            {
+                chkSoloId.BackColor = Color.White;
+                chkSoloId.ForeColor = Color.Crimson;
+            }
+        }
     }
 }

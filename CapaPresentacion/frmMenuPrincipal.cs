@@ -115,5 +115,12 @@ namespace CapaPresentacion
             S.MdiParent = this;
             S.Show();
         }
+
+        private void seguroDeVidaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSeguroVida frmVida = new frmSeguroVida();
+            frmVida.MdiParent = this;
+            frmVida.Show();
+        }
     }
 }

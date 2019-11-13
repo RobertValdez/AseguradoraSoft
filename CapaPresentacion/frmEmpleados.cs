@@ -209,7 +209,7 @@ namespace CapaPresentacion
             else
             {
                 chkSoloId.BackColor = Color.White;
-                chkSoloId.ForeColor = Color.Black;
+                chkSoloId.ForeColor = Color.Crimson;
             }
         }
 

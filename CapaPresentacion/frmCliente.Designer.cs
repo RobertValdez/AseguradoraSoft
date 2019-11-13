@@ -64,7 +64,6 @@
             this.btnEliminarMod = new System.Windows.Forms.Button();
             this.btnGuardarCambiosMod = new System.Windows.Forms.Button();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -79,10 +78,11 @@
             this.txtDireccionMod = new System.Windows.Forms.TextBox();
             this.txtApellidoMod = new System.Windows.Forms.TextBox();
             this.txtNombreMod = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtBuscarCliente = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.chkSoloId = new System.Windows.Forms.CheckBox();
             this.pnlNuevo.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.pnlModificar.SuspendLayout();
@@ -359,6 +359,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.chkSoloId);
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.txtIdMod);
             this.groupBox2.Controls.Add(this.cmbSexoMod);
@@ -369,7 +370,6 @@
             this.groupBox2.Controls.Add(this.btnEliminarMod);
             this.groupBox2.Controls.Add(this.btnGuardarCambiosMod);
             this.groupBox2.Controls.Add(this.dgvClientes);
-            this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label16);
@@ -384,7 +384,7 @@
             this.groupBox2.Controls.Add(this.txtDireccionMod);
             this.groupBox2.Controls.Add(this.txtApellidoMod);
             this.groupBox2.Controls.Add(this.txtNombreMod);
-            this.groupBox2.Controls.Add(this.textBox9);
+            this.groupBox2.Controls.Add(this.txtBuscarCliente);
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 21.75F);
@@ -511,14 +511,6 @@
             this.dgvClientes.Size = new System.Drawing.Size(636, 452);
             this.dgvClientes.TabIndex = 12;
             this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(141, 51);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 44);
-            this.comboBox1.TabIndex = 14;
             // 
             // label22
             // 
@@ -662,14 +654,15 @@
             this.txtNombreMod.Size = new System.Drawing.Size(168, 43);
             this.txtNombreMod.TabIndex = 0;
             // 
-            // textBox9
+            // txtBuscarCliente
             // 
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Location = new System.Drawing.Point(269, 52);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(156, 43);
-            this.textBox9.TabIndex = 6;
+            this.txtBuscarCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBuscarCliente.Location = new System.Drawing.Point(145, 52);
+            this.txtBuscarCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBuscarCliente.Name = "txtBuscarCliente";
+            this.txtBuscarCliente.Size = new System.Drawing.Size(333, 43);
+            this.txtBuscarCliente.TabIndex = 6;
+            this.txtBuscarCliente.TextChanged += new System.EventHandler(this.txtBuscarCliente_TextChanged);
             // 
             // label18
             // 
@@ -713,6 +706,20 @@
             this.btnModificar.Text = "Modificar/Eliminar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // chkSoloId
+            // 
+            this.chkSoloId.AutoSize = true;
+            this.chkSoloId.BackColor = System.Drawing.Color.White;
+            this.chkSoloId.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkSoloId.ForeColor = System.Drawing.Color.Crimson;
+            this.chkSoloId.Location = new System.Drawing.Point(485, 61);
+            this.chkSoloId.Name = "chkSoloId";
+            this.chkSoloId.Size = new System.Drawing.Size(108, 32);
+            this.chkSoloId.TabIndex = 24;
+            this.chkSoloId.Text = "solo Id";
+            this.chkSoloId.UseVisualStyleBackColor = false;
+            this.chkSoloId.CheckedChanged += new System.EventHandler(this.chkSoloId_CheckedChanged);
             // 
             // frmCliente
             // 
@@ -769,9 +776,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvClientes;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtBuscarCliente;
         private System.Windows.Forms.TextBox txtCorreoElectronicoMod;
         private System.Windows.Forms.TextBox txtTelefonoMod;
         private System.Windows.Forms.TextBox txtDireccionMod;
@@ -798,5 +804,6 @@
         private System.Windows.Forms.TextBox txtIdMod;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtNacionalidadMod;
+        private System.Windows.Forms.CheckBox chkSoloId;
     }
 }
