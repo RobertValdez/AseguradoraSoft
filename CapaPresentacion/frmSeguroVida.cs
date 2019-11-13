@@ -190,14 +190,39 @@ namespace CapaPresentacion
         private void btnSIGUIENTEpnlVidaSalud_Click(object sender, EventArgs e)
         {
             if (txtNombre.Text == "" || txtApellido.Text == "" || txtDireccion.Text == "" || mskCedula.Text == "   -       -" || mskTelefono.Text == "" || txtCorreoElectronico.Text == "" || txtNacionalidad.Text == "" || cmbSexo.Text == ""
-                || txtAntecedentesPersonales.Text == "" || txtInstitutoDondeLabora.Text == "" || (rdBasicoSegSalud.Checked == false && rdSemiFullSegSalud.Checked == false && rdFullSegSalud.Checked == false))
+                || txtAntecedentesPersonales.Text == "" || txtInstitutoDondeLabora.Text == "" || (rbBasicoSegSalud.Checked == false && rbSemiFullSegSalud.Checked == false && rbFullSegSalud.Checked == false))
             {
                 MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else if (txtNombre.ReadOnly == true) // False aquí: Significa que está añadido como cliente en la Base de Datos
+            {
+                string strRb_Categoria = "";
+                if (rbBasicoSegSalud.Checked == true)
+                {
+                    strRb_Categoria = "Básico";
+                }
+                else if (rbSemiFullSegSalud.Checked == true)
+                {
+                    strRb_Categoria = "Semi Full";
+                }
+                else if (rbFullSegSalud.Checked == true)
+                {
+                    strRb_Categoria = "Full";
+                }
+                frmFacturas frmFac = new frmFacturas();
+
+                frmFac.txtId.Text = txtId.Text;
+                frmFac.txtCliente.Text = txtNombre.Text + " " + txtApellido.Text;
+                frmFac.txtCedula.Text = mskCedula.Text;
+                frmFac.txtSeguroA_Adquirir.Text = lblSeguroSalud.Text;
+                frmFac.txtEfectoA_Asegurar.Text = "N/A";
+                frmFac.txtCategoria.Text = strRb_Categoria;
+
+                frmFac.ShowDialog();
+            }
             else
             {
-                frmFacturas frmFac = new frmFacturas();
-                frmFac.ShowDialog();
+                MessageBox.Show("Añada el Cliente actual para poder continuar.", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

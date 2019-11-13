@@ -30,6 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFacturas));
             this.pnlResumenSolicitud = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.txtCedula = new System.Windows.Forms.TextBox();
+            this.txtSeguroA_Adquirir = new System.Windows.Forms.TextBox();
+            this.txtEfectoA_Asegurar = new System.Windows.Forms.TextBox();
+            this.txtCategoria = new System.Windows.Forms.TextBox();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnAtras = new System.Windows.Forms.Button();
             this.btnSolicitar = new System.Windows.Forms.Button();
@@ -49,27 +62,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.txtEfectoA_Asegurar = new System.Windows.Forms.TextBox();
-            this.txtSeguroA_Adquirir = new System.Windows.Forms.TextBox();
-            this.txtCedula = new System.Windows.Forms.TextBox();
-            this.txtCliente = new System.Windows.Forms.TextBox();
-            this.label69 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblCerrar = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtCategoria = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pnlResumenSolicitud.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlResumenSolicitud
@@ -98,6 +98,148 @@
             this.pnlResumenSolicitud.Name = "pnlResumenSolicitud";
             this.pnlResumenSolicitud.Size = new System.Drawing.Size(829, 550);
             this.pnlResumenSolicitud.TabIndex = 7;
+            this.pnlResumenSolicitud.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlResumenSolicitud_MouseDown);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtId);
+            this.groupBox1.Controls.Add(this.label42);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label51);
+            this.groupBox1.Controls.Add(this.label60);
+            this.groupBox1.Controls.Add(this.label69);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txtCliente);
+            this.groupBox1.Controls.Add(this.txtCedula);
+            this.groupBox1.Controls.Add(this.txtSeguroA_Adquirir);
+            this.groupBox1.Controls.Add(this.txtEfectoA_Asegurar);
+            this.groupBox1.Controls.Add(this.txtCategoria);
+            this.groupBox1.Location = new System.Drawing.Point(29, 64);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(398, 344);
+            this.groupBox1.TabIndex = 108;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Cliente:";
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(137, 38);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(111, 33);
+            this.txtId.TabIndex = 1;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.ForeColor = System.Drawing.Color.Firebrick;
+            this.label42.Location = new System.Drawing.Point(11, 69);
+            this.label42.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(118, 48);
+            this.label42.TabIndex = 0;
+            this.label42.Text = "Nombre\r\ncompleto:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Firebrick;
+            this.label2.Location = new System.Drawing.Point(95, 40);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 24);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Id:";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.ForeColor = System.Drawing.Color.Firebrick;
+            this.label51.Location = new System.Drawing.Point(37, 136);
+            this.label51.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(92, 24);
+            this.label51.TabIndex = 0;
+            this.label51.Text = "Cédula:";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.ForeColor = System.Drawing.Color.Firebrick;
+            this.label60.Location = new System.Drawing.Point(22, 169);
+            this.label60.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(107, 48);
+            this.label60.TabIndex = 0;
+            this.label60.Text = "Seguro a \r\nadquirir:";
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.ForeColor = System.Drawing.Color.Firebrick;
+            this.label69.Location = new System.Drawing.Point(25, 231);
+            this.label69.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(104, 48);
+            this.label69.TabIndex = 0;
+            this.label69.Text = "Efecto a \r\nasegurar:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Firebrick;
+            this.label1.Location = new System.Drawing.Point(9, 293);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Categoría:";
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.Location = new System.Drawing.Point(137, 84);
+            this.txtCliente.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.ReadOnly = true;
+            this.txtCliente.Size = new System.Drawing.Size(239, 33);
+            this.txtCliente.TabIndex = 1;
+            // 
+            // txtCedula
+            // 
+            this.txtCedula.Location = new System.Drawing.Point(137, 135);
+            this.txtCedula.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.ReadOnly = true;
+            this.txtCedula.Size = new System.Drawing.Size(239, 33);
+            this.txtCedula.TabIndex = 1;
+            // 
+            // txtSeguroA_Adquirir
+            // 
+            this.txtSeguroA_Adquirir.Location = new System.Drawing.Point(137, 186);
+            this.txtSeguroA_Adquirir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtSeguroA_Adquirir.Name = "txtSeguroA_Adquirir";
+            this.txtSeguroA_Adquirir.ReadOnly = true;
+            this.txtSeguroA_Adquirir.Size = new System.Drawing.Size(239, 33);
+            this.txtSeguroA_Adquirir.TabIndex = 1;
+            // 
+            // txtEfectoA_Asegurar
+            // 
+            this.txtEfectoA_Asegurar.Location = new System.Drawing.Point(137, 237);
+            this.txtEfectoA_Asegurar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtEfectoA_Asegurar.Name = "txtEfectoA_Asegurar";
+            this.txtEfectoA_Asegurar.ReadOnly = true;
+            this.txtEfectoA_Asegurar.Size = new System.Drawing.Size(239, 33);
+            this.txtEfectoA_Asegurar.TabIndex = 1;
+            // 
+            // txtCategoria
+            // 
+            this.txtCategoria.Location = new System.Drawing.Point(137, 288);
+            this.txtCategoria.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.ReadOnly = true;
+            this.txtCategoria.Size = new System.Drawing.Size(239, 33);
+            this.txtCategoria.TabIndex = 1;
             // 
             // btnImprimir
             // 
@@ -144,6 +286,7 @@
             this.btnSolicitar.TabIndex = 14;
             this.btnSolicitar.Text = "Solicitar";
             this.btnSolicitar.UseVisualStyleBackColor = false;
+            this.btnSolicitar.Click += new System.EventHandler(this.btnSolicitar_Click);
             // 
             // groupBox2
             // 
@@ -332,86 +475,6 @@
             this.label30.TabIndex = 0;
             this.label30.Text = "Resumen de Solicitud";
             // 
-            // txtEfectoA_Asegurar
-            // 
-            this.txtEfectoA_Asegurar.Location = new System.Drawing.Point(137, 237);
-            this.txtEfectoA_Asegurar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtEfectoA_Asegurar.Name = "txtEfectoA_Asegurar";
-            this.txtEfectoA_Asegurar.ReadOnly = true;
-            this.txtEfectoA_Asegurar.Size = new System.Drawing.Size(239, 33);
-            this.txtEfectoA_Asegurar.TabIndex = 1;
-            // 
-            // txtSeguroA_Adquirir
-            // 
-            this.txtSeguroA_Adquirir.Location = new System.Drawing.Point(137, 186);
-            this.txtSeguroA_Adquirir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtSeguroA_Adquirir.Name = "txtSeguroA_Adquirir";
-            this.txtSeguroA_Adquirir.ReadOnly = true;
-            this.txtSeguroA_Adquirir.Size = new System.Drawing.Size(239, 33);
-            this.txtSeguroA_Adquirir.TabIndex = 1;
-            // 
-            // txtCedula
-            // 
-            this.txtCedula.Location = new System.Drawing.Point(137, 135);
-            this.txtCedula.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.ReadOnly = true;
-            this.txtCedula.Size = new System.Drawing.Size(239, 33);
-            this.txtCedula.TabIndex = 1;
-            // 
-            // txtCliente
-            // 
-            this.txtCliente.Location = new System.Drawing.Point(137, 84);
-            this.txtCliente.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.ReadOnly = true;
-            this.txtCliente.Size = new System.Drawing.Size(239, 33);
-            this.txtCliente.TabIndex = 1;
-            // 
-            // label69
-            // 
-            this.label69.AutoSize = true;
-            this.label69.ForeColor = System.Drawing.Color.Firebrick;
-            this.label69.Location = new System.Drawing.Point(25, 231);
-            this.label69.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(104, 48);
-            this.label69.TabIndex = 0;
-            this.label69.Text = "Efecto a \r\nasegurar:";
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.ForeColor = System.Drawing.Color.Firebrick;
-            this.label60.Location = new System.Drawing.Point(22, 169);
-            this.label60.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(107, 48);
-            this.label60.TabIndex = 0;
-            this.label60.Text = "Seguro a \r\nadquirir:";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.ForeColor = System.Drawing.Color.Firebrick;
-            this.label51.Location = new System.Drawing.Point(37, 136);
-            this.label51.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(92, 24);
-            this.label51.TabIndex = 0;
-            this.label51.Text = "Cédula:";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.ForeColor = System.Drawing.Color.Firebrick;
-            this.label42.Location = new System.Drawing.Point(11, 69);
-            this.label42.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(118, 48);
-            this.label42.TabIndex = 0;
-            this.label42.Text = "Nombre\r\ncompleto:";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Crimson;
@@ -456,67 +519,6 @@
             this.lblCerrar.Text = "X";
             this.lblCerrar.Click += new System.EventHandler(this.lblCerrar_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Firebrick;
-            this.label1.Location = new System.Drawing.Point(9, 293);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Categoría:";
-            // 
-            // txtCategoria
-            // 
-            this.txtCategoria.Location = new System.Drawing.Point(137, 288);
-            this.txtCategoria.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.ReadOnly = true;
-            this.txtCategoria.Size = new System.Drawing.Size(239, 33);
-            this.txtCategoria.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Firebrick;
-            this.label2.Location = new System.Drawing.Point(95, 40);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 24);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Id:";
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(137, 38);
-            this.txtId.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtId.Name = "txtId";
-            this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(111, 33);
-            this.txtId.TabIndex = 1;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.txtId);
-            this.groupBox1.Controls.Add(this.label42);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label51);
-            this.groupBox1.Controls.Add(this.label60);
-            this.groupBox1.Controls.Add(this.label69);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtCliente);
-            this.groupBox1.Controls.Add(this.txtCedula);
-            this.groupBox1.Controls.Add(this.txtSeguroA_Adquirir);
-            this.groupBox1.Controls.Add(this.txtEfectoA_Asegurar);
-            this.groupBox1.Controls.Add(this.txtCategoria);
-            this.groupBox1.Location = new System.Drawing.Point(29, 64);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(398, 344);
-            this.groupBox1.TabIndex = 108;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cliente:";
-            // 
             // frmFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
@@ -535,12 +537,13 @@
             this.Name = "frmFacturas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Facturas";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmFacturas_MouseDown);
             this.pnlResumenSolicitud.ResumeLayout(false);
             this.pnlResumenSolicitud.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -565,10 +568,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox txtEfectoA_Asegurar;
-        private System.Windows.Forms.TextBox txtSeguroA_Adquirir;
-        private System.Windows.Forms.TextBox txtCedula;
-        private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Label label69;
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Label label51;
@@ -581,10 +580,14 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Label lblCerrar;
-        private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox txtEfectoA_Asegurar;
+        public System.Windows.Forms.TextBox txtSeguroA_Adquirir;
+        public System.Windows.Forms.TextBox txtCedula;
+        public System.Windows.Forms.TextBox txtCliente;
+        public System.Windows.Forms.TextBox txtCategoria;
+        public System.Windows.Forms.TextBox txtId;
     }
 }
