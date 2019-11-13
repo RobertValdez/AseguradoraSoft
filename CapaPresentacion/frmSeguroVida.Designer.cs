@@ -39,11 +39,11 @@
             this.lblCerrarRiesgoMuerte = new System.Windows.Forms.Label();
             this.label104 = new System.Windows.Forms.Label();
             this.pnlVidaSalud = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.AC_SeguroSalud = new System.Windows.Forms.Button();
             this.btnSIGUIENTEpnlVidaSalud = new System.Windows.Forms.Button();
             this.lblCerrar_pnlVidaSalud = new System.Windows.Forms.Label();
-            this.textBox57 = new System.Windows.Forms.TextBox();
-            this.textBox58 = new System.Windows.Forms.TextBox();
+            this.txtAntecedentesPersonales = new System.Windows.Forms.TextBox();
+            this.txtInstitutoDondeLabora = new System.Windows.Forms.TextBox();
             this.label89 = new System.Windows.Forms.Label();
             this.label90 = new System.Windows.Forms.Label();
             this.label84 = new System.Windows.Forms.Label();
@@ -109,13 +109,11 @@
             this.dgvBuscarClientes = new System.Windows.Forms.DataGridView();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.cmbSexo = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.mskCedula = new System.Windows.Forms.MaskedTextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnNuevoCliente = new System.Windows.Forms.Button();
             this.txtRNC = new System.Windows.Forms.TextBox();
             this.txtCorreoElectronico = new System.Windows.Forms.TextBox();
-            this.btnLimpiar = new System.Windows.Forms.Button();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -136,9 +134,9 @@
             this.label31 = new System.Windows.Forms.Label();
             this.lblCerrar = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.rdFullSegSalud = new System.Windows.Forms.RadioButton();
+            this.rdSemiFullSegSalud = new System.Windows.Forms.RadioButton();
+            this.rdBasicoSegSalud = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.radioButton7 = new System.Windows.Forms.RadioButton();
@@ -156,6 +154,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtNacionalidad = new System.Windows.Forms.TextBox();
             this.chkSoloId = new System.Windows.Forms.CheckBox();
+            this.lblId = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.pnlVidaRiesgoMuerte.SuspendLayout();
             this.pnlVidaSalud.SuspendLayout();
             this.pnlVidaSaludDependientes.SuspendLayout();
@@ -291,11 +292,11 @@
             this.pnlVidaSalud.BackColor = System.Drawing.Color.White;
             this.pnlVidaSalud.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlVidaSalud.Controls.Add(this.groupBox2);
-            this.pnlVidaSalud.Controls.Add(this.button2);
+            this.pnlVidaSalud.Controls.Add(this.AC_SeguroSalud);
             this.pnlVidaSalud.Controls.Add(this.btnSIGUIENTEpnlVidaSalud);
             this.pnlVidaSalud.Controls.Add(this.lblCerrar_pnlVidaSalud);
-            this.pnlVidaSalud.Controls.Add(this.textBox57);
-            this.pnlVidaSalud.Controls.Add(this.textBox58);
+            this.pnlVidaSalud.Controls.Add(this.txtAntecedentesPersonales);
+            this.pnlVidaSalud.Controls.Add(this.txtInstitutoDondeLabora);
             this.pnlVidaSalud.Controls.Add(this.label89);
             this.pnlVidaSalud.Controls.Add(this.label90);
             this.pnlVidaSalud.Controls.Add(this.label84);
@@ -307,20 +308,21 @@
             this.pnlVidaSalud.TabIndex = 8;
             this.pnlVidaSalud.Visible = false;
             // 
-            // button2
+            // AC_SeguroSalud
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.button2.Location = new System.Drawing.Point(6, 5);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(170, 45);
-            this.button2.TabIndex = 117;
-            this.button2.Text = "Acerca de ...";
-            this.button2.UseVisualStyleBackColor = false;
+            this.AC_SeguroSalud.BackColor = System.Drawing.Color.White;
+            this.AC_SeguroSalud.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.AC_SeguroSalud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AC_SeguroSalud.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AC_SeguroSalud.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.AC_SeguroSalud.Location = new System.Drawing.Point(6, 5);
+            this.AC_SeguroSalud.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.AC_SeguroSalud.Name = "AC_SeguroSalud";
+            this.AC_SeguroSalud.Size = new System.Drawing.Size(170, 45);
+            this.AC_SeguroSalud.TabIndex = 117;
+            this.AC_SeguroSalud.Text = "Acerca de ...";
+            this.AC_SeguroSalud.UseVisualStyleBackColor = false;
+            this.AC_SeguroSalud.Click += new System.EventHandler(this.AC_SeguroSalud_Click);
             // 
             // btnSIGUIENTEpnlVidaSalud
             // 
@@ -336,6 +338,7 @@
             this.btnSIGUIENTEpnlVidaSalud.TabIndex = 107;
             this.btnSIGUIENTEpnlVidaSalud.Text = "Siguiente >>";
             this.btnSIGUIENTEpnlVidaSalud.UseVisualStyleBackColor = false;
+            this.btnSIGUIENTEpnlVidaSalud.Click += new System.EventHandler(this.btnSIGUIENTEpnlVidaSalud_Click);
             // 
             // lblCerrar_pnlVidaSalud
             // 
@@ -349,21 +352,21 @@
             this.lblCerrar_pnlVidaSalud.Text = "X";
             this.lblCerrar_pnlVidaSalud.Click += new System.EventHandler(this.lblCerrar_pnlVidaSalud_Click);
             // 
-            // textBox57
+            // txtAntecedentesPersonales
             // 
-            this.textBox57.Location = new System.Drawing.Point(20, 134);
-            this.textBox57.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox57.Name = "textBox57";
-            this.textBox57.Size = new System.Drawing.Size(300, 33);
-            this.textBox57.TabIndex = 4;
+            this.txtAntecedentesPersonales.Location = new System.Drawing.Point(20, 134);
+            this.txtAntecedentesPersonales.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtAntecedentesPersonales.Name = "txtAntecedentesPersonales";
+            this.txtAntecedentesPersonales.Size = new System.Drawing.Size(300, 33);
+            this.txtAntecedentesPersonales.TabIndex = 4;
             // 
-            // textBox58
+            // txtInstitutoDondeLabora
             // 
-            this.textBox58.Location = new System.Drawing.Point(19, 211);
-            this.textBox58.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox58.Name = "textBox58";
-            this.textBox58.Size = new System.Drawing.Size(301, 33);
-            this.textBox58.TabIndex = 4;
+            this.txtInstitutoDondeLabora.Location = new System.Drawing.Point(19, 211);
+            this.txtInstitutoDondeLabora.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtInstitutoDondeLabora.Name = "txtInstitutoDondeLabora";
+            this.txtInstitutoDondeLabora.Size = new System.Drawing.Size(301, 33);
+            this.txtInstitutoDondeLabora.TabIndex = 4;
             // 
             // label89
             // 
@@ -1086,9 +1089,8 @@
             // 
             this.pnlCrearCuenta.BackColor = System.Drawing.Color.White;
             this.pnlCrearCuenta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlCrearCuenta.Controls.Add(this.pnlBuscarCliente);
+            this.pnlCrearCuenta.Controls.Add(this.btnNuevo);
             this.pnlCrearCuenta.Controls.Add(this.cmbSexo);
-            this.pnlCrearCuenta.Controls.Add(this.label3);
             this.pnlCrearCuenta.Controls.Add(this.mskTelefono);
             this.pnlCrearCuenta.Controls.Add(this.mskCedula);
             this.pnlCrearCuenta.Controls.Add(this.btnBuscar);
@@ -1096,9 +1098,9 @@
             this.pnlCrearCuenta.Controls.Add(this.txtRNC);
             this.pnlCrearCuenta.Controls.Add(this.txtNacionalidad);
             this.pnlCrearCuenta.Controls.Add(this.txtCorreoElectronico);
-            this.pnlCrearCuenta.Controls.Add(this.btnLimpiar);
             this.pnlCrearCuenta.Controls.Add(this.txtDireccion);
             this.pnlCrearCuenta.Controls.Add(this.txtApellido);
+            this.pnlCrearCuenta.Controls.Add(this.txtId);
             this.pnlCrearCuenta.Controls.Add(this.txtNombre);
             this.pnlCrearCuenta.Controls.Add(this.label9);
             this.pnlCrearCuenta.Controls.Add(this.label4);
@@ -1108,6 +1110,7 @@
             this.pnlCrearCuenta.Controls.Add(this.label12);
             this.pnlCrearCuenta.Controls.Add(this.label11);
             this.pnlCrearCuenta.Controls.Add(this.label8);
+            this.pnlCrearCuenta.Controls.Add(this.lblId);
             this.pnlCrearCuenta.Controls.Add(this.label10);
             this.pnlCrearCuenta.Controls.Add(this.label7);
             this.pnlCrearCuenta.Controls.Add(this.label13);
@@ -1125,9 +1128,9 @@
             this.pnlBuscarCliente.Controls.Add(this.dgvBuscarClientes);
             this.pnlBuscarCliente.Controls.Add(this.txtBuscar);
             this.pnlBuscarCliente.Controls.Add(this.label5);
-            this.pnlBuscarCliente.Location = new System.Drawing.Point(-1, -1);
+            this.pnlBuscarCliente.Location = new System.Drawing.Point(6, 114);
             this.pnlBuscarCliente.Name = "pnlBuscarCliente";
-            this.pnlBuscarCliente.Size = new System.Drawing.Size(462, 588);
+            this.pnlBuscarCliente.Size = new System.Drawing.Size(473, 588);
             this.pnlBuscarCliente.TabIndex = 106;
             this.pnlBuscarCliente.Visible = false;
             // 
@@ -1145,13 +1148,17 @@
             // 
             this.dgvBuscarClientes.AllowUserToAddRows = false;
             this.dgvBuscarClientes.AllowUserToDeleteRows = false;
+            this.dgvBuscarClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvBuscarClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvBuscarClientes.BackgroundColor = System.Drawing.Color.LightPink;
             this.dgvBuscarClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBuscarClientes.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvBuscarClientes.Location = new System.Drawing.Point(0, 92);
             this.dgvBuscarClientes.Name = "dgvBuscarClientes";
             this.dgvBuscarClientes.ReadOnly = true;
-            this.dgvBuscarClientes.Size = new System.Drawing.Size(462, 496);
+            this.dgvBuscarClientes.Size = new System.Drawing.Size(473, 496);
             this.dgvBuscarClientes.TabIndex = 0;
+            this.dgvBuscarClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscarClientes_CellDoubleClick);
             // 
             // txtBuscar
             // 
@@ -1164,6 +1171,7 @@
             // 
             // cmbSexo
             // 
+            this.cmbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSexo.FormattingEnabled = true;
             this.cmbSexo.Items.AddRange(new object[] {
             "Masculino",
@@ -1172,16 +1180,6 @@
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Size = new System.Drawing.Size(134, 32);
             this.cmbSexo.TabIndex = 18;
-            // 
-            // label3
-            // 
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
-            this.label3.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label3.Location = new System.Drawing.Point(257, 42);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 56);
-            this.label3.TabIndex = 16;
             // 
             // mskCedula
             // 
@@ -1198,12 +1196,15 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.Crimson;
-            this.btnBuscar.Location = new System.Drawing.Point(326, 52);
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(305, 24);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(103, 33);
+            this.btnBuscar.Size = new System.Drawing.Size(124, 53);
             this.btnBuscar.TabIndex = 105;
             this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -1214,10 +1215,10 @@
             this.btnNuevoCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevoCliente.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoCliente.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoCliente.Location = new System.Drawing.Point(23, 518);
+            this.btnNuevoCliente.Location = new System.Drawing.Point(76, 516);
             this.btnNuevoCliente.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnNuevoCliente.Name = "btnNuevoCliente";
-            this.btnNuevoCliente.Size = new System.Drawing.Size(199, 57);
+            this.btnNuevoCliente.Size = new System.Drawing.Size(282, 57);
             this.btnNuevoCliente.TabIndex = 7;
             this.btnNuevoCliente.Text = "Añadir Cliente";
             this.btnNuevoCliente.UseVisualStyleBackColor = false;
@@ -1238,21 +1239,6 @@
             this.txtCorreoElectronico.Name = "txtCorreoElectronico";
             this.txtCorreoElectronico.Size = new System.Drawing.Size(395, 33);
             this.txtCorreoElectronico.TabIndex = 4;
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.Crimson;
-            this.btnLimpiar.FlatAppearance.BorderSize = 0;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(271, 518);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(171, 57);
-            this.btnLimpiar.TabIndex = 7;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = false;
             // 
             // txtDireccion
             // 
@@ -1472,45 +1458,45 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Buscar Cliente";
             // 
-            // radioButton4
+            // rdFullSegSalud
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(16, 92);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(58, 28);
-            this.radioButton4.TabIndex = 118;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "full";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rdFullSegSalud.AutoSize = true;
+            this.rdFullSegSalud.Location = new System.Drawing.Point(16, 92);
+            this.rdFullSegSalud.Name = "rdFullSegSalud";
+            this.rdFullSegSalud.Size = new System.Drawing.Size(61, 28);
+            this.rdFullSegSalud.TabIndex = 118;
+            this.rdFullSegSalud.TabStop = true;
+            this.rdFullSegSalud.Text = "Full";
+            this.rdFullSegSalud.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // rdSemiFullSegSalud
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(16, 64);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(110, 28);
-            this.radioButton5.TabIndex = 119;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "semi full";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.rdSemiFullSegSalud.AutoSize = true;
+            this.rdSemiFullSegSalud.Location = new System.Drawing.Point(16, 64);
+            this.rdSemiFullSegSalud.Name = "rdSemiFullSegSalud";
+            this.rdSemiFullSegSalud.Size = new System.Drawing.Size(115, 28);
+            this.rdSemiFullSegSalud.TabIndex = 119;
+            this.rdSemiFullSegSalud.TabStop = true;
+            this.rdSemiFullSegSalud.Text = "Semi Full";
+            this.rdSemiFullSegSalud.UseVisualStyleBackColor = true;
             // 
-            // radioButton6
+            // rdBasicoSegSalud
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(16, 36);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(107, 28);
-            this.radioButton6.TabIndex = 120;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Regular";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.rdBasicoSegSalud.AutoSize = true;
+            this.rdBasicoSegSalud.Location = new System.Drawing.Point(16, 36);
+            this.rdBasicoSegSalud.Name = "rdBasicoSegSalud";
+            this.rdBasicoSegSalud.Size = new System.Drawing.Size(93, 28);
+            this.rdBasicoSegSalud.TabIndex = 120;
+            this.rdBasicoSegSalud.TabStop = true;
+            this.rdBasicoSegSalud.Text = "Básico";
+            this.rdBasicoSegSalud.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.radioButton5);
-            this.groupBox2.Controls.Add(this.radioButton4);
-            this.groupBox2.Controls.Add(this.radioButton6);
+            this.groupBox2.Controls.Add(this.rdSemiFullSegSalud);
+            this.groupBox2.Controls.Add(this.rdFullSegSalud);
+            this.groupBox2.Controls.Add(this.rdBasicoSegSalud);
             this.groupBox2.ForeColor = System.Drawing.Color.Firebrick;
             this.groupBox2.Location = new System.Drawing.Point(615, 75);
             this.groupBox2.Name = "groupBox2";
@@ -1701,12 +1687,51 @@
             this.chkSoloId.UseVisualStyleBackColor = false;
             this.chkSoloId.CheckedChanged += new System.EventHandler(this.chkSoloId_CheckedChanged);
             // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblId.Location = new System.Drawing.Point(27, 70);
+            this.lblId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(34, 24);
+            this.lblId.TabIndex = 0;
+            this.lblId.Text = "Id:";
+            this.lblId.Visible = false;
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(67, 66);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(88, 33);
+            this.txtId.TabIndex = 0;
+            this.txtId.Visible = false;
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.BackColor = System.Drawing.Color.White;
+            this.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.ForeColor = System.Drawing.Color.Crimson;
+            this.btnNuevo.Location = new System.Drawing.Point(305, 83);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(124, 33);
+            this.btnNuevo.TabIndex = 105;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
             // frmSeguroVida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1343, 713);
+            this.Controls.Add(this.pnlBuscarCliente);
             this.Controls.Add(this.pnlCrearCuenta);
             this.Controls.Add(this.pnlVidaSalud);
             this.Controls.Add(this.pnlVidaSaludDependientes);
@@ -1765,11 +1790,11 @@
         private System.Windows.Forms.Label lblCerrarRiesgoMuerte;
         private System.Windows.Forms.Label label104;
         private System.Windows.Forms.Panel pnlVidaSalud;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button AC_SeguroSalud;
         private System.Windows.Forms.Button btnSIGUIENTEpnlVidaSalud;
         private System.Windows.Forms.Label lblCerrar_pnlVidaSalud;
-        private System.Windows.Forms.TextBox textBox57;
-        private System.Windows.Forms.TextBox textBox58;
+        private System.Windows.Forms.TextBox txtAntecedentesPersonales;
+        private System.Windows.Forms.TextBox txtInstitutoDondeLabora;
         private System.Windows.Forms.Label label89;
         private System.Windows.Forms.Label label90;
         private System.Windows.Forms.Label label84;
@@ -1835,13 +1860,11 @@
         private System.Windows.Forms.DataGridView dgvBuscarClientes;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.ComboBox cmbSexo;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MaskedTextBox mskCedula;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnNuevoCliente;
         private System.Windows.Forms.TextBox txtRNC;
         private System.Windows.Forms.TextBox txtCorreoElectronico;
-        private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtNombre;
@@ -1863,9 +1886,9 @@
         private System.Windows.Forms.Label lblCerrar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RadioButton rdSemiFullSegSalud;
+        private System.Windows.Forms.RadioButton rdFullSegSalud;
+        private System.Windows.Forms.RadioButton rdBasicoSegSalud;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.RadioButton radioButton7;
         private System.Windows.Forms.RadioButton radioButton8;
@@ -1882,5 +1905,8 @@
         private System.Windows.Forms.TextBox txtNacionalidad;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox chkSoloId;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.Button btnNuevo;
     }
 }

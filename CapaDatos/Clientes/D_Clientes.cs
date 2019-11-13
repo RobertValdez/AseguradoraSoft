@@ -35,6 +35,12 @@ namespace CapaDatos.Clientes
             cmd.CommandText = "InsertarCliente";
             cmd.CommandType = CommandType.StoredProcedure;
 
+            SqlParameter parId = new SqlParameter();
+            parId.ParameterName = "@id";
+            parId.SqlDbType = SqlDbType.Int;
+            parId.Direction = ParameterDirection.Output;
+            cmd.Parameters.Add(parId);
+
             SqlParameter parNombre = new SqlParameter();
             parNombre.ParameterName = "@Nombre";
             parNombre.SqlDbType = SqlDbType.VarChar;
@@ -104,9 +110,11 @@ namespace CapaDatos.Clientes
             parFechaHora.Value = eClie.FechaHora;
             cmd.Parameters.Add(parFechaHora);
 
-            int rsp = cmd.ExecuteNonQuery();
+            cmd.ExecuteNonQuery();
             strcon.Close();
-            return rsp;
+            SqlParameter parReturnId = cmd.Parameters["@id"];
+
+            return Convert.ToInt32(parReturnId.Value);
         }
 
         public int ModificarEmpleado(E_Clientes eClie)
