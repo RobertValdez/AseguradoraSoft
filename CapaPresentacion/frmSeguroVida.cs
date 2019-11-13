@@ -81,12 +81,15 @@ namespace CapaPresentacion
 
         private void btnNuevoCliente_Click(object sender, EventArgs e)
         {
+            QuitarErrorProvider();
+            ValidarCamposCliente();
             InsertarCliente();
         }
         public void InsertarCliente()
         {
             try
             {
+
                 if (!txtId.Text.Equals(""))
                 {
                     MessageBox.Show("El Cliente ya existe. Haga clic en Nuevo para añadir a otro cliente.", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -189,41 +192,71 @@ namespace CapaPresentacion
 
         private void btnSIGUIENTEpnlVidaSalud_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text == "" || txtApellido.Text == "" || txtDireccion.Text == "" || mskCedula.Text == "   -       -" || mskTelefono.Text == "" || txtCorreoElectronico.Text == "" || txtNacionalidad.Text == "" || cmbSexo.Text == ""
-                || txtAntecedentesPersonales.Text == "" || txtInstitutoDondeLabora.Text == "" || (rbBasicoSegSalud.Checked == false && rbSemiFullSegSalud.Checked == false && rbFullSegSalud.Checked == false))
+            try
             {
-                MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (txtNombre.ReadOnly == true) // False aquí: Significa que está añadido como cliente en la Base de Datos
-            {
-                string strRb_Categoria = "";
-                if (rbBasicoSegSalud.Checked == true)
+                QuitarErrorProviderSegSalud();
+                ValidarCamposSegSalud();
+                if (txtNombre.Text == "" || txtApellido.Text == "" || txtDireccion.Text == "" || mskCedula.Text == "   -       -" || mskTelefono.Text == "" || txtCorreoElectronico.Text == "" || txtNacionalidad.Text == "" || cmbSexo.Text == ""
+                    || txtAntecedentesPersonales.Text == "" || txtInstitutoDondeLabora.Text == "" || (rbBasicoSegSalud.Checked == false && rbSemiFullSegSalud.Checked == false && rbFullSegSalud.Checked == false))
                 {
-                    strRb_Categoria = "Básico";
+                    MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else if (rbSemiFullSegSalud.Checked == true)
+                else if (txtNombre.ReadOnly == true) // False aquí: Significa que está añadido como cliente en la Base de Datos
                 {
-                    strRb_Categoria = "Semi Full";
-                }
-                else if (rbFullSegSalud.Checked == true)
-                {
-                    strRb_Categoria = "Full";
-                }
-                frmFacturas frmFac = new frmFacturas();
+                    string strRb_Categoria = "";
+                    if (rbBasicoSegSalud.Checked == true)
+                    {
+                        strRb_Categoria = "Básico";
+                    }
+                    else if (rbSemiFullSegSalud.Checked == true)
+                    {
+                        strRb_Categoria = "Semi Full";
+                    }
+                    else if (rbFullSegSalud.Checked == true)
+                    {
+                        strRb_Categoria = "Full";
+                    }
+                    frmFacturas frmFac = new frmFacturas();
 
-                frmFac.txtId.Text = txtId.Text;
-                frmFac.txtCliente.Text = txtNombre.Text + " " + txtApellido.Text;
-                frmFac.txtCedula.Text = mskCedula.Text;
-                frmFac.txtSeguroA_Adquirir.Text = lblSeguroSalud.Text;
-                frmFac.txtEfectoA_Asegurar.Text = "N/A";
-                frmFac.txtCategoria.Text = strRb_Categoria;
+                    frmFac.txtId.Text = txtId.Text;
+                    frmFac.txtCliente.Text = txtNombre.Text + " " + txtApellido.Text;
+                    frmFac.txtCedula.Text = mskCedula.Text;
+                    frmFac.txtSeguroA_Adquirir.Text = lblSeguroSalud.Text;
+                    frmFac.txtEfectoA_Asegurar.Text = "N/A";
+                    frmFac.txtCategoria.Text = strRb_Categoria;
 
-                frmFac.ShowDialog();
+                    frmFac.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Añada el Cliente actual para poder continuar.", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            else
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private bool ValidarCamposSegSalud()
+        {
+            bool ok = true;
+
+            if (txtInstitutoDondeLabora.Text == "")
             {
-                MessageBox.Show("Añada el Cliente actual para poder continuar.", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ok = false;
+                errorProvider1.SetError(txtInstitutoDondeLabora, "Campo obligatorio");
             }
+            if (txtAntecedentesPersonales.Text == "")
+            {
+                ok = false;
+                errorProvider1.SetError(txtAntecedentesPersonales, "Campo obligatorio");
+            }
+
+            return ok;
+        }
+
+        private void QuitarErrorProviderSegSalud()
+        {
+            errorProvider1.SetError(txtInstitutoDondeLabora, "");
+            errorProvider1.SetError(txtAntecedentesPersonales, "");
         }
 
         private void dgvBuscarClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -275,36 +308,83 @@ namespace CapaPresentacion
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            csLimpiar L = new csLimpiar();
+            L.BorrarCampos(pnlCliente);
+
             lblId.Visible = false;
             txtId.Visible = false;
-            txtId.Text = "";
 
             txtNombre.ReadOnly = false;
-            txtNombre.Text = "";
-
             txtApellido.ReadOnly = false;
-            txtApellido.Text = "";
-
             txtDireccion.ReadOnly = false;
-            txtDireccion.Text = "";
-
             mskCedula.ReadOnly = false;
-            mskCedula.Text = "";
-
             mskTelefono.ReadOnly = false;
-            mskTelefono.Text = "";
-
             txtCorreoElectronico.ReadOnly = false;
-            txtCorreoElectronico.Text = "";
-
             txtNacionalidad.ReadOnly = false;
-            txtNacionalidad.Text = "";
-
             cmbSexo.Enabled = true;
-
             txtRNC.ReadOnly = false;
-            txtRNC.Text = "";
 
+            QuitarErrorProvider();
+        }
+
+        private bool ValidarCamposCliente()
+        {
+            bool ok = true;
+
+            if (txtNombre.Text == "")
+            {
+                ok = false;
+                errorProvider1.SetError(txtNombre, "Escriba el Nombre");
+            }
+
+            if (txtApellido.Text == "")
+            {
+                ok = false;
+                errorProvider1.SetError(txtApellido, "Escriba el Apellido");
+            }
+            if (txtDireccion.Text == "")
+            {
+                ok = false;
+                errorProvider1.SetError(txtDireccion, "Escriba la Dirección");
+            }
+            if (mskCedula.Text == "   -       -")
+            {
+                ok = false;
+                errorProvider1.SetError(mskCedula, "Escriba la Cédula");
+            }
+            if (mskTelefono.Text == "(   )-   -")
+            {
+                ok = false;
+                errorProvider1.SetError(mskTelefono, "Escriba el Telefono");
+            }
+            if (txtNacionalidad.Text == "")
+            {
+                ok = false;
+                errorProvider1.SetError(txtNacionalidad, "Escriba la Nacionalidad");
+            }
+            if (txtCorreoElectronico.Text == "")
+            {
+                ok = false;
+                errorProvider1.SetError(txtCorreoElectronico, "Escriba el Correo Electrónico");
+            }
+            if (cmbSexo.Text == "")
+            {
+                ok = false;
+                errorProvider1.SetError(cmbSexo, "Indique el Sexo");
+            }
+
+            return ok;
+        }
+        private void QuitarErrorProvider()
+        {
+            errorProvider1.SetError(txtNombre, "");
+            errorProvider1.SetError(txtApellido, "");
+            errorProvider1.SetError(txtDireccion, "");
+            errorProvider1.SetError(mskCedula, "");
+            errorProvider1.SetError(mskTelefono, "");
+            errorProvider1.SetError(txtNacionalidad, "");
+            errorProvider1.SetError(txtCorreoElectronico, "");
+            errorProvider1.SetError(cmbSexo, "");
         }
     }
 }

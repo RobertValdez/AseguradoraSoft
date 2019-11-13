@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="csLimpiar.cs" />
     <Compile Include="frmDescripcionSeguros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +146,7 @@
     <Compile Include="frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Validacion.cs" />
     <EmbeddedResource Include="frmDescripcionSeguros.resx">
       <DependentUpon>frmDescripcionSeguros.cs</DependentUpon>
     </EmbeddedResource>

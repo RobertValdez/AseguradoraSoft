@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSeguroVida));
             this.pnlVidaRiesgoMuerte = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -119,7 +120,7 @@
             this.btnSeguroSalud = new System.Windows.Forms.Button();
             this.btnRiesgoMuerte = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.pnlCrearCuenta = new System.Windows.Forms.Panel();
+            this.pnlCliente = new System.Windows.Forms.Panel();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.cmbSexo = new System.Windows.Forms.ComboBox();
             this.mskTelefono = new System.Windows.Forms.MaskedTextBox();
@@ -157,6 +158,7 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlVidaRiesgoMuerte.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.pnlVidaSalud.SuspendLayout();
@@ -168,10 +170,11 @@
             this.pnlVidaRiesgosLaborales_BuscarEmpresa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnlVida.SuspendLayout();
-            this.pnlCrearCuenta.SuspendLayout();
+            this.pnlCliente.SuspendLayout();
             this.pnlBuscarCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscarClientes)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlVidaRiesgoMuerte
@@ -1273,49 +1276,49 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Seguros de Vida";
             // 
-            // pnlCrearCuenta
+            // pnlCliente
             // 
-            this.pnlCrearCuenta.BackColor = System.Drawing.Color.White;
-            this.pnlCrearCuenta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlCrearCuenta.Controls.Add(this.btnNuevo);
-            this.pnlCrearCuenta.Controls.Add(this.cmbSexo);
-            this.pnlCrearCuenta.Controls.Add(this.mskTelefono);
-            this.pnlCrearCuenta.Controls.Add(this.mskCedula);
-            this.pnlCrearCuenta.Controls.Add(this.btnBuscar);
-            this.pnlCrearCuenta.Controls.Add(this.btnNuevoCliente);
-            this.pnlCrearCuenta.Controls.Add(this.txtRNC);
-            this.pnlCrearCuenta.Controls.Add(this.txtNacionalidad);
-            this.pnlCrearCuenta.Controls.Add(this.txtCorreoElectronico);
-            this.pnlCrearCuenta.Controls.Add(this.txtDireccion);
-            this.pnlCrearCuenta.Controls.Add(this.txtApellido);
-            this.pnlCrearCuenta.Controls.Add(this.txtId);
-            this.pnlCrearCuenta.Controls.Add(this.txtNombre);
-            this.pnlCrearCuenta.Controls.Add(this.label9);
-            this.pnlCrearCuenta.Controls.Add(this.label4);
-            this.pnlCrearCuenta.Controls.Add(this.label15);
-            this.pnlCrearCuenta.Controls.Add(this.label6);
-            this.pnlCrearCuenta.Controls.Add(this.label14);
-            this.pnlCrearCuenta.Controls.Add(this.label12);
-            this.pnlCrearCuenta.Controls.Add(this.label11);
-            this.pnlCrearCuenta.Controls.Add(this.label8);
-            this.pnlCrearCuenta.Controls.Add(this.lblId);
-            this.pnlCrearCuenta.Controls.Add(this.label10);
-            this.pnlCrearCuenta.Controls.Add(this.label7);
-            this.pnlCrearCuenta.Controls.Add(this.label13);
-            this.pnlCrearCuenta.Location = new System.Drawing.Point(5, 113);
-            this.pnlCrearCuenta.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pnlCrearCuenta.Name = "pnlCrearCuenta";
-            this.pnlCrearCuenta.Size = new System.Drawing.Size(460, 588);
-            this.pnlCrearCuenta.TabIndex = 118;
+            this.pnlCliente.BackColor = System.Drawing.Color.White;
+            this.pnlCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCliente.Controls.Add(this.btnNuevo);
+            this.pnlCliente.Controls.Add(this.cmbSexo);
+            this.pnlCliente.Controls.Add(this.mskTelefono);
+            this.pnlCliente.Controls.Add(this.mskCedula);
+            this.pnlCliente.Controls.Add(this.btnBuscar);
+            this.pnlCliente.Controls.Add(this.btnNuevoCliente);
+            this.pnlCliente.Controls.Add(this.txtRNC);
+            this.pnlCliente.Controls.Add(this.txtNacionalidad);
+            this.pnlCliente.Controls.Add(this.txtCorreoElectronico);
+            this.pnlCliente.Controls.Add(this.txtDireccion);
+            this.pnlCliente.Controls.Add(this.txtApellido);
+            this.pnlCliente.Controls.Add(this.txtId);
+            this.pnlCliente.Controls.Add(this.txtNombre);
+            this.pnlCliente.Controls.Add(this.label9);
+            this.pnlCliente.Controls.Add(this.label4);
+            this.pnlCliente.Controls.Add(this.label15);
+            this.pnlCliente.Controls.Add(this.label6);
+            this.pnlCliente.Controls.Add(this.label14);
+            this.pnlCliente.Controls.Add(this.label12);
+            this.pnlCliente.Controls.Add(this.label11);
+            this.pnlCliente.Controls.Add(this.label8);
+            this.pnlCliente.Controls.Add(this.lblId);
+            this.pnlCliente.Controls.Add(this.label10);
+            this.pnlCliente.Controls.Add(this.label7);
+            this.pnlCliente.Controls.Add(this.label13);
+            this.pnlCliente.Location = new System.Drawing.Point(5, 113);
+            this.pnlCliente.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pnlCliente.Name = "pnlCliente";
+            this.pnlCliente.Size = new System.Drawing.Size(460, 588);
+            this.pnlCliente.TabIndex = 118;
             // 
             // btnNuevo
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.White;
             this.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.Crimson;
-            this.btnNuevo.Location = new System.Drawing.Point(305, 83);
+            this.btnNuevo.Location = new System.Drawing.Point(311, 83);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(124, 33);
@@ -1330,7 +1333,8 @@
             this.cmbSexo.FormattingEnabled = true;
             this.cmbSexo.Items.AddRange(new object[] {
             "Masculino",
-            "Femenino"});
+            "Femenino",
+            " "});
             this.cmbSexo.Location = new System.Drawing.Point(27, 450);
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Size = new System.Drawing.Size(134, 32);
@@ -1338,10 +1342,10 @@
             // 
             // mskTelefono
             // 
-            this.mskTelefono.Location = new System.Drawing.Point(193, 259);
+            this.mskTelefono.Location = new System.Drawing.Point(201, 259);
             this.mskTelefono.Mask = "(000)-000-0000";
             this.mskTelefono.Name = "mskTelefono";
-            this.mskTelefono.Size = new System.Drawing.Size(229, 33);
+            this.mskTelefono.Size = new System.Drawing.Size(226, 33);
             this.mskTelefono.TabIndex = 8;
             // 
             // mskCedula
@@ -1361,7 +1365,7 @@
             this.btnBuscar.ForeColor = System.Drawing.Color.Crimson;
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(305, 24);
+            this.btnBuscar.Location = new System.Drawing.Point(311, 24);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(124, 53);
@@ -1389,10 +1393,10 @@
             // 
             // txtRNC
             // 
-            this.txtRNC.Location = new System.Drawing.Point(168, 449);
+            this.txtRNC.Location = new System.Drawing.Point(176, 449);
             this.txtRNC.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtRNC.Name = "txtRNC";
-            this.txtRNC.Size = new System.Drawing.Size(254, 33);
+            this.txtRNC.Size = new System.Drawing.Size(251, 33);
             this.txtRNC.TabIndex = 4;
             // 
             // txtNacionalidad
@@ -1400,7 +1404,7 @@
             this.txtNacionalidad.Location = new System.Drawing.Point(27, 321);
             this.txtNacionalidad.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtNacionalidad.Name = "txtNacionalidad";
-            this.txtNacionalidad.Size = new System.Drawing.Size(395, 33);
+            this.txtNacionalidad.Size = new System.Drawing.Size(400, 33);
             this.txtNacionalidad.TabIndex = 4;
             // 
             // txtCorreoElectronico
@@ -1408,20 +1412,20 @@
             this.txtCorreoElectronico.Location = new System.Drawing.Point(27, 383);
             this.txtCorreoElectronico.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtCorreoElectronico.Name = "txtCorreoElectronico";
-            this.txtCorreoElectronico.Size = new System.Drawing.Size(395, 33);
+            this.txtCorreoElectronico.Size = new System.Drawing.Size(400, 33);
             this.txtCorreoElectronico.TabIndex = 4;
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(27, 196);
+            this.txtDireccion.Location = new System.Drawing.Point(25, 196);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(395, 33);
+            this.txtDireccion.Size = new System.Drawing.Size(402, 33);
             this.txtDireccion.TabIndex = 2;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(173, 132);
+            this.txtApellido.Location = new System.Drawing.Point(178, 132);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(249, 33);
@@ -1439,7 +1443,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(27, 132);
+            this.txtNombre.Location = new System.Drawing.Point(23, 129);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(138, 33);
@@ -1460,7 +1464,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Firebrick;
-            this.label4.Location = new System.Drawing.Point(164, 485);
+            this.label4.Location = new System.Drawing.Point(172, 485);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(116, 24);
@@ -1471,7 +1475,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.Firebrick;
-            this.label15.Location = new System.Drawing.Point(173, 421);
+            this.label15.Location = new System.Drawing.Point(181, 421);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(61, 24);
@@ -1515,7 +1519,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.Firebrick;
-            this.label11.Location = new System.Drawing.Point(198, 232);
+            this.label11.Location = new System.Drawing.Point(206, 232);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(104, 24);
@@ -1526,7 +1530,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Firebrick;
-            this.label8.Location = new System.Drawing.Point(168, 105);
+            this.label8.Location = new System.Drawing.Point(173, 105);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 24);
@@ -1725,6 +1729,10 @@
             this.label31.TabIndex = 1;
             this.label31.Text = "Cédula:";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmSeguroVida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
@@ -1732,7 +1740,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1343, 713);
             this.Controls.Add(this.pnlBuscarCliente);
-            this.Controls.Add(this.pnlCrearCuenta);
+            this.Controls.Add(this.pnlCliente);
             this.Controls.Add(this.pnlVidaSalud);
             this.Controls.Add(this.pnlVidaSaludDependientes);
             this.Controls.Add(this.pnlVidaRiesgosLaborales);
@@ -1766,13 +1774,14 @@
             this.pnlVidaRiesgosLaborales_BuscarEmpresa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.pnlVida.ResumeLayout(false);
-            this.pnlCrearCuenta.ResumeLayout(false);
-            this.pnlCrearCuenta.PerformLayout();
+            this.pnlCliente.ResumeLayout(false);
+            this.pnlCliente.PerformLayout();
             this.pnlBuscarCliente.ResumeLayout(false);
             this.pnlBuscarCliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscarClientes)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1854,7 +1863,7 @@
         private System.Windows.Forms.Button btnSeguroSalud;
         private System.Windows.Forms.Button btnRiesgoMuerte;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel pnlCrearCuenta;
+        private System.Windows.Forms.Panel pnlCliente;
         private System.Windows.Forms.Panel pnlBuscarCliente;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvBuscarClientes;
@@ -1908,5 +1917,6 @@
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

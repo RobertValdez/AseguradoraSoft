@@ -537,6 +537,7 @@
             this.Name = "frmFacturas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Facturas";
+            this.Load += new System.EventHandler(this.frmFacturas_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmFacturas_MouseDown);
             this.pnlResumenSolicitud.ResumeLayout(false);
             this.pnlResumenSolicitud.PerformLayout();

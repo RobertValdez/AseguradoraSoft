@@ -13,7 +13,6 @@ namespace CapaPresentacion
 {
     public partial class frmFacturas : Form
     {
-        static string Id, nombreApellido, cedula, seguroA_Adquirir, efectoA_Asegurar, Categoria;
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -24,8 +23,6 @@ namespace CapaPresentacion
         public frmFacturas()
         {
             InitializeComponent();
-
-            RecibirDatos();
         }
 
         private void pnlResumenSolicitud_MouseDown(object sender, MouseEventArgs e)
@@ -40,27 +37,6 @@ namespace CapaPresentacion
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        public void RecibirDatos()
-        {
-            txtId.Text = Id;
-            txtCliente.Text = nombreApellido;
-            txtCedula.Text = cedula;
-            txtSeguroA_Adquirir.Text = seguroA_Adquirir;
-            txtEfectoA_Asegurar.Text = efectoA_Asegurar;
-            txtCategoria.Text = Categoria;
-        }
-
-        public frmFacturas(string id, string NombreApellido,
-            string Cedula, string SeguroA_Adquirir, string efectoAsegurar, string categoria)
-        {
-            Id = id;
-            nombreApellido = NombreApellido;
-            cedula = Cedula;
-            seguroA_Adquirir = SeguroA_Adquirir;
-            efectoA_Asegurar = efectoAsegurar;
-            Categoria = categoria;
-        }
-
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -72,6 +48,11 @@ namespace CapaPresentacion
         }
 
         private void btnSolicitar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmFacturas_Load(object sender, EventArgs e)
         {
 
         }
