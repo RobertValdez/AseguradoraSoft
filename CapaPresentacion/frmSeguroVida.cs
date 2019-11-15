@@ -245,6 +245,9 @@ namespace CapaPresentacion
         private void btnSIGUIENTEpnlVidaSalud_Click(object sender, EventArgs e)
         {
             Siguiente_pnlVidaSalud();
+
+            mskTelefonoValidar();
+            mskCedulaValidar();
         }
         public void Siguiente_pnlVidaSalud()
         {

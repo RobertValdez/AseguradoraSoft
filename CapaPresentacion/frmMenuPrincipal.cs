@@ -122,5 +122,10 @@ namespace CapaPresentacion
             frmVida.MdiParent = this;
             frmVida.Show();
         }
+
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

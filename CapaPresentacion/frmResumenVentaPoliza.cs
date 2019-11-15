@@ -98,7 +98,7 @@ namespace CapaPresentacion
             E_ResumenVentaPoliza.IdCliente = Convert.ToInt32(txtId.Text);
             E_ResumenVentaPoliza.IdEmpleado = varIdEmpleado;
             E_ResumenVentaPoliza.Total = Convert.ToDecimal(txtTotal_A_Pagar.Text);
-            // E_ResumenVentaPoliza.Id_ctVida = 
+
             E_ResumenVentaPoliza.InstitutoDondeLabora = strInstitutoDondeLabora;
             E_ResumenVentaPoliza.FechaHora = DateTime.Now;
             E_ResumenVentaPoliza.AntecedentesPersonales = strAntecedentesPersonales;
@@ -109,7 +109,17 @@ namespace CapaPresentacion
 
             E_ResumenVentaPoliza.Vencimiento = FechaA_Vencer(DateTime.Now.Date);
 
-            B_ResumenVentaPoliza.CrearPoliza(E_ResumenVentaPoliza);
+            if (MessageBox.Show("¿Está seguro que desea realizar el pago y crear una póliza de seguro para el cliente actual?","", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (B_ResumenVentaPoliza.CrearPoliza(E_ResumenVentaPoliza) == 3)
+                {
+                    MessageBox.Show("Poliza creada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error inesperado.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }  
+            }
         }
         public DateTime FechaA_Vencer(DateTime FechaActual)
         {
@@ -118,8 +128,6 @@ namespace CapaPresentacion
             DateTime fecha = Convert.ToDateTime(strFechaActual, new CultureInfo("es-ES"));
 
             return fecha = fecha.AddDays(180);
-
-          //  string resultado = fecha.ToString("ddMMyyyy");
 
         }
     }

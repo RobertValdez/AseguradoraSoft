@@ -33,6 +33,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnCompras = new System.Windows.Forms.ToolStripMenuItem();
             this.solicitudToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seguroDeVidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.reclamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.devolucionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,7 +52,6 @@
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.lblFechaHora = new System.Windows.Forms.Label();
             this.FechaHora = new System.Windows.Forms.Timer(this.components);
-            this.seguroDeVidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,6 +92,7 @@
             this.btnCompras.Size = new System.Drawing.Size(87, 23);
             this.btnCompras.Text = "Procesos";
             this.btnCompras.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCompras.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
             // solicitudToolStripMenuItem
             // 
@@ -101,6 +102,15 @@
             this.solicitudToolStripMenuItem.Size = new System.Drawing.Size(199, 24);
             this.solicitudToolStripMenuItem.Text = "Solicitud";
             this.solicitudToolStripMenuItem.Click += new System.EventHandler(this.solicitudToolStripMenuItem_Click);
+            // 
+            // seguroDeVidaToolStripMenuItem
+            // 
+            this.seguroDeVidaToolStripMenuItem.BackColor = System.Drawing.Color.Crimson;
+            this.seguroDeVidaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.seguroDeVidaToolStripMenuItem.Name = "seguroDeVidaToolStripMenuItem";
+            this.seguroDeVidaToolStripMenuItem.Size = new System.Drawing.Size(199, 24);
+            this.seguroDeVidaToolStripMenuItem.Text = "Seguro de Vida";
+            this.seguroDeVidaToolStripMenuItem.Click += new System.EventHandler(this.seguroDeVidaToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem1
             // 
@@ -151,6 +161,7 @@
             this.sdfsdfToolStripMenuItem.Name = "sdfsdfToolStripMenuItem";
             this.sdfsdfToolStripMenuItem.Size = new System.Drawing.Size(144, 23);
             this.sdfsdfToolStripMenuItem.Text = "Mantenimientos";
+            this.sdfsdfToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
             // empleadosToolStripMenuItem
             // 
@@ -165,8 +176,10 @@
             // 
             // cargoToolStripMenuItem
             // 
+            this.cargoToolStripMenuItem.BackColor = System.Drawing.Color.Crimson;
+            this.cargoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.cargoToolStripMenuItem.Name = "cargoToolStripMenuItem";
-            this.cargoToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
+            this.cargoToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.cargoToolStripMenuItem.Text = "Cargo";
             // 
             // clientesToolStripMenuItem1
@@ -204,6 +217,7 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(94, 23);
             this.toolStripMenuItem1.Text = "Consultas";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -213,6 +227,7 @@
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(86, 23);
             this.toolStripMenuItem2.Text = "Reportes";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
@@ -224,13 +239,14 @@
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(148, 23);
             this.toolStripMenuItem3.Text = "Configuraciones";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.BackColor = System.Drawing.Color.Crimson;
             this.usuariosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
@@ -242,6 +258,7 @@
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
             this.ventasToolStripMenuItem.Size = new System.Drawing.Size(74, 23);
             this.ventasToolStripMenuItem.Text = "Ayuda";
+            this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
             // btnCerrarSesion
             // 
@@ -273,15 +290,6 @@
             // FechaHora
             // 
             this.FechaHora.Tick += new System.EventHandler(this.FechaHora_Tick);
-            // 
-            // seguroDeVidaToolStripMenuItem
-            // 
-            this.seguroDeVidaToolStripMenuItem.BackColor = System.Drawing.Color.Crimson;
-            this.seguroDeVidaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.seguroDeVidaToolStripMenuItem.Name = "seguroDeVidaToolStripMenuItem";
-            this.seguroDeVidaToolStripMenuItem.Size = new System.Drawing.Size(199, 24);
-            this.seguroDeVidaToolStripMenuItem.Text = "Seguro de Vida";
-            this.seguroDeVidaToolStripMenuItem.Click += new System.EventHandler(this.seguroDeVidaToolStripMenuItem_Click);
             // 
             // frmMenuPrincipal
             // 

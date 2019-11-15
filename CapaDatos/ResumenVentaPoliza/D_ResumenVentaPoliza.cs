@@ -78,7 +78,7 @@ namespace CapaDatos.ResumenVentaPoliza
             SqlParameter parFecha = new SqlParameter();
             parFecha.ParameterName = "@Fecha";
             parFecha.SqlDbType = SqlDbType.Date;
-            parFecha.Value = parFecha;
+            parFecha.Value = rVPoliza.Fecha;
             cmd.Parameters.Add(parFecha);
 
             SqlParameter parTipo = new SqlParameter();
@@ -107,8 +107,7 @@ namespace CapaDatos.ResumenVentaPoliza
             cmd.Parameters.Add(parVencimiento);
 
 
-            int a = 0;
-                cmd.ExecuteNonQuery();
+            int a = cmd.ExecuteNonQuery();
             cmd.Clone();
             return a;
 
