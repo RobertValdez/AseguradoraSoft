@@ -18,9 +18,13 @@ namespace CapaNegocio.SeguroVida
         {
             return D_SeguroVida.D_MostrarSegurosDePolizas();
         }
-        public DataTable B_CargarNombreEmpleado(E_SeguroVida e_SegVida)
+        public void B_CargarNombreEmpleado(E_SeguroVida e_SegVida)
         {
-           return D_SeguroVida.D_CargarNombreEmpleado(e_SegVida);
+           D_SeguroVida.D_CargarNombreEmpleado(e_SegVida);
+        }
+        public int B_Cargar_id_detalleSeguroSalud(E_SeguroVida e_Seguro)
+        {
+            return D_SeguroVida.D_Cargar_id_detalleSeguroSalud();
         }
     }
 }

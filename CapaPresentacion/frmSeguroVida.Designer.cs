@@ -121,6 +121,7 @@
             this.btnRiesgoMuerte = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlCliente = new System.Windows.Forms.Panel();
+            this.cmbNacionalidad = new System.Windows.Forms.ComboBox();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.cmbSexo = new System.Windows.Forms.ComboBox();
             this.mskTelefono = new System.Windows.Forms.MaskedTextBox();
@@ -158,7 +159,6 @@
             this.lblNombre_empleado = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cmbNacionalidad = new System.Windows.Forms.ComboBox();
             this.pnlVidaRiesgoMuerte.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.pnlVidaSalud.SuspendLayout();
@@ -1311,6 +1311,19 @@
             this.pnlCliente.Size = new System.Drawing.Size(460, 588);
             this.pnlCliente.TabIndex = 118;
             // 
+            // cmbNacionalidad
+            // 
+            this.cmbNacionalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNacionalidad.FormattingEnabled = true;
+            this.cmbNacionalidad.Items.AddRange(new object[] {
+            "dominicana",
+            "extranjera",
+            " "});
+            this.cmbNacionalidad.Location = new System.Drawing.Point(27, 322);
+            this.cmbNacionalidad.Name = "cmbNacionalidad";
+            this.cmbNacionalidad.Size = new System.Drawing.Size(400, 32);
+            this.cmbNacionalidad.TabIndex = 106;
+            // 
             // btnNuevo
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.White;
@@ -1682,7 +1695,7 @@
             // 
             this.lblCedula.AutoSize = true;
             this.lblCedula.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCedula.Location = new System.Drawing.Point(317, 55);
+            this.lblCedula.Location = new System.Drawing.Point(280, 55);
             this.lblCedula.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCedula.Name = "lblCedula";
             this.lblCedula.Size = new System.Drawing.Size(121, 22);
@@ -1705,19 +1718,19 @@
             // 
             this.lblNombre_empleado.AutoSize = true;
             this.lblNombre_empleado.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre_empleado.Location = new System.Drawing.Point(123, 39);
+            this.lblNombre_empleado.Location = new System.Drawing.Point(126, 39);
             this.lblNombre_empleado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre_empleado.Name = "lblNombre_empleado";
-            this.lblNombre_empleado.Size = new System.Drawing.Size(187, 22);
+            this.lblNombre_empleado.Size = new System.Drawing.Size(82, 22);
             this.lblNombre_empleado.TabIndex = 1;
-            this.lblNombre_empleado.Text = "nombre_empleado";
+            this.lblNombre_empleado.Text = "nombre";
             // 
             // label31
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Century Gothic", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.Firebrick;
-            this.label31.Location = new System.Drawing.Point(317, 32);
+            this.label31.Location = new System.Drawing.Point(280, 32);
             this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(84, 23);
@@ -1727,19 +1740,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // cmbNacionalidad
-            // 
-            this.cmbNacionalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbNacionalidad.FormattingEnabled = true;
-            this.cmbNacionalidad.Items.AddRange(new object[] {
-            "dominicana",
-            "extranjera",
-            " "});
-            this.cmbNacionalidad.Location = new System.Drawing.Point(27, 322);
-            this.cmbNacionalidad.Name = "cmbNacionalidad";
-            this.cmbNacionalidad.Size = new System.Drawing.Size(400, 32);
-            this.cmbNacionalidad.TabIndex = 106;
             // 
             // frmSeguroVida
             // 

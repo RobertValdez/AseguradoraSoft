@@ -32,16 +32,16 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.btnCrearCuenta = new System.Windows.Forms.Button();
+            this.btnPagarCrearPoliza = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox82 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.cmbTipo_Pago = new System.Windows.Forms.ComboBox();
+            this.txtTotal_A_Pagar = new System.Windows.Forms.TextBox();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.txtSubTotal = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -52,8 +52,10 @@
             this.btnAtras = new System.Windows.Forms.Button();
             this.lblCerrar = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtIdSeguro = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
@@ -64,8 +66,8 @@
             this.txtSeguroA_Adquirir = new System.Windows.Forms.TextBox();
             this.txtEfectoA_Asegurar = new System.Windows.Forms.TextBox();
             this.txtCategoria = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtIdSeguro = new System.Windows.Forms.TextBox();
+            this.lblParcial = new System.Windows.Forms.Label();
+            this.mskParcial = new System.Windows.Forms.MaskedTextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -102,28 +104,30 @@
             this.button4.Size = new System.Drawing.Size(120, 65);
             this.button4.TabIndex = 252;
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Visible = false;
             // 
-            // btnCrearCuenta
+            // btnPagarCrearPoliza
             // 
-            this.btnCrearCuenta.BackColor = System.Drawing.Color.Crimson;
-            this.btnCrearCuenta.FlatAppearance.BorderSize = 0;
-            this.btnCrearCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrearCuenta.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearCuenta.ForeColor = System.Drawing.Color.White;
-            this.btnCrearCuenta.Location = new System.Drawing.Point(416, 557);
-            this.btnCrearCuenta.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btnCrearCuenta.Name = "btnCrearCuenta";
-            this.btnCrearCuenta.Size = new System.Drawing.Size(538, 65);
-            this.btnCrearCuenta.TabIndex = 251;
-            this.btnCrearCuenta.Text = "Pagar y Crear Póliza";
-            this.btnCrearCuenta.UseVisualStyleBackColor = false;
+            this.btnPagarCrearPoliza.BackColor = System.Drawing.Color.Crimson;
+            this.btnPagarCrearPoliza.FlatAppearance.BorderSize = 0;
+            this.btnPagarCrearPoliza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagarCrearPoliza.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagarCrearPoliza.ForeColor = System.Drawing.Color.White;
+            this.btnPagarCrearPoliza.Location = new System.Drawing.Point(416, 557);
+            this.btnPagarCrearPoliza.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.btnPagarCrearPoliza.Name = "btnPagarCrearPoliza";
+            this.btnPagarCrearPoliza.Size = new System.Drawing.Size(538, 65);
+            this.btnPagarCrearPoliza.TabIndex = 251;
+            this.btnPagarCrearPoliza.Text = "Pagar y Crear Póliza";
+            this.btnPagarCrearPoliza.UseVisualStyleBackColor = false;
+            this.btnPagarCrearPoliza.Click += new System.EventHandler(this.btnPagarCrearPoliza_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textBox82);
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.ForeColor = System.Drawing.Color.Firebrick;
-            this.groupBox2.Location = new System.Drawing.Point(766, 167);
+            this.groupBox2.Location = new System.Drawing.Point(766, 57);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -155,80 +159,82 @@
             this.button3.Text = "Descontar";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // comboBox4
+            // cmbTipo_Pago
             // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.cmbTipo_Pago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipo_Pago.FormattingEnabled = true;
+            this.cmbTipo_Pago.Items.AddRange(new object[] {
             "Al contado",
             "Parcial"});
-            this.comboBox4.Location = new System.Drawing.Point(671, 120);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(145, 32);
-            this.comboBox4.TabIndex = 249;
+            this.cmbTipo_Pago.Location = new System.Drawing.Point(797, 257);
+            this.cmbTipo_Pago.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.cmbTipo_Pago.Name = "cmbTipo_Pago";
+            this.cmbTipo_Pago.Size = new System.Drawing.Size(145, 32);
+            this.cmbTipo_Pago.TabIndex = 249;
+            this.cmbTipo_Pago.SelectedIndexChanged += new System.EventHandler(this.cmbTipo_Pago_SelectedIndexChanged);
             // 
-            // textBox6
+            // txtTotal_A_Pagar
             // 
-            this.textBox6.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.AllUrl;
-            this.textBox6.BackColor = System.Drawing.Color.LightPink;
-            this.textBox6.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(708, 474);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(246, 53);
-            this.textBox6.TabIndex = 245;
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTotal_A_Pagar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.AllUrl;
+            this.txtTotal_A_Pagar.BackColor = System.Drawing.Color.LightPink;
+            this.txtTotal_A_Pagar.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal_A_Pagar.Location = new System.Drawing.Point(708, 474);
+            this.txtTotal_A_Pagar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.txtTotal_A_Pagar.Name = "txtTotal_A_Pagar";
+            this.txtTotal_A_Pagar.ReadOnly = true;
+            this.txtTotal_A_Pagar.Size = new System.Drawing.Size(246, 53);
+            this.txtTotal_A_Pagar.TabIndex = 245;
+            this.txtTotal_A_Pagar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox17
             // 
             this.textBox17.BackColor = System.Drawing.Color.LightPink;
-            this.textBox17.Location = new System.Drawing.Point(848, 429);
+            this.textBox17.Location = new System.Drawing.Point(824, 435);
             this.textBox17.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.textBox17.Name = "textBox17";
             this.textBox17.ReadOnly = true;
-            this.textBox17.Size = new System.Drawing.Size(106, 33);
+            this.textBox17.Size = new System.Drawing.Size(130, 33);
             this.textBox17.TabIndex = 246;
+            this.textBox17.Text = "0.00";
             this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label28
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(688, 432);
+            this.label28.Location = new System.Drawing.Point(688, 438);
             this.label28.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(126, 25);
             this.label28.TabIndex = 240;
             this.label28.Text = "Descuento:";
             // 
-            // textBox16
+            // txtSubTotal
             // 
-            this.textBox16.BackColor = System.Drawing.Color.LightPink;
-            this.textBox16.Location = new System.Drawing.Point(848, 384);
-            this.textBox16.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.ReadOnly = true;
-            this.textBox16.Size = new System.Drawing.Size(106, 33);
-            this.textBox16.TabIndex = 247;
-            this.textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtSubTotal.BackColor = System.Drawing.Color.LightPink;
+            this.txtSubTotal.Location = new System.Drawing.Point(824, 396);
+            this.txtSubTotal.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.txtSubTotal.Name = "txtSubTotal";
+            this.txtSubTotal.ReadOnly = true;
+            this.txtSubTotal.Size = new System.Drawing.Size(130, 33);
+            this.txtSubTotal.TabIndex = 247;
+            this.txtSubTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox13
+            // txtCodigo
             // 
-            this.textBox13.BackColor = System.Drawing.Color.LightPink;
-            this.textBox13.Location = new System.Drawing.Point(826, 119);
-            this.textBox13.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.ReadOnly = true;
-            this.textBox13.Size = new System.Drawing.Size(112, 33);
-            this.textBox13.TabIndex = 248;
+            this.txtCodigo.BackColor = System.Drawing.Color.LightPink;
+            this.txtCodigo.Location = new System.Drawing.Point(607, 57);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.ReadOnly = true;
+            this.txtCodigo.Size = new System.Drawing.Size(112, 33);
+            this.txtCodigo.TabIndex = 248;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(713, 387);
+            this.label22.Location = new System.Drawing.Point(713, 399);
             this.label22.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(103, 25);
@@ -238,7 +244,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(666, 88);
+            this.label27.Location = new System.Drawing.Point(792, 225);
             this.label27.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(150, 24);
@@ -259,7 +265,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(853, 87);
+            this.label29.Location = new System.Drawing.Point(618, 30);
             this.label29.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(91, 24);
@@ -270,7 +276,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(184, 38);
+            this.label30.Location = new System.Drawing.Point(111, 41);
             this.label30.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(417, 36);
@@ -347,7 +353,16 @@
             this.groupBox1.Size = new System.Drawing.Size(438, 357);
             this.groupBox1.TabIndex = 255;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cliente:";
+            this.groupBox1.Text = "Datos:";
+            // 
+            // txtIdSeguro
+            // 
+            this.txtIdSeguro.Location = new System.Drawing.Point(164, 71);
+            this.txtIdSeguro.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.txtIdSeguro.Name = "txtIdSeguro";
+            this.txtIdSeguro.ReadOnly = true;
+            this.txtIdSeguro.Size = new System.Drawing.Size(132, 33);
+            this.txtIdSeguro.TabIndex = 1;
             // 
             // txtId
             // 
@@ -368,6 +383,17 @@
             this.label42.Size = new System.Drawing.Size(118, 48);
             this.label42.TabIndex = 0;
             this.label42.Text = "Nombre\r\ncompleto:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Firebrick;
+            this.label3.Location = new System.Drawing.Point(40, 71);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(111, 24);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Id Seguro:";
             // 
             // label2
             // 
@@ -469,25 +495,27 @@
             this.txtCategoria.Size = new System.Drawing.Size(244, 33);
             this.txtCategoria.TabIndex = 1;
             // 
-            // label3
+            // lblParcial
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Firebrick;
-            this.label3.Location = new System.Drawing.Point(40, 71);
-            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 24);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Id Seguro:";
+            this.lblParcial.AutoSize = true;
+            this.lblParcial.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblParcial.Location = new System.Drawing.Point(797, 302);
+            this.lblParcial.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblParcial.Name = "lblParcial";
+            this.lblParcial.Size = new System.Drawing.Size(83, 24);
+            this.lblParcial.TabIndex = 0;
+            this.lblParcial.Text = "Parcial:";
+            this.lblParcial.Visible = false;
             // 
-            // txtIdSeguro
+            // mskParcial
             // 
-            this.txtIdSeguro.Location = new System.Drawing.Point(164, 71);
-            this.txtIdSeguro.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.txtIdSeguro.Name = "txtIdSeguro";
-            this.txtIdSeguro.ReadOnly = true;
-            this.txtIdSeguro.Size = new System.Drawing.Size(132, 33);
-            this.txtIdSeguro.TabIndex = 1;
+            this.mskParcial.Location = new System.Drawing.Point(801, 329);
+            this.mskParcial.Mask = "99999";
+            this.mskParcial.Name = "mskParcial";
+            this.mskParcial.Size = new System.Drawing.Size(141, 33);
+            this.mskParcial.TabIndex = 256;
+            this.mskParcial.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.mskParcial.ValidatingType = typeof(int);
             // 
             // frmResumenVentaPoliza
             // 
@@ -495,20 +523,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(999, 678);
+            this.Controls.Add(this.mskParcial);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAtras);
+            this.Controls.Add(this.lblParcial);
             this.Controls.Add(this.lblCerrar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.btnCrearCuenta);
+            this.Controls.Add(this.btnPagarCrearPoliza);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.cmbTipo_Pago);
+            this.Controls.Add(this.txtTotal_A_Pagar);
             this.Controls.Add(this.textBox17);
             this.Controls.Add(this.label28);
-            this.Controls.Add(this.textBox16);
-            this.Controls.Add(this.textBox13);
+            this.Controls.Add(this.txtSubTotal);
+            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label23);
@@ -521,6 +551,8 @@
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "frmResumenVentaPoliza";
             this.Text = "frmResumenVentaPoliza";
+            this.Load += new System.EventHandler(this.frmResumenVentaPoliza_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmResumenVentaPoliza_MouseDown);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -534,16 +566,13 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button btnCrearCuenta;
+        private System.Windows.Forms.Button btnPagarCrearPoliza;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox textBox82;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.ComboBox cmbTipo_Pago;
         private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label23;
@@ -568,5 +597,10 @@
         public System.Windows.Forms.TextBox txtCategoria;
         public System.Windows.Forms.TextBox txtIdSeguro;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblParcial;
+        public System.Windows.Forms.TextBox txtTotal_A_Pagar;
+        public System.Windows.Forms.TextBox txtSubTotal;
+        public System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.MaskedTextBox mskParcial;
     }
 }

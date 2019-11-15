@@ -12,6 +12,20 @@ namespace CapaDatos.SeguroVida
 {
     public class D_SeguroVida
     {
+        public int D_Cargar_id_detalleSeguroSalud()
+        {
+            SqlConnection strcon = new SqlConnection();
+            strcon.ConnectionString = Conexion.Conexion.SqlConex;
+            strcon.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = strcon;
+            cmd.CommandText = "CargarId";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            int rsp= Convert.ToInt32(cmd.ExecuteScalar());
+            return rsp;
+        }
+
         public DataTable D_MostrarSegurosDePolizas()
         {
             SqlConnection strCon = new SqlConnection();
@@ -24,20 +38,20 @@ namespace CapaDatos.SeguroVida
             strCon.Close();
             return dt;
         }
-        public DataTable D_CargarNombreEmpleado(E_SeguroVida eSegVida)
+        public void D_CargarNombreEmpleado(E_SeguroVida eSegVida)
         {
-            SqlConnection strcon = new SqlConnection();
-            strcon.ConnectionString = Conexion.Conexion.SqlConex;
-            strcon.Open();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = strcon;
-            cmd.CommandText = "CargarNombreEmpleado";
+
+            SqlConnection strCon = new SqlConnection();
+            strCon.ConnectionString = Conexion.Conexion.SqlConex;
+            SqlCommand cmd = new SqlCommand("CargarNombreEmpleado", strCon);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            SqlParameter parId = new SqlParameter();
-            parId.ParameterName = "@id";
-            parId.SqlDbType = SqlDbType.Int;
-            parId.Value = eSegVida.Id;
+            SqlParameter parId = new SqlParameter
+            {
+                ParameterName = "@id",
+                SqlDbType = SqlDbType.Int,
+                Value = eSegVida.Id
+            };
             cmd.Parameters.Add(parId);
 
             SqlParameter parNombre = new SqlParameter();
@@ -45,7 +59,6 @@ namespace CapaDatos.SeguroVida
             parNombre.SqlDbType = SqlDbType.VarChar;
             parNombre.Size = 50;
             parNombre.Direction = ParameterDirection.Output;
-            parNombre.Value = eSegVida.NombreEmpleado;
             cmd.Parameters.Add(parNombre);
 
             SqlParameter parCedula = new SqlParameter();
@@ -53,20 +66,17 @@ namespace CapaDatos.SeguroVida
             parCedula.SqlDbType = SqlDbType.VarChar;
             parCedula.Size = 30;
             parCedula.Direction = ParameterDirection.Output;
-            parCedula.Value = eSegVida.Cedula;
             cmd.Parameters.Add(parCedula);
 
-            DataTable Dt = new DataTable();
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                Dt.Rows.Add(String.Format("{0}", reader[0]));
-            }
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
 
-            SqlParameter parNombreReturn = cmd.Parameters["@Nombre"];
-            SqlParameter parCedulaReturn = cmd.Parameters["@Cedula"];
+            DataRow dr = dt.Rows[0];
 
-            return Dt;
+            eSegVida.NombreEmpleado = dr[1].ToString();
+            eSegVida.Cedula = dr[2].ToString();
+            strCon.Close();
         }
     }
 }

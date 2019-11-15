@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="B_ResumenVentaPoliza\B_ResumenVentaPoliza.cs" />
     <Compile Include="Clientes\B_Clientes.cs" />
     <Compile Include="Empleados\B_Empleados.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

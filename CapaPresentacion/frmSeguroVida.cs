@@ -23,6 +23,17 @@ namespace CapaPresentacion
         B_SeguroVida B_SeguroVida = new B_SeguroVida();
 
         DataTable dtPolizaDeSeguros = new DataTable();
+        DataTable dtEmpleado = new DataTable();
+        DataTable dtId_detalleSegVida = new DataTable();
+
+        int idProductoSeguroVidaSalud = 0;
+
+        int idCodigo = 0;
+        decimal Precio = 0;
+        int varIdEmpleado = 0;
+
+
+        
         public frmSeguroVida()
         {
             InitializeComponent();
@@ -38,9 +49,16 @@ namespace CapaPresentacion
             pnlVidaRiesgosLaborales.Visible = true;
         }
 
+
         private void btnSeguroSalud_Click(object sender, EventArgs e)
         {
             pnlVidaSalud.Visible = true;
+            DataView dv = new DataView(dtPolizaDeSeguros);
+
+            dv.RowFilter = "[Nombre del Seguro] = 'Seguro de Salud'";
+
+            idProductoSeguroVidaSalud = (int)dv[0]["id"];
+            Precio = (decimal)dv[0]["Precio"];
         }
 
         private void btnDependientes_Click(object sender, EventArgs e)
@@ -143,9 +161,17 @@ namespace CapaPresentacion
 
         private void frmSeguroVida_Load(object sender, EventArgs e)
         {
+            Cargar_idCodigo_detalleSeguroSalud();
+            CargarSegurosDePoliza();
             CargarEmpleado();
             MostrarClientes();
         }
+        
+        public void Cargar_idCodigo_detalleSeguroSalud()
+        {
+            idCodigo =  B_SeguroVida.B_Cargar_id_detalleSeguroSalud(E_SegVida);
+        }
+
         public void CargarSegurosDePoliza()
         {
            dtPolizaDeSeguros = B_SeguroVida.B_MostrarSegurosDePolizas();
@@ -153,10 +179,10 @@ namespace CapaPresentacion
 
         public void CargarEmpleado()
         {
-            DataTable dt = new DataTable();
-            dt = B_SeguroVida.B_CargarNombreEmpleado(E_SegVida);
+            E_SegVida.Id = 1;
+            varIdEmpleado = 1; /////
 
-            
+            B_SeguroVida.B_CargarNombreEmpleado(E_SegVida);
 
             lblNombre_empleado.Text = E_SegVida.NombreEmpleado;
             lblCedula.Text = E_SegVida.Cedula;
@@ -218,15 +244,19 @@ namespace CapaPresentacion
 
         private void btnSIGUIENTEpnlVidaSalud_Click(object sender, EventArgs e)
         {
-            try
+            Siguiente_pnlVidaSalud();
+        }
+        public void Siguiente_pnlVidaSalud()
+        {
+        //    try
             {
                 mskTelefonoValidar();
                 mskCedulaValidar();
-               
+
                 QuitarErrorProviderCliente();
                 ValidarCamposCliente();
                 //------------------------//
-                QuitarErrorProviderSegSalud(); 
+                QuitarErrorProviderSegSalud();
                 ValidarCamposSegSalud();
 
                 if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrWhiteSpace(txtNombre.Text)
@@ -264,6 +294,18 @@ namespace CapaPresentacion
                     frmFac.txtSeguroA_Adquirir.Text = lblSeguroSalud.Text;
                     frmFac.txtEfectoA_Asegurar.Text = "N/A";
                     frmFac.txtCategoria.Text = strRb_Categoria;
+                    frmFac.txtIdSeguro.Text = idProductoSeguroVidaSalud.ToString();
+
+                    frmFac.txtCodigo.Text = idCodigo.ToString();
+                    frmFac.txtSubTotal.Text = Precio.ToString();
+                    frmFac.txtTotal_A_Pagar.Text = Precio.ToString();
+
+
+
+
+                    frmFac.strInstitutoDondeLabora = txtInstitutoDondeLabora.Text.Trim();
+                    frmFac.strAntecedentesPersonales = txtAntecedentesPersonales.Text.Trim();
+                    frmFac.varIdEmpleado = varIdEmpleado;
 
                     frmFac.ShowDialog();
                 }
@@ -272,7 +314,7 @@ namespace CapaPresentacion
                     MessageBox.Show("Añada el Cliente actual para poder continuar.", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+          //  catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private bool ValidarCamposSegSalud()

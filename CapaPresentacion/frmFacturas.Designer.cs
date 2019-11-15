@@ -67,6 +67,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblCerrar = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnlResumenSolicitud.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -75,6 +77,8 @@
             // pnlResumenSolicitud
             // 
             this.pnlResumenSolicitud.BackColor = System.Drawing.Color.White;
+            this.pnlResumenSolicitud.Controls.Add(this.textBox1);
+            this.pnlResumenSolicitud.Controls.Add(this.label3);
             this.pnlResumenSolicitud.Controls.Add(this.groupBox1);
             this.pnlResumenSolicitud.Controls.Add(this.btnImprimir);
             this.pnlResumenSolicitud.Controls.Add(this.btnAtras);
@@ -293,9 +297,9 @@
             this.groupBox2.Controls.Add(this.txtDescontar);
             this.groupBox2.Controls.Add(this.btnDescontar);
             this.groupBox2.ForeColor = System.Drawing.Color.Firebrick;
-            this.groupBox2.Location = new System.Drawing.Point(433, 130);
+            this.groupBox2.Location = new System.Drawing.Point(625, 10);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(384, 171);
+            this.groupBox2.Size = new System.Drawing.Size(201, 171);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Descontar:";
@@ -305,7 +309,7 @@
             this.txtDescontar.Location = new System.Drawing.Point(35, 52);
             this.txtDescontar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDescontar.Name = "txtDescontar";
-            this.txtDescontar.Size = new System.Drawing.Size(342, 33);
+            this.txtDescontar.Size = new System.Drawing.Size(144, 33);
             this.txtDescontar.TabIndex = 1;
             this.txtDescontar.Validating += new System.ComponentModel.CancelEventHandler(this.txtDescontar_Validating);
             // 
@@ -347,10 +351,10 @@
             this.txtTipoPago.Items.AddRange(new object[] {
             "Al contado",
             "Parcial"});
-            this.txtTipoPago.Location = new System.Drawing.Point(650, 92);
+            this.txtTipoPago.Location = new System.Drawing.Point(666, 211);
             this.txtTipoPago.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtTipoPago.Name = "txtTipoPago";
-            this.txtTipoPago.Size = new System.Drawing.Size(138, 32);
+            this.txtTipoPago.Size = new System.Drawing.Size(151, 32);
             this.txtTipoPago.TabIndex = 5;
             // 
             // txtTotalA_Pagar
@@ -402,7 +406,7 @@
             // txtCodigo
             // 
             this.txtCodigo.BackColor = System.Drawing.Color.LightPink;
-            this.txtCodigo.Location = new System.Drawing.Point(723, 15);
+            this.txtCodigo.Location = new System.Drawing.Point(524, 3);
             this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.ReadOnly = true;
@@ -423,7 +427,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(646, 64);
+            this.label27.Location = new System.Drawing.Point(662, 183);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(150, 24);
@@ -459,7 +463,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(612, 18);
+            this.label29.Location = new System.Drawing.Point(413, 6);
             this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(91, 24);
@@ -469,11 +473,11 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(51, 18);
+            this.label30.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(52, 6);
             this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(293, 32);
+            this.label30.Size = new System.Drawing.Size(317, 36);
             this.label30.TabIndex = 0;
             this.label30.Text = "Resumen de Solicitud";
             // 
@@ -520,6 +524,26 @@
             this.lblCerrar.TabIndex = 108;
             this.lblCerrar.Text = "X";
             this.lblCerrar.Click += new System.EventHandler(this.lblCerrar_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(683, 268);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(134, 33);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.txtDescontar_Validating);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Firebrick;
+            this.label3.Location = new System.Drawing.Point(592, 271);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 24);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Parcial:";
             // 
             // frmFacturas
             // 
@@ -592,5 +616,7 @@
         public System.Windows.Forms.TextBox txtCliente;
         public System.Windows.Forms.TextBox txtCategoria;
         public System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label3;
     }
 }
