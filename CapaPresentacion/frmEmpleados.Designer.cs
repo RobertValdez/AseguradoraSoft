@@ -438,7 +438,7 @@
             this.pnlNuevo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlNuevo.Location = new System.Drawing.Point(15, 88);
             this.pnlNuevo.Name = "pnlNuevo";
-            this.pnlNuevo.Size = new System.Drawing.Size(480, 466);
+            this.pnlNuevo.Size = new System.Drawing.Size(618, 466);
             this.pnlNuevo.TabIndex = 21;
             // 
             // txtCedula

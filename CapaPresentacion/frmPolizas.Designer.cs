@@ -58,7 +58,27 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabGestionarPolizas = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCrearCuenta = new System.Windows.Forms.Button();
+            this.label30 = new System.Windows.Forms.Label();
+            this.textBox80 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox79 = new System.Windows.Forms.TextBox();
+            this.textBox78 = new System.Windows.Forms.TextBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pnlGestionarPolizas = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -82,6 +102,9 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox15 = new System.Windows.Forms.TextBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,40 +113,17 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
-            this.textBox78 = new System.Windows.Forms.TextBox();
-            this.textBox79 = new System.Windows.Forms.TextBox();
-            this.textBox80 = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.btnCrearCuenta = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlPagoPolizas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            this.tabGestionarPolizas.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.pnlGestionarPolizas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.tabPage1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPagoP
@@ -430,16 +430,212 @@
             this.panel2.Size = new System.Drawing.Size(10, 730);
             this.panel2.TabIndex = 174;
             // 
-            // tabControl1
+            // tabGestionarPolizas
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(10, 117);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1091, 556);
-            this.tabControl1.TabIndex = 187;
+            this.tabGestionarPolizas.Controls.Add(this.tabPage1);
+            this.tabGestionarPolizas.Controls.Add(this.tabPage2);
+            this.tabGestionarPolizas.Controls.Add(this.tabPage3);
+            this.tabGestionarPolizas.Location = new System.Drawing.Point(10, 117);
+            this.tabGestionarPolizas.Name = "tabGestionarPolizas";
+            this.tabGestionarPolizas.SelectedIndex = 0;
+            this.tabGestionarPolizas.Size = new System.Drawing.Size(1091, 556);
+            this.tabGestionarPolizas.TabIndex = 187;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.panel3);
+            this.tabPage1.Location = new System.Drawing.Point(4, 30);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1083, 522);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Nueva";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dataGridView4);
+            this.panel3.Controls.Add(this.btnCrearCuenta);
+            this.panel3.Controls.Add(this.label30);
+            this.panel3.Controls.Add(this.textBox80);
+            this.panel3.Controls.Add(this.button4);
+            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.textBox79);
+            this.panel3.Controls.Add(this.textBox78);
+            this.panel3.Controls.Add(this.label60);
+            this.panel3.Controls.Add(this.label51);
+            this.panel3.Controls.Add(this.label42);
+            this.panel3.Location = new System.Drawing.Point(6, 20);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1071, 472);
+            this.panel3.TabIndex = 25;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.BackgroundColor = System.Drawing.Color.LightPink;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21});
+            this.dataGridView4.Location = new System.Drawing.Point(495, 60);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.Size = new System.Drawing.Size(550, 345);
+            this.dataGridView4.TabIndex = 206;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.HeaderText = "Column1";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.HeaderText = "Column2";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.HeaderText = "Column3";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.HeaderText = "Column4";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.HeaderText = "Column5";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.HeaderText = "Column6";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.HeaderText = "Column7";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            // 
+            // btnCrearCuenta
+            // 
+            this.btnCrearCuenta.BackColor = System.Drawing.Color.Crimson;
+            this.btnCrearCuenta.FlatAppearance.BorderSize = 0;
+            this.btnCrearCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrearCuenta.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearCuenta.ForeColor = System.Drawing.Color.White;
+            this.btnCrearCuenta.Location = new System.Drawing.Point(58, 348);
+            this.btnCrearCuenta.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnCrearCuenta.Name = "btnCrearCuenta";
+            this.btnCrearCuenta.Size = new System.Drawing.Size(395, 57);
+            this.btnCrearCuenta.TabIndex = 205;
+            this.btnCrearCuenta.Text = "Proceso de pago";
+            this.btnCrearCuenta.UseVisualStyleBackColor = false;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(52, 11);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(344, 32);
+            this.label30.TabIndex = 185;
+            this.label30.Text = "Buscar Solicitud de Póliza";
+            // 
+            // textBox80
+            // 
+            this.textBox80.Location = new System.Drawing.Point(204, 224);
+            this.textBox80.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox80.Name = "textBox80";
+            this.textBox80.ReadOnly = true;
+            this.textBox80.Size = new System.Drawing.Size(222, 27);
+            this.textBox80.TabIndex = 191;
+            // 
+            // button4
+            // 
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.Crimson;
+            this.button4.Location = new System.Drawing.Point(265, 257);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(161, 27);
+            this.button4.TabIndex = 165;
+            this.button4.Text = "Ver solicitud";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Crimson;
+            this.button3.Location = new System.Drawing.Point(265, 170);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(161, 27);
+            this.button3.TabIndex = 165;
+            this.button3.Text = "Buscar Cliente";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // textBox79
+            // 
+            this.textBox79.Location = new System.Drawing.Point(187, 137);
+            this.textBox79.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox79.Name = "textBox79";
+            this.textBox79.ReadOnly = true;
+            this.textBox79.Size = new System.Drawing.Size(239, 27);
+            this.textBox79.TabIndex = 192;
+            // 
+            // textBox78
+            // 
+            this.textBox78.Location = new System.Drawing.Point(187, 106);
+            this.textBox78.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox78.Name = "textBox78";
+            this.textBox78.ReadOnly = true;
+            this.textBox78.Size = new System.Drawing.Size(239, 27);
+            this.textBox78.TabIndex = 193;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.label60.ForeColor = System.Drawing.Color.Firebrick;
+            this.label60.Location = new System.Drawing.Point(67, 227);
+            this.label60.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(129, 24);
+            this.label60.TabIndex = 187;
+            this.label60.Text = "No. Factura";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.label51.ForeColor = System.Drawing.Color.Firebrick;
+            this.label51.Location = new System.Drawing.Point(67, 137);
+            this.label51.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(92, 24);
+            this.label51.TabIndex = 188;
+            this.label51.Text = "Cédula:";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.label42.ForeColor = System.Drawing.Color.Firebrick;
+            this.label42.Location = new System.Drawing.Point(67, 106);
+            this.label42.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(88, 24);
+            this.label42.TabIndex = 189;
+            this.label42.Text = "Cliente:";
             // 
             // tabPage2
             // 
@@ -673,6 +869,43 @@
             this.tabPage3.Text = "Ver Pólizas";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Seguro de Riesgo de Muerte",
+            "Seguro de Salud",
+            "Seguro de Riesgos Laborales",
+            "Seguro Contenido",
+            "Seguro Edificaciones",
+            "Seguro para Empresas y Negocios",
+            "Seguro a Todo Riesgo",
+            "Seguro Obligatorio",
+            "Seguro Voluntario"});
+            this.comboBox3.Location = new System.Drawing.Point(365, 19);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(297, 29);
+            this.comboBox3.TabIndex = 167;
+            // 
+            // label16
+            // 
+            this.label16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label16.Image = ((System.Drawing.Image)(resources.GetObject("label16.Image")));
+            this.label16.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.label16.Location = new System.Drawing.Point(296, 39);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(62, 56);
+            this.label16.TabIndex = 166;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(365, 55);
+            this.textBox15.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(434, 27);
+            this.textBox15.TabIndex = 165;
+            // 
             // dataGridView3
             // 
             this.dataGridView3.BackgroundColor = System.Drawing.Color.LightPink;
@@ -725,246 +958,13 @@
             this.dataGridViewTextBoxColumn14.HeaderText = "Column7";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             // 
-            // comboBox3
-            // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Seguro de Riesgo de Muerte",
-            "Seguro de Salud",
-            "Seguro de Riesgos Laborales",
-            "Seguro Contenido",
-            "Seguro Edificaciones",
-            "Seguro para Empresas y Negocios",
-            "Seguro a Todo Riesgo",
-            "Seguro Obligatorio",
-            "Seguro Voluntario"});
-            this.comboBox3.Location = new System.Drawing.Point(365, 19);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(297, 29);
-            this.comboBox3.TabIndex = 167;
-            // 
-            // label16
-            // 
-            this.label16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label16.Image = ((System.Drawing.Image)(resources.GetObject("label16.Image")));
-            this.label16.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label16.Location = new System.Drawing.Point(296, 39);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(62, 56);
-            this.label16.TabIndex = 166;
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(365, 55);
-            this.textBox15.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(434, 27);
-            this.textBox15.TabIndex = 165;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.panel3);
-            this.tabPage1.Location = new System.Drawing.Point(4, 30);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1083, 522);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Nueva";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.label42.ForeColor = System.Drawing.Color.Firebrick;
-            this.label42.Location = new System.Drawing.Point(67, 106);
-            this.label42.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(88, 24);
-            this.label42.TabIndex = 189;
-            this.label42.Text = "Cliente:";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.label51.ForeColor = System.Drawing.Color.Firebrick;
-            this.label51.Location = new System.Drawing.Point(67, 137);
-            this.label51.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(92, 24);
-            this.label51.TabIndex = 188;
-            this.label51.Text = "Cédula:";
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.label60.ForeColor = System.Drawing.Color.Firebrick;
-            this.label60.Location = new System.Drawing.Point(67, 227);
-            this.label60.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(129, 24);
-            this.label60.TabIndex = 187;
-            this.label60.Text = "No. Factura";
-            // 
-            // textBox78
-            // 
-            this.textBox78.Location = new System.Drawing.Point(187, 106);
-            this.textBox78.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox78.Name = "textBox78";
-            this.textBox78.ReadOnly = true;
-            this.textBox78.Size = new System.Drawing.Size(239, 27);
-            this.textBox78.TabIndex = 193;
-            // 
-            // textBox79
-            // 
-            this.textBox79.Location = new System.Drawing.Point(187, 137);
-            this.textBox79.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox79.Name = "textBox79";
-            this.textBox79.ReadOnly = true;
-            this.textBox79.Size = new System.Drawing.Size(239, 27);
-            this.textBox79.TabIndex = 192;
-            // 
-            // textBox80
-            // 
-            this.textBox80.Location = new System.Drawing.Point(204, 224);
-            this.textBox80.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox80.Name = "textBox80";
-            this.textBox80.ReadOnly = true;
-            this.textBox80.Size = new System.Drawing.Size(222, 27);
-            this.textBox80.TabIndex = 191;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(52, 11);
-            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(344, 32);
-            this.label30.TabIndex = 185;
-            this.label30.Text = "Buscar Solicitud de Póliza";
-            // 
-            // btnCrearCuenta
-            // 
-            this.btnCrearCuenta.BackColor = System.Drawing.Color.Crimson;
-            this.btnCrearCuenta.FlatAppearance.BorderSize = 0;
-            this.btnCrearCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrearCuenta.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearCuenta.ForeColor = System.Drawing.Color.White;
-            this.btnCrearCuenta.Location = new System.Drawing.Point(58, 348);
-            this.btnCrearCuenta.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnCrearCuenta.Name = "btnCrearCuenta";
-            this.btnCrearCuenta.Size = new System.Drawing.Size(395, 57);
-            this.btnCrearCuenta.TabIndex = 205;
-            this.btnCrearCuenta.Text = "Proceso de pago";
-            this.btnCrearCuenta.UseVisualStyleBackColor = false;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.dataGridView4);
-            this.panel3.Controls.Add(this.btnCrearCuenta);
-            this.panel3.Controls.Add(this.label30);
-            this.panel3.Controls.Add(this.textBox80);
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.textBox79);
-            this.panel3.Controls.Add(this.textBox78);
-            this.panel3.Controls.Add(this.label60);
-            this.panel3.Controls.Add(this.label51);
-            this.panel3.Controls.Add(this.label42);
-            this.panel3.Location = new System.Drawing.Point(6, 20);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1071, 472);
-            this.panel3.TabIndex = 25;
-            // 
-            // button3
-            // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Crimson;
-            this.button3.Location = new System.Drawing.Point(265, 170);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(161, 27);
-            this.button3.TabIndex = 165;
-            this.button3.Text = "Buscar Cliente";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Crimson;
-            this.button4.Location = new System.Drawing.Point(265, 257);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(161, 27);
-            this.button4.TabIndex = 165;
-            this.button4.Text = "Ver solicitud";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.BackgroundColor = System.Drawing.Color.LightPink;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21});
-            this.dataGridView4.Location = new System.Drawing.Point(495, 60);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(550, 345);
-            this.dataGridView4.TabIndex = 206;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.HeaderText = "Column1";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.HeaderText = "Column2";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.HeaderText = "Column3";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.HeaderText = "Column4";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.HeaderText = "Column5";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.HeaderText = "Column6";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.HeaderText = "Column7";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            // 
             // frmPolizas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1179, 670);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabGestionarPolizas);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlPagoPolizas);
@@ -977,7 +977,11 @@
             this.pnlPagoPolizas.ResumeLayout(false);
             this.pnlPagoPolizas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            this.tabGestionarPolizas.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.pnlGestionarPolizas.ResumeLayout(false);
             this.pnlGestionarPolizas.PerformLayout();
@@ -985,10 +989,6 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.tabPage1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1023,7 +1023,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabGestionarPolizas;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel pnlGestionarPolizas;
         private System.Windows.Forms.Label label4;

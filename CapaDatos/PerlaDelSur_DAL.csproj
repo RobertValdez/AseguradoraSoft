@@ -50,6 +50,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="SeguroVida\D_SeguroVida.cs" />
     <Compile Include="Usuarios\D_Usuarios.cs" />
   </ItemGroup>
   <ItemGroup>

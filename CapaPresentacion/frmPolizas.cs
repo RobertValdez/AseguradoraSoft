@@ -19,8 +19,8 @@ namespace CapaPresentacion
 
         private void btnPagoP_Click(object sender, EventArgs e)
         {
-            pnlGestionarPolizas.Visible = false;
-            pnlPagoPolizas.Visible = true;
+            tabGestionarPolizas.Visible = false;
+            pnlPagoPolizas.Visible = true;///
 
             btnPagoP.BackColor = Color.LightPink;
             btnGestionarP.BackColor = Color.White;
@@ -28,8 +28,8 @@ namespace CapaPresentacion
 
         private void btnGestionarP_Click(object sender, EventArgs e)
         {
-            pnlGestionarPolizas.Visible = true;
-            pnlPagoPolizas.Visible = false;
+            tabGestionarPolizas.Visible = true;
+            pnlPagoPolizas.Visible = true; ///
 
             btnGestionarP.BackColor = Color.LightPink;
             btnPagoP.BackColor = Color.White;

@@ -49,12 +49,25 @@ namespace CapaPresentacion
 
         private void btnSolicitar_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void frmFacturas_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDescontar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtDescontar.Text) || string.IsNullOrWhiteSpace(txtDescontar.Text))
+            {
+            //    MessageBox.Show("ma");
+            }
+        }
+
+        private void txtDescontar_Validating(object sender, CancelEventArgs e)
+        {
+            MessageBox.Show("ma");
         }
     }
 }

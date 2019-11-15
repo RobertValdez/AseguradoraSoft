@@ -293,20 +293,21 @@
             this.groupBox2.Controls.Add(this.txtDescontar);
             this.groupBox2.Controls.Add(this.btnDescontar);
             this.groupBox2.ForeColor = System.Drawing.Color.Firebrick;
-            this.groupBox2.Location = new System.Drawing.Point(614, 130);
+            this.groupBox2.Location = new System.Drawing.Point(433, 130);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(203, 171);
+            this.groupBox2.Size = new System.Drawing.Size(384, 171);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Descontar:";
             // 
             // txtDescontar
             // 
-            this.txtDescontar.Location = new System.Drawing.Point(39, 52);
+            this.txtDescontar.Location = new System.Drawing.Point(35, 52);
             this.txtDescontar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDescontar.Name = "txtDescontar";
-            this.txtDescontar.Size = new System.Drawing.Size(140, 33);
+            this.txtDescontar.Size = new System.Drawing.Size(342, 33);
             this.txtDescontar.TabIndex = 1;
+            this.txtDescontar.Validating += new System.ComponentModel.CancelEventHandler(this.txtDescontar_Validating);
             // 
             // btnDescontar
             // 
@@ -322,6 +323,7 @@
             this.btnDescontar.TabIndex = 12;
             this.btnDescontar.Text = "Descontar";
             this.btnDescontar.UseVisualStyleBackColor = false;
+            this.btnDescontar.Click += new System.EventHandler(this.btnDescontar_Click);
             // 
             // button3
             // 

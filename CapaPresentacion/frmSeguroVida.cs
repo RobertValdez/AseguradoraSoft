@@ -8,16 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using PerlaDelSur_Entity.SeguroVida;
 using PerlaDelSur_Entity.Clientes;
 using CapaNegocio.Clientes;
+using CapaNegocio.SeguroVida;
 
 namespace CapaPresentacion
 {
     public partial class frmSeguroVida : Form
     {
+        E_SeguroVida E_SegVida = new E_SeguroVida();
         E_Clientes E_Clientes = new E_Clientes();
         B_Clientes B_Clientes = new B_Clientes();
+        B_SeguroVida B_SeguroVida = new B_SeguroVida();
 
+        DataTable dtPolizaDeSeguros = new DataTable();
         public frmSeguroVida()
         {
             InitializeComponent();
@@ -81,37 +86,42 @@ namespace CapaPresentacion
 
         private void btnNuevoCliente_Click(object sender, EventArgs e)
         {
-            QuitarErrorProvider();
-            ValidarCamposCliente();
-            InsertarCliente();
+            QuitarErrorProviderCliente();
+            if (ValidarCamposCliente() || mskTelefonoValidar() || mskCedulaValidar())
+            {
+                InsertarCliente();
+            }
         }
         public void InsertarCliente()
         {
             try
             {
-
                 if (!txtId.Text.Equals(""))
                 {
                     MessageBox.Show("El Cliente ya existe. Haga clic en Nuevo para añadir a otro cliente.", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-
-                    if (txtNombre.Text == "" || txtApellido.Text == "" || txtDireccion.Text == "" || mskCedula.Text == "   -       -" || mskTelefono.Text == "" || txtCorreoElectronico.Text == "" || txtNacionalidad.Text == "" || cmbSexo.Text == "")
+                    if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrWhiteSpace(txtNombre.Text)
+                    || string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrWhiteSpace(txtApellido.Text)
+                    || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || mskCedula.Text == "   -       -" || mskTelefono.Text == ""
+                    || string.IsNullOrEmpty(txtCorreoElectronico.Text) || string.IsNullOrWhiteSpace(txtCorreoElectronico.Text)
+                    || string.IsNullOrEmpty(cmbNacionalidad.Text) || string.IsNullOrWhiteSpace(cmbNacionalidad.Text)
+                    || string.IsNullOrEmpty(cmbSexo.Text) || string.IsNullOrWhiteSpace(cmbSexo.Text))
                     {
                         MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
-                        E_Clientes.Nombre = txtNombre.Text;
-                        E_Clientes.Apellido = txtApellido.Text;
-                        E_Clientes.Cedula = mskCedula.Text;
-                        E_Clientes.Direccion = txtDireccion.Text;
-                        E_Clientes.Telefono = mskTelefono.Text;
-                        E_Clientes.Nacionalidad = txtNacionalidad.Text;
-                        E_Clientes.CorreoElectronico = txtCorreoElectronico.Text;
-                        E_Clientes.Sexo = cmbSexo.Text;
-                        E_Clientes.RNC = txtRNC.Text;
+                        E_Clientes.Nombre = txtNombre.Text.Trim();
+                        E_Clientes.Apellido = txtApellido.Text.Trim();
+                        E_Clientes.Cedula = mskCedula.Text.Trim();
+                        E_Clientes.Direccion = txtDireccion.Text.Trim();
+                        E_Clientes.Telefono = mskTelefono.Text.Trim();
+                        E_Clientes.Nacionalidad = cmbNacionalidad.Text.Trim();
+                        E_Clientes.CorreoElectronico = txtCorreoElectronico.Text.Trim();
+                        E_Clientes.Sexo = cmbSexo.Text.Trim();
+                        E_Clientes.RNC = txtRNC.Text.Trim();
                         E_Clientes.FechaHora = DateTime.Now;
 
                         int rsp = B_Clientes.B_InsertarCliente(E_Clientes);
@@ -123,7 +133,7 @@ namespace CapaPresentacion
                         {
                             MessageBox.Show("Se ha añadido el Cliente correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             txtId.Text = rsp.ToString();
-                            InhabilitarTxT();
+                            InhabilitarTxTs();
                         }
                     }
                 }
@@ -133,7 +143,23 @@ namespace CapaPresentacion
 
         private void frmSeguroVida_Load(object sender, EventArgs e)
         {
+            CargarEmpleado();
             MostrarClientes();
+        }
+        public void CargarSegurosDePoliza()
+        {
+           dtPolizaDeSeguros = B_SeguroVida.B_MostrarSegurosDePolizas();
+        }
+
+        public void CargarEmpleado()
+        {
+            DataTable dt = new DataTable();
+            dt = B_SeguroVida.B_CargarNombreEmpleado(E_SegVida);
+
+            
+
+            lblNombre_empleado.Text = E_SegVida.NombreEmpleado;
+            lblCedula.Text = E_SegVida.Cedula;
         }
         public void MostrarClientes()
         {
@@ -194,14 +220,28 @@ namespace CapaPresentacion
         {
             try
             {
-                QuitarErrorProviderSegSalud();
+                mskTelefonoValidar();
+                mskCedulaValidar();
+               
+                QuitarErrorProviderCliente();
+                ValidarCamposCliente();
+                //------------------------//
+                QuitarErrorProviderSegSalud(); 
                 ValidarCamposSegSalud();
-                if (txtNombre.Text == "" || txtApellido.Text == "" || txtDireccion.Text == "" || mskCedula.Text == "   -       -" || mskTelefono.Text == "" || txtCorreoElectronico.Text == "" || txtNacionalidad.Text == "" || cmbSexo.Text == ""
-                    || txtAntecedentesPersonales.Text == "" || txtInstitutoDondeLabora.Text == "" || (rbBasicoSegSalud.Checked == false && rbSemiFullSegSalud.Checked == false && rbFullSegSalud.Checked == false))
+
+                if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrWhiteSpace(txtNombre.Text)
+                    || string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrWhiteSpace(txtApellido.Text)
+                    || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || mskCedula.Text == "   -       -" || mskTelefono.Text == ""
+                    || string.IsNullOrEmpty(txtCorreoElectronico.Text) || string.IsNullOrWhiteSpace(txtCorreoElectronico.Text)
+                    || string.IsNullOrEmpty(cmbNacionalidad.Text) || string.IsNullOrWhiteSpace(cmbNacionalidad.Text)
+                    || string.IsNullOrEmpty(cmbSexo.Text) || string.IsNullOrWhiteSpace(cmbSexo.Text)
+                    || string.IsNullOrEmpty(txtInstitutoDondeLabora.Text) || string.IsNullOrWhiteSpace(txtInstitutoDondeLabora.Text)
+                    || string.IsNullOrEmpty(txtAntecedentesPersonales.Text) || string.IsNullOrWhiteSpace(txtAntecedentesPersonales.Text)
+                    || rbBasicoSegSalud.Checked == false && rbSemiFullSegSalud.Checked == false && rbFullSegSalud.Checked == false)
                 {
                     MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else if (txtNombre.ReadOnly == true) // False aquí: Significa que está añadido como cliente en la Base de Datos
+                else if (txtNombre.ReadOnly == true) // True aquí: Significa que está añadido como cliente en la Base de Datos
                 {
                     string strRb_Categoria = "";
                     if (rbBasicoSegSalud.Checked == true)
@@ -216,7 +256,7 @@ namespace CapaPresentacion
                     {
                         strRb_Categoria = "Full";
                     }
-                    frmFacturas frmFac = new frmFacturas();
+                    frmResumenVentaPoliza frmFac = new frmResumenVentaPoliza();
 
                     frmFac.txtId.Text = txtId.Text;
                     frmFac.txtCliente.Text = txtNombre.Text + " " + txtApellido.Text;
@@ -239,15 +279,20 @@ namespace CapaPresentacion
         {
             bool ok = true;
 
-            if (txtInstitutoDondeLabora.Text == "")
+            if (string.IsNullOrEmpty(txtInstitutoDondeLabora.Text)
+                || string.IsNullOrWhiteSpace(txtInstitutoDondeLabora.Text))
             {
                 ok = false;
                 errorProvider1.SetError(txtInstitutoDondeLabora, "Campo obligatorio");
+                txtInstitutoDondeLabora.Text = "";
             }
-            if (txtAntecedentesPersonales.Text == "")
+
+            if (string.IsNullOrEmpty(txtAntecedentesPersonales.Text)
+                || string.IsNullOrWhiteSpace(txtAntecedentesPersonales.Text))
             {
                 ok = false;
                 errorProvider1.SetError(txtAntecedentesPersonales, "Campo obligatorio");
+                txtAntecedentesPersonales.Text = "";
             }
 
             return ok;
@@ -257,6 +302,7 @@ namespace CapaPresentacion
         {
             errorProvider1.SetError(txtInstitutoDondeLabora, "");
             errorProvider1.SetError(txtAntecedentesPersonales, "");
+            errorProvider1.SetError(gbxCategoria, "");
         }
 
         private void dgvBuscarClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -267,7 +313,7 @@ namespace CapaPresentacion
             txtApellido.Text = row.Cells[2].Value.ToString();
             txtDireccion.Text = row.Cells[3].Value.ToString();
             mskCedula.Text = row.Cells[4].Value.ToString();
-            txtNacionalidad.Text = row.Cells[5].Value.ToString();
+            cmbNacionalidad.Text = row.Cells[5].Value.ToString();
             mskTelefono.Text = row.Cells[6].Value.ToString();
             txtCorreoElectronico.Text = row.Cells[7].Value.ToString();
 
@@ -286,10 +332,10 @@ namespace CapaPresentacion
             }
             cmbSexo.Text = strSexo;
             pnlBuscarCliente.Visible = false;
-            InhabilitarTxT();
+            InhabilitarTxTs();
         }
 
-        public void InhabilitarTxT()
+        public void InhabilitarTxTs()
         {
             lblId.Visible = true;
             txtId.Visible = true;
@@ -300,7 +346,7 @@ namespace CapaPresentacion
             mskCedula.ReadOnly = true;
             mskTelefono.ReadOnly = true;
             txtCorreoElectronico.ReadOnly = true;
-            txtNacionalidad.ReadOnly = true;
+            cmbNacionalidad.Enabled = false;
             cmbSexo.Enabled = false;
             txtRNC.ReadOnly = true;
 
@@ -320,54 +366,45 @@ namespace CapaPresentacion
             mskCedula.ReadOnly = false;
             mskTelefono.ReadOnly = false;
             txtCorreoElectronico.ReadOnly = false;
-            txtNacionalidad.ReadOnly = false;
+            cmbNacionalidad.Enabled = true;
             cmbSexo.Enabled = true;
             txtRNC.ReadOnly = false;
 
-            QuitarErrorProvider();
+            QuitarErrorProviderCliente();
         }
 
         private bool ValidarCamposCliente()
         {
             bool ok = true;
 
-            if (txtNombre.Text == "")
+            if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrWhiteSpace(txtNombre.Text))
             {
                 ok = false;
                 errorProvider1.SetError(txtNombre, "Escriba el Nombre");
             }
 
-            if (txtApellido.Text == "")
+            if (string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrWhiteSpace(txtApellido.Text))
             {
                 ok = false;
                 errorProvider1.SetError(txtApellido, "Escriba el Apellido");
             }
-            if (txtDireccion.Text == "")
+            if (string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text))
             {
                 ok = false;
                 errorProvider1.SetError(txtDireccion, "Escriba la Dirección");
             }
-            if (mskCedula.Text == "   -       -")
+
+            if (string.IsNullOrEmpty(cmbNacionalidad.Text) || string.IsNullOrWhiteSpace(cmbNacionalidad.Text))
             {
                 ok = false;
-                errorProvider1.SetError(mskCedula, "Escriba la Cédula");
+                errorProvider1.SetError(cmbNacionalidad, "Escriba la Nacionalidad");
             }
-            if (mskTelefono.Text == "(   )-   -")
-            {
-                ok = false;
-                errorProvider1.SetError(mskTelefono, "Escriba el Telefono");
-            }
-            if (txtNacionalidad.Text == "")
-            {
-                ok = false;
-                errorProvider1.SetError(txtNacionalidad, "Escriba la Nacionalidad");
-            }
-            if (txtCorreoElectronico.Text == "")
+            if (string.IsNullOrEmpty(txtCorreoElectronico.Text) || string.IsNullOrWhiteSpace(txtCorreoElectronico.Text))
             {
                 ok = false;
                 errorProvider1.SetError(txtCorreoElectronico, "Escriba el Correo Electrónico");
             }
-            if (cmbSexo.Text == "")
+            if (string.IsNullOrEmpty(cmbSexo.Text) || string.IsNullOrWhiteSpace(cmbSexo.Text))
             {
                 ok = false;
                 errorProvider1.SetError(cmbSexo, "Indique el Sexo");
@@ -375,16 +412,78 @@ namespace CapaPresentacion
 
             return ok;
         }
-        private void QuitarErrorProvider()
+        private void QuitarErrorProviderCliente()
         {
             errorProvider1.SetError(txtNombre, "");
             errorProvider1.SetError(txtApellido, "");
             errorProvider1.SetError(txtDireccion, "");
             errorProvider1.SetError(mskCedula, "");
             errorProvider1.SetError(mskTelefono, "");
-            errorProvider1.SetError(txtNacionalidad, "");
+            errorProvider1.SetError(cmbNacionalidad, "");
             errorProvider1.SetError(txtCorreoElectronico, "");
             errorProvider1.SetError(cmbSexo, "");
+        }
+
+        private void mskTelefono_Leave(object sender, EventArgs e)
+        {
+            
+        }
+        public bool mskTelefonoValidar()
+        {
+            bool valor = false;
+            if (mskTelefono.Text == "(   )-   -")
+            {
+                valor = false;
+                errorProvider1.SetError(mskTelefono, "Escriba el Telefono");
+            }
+            else
+            {
+                valor = true;
+            }
+
+            if (!mskTelefono.Text.Length.Equals(14))
+            {
+                valor = false;
+                errorProvider1.SetError(mskTelefono, "Complete el Telefono");
+            }
+            else
+            {
+                valor = true;
+            }
+            return valor;
+        }
+        private void mskTelefono_Validating(object sender, CancelEventArgs e)
+        {
+            mskTelefonoValidar();
+        }
+
+        private void mskCedula_Validating(object sender, CancelEventArgs e)
+        {
+            mskCedulaValidar();
+        }
+        public bool mskCedulaValidar()
+        {
+             bool valor = false;
+            if (!mskCedula.Text.Length.Equals(13))
+            {
+                valor = false;
+                errorProvider1.SetError(mskCedula, "Complete la Cédula");
+            }
+            else
+            {
+                valor = true;
+            }
+
+            if (mskCedula.Text == "   -       -")
+            {
+                valor = false;
+                errorProvider1.SetError(mskCedula, "Escriba la Cédula");
+            }
+            else
+            {
+                valor = true;
+            }
+            return valor;
         }
     }
 }

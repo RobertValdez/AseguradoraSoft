@@ -44,7 +44,7 @@
             this.lblCerrarRiesgoMuerte = new System.Windows.Forms.Label();
             this.label104 = new System.Windows.Forms.Label();
             this.pnlVidaSalud = new System.Windows.Forms.Panel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbxCategoria = new System.Windows.Forms.GroupBox();
             this.rbSemiFullSegSalud = new System.Windows.Forms.RadioButton();
             this.rbFullSegSalud = new System.Windows.Forms.RadioButton();
             this.rbBasicoSegSalud = new System.Windows.Forms.RadioButton();
@@ -128,7 +128,6 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnNuevoCliente = new System.Windows.Forms.Button();
             this.txtRNC = new System.Windows.Forms.TextBox();
-            this.txtNacionalidad = new System.Windows.Forms.TextBox();
             this.txtCorreoElectronico = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
@@ -154,15 +153,16 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label32 = new System.Windows.Forms.Label();
+            this.lblCedula = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.lblNombre_empleado = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cmbNacionalidad = new System.Windows.Forms.ComboBox();
             this.pnlVidaRiesgoMuerte.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.pnlVidaSalud.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gbxCategoria.SuspendLayout();
             this.pnlVidaSaludDependientes.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.pnlVidaRiesgosLaborales.SuspendLayout();
@@ -341,7 +341,7 @@
             // 
             this.pnlVidaSalud.BackColor = System.Drawing.Color.White;
             this.pnlVidaSalud.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlVidaSalud.Controls.Add(this.groupBox2);
+            this.pnlVidaSalud.Controls.Add(this.gbxCategoria);
             this.pnlVidaSalud.Controls.Add(this.AC_SeguroSalud);
             this.pnlVidaSalud.Controls.Add(this.btnSIGUIENTEpnlVidaSalud);
             this.pnlVidaSalud.Controls.Add(this.lblCerrar_pnlVidaSalud);
@@ -358,19 +358,19 @@
             this.pnlVidaSalud.TabIndex = 8;
             this.pnlVidaSalud.Visible = false;
             // 
-            // groupBox2
+            // gbxCategoria
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.rbSemiFullSegSalud);
-            this.groupBox2.Controls.Add(this.rbFullSegSalud);
-            this.groupBox2.Controls.Add(this.rbBasicoSegSalud);
-            this.groupBox2.ForeColor = System.Drawing.Color.Firebrick;
-            this.groupBox2.Location = new System.Drawing.Point(615, 75);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 140);
-            this.groupBox2.TabIndex = 121;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Categoría:";
+            this.gbxCategoria.BackColor = System.Drawing.Color.White;
+            this.gbxCategoria.Controls.Add(this.rbSemiFullSegSalud);
+            this.gbxCategoria.Controls.Add(this.rbFullSegSalud);
+            this.gbxCategoria.Controls.Add(this.rbBasicoSegSalud);
+            this.gbxCategoria.ForeColor = System.Drawing.Color.Firebrick;
+            this.gbxCategoria.Location = new System.Drawing.Point(615, 75);
+            this.gbxCategoria.Name = "gbxCategoria";
+            this.gbxCategoria.Size = new System.Drawing.Size(200, 140);
+            this.gbxCategoria.TabIndex = 121;
+            this.gbxCategoria.TabStop = false;
+            this.gbxCategoria.Text = "Categoría:";
             // 
             // rbSemiFullSegSalud
             // 
@@ -1280,6 +1280,7 @@
             // 
             this.pnlCliente.BackColor = System.Drawing.Color.White;
             this.pnlCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCliente.Controls.Add(this.cmbNacionalidad);
             this.pnlCliente.Controls.Add(this.btnNuevo);
             this.pnlCliente.Controls.Add(this.cmbSexo);
             this.pnlCliente.Controls.Add(this.mskTelefono);
@@ -1287,7 +1288,6 @@
             this.pnlCliente.Controls.Add(this.btnBuscar);
             this.pnlCliente.Controls.Add(this.btnNuevoCliente);
             this.pnlCliente.Controls.Add(this.txtRNC);
-            this.pnlCliente.Controls.Add(this.txtNacionalidad);
             this.pnlCliente.Controls.Add(this.txtCorreoElectronico);
             this.pnlCliente.Controls.Add(this.txtDireccion);
             this.pnlCliente.Controls.Add(this.txtApellido);
@@ -1347,6 +1347,8 @@
             this.mskTelefono.Name = "mskTelefono";
             this.mskTelefono.Size = new System.Drawing.Size(226, 33);
             this.mskTelefono.TabIndex = 8;
+            this.mskTelefono.Leave += new System.EventHandler(this.mskTelefono_Leave);
+            this.mskTelefono.Validating += new System.ComponentModel.CancelEventHandler(this.mskTelefono_Validating);
             // 
             // mskCedula
             // 
@@ -1355,6 +1357,7 @@
             this.mskCedula.Name = "mskCedula";
             this.mskCedula.Size = new System.Drawing.Size(159, 33);
             this.mskCedula.TabIndex = 8;
+            this.mskCedula.Validating += new System.ComponentModel.CancelEventHandler(this.mskCedula_Validating);
             // 
             // btnBuscar
             // 
@@ -1398,14 +1401,6 @@
             this.txtRNC.Name = "txtRNC";
             this.txtRNC.Size = new System.Drawing.Size(251, 33);
             this.txtRNC.TabIndex = 4;
-            // 
-            // txtNacionalidad
-            // 
-            this.txtNacionalidad.Location = new System.Drawing.Point(27, 321);
-            this.txtNacionalidad.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtNacionalidad.Name = "txtNacionalidad";
-            this.txtNacionalidad.Size = new System.Drawing.Size(400, 33);
-            this.txtNacionalidad.TabIndex = 4;
             // 
             // txtCorreoElectronico
             // 
@@ -1593,7 +1588,7 @@
             this.pnlBuscarCliente.Controls.Add(this.label5);
             this.pnlBuscarCliente.Location = new System.Drawing.Point(6, 114);
             this.pnlBuscarCliente.Name = "pnlBuscarCliente";
-            this.pnlBuscarCliente.Size = new System.Drawing.Size(461, 588);
+            this.pnlBuscarCliente.Size = new System.Drawing.Size(460, 588);
             this.pnlBuscarCliente.TabIndex = 106;
             this.pnlBuscarCliente.Visible = false;
             // 
@@ -1645,7 +1640,7 @@
             this.dgvBuscarClientes.Location = new System.Drawing.Point(0, 92);
             this.dgvBuscarClientes.Name = "dgvBuscarClientes";
             this.dgvBuscarClientes.ReadOnly = true;
-            this.dgvBuscarClientes.Size = new System.Drawing.Size(461, 496);
+            this.dgvBuscarClientes.Size = new System.Drawing.Size(460, 496);
             this.dgvBuscarClientes.TabIndex = 0;
             this.dgvBuscarClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscarClientes_CellDoubleClick);
             // 
@@ -1673,9 +1668,9 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.label32);
+            this.groupBox1.Controls.Add(this.lblCedula);
             this.groupBox1.Controls.Add(this.label25);
-            this.groupBox1.Controls.Add(this.label26);
+            this.groupBox1.Controls.Add(this.lblNombre_empleado);
             this.groupBox1.Controls.Add(this.label31);
             this.groupBox1.Location = new System.Drawing.Point(11, 21);
             this.groupBox1.Name = "groupBox1";
@@ -1683,16 +1678,16 @@
             this.groupBox1.TabIndex = 119;
             this.groupBox1.TabStop = false;
             // 
-            // label32
+            // lblCedula
             // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(317, 55);
-            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(121, 22);
-            this.label32.TabIndex = 1;
-            this.label32.Text = "000-00000-0";
+            this.lblCedula.AutoSize = true;
+            this.lblCedula.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCedula.Location = new System.Drawing.Point(317, 55);
+            this.lblCedula.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCedula.Name = "lblCedula";
+            this.lblCedula.Size = new System.Drawing.Size(121, 22);
+            this.lblCedula.TabIndex = 1;
+            this.lblCedula.Text = "000-00000-0";
             // 
             // label25
             // 
@@ -1706,16 +1701,16 @@
             this.label25.TabIndex = 1;
             this.label25.Text = "Empleado:";
             // 
-            // label26
+            // lblNombre_empleado
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(123, 39);
-            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(187, 22);
-            this.label26.TabIndex = 1;
-            this.label26.Text = "nombre_empleado";
+            this.lblNombre_empleado.AutoSize = true;
+            this.lblNombre_empleado.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre_empleado.Location = new System.Drawing.Point(123, 39);
+            this.lblNombre_empleado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre_empleado.Name = "lblNombre_empleado";
+            this.lblNombre_empleado.Size = new System.Drawing.Size(187, 22);
+            this.lblNombre_empleado.TabIndex = 1;
+            this.lblNombre_empleado.Text = "nombre_empleado";
             // 
             // label31
             // 
@@ -1732,6 +1727,19 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // cmbNacionalidad
+            // 
+            this.cmbNacionalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNacionalidad.FormattingEnabled = true;
+            this.cmbNacionalidad.Items.AddRange(new object[] {
+            "dominicana",
+            "extranjera",
+            " "});
+            this.cmbNacionalidad.Location = new System.Drawing.Point(27, 322);
+            this.cmbNacionalidad.Name = "cmbNacionalidad";
+            this.cmbNacionalidad.Size = new System.Drawing.Size(400, 32);
+            this.cmbNacionalidad.TabIndex = 106;
             // 
             // frmSeguroVida
             // 
@@ -1760,8 +1768,8 @@
             this.groupBox5.PerformLayout();
             this.pnlVidaSalud.ResumeLayout(false);
             this.pnlVidaSalud.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gbxCategoria.ResumeLayout(false);
+            this.gbxCategoria.PerformLayout();
             this.pnlVidaSaludDependientes.ResumeLayout(false);
             this.pnlVidaSaludDependientes.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -1888,13 +1896,13 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label lblCedula;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label lblNombre_empleado;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label lblCerrar;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbxCategoria;
         private System.Windows.Forms.RadioButton rbSemiFullSegSalud;
         private System.Windows.Forms.RadioButton rbFullSegSalud;
         private System.Windows.Forms.RadioButton rbBasicoSegSalud;
@@ -1911,12 +1919,12 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.MaskedTextBox mskTelefono;
-        private System.Windows.Forms.TextBox txtNacionalidad;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox chkSoloId;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ComboBox cmbNacionalidad;
     }
 }
