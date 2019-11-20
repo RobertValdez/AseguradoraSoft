@@ -53,6 +53,7 @@
     <Compile Include="ResumenVentaPoliza\D_ResumenVentaPoliza.cs" />
     <Compile Include="SeguroVida\D_SeguroVida.cs" />
     <Compile Include="Usuarios\D_Usuarios.cs" />
+    <Compile Include="VerPoliza\D_VerPoliza.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaEntidad\PerlaDelSur_Entity.csproj">

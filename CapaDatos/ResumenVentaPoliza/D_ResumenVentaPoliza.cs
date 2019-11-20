@@ -14,13 +14,6 @@ namespace CapaDatos.ResumenVentaPoliza
     {
         public int CrearPoliza(E_ResumenVentaPoliza rVPoliza)
         {
-            /*
-              exec CrearPoliza     1,1, 1.0, 1, '10-10-2019',
-              'qwedasdasd','sdfsdf', '10-10-2019', 'eqwr',
-                'sdfsafsadf',1, '10-10-2020'
-                */
-
-
             SqlConnection strcon = new SqlConnection();
             strcon.ConnectionString = Conexion.Conexion.SqlConex;
             strcon.Open();
