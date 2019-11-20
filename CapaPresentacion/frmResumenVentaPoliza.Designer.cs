@@ -550,6 +550,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "frmResumenVentaPoliza";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmResumenVentaPoliza";
             this.Load += new System.EventHandler(this.frmResumenVentaPoliza_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmResumenVentaPoliza_MouseDown);

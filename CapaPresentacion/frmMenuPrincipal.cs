@@ -123,9 +123,24 @@ namespace CapaPresentacion
             frmVida.Show();
         }
 
-        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        private void toolStripMenuItem1_BackColorChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void sdfsdfToolStripMenuItem_ForeColorChanged(object sender, EventArgs e)
+        {
+            sdfsdfToolStripMenuItem.ForeColor = Color.Black;
         }
     }
 }

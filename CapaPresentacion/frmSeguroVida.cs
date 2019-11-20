@@ -32,8 +32,9 @@ namespace CapaPresentacion
         decimal Precio = 0;
         int varIdEmpleado = 0;
 
+        //   static bool b
+        static string _Categoria = "";
 
-        
         public frmSeguroVida()
         {
             InitializeComponent();
@@ -41,29 +42,45 @@ namespace CapaPresentacion
 
         private void btnRiesgoMuerte_Click(object sender, EventArgs e)
         {
-            pnlVidaRiesgoMuerte.Visible = true;
+            _DescrepcionValue = false;
+            if (!cancelarDescripcionSeguros())
+            {
+                pnlVidaRiesgoMuerte.Visible = true;
+            }
         }
 
         private void btnRiesgosLaborales_Click(object sender, EventArgs e)
         {
-            pnlVidaRiesgosLaborales.Visible = true;
+            _DescrepcionValue = false;
+            if (!cancelarDescripcionSeguros())
+            {
+                pnlVidaRiesgosLaborales.Visible = true;
+            }
         }
-
 
         private void btnSeguroSalud_Click(object sender, EventArgs e)
         {
-            pnlVidaSalud.Visible = true;
-            DataView dv = new DataView(dtPolizaDeSeguros);
+            _DescrepcionValue = false;
+            if (!cancelarDescripcionSeguros())
+            {
+                DataView dv = new DataView(dtPolizaDeSeguros);
 
-            dv.RowFilter = "[Nombre del Seguro] = 'Seguro de Salud'";
+                dv.RowFilter = "[Nombre del Seguro] = 'Seguro de Salud'";
 
-            idProductoSeguroVidaSalud = (int)dv[0]["id"];
-            Precio = (decimal)dv[0]["Precio"];
+                idProductoSeguroVidaSalud = (int)dv[0]["id"];
+                Precio = (decimal)dv[0]["Precio"];
+
+                pnlVidaSalud.Visible = true;
+            }
         }
 
         private void btnDependientes_Click(object sender, EventArgs e)
         {
-            pnlVidaSaludDependientes.Visible = true;
+            _DescrepcionValue = false;
+            if (!cancelarDescripcionSeguros())
+            {
+                pnlVidaSaludDependientes.Visible = true;
+            }
         }
 
         private void lblCerrarRiesgoMuerte_Click(object sender, EventArgs e)
@@ -79,6 +96,8 @@ namespace CapaPresentacion
         private void lblVidaRLab_BuscarEmpresaCerrar_Click(object sender, EventArgs e)
         {
             pnlVidaRiesgosLaborales_BuscarEmpresa.Visible = false;
+            lblSeguroRiesgosLaborales.Text = "Seguro Riesgos Laborales";
+            lblCerrar_pnlRiesgoLab.Visible = true;
         }
 
         private void lblCerrar_pnlVidaSalud_Click(object sender, EventArgs e)
@@ -121,8 +140,8 @@ namespace CapaPresentacion
                 else
                 {
                     if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrWhiteSpace(txtNombre.Text)
-                    || string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrWhiteSpace(txtApellido.Text)
-                    || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || mskCedula.Text == "   -       -" || mskTelefono.Text == ""
+                    || string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrWhiteSpace(txtApellido.Text)      
+                    || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || !mskTelefonoValidar() || !mskCedulaValidar() 
                     || string.IsNullOrEmpty(txtCorreoElectronico.Text) || string.IsNullOrWhiteSpace(txtCorreoElectronico.Text)
                     || string.IsNullOrEmpty(cmbNacionalidad.Text) || string.IsNullOrWhiteSpace(cmbNacionalidad.Text)
                     || string.IsNullOrEmpty(cmbSexo.Text) || string.IsNullOrWhiteSpace(cmbSexo.Text))
@@ -169,12 +188,25 @@ namespace CapaPresentacion
         
         public void Cargar_idCodigo_detalleSeguroSalud()
         {
-            idCodigo =  B_SeguroVida.B_Cargar_id_detalleSeguroSalud(E_SegVida);
+            try
+            {
+                idCodigo = B_SeguroVida.B_Cargar_id_detalleSeguroSalud(E_SegVida);
+            }
+            catch (Exception  ex){
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void CargarSegurosDePoliza()
         {
-           dtPolizaDeSeguros = B_SeguroVida.B_MostrarSegurosDePolizas();
+            try
+            {
+                dtPolizaDeSeguros = B_SeguroVida.B_MostrarSegurosDePolizas();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void CargarEmpleado()
@@ -236,10 +268,28 @@ namespace CapaPresentacion
             }
         }
 
-        private void AC_SeguroSalud_Click(object sender, EventArgs e)
+        static bool _DescrepcionValue = false;
+        public frmSeguroVida(bool DescrepcionValue)
         {
+            _DescrepcionValue = DescrepcionValue;
+        }
+        
+        public frmSeguroVida(string Categoria)
+        {
+            _Categoria = Categoria;
+        }
+
+        public bool cancelarDescripcionSeguros()
+        {
+            bool value = false;
             frmDescripcionSeguros frm = new frmDescripcionSeguros();
             frm.ShowDialog();
+
+            if (_DescrepcionValue.Equals(true))
+            {
+                value = true;
+            }
+            return value;
         }
 
         private void btnSIGUIENTEpnlVidaSalud_Click(object sender, EventArgs e)
@@ -251,7 +301,7 @@ namespace CapaPresentacion
         }
         public void Siguiente_pnlVidaSalud()
         {
-        //    try
+            try
             {
                 mskTelefonoValidar();
                 mskCedulaValidar();
@@ -269,26 +319,12 @@ namespace CapaPresentacion
                     || string.IsNullOrEmpty(cmbNacionalidad.Text) || string.IsNullOrWhiteSpace(cmbNacionalidad.Text)
                     || string.IsNullOrEmpty(cmbSexo.Text) || string.IsNullOrWhiteSpace(cmbSexo.Text)
                     || string.IsNullOrEmpty(txtInstitutoDondeLabora.Text) || string.IsNullOrWhiteSpace(txtInstitutoDondeLabora.Text)
-                    || string.IsNullOrEmpty(txtAntecedentesPersonales.Text) || string.IsNullOrWhiteSpace(txtAntecedentesPersonales.Text)
-                    || rbBasicoSegSalud.Checked == false && rbSemiFullSegSalud.Checked == false && rbFullSegSalud.Checked == false)
+                    || string.IsNullOrEmpty(txtAntecedentesPersonales.Text) || string.IsNullOrWhiteSpace(txtAntecedentesPersonales.Text))
                 {
                     MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else if (txtNombre.ReadOnly == true) // True aquí: Significa que está añadido como cliente en la Base de Datos
                 {
-                    string strRb_Categoria = "";
-                    if (rbBasicoSegSalud.Checked == true)
-                    {
-                        strRb_Categoria = "Básico";
-                    }
-                    else if (rbSemiFullSegSalud.Checked == true)
-                    {
-                        strRb_Categoria = "Semi Full";
-                    }
-                    else if (rbFullSegSalud.Checked == true)
-                    {
-                        strRb_Categoria = "Full";
-                    }
                     frmResumenVentaPoliza frmFac = new frmResumenVentaPoliza();
 
                     frmFac.txtId.Text = txtId.Text;
@@ -296,14 +332,12 @@ namespace CapaPresentacion
                     frmFac.txtCedula.Text = mskCedula.Text;
                     frmFac.txtSeguroA_Adquirir.Text = lblSeguroSalud.Text;
                     frmFac.txtEfectoA_Asegurar.Text = "N/A";
-                    frmFac.txtCategoria.Text = strRb_Categoria;
+                    frmFac.txtCategoria.Text = _Categoria;
                     frmFac.txtIdSeguro.Text = idProductoSeguroVidaSalud.ToString();
 
                     frmFac.txtCodigo.Text = idCodigo.ToString();
                     frmFac.txtSubTotal.Text = Precio.ToString();
                     frmFac.txtTotal_A_Pagar.Text = Precio.ToString();
-
-
 
 
                     frmFac.strInstitutoDondeLabora = txtInstitutoDondeLabora.Text.Trim();
@@ -317,7 +351,7 @@ namespace CapaPresentacion
                     MessageBox.Show("Añada el Cliente actual para poder continuar.", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-          //  catch (Exception ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private bool ValidarCamposSegSalud()
@@ -346,8 +380,7 @@ namespace CapaPresentacion
         private void QuitarErrorProviderSegSalud()
         {
             errorProvider1.SetError(txtInstitutoDondeLabora, "");
-            errorProvider1.SetError(txtAntecedentesPersonales, "");
-            errorProvider1.SetError(gbxCategoria, "");
+            errorProvider1.SetError(txtAntecedentesPersonales, "");;
         }
 
         private void dgvBuscarClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -476,15 +509,6 @@ namespace CapaPresentacion
         public bool mskTelefonoValidar()
         {
             bool valor = false;
-            if (mskTelefono.Text == "(   )-   -")
-            {
-                valor = false;
-                errorProvider1.SetError(mskTelefono, "Escriba el Telefono");
-            }
-            else
-            {
-                valor = true;
-            }
 
             if (!mskTelefono.Text.Length.Equals(14))
             {
@@ -519,16 +543,14 @@ namespace CapaPresentacion
                 valor = true;
             }
 
-            if (mskCedula.Text == "   -       -")
-            {
-                valor = false;
-                errorProvider1.SetError(mskCedula, "Escriba la Cédula");
-            }
-            else
-            {
-                valor = true;
-            }
             return valor;
+        }
+
+        private void btnVidaRLab_BuscarEmpresa_Click(object sender, EventArgs e)
+        {
+            pnlVidaRiesgosLaborales_BuscarEmpresa.Visible = true;
+            lblSeguroRiesgosLaborales.Text = "Buscar Empresa del Cliente";
+            lblCerrar_pnlRiesgoLab.Visible = false;
         }
     }
 }

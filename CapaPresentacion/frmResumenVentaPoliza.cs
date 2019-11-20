@@ -29,7 +29,7 @@ namespace CapaPresentacion
             "dfh g" +
             "df" +
             "hg dfhgdf" +
-            "hg dfhg df " +
+            "hg dfhg df " +                     /// Simulación de la Descripcion
             "hdfhg " +
             "dfs fgsfd gsdf g+sdf gs" +
             "df g" +
@@ -91,7 +91,15 @@ namespace CapaPresentacion
 
         private void btnPagarCrearPoliza_Click(object sender, EventArgs e)
         {
-            Pagar_y_CrearPoliza();
+            try
+            {
+                Pagar_y_CrearPoliza();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
         public void Pagar_y_CrearPoliza()
         {
@@ -107,7 +115,7 @@ namespace CapaPresentacion
             E_ResumenVentaPoliza.Poliza = DatosYContratoDePolizaDeSeguro;
             E_ResumenVentaPoliza.EstadoPoliza = 1;
 
-            E_ResumenVentaPoliza.Vencimiento = FechaA_Vencer(DateTime.Now.Date);
+            E_ResumenVentaPoliza.Vencimiento = DateTime.Parse("13-05-2020");
 
             if (MessageBox.Show("¿Está seguro que desea realizar el pago y crear una póliza de seguro para el cliente actual?","", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
