@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clSoloNumero.cs" />
     <Compile Include="csLimpiar.cs" />
     <Compile Include="frmDescripcionSeguros.cs">
       <SubType>Form</SubType>

@@ -44,6 +44,7 @@
     <Compile Include="B_ResumenVentaPoliza\B_ResumenVentaPoliza.cs" />
     <Compile Include="Clientes\B_Clientes.cs" />
     <Compile Include="Empleados\B_Empleados.cs" />
+    <Compile Include="Poliza\B_Poliza.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeguroVida\B_SeguroVida.cs" />
     <Compile Include="Usuarios\B_Usuarios.cs" />

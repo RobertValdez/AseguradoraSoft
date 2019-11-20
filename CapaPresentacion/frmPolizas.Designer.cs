@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPolizas));
             this.btnPagoP = new System.Windows.Forms.Button();
             this.btnGestionarP = new System.Windows.Forms.Button();
@@ -64,28 +65,29 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnVerPoliza_Renovar = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtCliente_Renovar = new System.Windows.Forms.TextBox();
+            this.txtCedulaCliente_Renovar = new System.Windows.Forms.TextBox();
             this.txtVencimiento_Renovar = new System.Windows.Forms.TextBox();
+            this.txtEstado_Renovar = new System.Windows.Forms.TextBox();
             this.txtNumPoliza_Renovar = new System.Windows.Forms.TextBox();
             this.btnPagar_Renovar = new System.Windows.Forms.Button();
             this.cmbTPago = new System.Windows.Forms.ComboBox();
             this.lblParcial = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.txtParcial_Renovar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtPrecio_Renovar = new System.Windows.Forms.TextBox();
             this.txtTotalAPagar_Renovar = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
-            this.dgvMostrarPolizas_Pagar = new System.Windows.Forms.DataGridView();
+            this.dgvMostrarPolizas_Renovar = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtPrecio_Renovar = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtEstado_Renovar = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.btnVerPoliza_Renovar = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtPagoParcial_Renovar = new System.Windows.Forms.TextBox();
             this.pnlPagoPolizas.SuspendLayout();
             this.tabGestionarPolizas.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -94,7 +96,8 @@
             this.tabPage2.SuspendLayout();
             this.pnlGestionarPolizas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarPoliza_Cancelar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarPolizas_Pagar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarPolizas_Renovar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPagoP
@@ -135,7 +138,7 @@
             this.pnlPagoPolizas.Controls.Add(this.btnVerPoliza_Renovar);
             this.pnlPagoPolizas.Controls.Add(this.label13);
             this.pnlPagoPolizas.Controls.Add(this.label6);
-            this.pnlPagoPolizas.Controls.Add(this.txtCliente_Renovar);
+            this.pnlPagoPolizas.Controls.Add(this.txtCedulaCliente_Renovar);
             this.pnlPagoPolizas.Controls.Add(this.txtVencimiento_Renovar);
             this.pnlPagoPolizas.Controls.Add(this.txtEstado_Renovar);
             this.pnlPagoPolizas.Controls.Add(this.txtNumPoliza_Renovar);
@@ -146,12 +149,12 @@
             this.pnlPagoPolizas.Controls.Add(this.label3);
             this.pnlPagoPolizas.Controls.Add(this.label11);
             this.pnlPagoPolizas.Controls.Add(this.comboBox2);
-            this.pnlPagoPolizas.Controls.Add(this.txtParcial_Renovar);
+            this.pnlPagoPolizas.Controls.Add(this.txtPagoParcial_Renovar);
             this.pnlPagoPolizas.Controls.Add(this.label1);
             this.pnlPagoPolizas.Controls.Add(this.txtPrecio_Renovar);
             this.pnlPagoPolizas.Controls.Add(this.txtTotalAPagar_Renovar);
             this.pnlPagoPolizas.Controls.Add(this.textBox10);
-            this.pnlPagoPolizas.Controls.Add(this.dgvMostrarPolizas_Pagar);
+            this.pnlPagoPolizas.Controls.Add(this.dgvMostrarPolizas_Renovar);
             this.pnlPagoPolizas.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.pnlPagoPolizas.Location = new System.Drawing.Point(-3, 104);
             this.pnlPagoPolizas.Name = "pnlPagoPolizas";
@@ -530,9 +533,9 @@
             this.label5.Location = new System.Drawing.Point(766, 96);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 24);
+            this.label5.Size = new System.Drawing.Size(92, 24);
             this.label5.TabIndex = 172;
-            this.label5.Text = "Cliente:";
+            this.label5.Text = "Cédula:";
             // 
             // label7
             // 
@@ -546,6 +549,31 @@
             this.label7.TabIndex = 173;
             this.label7.Text = "Vencimiento\r\nActual:";
             // 
+            // btnVerPoliza_Renovar
+            // 
+            this.btnVerPoliza_Renovar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerPoliza_Renovar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerPoliza_Renovar.ForeColor = System.Drawing.Color.Crimson;
+            this.btnVerPoliza_Renovar.Location = new System.Drawing.Point(1036, 136);
+            this.btnVerPoliza_Renovar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnVerPoliza_Renovar.Name = "btnVerPoliza_Renovar";
+            this.btnVerPoliza_Renovar.Size = new System.Drawing.Size(77, 33);
+            this.btnVerPoliza_Renovar.TabIndex = 165;
+            this.btnVerPoliza_Renovar.Text = "Ver";
+            this.btnVerPoliza_Renovar.UseVisualStyleBackColor = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Firebrick;
+            this.label13.Location = new System.Drawing.Point(766, 180);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(83, 24);
+            this.label13.TabIndex = 173;
+            this.label13.Text = "Estado:";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -558,14 +586,14 @@
             this.label6.TabIndex = 173;
             this.label6.Text = "Núm. Póliza:";
             // 
-            // txtCliente_Renovar
+            // txtCedulaCliente_Renovar
             // 
-            this.txtCliente_Renovar.Location = new System.Drawing.Point(912, 93);
-            this.txtCliente_Renovar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtCliente_Renovar.Name = "txtCliente_Renovar";
-            this.txtCliente_Renovar.ReadOnly = true;
-            this.txtCliente_Renovar.Size = new System.Drawing.Size(203, 33);
-            this.txtCliente_Renovar.TabIndex = 170;
+            this.txtCedulaCliente_Renovar.Location = new System.Drawing.Point(912, 93);
+            this.txtCedulaCliente_Renovar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCedulaCliente_Renovar.Name = "txtCedulaCliente_Renovar";
+            this.txtCedulaCliente_Renovar.ReadOnly = true;
+            this.txtCedulaCliente_Renovar.Size = new System.Drawing.Size(203, 33);
+            this.txtCedulaCliente_Renovar.TabIndex = 170;
             // 
             // txtVencimiento_Renovar
             // 
@@ -575,6 +603,15 @@
             this.txtVencimiento_Renovar.ReadOnly = true;
             this.txtVencimiento_Renovar.Size = new System.Drawing.Size(203, 33);
             this.txtVencimiento_Renovar.TabIndex = 171;
+            // 
+            // txtEstado_Renovar
+            // 
+            this.txtEstado_Renovar.Location = new System.Drawing.Point(912, 177);
+            this.txtEstado_Renovar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtEstado_Renovar.Name = "txtEstado_Renovar";
+            this.txtEstado_Renovar.ReadOnly = true;
+            this.txtEstado_Renovar.Size = new System.Drawing.Size(203, 33);
+            this.txtEstado_Renovar.TabIndex = 171;
             // 
             // txtNumPoliza_Renovar
             // 
@@ -599,6 +636,7 @@
             this.btnPagar_Renovar.TabIndex = 169;
             this.btnPagar_Renovar.Text = "Pagar";
             this.btnPagar_Renovar.UseVisualStyleBackColor = false;
+            this.btnPagar_Renovar.Click += new System.EventHandler(this.btnPagar_Renovar_Click);
             // 
             // cmbTPago
             // 
@@ -607,7 +645,7 @@
             this.cmbTPago.Items.AddRange(new object[] {
             "Al contado",
             "Parcial"});
-            this.cmbTPago.Location = new System.Drawing.Point(919, 305);
+            this.cmbTPago.Location = new System.Drawing.Point(919, 302);
             this.cmbTPago.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cmbTPago.Name = "cmbTPago";
             this.cmbTPago.Size = new System.Drawing.Size(196, 32);
@@ -619,7 +657,7 @@
             this.lblParcial.AutoSize = true;
             this.lblParcial.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblParcial.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblParcial.Location = new System.Drawing.Point(766, 353);
+            this.lblParcial.Location = new System.Drawing.Point(766, 350);
             this.lblParcial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblParcial.Name = "lblParcial";
             this.lblParcial.Size = new System.Drawing.Size(145, 24);
@@ -627,12 +665,24 @@
             this.lblParcial.Text = "Pago parcial:";
             this.lblParcial.Visible = false;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Firebrick;
+            this.label12.Location = new System.Drawing.Point(628, 23);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(243, 24);
+            this.label12.TabIndex = 165;
+            this.label12.Text = "Precio de Renovación:";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Firebrick;
-            this.label3.Location = new System.Drawing.Point(766, 394);
+            this.label3.Location = new System.Drawing.Point(766, 418);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(151, 24);
@@ -644,7 +694,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Firebrick;
-            this.label11.Location = new System.Drawing.Point(967, 269);
+            this.label11.Location = new System.Drawing.Point(967, 266);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(148, 24);
@@ -670,15 +720,6 @@
             this.comboBox2.Size = new System.Drawing.Size(297, 32);
             this.comboBox2.TabIndex = 164;
             // 
-            // txtParcial_Renovar
-            // 
-            this.txtParcial_Renovar.Location = new System.Drawing.Point(919, 348);
-            this.txtParcial_Renovar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtParcial_Renovar.Name = "txtParcial_Renovar";
-            this.txtParcial_Renovar.Size = new System.Drawing.Size(196, 33);
-            this.txtParcial_Renovar.TabIndex = 162;
-            this.txtParcial_Renovar.Visible = false;
-            // 
             // label1
             // 
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -689,13 +730,27 @@
             this.label1.Size = new System.Drawing.Size(62, 56);
             this.label1.TabIndex = 163;
             // 
+            // txtPrecio_Renovar
+            // 
+            this.txtPrecio_Renovar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio_Renovar.Location = new System.Drawing.Point(879, 20);
+            this.txtPrecio_Renovar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtPrecio_Renovar.Name = "txtPrecio_Renovar";
+            this.txtPrecio_Renovar.ReadOnly = true;
+            this.txtPrecio_Renovar.Size = new System.Drawing.Size(236, 33);
+            this.txtPrecio_Renovar.TabIndex = 162;
+            this.txtPrecio_Renovar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // txtTotalAPagar_Renovar
             // 
-            this.txtTotalAPagar_Renovar.Location = new System.Drawing.Point(919, 391);
+            this.txtTotalAPagar_Renovar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalAPagar_Renovar.Location = new System.Drawing.Point(919, 415);
             this.txtTotalAPagar_Renovar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtTotalAPagar_Renovar.Name = "txtTotalAPagar_Renovar";
+            this.txtTotalAPagar_Renovar.ReadOnly = true;
             this.txtTotalAPagar_Renovar.Size = new System.Drawing.Size(196, 33);
             this.txtTotalAPagar_Renovar.TabIndex = 162;
+            this.txtTotalAPagar_Renovar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox10
             // 
@@ -705,20 +760,20 @@
             this.textBox10.Size = new System.Drawing.Size(434, 33);
             this.textBox10.TabIndex = 162;
             // 
-            // dgvMostrarPolizas_Pagar
+            // dgvMostrarPolizas_Renovar
             // 
-            this.dgvMostrarPolizas_Pagar.AllowUserToAddRows = false;
-            this.dgvMostrarPolizas_Pagar.AllowUserToDeleteRows = false;
-            this.dgvMostrarPolizas_Pagar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dgvMostrarPolizas_Pagar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvMostrarPolizas_Pagar.BackgroundColor = System.Drawing.Color.LightPink;
-            this.dgvMostrarPolizas_Pagar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMostrarPolizas_Pagar.Location = new System.Drawing.Point(15, 109);
-            this.dgvMostrarPolizas_Pagar.Name = "dgvMostrarPolizas_Pagar";
-            this.dgvMostrarPolizas_Pagar.ReadOnly = true;
-            this.dgvMostrarPolizas_Pagar.Size = new System.Drawing.Size(735, 452);
-            this.dgvMostrarPolizas_Pagar.TabIndex = 0;
-            this.dgvMostrarPolizas_Pagar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMostrarPolizas_Pagar_CellClick);
+            this.dgvMostrarPolizas_Renovar.AllowUserToAddRows = false;
+            this.dgvMostrarPolizas_Renovar.AllowUserToDeleteRows = false;
+            this.dgvMostrarPolizas_Renovar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvMostrarPolizas_Renovar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvMostrarPolizas_Renovar.BackgroundColor = System.Drawing.Color.LightPink;
+            this.dgvMostrarPolizas_Renovar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMostrarPolizas_Renovar.Location = new System.Drawing.Point(15, 109);
+            this.dgvMostrarPolizas_Renovar.Name = "dgvMostrarPolizas_Renovar";
+            this.dgvMostrarPolizas_Renovar.ReadOnly = true;
+            this.dgvMostrarPolizas_Renovar.Size = new System.Drawing.Size(735, 452);
+            this.dgvMostrarPolizas_Renovar.TabIndex = 0;
+            this.dgvMostrarPolizas_Renovar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMostrarPolizas_Pagar_CellClick);
             // 
             // panel1
             // 
@@ -736,60 +791,20 @@
             this.panel2.Size = new System.Drawing.Size(10, 730);
             this.panel2.TabIndex = 174;
             // 
-            // txtPrecio_Renovar
+            // errorProvider1
             // 
-            this.txtPrecio_Renovar.Location = new System.Drawing.Point(879, 20);
-            this.txtPrecio_Renovar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtPrecio_Renovar.Name = "txtPrecio_Renovar";
-            this.txtPrecio_Renovar.ReadOnly = true;
-            this.txtPrecio_Renovar.Size = new System.Drawing.Size(196, 33);
-            this.txtPrecio_Renovar.TabIndex = 162;
+            this.errorProvider1.ContainerControl = this;
             // 
-            // label12
+            // txtPagoParcial_Renovar
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Firebrick;
-            this.label12.Location = new System.Drawing.Point(628, 23);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(243, 24);
-            this.label12.TabIndex = 165;
-            this.label12.Text = "Precio de Renovación:";
-            // 
-            // txtEstado_Renovar
-            // 
-            this.txtEstado_Renovar.Location = new System.Drawing.Point(912, 177);
-            this.txtEstado_Renovar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtEstado_Renovar.Name = "txtEstado_Renovar";
-            this.txtEstado_Renovar.ReadOnly = true;
-            this.txtEstado_Renovar.Size = new System.Drawing.Size(203, 33);
-            this.txtEstado_Renovar.TabIndex = 171;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Firebrick;
-            this.label13.Location = new System.Drawing.Point(766, 180);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(83, 24);
-            this.label13.TabIndex = 173;
-            this.label13.Text = "Estado:";
-            // 
-            // btnVerPoliza_Renovar
-            // 
-            this.btnVerPoliza_Renovar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerPoliza_Renovar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerPoliza_Renovar.ForeColor = System.Drawing.Color.Crimson;
-            this.btnVerPoliza_Renovar.Location = new System.Drawing.Point(1036, 136);
-            this.btnVerPoliza_Renovar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnVerPoliza_Renovar.Name = "btnVerPoliza_Renovar";
-            this.btnVerPoliza_Renovar.Size = new System.Drawing.Size(77, 33);
-            this.btnVerPoliza_Renovar.TabIndex = 165;
-            this.btnVerPoliza_Renovar.Text = "Ver";
-            this.btnVerPoliza_Renovar.UseVisualStyleBackColor = false;
+            this.txtPagoParcial_Renovar.Location = new System.Drawing.Point(919, 345);
+            this.txtPagoParcial_Renovar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtPagoParcial_Renovar.Name = "txtPagoParcial_Renovar";
+            this.txtPagoParcial_Renovar.Size = new System.Drawing.Size(196, 33);
+            this.txtPagoParcial_Renovar.TabIndex = 162;
+            this.txtPagoParcial_Renovar.Visible = false;
+            this.txtPagoParcial_Renovar.TextChanged += new System.EventHandler(this.txtParcial_Renovar_TextChanged);
+            this.txtPagoParcial_Renovar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtParcial_Renovar_KeyPress);
             // 
             // frmPolizas
             // 
@@ -818,7 +833,8 @@
             this.pnlGestionarPolizas.ResumeLayout(false);
             this.pnlGestionarPolizas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarPoliza_Cancelar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarPolizas_Pagar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarPolizas_Renovar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -831,16 +847,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTotalAPagar_Renovar;
         private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.DataGridView dgvMostrarPolizas_Pagar;
+        private System.Windows.Forms.DataGridView dgvMostrarPolizas_Renovar;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmbTPago;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblParcial;
-        private System.Windows.Forms.TextBox txtParcial_Renovar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtCliente_Renovar;
+        private System.Windows.Forms.TextBox txtCedulaCliente_Renovar;
         private System.Windows.Forms.TextBox txtVencimiento_Renovar;
         private System.Windows.Forms.TextBox txtNumPoliza_Renovar;
         private System.Windows.Forms.Button btnPagar_Renovar;
@@ -881,5 +896,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtEstado_Renovar;
         private System.Windows.Forms.Button btnVerPoliza_Renovar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TextBox txtPagoParcial_Renovar;
     }
 }
