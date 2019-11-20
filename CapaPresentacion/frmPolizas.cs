@@ -17,6 +17,8 @@ namespace CapaPresentacion
 {
     public partial class frmPolizas : Form
     {
+        clSoloNumero cs = new clSoloNumero();
+
         private E_Poliza E_Poliza = new E_Poliza();
         private B_VerPoliza B_VerPolizas = new B_VerPoliza();
 
@@ -197,8 +199,22 @@ namespace CapaPresentacion
             errorProvider1.SetError(txtPagoParcial_Renovar, "");
         }
 
+
+
         private void txtParcial_Renovar_TextChanged(object sender, EventArgs e)
         {
+
+
+            txtPagoParcial_Renovar.TextChanged += delegate (System.Object o, System.EventArgs r)
+            {
+                TextBox _tbox = o as TextBox;
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+            };
+
+
+
+
+
             if (txtPagoParcial_Renovar.Text == "")
             {
                 blParcial = true;
@@ -212,7 +228,7 @@ namespace CapaPresentacion
 
         private void txtParcial_Renovar_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+           //cs.SoloNumeros(e);
         }
     }
 }

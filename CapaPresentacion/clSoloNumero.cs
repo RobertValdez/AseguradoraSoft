@@ -9,7 +9,7 @@ namespace CapaPresentacion
 {
      class clSoloNumero
     {
-        public void SoloLetras(KeyPressEventArgs e)
+        public void SoloNumeros(KeyPressEventArgs e)
         {
             try
             {
