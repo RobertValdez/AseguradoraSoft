@@ -36,11 +36,13 @@
             this.tabGestionarPolizas = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.btnCrearCuenta = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox80 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox79 = new System.Windows.Forms.TextBox();
             this.textBox78 = new System.Windows.Forms.TextBox();
@@ -79,6 +81,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.txtPagoParcial_Renovar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPrecio_Renovar = new System.Windows.Forms.TextBox();
             this.txtTotalAPagar_Renovar = new System.Windows.Forms.TextBox();
@@ -87,7 +90,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtPagoParcial_Renovar = new System.Windows.Forms.TextBox();
             this.pnlPagoPolizas.SuspendLayout();
             this.tabGestionarPolizas.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -168,7 +170,7 @@
             this.tabGestionarPolizas.Location = new System.Drawing.Point(9, 14);
             this.tabGestionarPolizas.Name = "tabGestionarPolizas";
             this.tabGestionarPolizas.SelectedIndex = 0;
-            this.tabGestionarPolizas.Size = new System.Drawing.Size(380, 511);
+            this.tabGestionarPolizas.Size = new System.Drawing.Size(1159, 572);
             this.tabGestionarPolizas.TabIndex = 187;
             this.tabGestionarPolizas.Visible = false;
             // 
@@ -178,28 +180,59 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 33);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(372, 474);
+            this.tabPage1.Size = new System.Drawing.Size(1155, 535);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nueva";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label14);
+            this.panel3.Controls.Add(this.comboBox1);
             this.panel3.Controls.Add(this.dataGridView4);
             this.panel3.Controls.Add(this.btnCrearCuenta);
             this.panel3.Controls.Add(this.label30);
+            this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.textBox80);
-            this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.textBox79);
             this.panel3.Controls.Add(this.textBox78);
             this.panel3.Controls.Add(this.label60);
             this.panel3.Controls.Add(this.label51);
             this.panel3.Controls.Add(this.label42);
-            this.panel3.Location = new System.Drawing.Point(6, 20);
+            this.panel3.Location = new System.Drawing.Point(6, 1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1071, 437);
+            this.panel3.Size = new System.Drawing.Size(1143, 534);
             this.panel3.TabIndex = 25;
+            // 
+            // label14
+            // 
+            this.label14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label14.Image = ((System.Drawing.Image)(resources.GetObject("label14.Image")));
+            this.label14.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.label14.Location = new System.Drawing.Point(561, 42);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(62, 56);
+            this.label14.TabIndex = 208;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Seguro de Riesgo de Muerte",
+            "Seguro de Salud",
+            "Seguro de Riesgos Laborales",
+            "Seguro Contenido",
+            "Seguro Edificaciones",
+            "Seguro para Empresas y Negocios",
+            "Seguro a Todo Riesgo",
+            "Seguro Obligatorio",
+            "Seguro Voluntario"});
+            this.comboBox1.Location = new System.Drawing.Point(630, 33);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(412, 32);
+            this.comboBox1.TabIndex = 207;
             // 
             // dataGridView4
             // 
@@ -207,10 +240,10 @@
             this.dataGridView4.AllowUserToDeleteRows = false;
             this.dataGridView4.BackgroundColor = System.Drawing.Color.LightPink;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(495, 42);
+            this.dataGridView4.Location = new System.Drawing.Point(495, 110);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.Size = new System.Drawing.Size(550, 363);
+            this.dataGridView4.Size = new System.Drawing.Size(627, 363);
             this.dataGridView4.TabIndex = 206;
             // 
             // btnCrearCuenta
@@ -220,7 +253,7 @@
             this.btnCrearCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrearCuenta.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrearCuenta.ForeColor = System.Drawing.Color.White;
-            this.btnCrearCuenta.Location = new System.Drawing.Point(58, 348);
+            this.btnCrearCuenta.Location = new System.Drawing.Point(71, 416);
             this.btnCrearCuenta.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCrearCuenta.Name = "btnCrearCuenta";
             this.btnCrearCuenta.Size = new System.Drawing.Size(395, 57);
@@ -239,27 +272,22 @@
             this.label30.TabIndex = 185;
             this.label30.Text = "Buscar Solicitud de Póliza";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(630, 71);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(293, 33);
+            this.textBox1.TabIndex = 191;
+            // 
             // textBox80
             // 
-            this.textBox80.Location = new System.Drawing.Point(204, 224);
+            this.textBox80.Location = new System.Drawing.Point(71, 254);
             this.textBox80.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox80.Name = "textBox80";
             this.textBox80.ReadOnly = true;
-            this.textBox80.Size = new System.Drawing.Size(222, 33);
+            this.textBox80.Size = new System.Drawing.Size(395, 33);
             this.textBox80.TabIndex = 191;
-            // 
-            // button4
-            // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Crimson;
-            this.button4.Location = new System.Drawing.Point(265, 265);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(161, 27);
-            this.button4.TabIndex = 165;
-            this.button4.Text = "Ver solicitud";
-            this.button4.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
@@ -269,7 +297,7 @@
             this.button3.Location = new System.Drawing.Point(265, 162);
             this.button3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(161, 27);
+            this.button3.Size = new System.Drawing.Size(201, 27);
             this.button3.TabIndex = 165;
             this.button3.Text = "Buscar Cliente";
             this.button3.UseVisualStyleBackColor = false;
@@ -280,7 +308,7 @@
             this.textBox79.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox79.Name = "textBox79";
             this.textBox79.ReadOnly = true;
-            this.textBox79.Size = new System.Drawing.Size(239, 33);
+            this.textBox79.Size = new System.Drawing.Size(279, 33);
             this.textBox79.TabIndex = 192;
             // 
             // textBox78
@@ -289,18 +317,18 @@
             this.textBox78.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox78.Name = "textBox78";
             this.textBox78.ReadOnly = true;
-            this.textBox78.Size = new System.Drawing.Size(239, 33);
+            this.textBox78.Size = new System.Drawing.Size(279, 33);
             this.textBox78.TabIndex = 193;
             // 
             // label60
             // 
             this.label60.AutoSize = true;
-            this.label60.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.label60.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label60.ForeColor = System.Drawing.Color.Firebrick;
-            this.label60.Location = new System.Drawing.Point(67, 227);
+            this.label60.Location = new System.Drawing.Point(66, 223);
             this.label60.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(129, 24);
+            this.label60.Size = new System.Drawing.Size(147, 28);
             this.label60.TabIndex = 187;
             this.label60.Text = "No. Factura";
             // 
@@ -334,7 +362,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(372, 474);
+            this.tabPage2.Size = new System.Drawing.Size(1151, 535);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Cancelación";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -357,7 +385,7 @@
             this.pnlGestionarPolizas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlGestionarPolizas.Location = new System.Drawing.Point(6, 3);
             this.pnlGestionarPolizas.Name = "pnlGestionarPolizas";
-            this.pnlGestionarPolizas.Size = new System.Drawing.Size(1084, 472);
+            this.pnlGestionarPolizas.Size = new System.Drawing.Size(1145, 476);
             this.pnlGestionarPolizas.TabIndex = 25;
             // 
             // label4
@@ -365,19 +393,19 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Firebrick;
-            this.label4.Location = new System.Drawing.Point(758, 89);
+            this.label4.Location = new System.Drawing.Point(757, 89);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 24);
+            this.label4.Size = new System.Drawing.Size(92, 24);
             this.label4.TabIndex = 184;
-            this.label4.Text = "Cliente:";
+            this.label4.Text = "Cédula:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Firebrick;
-            this.label10.Location = new System.Drawing.Point(758, 218);
+            this.label10.Location = new System.Drawing.Point(757, 218);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(66, 24);
@@ -389,7 +417,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Firebrick;
-            this.label8.Location = new System.Drawing.Point(758, 176);
+            this.label8.Location = new System.Drawing.Point(757, 176);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(83, 24);
@@ -401,7 +429,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Firebrick;
-            this.label9.Location = new System.Drawing.Point(758, 132);
+            this.label9.Location = new System.Drawing.Point(757, 132);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(133, 24);
@@ -410,38 +438,38 @@
             // 
             // txtCliente_Cancelar
             // 
-            this.txtCliente_Cancelar.Location = new System.Drawing.Point(913, 89);
+            this.txtCliente_Cancelar.Location = new System.Drawing.Point(912, 89);
             this.txtCliente_Cancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtCliente_Cancelar.Name = "txtCliente_Cancelar";
             this.txtCliente_Cancelar.ReadOnly = true;
-            this.txtCliente_Cancelar.Size = new System.Drawing.Size(138, 33);
+            this.txtCliente_Cancelar.Size = new System.Drawing.Size(209, 33);
             this.txtCliente_Cancelar.TabIndex = 181;
             // 
             // txtNota_Cancelar
             // 
-            this.txtNota_Cancelar.Location = new System.Drawing.Point(834, 215);
+            this.txtNota_Cancelar.Location = new System.Drawing.Point(833, 215);
             this.txtNota_Cancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtNota_Cancelar.Multiline = true;
             this.txtNota_Cancelar.Name = "txtNota_Cancelar";
-            this.txtNota_Cancelar.Size = new System.Drawing.Size(217, 145);
+            this.txtNota_Cancelar.Size = new System.Drawing.Size(288, 145);
             this.txtNota_Cancelar.TabIndex = 182;
             // 
             // txtEstado_Cancelar
             // 
-            this.txtEstado_Cancelar.Location = new System.Drawing.Point(913, 173);
+            this.txtEstado_Cancelar.Location = new System.Drawing.Point(912, 173);
             this.txtEstado_Cancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtEstado_Cancelar.Name = "txtEstado_Cancelar";
             this.txtEstado_Cancelar.ReadOnly = true;
-            this.txtEstado_Cancelar.Size = new System.Drawing.Size(138, 33);
+            this.txtEstado_Cancelar.Size = new System.Drawing.Size(209, 33);
             this.txtEstado_Cancelar.TabIndex = 182;
             // 
             // txtNumPoliza_Cancelar
             // 
-            this.txtNumPoliza_Cancelar.Location = new System.Drawing.Point(913, 132);
+            this.txtNumPoliza_Cancelar.Location = new System.Drawing.Point(912, 132);
             this.txtNumPoliza_Cancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtNumPoliza_Cancelar.Name = "txtNumPoliza_Cancelar";
             this.txtNumPoliza_Cancelar.ReadOnly = true;
-            this.txtNumPoliza_Cancelar.Size = new System.Drawing.Size(138, 33);
+            this.txtNumPoliza_Cancelar.Size = new System.Drawing.Size(209, 33);
             this.txtNumPoliza_Cancelar.TabIndex = 183;
             // 
             // btnCancelarPoliza
@@ -451,13 +479,14 @@
             this.btnCancelarPoliza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarPoliza.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarPoliza.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarPoliza.Location = new System.Drawing.Point(762, 395);
+            this.btnCancelarPoliza.Location = new System.Drawing.Point(768, 395);
             this.btnCancelarPoliza.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCancelarPoliza.Name = "btnCancelarPoliza";
-            this.btnCancelarPoliza.Size = new System.Drawing.Size(289, 57);
+            this.btnCancelarPoliza.Size = new System.Drawing.Size(353, 57);
             this.btnCancelarPoliza.TabIndex = 180;
             this.btnCancelarPoliza.Text = "Cancelar Póliza";
             this.btnCancelarPoliza.UseVisualStyleBackColor = false;
+            this.btnCancelarPoliza.Click += new System.EventHandler(this.btnCancelarPoliza_Click);
             // 
             // cmbSeguro_CancelarP
             // 
@@ -523,7 +552,6 @@
             this.btnImprimir.Size = new System.Drawing.Size(71, 57);
             this.btnImprimir.TabIndex = 253;
             this.btnImprimir.UseVisualStyleBackColor = false;
-            this.btnImprimir.Visible = false;
             // 
             // label5
             // 
@@ -720,6 +748,16 @@
             this.comboBox2.Size = new System.Drawing.Size(297, 32);
             this.comboBox2.TabIndex = 164;
             // 
+            // txtPagoParcial_Renovar
+            // 
+            this.txtPagoParcial_Renovar.Location = new System.Drawing.Point(919, 345);
+            this.txtPagoParcial_Renovar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtPagoParcial_Renovar.Name = "txtPagoParcial_Renovar";
+            this.txtPagoParcial_Renovar.Size = new System.Drawing.Size(196, 33);
+            this.txtPagoParcial_Renovar.TabIndex = 162;
+            this.txtPagoParcial_Renovar.Visible = false;
+            this.txtPagoParcial_Renovar.TextChanged += new System.EventHandler(this.txtPagoParcial_Renovar_TextChanged);
+            // 
             // label1
             // 
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -788,30 +826,19 @@
             this.panel2.BackColor = System.Drawing.Color.Crimson;
             this.panel2.Location = new System.Drawing.Point(1171, -40);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 730);
+            this.panel2.Size = new System.Drawing.Size(10, 770);
             this.panel2.TabIndex = 174;
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // txtPagoParcial_Renovar
-            // 
-            this.txtPagoParcial_Renovar.Location = new System.Drawing.Point(919, 345);
-            this.txtPagoParcial_Renovar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtPagoParcial_Renovar.Name = "txtPagoParcial_Renovar";
-            this.txtPagoParcial_Renovar.Size = new System.Drawing.Size(196, 33);
-            this.txtPagoParcial_Renovar.TabIndex = 162;
-            this.txtPagoParcial_Renovar.Visible = false;
-            this.txtPagoParcial_Renovar.TextChanged += new System.EventHandler(this.txtParcial_Renovar_TextChanged);
-            this.txtPagoParcial_Renovar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtParcial_Renovar_KeyPress);
-            // 
             // frmPolizas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1181, 723);
+            this.ClientSize = new System.Drawing.Size(1181, 672);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlPagoPolizas);
@@ -820,6 +847,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmPolizas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Polizas";
             this.Load += new System.EventHandler(this.frmPolizas_Load);
             this.pnlPagoPolizas.ResumeLayout(false);
@@ -883,7 +911,6 @@
         private System.Windows.Forms.Button btnCrearCuenta;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox textBox80;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox79;
         private System.Windows.Forms.TextBox textBox78;
@@ -898,5 +925,8 @@
         private System.Windows.Forms.Button btnVerPoliza_Renovar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TextBox txtPagoParcial_Renovar;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label14;
     }
 }
