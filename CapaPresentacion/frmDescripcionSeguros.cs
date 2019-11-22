@@ -34,6 +34,7 @@ namespace CapaPresentacion
         private void lblCerrar_Click(object sender, EventArgs e)
         {
             frmSeguroVida sv = new frmSeguroVida(true);
+            frmSolicitud st = new frmSolicitud(true);
             Close();
         }
 

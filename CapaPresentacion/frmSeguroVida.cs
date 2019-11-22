@@ -32,7 +32,6 @@ namespace CapaPresentacion
         decimal Precio = 0;
         int varIdEmpleado = 0;
 
-        //   static bool b
         static string _Categoria = "";
 
         public frmSeguroVida()
@@ -532,7 +531,7 @@ namespace CapaPresentacion
         }
         public bool mskCedulaValidar()
         {
-             bool valor = false;
+            bool valor = false;
             if (!mskCedula.Text.Length.Equals(13))
             {
                 valor = false;

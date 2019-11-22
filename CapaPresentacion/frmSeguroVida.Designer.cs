@@ -383,7 +383,7 @@
             this.pnlVidaSaludDependientes.Location = new System.Drawing.Point(473, 75);
             this.pnlVidaSaludDependientes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlVidaSaludDependientes.Name = "pnlVidaSaludDependientes";
-            this.pnlVidaSaludDependientes.Size = new System.Drawing.Size(841, 605);
+            this.pnlVidaSaludDependientes.Size = new System.Drawing.Size(840, 605);
             this.pnlVidaSaludDependientes.TabIndex = 9;
             this.pnlVidaSaludDependientes.Visible = false;
             // 
@@ -1308,7 +1308,7 @@
             this.pnlBuscarCliente.Controls.Add(this.label5);
             this.pnlBuscarCliente.Location = new System.Drawing.Point(6, 114);
             this.pnlBuscarCliente.Name = "pnlBuscarCliente";
-            this.pnlBuscarCliente.Size = new System.Drawing.Size(460, 588);
+            this.pnlBuscarCliente.Size = new System.Drawing.Size(461, 588);
             this.pnlBuscarCliente.TabIndex = 106;
             this.pnlBuscarCliente.Visible = false;
             // 
@@ -1360,7 +1360,7 @@
             this.dgvBuscarClientes.Location = new System.Drawing.Point(0, 92);
             this.dgvBuscarClientes.Name = "dgvBuscarClientes";
             this.dgvBuscarClientes.ReadOnly = true;
-            this.dgvBuscarClientes.Size = new System.Drawing.Size(460, 496);
+            this.dgvBuscarClientes.Size = new System.Drawing.Size(461, 496);
             this.dgvBuscarClientes.TabIndex = 0;
             this.dgvBuscarClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscarClientes_CellDoubleClick);
             // 
@@ -1440,9 +1440,9 @@
             this.label31.Location = new System.Drawing.Point(280, 32);
             this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(84, 23);
+            this.label31.Size = new System.Drawing.Size(85, 23);
             this.label31.TabIndex = 1;
-            this.label31.Text = "Cédula:";
+            this.label31.Text = "Código:";
             // 
             // errorProvider1
             // 

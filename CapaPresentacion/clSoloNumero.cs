@@ -30,7 +30,7 @@ namespace CapaPresentacion
                     e.Handled = true;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
