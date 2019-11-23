@@ -432,7 +432,7 @@ namespace CapaPresentacion
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             csLimpiar L = new csLimpiar();
-            L.BorrarCampos(pnlCliente);
+            L.BorrarCamposPnl(pnlCliente);
 
             lblId.Visible = false;
             txtId.Visible = false;

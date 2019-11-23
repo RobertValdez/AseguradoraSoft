@@ -9,12 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using CapaNegocio.Clientes;
+using CapaNegocio.Siniestro;
+using PerlaDelSur_Entity.Siniestro;
 
 namespace CapaPresentacion
 {
     public partial class frmSiniestro : Form
     {
         B_Clientes B_Clientes = new B_Clientes();
+        B_Siniestro B_Siniestro = new B_Siniestro();
+        E_Siniestro E_Siniestro = new E_Siniestro();
+
+        int idEmpleado = 1;
+        int idCliente = 0;
+
+        csLimpiar cLimpiar = new csLimpiar();
 
         public frmSiniestro()
         {
@@ -87,7 +96,6 @@ namespace CapaPresentacion
             }
         }
 
-        int idCliente = 0;
         private void dgvBuscarClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             var row = dgvBuscarClientes.CurrentRow;
@@ -100,6 +108,8 @@ namespace CapaPresentacion
             txtTelefono.Text = row.Cells[6].Value.ToString();
 
             pnlBuscarCliente.Visible = false;
+            QuitarErrorProvider();
+            lblRegistroSiniestros.Text = "Registro de Siniestros";
         }
 
         private void CargarPolizasActivas()
@@ -111,9 +121,66 @@ namespace CapaPresentacion
         {
             Guardar();
         }
+
         private void Guardar()
         {
+            E_Siniestro.IdCliente = idCliente;
+            E_Siniestro.IdEmpleado = idEmpleado;
+            E_Siniestro.Siniestro = txtSiniestro.Text;
+            E_Siniestro.FechaHora = DateTime.Now;
 
+            if (ValidarCampos())
+            {
+                QuitarErrorProvider();
+                if (MessageBox.Show("Desea guardar los datos del Siniestro actual?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    if (B_Siniestro.B_GuardarSiniestro(E_Siniestro) == 2)
+                    {
+                        MessageBox.Show("El siniestro se ha guardado satisfactoriamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Rellene los datos faltantes para continuar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        private bool ValidarCampos()
+        {
+            bool ok = true;
+
+            if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(btnBuscarCliente, "Busque y seleccione el Cliente");
+            }
+
+            if (string.IsNullOrEmpty(txtSiniestro.Text) || string.IsNullOrWhiteSpace(txtSiniestro.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtSiniestro, "Detalle los datos del Siniestro");
+            }
+            return ok;
+        }
+
+        private void QuitarErrorProvider()
+        {
+            errorProvider1.SetError(btnBuscarCliente, "");
+            errorProvider1.SetError(txtSiniestro, "");
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            mLimpiar();
+        }
+
+        private void mLimpiar()
+        {
+            try
+            {
+                cLimpiar.BorrarCamposGBx(gbxSiniestro);
+            }
+            catch (Exception ex){ MessageBox.Show(ex.Message); }
         }
     }
 }

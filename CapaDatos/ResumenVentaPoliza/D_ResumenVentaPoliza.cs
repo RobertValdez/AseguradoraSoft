@@ -101,7 +101,7 @@ namespace CapaDatos.ResumenVentaPoliza
 
 
             int a = cmd.ExecuteNonQuery();
-            cmd.Clone();
+            strcon.Close();
             return a;
 
         }

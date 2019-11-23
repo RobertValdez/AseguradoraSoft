@@ -28,35 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSiniestro));
             this.pnlBuscarCliente = new System.Windows.Forms.Panel();
+            this.chkSoloId = new System.Windows.Forms.CheckBox();
             this.lblCerrar = new System.Windows.Forms.Label();
             this.dgvBuscarClientes = new System.Windows.Forms.DataGridView();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.pnlNuevo = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbxSiniestro = new System.Windows.Forms.GroupBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.lblRegistroSiniestros = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtSiniestro = new System.Windows.Forms.TextBox();
             this.txtPolizasActivas = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.txtCedula = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.chkSoloId = new System.Windows.Forms.CheckBox();
+            this.txtCedula = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlBuscarCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscarClientes)).BeginInit();
             this.pnlNuevo.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbxSiniestro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlBuscarCliente
@@ -68,9 +71,23 @@
             this.pnlBuscarCliente.Controls.Add(this.label6);
             this.pnlBuscarCliente.Location = new System.Drawing.Point(15, 60);
             this.pnlBuscarCliente.Name = "pnlBuscarCliente";
-            this.pnlBuscarCliente.Size = new System.Drawing.Size(918, 541);
+            this.pnlBuscarCliente.Size = new System.Drawing.Size(927, 541);
             this.pnlBuscarCliente.TabIndex = 23;
             this.pnlBuscarCliente.Visible = false;
+            // 
+            // chkSoloId
+            // 
+            this.chkSoloId.AutoSize = true;
+            this.chkSoloId.BackColor = System.Drawing.Color.White;
+            this.chkSoloId.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkSoloId.ForeColor = System.Drawing.Color.Crimson;
+            this.chkSoloId.Location = new System.Drawing.Point(568, 30);
+            this.chkSoloId.Name = "chkSoloId";
+            this.chkSoloId.Size = new System.Drawing.Size(108, 32);
+            this.chkSoloId.TabIndex = 109;
+            this.chkSoloId.Text = "solo Id";
+            this.chkSoloId.UseVisualStyleBackColor = false;
+            this.chkSoloId.CheckedChanged += new System.EventHandler(this.chkSoloId_CheckedChanged);
             // 
             // lblCerrar
             // 
@@ -94,7 +111,7 @@
             this.dgvBuscarClientes.Location = new System.Drawing.Point(0, 73);
             this.dgvBuscarClientes.Name = "dgvBuscarClientes";
             this.dgvBuscarClientes.ReadOnly = true;
-            this.dgvBuscarClientes.Size = new System.Drawing.Size(918, 468);
+            this.dgvBuscarClientes.Size = new System.Drawing.Size(927, 468);
             this.dgvBuscarClientes.TabIndex = 0;
             this.dgvBuscarClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscarClientes_CellDoubleClick);
             // 
@@ -120,39 +137,39 @@
             // 
             // pnlNuevo
             // 
-            this.pnlNuevo.Controls.Add(this.groupBox1);
+            this.pnlNuevo.Controls.Add(this.gbxSiniestro);
             this.pnlNuevo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlNuevo.Location = new System.Drawing.Point(12, 12);
             this.pnlNuevo.Name = "pnlNuevo";
             this.pnlNuevo.Size = new System.Drawing.Size(947, 589);
             this.pnlNuevo.TabIndex = 24;
             // 
-            // groupBox1
+            // gbxSiniestro
             // 
-            this.groupBox1.Controls.Add(this.btnBuscarCliente);
-            this.groupBox1.Controls.Add(this.lblRegistroSiniestros);
-            this.groupBox1.Controls.Add(this.btnLimpiar);
-            this.groupBox1.Controls.Add(this.btnGuardar);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtSiniestro);
-            this.groupBox1.Controls.Add(this.txtPolizasActivas);
-            this.groupBox1.Controls.Add(this.txtTelefono);
-            this.groupBox1.Controls.Add(this.txtCedula);
-            this.groupBox1.Controls.Add(this.txtApellido);
-            this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(19, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(902, 572);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
+            this.gbxSiniestro.Controls.Add(this.btnBuscarCliente);
+            this.gbxSiniestro.Controls.Add(this.lblRegistroSiniestros);
+            this.gbxSiniestro.Controls.Add(this.btnLimpiar);
+            this.gbxSiniestro.Controls.Add(this.btnGuardar);
+            this.gbxSiniestro.Controls.Add(this.label1);
+            this.gbxSiniestro.Controls.Add(this.label14);
+            this.gbxSiniestro.Controls.Add(this.label2);
+            this.gbxSiniestro.Controls.Add(this.label4);
+            this.gbxSiniestro.Controls.Add(this.label3);
+            this.gbxSiniestro.Controls.Add(this.label7);
+            this.gbxSiniestro.Controls.Add(this.txtSiniestro);
+            this.gbxSiniestro.Controls.Add(this.txtPolizasActivas);
+            this.gbxSiniestro.Controls.Add(this.txtTelefono);
+            this.gbxSiniestro.Controls.Add(this.txtCedula);
+            this.gbxSiniestro.Controls.Add(this.txtApellido);
+            this.gbxSiniestro.Controls.Add(this.txtNombre);
+            this.gbxSiniestro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gbxSiniestro.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.gbxSiniestro.ForeColor = System.Drawing.Color.Black;
+            this.gbxSiniestro.Location = new System.Drawing.Point(19, 3);
+            this.gbxSiniestro.Name = "gbxSiniestro";
+            this.gbxSiniestro.Size = new System.Drawing.Size(950, 572);
+            this.gbxSiniestro.TabIndex = 13;
+            this.gbxSiniestro.TabStop = false;
             // 
             // btnBuscarCliente
             // 
@@ -161,6 +178,8 @@
             this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarCliente.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarCliente.ForeColor = System.Drawing.Color.Crimson;
+            this.errorProvider1.SetIconAlignment(this.btnBuscarCliente, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
+            this.errorProvider1.SetIconPadding(this.btnBuscarCliente, 1);
             this.btnBuscarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarCliente.Image")));
             this.btnBuscarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBuscarCliente.Location = new System.Drawing.Point(55, 94);
@@ -199,6 +218,7 @@
             this.btnLimpiar.TabIndex = 7;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnGuardar
             // 
@@ -239,6 +259,39 @@
             this.label14.TabIndex = 9;
             this.label14.Text = "Siniestro:";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Crimson;
+            this.label2.Location = new System.Drawing.Point(207, 94);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 24);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Nombre:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Crimson;
+            this.label4.Location = new System.Drawing.Point(729, 94);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(104, 24);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Teléfono:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Crimson;
+            this.label3.Location = new System.Drawing.Point(555, 94);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 24);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Cédula:";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -257,6 +310,7 @@
             this.txtSiniestro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSiniestro.Multiline = true;
             this.txtSiniestro.Name = "txtSiniestro";
+            this.txtSiniestro.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtSiniestro.Size = new System.Drawing.Size(651, 285);
             this.txtSiniestro.TabIndex = 1;
             // 
@@ -271,25 +325,15 @@
             this.txtPolizasActivas.Size = new System.Drawing.Size(224, 356);
             this.txtPolizasActivas.TabIndex = 1;
             // 
-            // txtNombre
+            // txtTelefono
             // 
-            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombre.Location = new System.Drawing.Point(204, 119);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.ReadOnly = true;
-            this.txtNombre.Size = new System.Drawing.Size(166, 33);
-            this.txtNombre.TabIndex = 1;
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtApellido.Location = new System.Drawing.Point(378, 119);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.ReadOnly = true;
-            this.txtApellido.Size = new System.Drawing.Size(166, 33);
-            this.txtApellido.TabIndex = 1;
+            this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTelefono.Location = new System.Drawing.Point(726, 119);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.ReadOnly = true;
+            this.txtTelefono.Size = new System.Drawing.Size(166, 33);
+            this.txtTelefono.TabIndex = 1;
             // 
             // txtCedula
             // 
@@ -301,69 +345,36 @@
             this.txtCedula.Size = new System.Drawing.Size(166, 33);
             this.txtCedula.TabIndex = 1;
             // 
-            // txtTelefono
+            // txtApellido
             // 
-            this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTelefono.Location = new System.Drawing.Point(726, 119);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.ReadOnly = true;
-            this.txtTelefono.Size = new System.Drawing.Size(166, 33);
-            this.txtTelefono.TabIndex = 1;
+            this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtApellido.Location = new System.Drawing.Point(378, 119);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.ReadOnly = true;
+            this.txtApellido.Size = new System.Drawing.Size(166, 33);
+            this.txtApellido.TabIndex = 1;
             // 
-            // label2
+            // txtNombre
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Crimson;
-            this.label2.Location = new System.Drawing.Point(207, 94);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 24);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Nombre:";
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNombre.Location = new System.Drawing.Point(204, 119);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ReadOnly = true;
+            this.txtNombre.Size = new System.Drawing.Size(166, 33);
+            this.txtNombre.TabIndex = 1;
             // 
-            // label3
+            // errorProvider1
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Crimson;
-            this.label3.Location = new System.Drawing.Point(555, 94);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 24);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Cédula:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Crimson;
-            this.label4.Location = new System.Drawing.Point(729, 94);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 24);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Teléfono:";
-            // 
-            // chkSoloId
-            // 
-            this.chkSoloId.AutoSize = true;
-            this.chkSoloId.BackColor = System.Drawing.Color.White;
-            this.chkSoloId.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkSoloId.ForeColor = System.Drawing.Color.Crimson;
-            this.chkSoloId.Location = new System.Drawing.Point(568, 30);
-            this.chkSoloId.Name = "chkSoloId";
-            this.chkSoloId.Size = new System.Drawing.Size(108, 32);
-            this.chkSoloId.TabIndex = 109;
-            this.chkSoloId.Text = "solo Id";
-            this.chkSoloId.UseVisualStyleBackColor = false;
-            this.chkSoloId.CheckedChanged += new System.EventHandler(this.chkSoloId_CheckedChanged);
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmSiniestro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(993, 613);
+            this.ClientSize = new System.Drawing.Size(979, 613);
             this.Controls.Add(this.pnlBuscarCliente);
             this.Controls.Add(this.pnlNuevo);
             this.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -379,8 +390,9 @@
             this.pnlBuscarCliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscarClientes)).EndInit();
             this.pnlNuevo.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbxSiniestro.ResumeLayout(false);
+            this.gbxSiniestro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -393,7 +405,7 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel pnlNuevo;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbxSiniestro;
         private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.Label lblRegistroSiniestros;
         private System.Windows.Forms.Button btnLimpiar;
@@ -411,5 +423,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox chkSoloId;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

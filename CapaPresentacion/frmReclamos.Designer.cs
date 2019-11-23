@@ -382,7 +382,7 @@
             this.pnlBuscarClientes.Controls.Add(this.label6);
             this.pnlBuscarClientes.Location = new System.Drawing.Point(14, 60);
             this.pnlBuscarClientes.Name = "pnlBuscarClientes";
-            this.pnlBuscarClientes.Size = new System.Drawing.Size(616, 552);
+            this.pnlBuscarClientes.Size = new System.Drawing.Size(609, 552);
             this.pnlBuscarClientes.TabIndex = 23;
             this.pnlBuscarClientes.Visible = false;
             // 
@@ -413,7 +413,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 72);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(616, 480);
+            this.dataGridView1.Size = new System.Drawing.Size(609, 480);
             this.dataGridView1.TabIndex = 0;
             // 
             // Column1

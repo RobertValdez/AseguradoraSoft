@@ -9,7 +9,7 @@ namespace CapaPresentacion
 {
     class csLimpiar
     {
-        public void BorrarCampos(Panel pnl)
+        public void BorrarCamposPnl(Panel pnl)
         {
             foreach (var txt in pnl.Controls)
             {
@@ -27,6 +27,23 @@ namespace CapaPresentacion
                 }
             }
         }
-
+        public void BorrarCamposGBx(GroupBox gbx)
+        {
+            foreach (var txt in gbx.Controls)
+            {
+                if (txt is TextBox)
+                {
+                    ((TextBox)txt).Clear();
+                }
+                else if (txt is ComboBox)
+                {
+                    ((ComboBox)txt).SelectedIndex = 2;
+                }
+                else if (txt is MaskedTextBox)
+                {
+                    ((MaskedTextBox)txt).ResetText();
+                }
+            }
+        }
     }
 }

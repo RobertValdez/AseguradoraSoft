@@ -76,7 +76,7 @@
             this.pnlBuscarClientes.Controls.Add(this.label6);
             this.pnlBuscarClientes.Location = new System.Drawing.Point(12, 56);
             this.pnlBuscarClientes.Name = "pnlBuscarClientes";
-            this.pnlBuscarClientes.Size = new System.Drawing.Size(1036, 461);
+            this.pnlBuscarClientes.Size = new System.Drawing.Size(1043, 461);
             this.pnlBuscarClientes.TabIndex = 24;
             this.pnlBuscarClientes.Visible = false;
             // 
@@ -86,7 +86,7 @@
             this.lblCerrar.AutoSize = true;
             this.lblCerrar.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblCerrar.Font = new System.Drawing.Font("Century Gothic", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCerrar.Location = new System.Drawing.Point(998, 0);
+            this.lblCerrar.Location = new System.Drawing.Point(1005, 0);
             this.lblCerrar.Name = "lblCerrar";
             this.lblCerrar.Size = new System.Drawing.Size(35, 36);
             this.lblCerrar.TabIndex = 16;
@@ -108,7 +108,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 81);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1036, 380);
+            this.dataGridView1.Size = new System.Drawing.Size(1043, 380);
             this.dataGridView1.TabIndex = 0;
             // 
             // Column1
