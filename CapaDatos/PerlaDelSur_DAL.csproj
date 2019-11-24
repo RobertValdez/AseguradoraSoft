@@ -51,6 +51,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="RegistroReclamos\D_RegistroReclamos.cs" />
     <Compile Include="ResumenVentaPoliza\D_ResumenVentaPoliza.cs" />
     <Compile Include="SeguroVida\D_SeguroVida.cs" />
     <Compile Include="Siniestro\D_Siniestro.cs" />

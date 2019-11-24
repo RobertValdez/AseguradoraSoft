@@ -226,5 +226,18 @@ namespace CapaDatos.Clientes
             strcon.Close();
             return rsp;
         }
+
+        public DataTable D_MostrarClientes_Reclamos()
+        {
+            SqlConnection strCon = new SqlConnection();
+            strCon.ConnectionString = Conexion.Conexion.SqlConex;
+            SqlCommand cmd = new SqlCommand("MostrarClientesReclamos", strCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            strCon.Close();
+            return dt;
+        }
     }
 }

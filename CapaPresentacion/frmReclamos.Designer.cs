@@ -31,44 +31,49 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistroDeReclamos));
             this.pnlRegistroReclamos = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnBuscar_ftcCopiaDeLaMatricula = new System.Windows.Forms.Button();
+            this.btnBuscar_ftcCopiaCedula = new System.Windows.Forms.Button();
+            this.btnBuscarFtcNumPoliza = new System.Windows.Forms.Button();
+            this.btnBuscar_ftcCopiaActaPolicial = new System.Windows.Forms.Button();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.lblRegistroReclamos = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtCopiaMatricula = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCopiaCedula = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCedula = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtIdSiniestro = new System.Windows.Forms.TextBox();
+            this.txtActaPolicial = new System.Windows.Forms.TextBox();
             this.pnlBuscarClientes = new System.Windows.Forms.Panel();
             this.lblCerrar = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.dgvBuscarClientes = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtBuscarSiniestro = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dgvSiniestros = new System.Windows.Forms.DataGridView();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtIdSinietro = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtBuscarCliente = new System.Windows.Forms.TextBox();
             this.pnlRegistroReclamos.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.pnlBuscarClientes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBuscarClientes)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSiniestros)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlRegistroReclamos
@@ -77,97 +82,148 @@
             this.pnlRegistroReclamos.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlRegistroReclamos.Location = new System.Drawing.Point(13, 12);
             this.pnlRegistroReclamos.Name = "pnlRegistroReclamos";
-            this.pnlRegistroReclamos.Size = new System.Drawing.Size(610, 608);
+            this.pnlRegistroReclamos.Size = new System.Drawing.Size(1055, 651);
             this.pnlRegistroReclamos.TabIndex = 22;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btnBuscar_ftcCopiaDeLaMatricula);
+            this.groupBox1.Controls.Add(this.btnBuscar_ftcCopiaCedula);
+            this.groupBox1.Controls.Add(this.btnBuscarFtcNumPoliza);
+            this.groupBox1.Controls.Add(this.btnBuscar_ftcCopiaActaPolicial);
             this.groupBox1.Controls.Add(this.btnBuscarCliente);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.lblRegistroReclamos);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.btnLimpiar);
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txtIdSinietro);
+            this.groupBox1.Controls.Add(this.txtCopiaMatricula);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtCopiaCedula);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtCedula);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.txtApellido);
+            this.groupBox1.Controls.Add(this.txtIdSiniestro);
+            this.groupBox1.Controls.Add(this.txtActaPolicial);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(14, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(572, 597);
+            this.groupBox1.Size = new System.Drawing.Size(1023, 640);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Seguro de Riesgo de Muerte",
+            "Seguro de Salud",
+            "Seguro de Riesgos Laborales",
+            "Seguro Contenido",
+            "Seguro Edificaciones",
+            "Seguro para Empresas y Negocios",
+            "Seguro a Todo Riesgo",
+            "Seguro Obligatorio",
+            "Seguro Voluntario"});
+            this.comboBox1.Location = new System.Drawing.Point(21, 175);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(528, 32);
+            this.comboBox1.TabIndex = 208;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.Crimson;
+            this.label10.Location = new System.Drawing.Point(32, 148);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(72, 24);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "Poliza:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.Firebrick;
-            this.label9.Location = new System.Drawing.Point(433, 469);
+            this.label9.Location = new System.Drawing.Point(433, 537);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(116, 24);
             this.label9.TabIndex = 25;
             this.label9.Text = "(opcional)";
             // 
-            // button4
+            // btnBuscar_ftcCopiaDeLaMatricula
             // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Crimson;
-            this.button4.Location = new System.Drawing.Point(321, 354);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(165, 33);
-            this.button4.TabIndex = 23;
-            this.button4.Text = "Buscar Fotocopia";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnBuscar_ftcCopiaDeLaMatricula.BackColor = System.Drawing.Color.White;
+            this.btnBuscar_ftcCopiaDeLaMatricula.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnBuscar_ftcCopiaDeLaMatricula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar_ftcCopiaDeLaMatricula.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar_ftcCopiaDeLaMatricula.ForeColor = System.Drawing.Color.Crimson;
+            this.btnBuscar_ftcCopiaDeLaMatricula.Location = new System.Drawing.Point(321, 440);
+            this.btnBuscar_ftcCopiaDeLaMatricula.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBuscar_ftcCopiaDeLaMatricula.Name = "btnBuscar_ftcCopiaDeLaMatricula";
+            this.btnBuscar_ftcCopiaDeLaMatricula.Size = new System.Drawing.Size(228, 33);
+            this.btnBuscar_ftcCopiaDeLaMatricula.TabIndex = 23;
+            this.btnBuscar_ftcCopiaDeLaMatricula.Text = "Buscar Fotocopia";
+            this.btnBuscar_ftcCopiaDeLaMatricula.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnBuscar_ftcCopiaCedula
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Crimson;
-            this.button3.Location = new System.Drawing.Point(321, 275);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(165, 33);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Buscar Fotocopia";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnBuscar_ftcCopiaCedula.BackColor = System.Drawing.Color.White;
+            this.btnBuscar_ftcCopiaCedula.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnBuscar_ftcCopiaCedula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar_ftcCopiaCedula.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar_ftcCopiaCedula.ForeColor = System.Drawing.Color.Crimson;
+            this.btnBuscar_ftcCopiaCedula.Location = new System.Drawing.Point(321, 375);
+            this.btnBuscar_ftcCopiaCedula.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBuscar_ftcCopiaCedula.Name = "btnBuscar_ftcCopiaCedula";
+            this.btnBuscar_ftcCopiaCedula.Size = new System.Drawing.Size(228, 33);
+            this.btnBuscar_ftcCopiaCedula.TabIndex = 23;
+            this.btnBuscar_ftcCopiaCedula.Text = "Buscar Fotocopia";
+            this.btnBuscar_ftcCopiaCedula.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnBuscarFtcNumPoliza
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Crimson;
-            this.button2.Location = new System.Drawing.Point(321, 197);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(165, 33);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "Buscar Fotocopia";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnBuscarFtcNumPoliza.BackColor = System.Drawing.Color.White;
+            this.btnBuscarFtcNumPoliza.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnBuscarFtcNumPoliza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarFtcNumPoliza.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarFtcNumPoliza.ForeColor = System.Drawing.Color.Crimson;
+            this.btnBuscarFtcNumPoliza.Location = new System.Drawing.Point(321, 241);
+            this.btnBuscarFtcNumPoliza.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBuscarFtcNumPoliza.Name = "btnBuscarFtcNumPoliza";
+            this.btnBuscarFtcNumPoliza.Size = new System.Drawing.Size(228, 33);
+            this.btnBuscarFtcNumPoliza.TabIndex = 23;
+            this.btnBuscarFtcNumPoliza.Text = "Buscar Fotocopia";
+            this.btnBuscarFtcNumPoliza.UseVisualStyleBackColor = false;
+            // 
+            // btnBuscar_ftcCopiaActaPolicial
+            // 
+            this.btnBuscar_ftcCopiaActaPolicial.BackColor = System.Drawing.Color.White;
+            this.btnBuscar_ftcCopiaActaPolicial.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnBuscar_ftcCopiaActaPolicial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar_ftcCopiaActaPolicial.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar_ftcCopiaActaPolicial.ForeColor = System.Drawing.Color.Crimson;
+            this.btnBuscar_ftcCopiaActaPolicial.Location = new System.Drawing.Point(321, 306);
+            this.btnBuscar_ftcCopiaActaPolicial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBuscar_ftcCopiaActaPolicial.Name = "btnBuscar_ftcCopiaActaPolicial";
+            this.btnBuscar_ftcCopiaActaPolicial.Size = new System.Drawing.Size(228, 33);
+            this.btnBuscar_ftcCopiaActaPolicial.TabIndex = 23;
+            this.btnBuscar_ftcCopiaActaPolicial.Text = "Buscar Fotocopia";
+            this.btnBuscar_ftcCopiaActaPolicial.UseVisualStyleBackColor = false;
             // 
             // btnBuscarCliente
             // 
@@ -176,7 +232,7 @@
             this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarCliente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarCliente.ForeColor = System.Drawing.Color.Crimson;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(402, 54);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(402, 52);
             this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(147, 44);
@@ -190,22 +246,10 @@
             this.label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label13.Image = ((System.Drawing.Image)(resources.GetObject("label13.Image")));
             this.label13.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label13.Location = new System.Drawing.Point(336, 45);
+            this.label13.Location = new System.Drawing.Point(336, 43);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(62, 56);
             this.label13.TabIndex = 14;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Crimson;
-            this.label3.Location = new System.Drawing.Point(33, 402);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 24);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Deducible:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblRegistroReclamos
             // 
@@ -219,29 +263,20 @@
             this.lblRegistroReclamos.TabIndex = 11;
             this.lblRegistroReclamos.Text = "Registro de Reclamos";
             // 
-            // button1
+            // btnLimpiar
             // 
-            this.button1.BackColor = System.Drawing.Color.Crimson;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(161, 517);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(194, 60);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Limpiar";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(21, 431);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(295, 33);
-            this.textBox1.TabIndex = 4;
+            this.btnLimpiar.BackColor = System.Drawing.Color.Crimson;
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(153, 572);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(194, 60);
+            this.btnLimpiar.TabIndex = 7;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
             // 
             // btnGuardar
             // 
@@ -250,7 +285,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(363, 517);
+            this.btnGuardar.Location = new System.Drawing.Point(355, 572);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(194, 60);
@@ -261,7 +296,7 @@
             // txtTelefono
             // 
             this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTelefono.Location = new System.Drawing.Point(402, 431);
+            this.txtTelefono.Location = new System.Drawing.Point(402, 504);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(147, 33);
@@ -272,7 +307,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Crimson;
-            this.label8.Location = new System.Drawing.Point(349, 436);
+            this.label8.Location = new System.Drawing.Point(349, 509);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(51, 24);
@@ -283,7 +318,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Crimson;
-            this.label2.Location = new System.Drawing.Point(373, 402);
+            this.label2.Location = new System.Drawing.Point(373, 477);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(176, 24);
@@ -294,95 +329,117 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Crimson;
-            this.label7.Location = new System.Drawing.Point(33, 325);
+            this.label7.Location = new System.Drawing.Point(33, 411);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(234, 24);
             this.label7.TabIndex = 9;
             this.label7.Text = "Copia de la Matrícula";
             // 
-            // textBox4
+            // txtCopiaMatricula
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(21, 354);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(295, 33);
-            this.textBox4.TabIndex = 1;
+            this.txtCopiaMatricula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCopiaMatricula.Location = new System.Drawing.Point(21, 440);
+            this.txtCopiaMatricula.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCopiaMatricula.Name = "txtCopiaMatricula";
+            this.txtCopiaMatricula.ReadOnly = true;
+            this.txtCopiaMatricula.Size = new System.Drawing.Size(292, 33);
+            this.txtCopiaMatricula.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Crimson;
-            this.label1.Location = new System.Drawing.Point(33, 244);
+            this.label1.Location = new System.Drawing.Point(33, 344);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(194, 24);
             this.label1.TabIndex = 9;
             this.label1.Text = "Copia de Cédula:";
             // 
-            // textBox2
+            // txtCopiaCedula
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(21, 275);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(295, 33);
-            this.textBox2.TabIndex = 1;
+            this.txtCopiaCedula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCopiaCedula.Location = new System.Drawing.Point(21, 375);
+            this.txtCopiaCedula.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCopiaCedula.Name = "txtCopiaCedula";
+            this.txtCopiaCedula.ReadOnly = true;
+            this.txtCopiaCedula.Size = new System.Drawing.Size(292, 33);
+            this.txtCopiaCedula.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Crimson;
-            this.label4.Location = new System.Drawing.Point(17, 91);
+            this.label4.Location = new System.Drawing.Point(17, 106);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(210, 48);
+            this.label4.Size = new System.Drawing.Size(210, 24);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Nombre y Apellidos\r\ndel Cliente:";
+            this.label4.Text = "Cédula del Cliente:";
             // 
-            // textBox3
+            // txtCedula
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(235, 106);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(314, 33);
-            this.textBox3.TabIndex = 1;
+            this.txtCedula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCedula.Location = new System.Drawing.Point(235, 104);
+            this.txtCedula.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.ReadOnly = true;
+            this.txtCedula.Size = new System.Drawing.Size(314, 33);
+            this.txtCedula.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Crimson;
+            this.label5.Location = new System.Drawing.Point(33, 212);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(196, 24);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Número de Poliza:";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.Color.Crimson;
-            this.label14.Location = new System.Drawing.Point(33, 168);
+            this.label14.Location = new System.Drawing.Point(33, 277);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(143, 24);
             this.label14.TabIndex = 9;
             this.label14.Text = "Acta policial:";
             // 
-            // txtApellido
+            // txtIdSiniestro
             // 
-            this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtApellido.Location = new System.Drawing.Point(21, 197);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.ReadOnly = true;
-            this.txtApellido.Size = new System.Drawing.Size(295, 33);
-            this.txtApellido.TabIndex = 1;
+            this.txtIdSiniestro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdSiniestro.Location = new System.Drawing.Point(21, 241);
+            this.txtIdSiniestro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtIdSiniestro.Name = "txtIdSiniestro";
+            this.txtIdSiniestro.ReadOnly = true;
+            this.txtIdSiniestro.Size = new System.Drawing.Size(292, 33);
+            this.txtIdSiniestro.TabIndex = 1;
+            // 
+            // txtActaPolicial
+            // 
+            this.txtActaPolicial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtActaPolicial.Location = new System.Drawing.Point(21, 306);
+            this.txtActaPolicial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtActaPolicial.Name = "txtActaPolicial";
+            this.txtActaPolicial.ReadOnly = true;
+            this.txtActaPolicial.Size = new System.Drawing.Size(292, 33);
+            this.txtActaPolicial.TabIndex = 1;
             // 
             // pnlBuscarClientes
             // 
+            this.pnlBuscarClientes.Controls.Add(this.txtBuscarCliente);
             this.pnlBuscarClientes.Controls.Add(this.lblCerrar);
-            this.pnlBuscarClientes.Controls.Add(this.dataGridView1);
-            this.pnlBuscarClientes.Controls.Add(this.textBox7);
+            this.pnlBuscarClientes.Controls.Add(this.dgvBuscarClientes);
             this.pnlBuscarClientes.Controls.Add(this.label6);
+            this.pnlBuscarClientes.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlBuscarClientes.Location = new System.Drawing.Point(14, 60);
             this.pnlBuscarClientes.Name = "pnlBuscarClientes";
-            this.pnlBuscarClientes.Size = new System.Drawing.Size(609, 552);
+            this.pnlBuscarClientes.Size = new System.Drawing.Size(609, 603);
             this.pnlBuscarClientes.TabIndex = 23;
             this.pnlBuscarClientes.Visible = false;
             // 
@@ -391,74 +448,26 @@
             this.lblCerrar.AutoSize = true;
             this.lblCerrar.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblCerrar.Font = new System.Drawing.Font("Century Gothic", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCerrar.Location = new System.Drawing.Point(574, 1);
+            this.lblCerrar.Location = new System.Drawing.Point(571, -2);
             this.lblCerrar.Name = "lblCerrar";
             this.lblCerrar.Size = new System.Drawing.Size(35, 36);
             this.lblCerrar.TabIndex = 16;
             this.lblCerrar.Text = "X";
             this.lblCerrar.Click += new System.EventHandler(this.lblCerrar_Click);
             // 
-            // dataGridView1
+            // dgvBuscarClientes
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightPink;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 72);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(609, 480);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Column3";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Column4";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Column5";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Column6";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Column7";
-            this.Column7.Name = "Column7";
-            // 
-            // textBox7
-            // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Location = new System.Drawing.Point(214, 29);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(193, 27);
-            this.textBox7.TabIndex = 0;
+            this.dgvBuscarClientes.AllowUserToAddRows = false;
+            this.dgvBuscarClientes.AllowUserToDeleteRows = false;
+            this.dgvBuscarClientes.BackgroundColor = System.Drawing.Color.LightPink;
+            this.dgvBuscarClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBuscarClientes.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvBuscarClientes.Location = new System.Drawing.Point(0, 72);
+            this.dgvBuscarClientes.Name = "dgvBuscarClientes";
+            this.dgvBuscarClientes.ReadOnly = true;
+            this.dgvBuscarClientes.Size = new System.Drawing.Size(609, 531);
+            this.dgvBuscarClientes.TabIndex = 0;
+            this.dgvBuscarClientes.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBuscarClientes_CellMouseDoubleClick);
             // 
             // label6
             // 
@@ -470,12 +479,97 @@
             this.label6.Size = new System.Drawing.Size(62, 56);
             this.label6.TabIndex = 14;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtBuscarSiniestro);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.dgvSiniestros);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Location = new System.Drawing.Point(602, 45);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(415, 595);
+            this.panel1.TabIndex = 209;
+            // 
+            // txtBuscarSiniestro
+            // 
+            this.txtBuscarSiniestro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBuscarSiniestro.Location = new System.Drawing.Point(121, 60);
+            this.txtBuscarSiniestro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBuscarSiniestro.Name = "txtBuscarSiniestro";
+            this.txtBuscarSiniestro.Size = new System.Drawing.Size(193, 33);
+            this.txtBuscarSiniestro.TabIndex = 15;
+            // 
+            // label3
+            // 
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.label3.Location = new System.Drawing.Point(47, 44);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 56);
+            this.label3.TabIndex = 18;
+            // 
+            // dgvSiniestros
+            // 
+            this.dgvSiniestros.AllowUserToAddRows = false;
+            this.dgvSiniestros.AllowUserToDeleteRows = false;
+            this.dgvSiniestros.BackgroundColor = System.Drawing.Color.LightPink;
+            this.dgvSiniestros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSiniestros.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvSiniestros.Location = new System.Drawing.Point(0, 115);
+            this.dgvSiniestros.Name = "dgvSiniestros";
+            this.dgvSiniestros.ReadOnly = true;
+            this.dgvSiniestros.Size = new System.Drawing.Size(415, 480);
+            this.dgvSiniestros.TabIndex = 16;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Crimson;
+            this.label11.Location = new System.Drawing.Point(41, 10);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(349, 33);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "Buscar Sinietro de Cliente";
+            // 
+            // txtIdSinietro
+            // 
+            this.txtIdSinietro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdSinietro.Location = new System.Drawing.Point(21, 504);
+            this.txtIdSinietro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtIdSinietro.Name = "txtIdSinietro";
+            this.txtIdSinietro.ReadOnly = true;
+            this.txtIdSinietro.Size = new System.Drawing.Size(292, 33);
+            this.txtIdSinietro.TabIndex = 1;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.Crimson;
+            this.label12.Location = new System.Drawing.Point(33, 478);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(214, 24);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "Código del Siniestro:";
+            // 
+            // txtBuscarCliente
+            // 
+            this.txtBuscarCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBuscarCliente.Location = new System.Drawing.Point(209, 23);
+            this.txtBuscarCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBuscarCliente.Name = "txtBuscarCliente";
+            this.txtBuscarCliente.Size = new System.Drawing.Size(193, 33);
+            this.txtBuscarCliente.TabIndex = 15;
+            // 
             // frmRegistroDeReclamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(642, 631);
+            this.ClientSize = new System.Drawing.Size(1091, 667);
             this.Controls.Add(this.pnlBuscarClientes);
             this.Controls.Add(this.pnlRegistroReclamos);
             this.Font = new System.Drawing.Font("Century Gothic", 12F);
@@ -483,12 +577,16 @@
             this.MaximizeBox = false;
             this.Name = "frmRegistroDeReclamos";
             this.Text = "Reclamos";
+            this.Load += new System.EventHandler(this.frmRegistroDeReclamos_Load);
             this.pnlRegistroReclamos.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.pnlBuscarClientes.ResumeLayout(false);
             this.pnlBuscarClientes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBuscarClientes)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSiniestros)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -497,39 +595,42 @@
 
         private System.Windows.Forms.Panel pnlRegistroReclamos;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblRegistroReclamos;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.TextBox txtActaPolicial;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.Panel pnlBuscarClientes;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.DataGridView dgvBuscarClientes;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtCopiaMatricula;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtCopiaCedula;
+        private System.Windows.Forms.Button btnBuscar_ftcCopiaDeLaMatricula;
+        private System.Windows.Forms.Button btnBuscar_ftcCopiaCedula;
+        private System.Windows.Forms.Button btnBuscar_ftcCopiaActaPolicial;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.Label lblCerrar;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnBuscarFtcNumPoliza;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtIdSiniestro;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtBuscarSiniestro;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dgvSiniestros;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtIdSinietro;
+        private System.Windows.Forms.TextBox txtBuscarCliente;
     }
 }

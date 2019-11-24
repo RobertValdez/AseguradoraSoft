@@ -108,13 +108,19 @@ namespace CapaPresentacion
             txtTelefono.Text = row.Cells[6].Value.ToString();
 
             pnlBuscarCliente.Visible = false;
+            CargarPolizasActivas();
             QuitarErrorProvider();
             lblRegistroSiniestros.Text = "Registro de Siniestros";
         }
 
         private void CargarPolizasActivas()
         {
-
+            try
+            {
+                E_Siniestro.IdCliente = idCliente;
+                txtPolizasActivas.Text = B_Siniestro.B_CargarPolizasActivas(E_Siniestro);
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

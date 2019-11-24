@@ -69,9 +69,9 @@
             this.pnlBuscarCliente.Controls.Add(this.dgvBuscarClientes);
             this.pnlBuscarCliente.Controls.Add(this.txtBuscar);
             this.pnlBuscarCliente.Controls.Add(this.label6);
-            this.pnlBuscarCliente.Location = new System.Drawing.Point(15, 60);
+            this.pnlBuscarCliente.Location = new System.Drawing.Point(12, 60);
             this.pnlBuscarCliente.Name = "pnlBuscarCliente";
-            this.pnlBuscarCliente.Size = new System.Drawing.Size(927, 541);
+            this.pnlBuscarCliente.Size = new System.Drawing.Size(969, 541);
             this.pnlBuscarCliente.TabIndex = 23;
             this.pnlBuscarCliente.Visible = false;
             // 
@@ -111,7 +111,7 @@
             this.dgvBuscarClientes.Location = new System.Drawing.Point(0, 73);
             this.dgvBuscarClientes.Name = "dgvBuscarClientes";
             this.dgvBuscarClientes.ReadOnly = true;
-            this.dgvBuscarClientes.Size = new System.Drawing.Size(927, 468);
+            this.dgvBuscarClientes.Size = new System.Drawing.Size(969, 468);
             this.dgvBuscarClientes.TabIndex = 0;
             this.dgvBuscarClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscarClientes_CellDoubleClick);
             // 
@@ -141,7 +141,7 @@
             this.pnlNuevo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlNuevo.Location = new System.Drawing.Point(12, 12);
             this.pnlNuevo.Name = "pnlNuevo";
-            this.pnlNuevo.Size = new System.Drawing.Size(947, 589);
+            this.pnlNuevo.Size = new System.Drawing.Size(1003, 589);
             this.pnlNuevo.TabIndex = 24;
             // 
             // gbxSiniestro
@@ -167,7 +167,7 @@
             this.gbxSiniestro.ForeColor = System.Drawing.Color.Black;
             this.gbxSiniestro.Location = new System.Drawing.Point(19, 3);
             this.gbxSiniestro.Name = "gbxSiniestro";
-            this.gbxSiniestro.Size = new System.Drawing.Size(950, 572);
+            this.gbxSiniestro.Size = new System.Drawing.Size(971, 572);
             this.gbxSiniestro.TabIndex = 13;
             this.gbxSiniestro.TabStop = false;
             // 
@@ -240,12 +240,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Crimson;
-            this.label1.Location = new System.Drawing.Point(4, 175);
+            this.label1.Location = new System.Drawing.Point(42, 175);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(278, 24);
+            this.label1.Size = new System.Drawing.Size(198, 24);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Pólizas del Cliente Activas:";
+            this.label1.Text = "Pólizas del Cliente:";
             // 
             // label14
             // 
@@ -306,23 +306,25 @@
             // txtSiniestro
             // 
             this.txtSiniestro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSiniestro.Location = new System.Drawing.Point(251, 204);
+            this.txtSiniestro.Location = new System.Drawing.Point(291, 204);
             this.txtSiniestro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSiniestro.Multiline = true;
             this.txtSiniestro.Name = "txtSiniestro";
             this.txtSiniestro.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtSiniestro.Size = new System.Drawing.Size(651, 285);
+            this.txtSiniestro.Size = new System.Drawing.Size(659, 285);
             this.txtSiniestro.TabIndex = 1;
             // 
             // txtPolizasActivas
             // 
             this.txtPolizasActivas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPolizasActivas.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPolizasActivas.Location = new System.Drawing.Point(11, 204);
             this.txtPolizasActivas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPolizasActivas.Multiline = true;
             this.txtPolizasActivas.Name = "txtPolizasActivas";
             this.txtPolizasActivas.ReadOnly = true;
-            this.txtPolizasActivas.Size = new System.Drawing.Size(224, 356);
+            this.txtPolizasActivas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtPolizasActivas.Size = new System.Drawing.Size(272, 356);
             this.txtPolizasActivas.TabIndex = 1;
             // 
             // txtTelefono
@@ -374,7 +376,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(979, 613);
+            this.ClientSize = new System.Drawing.Size(1014, 613);
             this.Controls.Add(this.pnlBuscarCliente);
             this.Controls.Add(this.pnlNuevo);
             this.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
