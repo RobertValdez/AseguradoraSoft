@@ -95,7 +95,7 @@ namespace CapaDatos.Siniestro
             strcon.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = strcon;
-            cmd.CommandText = "CargarPolizasActivas";
+            cmd.CommandText = "CargarPolizasActivasEInactivas";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter parId_Cliente = new SqlParameter();
