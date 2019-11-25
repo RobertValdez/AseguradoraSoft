@@ -8,6 +8,8 @@ namespace PerlaDelSur_Entity.RegistroReclamos
 {
     public class E_RegistroReclamos
     {
+        private string _Area;
+
         private int _idCliente;
         private int _idSiniestro;
         private int _idPoliza;
@@ -26,15 +28,18 @@ namespace PerlaDelSur_Entity.RegistroReclamos
         public decimal CostoEstimado { get => _CostoEstimado; set => _CostoEstimado = value; }
         public DateTime FechaHora { get => _FechaHora; set => _FechaHora = value; }
 
+        public string Area { get => _Area; set => _Area = value; }
+
         public E_RegistroReclamos()
         {
 
         }
 
-        public E_RegistroReclamos(int idCliente, int idSiniestro, int idPoliza,
+        public E_RegistroReclamos(string Area, int idCliente, int idSiniestro, int idPoliza,
             byte[] ActaPolicial, byte[] CopiaMatricula, byte[] CopiaCedula,
              decimal CostoEstimado, DateTime FechaHora)
         {
+            _Area = Area;
             _idCliente = idCliente;
             _idSiniestro = idSiniestro;
             _idPoliza = idPoliza;

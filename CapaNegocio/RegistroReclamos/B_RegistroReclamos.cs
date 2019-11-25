@@ -19,5 +19,9 @@ namespace CapaNegocio.RegistroReclamos
         {
             return D_RegistroReclamos.CargarPolizasActivas(eReg);
         }
+        public int B_GuardarReclamo(E_RegistroReclamos eReg)
+        {
+            return D_RegistroReclamos.GuardarReclamo(eReg);
+        }
     }
 }

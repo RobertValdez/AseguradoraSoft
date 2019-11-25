@@ -63,6 +63,9 @@
             this.lblCerrar = new System.Windows.Forms.Label();
             this.dgvBuscarDatos = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtBuscarSiniestro = new System.Windows.Forms.TextBox();
+            this.txtBuscarPoliza = new System.Windows.Forms.TextBox();
+            this.chkSoloId = new System.Windows.Forms.CheckBox();
             this.pnlRegistroReclamos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPreviewImg)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -122,7 +125,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(14, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(571, 654);
+            this.groupBox1.Size = new System.Drawing.Size(591, 654);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             // 
@@ -237,6 +240,7 @@
             this.btnLimpiar.TabIndex = 7;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnGuardar
             // 
@@ -446,6 +450,9 @@
             // 
             // pnlBuscarDatos
             // 
+            this.pnlBuscarDatos.Controls.Add(this.chkSoloId);
+            this.pnlBuscarDatos.Controls.Add(this.txtBuscarPoliza);
+            this.pnlBuscarDatos.Controls.Add(this.txtBuscarSiniestro);
             this.pnlBuscarDatos.Controls.Add(this.txtBuscarCliente);
             this.pnlBuscarDatos.Controls.Add(this.lblCerrar);
             this.pnlBuscarDatos.Controls.Add(this.dgvBuscarDatos);
@@ -453,18 +460,19 @@
             this.pnlBuscarDatos.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlBuscarDatos.Location = new System.Drawing.Point(12, 60);
             this.pnlBuscarDatos.Name = "pnlBuscarDatos";
-            this.pnlBuscarDatos.Size = new System.Drawing.Size(606, 603);
+            this.pnlBuscarDatos.Size = new System.Drawing.Size(600, 603);
             this.pnlBuscarDatos.TabIndex = 23;
             this.pnlBuscarDatos.Visible = false;
             // 
             // txtBuscarCliente
             // 
             this.txtBuscarCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscarCliente.Location = new System.Drawing.Point(209, 23);
+            this.txtBuscarCliente.Location = new System.Drawing.Point(136, 23);
             this.txtBuscarCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBuscarCliente.Name = "txtBuscarCliente";
-            this.txtBuscarCliente.Size = new System.Drawing.Size(193, 33);
+            this.txtBuscarCliente.Size = new System.Drawing.Size(273, 33);
             this.txtBuscarCliente.TabIndex = 15;
+            this.txtBuscarCliente.TextChanged += new System.EventHandler(this.txtBuscarCliente_TextChanged);
             // 
             // lblCerrar
             // 
@@ -488,7 +496,7 @@
             this.dgvBuscarDatos.Location = new System.Drawing.Point(0, 72);
             this.dgvBuscarDatos.Name = "dgvBuscarDatos";
             this.dgvBuscarDatos.ReadOnly = true;
-            this.dgvBuscarDatos.Size = new System.Drawing.Size(606, 531);
+            this.dgvBuscarDatos.Size = new System.Drawing.Size(600, 531);
             this.dgvBuscarDatos.TabIndex = 0;
             this.dgvBuscarDatos.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBuscarClientes_CellMouseDoubleClick);
             // 
@@ -497,10 +505,43 @@
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
             this.label6.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label6.Location = new System.Drawing.Point(140, 13);
+            this.label6.Location = new System.Drawing.Point(67, 13);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 56);
             this.label6.TabIndex = 14;
+            // 
+            // txtBuscarSiniestro
+            // 
+            this.txtBuscarSiniestro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBuscarSiniestro.Location = new System.Drawing.Point(136, 23);
+            this.txtBuscarSiniestro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBuscarSiniestro.Name = "txtBuscarSiniestro";
+            this.txtBuscarSiniestro.Size = new System.Drawing.Size(273, 33);
+            this.txtBuscarSiniestro.TabIndex = 15;
+            this.txtBuscarSiniestro.TextChanged += new System.EventHandler(this.txtBuscarSiniestro_TextChanged);
+            // 
+            // txtBuscarPoliza
+            // 
+            this.txtBuscarPoliza.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBuscarPoliza.Location = new System.Drawing.Point(136, 23);
+            this.txtBuscarPoliza.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBuscarPoliza.Name = "txtBuscarPoliza";
+            this.txtBuscarPoliza.Size = new System.Drawing.Size(273, 33);
+            this.txtBuscarPoliza.TabIndex = 15;
+            this.txtBuscarPoliza.TextChanged += new System.EventHandler(this.txtBuscarPoliza_TextChanged);
+            // 
+            // chkSoloId
+            // 
+            this.chkSoloId.AutoSize = true;
+            this.chkSoloId.BackColor = System.Drawing.Color.White;
+            this.chkSoloId.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkSoloId.ForeColor = System.Drawing.Color.Crimson;
+            this.chkSoloId.Location = new System.Drawing.Point(436, 24);
+            this.chkSoloId.Name = "chkSoloId";
+            this.chkSoloId.Size = new System.Drawing.Size(108, 32);
+            this.chkSoloId.TabIndex = 110;
+            this.chkSoloId.Text = "solo Id";
+            this.chkSoloId.UseVisualStyleBackColor = false;
             // 
             // frmRegistroDeReclamos
             // 
@@ -564,5 +605,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnIdSiniestro;
         private System.Windows.Forms.PictureBox picPreviewImg;
+        private System.Windows.Forms.TextBox txtBuscarPoliza;
+        private System.Windows.Forms.TextBox txtBuscarSiniestro;
+        private System.Windows.Forms.CheckBox chkSoloId;
     }
 }

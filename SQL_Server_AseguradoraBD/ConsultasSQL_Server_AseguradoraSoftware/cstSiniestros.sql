@@ -8,16 +8,16 @@ use AseguradoraBD
 alter proc CargarPolizasActivas
 @IdCliente int
 as
-select vh.Id as "Núm Poliza", PS.[Nombre del Seguro], cE.Validacion as "Estado" from vdPoliza vh join PolizaDeSeguros PS
+select vh.Id as "Núm Poliza", PS.[Nombre del Seguro], PS.Area, cE.Validacion as "Estado" from vdPoliza vh join PolizaDeSeguros PS
 on vh.IdPolizaDeSeguro = Ps.id join cEstado cE on vh.Estado = cE.idEstado where Id_Cliente = @IdCliente and cE.idEstado = 1
  UNION  
-select em.Id as "Núm Poliza", PS.[Nombre del Seguro], cE.Validacion as "Estado" from emPoliza em join PolizaDeSeguros PS
+select em.Id as "Núm Poliza", PS.[Nombre del Seguro], PS.Area, cE.Validacion as "Estado" from emPoliza em join PolizaDeSeguros PS
 on em.IdPolizaDeSeguro = Ps.id join cEstado cE on em.Estado = cE.idEstado where Id_Cliente =  @IdCliente and cE.idEstado = 1
  UNION  
-select vh.Id as "Núm Poliza", PS.[Nombre del Seguro], cE.Validacion as "Estado" from vhPoliza vh join PolizaDeSeguros PS
+select vh.Id as "Núm Poliza", PS.[Nombre del Seguro], PS.Area, cE.Validacion as "Estado" from vhPoliza vh join PolizaDeSeguros PS
 on vh.IdPolizaDeSeguro = Ps.id join cEstado cE on vh.Estado = cE.idEstado where Id_Cliente =  @IdCliente and cE.idEstado = 1
  UNION  
-select _in.Id as "Núm Poliza", PS.[Nombre del Seguro], cE.Validacion as "Estado" from inPoliza _in join PolizaDeSeguros PS
+select _in.Id as "Núm Poliza", PS.[Nombre del Seguro], PS.Area, cE.Validacion as "Estado" from inPoliza _in join PolizaDeSeguros PS
 on _in.IdPolizaDeSeguro = Ps.id join cEstado cE on _in.Estado = cE.idEstado where Id_Cliente =  @IdCliente and cE.idEstado = 1
 
 CargarPolizasActivas 1
