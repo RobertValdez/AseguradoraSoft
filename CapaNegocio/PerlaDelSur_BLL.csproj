@@ -47,8 +47,10 @@
     <Compile Include="Poliza\B_Poliza.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistroReclamos\B_RegistroReclamos.cs" />
+    <Compile Include="ResumenSolicitud\B_ResumenSolicitud.cs" />
     <Compile Include="SeguroVida\B_SeguroVida.cs" />
     <Compile Include="Siniestro\B_Siniestro.cs" />
+    <Compile Include="Solicitud\B_Solicitud.cs" />
     <Compile Include="Usuarios\B_Usuarios.cs" />
     <Compile Include="VerPoliza\B_VerPoliza.cs" />
   </ItemGroup>

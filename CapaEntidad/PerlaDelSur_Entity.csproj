@@ -46,6 +46,7 @@
     <Compile Include="Poliza\E_Poliza.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistroReclamos\E_RegistroReclamos.cs" />
+    <Compile Include="ResumenSolicitud\E_ResumenSolicitud.cs" />
     <Compile Include="ResumenVentaPoliza\E_ResumenVentaPoliza.cs" />
     <Compile Include="SeguroVida\E_SeguroVida.cs" />
     <Compile Include="Siniestro\E_Siniestro.cs" />

@@ -10,16 +10,53 @@ using System.Windows.Forms;
 
 using PerlaDelSur_Entity.Clientes;
 using CapaNegocio.Clientes;
+using CapaNegocio.SeguroVida;
+using PerlaDelSur_Entity.SeguroVida;
+using System.IO;
+using CapaNegocio.Solicitud;
 
 namespace CapaPresentacion
 {
     public partial class frmSolicitud : Form
     {
+        B_Solicitud B_Solicitud = new B_Solicitud();
+
+        B_SeguroVida B_SeguroVida = new B_SeguroVida();
+        E_SeguroVida E_SegVida = new E_SeguroVida();
 
         E_Clientes E_Clientes = new E_Clientes();
         B_Clientes B_Clientes = new B_Clientes();
 
+        DataTable dtPolizaDeSeguros = new DataTable();
+
         static string _Categoria = "";
+
+        int idCodigo = 0;
+        decimal Precio = 0;
+        int varIdEmpleado = 0;
+
+        int idProductoSeguroVidaSalud = 0;
+
+        byte[] imgCopiaEstatutos = null;
+        byte[] imgCopiaActaAsignacionRNC = null;
+        byte[] imgCopiaPresidenteReprAut = null;
+
+
+        byte[] imgImagen1 = null;
+        string strImagen1 = "";
+
+        byte[] imgImagen2 = null;
+        string strImagen2 = "";
+
+        byte[] imgImagen3 = null;
+        string strImagen3 = "";
+
+        byte[] imgImagen4 = null;
+        string strImagen4 = "";
+
+        byte[] imgImagen5 = null;
+        string strImagen5 = "";
+
         public frmSolicitud()
         {
             InitializeComponent();
@@ -129,13 +166,34 @@ namespace CapaPresentacion
         {
             if (!cancelarDescripcionSeguros())
             {
+                DataView dv = new DataView(dtPolizaDeSeguros);
+
+                dv.RowFilter = "[Nombre del Seguro] = 'Seguro Negocios y Empresas'";
+
+                idProductoSeguroVidaSalud = (int)dv[0]["id"];
+                Precio = (decimal)dv[0]["Precio"];
+
+
                 pnlNegociosEmpresas.Visible = true;
+            }
+        }
+
+        public void CargarSegurosDePoliza()
+        {
+            try
+            {
+                dtPolizaDeSeguros = B_SeguroVida.B_MostrarSegurosDePolizas();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void lblCerrarNegocioEmp_Click(object sender, EventArgs e)
         {
             pnlNegociosEmpresas.Visible = false;
+            pnlPicImagen.Visible = false;
         }
 
         private void btnVidaRLab_BuscarEmpresa_Click(object sender, EventArgs e)
@@ -175,7 +233,153 @@ namespace CapaPresentacion
 
         private void btnSIGUIENTEpnlNegociosEmpresas_Click(object sender, EventArgs e)
         {
-            MostrarFormFactura();
+            Siguiente_pnlNegociosEmpresas();
+        }
+
+        public void Siguiente_pnlNegociosEmpresas()
+        {
+            try
+            {
+                mskTelefonoValidar();
+                mskCedulaValidar();
+
+                QuitarErrorProviderCliente();
+                ValidarCamposCliente();
+                //------------------------//
+                QuitarErrorProviderSegEmprNegocios();
+                ValidarCamposSegEmprNegocios();
+
+                if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrWhiteSpace(txtNombre.Text)
+                    || string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrWhiteSpace(txtApellido.Text)
+                    || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || mskCedula.Text == "   -       -" || mskTelefono.Text == ""
+                    || string.IsNullOrEmpty(txtCorreoElectronico.Text) || string.IsNullOrWhiteSpace(txtCorreoElectronico.Text)
+                    || string.IsNullOrEmpty(cmbNacionalidad.Text) || string.IsNullOrWhiteSpace(cmbNacionalidad.Text)
+                    || string.IsNullOrEmpty(cmbSexo.Text) || string.IsNullOrWhiteSpace(cmbSexo.Text)
+                    || (string.IsNullOrEmpty(txtCopiaEstatutos.Text)
+                    || string.IsNullOrWhiteSpace(txtCopiaEstatutos.Text))
+                    || (string.IsNullOrEmpty(txtCopiaActaAsignacionRNC.Text)
+                    || string.IsNullOrWhiteSpace(txtCopiaActaAsignacionRNC.Text))
+                    || (string.IsNullOrEmpty(txtCopiaCedulaPresidente_RepresAut.Text)
+                    || string.IsNullOrWhiteSpace(txtCopiaCedulaPresidente_RepresAut.Text))
+                    || (string.IsNullOrEmpty(txtTelefonoEntAut.Text)
+                    || string.IsNullOrWhiteSpace(txtTelefonoEntAut.Text))
+                    || (picImagen1.Image == null))
+                {
+                    MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (txtNombre.ReadOnly == true) // True aquí: Significa que está añadido como cliente en la Base de Datos
+                {
+                    frmFacturas frmFac = new frmFacturas();
+
+                    frmFac.txtId.Text = txtId.Text;
+                    frmFac.txtCliente.Text = txtNombre.Text + " " + txtApellido.Text;
+                    frmFac.txtCedula.Text = mskCedula.Text;
+                    frmFac.txtSeguroA_Adquirir.Text = lblSeguroNEmpresa.Text;
+                    frmFac.txtEfectoA_Asegurar.Text = txtNombreEmpresa.Text;
+                    frmFac.txtCategoria.Text = _Categoria;
+                    frmFac.txtIdSeguro.Text = idProductoSeguroVidaSalud.ToString();
+
+                    frmFac.txtCodigo.Text = idCodigo.ToString();
+                    frmFac.txtSubTotal.Text = Precio.ToString();
+                    frmFac.txtTotalA_Pagar.Text = Precio.ToString();
+
+
+
+                    frmFac.strCopiaEstatutos = txtCopiaEstatutos.Text.Trim();
+                    frmFac.strCopiaActaAsignacionRNC = txtCopiaActaAsignacionRNC.Text.Trim();
+
+                    frmFac.strCopiaCedulaPresidente_RepresAut = txtCopiaCedulaPresidente_RepresAut.Text.Trim();
+                    frmFac.strTelefonoEntAut = txtTelefonoEntAut.Text.Trim();
+
+                    frmFac.imgImagen1 = imgImagen1;
+                    frmFac.imgImagen2 = imgImagen2;
+                    frmFac.imgImagen3 = imgImagen3;
+                    frmFac.imgImagen4 = imgImagen4;
+                    frmFac.imgImagen5 = imgImagen5;
+
+                    frmFac.varIdEmpleado = varIdEmpleado;
+
+                    frmFac.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Añada el Cliente actual para poder continuar.", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    pnlPicImagen.Visible = false;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private bool ValidarCamposSegEmprNegocios()
+        {
+            bool ok = true;
+
+            if (string.IsNullOrEmpty(txtNombreEmpresa.Text)
+               || string.IsNullOrWhiteSpace(txtNombreEmpresa.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtNombreEmpresa, "Campo obligatorio");
+                txtNombreEmpresa.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtCopiaEstatutos.Text)
+                || string.IsNullOrWhiteSpace(txtCopiaEstatutos.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCopiaEstatutos, "Campo obligatorio");
+                txtCopiaEstatutos.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtCopiaActaAsignacionRNC.Text)
+                || string.IsNullOrWhiteSpace(txtCopiaActaAsignacionRNC.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCopiaActaAsignacionRNC, "Campo obligatorio");
+                txtCopiaActaAsignacionRNC.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtCopiaCedulaPresidente_RepresAut.Text)
+                || string.IsNullOrWhiteSpace(txtCopiaCedulaPresidente_RepresAut.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCopiaCedulaPresidente_RepresAut, "Campo obligatorio");
+                txtCopiaCedulaPresidente_RepresAut.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtTelefonoEntAut.Text)
+                || string.IsNullOrWhiteSpace(txtTelefonoEntAut.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtTelefonoEntAut, "Campo obligatorio");
+                txtTelefonoEntAut.Text = "";
+            }
+
+            if (picImagen1.Image == null)
+            {
+                ok = false;
+                errorProvider1.SetError(picImagen5, "Seleccione las fotos");
+            }
+
+            if (string.IsNullOrEmpty(txtCorreoElectronicoEntAutorizada.Text)
+               || string.IsNullOrWhiteSpace(txtCorreoElectronicoEntAutorizada.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCorreoElectronicoEntAutorizada, "Campo obligatorio");
+                txtCorreoElectronicoEntAutorizada.Text = "";
+            }
+
+            return ok;
+        }
+
+        private void QuitarErrorProviderSegEmprNegocios()
+        {
+            errorProvider1.SetError(txtNombreEmpresa, "");
+            errorProvider1.SetError(txtCopiaEstatutos, "");
+            errorProvider1.SetError(txtCopiaActaAsignacionRNC, "");
+            errorProvider1.SetError(txtCopiaCedulaPresidente_RepresAut, "");
+            errorProvider1.SetError(txtTelefonoEntAut, "");
+            errorProvider1.SetError(picImagen5, "");
+            errorProvider1.SetError(txtCorreoElectronicoEntAutorizada, "");
         }
 
         private void btnSIGUIENTEpnlVidaSaludDependientes_Click(object sender, EventArgs e)
@@ -192,7 +396,7 @@ namespace CapaPresentacion
         {
             MostrarFormFactura();
         }
-        
+
         public void MostrarFormFactura()
         {
             frmFacturas f = new frmFacturas();
@@ -241,6 +445,11 @@ namespace CapaPresentacion
         private void MostrarClientes()
         {
             dgvBuscarClientes.DataSource = B_Clientes.B_MostrarClientes();
+        }
+
+        private void lblCerrar_Click(object sender, EventArgs e)
+        {
+            pnlBuscarCliente.Visible = false;
         }
 
         private void dgvBuscarClientes_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -437,7 +646,7 @@ namespace CapaPresentacion
 
         public frmSolicitud(string Categoria)
         {
-            _Categoria = Categoria;
+            _Categoria = Categoria; 
         }
 
         public bool cancelarDescripcionSeguros()
@@ -451,6 +660,253 @@ namespace CapaPresentacion
                 value = true;
             }
             return value;
+        }
+
+        private void frmSolicitud_Load(object sender, EventArgs e)
+        {
+            Cargar_idCodigo_detalleSeguroSalud();
+            CargarSegurosDePoliza();
+            CargarEmpleado();
+            MostrarClientes();
+        }
+
+        private void CargarEmpleado()
+        {
+            E_SegVida.Id = 1;
+            varIdEmpleado = 1; /////
+
+            B_SeguroVida.B_CargarNombreEmpleado(E_SegVida);
+
+            lblNombre_empleado.Text = E_SegVida.NombreEmpleado;
+            lblCedula.Text = E_SegVida.Cedula;
+        }
+
+        private void Cargar_idCodigo_detalleSeguroSalud()
+        {
+            try
+            {
+                idCodigo = B_Solicitud.B_CargarIdDetalleEmpresaNegocio();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnImagenesContenido_Click(object sender, EventArgs e)
+        {
+            CargarImagenesContenido();
+        }
+
+        private void CargarImagenesContenido()
+        {
+            try
+            {
+                if (FotosContenido() == 5)
+                {
+                    imgImagen1 = ImageConvert(strImagen1);
+                    imgImagen2 = ImageConvert(strImagen2);
+                    imgImagen3 = ImageConvert(strImagen3);
+                    imgImagen4 = ImageConvert(strImagen4);
+                    imgImagen5 = ImageConvert(strImagen5);
+
+                    picImagen1.LoadAsync(strImagen1);
+                    picImagen2.LoadAsync(strImagen2);
+                    picImagen3.LoadAsync(strImagen3);
+                    picImagen4.LoadAsync(strImagen4);
+                    picImagen5.LoadAsync(strImagen5);
+
+                    picImagen1.Cursor = Cursors.Hand;
+                    picImagen2.Cursor = Cursors.Hand;
+                    picImagen3.Cursor = Cursors.Hand;
+                    picImagen4.Cursor = Cursors.Hand;
+                    picImagen5.Cursor = Cursors.Hand;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private byte[] ImageConvert(string ImagLoc)
+        {
+            byte[] img = null;
+            FileStream fs = new FileStream(ImagLoc, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            img = br.ReadBytes((int)fs.Length);
+            return img;
+        }
+
+        private void btnBuscarCopiaEstatutos_Click(object sender, EventArgs e)
+        {
+            string strFotoCopia = BuscarFotoCopia();
+            if (!strFotoCopia.Equals(""))
+            {
+                txtCopiaEstatutos.Text = strFotoCopia;
+                imgCopiaEstatutos = ImageConvert(txtCopiaEstatutos.Text);
+
+                btnVERCopiaEstatutos.Enabled = true;
+            }
+        }
+
+        private string BuscarFotoCopia()
+        {
+            string directory = "";
+            OpenFileDialog OFD = new OpenFileDialog();
+            OFD.Filter = "Imagenes JPG|*.jpg|Imagenes PNG|*.png|Imagenes BMP|*.bmp|Imagenes GIF|*.gif|Imagenes TIFF|*.tif|Todo |*.*";
+            OFD.FilterIndex = 1;
+
+            if (OFD.ShowDialog() == DialogResult.OK)
+            {
+                directory = OFD.FileName;
+                picPreviewImg.ImageLocation = (directory);
+                pnlPicImagen.Visible = true;
+            }
+            return directory;
+        }
+
+        private int FotosContenido()
+        {
+            int count = 0;
+            OpenFileDialog OFD = new OpenFileDialog();
+            OFD.Multiselect = true;
+            OFD.Filter = "Imagenes JPG|*.jpg|Imagenes PNG|*.png|Imagenes BMP|*.bmp|Imagenes GIF|*.gif|Imagenes TIFF|*.tif|Todo |*.*";
+            OFD.FilterIndex = 1;
+
+
+            if (OFD.ShowDialog() == DialogResult.OK)
+            {
+                count = 1;
+
+                IEnumerable<string> str_ofdFileName = OFD.FileNames.Take(5);
+
+                if (str_ofdFileName.LongCount() == 5)
+                {
+                    foreach (string file in str_ofdFileName)
+                    {
+                        if (count == 1)
+                        {
+                            strImagen1 = file;
+                            count++;
+                        }
+                        else if (count == 2)
+                        {
+                            strImagen2 = file;
+                            count++;
+                        }
+                        else if (count == 3)
+                        {
+                            strImagen3 = file;
+                            count++;
+                        }
+                        else if (count == 4)
+                        {
+                            strImagen4 = file;
+                            count++;
+                        }
+                        else if (count == 5)
+                        {
+                            strImagen5 = file;
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Solo puede seleccionar 5 imagenes. Por favor, intentelo de nuevo"
+                        , "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            return count;
+        }
+
+        private void btnCopiaActaAsignacionRNC_Click(object sender, EventArgs e)
+        {
+            string strFotoCopia = BuscarFotoCopia();
+            if (!strFotoCopia.Equals(""))
+            {
+                txtCopiaActaAsignacionRNC.Text = strFotoCopia;
+                imgCopiaActaAsignacionRNC = ImageConvert(txtCopiaActaAsignacionRNC.Text);
+
+                btnVERCopiaActaAsignacionRNC.Enabled = true;
+            }
+        }
+
+        private void btnCopiaCedulaPresidente_RepresAut_Click(object sender, EventArgs e)
+        {
+            string strFotoCopia = BuscarFotoCopia();
+            if (!strFotoCopia.Equals(""))
+            {
+                txtCopiaCedulaPresidente_RepresAut.Text = strFotoCopia;
+                imgCopiaPresidenteReprAut = ImageConvert(txtCopiaCedulaPresidente_RepresAut.Text);
+
+                btnVERCopiaCedulaPresidente_RepresAut.Enabled = true;
+            }
+        }
+         
+        private void lblCerrarPicPreview_Click(object sender, EventArgs e)
+        {
+            picPreviewImg.Image = null;
+            pnlPicImagen.Visible = false;
+        }
+
+        private void btnVERCopiaEstatutos_Click(object sender, EventArgs e)
+        {
+            pnlPicImagen.Visible = true;
+            picPreviewImg.LoadAsync(txtCopiaEstatutos.Text);
+        }
+
+        private void btnVERCopiaActaAsignacionRNC_Click(object sender, EventArgs e)
+        {
+            pnlPicImagen.Visible = true;
+            picPreviewImg.LoadAsync(txtCopiaActaAsignacionRNC.Text);
+        }
+
+        private void btnVERCopiaCedulaPresidente_RepresAut_Click(object sender, EventArgs e)
+        {
+            pnlPicImagen.Visible = true;
+            picPreviewImg.LoadAsync(txtCopiaCedulaPresidente_RepresAut.Text);
+        }
+
+        private void picImagen1_Click(object sender, EventArgs e)
+        {
+            if (!(picImagen1.Image == null))
+            {
+                pnlPicImagen.Visible = true;
+                picPreviewImg.LoadAsync(strImagen1);
+            }
+        }
+
+        private void picImagen2_Click(object sender, EventArgs e)
+        {
+            if (!(picImagen2.Image == null))
+            {
+                pnlPicImagen.Visible = true;
+                picPreviewImg.LoadAsync(strImagen2);
+            }
+        }
+        private void picImagen3_Click(object sender, EventArgs e)
+        {
+            if (!(picImagen3.Image == null))
+            {
+                pnlPicImagen.Visible = true;
+                picPreviewImg.LoadAsync(strImagen3);
+            }
+        }
+
+        private void picImagen4_Click(object sender, EventArgs e)
+        {
+            if (!(picImagen4.Image == null))
+            {
+                pnlPicImagen.Visible = true;
+                picPreviewImg.LoadAsync(strImagen4);
+            }
+        }
+
+        private void picImagen5_Click(object sender, EventArgs e)
+        {
+            if (!(picImagen5.Image == null))
+            {
+                pnlPicImagen.Visible = true;
+                picPreviewImg.LoadAsync(strImagen5);
+            }
         }
     }
 }

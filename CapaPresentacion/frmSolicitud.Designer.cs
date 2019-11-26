@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSolicitud));
             this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.lblNombre_empleado = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
+            this.lblCedula = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pnlVEHSeguroVoluntario = new System.Windows.Forms.Panel();
             this.btnSIGUIENTEpnlVEHSeguroVoluntario = new System.Windows.Forms.Button();
@@ -152,26 +152,31 @@
             this.lblCerrarInmContenido = new System.Windows.Forms.Label();
             this.label68 = new System.Windows.Forms.Label();
             this.pnlNegociosEmpresas = new System.Windows.Forms.Panel();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.picImagen5 = new System.Windows.Forms.PictureBox();
+            this.picImagen4 = new System.Windows.Forms.PictureBox();
+            this.picImagen3 = new System.Windows.Forms.PictureBox();
+            this.picImagen2 = new System.Windows.Forms.PictureBox();
+            this.btnImagenesContenido = new System.Windows.Forms.Button();
+            this.btnCopiaCedulaPresidente_RepresAut = new System.Windows.Forms.Button();
+            this.btnCopiaActaAsignacionRNC = new System.Windows.Forms.Button();
+            this.btnBuscarCopiaEstatutos = new System.Windows.Forms.Button();
             this.btnSIGUIENTEpnlNegociosEmpresas = new System.Windows.Forms.Button();
-            this.textBox44 = new System.Windows.Forms.TextBox();
-            this.textBox43 = new System.Windows.Forms.TextBox();
-            this.textBox37 = new System.Windows.Forms.TextBox();
-            this.textBox38 = new System.Windows.Forms.TextBox();
-            this.textBox45 = new System.Windows.Forms.TextBox();
-            this.textBox48 = new System.Windows.Forms.TextBox();
+            this.txtNombreEmpresa = new System.Windows.Forms.TextBox();
+            this.txtCorreoElectronicoEntAutorizada = new System.Windows.Forms.TextBox();
+            this.txtTelefonoEntAut = new System.Windows.Forms.TextBox();
+            this.txtCopiaActaAsignacionRNC = new System.Windows.Forms.TextBox();
+            this.txtCopiaCedulaPresidente_RepresAut = new System.Windows.Forms.TextBox();
+            this.txtCopiaEstatutos = new System.Windows.Forms.TextBox();
             this.label72 = new System.Windows.Forms.Label();
-            this.label70 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.label71 = new System.Windows.Forms.Label();
             this.label74 = new System.Windows.Forms.Label();
             this.label122 = new System.Windows.Forms.Label();
             this.label123 = new System.Windows.Forms.Label();
             this.label124 = new System.Windows.Forms.Label();
             this.lblCerrarNegocioEmp = new System.Windows.Forms.Label();
-            this.label77 = new System.Windows.Forms.Label();
+            this.lblSeguroNEmpresa = new System.Windows.Forms.Label();
             this.pnlInmuebles = new System.Windows.Forms.Panel();
             this.lblCerrar_pnlInmuebles = new System.Windows.Forms.Label();
             this.btnInmEdificaciones = new System.Windows.Forms.Button();
@@ -210,6 +215,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblCerrarPicPreview = new System.Windows.Forms.Label();
+            this.pnlPicImagen = new System.Windows.Forms.Panel();
+            this.picPreviewImg = new System.Windows.Forms.PictureBox();
+            this.btnVERCopiaEstatutos = new System.Windows.Forms.Button();
+            this.btnVERCopiaActaAsignacionRNC = new System.Windows.Forms.Button();
+            this.btnVERCopiaCedulaPresidente_RepresAut = new System.Windows.Forms.Button();
+            this.picImagen1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.pnlVEHSeguroVoluntario.SuspendLayout();
             this.pnlVehiculo.SuspendLayout();
@@ -218,11 +230,18 @@
             this.pnlMueblesInmEdificaciones.SuspendLayout();
             this.pnlMueblesInmContenido.SuspendLayout();
             this.pnlNegociosEmpresas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagen5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagen4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagen3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagen2)).BeginInit();
             this.pnlInmuebles.SuspendLayout();
             this.pnlBuscarCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscarClientes)).BeginInit();
             this.pnlCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.pnlPicImagen.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPreviewImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagen1)).BeginInit();
             this.SuspendLayout();
             // 
             // label25
@@ -237,16 +256,16 @@
             this.label25.TabIndex = 1;
             this.label25.Text = "Empleado:";
             // 
-            // label26
+            // lblNombre_empleado
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(123, 39);
-            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(187, 22);
-            this.label26.TabIndex = 1;
-            this.label26.Text = "nombre_empleado";
+            this.lblNombre_empleado.AutoSize = true;
+            this.lblNombre_empleado.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre_empleado.Location = new System.Drawing.Point(123, 39);
+            this.lblNombre_empleado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre_empleado.Name = "lblNombre_empleado";
+            this.lblNombre_empleado.Size = new System.Drawing.Size(187, 22);
+            this.lblNombre_empleado.TabIndex = 1;
+            this.lblNombre_empleado.Text = "nombre_empleado";
             // 
             // label31
             // 
@@ -256,27 +275,27 @@
             this.label31.Location = new System.Drawing.Point(317, 32);
             this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(84, 23);
+            this.label31.Size = new System.Drawing.Size(85, 23);
             this.label31.TabIndex = 1;
-            this.label31.Text = "Cédula:";
+            this.label31.Text = "Código:";
             // 
-            // label32
+            // lblCedula
             // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(317, 55);
-            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(121, 22);
-            this.label32.TabIndex = 1;
-            this.label32.Text = "000-00000-0";
+            this.lblCedula.AutoSize = true;
+            this.lblCedula.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCedula.Location = new System.Drawing.Point(317, 55);
+            this.lblCedula.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCedula.Name = "lblCedula";
+            this.lblCedula.Size = new System.Drawing.Size(121, 22);
+            this.lblCedula.TabIndex = 1;
+            this.lblCedula.Text = "000-00000-0";
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.label32);
+            this.groupBox1.Controls.Add(this.lblCedula);
             this.groupBox1.Controls.Add(this.label25);
-            this.groupBox1.Controls.Add(this.label26);
+            this.groupBox1.Controls.Add(this.lblNombre_empleado);
             this.groupBox1.Controls.Add(this.label31);
             this.groupBox1.Location = new System.Drawing.Point(20, 11);
             this.groupBox1.Name = "groupBox1";
@@ -1647,92 +1666,153 @@
             // 
             this.pnlNegociosEmpresas.BackColor = System.Drawing.Color.White;
             this.pnlNegociosEmpresas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlNegociosEmpresas.Controls.Add(this.button15);
-            this.pnlNegociosEmpresas.Controls.Add(this.button12);
-            this.pnlNegociosEmpresas.Controls.Add(this.button11);
-            this.pnlNegociosEmpresas.Controls.Add(this.button10);
+            this.pnlNegociosEmpresas.Controls.Add(this.picImagen5);
+            this.pnlNegociosEmpresas.Controls.Add(this.picImagen1);
+            this.pnlNegociosEmpresas.Controls.Add(this.picImagen4);
+            this.pnlNegociosEmpresas.Controls.Add(this.picImagen3);
+            this.pnlNegociosEmpresas.Controls.Add(this.picImagen2);
+            this.pnlNegociosEmpresas.Controls.Add(this.btnImagenesContenido);
+            this.pnlNegociosEmpresas.Controls.Add(this.btnCopiaCedulaPresidente_RepresAut);
+            this.pnlNegociosEmpresas.Controls.Add(this.btnCopiaActaAsignacionRNC);
+            this.pnlNegociosEmpresas.Controls.Add(this.btnVERCopiaCedulaPresidente_RepresAut);
+            this.pnlNegociosEmpresas.Controls.Add(this.btnVERCopiaActaAsignacionRNC);
+            this.pnlNegociosEmpresas.Controls.Add(this.btnVERCopiaEstatutos);
+            this.pnlNegociosEmpresas.Controls.Add(this.btnBuscarCopiaEstatutos);
             this.pnlNegociosEmpresas.Controls.Add(this.btnSIGUIENTEpnlNegociosEmpresas);
-            this.pnlNegociosEmpresas.Controls.Add(this.textBox44);
-            this.pnlNegociosEmpresas.Controls.Add(this.textBox43);
-            this.pnlNegociosEmpresas.Controls.Add(this.textBox37);
-            this.pnlNegociosEmpresas.Controls.Add(this.textBox38);
-            this.pnlNegociosEmpresas.Controls.Add(this.textBox45);
-            this.pnlNegociosEmpresas.Controls.Add(this.textBox48);
+            this.pnlNegociosEmpresas.Controls.Add(this.txtNombreEmpresa);
+            this.pnlNegociosEmpresas.Controls.Add(this.txtCorreoElectronicoEntAutorizada);
+            this.pnlNegociosEmpresas.Controls.Add(this.txtTelefonoEntAut);
+            this.pnlNegociosEmpresas.Controls.Add(this.txtCopiaActaAsignacionRNC);
+            this.pnlNegociosEmpresas.Controls.Add(this.txtCopiaCedulaPresidente_RepresAut);
+            this.pnlNegociosEmpresas.Controls.Add(this.txtCopiaEstatutos);
             this.pnlNegociosEmpresas.Controls.Add(this.label72);
-            this.pnlNegociosEmpresas.Controls.Add(this.label70);
+            this.pnlNegociosEmpresas.Controls.Add(this.label22);
+            this.pnlNegociosEmpresas.Controls.Add(this.label23);
             this.pnlNegociosEmpresas.Controls.Add(this.label71);
             this.pnlNegociosEmpresas.Controls.Add(this.label74);
             this.pnlNegociosEmpresas.Controls.Add(this.label122);
             this.pnlNegociosEmpresas.Controls.Add(this.label123);
             this.pnlNegociosEmpresas.Controls.Add(this.label124);
             this.pnlNegociosEmpresas.Controls.Add(this.lblCerrarNegocioEmp);
-            this.pnlNegociosEmpresas.Controls.Add(this.label77);
+            this.pnlNegociosEmpresas.Controls.Add(this.lblSeguroNEmpresa);
             this.pnlNegociosEmpresas.Location = new System.Drawing.Point(482, 27);
             this.pnlNegociosEmpresas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlNegociosEmpresas.Name = "pnlNegociosEmpresas";
-            this.pnlNegociosEmpresas.Size = new System.Drawing.Size(842, 557);
+            this.pnlNegociosEmpresas.Size = new System.Drawing.Size(842, 514);
             this.pnlNegociosEmpresas.TabIndex = 6;
             this.pnlNegociosEmpresas.Visible = false;
             // 
-            // button15
+            // picImagen5
             // 
-            this.button15.BackColor = System.Drawing.Color.White;
-            this.button15.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.ForeColor = System.Drawing.Color.Crimson;
-            this.button15.Location = new System.Drawing.Point(40, 514);
-            this.button15.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(157, 33);
-            this.button15.TabIndex = 105;
-            this.button15.Text = "Buscar Fotocopia";
-            this.button15.UseVisualStyleBackColor = false;
+            this.picImagen5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picImagen5.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.picImagen5.Location = new System.Drawing.Point(644, 347);
+            this.picImagen5.Name = "picImagen5";
+            this.picImagen5.Size = new System.Drawing.Size(35, 36);
+            this.picImagen5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picImagen5.TabIndex = 107;
+            this.picImagen5.TabStop = false;
+            this.picImagen5.Click += new System.EventHandler(this.picImagen5_Click);
             // 
-            // button12
+            // picImagen4
             // 
-            this.button12.BackColor = System.Drawing.Color.White;
-            this.button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.ForeColor = System.Drawing.Color.Crimson;
-            this.button12.Location = new System.Drawing.Point(242, 360);
-            this.button12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(157, 33);
-            this.button12.TabIndex = 105;
-            this.button12.Text = "Buscar Fotocopia";
-            this.button12.UseVisualStyleBackColor = false;
+            this.picImagen4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picImagen4.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.picImagen4.Location = new System.Drawing.Point(603, 347);
+            this.picImagen4.Name = "picImagen4";
+            this.picImagen4.Size = new System.Drawing.Size(35, 36);
+            this.picImagen4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picImagen4.TabIndex = 107;
+            this.picImagen4.TabStop = false;
+            this.picImagen4.Click += new System.EventHandler(this.picImagen4_Click);
             // 
-            // button11
+            // picImagen3
             // 
-            this.button11.BackColor = System.Drawing.Color.White;
-            this.button11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.Crimson;
-            this.button11.Location = new System.Drawing.Point(225, 264);
-            this.button11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(157, 33);
-            this.button11.TabIndex = 105;
-            this.button11.Text = "Buscar Fotocopia";
-            this.button11.UseVisualStyleBackColor = false;
+            this.picImagen3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picImagen3.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.picImagen3.Location = new System.Drawing.Point(562, 347);
+            this.picImagen3.Name = "picImagen3";
+            this.picImagen3.Size = new System.Drawing.Size(35, 36);
+            this.picImagen3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picImagen3.TabIndex = 107;
+            this.picImagen3.TabStop = false;
+            this.picImagen3.Click += new System.EventHandler(this.picImagen3_Click);
             // 
-            // button10
+            // picImagen2
             // 
-            this.button10.BackColor = System.Drawing.Color.White;
-            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.Crimson;
-            this.button10.Location = new System.Drawing.Point(241, 163);
-            this.button10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(157, 33);
-            this.button10.TabIndex = 105;
-            this.button10.Text = "Buscar Fotocopia";
-            this.button10.UseVisualStyleBackColor = false;
+            this.picImagen2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picImagen2.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.picImagen2.Location = new System.Drawing.Point(521, 347);
+            this.picImagen2.Name = "picImagen2";
+            this.picImagen2.Size = new System.Drawing.Size(35, 36);
+            this.picImagen2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picImagen2.TabIndex = 107;
+            this.picImagen2.TabStop = false;
+            this.picImagen2.Click += new System.EventHandler(this.picImagen2_Click);
+            // 
+            // btnImagenesContenido
+            // 
+            this.btnImagenesContenido.BackColor = System.Drawing.Color.White;
+            this.btnImagenesContenido.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnImagenesContenido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImagenesContenido.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImagenesContenido.ForeColor = System.Drawing.Color.Crimson;
+            this.btnImagenesContenido.Location = new System.Drawing.Point(479, 391);
+            this.btnImagenesContenido.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnImagenesContenido.Name = "btnImagenesContenido";
+            this.btnImagenesContenido.Size = new System.Drawing.Size(157, 33);
+            this.btnImagenesContenido.TabIndex = 105;
+            this.btnImagenesContenido.Text = "Buscar Imagenes";
+            this.btnImagenesContenido.UseVisualStyleBackColor = false;
+            this.btnImagenesContenido.Click += new System.EventHandler(this.btnImagenesContenido_Click);
+            // 
+            // btnCopiaCedulaPresidente_RepresAut
+            // 
+            this.btnCopiaCedulaPresidente_RepresAut.BackColor = System.Drawing.Color.White;
+            this.btnCopiaCedulaPresidente_RepresAut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnCopiaCedulaPresidente_RepresAut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCopiaCedulaPresidente_RepresAut.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCopiaCedulaPresidente_RepresAut.ForeColor = System.Drawing.Color.Crimson;
+            this.btnCopiaCedulaPresidente_RepresAut.Location = new System.Drawing.Point(269, 439);
+            this.btnCopiaCedulaPresidente_RepresAut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCopiaCedulaPresidente_RepresAut.Name = "btnCopiaCedulaPresidente_RepresAut";
+            this.btnCopiaCedulaPresidente_RepresAut.Size = new System.Drawing.Size(157, 33);
+            this.btnCopiaCedulaPresidente_RepresAut.TabIndex = 105;
+            this.btnCopiaCedulaPresidente_RepresAut.Text = "Buscar Fotocopia";
+            this.btnCopiaCedulaPresidente_RepresAut.UseVisualStyleBackColor = false;
+            this.btnCopiaCedulaPresidente_RepresAut.Click += new System.EventHandler(this.btnCopiaCedulaPresidente_RepresAut_Click);
+            // 
+            // btnCopiaActaAsignacionRNC
+            // 
+            this.btnCopiaActaAsignacionRNC.BackColor = System.Drawing.Color.White;
+            this.btnCopiaActaAsignacionRNC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnCopiaActaAsignacionRNC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCopiaActaAsignacionRNC.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCopiaActaAsignacionRNC.ForeColor = System.Drawing.Color.Crimson;
+            this.btnCopiaActaAsignacionRNC.Location = new System.Drawing.Point(269, 342);
+            this.btnCopiaActaAsignacionRNC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCopiaActaAsignacionRNC.Name = "btnCopiaActaAsignacionRNC";
+            this.btnCopiaActaAsignacionRNC.Size = new System.Drawing.Size(157, 33);
+            this.btnCopiaActaAsignacionRNC.TabIndex = 105;
+            this.btnCopiaActaAsignacionRNC.Text = "Buscar Fotocopia";
+            this.btnCopiaActaAsignacionRNC.UseVisualStyleBackColor = false;
+            this.btnCopiaActaAsignacionRNC.Click += new System.EventHandler(this.btnCopiaActaAsignacionRNC_Click);
+            // 
+            // btnBuscarCopiaEstatutos
+            // 
+            this.btnBuscarCopiaEstatutos.BackColor = System.Drawing.Color.White;
+            this.btnBuscarCopiaEstatutos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnBuscarCopiaEstatutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarCopiaEstatutos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarCopiaEstatutos.ForeColor = System.Drawing.Color.Crimson;
+            this.btnBuscarCopiaEstatutos.Location = new System.Drawing.Point(269, 242);
+            this.btnBuscarCopiaEstatutos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBuscarCopiaEstatutos.Name = "btnBuscarCopiaEstatutos";
+            this.btnBuscarCopiaEstatutos.Size = new System.Drawing.Size(157, 33);
+            this.btnBuscarCopiaEstatutos.TabIndex = 105;
+            this.btnBuscarCopiaEstatutos.Text = "Buscar Fotocopia";
+            this.btnBuscarCopiaEstatutos.UseVisualStyleBackColor = false;
+            this.btnBuscarCopiaEstatutos.Click += new System.EventHandler(this.btnBuscarCopiaEstatutos_Click);
             // 
             // btnSIGUIENTEpnlNegociosEmpresas
             // 
@@ -1741,7 +1821,7 @@
             this.btnSIGUIENTEpnlNegociosEmpresas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSIGUIENTEpnlNegociosEmpresas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSIGUIENTEpnlNegociosEmpresas.ForeColor = System.Drawing.Color.Crimson;
-            this.btnSIGUIENTEpnlNegociosEmpresas.Location = new System.Drawing.Point(639, 485);
+            this.btnSIGUIENTEpnlNegociosEmpresas.Location = new System.Drawing.Point(649, 456);
             this.btnSIGUIENTEpnlNegociosEmpresas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSIGUIENTEpnlNegociosEmpresas.Name = "btnSIGUIENTEpnlNegociosEmpresas";
             this.btnSIGUIENTEpnlNegociosEmpresas.Size = new System.Drawing.Size(157, 49);
@@ -1750,85 +1830,98 @@
             this.btnSIGUIENTEpnlNegociosEmpresas.UseVisualStyleBackColor = false;
             this.btnSIGUIENTEpnlNegociosEmpresas.Click += new System.EventHandler(this.btnSIGUIENTEpnlNegociosEmpresas_Click);
             // 
-            // textBox44
+            // txtNombreEmpresa
             // 
-            this.textBox44.Location = new System.Drawing.Point(40, 475);
-            this.textBox44.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox44.Name = "textBox44";
-            this.textBox44.ReadOnly = true;
-            this.textBox44.Size = new System.Drawing.Size(351, 33);
-            this.textBox44.TabIndex = 103;
+            this.txtNombreEmpresa.Location = new System.Drawing.Point(33, 164);
+            this.txtNombreEmpresa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtNombreEmpresa.Name = "txtNombreEmpresa";
+            this.txtNombreEmpresa.Size = new System.Drawing.Size(340, 33);
+            this.txtNombreEmpresa.TabIndex = 103;
             // 
-            // textBox43
+            // txtCorreoElectronicoEntAutorizada
             // 
-            this.textBox43.Location = new System.Drawing.Point(449, 260);
-            this.textBox43.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox43.Name = "textBox43";
-            this.textBox43.Size = new System.Drawing.Size(347, 33);
-            this.textBox43.TabIndex = 103;
+            this.txtCorreoElectronicoEntAutorizada.Location = new System.Drawing.Point(460, 254);
+            this.txtCorreoElectronicoEntAutorizada.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCorreoElectronicoEntAutorizada.Name = "txtCorreoElectronicoEntAutorizada";
+            this.txtCorreoElectronicoEntAutorizada.Size = new System.Drawing.Size(347, 33);
+            this.txtCorreoElectronicoEntAutorizada.TabIndex = 103;
             // 
-            // textBox37
+            // txtTelefonoEntAut
             // 
-            this.textBox37.Location = new System.Drawing.Point(449, 163);
-            this.textBox37.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox37.Name = "textBox37";
-            this.textBox37.Size = new System.Drawing.Size(347, 33);
-            this.textBox37.TabIndex = 103;
+            this.txtTelefonoEntAut.Location = new System.Drawing.Point(461, 163);
+            this.txtTelefonoEntAut.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtTelefonoEntAut.Name = "txtTelefonoEntAut";
+            this.txtTelefonoEntAut.Size = new System.Drawing.Size(347, 33);
+            this.txtTelefonoEntAut.TabIndex = 103;
             // 
-            // textBox38
+            // txtCopiaActaAsignacionRNC
             // 
-            this.textBox38.Location = new System.Drawing.Point(36, 264);
-            this.textBox38.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox38.Name = "textBox38";
-            this.textBox38.ReadOnly = true;
-            this.textBox38.Size = new System.Drawing.Size(177, 33);
-            this.textBox38.TabIndex = 102;
+            this.errorProvider1.SetIconAlignment(this.txtCopiaActaAsignacionRNC, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
+            this.txtCopiaActaAsignacionRNC.Location = new System.Drawing.Point(33, 343);
+            this.txtCopiaActaAsignacionRNC.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCopiaActaAsignacionRNC.Name = "txtCopiaActaAsignacionRNC";
+            this.txtCopiaActaAsignacionRNC.ReadOnly = true;
+            this.txtCopiaActaAsignacionRNC.Size = new System.Drawing.Size(172, 33);
+            this.txtCopiaActaAsignacionRNC.TabIndex = 102;
             // 
-            // textBox45
+            // txtCopiaCedulaPresidente_RepresAut
             // 
-            this.textBox45.Location = new System.Drawing.Point(34, 360);
-            this.textBox45.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox45.Name = "textBox45";
-            this.textBox45.ReadOnly = true;
-            this.textBox45.Size = new System.Drawing.Size(200, 33);
-            this.textBox45.TabIndex = 104;
+            this.errorProvider1.SetIconAlignment(this.txtCopiaCedulaPresidente_RepresAut, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
+            this.txtCopiaCedulaPresidente_RepresAut.Location = new System.Drawing.Point(33, 439);
+            this.txtCopiaCedulaPresidente_RepresAut.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCopiaCedulaPresidente_RepresAut.Name = "txtCopiaCedulaPresidente_RepresAut";
+            this.txtCopiaCedulaPresidente_RepresAut.ReadOnly = true;
+            this.txtCopiaCedulaPresidente_RepresAut.Size = new System.Drawing.Size(172, 33);
+            this.txtCopiaCedulaPresidente_RepresAut.TabIndex = 104;
             // 
-            // textBox48
+            // txtCopiaEstatutos
             // 
-            this.textBox48.Location = new System.Drawing.Point(36, 163);
-            this.textBox48.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox48.Name = "textBox48";
-            this.textBox48.ReadOnly = true;
-            this.textBox48.Size = new System.Drawing.Size(200, 33);
-            this.textBox48.TabIndex = 85;
+            this.errorProvider1.SetIconAlignment(this.txtCopiaEstatutos, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
+            this.txtCopiaEstatutos.Location = new System.Drawing.Point(33, 242);
+            this.txtCopiaEstatutos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCopiaEstatutos.Name = "txtCopiaEstatutos";
+            this.txtCopiaEstatutos.ReadOnly = true;
+            this.txtCopiaEstatutos.Size = new System.Drawing.Size(172, 33);
+            this.txtCopiaEstatutos.TabIndex = 85;
             // 
             // label72
             // 
             this.label72.AutoSize = true;
             this.label72.ForeColor = System.Drawing.Color.Firebrick;
-            this.label72.Location = new System.Drawing.Point(36, 424);
+            this.label72.Location = new System.Drawing.Point(467, 313);
             this.label72.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(152, 48);
+            this.label72.Size = new System.Drawing.Size(272, 24);
             this.label72.TabIndex = 88;
-            this.label72.Text = "Imagenes del\r\nContenido:";
+            this.label72.Text = "Imagenes del Contenido:";
             // 
-            // label70
+            // label22
             // 
-            this.label70.AutoSize = true;
-            this.label70.ForeColor = System.Drawing.Color.Firebrick;
-            this.label70.Location = new System.Drawing.Point(456, 233);
-            this.label70.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(224, 24);
-            this.label70.TabIndex = 88;
-            this.label70.Text = "Inspeccion del Local";
+            this.label22.AutoSize = true;
+            this.label22.ForeColor = System.Drawing.Color.Firebrick;
+            this.label22.Location = new System.Drawing.Point(33, 133);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(343, 24);
+            this.label22.TabIndex = 88;
+            this.label22.Text = "Nombre de Negocio o Empresa:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.ForeColor = System.Drawing.Color.Firebrick;
+            this.label23.Location = new System.Drawing.Point(467, 203);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(236, 48);
+            this.label23.TabIndex = 88;
+            this.label23.Text = "Correo Electrónico de\r\nEntidad Autorizada:";
             // 
             // label71
             // 
             this.label71.AutoSize = true;
             this.label71.ForeColor = System.Drawing.Color.Firebrick;
-            this.label71.Location = new System.Drawing.Point(456, 112);
+            this.label71.Location = new System.Drawing.Point(467, 113);
             this.label71.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label71.Name = "label71";
             this.label71.Size = new System.Drawing.Size(206, 48);
@@ -1839,7 +1932,7 @@
             // 
             this.label74.AutoSize = true;
             this.label74.ForeColor = System.Drawing.Color.Firebrick;
-            this.label74.Location = new System.Drawing.Point(36, 309);
+            this.label74.Location = new System.Drawing.Point(33, 388);
             this.label74.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(289, 48);
@@ -1850,7 +1943,7 @@
             // 
             this.label122.AutoSize = true;
             this.label122.ForeColor = System.Drawing.Color.Firebrick;
-            this.label122.Location = new System.Drawing.Point(36, 212);
+            this.label122.Location = new System.Drawing.Point(33, 291);
             this.label122.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label122.Name = "label122";
             this.label122.Size = new System.Drawing.Size(196, 48);
@@ -1861,7 +1954,7 @@
             // 
             this.label123.AutoSize = true;
             this.label123.ForeColor = System.Drawing.Color.Firebrick;
-            this.label123.Location = new System.Drawing.Point(36, 136);
+            this.label123.Location = new System.Drawing.Point(33, 215);
             this.label123.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label123.Name = "label123";
             this.label123.Size = new System.Drawing.Size(239, 24);
@@ -1892,17 +1985,17 @@
             this.lblCerrarNegocioEmp.Text = "X";
             this.lblCerrarNegocioEmp.Click += new System.EventHandler(this.lblCerrarNegocioEmp_Click);
             // 
-            // label77
+            // lblSeguroNEmpresa
             // 
-            this.label77.AutoSize = true;
-            this.label77.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.label77.ForeColor = System.Drawing.Color.Firebrick;
-            this.label77.Location = new System.Drawing.Point(251, 14);
-            this.label77.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(329, 28);
-            this.label77.TabIndex = 0;
-            this.label77.Text = "Seguro Negocios Empresas";
+            this.lblSeguroNEmpresa.AutoSize = true;
+            this.lblSeguroNEmpresa.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
+            this.lblSeguroNEmpresa.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblSeguroNEmpresa.Location = new System.Drawing.Point(251, 14);
+            this.lblSeguroNEmpresa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSeguroNEmpresa.Name = "lblSeguroNEmpresa";
+            this.lblSeguroNEmpresa.Size = new System.Drawing.Size(329, 28);
+            this.lblSeguroNEmpresa.TabIndex = 0;
+            this.lblSeguroNEmpresa.Text = "Seguro Negocios Empresas";
             // 
             // pnlInmuebles
             // 
@@ -1912,7 +2005,7 @@
             this.pnlInmuebles.Controls.Add(this.btnInmContenido);
             this.pnlInmuebles.Location = new System.Drawing.Point(664, 148);
             this.pnlInmuebles.Name = "pnlInmuebles";
-            this.pnlInmuebles.Size = new System.Drawing.Size(548, 272);
+            this.pnlInmuebles.Size = new System.Drawing.Size(592, 272);
             this.pnlInmuebles.TabIndex = 9;
             this.pnlInmuebles.Visible = false;
             // 
@@ -1992,11 +2085,12 @@
             this.lblCerrar.AutoSize = true;
             this.lblCerrar.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblCerrar.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCerrar.Location = new System.Drawing.Point(422, 3);
+            this.lblCerrar.Location = new System.Drawing.Point(422, -4);
             this.lblCerrar.Name = "lblCerrar";
             this.lblCerrar.Size = new System.Drawing.Size(35, 36);
             this.lblCerrar.TabIndex = 107;
             this.lblCerrar.Text = "X";
+            this.lblCerrar.Click += new System.EventHandler(this.lblCerrar_Click);
             // 
             // label2
             // 
@@ -2362,12 +2456,108 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // lblCerrarPicPreview
+            // 
+            this.lblCerrarPicPreview.AutoSize = true;
+            this.lblCerrarPicPreview.BackColor = System.Drawing.Color.LightGray;
+            this.lblCerrarPicPreview.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblCerrarPicPreview.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCerrarPicPreview.Location = new System.Drawing.Point(421, 1);
+            this.lblCerrarPicPreview.Name = "lblCerrarPicPreview";
+            this.lblCerrarPicPreview.Size = new System.Drawing.Size(35, 36);
+            this.lblCerrarPicPreview.TabIndex = 10;
+            this.lblCerrarPicPreview.Text = "X";
+            this.lblCerrarPicPreview.Click += new System.EventHandler(this.lblCerrarPicPreview_Click);
+            // 
+            // pnlPicImagen
+            // 
+            this.pnlPicImagen.Controls.Add(this.lblCerrarPicPreview);
+            this.pnlPicImagen.Controls.Add(this.picPreviewImg);
+            this.pnlPicImagen.Location = new System.Drawing.Point(21, 103);
+            this.pnlPicImagen.Name = "pnlPicImagen";
+            this.pnlPicImagen.Size = new System.Drawing.Size(459, 586);
+            this.pnlPicImagen.TabIndex = 108;
+            this.pnlPicImagen.Visible = false;
+            // 
+            // picPreviewImg
+            // 
+            this.picPreviewImg.Location = new System.Drawing.Point(0, 0);
+            this.picPreviewImg.Name = "picPreviewImg";
+            this.picPreviewImg.Size = new System.Drawing.Size(456, 651);
+            this.picPreviewImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picPreviewImg.TabIndex = 25;
+            this.picPreviewImg.TabStop = false;
+            // 
+            // btnVERCopiaEstatutos
+            // 
+            this.btnVERCopiaEstatutos.BackColor = System.Drawing.Color.White;
+            this.btnVERCopiaEstatutos.Enabled = false;
+            this.btnVERCopiaEstatutos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnVERCopiaEstatutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVERCopiaEstatutos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVERCopiaEstatutos.ForeColor = System.Drawing.Color.Crimson;
+            this.btnVERCopiaEstatutos.Location = new System.Drawing.Point(209, 242);
+            this.btnVERCopiaEstatutos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnVERCopiaEstatutos.Name = "btnVERCopiaEstatutos";
+            this.btnVERCopiaEstatutos.Size = new System.Drawing.Size(59, 33);
+            this.btnVERCopiaEstatutos.TabIndex = 105;
+            this.btnVERCopiaEstatutos.Text = "Ver";
+            this.btnVERCopiaEstatutos.UseVisualStyleBackColor = false;
+            this.btnVERCopiaEstatutos.Click += new System.EventHandler(this.btnVERCopiaEstatutos_Click);
+            // 
+            // btnVERCopiaActaAsignacionRNC
+            // 
+            this.btnVERCopiaActaAsignacionRNC.BackColor = System.Drawing.Color.White;
+            this.btnVERCopiaActaAsignacionRNC.Enabled = false;
+            this.btnVERCopiaActaAsignacionRNC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnVERCopiaActaAsignacionRNC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVERCopiaActaAsignacionRNC.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVERCopiaActaAsignacionRNC.ForeColor = System.Drawing.Color.Crimson;
+            this.btnVERCopiaActaAsignacionRNC.Location = new System.Drawing.Point(209, 342);
+            this.btnVERCopiaActaAsignacionRNC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnVERCopiaActaAsignacionRNC.Name = "btnVERCopiaActaAsignacionRNC";
+            this.btnVERCopiaActaAsignacionRNC.Size = new System.Drawing.Size(59, 33);
+            this.btnVERCopiaActaAsignacionRNC.TabIndex = 105;
+            this.btnVERCopiaActaAsignacionRNC.Text = "Ver";
+            this.btnVERCopiaActaAsignacionRNC.UseVisualStyleBackColor = false;
+            this.btnVERCopiaActaAsignacionRNC.Click += new System.EventHandler(this.btnVERCopiaActaAsignacionRNC_Click);
+            // 
+            // btnVERCopiaCedulaPresidente_RepresAut
+            // 
+            this.btnVERCopiaCedulaPresidente_RepresAut.BackColor = System.Drawing.Color.White;
+            this.btnVERCopiaCedulaPresidente_RepresAut.Enabled = false;
+            this.btnVERCopiaCedulaPresidente_RepresAut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnVERCopiaCedulaPresidente_RepresAut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVERCopiaCedulaPresidente_RepresAut.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVERCopiaCedulaPresidente_RepresAut.ForeColor = System.Drawing.Color.Crimson;
+            this.btnVERCopiaCedulaPresidente_RepresAut.Location = new System.Drawing.Point(209, 439);
+            this.btnVERCopiaCedulaPresidente_RepresAut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnVERCopiaCedulaPresidente_RepresAut.Name = "btnVERCopiaCedulaPresidente_RepresAut";
+            this.btnVERCopiaCedulaPresidente_RepresAut.Size = new System.Drawing.Size(59, 33);
+            this.btnVERCopiaCedulaPresidente_RepresAut.TabIndex = 105;
+            this.btnVERCopiaCedulaPresidente_RepresAut.Text = "Ver";
+            this.btnVERCopiaCedulaPresidente_RepresAut.UseVisualStyleBackColor = false;
+            this.btnVERCopiaCedulaPresidente_RepresAut.Click += new System.EventHandler(this.btnVERCopiaCedulaPresidente_RepresAut_Click);
+            // 
+            // picImagen1
+            // 
+            this.picImagen1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picImagen1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.picImagen1.Location = new System.Drawing.Point(480, 346);
+            this.picImagen1.Name = "picImagen1";
+            this.picImagen1.Size = new System.Drawing.Size(35, 36);
+            this.picImagen1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picImagen1.TabIndex = 25;
+            this.picImagen1.TabStop = false;
+            this.picImagen1.Click += new System.EventHandler(this.picImagen1_Click);
+            // 
             // frmSolicitud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1324, 707);
+            this.Controls.Add(this.pnlPicImagen);
             this.Controls.Add(this.pnlBuscarCliente);
             this.Controls.Add(this.pnlNegociosEmpresas);
             this.Controls.Add(this.pnlCliente);
@@ -2389,6 +2579,7 @@
             this.Name = "frmSolicitud";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Solicitud";
+            this.Load += new System.EventHandler(this.frmSolicitud_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.pnlVEHSeguroVoluntario.ResumeLayout(false);
@@ -2405,6 +2596,10 @@
             this.pnlMueblesInmContenido.PerformLayout();
             this.pnlNegociosEmpresas.ResumeLayout(false);
             this.pnlNegociosEmpresas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagen5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagen4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagen3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagen2)).EndInit();
             this.pnlInmuebles.ResumeLayout(false);
             this.pnlInmuebles.PerformLayout();
             this.pnlBuscarCliente.ResumeLayout(false);
@@ -2413,6 +2608,10 @@
             this.pnlCliente.ResumeLayout(false);
             this.pnlCliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.pnlPicImagen.ResumeLayout(false);
+            this.pnlPicImagen.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPreviewImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImagen1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2420,9 +2619,9 @@
 
         #endregion
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label lblNombre_empleado;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label lblCedula;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel pnlVEHSeguroVoluntario;
         private System.Windows.Forms.Label label41;
@@ -2464,7 +2663,7 @@
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.Panel pnlNegociosEmpresas;
         private System.Windows.Forms.Label lblCerrarNegocioEmp;
-        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.Label lblSeguroNEmpresa;
         private System.Windows.Forms.Panel pnlInmuebles;
         private System.Windows.Forms.Label lblCerrar_pnlInmuebles;
         private System.Windows.Forms.Button btnInmEdificaciones;
@@ -2548,23 +2747,20 @@
         private System.Windows.Forms.Label label116;
         private System.Windows.Forms.Label label117;
         private System.Windows.Forms.Button btnSIGUIENTEpnlNegociosEmpresas;
-        private System.Windows.Forms.TextBox textBox37;
-        private System.Windows.Forms.TextBox textBox38;
-        private System.Windows.Forms.TextBox textBox45;
-        private System.Windows.Forms.TextBox textBox48;
+        private System.Windows.Forms.TextBox txtTelefonoEntAut;
+        private System.Windows.Forms.TextBox txtCopiaActaAsignacionRNC;
+        private System.Windows.Forms.TextBox txtCopiaCedulaPresidente_RepresAut;
+        private System.Windows.Forms.TextBox txtCopiaEstatutos;
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.Label label74;
         private System.Windows.Forms.Label label122;
         private System.Windows.Forms.Label label123;
         private System.Windows.Forms.Label label124;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.TextBox textBox44;
-        private System.Windows.Forms.TextBox textBox43;
+        private System.Windows.Forms.Button btnImagenesContenido;
+        private System.Windows.Forms.Button btnCopiaCedulaPresidente_RepresAut;
+        private System.Windows.Forms.Button btnCopiaActaAsignacionRNC;
+        private System.Windows.Forms.Button btnBuscarCopiaEstatutos;
         private System.Windows.Forms.Label label72;
-        private System.Windows.Forms.Label label70;
         private System.Windows.Forms.Panel pnlBuscarCliente;
         private System.Windows.Forms.CheckBox chkSoloId;
         private System.Windows.Forms.Label lblCerrar;
@@ -2599,5 +2795,20 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TextBox txtNombreEmpresa;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox txtCorreoElectronicoEntAutorizada;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.PictureBox picImagen5;
+        private System.Windows.Forms.PictureBox picImagen4;
+        private System.Windows.Forms.PictureBox picImagen3;
+        private System.Windows.Forms.PictureBox picImagen2;
+        private System.Windows.Forms.Label lblCerrarPicPreview;
+        private System.Windows.Forms.Panel pnlPicImagen;
+        private System.Windows.Forms.PictureBox picPreviewImg;
+        private System.Windows.Forms.Button btnVERCopiaEstatutos;
+        private System.Windows.Forms.Button btnVERCopiaCedulaPresidente_RepresAut;
+        private System.Windows.Forms.Button btnVERCopiaActaAsignacionRNC;
+        private System.Windows.Forms.PictureBox picImagen1;
     }
 }

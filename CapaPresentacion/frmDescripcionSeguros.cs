@@ -48,6 +48,12 @@ namespace CapaPresentacion
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
+            FrmSeguroVida();
+            FrmSolicitud();
+        }
+
+        public void FrmSeguroVida()
+        {
             frmSeguroVida dv;
             switch (strBotonSelected)
             {
@@ -87,6 +93,58 @@ namespace CapaPresentacion
                     break;
                 case "Full - C":
                     dv = new frmSeguroVida(strBotonSelected);
+                    Close();
+                    break;
+
+                default:
+                    MessageBox.Show("Seleccione un Tipo de seguro y vuelva a intentarlo.",
+                        "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+
+            }
+        }
+
+        public void FrmSolicitud()
+        {
+            frmSolicitud Sd;
+            switch (strBotonSelected)
+            {
+                case "Básico - A":
+                    Sd = new frmSolicitud(strBotonSelected);
+                    Close();
+                    break;
+                case "Básico - B":
+                    Sd = new frmSolicitud(strBotonSelected);
+                    Close();
+                    break;
+                case "Básico - C":
+                    Sd = new frmSolicitud(strBotonSelected);
+                    Close();
+                    break;
+
+                case "Semi Full - A":
+                    Sd = new frmSolicitud(strBotonSelected);
+                    Close();
+                    break;
+                case "Semi Full - B":
+                    Sd = new frmSolicitud(strBotonSelected);
+                    Close();
+                    break;
+                case "Semi Full - C":
+                    Sd = new frmSolicitud(strBotonSelected);
+                    Close();
+                    break;
+
+                case "Full - A":
+                    Sd = new frmSolicitud(strBotonSelected);
+                    Close();
+                    break;
+                case "Full - B":
+                    Sd = new frmSolicitud(strBotonSelected);
+                    Close();
+                    break;
+                case "Full - C":
+                    Sd = new frmSolicitud(strBotonSelected);
                     Close();
                     break;
 
