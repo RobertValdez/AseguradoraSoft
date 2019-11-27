@@ -138,9 +138,16 @@ namespace CapaPresentacion
 
             if (!cancelarDescripcionSeguros())
             {
+                DataView dv = new DataView(dtPolizaDeSeguros);
+
+                dv.RowFilter = "[Nombre del Seguro] = 'Seguro Edificaciones'";
+
+                idProductoSeguroVidaSalud = (int)dv[0]["id"];
+                Precio = (decimal)dv[0]["Precio"];
                 pnlMueblesInmEdificaciones.Visible = true;
             }
         }
+
 
         private void lblCerrarInmContenido_Click(object sender, EventArgs e)
         {
@@ -228,7 +235,75 @@ namespace CapaPresentacion
 
         private void btnSIGUIENTEpnlMueblesInmEdificaciones_Click(object sender, EventArgs e)
         {
-            MostrarFormFactura();
+            try
+            {
+                QuitarErrorProviderCliente();
+                ValidarCamposCliente();
+                //------------------------//
+                QuitarErrorProviderSegEdificaciones();
+                ValidarCamposSegSegEdificaciones();
+
+                if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrWhiteSpace(txtNombre.Text)
+                        || string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrWhiteSpace(txtApellido.Text)
+                        || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || mskCedula.Text == "   -       -" || mskTelefono.Text == ""
+                        || string.IsNullOrEmpty(txtCorreoElectronico.Text) || string.IsNullOrWhiteSpace(txtCorreoElectronico.Text)
+                        || string.IsNullOrEmpty(cmbNacionalidad.Text) || string.IsNullOrWhiteSpace(cmbNacionalidad.Text)
+                        || string.IsNullOrEmpty(cmbSexo.Text) || string.IsNullOrWhiteSpace(cmbSexo.Text)
+                        || (string.IsNullOrEmpty(txtTipoVivienda.Text)
+                        || string.IsNullOrWhiteSpace(txtTipoVivienda.Text))
+                        || (string.IsNullOrEmpty(txtSituacion.Text)
+                        || string.IsNullOrWhiteSpace(txtSituacion.Text))
+                        || (string.IsNullOrEmpty(txtCodigoPostal.Text)
+                        || string.IsNullOrWhiteSpace(txtCodigoPostal.Text))
+                        || (string.IsNullOrEmpty(cmbViviendaHabitual.Text)
+                        || string.IsNullOrWhiteSpace(cmbViviendaHabitual.Text))
+                        || (string.IsNullOrEmpty(cmbViviendaAlquilada.Text)
+                        || string.IsNullOrWhiteSpace(cmbViviendaAlquilada.Text)) 
+                        || (string.IsNullOrEmpty(txtAnoConstruccion.Text)
+                        || string.IsNullOrWhiteSpace(txtAnoConstruccion.Text)) 
+                        || (string.IsNullOrEmpty(txtM2Vivienda.Text)
+                        || string.IsNullOrWhiteSpace(txtM2Vivienda.Text)) 
+                        || (string.IsNullOrEmpty(cmbDeshabitada3MesesAno.Text)
+                        || string.IsNullOrWhiteSpace(cmbDeshabitada3MesesAno.Text))
+                        || (string.IsNullOrEmpty(txtM2EdificacionesAnexas.Text)
+                        || string.IsNullOrWhiteSpace(txtM2EdificacionesAnexas.Text))
+                        || (string.IsNullOrEmpty(txtCapitalOtrasInstalaciones.Text)
+                        || string.IsNullOrWhiteSpace(txtCapitalOtrasInstalaciones.Text)))
+                {
+                    MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (txtNombre.ReadOnly == true) // True aquí: Significa que está añadido como cliente en la Base de Datos
+                {
+                    frmFacturas frmFac = new frmFacturas();
+
+                    frmFac.txtId.Text = txtId.Text;
+                    frmFac.txtCliente.Text = txtNombre.Text + " " + txtApellido.Text;
+                    frmFac.txtCedula.Text = mskCedula.Text;
+                    frmFac.txtSeguroA_Adquirir.Text = lblSeguroNEmpresa.Text;
+                    frmFac.txtEfectoA_Asegurar.Text = txtNombreEmpresa.Text;
+                    frmFac.txtCategoria.Text = _Categoria;
+                    frmFac.txtIdSeguro.Text = idProductoSeguroVidaSalud.ToString();
+
+                    frmFac.txtCodigo.Text = idCodigo.ToString();
+                    frmFac.txtSubTotal.Text = Precio.ToString();
+                    frmFac.txtTotalA_Pagar.Text = Precio.ToString();
+
+
+
+
+
+
+                    frmFac.varIdEmpleado = varIdEmpleado;
+
+                    frmFac.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Añada el Cliente actual para poder continuar.", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    pnlPicImagen.Visible = false;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void btnSIGUIENTEpnlNegociosEmpresas_Click(object sender, EventArgs e)
@@ -285,11 +360,15 @@ namespace CapaPresentacion
 
 
 
-                    frmFac.strCopiaEstatutos = txtCopiaEstatutos.Text.Trim();
-                    frmFac.strCopiaActaAsignacionRNC = txtCopiaActaAsignacionRNC.Text.Trim();
+                    frmFac.imgCopiaEstatutos = imgCopiaEstatutos;
+                    frmFac.imgCopiaActaAsignacionRNC = imgCopiaActaAsignacionRNC;
 
-                    frmFac.strCopiaCedulaPresidente_RepresAut = txtCopiaCedulaPresidente_RepresAut.Text.Trim();
-                    frmFac.strTelefonoEntAut = txtTelefonoEntAut.Text.Trim();
+                    frmFac.imgCopiaCedulaPresidente_RepresAut = imgCopiaPresidenteReprAut;
+                    frmFac.strTelefonoEntAut = txtTelefonoEntAut.Text;
+
+                    frmFac.CorreoElectronicoEntidadAutorizada = txtCorreoElectronicoEntAutorizada.Text;
+                    
+
 
                     frmFac.imgImagen1 = imgImagen1;
                     frmFac.imgImagen2 = imgImagen2;
@@ -308,6 +387,104 @@ namespace CapaPresentacion
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private bool ValidarCamposSegSegEdificaciones()
+        {
+            bool ok = true;
+
+            if (string.IsNullOrEmpty(txtTipoVivienda.Text)
+               || string.IsNullOrWhiteSpace(txtTipoVivienda.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtTipoVivienda, "Campo obligatorio");
+                txtTipoVivienda.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtSituacion.Text)
+                || string.IsNullOrWhiteSpace(txtSituacion.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtSituacion, "Campo obligatorio");
+                txtSituacion.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtPropietario.Text)
+                || string.IsNullOrWhiteSpace(txtPropietario.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtPropietario, "Campo obligatorio");
+                txtPropietario.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(cmbViviendaHabitual.Text)
+                || string.IsNullOrWhiteSpace(cmbViviendaHabitual.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(cmbViviendaHabitual, "Campo obligatorio");
+                cmbViviendaHabitual.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtCodigoPostal.Text)
+                || string.IsNullOrWhiteSpace(txtCodigoPostal.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCodigoPostal, "Campo obligatorio");
+                txtCodigoPostal.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(cmbDeshabitada3MesesAno.Text)
+               || string.IsNullOrWhiteSpace(cmbDeshabitada3MesesAno.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(cmbDeshabitada3MesesAno, "Campo obligatorio");
+                cmbDeshabitada3MesesAno.Text = "";
+            }
+            if (string.IsNullOrEmpty(txtAnoConstruccion.Text)
+               || string.IsNullOrWhiteSpace(txtAnoConstruccion.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtAnoConstruccion, "Campo obligatorio");
+                txtAnoConstruccion.Text = "";
+            }
+            if (string.IsNullOrEmpty(txtM2Vivienda.Text)
+               || string.IsNullOrWhiteSpace(txtM2Vivienda.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtM2Vivienda, "Campo obligatorio");
+                txtM2Vivienda.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtM2EdificacionesAnexas.Text)
+              || string.IsNullOrWhiteSpace(txtM2EdificacionesAnexas.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtM2EdificacionesAnexas, "Campo obligatorio");
+                txtM2EdificacionesAnexas.Text = "";
+            }
+            if (string.IsNullOrEmpty(txtCapitalOtrasInstalaciones.Text)
+              || string.IsNullOrWhiteSpace(txtCapitalOtrasInstalaciones.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCapitalOtrasInstalaciones, "Campo obligatorio");
+                txtCapitalOtrasInstalaciones.Text = "";
+            }
+
+            return ok;
+        }
+
+        private void QuitarErrorProviderSegEdificaciones()
+        {
+            errorProvider1.SetError(txtTipoVivienda, "");
+            errorProvider1.SetError(txtSituacion, "");
+            errorProvider1.SetError(txtPropietario, "");
+            errorProvider1.SetError(cmbViviendaHabitual, "");
+            errorProvider1.SetError(txtCodigoPostal, "");
+            errorProvider1.SetError(cmbDeshabitada3MesesAno, "");
+            errorProvider1.SetError(txtAnoConstruccion, "");
+            errorProvider1.SetError(txtM2Vivienda, "");
+            errorProvider1.SetError(txtM2EdificacionesAnexas, "");
+            errorProvider1.SetError(txtCapitalOtrasInstalaciones, "");
         }
 
         private bool ValidarCamposSegEmprNegocios()

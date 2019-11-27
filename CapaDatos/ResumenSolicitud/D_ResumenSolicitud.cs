@@ -41,12 +41,6 @@ namespace CapaDatos.ResumenSolicitud
             parTotal.Value = eSol.Total;
             cmd.Parameters.Add(parTotal);
 
-            SqlParameter parEstado_ctEmpresasNegocios = new SqlParameter();
-            parEstado_ctEmpresasNegocios.ParameterName = "@Estado_ctEmpresasNegocios";
-            parEstado_ctEmpresasNegocios.SqlDbType = SqlDbType.Int;
-            parEstado_ctEmpresasNegocios.Value = eSol.Estado_ctEmpresasNegocios;
-            cmd.Parameters.Add(parEstado_ctEmpresasNegocios);
-
             SqlParameter parFecha = new SqlParameter();
             parFecha.ParameterName = "@Fecha";
             parFecha.SqlDbType = SqlDbType.Date;
@@ -76,13 +70,13 @@ namespace CapaDatos.ResumenSolicitud
             SqlParameter parCopiaCedulaPres_RepreAut = new SqlParameter();
             parCopiaCedulaPres_RepreAut.ParameterName = "@CopiaCedulaPres_RepreAut";
             parCopiaCedulaPres_RepreAut.SqlDbType = SqlDbType.Image;
-            parCopiaCedulaPres_RepreAut.Value = eSol.CopiaEstatutos;
+            parCopiaCedulaPres_RepreAut.Value = eSol.CopiaCedulaPres_RepreAutorizado;
             cmd.Parameters.Add(parCopiaCedulaPres_RepreAut);
 
             SqlParameter parTelefonoEntAutorizadas = new SqlParameter();
             parTelefonoEntAutorizadas.ParameterName = "@TelefonoEntAutorizada";
             parTelefonoEntAutorizadas.SqlDbType = SqlDbType.VarChar;
-            parTelefonoEntAutorizadas.Value = eSol.CopiaEstatutos;
+            parTelefonoEntAutorizadas.Value = eSol.TelefonoEntidadAutorizada;
             cmd.Parameters.Add(parTelefonoEntAutorizadas);
 
             SqlParameter parCorreoElectronicoEntAutorizada = new SqlParameter();
@@ -101,7 +95,7 @@ namespace CapaDatos.ResumenSolicitud
             parTipo.ParameterName = "@Tipo";
             parTipo.SqlDbType = SqlDbType.VarChar;
             parTipo.Size = 50;
-            parTipo.Value = eSol.FechaHora;
+            parTipo.Value = eSol.Tipo;
             cmd.Parameters.Add(parTipo);
 
 
@@ -124,13 +118,13 @@ namespace CapaDatos.ResumenSolicitud
             cmd.Parameters.Add(parImagen3);
 
             SqlParameter parImagen4 = new SqlParameter();
-            parImagen4.ParameterName = "@parImagen4";
+            parImagen4.ParameterName = "@Imagen4";
             parImagen4.SqlDbType = SqlDbType.Image;
             parImagen4.Value = eSol.Imagen4;
             cmd.Parameters.Add(parImagen4);
 
             SqlParameter parImagen5 = new SqlParameter();
-            parImagen5.ParameterName = "@parImagen5";
+            parImagen5.ParameterName = "@Imagen5";
             parImagen5.SqlDbType = SqlDbType.Image;
             parImagen5.Value = eSol.Imagen5;
             cmd.Parameters.Add(parImagen5);

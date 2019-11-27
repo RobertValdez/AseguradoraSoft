@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.Runtime.InteropServices;
-using PerlaDelSur_Entity.ResumenVentaPoliza;
-using CapaNegocio.B_ResumenVentaPoliza;
+using PerlaDelSur_Entity.ResumenSolicitud;
+using CapaNegocio.ResumenSolicitud;
 
 namespace CapaPresentacion
 {
@@ -43,16 +43,17 @@ namespace CapaPresentacion
         private extern static void SendMessage(System.IntPtr hwnd,
             int wmsg, int wparam, int lparam);
 
-        E_ResumenVentaPoliza E_ResumenVentaPoliza = new E_ResumenVentaPoliza();
-        B_ResVentaPoliza B_ResumenVentaPoliza = new B_ResumenVentaPoliza();
+        E_ResumenSolicitud E_ResumenSolicitud = new E_ResumenSolicitud();
+        B_ResumenSolicitud B_ResumenSolicitud = new B_ResumenSolicitud();
 
         public int varIdEmpleado;
 
-        public string strCopiaEstatutos;
-        public string strCopiaActaAsignacionRNC;
-        public string strCopiaCedulaPresidente_RepresAut;
+        public byte[] imgCopiaEstatutos = null;
+        public byte[] imgCopiaActaAsignacionRNC = null;
+        public byte[] imgCopiaCedulaPresidente_RepresAut = null;
         public string strTelefonoEntAut;
 
+        public string CorreoElectronicoEntidadAutorizada;
 
         public byte[] imgImagen1 = null;
         public byte[] imgImagen2 = null;
@@ -117,28 +118,40 @@ namespace CapaPresentacion
 
         private void btnSolicitar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                Solicitar();
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void Solicitar()
         {
-            E_ResumenVentaPoliza.IdCliente = Convert.ToInt32(txtId.Text);
-            E_ResumenVentaPoliza.IdEmpleado = varIdEmpleado;
-            E_ResumenVentaPoliza.Total = Convert.ToDecimal(txtTotal_A_Pagar.Text);
+            E_ResumenSolicitud.IdCliente = Convert.ToInt32(txtId.Text);
+            E_ResumenSolicitud.IdEmpleado = varIdEmpleado;
+            E_ResumenSolicitud.Total = Convert.ToDecimal(txtTotalA_Pagar.Text);
 
-            E_ResumenVentaPoliza.InstitutoDondeLabora = strInstitutoDondeLabora;
-            E_ResumenVentaPoliza.FechaHora = DateTime.Now;
-            E_ResumenVentaPoliza.AntecedentesPersonales = strAntecedentesPersonales;
-            E_ResumenVentaPoliza.Fecha = DateTime.Now.Date;
-            E_ResumenVentaPoliza.Tipo = txtCategoria.Text.Trim();
-            E_ResumenVentaPoliza.Poliza = DatosYContratoDePolizaDeSeguro;
-            E_ResumenVentaPoliza.EstadoPoliza = 1;
+            E_ResumenSolicitud.Fecha = DateTime.Now.Date;
+            E_ResumenSolicitud.NombreEmpresa = txtEfectoA_Asegurar.Text;
+            E_ResumenSolicitud.CopiaEstatutos = imgCopiaEstatutos;
+            E_ResumenSolicitud.CopiaActaDeAsignacionRNC = imgCopiaActaAsignacionRNC;
+            E_ResumenSolicitud.CopiaCedulaPres_RepreAutorizado = imgCopiaCedulaPresidente_RepresAut;
+            E_ResumenSolicitud.TelefonoEntidadAutorizada = strTelefonoEntAut;
 
-            E_ResumenVentaPoliza.Vencimiento = DateTime.Parse("13-05-2020");
+            E_ResumenSolicitud.CorreoElectronicoEntidadAutorizada = CorreoElectronicoEntidadAutorizada;
+
+            E_ResumenSolicitud.FechaHora = DateTime.Now;
+            E_ResumenSolicitud.Tipo = txtCategoria.Text;
+
+            E_ResumenSolicitud.Imagen1 = imgImagen1;
+            E_ResumenSolicitud.Imagen2 = imgImagen2;
+            E_ResumenSolicitud.Imagen3 = imgImagen3;
+            E_ResumenSolicitud.Imagen4 = imgImagen4;
+            E_ResumenSolicitud.Imagen5 = imgImagen5;
 
             if (MessageBox.Show("Se creará una solicitud para el cliente actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (BackColor?  CrearPoliza(E_ResumenVentaPoliza) == 3)
+                if (B_ResumenSolicitud.B_CrearSolicitud(E_ResumenSolicitud) >= 3)
                 {
                     MessageBox.Show("Poliza creada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

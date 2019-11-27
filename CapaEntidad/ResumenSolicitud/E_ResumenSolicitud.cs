@@ -11,7 +11,6 @@ namespace PerlaDelSur_Entity.ResumenSolicitud
         private int _idCliente;
         private int _idEmpleado;
         private decimal _Total;
-        private int _Estado_ctEmpresasNegocios;
         private DateTime _Fecha;
         private string _NombreEmpresa;
         private byte[] _CopiaEstatutos;
@@ -32,7 +31,6 @@ namespace PerlaDelSur_Entity.ResumenSolicitud
         public int IdCliente { get => _idCliente; set => _idCliente = value; }
         public int IdEmpleado { get => _idEmpleado; set => _idEmpleado = value; }
         public decimal Total { get => _Total; set => _Total = value; }
-        public int Estado_ctEmpresasNegocios { get => _Estado_ctEmpresasNegocios; set => _Estado_ctEmpresasNegocios = value; }
         public DateTime Fecha { get => _Fecha; set => _Fecha = value; }
         public string NombreEmpresa { get => _NombreEmpresa; set => _NombreEmpresa = value; }
         public byte[] CopiaEstatutos { get => _CopiaEstatutos; set => _CopiaEstatutos = value; }
@@ -56,7 +54,7 @@ namespace PerlaDelSur_Entity.ResumenSolicitud
         }
 
         public E_ResumenSolicitud(int idCliente, int idEmpleado, decimal Total,
-            int Estado_ctEmpresasNegocios, DateTime Fecha, string NombreEmpresa,
+            DateTime Fecha, string NombreEmpresa,
             byte[] CopiaEstatutos, byte[] CopiaActaDeAsignacionRNC,
             byte[] CopiaCedulaPres_RepreAutorizado, string TelefonoEntidadAutorizada, 
             string CorreoElectronicoEntidadAutorizada, DateTime FechaHora,
@@ -66,7 +64,6 @@ namespace PerlaDelSur_Entity.ResumenSolicitud
             _idCliente = idCliente;
             _idEmpleado = idEmpleado;
             _Total = Total;
-            _Estado_ctEmpresasNegocios = Estado_ctEmpresasNegocios;
             _Fecha = Fecha;
             _NombreEmpresa = NombreEmpresa;
             _CopiaEstatutos = CopiaEstatutos;
