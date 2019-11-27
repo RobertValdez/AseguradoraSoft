@@ -127,7 +127,7 @@
             this.label116 = new System.Windows.Forms.Label();
             this.label117 = new System.Windows.Forms.Label();
             this.lblCerrarSegInmEdif = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
+            this.lblEdificaciones = new System.Windows.Forms.Label();
             this.pnlMueblesInmContenido = new System.Windows.Forms.Panel();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
@@ -1107,11 +1107,11 @@
             this.pnlMueblesInmEdificaciones.Controls.Add(this.label116);
             this.pnlMueblesInmEdificaciones.Controls.Add(this.label117);
             this.pnlMueblesInmEdificaciones.Controls.Add(this.lblCerrarSegInmEdif);
-            this.pnlMueblesInmEdificaciones.Controls.Add(this.label59);
+            this.pnlMueblesInmEdificaciones.Controls.Add(this.lblEdificaciones);
             this.pnlMueblesInmEdificaciones.Location = new System.Drawing.Point(482, 28);
             this.pnlMueblesInmEdificaciones.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlMueblesInmEdificaciones.Name = "pnlMueblesInmEdificaciones";
-            this.pnlMueblesInmEdificaciones.Size = new System.Drawing.Size(842, 513);
+            this.pnlMueblesInmEdificaciones.Size = new System.Drawing.Size(835, 513);
             this.pnlMueblesInmEdificaciones.TabIndex = 6;
             this.pnlMueblesInmEdificaciones.Visible = false;
             // 
@@ -1177,6 +1177,7 @@
             this.txtM2EdificacionesAnexas.Name = "txtM2EdificacionesAnexas";
             this.txtM2EdificacionesAnexas.Size = new System.Drawing.Size(177, 33);
             this.txtM2EdificacionesAnexas.TabIndex = 78;
+            this.txtM2EdificacionesAnexas.TextChanged += new System.EventHandler(this.txtM2EdificacionesAnexas_TextChanged);
             // 
             // txtCodigoPostal
             // 
@@ -1185,6 +1186,7 @@
             this.txtCodigoPostal.Name = "txtCodigoPostal";
             this.txtCodigoPostal.Size = new System.Drawing.Size(177, 33);
             this.txtCodigoPostal.TabIndex = 78;
+            this.txtCodigoPostal.TextChanged += new System.EventHandler(this.txtCodigoPostal_TextChanged);
             // 
             // txtCapitalOtrasInstalaciones
             // 
@@ -1201,6 +1203,7 @@
             this.txtM2Vivienda.Name = "txtM2Vivienda";
             this.txtM2Vivienda.Size = new System.Drawing.Size(177, 33);
             this.txtM2Vivienda.TabIndex = 78;
+            this.txtM2Vivienda.TextChanged += new System.EventHandler(this.txtM2Vivienda_TextChanged);
             // 
             // txtAnoConstruccion
             // 
@@ -1209,6 +1212,7 @@
             this.txtAnoConstruccion.Name = "txtAnoConstruccion";
             this.txtAnoConstruccion.Size = new System.Drawing.Size(200, 33);
             this.txtAnoConstruccion.TabIndex = 79;
+            this.txtAnoConstruccion.TextChanged += new System.EventHandler(this.txtAnoConstruccion_TextChanged);
             // 
             // txtSituacion
             // 
@@ -1379,17 +1383,17 @@
             this.lblCerrarSegInmEdif.Text = "X";
             this.lblCerrarSegInmEdif.Click += new System.EventHandler(this.lblCerrarSegInmEdif_Click);
             // 
-            // label59
+            // lblEdificaciones
             // 
-            this.label59.AutoSize = true;
-            this.label59.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.label59.ForeColor = System.Drawing.Color.Firebrick;
-            this.label59.Location = new System.Drawing.Point(294, 15);
-            this.label59.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(253, 28);
-            this.label59.TabIndex = 0;
-            this.label59.Text = "Seguro Edificaciones";
+            this.lblEdificaciones.AutoSize = true;
+            this.lblEdificaciones.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
+            this.lblEdificaciones.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblEdificaciones.Location = new System.Drawing.Point(294, 15);
+            this.lblEdificaciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEdificaciones.Name = "lblEdificaciones";
+            this.lblEdificaciones.Size = new System.Drawing.Size(253, 28);
+            this.lblEdificaciones.TabIndex = 0;
+            this.lblEdificaciones.Text = "Seguro Edificaciones";
             // 
             // pnlMueblesInmContenido
             // 
@@ -1698,7 +1702,7 @@
             this.pnlNegociosEmpresas.Location = new System.Drawing.Point(482, 27);
             this.pnlNegociosEmpresas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlNegociosEmpresas.Name = "pnlNegociosEmpresas";
-            this.pnlNegociosEmpresas.Size = new System.Drawing.Size(31, 514);
+            this.pnlNegociosEmpresas.Size = new System.Drawing.Size(28, 514);
             this.pnlNegociosEmpresas.TabIndex = 6;
             this.pnlNegociosEmpresas.Visible = false;
             // 
@@ -2657,7 +2661,7 @@
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Panel pnlMueblesInmEdificaciones;
         private System.Windows.Forms.Label lblCerrarSegInmEdif;
-        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label lblEdificaciones;
         private System.Windows.Forms.Panel pnlMueblesInmContenido;
         private System.Windows.Forms.Label lblCerrarInmContenido;
         private System.Windows.Forms.Label label68;

@@ -17,7 +17,12 @@ namespace CapaNegocio.ResumenSolicitud
 
         public int B_CrearSolicitud(E_ResumenSolicitud eSol)
         {
-            return D_ResumenSolicitud.CrearPoliza(eSol);
+            return D_ResumenSolicitud.CrearSolicitudEmpresas(eSol);
+        }
+
+        public int B_CrearSolicitudEdificaciones(E_ResumenSolicitudEdificaciones eSd)
+        {
+            return D_ResumenSolicitud.CrearSolicitudEdificaciones(eSd);
         }
     }
 }

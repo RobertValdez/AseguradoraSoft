@@ -31,7 +31,11 @@ namespace CapaPresentacion
 
         static string _Categoria = "";
 
-        int idCodigo = 0;
+        int idCodigoEm = 0;
+
+        int idCodigoEdif = 0;
+
+
         decimal Precio = 0;
         int varIdEmpleado = 0;
 
@@ -85,6 +89,7 @@ namespace CapaPresentacion
         private void btnSeguroVoluntario_Click_1(object sender, EventArgs e)
         {
             pnlVehiculo.Visible = false;
+            _DescrepcionValue = false;
 
             if (!cancelarDescripcionSeguros())
             {
@@ -95,6 +100,7 @@ namespace CapaPresentacion
         private void btnSeguroObligatorio_Click(object sender, EventArgs e)
         {
             pnlVehiculo.Visible = false;
+            _DescrepcionValue = false;
 
             if (!cancelarDescripcionSeguros())
             {
@@ -105,6 +111,7 @@ namespace CapaPresentacion
         private void btnSeguroTodoRiesgo_Click(object sender, EventArgs e)
         {
             pnlVehiculo.Visible = false;
+            _DescrepcionValue = false;
 
             if (!cancelarDescripcionSeguros())
             {
@@ -123,8 +130,8 @@ namespace CapaPresentacion
 
         private void btnInmContenido_Click(object sender, EventArgs e)
         {
-
             pnlInmuebles.Visible = false;
+            _DescrepcionValue = false;
 
             if (!cancelarDescripcionSeguros())
             {
@@ -135,6 +142,7 @@ namespace CapaPresentacion
         private void btnInmEdificaciones_Click(object sender, EventArgs e)
         {
             pnlInmuebles.Visible = false;
+            _DescrepcionValue = false;
 
             if (!cancelarDescripcionSeguros())
             {
@@ -279,19 +287,27 @@ namespace CapaPresentacion
                     frmFac.txtId.Text = txtId.Text;
                     frmFac.txtCliente.Text = txtNombre.Text + " " + txtApellido.Text;
                     frmFac.txtCedula.Text = mskCedula.Text;
-                    frmFac.txtSeguroA_Adquirir.Text = lblSeguroNEmpresa.Text;
-                    frmFac.txtEfectoA_Asegurar.Text = txtNombreEmpresa.Text;
+                    frmFac.txtSeguroA_Adquirir.Text = lblEdificaciones.Text;
+                    frmFac.txtEfectoA_Asegurar.Text = "Vivienda";
                     frmFac.txtCategoria.Text = _Categoria;
                     frmFac.txtIdSeguro.Text = idProductoSeguroVidaSalud.ToString();
 
-                    frmFac.txtCodigo.Text = idCodigo.ToString();
+                    frmFac.txtCodigo.Text = idCodigoEdif.ToString();
+
                     frmFac.txtSubTotal.Text = Precio.ToString();
                     frmFac.txtTotalA_Pagar.Text = Precio.ToString();
 
-
-
-
-
+                    frmFac.strTipoVivienda = txtTipoVivienda.Text;
+                    frmFac.strSituacion = txtSituacion.Text;
+                    frmFac.strPropietario = txtPropietario.Text;
+                    frmFac.strViviendaHabitual = cmbViviendaHabitual.Text;
+                    frmFac.strViviendaAlquilada = cmbViviendaAlquilada.Text;
+                    frmFac.strCodigoPostal = txtCodigoPostal.Text;
+                    frmFac.strDeshabitadaPor3MesesAlAno = cmbDeshabitada3MesesAno.Text;
+                    frmFac.strAnoDeCostruccion = Convert.ToInt32(txtAnoConstruccion.Text);
+                    frmFac.decM2Vivienda = Convert.ToDecimal(txtM2Vivienda.Text);
+                    frmFac.decM2EdificacionesAnexas = Convert.ToDecimal(txtM2EdificacionesAnexas.Text);
+                    frmFac.strCapitalOtrasInstalaciones = txtCapitalOtrasInstalaciones.Text;
 
                     frmFac.varIdEmpleado = varIdEmpleado;
 
@@ -354,7 +370,7 @@ namespace CapaPresentacion
                     frmFac.txtCategoria.Text = _Categoria;
                     frmFac.txtIdSeguro.Text = idProductoSeguroVidaSalud.ToString();
 
-                    frmFac.txtCodigo.Text = idCodigo.ToString();
+                    frmFac.txtCodigo.Text = idCodigoEm.ToString();
                     frmFac.txtSubTotal.Text = Precio.ToString();
                     frmFac.txtTotalA_Pagar.Text = Precio.ToString();
 
@@ -841,7 +857,8 @@ namespace CapaPresentacion
 
         private void frmSolicitud_Load(object sender, EventArgs e)
         {
-            Cargar_idCodigo_detalleSeguroSalud();
+            Cargar_idCodigo_detalleEmpresaNegocio();
+            Cargar_idCodigo_detalleSeguroEdificaciones();
             CargarSegurosDePoliza();
             CargarEmpleado();
             MostrarClientes();
@@ -858,11 +875,23 @@ namespace CapaPresentacion
             lblCedula.Text = E_SegVida.Cedula;
         }
 
-        private void Cargar_idCodigo_detalleSeguroSalud()
+        private void Cargar_idCodigo_detalleEmpresaNegocio()
         {
             try
             {
-                idCodigo = B_Solicitud.B_CargarIdDetalleEmpresaNegocio();
+                idCodigoEm = B_Solicitud.B_CargarIdDetalleEmpresaNegocio();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Cargar_idCodigo_detalleSeguroEdificaciones()
+        {
+            try
+            {
+                idCodigoEdif = B_Solicitud.B_CargarIdDetalleSeguroEdificaciones();
             }
             catch (Exception ex)
             {
@@ -1084,6 +1113,42 @@ namespace CapaPresentacion
                 pnlPicImagen.Visible = true;
                 picPreviewImg.LoadAsync(strImagen5);
             }
+        }
+
+        private void txtAnoConstruccion_TextChanged(object sender, EventArgs e)
+        {
+            txtAnoConstruccion.TextChanged += delegate (System.Object o, System.EventArgs r)
+            {
+                TextBox _tbox = o as TextBox;
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+            };
+        }
+
+        private void txtM2Vivienda_TextChanged(object sender, EventArgs e)
+        {
+            txtM2Vivienda.TextChanged += delegate (System.Object o, System.EventArgs r)
+            {
+                TextBox _tbox = o as TextBox;
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+            };
+        }
+
+        private void txtM2EdificacionesAnexas_TextChanged(object sender, EventArgs e)
+        {
+            txtM2EdificacionesAnexas.TextChanged += delegate (System.Object o, System.EventArgs r)
+            {
+                TextBox _tbox = o as TextBox;
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+            };
+        }
+
+        private void txtCodigoPostal_TextChanged(object sender, EventArgs e)
+        {
+            txtCodigoPostal.TextChanged += delegate (System.Object o, System.EventArgs r)
+            {
+                TextBox _tbox = o as TextBox;
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+            };
         }
     }
 }

@@ -16,26 +16,6 @@ namespace CapaPresentacion
 {
     public partial class frmFacturas : Form
     {
-        string DatosYContratoDePolizaDeSeguro = "lkuaewhfcneufgslkfgesl gsdflkgsf hgdfhgdf" +
-               "hg fgt" +
-               "hj dt" +
-               "hj d" +
-               " hj" +
-               "hj d" +
-               " hjdfhg df" +
-               "hg df" +
-               "hg df" +
-               "hg dfhg" +
-               "dfh g" +
-               "df" +
-               "hg dfhgdf" +
-               "hg dfhg df " +                     /// Simulación de la Descripcion
-            "hdfhg " +
-               "dfs fgsfd gsdf g+sdf gs" +
-               "df g" +
-               "sd gfsdf" +
-               "g" +
-               "sdf g";
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -43,23 +23,7 @@ namespace CapaPresentacion
         private extern static void SendMessage(System.IntPtr hwnd,
             int wmsg, int wparam, int lparam);
 
-        E_ResumenSolicitud E_ResumenSolicitud = new E_ResumenSolicitud();
         B_ResumenSolicitud B_ResumenSolicitud = new B_ResumenSolicitud();
-
-        public int varIdEmpleado;
-
-        public byte[] imgCopiaEstatutos = null;
-        public byte[] imgCopiaActaAsignacionRNC = null;
-        public byte[] imgCopiaCedulaPresidente_RepresAut = null;
-        public string strTelefonoEntAut;
-
-        public string CorreoElectronicoEntidadAutorizada;
-
-        public byte[] imgImagen1 = null;
-        public byte[] imgImagen2 = null;
-        public byte[] imgImagen3 = null;
-        public byte[] imgImagen4 = null;
-        public byte[] imgImagen5 = null;
 
         public frmFacturas()
         {
@@ -120,12 +84,93 @@ namespace CapaPresentacion
         {
             try
             {
-                Solicitar();
+                if (txtSeguroA_Adquirir.Text == "Seguro Negocios y Empresas")
+                {
+                    SolicitarEmpresasNegocios();
+                }
+                else if (txtSeguroA_Adquirir.Text == "Seguro Edificaciones")
+                {
+                    SolicitarEdificaciones();
+                }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        private void Solicitar()
+        E_ResumenSolicitudEdificaciones E_ResumenSolicitudEdificaciones =
+            new E_ResumenSolicitudEdificaciones();
+
+        public string strTipoVivienda;
+        public string strSituacion;
+        public string strPropietario;
+        public string strViviendaHabitual;
+        public string strViviendaAlquilada;
+        public string strCodigoPostal;
+        public string strDeshabitadaPor3MesesAlAno;
+        public int strAnoDeCostruccion;
+        public decimal decM2Vivienda;
+        public decimal decM2EdificacionesAnexas;
+        public string strCapitalOtrasInstalaciones;
+
+        private void SolicitarEdificaciones()
+        {
+            E_ResumenSolicitudEdificaciones.IdCliente = Convert.ToInt32(txtId.Text);
+            E_ResumenSolicitudEdificaciones.IdEmpleado = varIdEmpleado;
+            E_ResumenSolicitudEdificaciones.Total = Convert.ToDecimal(txtTotalA_Pagar.Text);
+
+            E_ResumenSolicitudEdificaciones.Fecha = DateTime.Now.Date;
+
+            E_ResumenSolicitudEdificaciones.TipoVivienda = strTipoVivienda;
+            E_ResumenSolicitudEdificaciones.Situacion = strSituacion;
+            E_ResumenSolicitudEdificaciones.Propietario = strPropietario;
+            E_ResumenSolicitudEdificaciones.ViviendaHabitual = strViviendaHabitual;
+            E_ResumenSolicitudEdificaciones.ViviendaAlquilada = strViviendaAlquilada;
+            E_ResumenSolicitudEdificaciones.CodigoPostal = strCodigoPostal;
+            E_ResumenSolicitudEdificaciones.DeshabitadaPor3MesesAlAno = strDeshabitadaPor3MesesAlAno;
+            E_ResumenSolicitudEdificaciones.AnoDeCostruccion = strAnoDeCostruccion;
+            E_ResumenSolicitudEdificaciones.M2Vivienda = decM2Vivienda;
+            E_ResumenSolicitudEdificaciones.M2EdificacionesAnexas = decM2EdificacionesAnexas;
+            E_ResumenSolicitudEdificaciones.CapitalOtrasInstalaciones = strCapitalOtrasInstalaciones;
+
+            E_ResumenSolicitudEdificaciones.FechaHora = DateTime.Now;
+            E_ResumenSolicitudEdificaciones.Tipo = txtCategoria.Text;
+
+
+            if (MessageBox.Show("Se creará una solicitud para el cliente actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if ( B_ResumenSolicitud.B_CrearSolicitudEdificaciones(E_ResumenSolicitudEdificaciones) == 2)
+                {
+                    MessageBox.Show("Solicitud creada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error inesperado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+
+
+
+
+
+        E_ResumenSolicitud E_ResumenSolicitud = new E_ResumenSolicitud();
+
+        public int varIdEmpleado;
+
+        public byte[] imgCopiaEstatutos = null;
+        public byte[] imgCopiaActaAsignacionRNC = null;
+        public byte[] imgCopiaCedulaPresidente_RepresAut = null;
+        public string strTelefonoEntAut;
+
+        public string CorreoElectronicoEntidadAutorizada;
+
+        public byte[] imgImagen1 = null;
+        public byte[] imgImagen2 = null;
+        public byte[] imgImagen3 = null;
+        public byte[] imgImagen4 = null;
+        public byte[] imgImagen5 = null;
+
+        private void SolicitarEmpresasNegocios()
         {
             E_ResumenSolicitud.IdCliente = Convert.ToInt32(txtId.Text);
             E_ResumenSolicitud.IdEmpleado = varIdEmpleado;
@@ -153,11 +198,11 @@ namespace CapaPresentacion
             {
                 if (B_ResumenSolicitud.B_CrearSolicitud(E_ResumenSolicitud) >= 3)
                 {
-                    MessageBox.Show("Poliza creada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Solicitud creada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrió un error inesperado.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Ocurrió un error inesperado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

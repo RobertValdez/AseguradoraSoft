@@ -19,5 +19,10 @@ namespace CapaNegocio.Solicitud
         {
             return D_Solicitud.D_Cargar_id_detalleSeguroEmpresaNegocio();
         }
+
+        public int B_CargarIdDetalleSeguroEdificaciones()
+        {
+            return D_Solicitud.D_Cargar_id_detalleSeguroEdificaciones();
+        }
     }
 }
