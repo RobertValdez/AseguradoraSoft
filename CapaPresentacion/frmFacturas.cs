@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.Runtime.InteropServices;
+using PerlaDelSur_Entity.Vehiculo;
 using PerlaDelSur_Entity.ResumenSolicitud;
 using CapaNegocio.ResumenSolicitud;
 
@@ -24,6 +25,8 @@ namespace CapaPresentacion
             int wmsg, int wparam, int lparam);
 
         B_ResumenSolicitud B_ResumenSolicitud = new B_ResumenSolicitud();
+
+        E_Vehiculo E_Vehiculo = new E_Vehiculo();
 
         public frmFacturas()
         {
@@ -92,9 +95,205 @@ namespace CapaPresentacion
                 {
                     SolicitarEdificaciones();
                 }
+                else if (txtSeguroA_Adquirir.Text == "Seguro Contenido")
+                {
+                    SolicitarContenido();
+                }
+                else if (txtSeguroA_Adquirir.Text == "Seguro Voluntario")
+                {
+                    SolicitarVEHvoluntario();
+                }
+                else if (txtSeguroA_Adquirir.Text == "Seguro Todo Riesgo")
+                {
+                    SolicitarVEHtodoRiesgo();
+                }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
+
+
+
+        public string strMarcaVehiculoTR;
+        public string strModeloTR;
+        public string strMatriculaTR;
+        public int intAnoTR;
+        public int intCilindrosTR;
+        public string strCarroceriaTR;
+        public string strCategoriaTR;
+        public string strUsoTR;
+
+        private void SolicitarVEHtodoRiesgo()
+        {
+            E_Vehiculo.IdCliente = Convert.ToInt32(txtId.Text);
+            E_Vehiculo.IdEmpleado = varIdEmpleado;
+            E_Vehiculo.Total = Convert.ToDecimal(txtTotalA_Pagar.Text);
+            E_Vehiculo.Fecha = DateTime.Now.Date;
+
+            E_Vehiculo.MarcaVehiculo = strMarcaVehiculoTR;
+            E_Vehiculo.Modelo = strModeloTR;
+            E_Vehiculo.Matricula = strMatriculaTR;
+            E_Vehiculo.Ano = intAnoTR;
+            E_Vehiculo.Cilindros = intCilindrosTR;
+            E_Vehiculo.Carroceria = strCarroceriaTR;
+            E_Vehiculo.Categoria = strCategoriaTR;
+            E_Vehiculo.Uso = strUsoTR;
+
+            E_Vehiculo.FechaHora = DateTime.Now;
+            E_Vehiculo.Tipo = txtCategoria.Text;
+
+
+            if (MessageBox.Show("Se creará una solicitud para el cliente actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (B_ResumenSolicitud.B_CrearSolicitudVEHtodoRiesgo(E_Vehiculo) == 2)
+                {
+                    MessageBox.Show("Solicitud creada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error inesperado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public string strMarcaVehiculoVol;
+        public string strModeloVol;
+        public string strMatriculaVol;
+        public int intAnoVol;
+        public int intCilindrosVol;
+        public string strCarroceriaVol;
+        public string strCategoriaVol;
+        public string strUsoVol;
+
+        private void SolicitarVEHvoluntario()
+        {
+            E_Vehiculo.IdCliente = Convert.ToInt32(txtId.Text);
+            E_Vehiculo.IdEmpleado = varIdEmpleado;
+            E_Vehiculo.Total = Convert.ToDecimal(txtTotalA_Pagar.Text);
+            E_Vehiculo.Fecha = DateTime.Now.Date;
+
+            E_Vehiculo.MarcaVehiculo = strMarcaVehiculoVol;
+            E_Vehiculo.Modelo = strModeloVol;
+            E_Vehiculo.Matricula = strMatriculaVol;
+            E_Vehiculo.Ano = intAnoVol;
+            E_Vehiculo.Cilindros = intCilindrosVol;
+            E_Vehiculo.Carroceria = strCarroceriaVol;
+            E_Vehiculo.Categoria = strCategoriaVol;
+            E_Vehiculo.Uso = strUsoVol;
+
+            E_Vehiculo.FechaHora = DateTime.Now;
+            E_Vehiculo.Tipo = txtCategoria.Text;
+
+
+            if (MessageBox.Show("Se creará una solicitud para el cliente actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (B_ResumenSolicitud.B_CrearSolicitudVEHvoluntario(E_Vehiculo) == 2)
+                {
+                    MessageBox.Show("Solicitud creada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error inesperado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public string strTipoViviendaCont;
+        public string strSituacionCont;
+        public string strPropietarioCont;
+        public string strViviendaHabitualCont;
+        public string strViviendaAlquiladaCont;
+        public string strCodigoPostalCont;
+        public string strDeshabitadaPor3MesesAlAnoCont;
+        public int intAnoDeCostruccionCont;
+        public decimal decM2ViviendaCont;
+        public string strDescripcionMueblesCont;
+        public int strValorEstimadoMueblesCont;
+
+        private void SolicitarContenido()
+        {
+            E_ResumenSolicitudEdificaciones.IdCliente = Convert.ToInt32(txtId.Text);
+            E_ResumenSolicitudEdificaciones.IdEmpleado = varIdEmpleado;
+            E_ResumenSolicitudEdificaciones.Total = Convert.ToDecimal(txtTotalA_Pagar.Text);
+
+            E_ResumenSolicitudEdificaciones.Fecha = DateTime.Now.Date;
+
+            E_ResumenSolicitudEdificaciones.TipoVivienda = strTipoViviendaCont;
+            E_ResumenSolicitudEdificaciones.Situacion = strSituacionCont;
+            E_ResumenSolicitudEdificaciones.Propietario = strPropietarioCont;
+            E_ResumenSolicitudEdificaciones.ViviendaHabitual = strViviendaHabitualCont;
+            E_ResumenSolicitudEdificaciones.ViviendaAlquilada = strViviendaAlquiladaCont;
+            E_ResumenSolicitudEdificaciones.CodigoPostal = strCodigoPostalCont;
+            E_ResumenSolicitudEdificaciones.DeshabitadaPor3MesesAlAno = strDeshabitadaPor3MesesAlAnoCont;
+            E_ResumenSolicitudEdificaciones.AnoDeCostruccion = intAnoDeCostruccionCont;
+            E_ResumenSolicitudEdificaciones.M2Vivienda = decM2ViviendaCont;
+            E_ResumenSolicitudEdificaciones.DescripcionMuebles = strDescripcionMueblesCont;
+            E_ResumenSolicitudEdificaciones.ValorEstimadoMuebles = strValorEstimadoMueblesCont;
+
+            E_ResumenSolicitudEdificaciones.FechaHora = DateTime.Now;
+            E_ResumenSolicitudEdificaciones.Tipo = txtCategoria.Text;
+
+
+            if (MessageBox.Show("Se creará una solicitud para el cliente actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (B_ResumenSolicitud.B_CrearSolicitudContendio(E_ResumenSolicitudEdificaciones) == 2)
+                {
+                    MessageBox.Show("Solicitud creada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error inesperado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         E_ResumenSolicitudEdificaciones E_ResumenSolicitudEdificaciones =
             new E_ResumenSolicitudEdificaciones();

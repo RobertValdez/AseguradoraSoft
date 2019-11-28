@@ -35,11 +35,18 @@ namespace CapaPresentacion
 
         int idCodigoEdif = 0;
 
+        int idCodigoCont = 0;
+
+        int idCodigoVol = 0;
+
+        int idCodigoTR = 0;
+
+        int idCodigoObl = 0;
 
         decimal Precio = 0;
         int varIdEmpleado = 0;
 
-        int idProductoSeguroVidaSalud = 0;
+        int idProductoSeguro = 0;
 
         byte[] imgCopiaEstatutos = null;
         byte[] imgCopiaActaAsignacionRNC = null;
@@ -93,30 +100,59 @@ namespace CapaPresentacion
 
             if (!cancelarDescripcionSeguros())
             {
+                DataView dv = new DataView(dtPolizaDeSeguros);
+
+                dv.RowFilter = "[Nombre del Seguro] = 'Seguro Voluntario'";
+
+                idProductoSeguro = (int)dv[0]["id"];
+                Precio = (decimal)dv[0]["Precio"];
+
                 pnlVEHSeguroVoluntario.Visible = true;
             }
         }
 
         private void btnSeguroObligatorio_Click(object sender, EventArgs e)
         {
-            pnlVehiculo.Visible = false;
-            _DescrepcionValue = false;
-
-            if (!cancelarDescripcionSeguros())
+            try
             {
-                pnlVEHSeguroObligatorio.Visible = true;
+                pnlVehiculo.Visible = false;
+                _DescrepcionValue = false;
+
+                if (!cancelarDescripcionSeguros()) 
+                {
+                    DataView dv = new DataView(dtPolizaDeSeguros);
+
+                    dv.RowFilter = "[Nombre del Seguro] = 'Seguro Obligatorio'";
+
+                    idProductoSeguro = (int)dv[0]["id"];
+                    Precio = (decimal)dv[0]["Precio"];
+
+                    pnlVEHSeguroObligatorio.Visible = true;
+                }
             }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void btnSeguroTodoRiesgo_Click(object sender, EventArgs e)
         {
-            pnlVehiculo.Visible = false;
-            _DescrepcionValue = false;
-
-            if (!cancelarDescripcionSeguros())
+            try
             {
-                pnlVEHSeguroTodoRiesgo.Visible = true;
+                pnlVehiculo.Visible = false;
+                _DescrepcionValue = false;
+
+                if (!cancelarDescripcionSeguros())
+                {
+                    DataView dv = new DataView(dtPolizaDeSeguros);
+
+                    dv.RowFilter = "[Nombre del Seguro] = 'Seguro Todo Riesgo'";
+
+                    idProductoSeguro = (int)dv[0]["id"];
+                    Precio = (decimal)dv[0]["Precio"];
+
+                    pnlVEHSeguroTodoRiesgo.Visible = true;
+                }
             }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
         private void lblCerrarTodoRiesgo_Click(object sender, EventArgs e)
         {
@@ -130,32 +166,46 @@ namespace CapaPresentacion
 
         private void btnInmContenido_Click(object sender, EventArgs e)
         {
-            pnlInmuebles.Visible = false;
-            _DescrepcionValue = false;
-
-            if (!cancelarDescripcionSeguros())
+            try
             {
-                pnlMueblesInmContenido.Visible = true;
+                pnlInmuebles.Visible = false;
+                _DescrepcionValue = false;
+
+                if (!cancelarDescripcionSeguros())
+                {
+                    DataView dv = new DataView(dtPolizaDeSeguros);
+
+                    dv.RowFilter = "[Nombre del Seguro] = 'Seguro Contenido'";
+
+                    idProductoSeguro = (int)dv[0]["id"];
+                    Precio = (decimal)dv[0]["Precio"];
+
+                    pnlMueblesInmContenido.Visible = true;
+                }
             }
-        }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+}
 
         private void btnInmEdificaciones_Click(object sender, EventArgs e)
         {
-            pnlInmuebles.Visible = false;
-            _DescrepcionValue = false;
-
-            if (!cancelarDescripcionSeguros())
+            try
             {
-                DataView dv = new DataView(dtPolizaDeSeguros);
+                pnlInmuebles.Visible = false;
+                _DescrepcionValue = false;
 
-                dv.RowFilter = "[Nombre del Seguro] = 'Seguro Edificaciones'";
+                if (!cancelarDescripcionSeguros())
+                {
+                    DataView dv = new DataView(dtPolizaDeSeguros);
 
-                idProductoSeguroVidaSalud = (int)dv[0]["id"];
-                Precio = (decimal)dv[0]["Precio"];
-                pnlMueblesInmEdificaciones.Visible = true;
+                    dv.RowFilter = "[Nombre del Seguro] = 'Seguro Edificaciones'";
+
+                    idProductoSeguro = (int)dv[0]["id"];
+                    Precio = (decimal)dv[0]["Precio"];
+                    pnlMueblesInmEdificaciones.Visible = true;
+                }
             }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
-
 
         private void lblCerrarInmContenido_Click(object sender, EventArgs e)
         {
@@ -179,18 +229,22 @@ namespace CapaPresentacion
 
         private void btnNegocioEmpresa_Click(object sender, EventArgs e)
         {
-            if (!cancelarDescripcionSeguros())
+            try
             {
-                DataView dv = new DataView(dtPolizaDeSeguros);
+                if (!cancelarDescripcionSeguros())
+                {
+                    DataView dv = new DataView(dtPolizaDeSeguros);
 
-                dv.RowFilter = "[Nombre del Seguro] = 'Seguro Negocios y Empresas'";
+                    dv.RowFilter = "[Nombre del Seguro] = 'Seguro Negocios y Empresas'";
 
-                idProductoSeguroVidaSalud = (int)dv[0]["id"];
-                Precio = (decimal)dv[0]["Precio"];
+                    idProductoSeguro = (int)dv[0]["id"];
+                    Precio = (decimal)dv[0]["Precio"];
 
 
-                pnlNegociosEmpresas.Visible = true;
+                    pnlNegociosEmpresas.Visible = true;
+                }
             }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         public void CargarSegurosDePoliza()
@@ -211,40 +265,360 @@ namespace CapaPresentacion
             pnlPicImagen.Visible = false;
         }
 
-        private void btnVidaRLab_BuscarEmpresa_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblVidaRLab_BuscarEmpresaCerrar_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnSiguientepnlVEHSeguroObligatorio_Click(object sender, EventArgs e)
         {
-            MostrarFormFactura();
+            SIGUIENTEpnlVEHSeguroObligatorio();
         }
+
+        private void SIGUIENTEpnlVEHSeguroObligatorio()
+        {
+            QuitarErrorProviderCliente();
+            ValidarCamposCliente();
+            //------------------------//
+            ValidarCamposVehiculoSeguroObligatorio();
+            QuitarErrorProviderVehiculoSeguroObligatorio();
+
+            try
+            {
+
+                if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrWhiteSpace(txtNombre.Text)
+                    || string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrWhiteSpace(txtApellido.Text)
+                    || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || mskCedula.Text == "   -       -" || mskTelefono.Text == ""
+                    || string.IsNullOrEmpty(txtCorreoElectronico.Text) || string.IsNullOrWhiteSpace(txtCorreoElectronico.Text)
+                    || string.IsNullOrEmpty(cmbNacionalidad.Text) || string.IsNullOrWhiteSpace(cmbNacionalidad.Text)
+                    || string.IsNullOrEmpty(cmbSexo.Text) || string.IsNullOrWhiteSpace(cmbSexo.Text)
+                    || (string.IsNullOrEmpty(txtMarcaVehiculoObl.Text)
+                    || string.IsNullOrWhiteSpace(txtMarcaVehiculoObl.Text))
+                    || (string.IsNullOrEmpty(txtMatriculaObl.Text)
+                    || string.IsNullOrWhiteSpace(txtMatriculaObl.Text))
+                    || (string.IsNullOrEmpty(txtUsoObl.Text)
+                    || string.IsNullOrWhiteSpace(txtUsoObl.Text))
+                    || (string.IsNullOrEmpty(txtCilindrosObl.Text)
+                    || string.IsNullOrWhiteSpace(txtCilindrosObl.Text))
+                    || (string.IsNullOrEmpty(txtCategoriaObl.Text)
+                    || string.IsNullOrWhiteSpace(txtCategoriaObl.Text))
+                    || (string.IsNullOrEmpty(txtCarroceriaObl.Text)
+                    || string.IsNullOrWhiteSpace(txtCarroceriaObl.Text))
+                    || (string.IsNullOrEmpty(txtModeloObl.Text)
+                    || string.IsNullOrWhiteSpace(txtModeloObl.Text)))
+                {
+                    MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (txtNombre.ReadOnly == true) // True aquí: Significa que está añadido como cliente en la Base de Datos
+                {
+                    frmFacturas frmFac = new frmFacturas();
+
+                    frmFac.txtId.Text = txtId.Text;
+                    frmFac.txtCliente.Text = txtNombre.Text + " " + txtApellido.Text;
+                    frmFac.txtCedula.Text = mskCedula.Text;
+                    frmFac.txtSeguroA_Adquirir.Text = lblSeguroObligatorio.Text;
+                    frmFac.txtEfectoA_Asegurar.Text = txtMarcaVehiculoObl.Text + "  " + txtModeloObl.Text;
+
+                    frmFac.txtCategoria.Text = _Categoria;
+
+                    frmFac.txtIdSeguro.Text = idProductoSeguro.ToString();
+
+                    frmFac.txtCodigo.Text = idCodigoObl.ToString();
+
+                    frmFac.txtSubTotal.Text = Precio.ToString();
+                    frmFac.txtTotalA_Pagar.Text = Precio.ToString();
+
+
+                    frmFac.strMarcaVehiculoTR = txtMarcaVehiculoTR.Text;
+                    frmFac.strModeloTR = txtModeloTR.Text;
+                    frmFac.strMatriculaTR = txtMatriculaTR.Text;
+                    frmFac.intAnoTR = Convert.ToInt32(txtAnoTR.Text);
+                    frmFac.intCilindrosTR = Convert.ToInt32(txtCilindrosTR.Text);
+                    frmFac.strCarroceriaTR = txtCarroceriaTR.Text;
+                    frmFac.strCategoriaTR = txtCategoriaTR.Text;
+                    frmFac.strUsoTR = txtUsoTR.Text;
+
+
+                    frmFac.varIdEmpleado = varIdEmpleado;
+
+                    frmFac.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Añada el Cliente actual para poder continuar.", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    pnlPicImagen.Visible = false;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+
+
 
         private void btnSIGUIENTEpnlVEHSeguroTodoRiesgo_Click(object sender, EventArgs e)
         {
-            MostrarFormFactura();
+            SIGUIENTEpnlVEHSeguroTodoRiesgo();
+        }
+
+        private void SIGUIENTEpnlVEHSeguroTodoRiesgo()
+        {
+            QuitarErrorProviderCliente();
+            ValidarCamposCliente();
+            //------------------------//
+            QuitarErrorProviderSegVehiculoTodoRiesgo();
+            ValidarCamposSeguroVehiculoTodoRiesgo();
+
+            try
+            {
+
+                if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrWhiteSpace(txtNombre.Text)
+                    || string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrWhiteSpace(txtApellido.Text)
+                    || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || mskCedula.Text == "   -       -" || mskTelefono.Text == ""
+                    || string.IsNullOrEmpty(txtCorreoElectronico.Text) || string.IsNullOrWhiteSpace(txtCorreoElectronico.Text)
+                    || string.IsNullOrEmpty(cmbNacionalidad.Text) || string.IsNullOrWhiteSpace(cmbNacionalidad.Text)
+                    || string.IsNullOrEmpty(cmbSexo.Text) || string.IsNullOrWhiteSpace(cmbSexo.Text)
+                    || (string.IsNullOrEmpty(txtMarcaVehiculoTR.Text)
+                    || string.IsNullOrWhiteSpace(txtMarcaVehiculoTR.Text))
+                    || (string.IsNullOrEmpty(txtMatriculaTR.Text)
+                    || string.IsNullOrWhiteSpace(txtMatriculaTR.Text))
+                    || (string.IsNullOrEmpty(txtUsoTR.Text)
+                    || string.IsNullOrWhiteSpace(txtUsoTR.Text))
+                    || (string.IsNullOrEmpty(txtCilindrosTR.Text)
+                    || string.IsNullOrWhiteSpace(txtCilindrosTR.Text))
+                    || (string.IsNullOrEmpty(txtCategoriaTR.Text)
+                    || string.IsNullOrWhiteSpace(txtCategoriaTR.Text))
+                    || (string.IsNullOrEmpty(txtCarroceriaTR.Text)
+                    || string.IsNullOrWhiteSpace(txtCarroceriaTR.Text))
+                    || (string.IsNullOrEmpty(txtModeloTR.Text)
+                    || string.IsNullOrWhiteSpace(txtModeloTR.Text)))
+                {
+                    MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (txtNombre.ReadOnly == true) // True aquí: Significa que está añadido como cliente en la Base de Datos
+                {
+                    frmFacturas frmFac = new frmFacturas();
+
+                    frmFac.txtId.Text = txtId.Text;
+                    frmFac.txtCliente.Text = txtNombre.Text + " " + txtApellido.Text;
+                    frmFac.txtCedula.Text = mskCedula.Text;
+                    frmFac.txtSeguroA_Adquirir.Text = lblSeguroTodoRiesgo.Text;
+                    frmFac.txtEfectoA_Asegurar.Text = txtMarcaVehiculoTR.Text + "  " + txtModeloTR.Text;
+
+                    frmFac.txtCategoria.Text = _Categoria;
+
+                    frmFac.txtIdSeguro.Text = idProductoSeguro.ToString();
+
+                    frmFac.txtCodigo.Text = idCodigoTR.ToString();
+
+                    frmFac.txtSubTotal.Text = Precio.ToString();
+                    frmFac.txtTotalA_Pagar.Text = Precio.ToString();
+
+
+                    frmFac.strMarcaVehiculoTR = txtMarcaVehiculoTR.Text;
+                    frmFac.strModeloTR = txtModeloTR.Text;
+                    frmFac.strMatriculaTR = txtMatriculaTR.Text;
+                    frmFac.intAnoTR = Convert.ToInt32(txtAnoTR.Text);
+                    frmFac.intCilindrosTR = Convert.ToInt32(txtCilindrosTR.Text);
+                    frmFac.strCarroceriaTR = txtCarroceriaTR.Text;
+                    frmFac.strCategoriaTR = txtCategoriaTR.Text;
+                    frmFac.strUsoTR = txtUsoTR.Text;
+
+
+                    frmFac.varIdEmpleado = varIdEmpleado;
+
+                    frmFac.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Añada el Cliente actual para poder continuar.", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    pnlPicImagen.Visible = false;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void btnSIGUIENTEpnlVEHSeguroVoluntario_Click(object sender, EventArgs e)
         {
-            MostrarFormFactura();
+            SIGUIENTEpnlVEHSeguroVoluntario();
         }
 
-        private void btnSIGUIENTEpnlMueblesInmContenido_Click(object sender, EventArgs e)
+        private void SIGUIENTEpnlVEHSeguroVoluntario()
         {
-            MostrarFormFactura();
+            QuitarErrorProviderCliente();
+            ValidarCamposCliente();
+            //------------------------//
+            QuitarErrorProviderSegVehiculoVoluntario();
+            ValidarCamposSeguroVehiculoVoluntario();
+
+            try
+            {
+
+                if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrWhiteSpace(txtNombre.Text)
+                    || string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrWhiteSpace(txtApellido.Text)
+                    || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || mskCedula.Text == "   -       -" || mskTelefono.Text == ""
+                    || string.IsNullOrEmpty(txtCorreoElectronico.Text) || string.IsNullOrWhiteSpace(txtCorreoElectronico.Text)
+                    || string.IsNullOrEmpty(cmbNacionalidad.Text) || string.IsNullOrWhiteSpace(cmbNacionalidad.Text)
+                    || string.IsNullOrEmpty(cmbSexo.Text) || string.IsNullOrWhiteSpace(cmbSexo.Text)
+                    || (string.IsNullOrEmpty(txtMarcaVehiculoVol.Text)
+                    || string.IsNullOrWhiteSpace(txtMarcaVehiculoVol.Text))
+                    || (string.IsNullOrEmpty(txtMatriculaVol.Text)
+                    || string.IsNullOrWhiteSpace(txtMatriculaVol.Text))
+                    || (string.IsNullOrEmpty(txtUsoVol.Text)
+                    || string.IsNullOrWhiteSpace(txtUsoVol.Text))
+                    || (string.IsNullOrEmpty(txtCilindrosVol.Text)
+                    || string.IsNullOrWhiteSpace(txtCilindrosVol.Text))
+                    || (string.IsNullOrEmpty(txtCategoriaVol.Text)
+                    || string.IsNullOrWhiteSpace(txtCategoriaVol.Text))
+                    || (string.IsNullOrEmpty(txtCarroceriaVol.Text)
+                    || string.IsNullOrWhiteSpace(txtCarroceriaVol.Text)) 
+                    || (string.IsNullOrEmpty(txtModeloVol.Text)
+                    || string.IsNullOrWhiteSpace(txtModeloVol.Text)))
+                {
+                    MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (txtNombre.ReadOnly == true) // True aquí: Significa que está añadido como cliente en la Base de Datos
+                {
+                    frmFacturas frmFac = new frmFacturas();
+
+                    frmFac.txtId.Text = txtId.Text;
+                    frmFac.txtCliente.Text = txtNombre.Text + " " + txtApellido.Text;
+                    frmFac.txtCedula.Text = mskCedula.Text;
+                    frmFac.txtSeguroA_Adquirir.Text = lblSeguroVoluntario.Text;
+                    frmFac.txtEfectoA_Asegurar.Text = txtMarcaVehiculoVol.Text + "  " + txtModeloVol.Text;
+
+                    frmFac.txtCategoria.Text = _Categoria;
+
+                    frmFac.txtIdSeguro.Text = idProductoSeguro.ToString();
+
+                    frmFac.txtCodigo.Text = idCodigoVol.ToString();
+
+                    frmFac.txtSubTotal.Text = Precio.ToString();
+                    frmFac.txtTotalA_Pagar.Text = Precio.ToString();
+
+
+                    frmFac.strMarcaVehiculoVol = txtMarcaVehiculoVol.Text;
+                    frmFac.strModeloVol = txtModeloVol.Text;
+                    frmFac.strMatriculaVol = txtMatriculaVol.Text;
+                    frmFac.intAnoVol = Convert.ToInt32(txtAnoVol.Text);
+                    frmFac.intCilindrosVol = Convert.ToInt32(txtCilindrosVol.Text);
+                    frmFac.strCarroceriaVol = txtCarroceriaVol.Text;
+                    frmFac.strCategoriaVol = txtCategoriaVol.Text;
+                    frmFac.strUsoVol = txtUsoVol.Text;
+
+
+                    frmFac.varIdEmpleado = varIdEmpleado;
+
+                    frmFac.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Añada el Cliente actual para poder continuar.", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    pnlPicImagen.Visible = false;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+
+
+    private void btnSIGUIENTEpnlMueblesInmContenido_Click(object sender, EventArgs e)
+        {
+            SIGUIENTEpnlMueblesInmContenido();
+        }
+
+        private void SIGUIENTEpnlMueblesInmContenido()
+        {
+            try
+            {
+
+                mskTelefonoValidar();
+                mskCedulaValidar();
+                
+                QuitarErrorProviderCliente();
+                ValidarCamposCliente();
+                //------------------------//
+                QuitarErrorProviderSegContendio();
+                ValidarCamposSeguroContenido();
+
+                if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrWhiteSpace(txtNombre.Text)
+                        || string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrWhiteSpace(txtApellido.Text)
+                        || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || mskCedula.Text == "   -       -" || mskTelefono.Text == ""
+                        || string.IsNullOrEmpty(txtCorreoElectronico.Text) || string.IsNullOrWhiteSpace(txtCorreoElectronico.Text)
+                        || string.IsNullOrEmpty(cmbNacionalidad.Text) || string.IsNullOrWhiteSpace(cmbNacionalidad.Text)
+                        || string.IsNullOrEmpty(cmbSexo.Text) || string.IsNullOrWhiteSpace(cmbSexo.Text)
+                        || (string.IsNullOrEmpty(txtTipoViviendaCont.Text)
+                        || string.IsNullOrWhiteSpace(txtTipoViviendaCont.Text))
+                        || (string.IsNullOrEmpty(txtSituacionCont.Text)
+                        || string.IsNullOrWhiteSpace(txtSituacionCont.Text))
+                        || (string.IsNullOrEmpty(txtCodigoPostalCont.Text)
+                        || string.IsNullOrWhiteSpace(txtCodigoPostalCont.Text))
+                        || (string.IsNullOrEmpty(cmbViviendaHabitualCont.Text)
+                        || string.IsNullOrWhiteSpace(cmbViviendaHabitualCont.Text))
+                        || (string.IsNullOrEmpty(cmbViviendaAlquiladaCont.Text)
+                        || string.IsNullOrWhiteSpace(cmbViviendaAlquiladaCont.Text))
+                        || (string.IsNullOrEmpty(txtAnoConstruccionCont.Text)
+                        || string.IsNullOrWhiteSpace(txtAnoConstruccionCont.Text))
+                        || (string.IsNullOrEmpty(txtM2ViviendaCont.Text)
+                        || string.IsNullOrWhiteSpace(txtM2ViviendaCont.Text))
+                        || (string.IsNullOrEmpty(cmbDeshabitada3MesesAnoCont.Text)
+                        || string.IsNullOrWhiteSpace(cmbDeshabitada3MesesAnoCont.Text))
+                        || (string.IsNullOrEmpty(txtDescripcionMueblesCont.Text)
+                        || string.IsNullOrWhiteSpace(txtDescripcionMueblesCont.Text))
+                        || (string.IsNullOrEmpty(txtValorMuebles.Text)
+                        || string.IsNullOrWhiteSpace(txtValorMuebles.Text)))
+                {
+                    MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (txtNombre.ReadOnly == true) // True aquí: Significa que está añadido como cliente en la Base de Datos
+                {
+                    frmFacturas frmFac = new frmFacturas();
+
+                    frmFac.txtId.Text = txtId.Text;
+                    frmFac.txtCliente.Text = txtNombre.Text + " " + txtApellido.Text;
+                    frmFac.txtCedula.Text = mskCedula.Text;
+                    frmFac.txtSeguroA_Adquirir.Text = lblSeguroContenido.Text;
+                    frmFac.txtEfectoA_Asegurar.Text = "Muebles";
+                    frmFac.txtCategoria.Text = _Categoria;
+                    frmFac.txtIdSeguro.Text = idProductoSeguro.ToString();
+
+                    frmFac.txtCodigo.Text = idCodigoCont.ToString();
+
+                    frmFac.txtSubTotal.Text = Precio.ToString();
+                    frmFac.txtTotalA_Pagar.Text = Precio.ToString();
+
+                    frmFac.strTipoViviendaCont = txtTipoViviendaCont.Text;
+                    frmFac.strSituacionCont = txtSituacionCont.Text;
+                    frmFac.strPropietarioCont = txtPropietarioCont.Text;
+                    frmFac.strViviendaHabitualCont = cmbViviendaHabitualCont.Text;
+                    frmFac.strViviendaAlquiladaCont = cmbViviendaAlquiladaCont.Text;
+                    frmFac.strCodigoPostalCont = txtCodigoPostalCont.Text;
+                    frmFac.strDeshabitadaPor3MesesAlAnoCont = cmbDeshabitada3MesesAnoCont.Text;
+                    frmFac.intAnoDeCostruccionCont = Convert.ToInt32(txtAnoConstruccionCont.Text);
+                    frmFac.decM2ViviendaCont = Convert.ToDecimal(txtM2ViviendaCont.Text);
+                    frmFac.strDescripcionMueblesCont = txtDescripcionMueblesCont.Text;
+                    frmFac.strValorEstimadoMueblesCont = Convert.ToInt32(txtValorMuebles.Text);
+
+                    frmFac.varIdEmpleado = varIdEmpleado;
+
+                    frmFac.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Añada el Cliente actual para poder continuar.", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    pnlPicImagen.Visible = false;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void btnSIGUIENTEpnlMueblesInmEdificaciones_Click(object sender, EventArgs e)
         {
+            SIGUIENTEpnlMueblesEdificaciones();
+        }
+
+        private void SIGUIENTEpnlMueblesEdificaciones()
+        {
             try
             {
+                mskTelefonoValidar();
+                mskCedulaValidar();
+
                 QuitarErrorProviderCliente();
                 ValidarCamposCliente();
                 //------------------------//
@@ -266,11 +640,11 @@ namespace CapaPresentacion
                         || (string.IsNullOrEmpty(cmbViviendaHabitual.Text)
                         || string.IsNullOrWhiteSpace(cmbViviendaHabitual.Text))
                         || (string.IsNullOrEmpty(cmbViviendaAlquilada.Text)
-                        || string.IsNullOrWhiteSpace(cmbViviendaAlquilada.Text)) 
+                        || string.IsNullOrWhiteSpace(cmbViviendaAlquilada.Text))
                         || (string.IsNullOrEmpty(txtAnoConstruccion.Text)
-                        || string.IsNullOrWhiteSpace(txtAnoConstruccion.Text)) 
+                        || string.IsNullOrWhiteSpace(txtAnoConstruccion.Text))
                         || (string.IsNullOrEmpty(txtM2Vivienda.Text)
-                        || string.IsNullOrWhiteSpace(txtM2Vivienda.Text)) 
+                        || string.IsNullOrWhiteSpace(txtM2Vivienda.Text))
                         || (string.IsNullOrEmpty(cmbDeshabitada3MesesAno.Text)
                         || string.IsNullOrWhiteSpace(cmbDeshabitada3MesesAno.Text))
                         || (string.IsNullOrEmpty(txtM2EdificacionesAnexas.Text)
@@ -288,9 +662,9 @@ namespace CapaPresentacion
                     frmFac.txtCliente.Text = txtNombre.Text + " " + txtApellido.Text;
                     frmFac.txtCedula.Text = mskCedula.Text;
                     frmFac.txtSeguroA_Adquirir.Text = lblEdificaciones.Text;
-                    frmFac.txtEfectoA_Asegurar.Text = "Vivienda";
+                    frmFac.txtEfectoA_Asegurar.Text = "Inmueble";
                     frmFac.txtCategoria.Text = _Categoria;
-                    frmFac.txtIdSeguro.Text = idProductoSeguroVidaSalud.ToString();
+                    frmFac.txtIdSeguro.Text = idProductoSeguro.ToString();
 
                     frmFac.txtCodigo.Text = idCodigoEdif.ToString();
 
@@ -368,7 +742,7 @@ namespace CapaPresentacion
                     frmFac.txtSeguroA_Adquirir.Text = lblSeguroNEmpresa.Text;
                     frmFac.txtEfectoA_Asegurar.Text = txtNombreEmpresa.Text;
                     frmFac.txtCategoria.Text = _Categoria;
-                    frmFac.txtIdSeguro.Text = idProductoSeguroVidaSalud.ToString();
+                    frmFac.txtIdSeguro.Text = idProductoSeguro.ToString();
 
                     frmFac.txtCodigo.Text = idCodigoEm.ToString();
                     frmFac.txtSubTotal.Text = Precio.ToString();
@@ -403,6 +777,359 @@ namespace CapaPresentacion
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+
+        private bool ValidarCamposVehiculoSeguroObligatorio()
+        {
+            bool ok = true;
+
+            if (string.IsNullOrEmpty(txtMarcaVehiculoObl.Text)
+               || string.IsNullOrWhiteSpace(txtMarcaVehiculoObl.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtMarcaVehiculoObl, "Campo obligatorio");
+                txtMarcaVehiculoObl.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtMatriculaObl.Text)
+                || string.IsNullOrWhiteSpace(txtMatriculaObl.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtMatriculaObl, "Campo obligatorio");
+                txtMatriculaObl.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtUsoObl.Text)
+                || string.IsNullOrWhiteSpace(txtUsoObl.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtUsoObl, "Campo obligatorio");
+                txtUsoObl.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtAnoObl.Text)
+                || string.IsNullOrWhiteSpace(txtAnoObl.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtAnoObl, "Campo obligatorio");
+                txtAnoObl.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtCilindrosObl.Text)
+                || string.IsNullOrWhiteSpace(txtCilindrosObl.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCilindrosObl, "Campo obligatorio");
+                txtCilindrosObl.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtCategoriaObl.Text)
+               || string.IsNullOrWhiteSpace(txtCategoriaObl.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCategoriaObl, "Campo obligatorio");
+                txtCategoriaObl.Text = "";
+            }
+            if (string.IsNullOrEmpty(txtCarroceriaObl.Text)
+               || string.IsNullOrWhiteSpace(txtCarroceriaObl.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCarroceriaObl, "Campo obligatorio");
+                txtCarroceriaObl.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtModeloObl.Text)
+                    || string.IsNullOrWhiteSpace(txtModeloObl.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtModeloObl, "Campo obligatorio");
+                txtModeloObl.Text = "";
+            }
+
+
+            return ok;
+        }
+
+        private void QuitarErrorProviderVehiculoSeguroObligatorio()
+        {
+            errorProvider1.SetError(txtMarcaVehiculoObl, "");
+            errorProvider1.SetError(txtMatriculaObl, "");
+            errorProvider1.SetError(txtUsoObl, "");
+            errorProvider1.SetError(txtAnoObl, "");
+            errorProvider1.SetError(txtCilindrosObl, "");
+            errorProvider1.SetError(txtCategoriaObl, "");
+            errorProvider1.SetError(txtCarroceriaObl, "");
+            errorProvider1.SetError(txtModeloObl, "");
+        }
+
+
+
+
+        private bool ValidarCamposSeguroVehiculoTodoRiesgo()
+        {
+            bool ok = true;
+
+            if (string.IsNullOrEmpty(txtMarcaVehiculoTR.Text)
+               || string.IsNullOrWhiteSpace(txtMarcaVehiculoTR.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtMarcaVehiculoTR, "Campo obligatorio");
+                txtMarcaVehiculoTR.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtMatriculaTR.Text)
+                || string.IsNullOrWhiteSpace(txtMatriculaTR.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtMatriculaTR, "Campo obligatorio");
+                txtMatriculaTR.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtUsoTR.Text)
+                || string.IsNullOrWhiteSpace(txtUsoTR.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtUsoTR, "Campo obligatorio");
+                txtUsoTR.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtAnoTR.Text)
+                || string.IsNullOrWhiteSpace(txtAnoTR.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtAnoTR, "Campo obligatorio");
+                txtAnoTR.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtCilindrosTR.Text)
+                || string.IsNullOrWhiteSpace(txtCilindrosTR.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCilindrosTR, "Campo obligatorio");
+                txtCilindrosTR.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtCategoriaTR.Text)
+               || string.IsNullOrWhiteSpace(txtCategoriaTR.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCategoriaTR, "Campo obligatorio");
+                txtCategoriaTR.Text = "";
+            }
+            if (string.IsNullOrEmpty(txtCarroceriaTR.Text)
+               || string.IsNullOrWhiteSpace(txtCarroceriaTR.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCarroceriaTR, "Campo obligatorio");
+                txtCarroceriaTR.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtModeloTR.Text)
+                    || string.IsNullOrWhiteSpace(txtModeloTR.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtModeloTR, "Campo obligatorio");
+                txtModeloTR.Text = "";
+            }
+
+
+            return ok;
+        }
+
+        private void QuitarErrorProviderSegVehiculoTodoRiesgo()
+        {
+            errorProvider1.SetError(txtMarcaVehiculoTR, "");
+            errorProvider1.SetError(txtMatriculaTR, "");
+            errorProvider1.SetError(txtUsoTR, "");
+            errorProvider1.SetError(txtAnoTR, "");
+            errorProvider1.SetError(txtCilindrosTR, "");
+            errorProvider1.SetError(txtCategoriaTR, "");
+            errorProvider1.SetError(txtCarroceriaTR, "");
+            errorProvider1.SetError(txtModeloTR, "");
+        }
+
+
+        private bool ValidarCamposSeguroVehiculoVoluntario()
+        {
+            bool ok = true;
+
+            if (string.IsNullOrEmpty(txtMarcaVehiculoVol.Text)
+               || string.IsNullOrWhiteSpace(txtMarcaVehiculoVol.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtMarcaVehiculoVol, "Campo obligatorio");
+                txtMarcaVehiculoVol.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtMatriculaVol.Text)
+                || string.IsNullOrWhiteSpace(txtMatriculaVol.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtMatriculaVol, "Campo obligatorio");
+                txtMatriculaVol.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtUsoVol.Text)
+                || string.IsNullOrWhiteSpace(txtUsoVol.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtUsoVol, "Campo obligatorio");
+                txtUsoVol.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtAnoVol.Text)
+                || string.IsNullOrWhiteSpace(txtAnoVol.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtAnoVol, "Campo obligatorio");
+                txtAnoVol.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtCilindrosVol.Text)
+                || string.IsNullOrWhiteSpace(txtCilindrosVol.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCilindrosVol, "Campo obligatorio");
+                txtCilindrosVol.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtCategoriaVol.Text)
+               || string.IsNullOrWhiteSpace(txtCategoriaVol.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCategoriaVol, "Campo obligatorio");
+                txtCategoriaVol.Text = "";
+            }
+            if (string.IsNullOrEmpty(txtCarroceriaVol.Text)
+               || string.IsNullOrWhiteSpace(txtCarroceriaVol.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCarroceriaVol, "Campo obligatorio");
+                txtCarroceriaVol.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtModeloVol.Text)
+                    || string.IsNullOrWhiteSpace(txtModeloVol.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtModeloVol, "Campo obligatorio");
+                txtModeloVol.Text = "";
+            }
+
+
+            return ok;
+        }
+
+        private void QuitarErrorProviderSegVehiculoVoluntario()
+        {
+            errorProvider1.SetError(txtMarcaVehiculoVol, "");
+            errorProvider1.SetError(txtMatriculaVol, "");
+            errorProvider1.SetError(txtUsoVol, "");
+            errorProvider1.SetError(txtAnoVol, "");
+            errorProvider1.SetError(txtCilindrosVol, "");
+            errorProvider1.SetError(txtCategoriaVol, "");
+            errorProvider1.SetError(txtCarroceriaVol, "");
+            errorProvider1.SetError(txtModeloVol, "");
+        }
+
+        private bool ValidarCamposSeguroContenido()
+        {
+            bool ok = true;
+
+            if (string.IsNullOrEmpty(txtTipoViviendaCont.Text)
+               || string.IsNullOrWhiteSpace(txtTipoViviendaCont.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtTipoViviendaCont, "Campo obligatorio");
+                txtTipoViviendaCont.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtSituacionCont.Text)
+                || string.IsNullOrWhiteSpace(txtSituacionCont.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtSituacionCont, "Campo obligatorio");
+                txtSituacionCont.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtPropietarioCont.Text)
+                || string.IsNullOrWhiteSpace(txtPropietarioCont.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtPropietarioCont, "Campo obligatorio");
+                txtPropietarioCont.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(cmbViviendaHabitualCont.Text)
+                || string.IsNullOrWhiteSpace(cmbViviendaHabitualCont.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(cmbViviendaHabitualCont, "Campo obligatorio");
+                cmbViviendaHabitualCont.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtCodigoPostalCont.Text)
+                || string.IsNullOrWhiteSpace(txtCodigoPostalCont.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCodigoPostalCont, "Campo obligatorio");
+                txtCodigoPostalCont.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(cmbDeshabitada3MesesAnoCont.Text)
+               || string.IsNullOrWhiteSpace(cmbDeshabitada3MesesAnoCont.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(cmbDeshabitada3MesesAnoCont, "Campo obligatorio");
+                cmbDeshabitada3MesesAnoCont.Text = "";
+            }
+            if (string.IsNullOrEmpty(txtAnoConstruccionCont.Text)
+               || string.IsNullOrWhiteSpace(txtAnoConstruccionCont.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtAnoConstruccionCont, "Campo obligatorio");
+                txtAnoConstruccionCont.Text = "";
+            }
+            if (string.IsNullOrEmpty(txtM2ViviendaCont.Text)
+               || string.IsNullOrWhiteSpace(txtM2ViviendaCont.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtM2ViviendaCont, "Campo obligatorio");
+                txtM2ViviendaCont.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtDescripcionMueblesCont.Text)
+              || string.IsNullOrWhiteSpace(txtDescripcionMueblesCont.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtDescripcionMueblesCont, "Campo obligatorio");
+                txtDescripcionMueblesCont.Text = "";
+            }
+            if (string.IsNullOrEmpty(txtValorMuebles.Text)
+              || string.IsNullOrWhiteSpace(txtValorMuebles.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtValorMuebles, "Campo obligatorio");
+                txtValorMuebles.Text = "";
+            }
+
+            return ok;
+        }
+
+
+        private void QuitarErrorProviderSegContendio()
+        {
+            errorProvider1.SetError(txtTipoViviendaCont, "");
+            errorProvider1.SetError(txtSituacionCont, "");
+            errorProvider1.SetError(txtPropietarioCont, "");
+            errorProvider1.SetError(cmbViviendaHabitualCont, "");
+            errorProvider1.SetError(txtCodigoPostalCont, "");
+            errorProvider1.SetError(cmbDeshabitada3MesesAnoCont, "");
+            errorProvider1.SetError(txtAnoConstruccionCont, "");
+            errorProvider1.SetError(txtM2ViviendaCont, "");
+            errorProvider1.SetError(txtDescripcionMueblesCont, "");
+            errorProvider1.SetError(txtValorMuebles, "");
         }
 
         private bool ValidarCamposSegSegEdificaciones()
@@ -580,16 +1307,7 @@ namespace CapaPresentacion
             MostrarFormFactura();
         }
 
-        private void btnSIGUIENTEpnlVidaSalud_Click(object sender, EventArgs e)
-        {
-            MostrarFormFactura();
-        }
-
-        private void btnSIGUIENTEpnlVidaRiesgoMuerte_Click(object sender, EventArgs e)
-        {
-            MostrarFormFactura();
-        }
-
+      
         public void MostrarFormFactura()
         {
             frmFacturas f = new frmFacturas();
@@ -859,6 +1577,11 @@ namespace CapaPresentacion
         {
             Cargar_idCodigo_detalleEmpresaNegocio();
             Cargar_idCodigo_detalleSeguroEdificaciones();
+            Cargar_idCodigo_detalleSeguroContenido();
+            Cargar_idCodigo_detalleSeguroVehiculoVoluntario();
+            Cargar_idCodigo_detalleSeguroVehiculoTodoRiesgo();
+
+
             CargarSegurosDePoliza();
             CargarEmpleado();
             MostrarClientes();
@@ -892,6 +1615,54 @@ namespace CapaPresentacion
             try
             {
                 idCodigoEdif = B_Solicitud.B_CargarIdDetalleSeguroEdificaciones();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Cargar_idCodigo_detalleSeguroContenido()
+        {
+            try
+            {
+                idCodigoCont = B_Solicitud.B_CargarIdDetalleSeguroContenido();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Cargar_idCodigo_detalleSeguroVehiculoVoluntario()
+        {
+            try
+            {
+                idCodigoVol = B_Solicitud.B_CargarIdDetalleSeguroVehiculoVoluntario();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Cargar_idCodigo_detalleSeguroVehiculoTodoRiesgo()
+        {
+            try
+            {
+                idCodigoTR = B_Solicitud.B_CargarIdDetalleSeguroVehiculoTodoRiesgo();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Cargar_idCodigo_detalleSeguroVehiculoObligatorio()
+        {
+            try
+            {
+                idCodigoObl = B_Solicitud.B_CargarIdDetalleSeguroVehiculoObligatorio();
             }
             catch (Exception ex)
             {
@@ -1145,6 +1916,86 @@ namespace CapaPresentacion
         private void txtCodigoPostal_TextChanged(object sender, EventArgs e)
         {
             txtCodigoPostal.TextChanged += delegate (System.Object o, System.EventArgs r)
+            {
+                TextBox _tbox = o as TextBox;
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+            };
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            BuscarClientes();
+        }
+        public void BuscarClientes()
+        {
+            try
+            {
+                if (chkSoloId.Checked)
+                {
+                    BindingSource bs = new BindingSource();
+                    bs.DataSource = dgvBuscarClientes.DataSource;
+                    bs.Filter = "CONVERT(id, 'System.String') like '%" + txtBuscar.Text + "%'";
+                    dgvBuscarClientes.DataSource = bs;
+                }
+                else
+                {
+                    BindingSource bs = new BindingSource();
+                    bs.DataSource = dgvBuscarClientes.DataSource;
+                    bs.Filter = "CONVERT(id, 'System.String') like '%" + txtBuscar.Text + "%' OR Nombre like '%" +
+                        txtBuscar.Text + "%' OR Apellido like '%" + txtBuscar.Text +
+                        "%' OR Direccion like '%" + txtBuscar.Text + "%' OR Cedula like '%" + txtBuscar.Text +
+                        "%' OR Telefono like '%" + txtBuscar.Text + "%' OR [Correo Electronico] like '%" + txtBuscar.Text + "%'";
+                    dgvBuscarClientes.DataSource = bs;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void chkSoloId_CheckedChanged(object sender, EventArgs e)
+        {
+            BuscarClientes();
+            if (chkSoloId.Checked)
+            {
+                chkSoloId.BackColor = Color.DarkViolet;
+                chkSoloId.ForeColor = Color.White;
+            }
+            else
+            {
+                chkSoloId.BackColor = Color.White;
+                chkSoloId.ForeColor = Color.Crimson;
+            }
+        }
+
+        private void txtCodigoPostalCont_TextChanged(object sender, EventArgs e)
+        {
+            txtCodigoPostalCont.TextChanged += delegate (System.Object o, System.EventArgs r)
+            {
+                TextBox _tbox = o as TextBox;
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+            };
+        }
+
+        private void txtAnoConstruccionCont_TextChanged(object sender, EventArgs e)
+        {
+            txtAnoConstruccionCont.TextChanged += delegate (System.Object o, System.EventArgs r)
+            {
+                TextBox _tbox = o as TextBox;
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+            };
+        }
+
+        private void txtM2ViviendaCont_TextChanged(object sender, EventArgs e)
+        {
+            txtM2ViviendaCont.TextChanged += delegate (System.Object o, System.EventArgs r)
+            {
+                TextBox _tbox = o as TextBox;
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+            };
+        }
+
+        private void txtValorMuebles_TextChanged(object sender, EventArgs e)
+        {
+            txtValorMuebles.TextChanged += delegate (System.Object o, System.EventArgs r)
             {
                 TextBox _tbox = o as TextBox;
                 _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());

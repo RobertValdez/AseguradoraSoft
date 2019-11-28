@@ -58,7 +58,7 @@ insert into imagenesCotenidoInspSeguroEmpresas(id_detallesSeguroEmpresasN, Image
 
 go
 
-create proc CrearSolicitudSeguroEdificaciones
+alter proc CrearSolicitudSeguroEdificaciones
 
 @IdCliente int,
 
@@ -101,6 +101,7 @@ insert into detalleEdificaciones( id_ctMueblesInmuebles,
       ,[M2 de la Vivienda]
       ,[M2 de edificaciones anexas]
       ,[Capital de otras instalaciones]
+	  ,[Estado]
       ,[FechaHora]
       ,[Tipo]) values (@id_ctMueblesInmuebles,
     @TipoVivienda,
@@ -114,9 +115,199 @@ insert into detalleEdificaciones( id_ctMueblesInmuebles,
 	@M2Vivienda,
 	@M2EdificacionesAnexas,
 	@CapitalOtrasInstalaciones,
+	3,
 	@FechaHora,
 	@Tipo)
 
 
       
+
+	  go
+	  
+Create proc CrearSolicitudSeguroContenido
+
+@IdCliente int,
+
+@idEmpleado int,
+@Total decimal(18,2),       
+@Fecha date,		
+----------------
+@TipoVivienda varchar(50),
+@Situacion varchar(50),
+@Propietario varchar (50),
+@ViviendaHabitual varchar(4),
+@ViviendaAlquilada varchar(4),
+@CodigoPostal varchar(15),
+@DesabitadaPor3MesesAlAno varchar (50),
+@AnoConstruccion int,
+@M2Vivienda decimal(18,2),
+@DescripcionMuebles varchar(max),
+@ValorEstimadoMuebles int,
+
+@FechaHora datetime,
+@Tipo varchar(50)
+
+as
+
+insert into ctMueblesInmuebles(id_Cliente, id_Empleado, Total, idEstado, Fecha)
+values (@IdCliente, @idEmpleado, @Total, 3, @FechaHora)
+
+declare @id_ctMueblesInmuebles int
+set @id_ctMueblesInmuebles = SCOPE_IDENTITY()
+
+insert into detalleSeguroContenido( id_ctMueblesInmuebles,
+	   [Tipo de Vivienda]
+      ,[Situacion]
+      ,[Propietario]
+      ,[Vivienda habitual]
+      ,[Vivienda Alquilada]
+      ,[Codigo Postal]
+      ,[Deshabitada por mas de tres meses al ano]
+      ,[Ano de Construccion]
+      ,[M2 de la Vivienda]
+	  ,DescripcionMuebles
+	  ,ValorEstimadoMuebles
+	  ,[Estado]
+      ,[FechaHora]
+      ,[Tipo]) values (@id_ctMueblesInmuebles,
+    @TipoVivienda,
+	@Situacion,
+	@Propietario,
+	@ViviendaHabitual,
+	@ViviendaAlquilada,
+	@CodigoPostal,
+	@DesabitadaPor3MesesAlAno,
+	@AnoConstruccion,
+	@M2Vivienda,
+	@DescripcionMuebles,
+	@ValorEstimadoMuebles,
+	3,
+	@FechaHora,
+	@Tipo)
+
+
+
+
+
+	go
+
+
+	
+alter proc CrearSolicitudSeguroVEH_Voluntario
+
+@IdCliente int,
+
+@idEmpleado int,
+@Total decimal(18,2),       
+@Fecha date,		
+
+----------------
+
+@MarcaVehiculo varchar(20),
+      @Modelo varchar(20),
+      @Matricula varchar(20),
+      @Ano int,
+      @Cilindros int,
+      @Carroceria varchar(20),
+      @Categoria varchar(20),
+      @Uso varchar(20),
+
+      @FechaHora datetime,
+      @Tipo varchar(50)
+
+
+as
+
+insert into ctVehiculo(id_Cliente, id_Empleado, Total, idEstado, Fecha)
+values (@IdCliente, @idEmpleado, @Total, 3, @FechaHora)
+
+
+declare @id_ctVehiculo int
+set @id_ctVehiculo = SCOPE_IDENTITY()
+
+insert into detalleSeguroVoluntario(id_ctVehiculo
+      ,[Marca de Vehiculo]
+      ,[Modelo]
+      ,[Matricula]
+      ,[Ano]
+      ,[Cilindros]
+      ,[Carroceria]
+      ,[Categoria]
+      ,[Uso]
+	  ,[Estado]
+      ,[FechaHora]
+      ,[Tipo]) values (@id_ctVehiculo,
+	  @MarcaVehiculo,
+      @Modelo,
+      @Matricula,
+      @Ano,
+      @Cilindros,
+      @Carroceria,
+      @Categoria,
+      @Uso,
+      3,
+
+      @FechaHora,
+      @Tipo)
+
+go
+
+
+	  
+alter proc CrearSolicitudSeguroVEH_TodoRiesgo
+
+@IdCliente int,
+
+@idEmpleado int,
+@Total decimal(18,2),       
+@Fecha date,		
+
+----------------
+
+@MarcaVehiculo varchar(20),
+      @Modelo varchar(20),
+      @Matricula varchar(20),
+      @Ano int,
+      @Cilindros int,
+      @Carroceria varchar(20),
+      @Categoria varchar(20),
+      @Uso varchar(20),
+
+      @FechaHora datetime,
+      @Tipo varchar(50)
+
+
+as
+
+insert into ctVehiculo(id_Cliente, id_Empleado, Total, idEstado, Fecha)
+values (@IdCliente, @idEmpleado, @Total, 3, @FechaHora)
+
+
+declare @id_ctVehiculo int
+set @id_ctVehiculo = SCOPE_IDENTITY()
+
+insert into detalleSeguroTodoRiesgo(id_ctVehiculo
+      ,[Marca de Vehiculo]
+      ,[Modelo]
+      ,[Matricula]
+      ,[Ano]
+      ,[Cilindros]
+      ,[Carroceria]
+      ,[Categoria]
+      ,[Uso]
+	  ,[Estado]
+      ,[FechaHora]
+      ,[Tipo]) values (@id_ctVehiculo,
+	  @MarcaVehiculo,
+      @Modelo,
+      @Matricula,
+      @Ano,
+      @Cilindros,
+      @Carroceria,
+      @Categoria,
+      @Uso,
+      3,
+
+      @FechaHora,
+      @Tipo)
 

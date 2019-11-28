@@ -24,5 +24,24 @@ namespace CapaNegocio.Solicitud
         {
             return D_Solicitud.D_Cargar_id_detalleSeguroEdificaciones();
         }
+
+        public int B_CargarIdDetalleSeguroContenido()
+        {
+            return D_Solicitud.D_Cargar_id_detalleSeguroContenido();
+        }
+
+        public int B_CargarIdDetalleSeguroVehiculoVoluntario()
+        {
+            return D_Solicitud.D_Cargar_id_detalleSeguroVehiculoVoluntario();
+        }
+
+        public int B_CargarIdDetalleSeguroVehiculoTodoRiesgo()
+        {
+            return D_Solicitud.D_Cargar_id_detalleSeguroVehiculoTodoRiesgo();
+        }
+        public int B_CargarIdDetalleSeguroVehiculoObligatorio()
+        {
+            return D_Solicitud.D_Cargar_id_detalleSeguroVehiculoObligatorio();
+        }
     }
 }

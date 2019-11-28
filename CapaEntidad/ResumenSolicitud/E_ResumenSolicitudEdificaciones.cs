@@ -27,6 +27,10 @@ namespace PerlaDelSur_Entity.ResumenSolicitud
         private DateTime _FechaHora;
         private string _Tipo;
 
+        /*Entidad para Seguro Contenido  */
+        private string _DescripcionMuebles;
+        private int _ValorEstimadoMuebles;
+
 
         public int IdCliente { get => _idCliente; set => _idCliente = value; }
         public int IdEmpleado { get => _idEmpleado; set => _idEmpleado = value; }
@@ -45,6 +49,9 @@ namespace PerlaDelSur_Entity.ResumenSolicitud
         public string CapitalOtrasInstalaciones { get => _CapitalOtrasInstalaciones; set => _CapitalOtrasInstalaciones = value; }
         public DateTime FechaHora { get => _FechaHora; set => _FechaHora = value; }
         public string Tipo { get => _Tipo; set => _Tipo = value; }
+
+        public string DescripcionMuebles { get => _DescripcionMuebles; set => _DescripcionMuebles = value; }
+        public int ValorEstimadoMuebles { get => _ValorEstimadoMuebles; set => _ValorEstimadoMuebles = value; }
 
         public E_ResumenSolicitudEdificaciones()
         {
@@ -74,11 +81,37 @@ namespace PerlaDelSur_Entity.ResumenSolicitud
             _M2Vivienda = M2Vivienda;
             _M2EdificacionesAnexas = M2EdificacionesAnexas;
             _CapitalOtrasInstalaciones = CapitalOtrasInstalaciones;
-            FechaHora = fechaHora;
-            Tipo = tipo;
+            _FechaHora = fechaHora;
+            _Tipo = tipo;
         }
 
+        public E_ResumenSolicitudEdificaciones(int idCliente, int idEmpleado, decimal Total,
+           DateTime Fecha, string TipoVivienda, string Situacion, string Propietario,
+           string ViviendaHabitual, string ViviendaAlquilada, string CodigoPostal,
+           string DeshabitadaPor3MesesAlAno, int AnoDeCostruccion, decimal M2Vivienda,
+           string DescripcionMuebles, int ValorEstimadoMuebles, DateTime fechaHora,
+           string tipo)
+        {
+            _idCliente = idCliente;
+            _idEmpleado = idEmpleado;
+            _Total = Total;
+            _Fecha = Fecha;
+            _TipoVivienda = TipoVivienda;
+            _Situacion = Situacion;
+            _Propietario = Propietario;
+            _ViviendaHabitual = ViviendaHabitual;
+            _ViviendaAlquilada = ViviendaAlquilada;
+            _CodigoPostal = CodigoPostal;
+            _DeshabitadaPor3MesesAlAno = DeshabitadaPor3MesesAlAno;
+            _AnoDeCostruccion = AnoDeCostruccion;
+            _M2Vivienda = M2Vivienda;
 
+            _DescripcionMuebles = DescripcionMuebles;
+            _ValorEstimadoMuebles = ValorEstimadoMuebles;
+
+            _FechaHora = fechaHora;
+            _Tipo = tipo;
+        }
 
     }
 }

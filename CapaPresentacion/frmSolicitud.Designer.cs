@@ -37,23 +37,25 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pnlVEHSeguroVoluntario = new System.Windows.Forms.Panel();
             this.btnSIGUIENTEpnlVEHSeguroVoluntario = new System.Windows.Forms.Button();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.txtAnoVol = new System.Windows.Forms.TextBox();
+            this.txtUsoVol = new System.Windows.Forms.TextBox();
+            this.txtModeloVol = new System.Windows.Forms.TextBox();
+            this.txtCategoriaVol = new System.Windows.Forms.TextBox();
+            this.txtCarroceriaVol = new System.Windows.Forms.TextBox();
+            this.txtCilindrosVol = new System.Windows.Forms.TextBox();
+            this.txtMatriculaVol = new System.Windows.Forms.TextBox();
+            this.txtMarcaVehiculoVol = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.label87 = new System.Windows.Forms.Label();
             this.lblCerrarSV = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
+            this.lblSeguroVoluntario = new System.Windows.Forms.Label();
             this.btnVehiculo = new System.Windows.Forms.Button();
             this.btnMueblesEInmuebles = new System.Windows.Forms.Button();
             this.btnNegocioEmpresa = new System.Windows.Forms.Button();
@@ -64,43 +66,47 @@
             this.btnSeguroObligatorio = new System.Windows.Forms.Button();
             this.btnSeguroVoluntario = new System.Windows.Forms.Button();
             this.pnlVEHSeguroTodoRiesgo = new System.Windows.Forms.Panel();
+            this.txtModeloTR = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
             this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtAnoTR = new System.Windows.Forms.TextBox();
+            this.txtUsoTR = new System.Windows.Forms.TextBox();
+            this.txtCategoriaTR = new System.Windows.Forms.TextBox();
+            this.txtCarroceriaTR = new System.Windows.Forms.TextBox();
+            this.txtCilindrosTR = new System.Windows.Forms.TextBox();
+            this.txtMatriculaTR = new System.Windows.Forms.TextBox();
+            this.txtMarcaVehiculoTR = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label78 = new System.Windows.Forms.Label();
             this.lblCerrarTodoRiesgo = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
+            this.lblSeguroTodoRiesgo = new System.Windows.Forms.Label();
             this.pnlVEHSeguroObligatorio = new System.Windows.Forms.Panel();
+            this.txtModeloObl = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.btnSiguientepnlVEHSeguroObligatorio = new System.Windows.Forms.Button();
             this.lblCerrarSeguroOb = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.txtAnoObl = new System.Windows.Forms.TextBox();
+            this.txtUsoObl = new System.Windows.Forms.TextBox();
+            this.txtCategoriaObl = new System.Windows.Forms.TextBox();
+            this.txtCarroceriaObl = new System.Windows.Forms.TextBox();
+            this.txtCilindrosObl = new System.Windows.Forms.TextBox();
+            this.txtMatriculaObl = new System.Windows.Forms.TextBox();
+            this.txtMarcaVehiculoObl = new System.Windows.Forms.TextBox();
             this.label43 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
+            this.lblSeguroObligatorio = new System.Windows.Forms.Label();
             this.pnlMueblesInmEdificaciones = new System.Windows.Forms.Panel();
             this.cmbViviendaAlquilada = new System.Windows.Forms.ComboBox();
             this.cmbViviendaHabitual = new System.Windows.Forms.ComboBox();
@@ -129,18 +135,22 @@
             this.lblCerrarSegInmEdif = new System.Windows.Forms.Label();
             this.lblEdificaciones = new System.Windows.Forms.Label();
             this.pnlMueblesInmContenido = new System.Windows.Forms.Panel();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.cmbSiNo = new System.Windows.Forms.ComboBox();
+            this.cmbViviendaAlquiladaCont = new System.Windows.Forms.ComboBox();
+            this.cmbViviendaHabitualCont = new System.Windows.Forms.ComboBox();
+            this.cmbDeshabitada3MesesAnoCont = new System.Windows.Forms.ComboBox();
             this.btnSIGUIENTEpnlMueblesInmContenido = new System.Windows.Forms.Button();
-            this.textBox84 = new System.Windows.Forms.TextBox();
-            this.textBox83 = new System.Windows.Forms.TextBox();
-            this.textBox39 = new System.Windows.Forms.TextBox();
-            this.textBox40 = new System.Windows.Forms.TextBox();
-            this.textBox41 = new System.Windows.Forms.TextBox();
-            this.textBox42 = new System.Windows.Forms.TextBox();
+            this.txtM2ViviendaCont = new System.Windows.Forms.TextBox();
+            this.txtValorMuebles = new System.Windows.Forms.TextBox();
+            this.txtDescripcionMueblesCont = new System.Windows.Forms.TextBox();
+            this.txtAnoConstruccionCont = new System.Windows.Forms.TextBox();
+            this.txtCodigoPostalCont = new System.Windows.Forms.TextBox();
+            this.txtSituacionCont = new System.Windows.Forms.TextBox();
+            this.txtPropietarioCont = new System.Windows.Forms.TextBox();
+            this.txtTipoViviendaCont = new System.Windows.Forms.TextBox();
             this.label61 = new System.Windows.Forms.Label();
             this.label115 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.label114 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
             this.label63 = new System.Windows.Forms.Label();
@@ -150,7 +160,7 @@
             this.label67 = new System.Windows.Forms.Label();
             this.label96 = new System.Windows.Forms.Label();
             this.lblCerrarInmContenido = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
+            this.lblSeguroContenido = new System.Windows.Forms.Label();
             this.pnlNegociosEmpresas = new System.Windows.Forms.Panel();
             this.picImagen5 = new System.Windows.Forms.PictureBox();
             this.picImagen1 = new System.Windows.Forms.PictureBox();
@@ -308,27 +318,29 @@
             this.pnlVEHSeguroVoluntario.BackColor = System.Drawing.Color.White;
             this.pnlVEHSeguroVoluntario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlVEHSeguroVoluntario.Controls.Add(this.btnSIGUIENTEpnlVEHSeguroVoluntario);
-            this.pnlVEHSeguroVoluntario.Controls.Add(this.textBox19);
-            this.pnlVEHSeguroVoluntario.Controls.Add(this.textBox20);
-            this.pnlVEHSeguroVoluntario.Controls.Add(this.textBox21);
-            this.pnlVEHSeguroVoluntario.Controls.Add(this.textBox22);
-            this.pnlVEHSeguroVoluntario.Controls.Add(this.textBox23);
-            this.pnlVEHSeguroVoluntario.Controls.Add(this.textBox24);
-            this.pnlVEHSeguroVoluntario.Controls.Add(this.textBox25);
+            this.pnlVEHSeguroVoluntario.Controls.Add(this.txtAnoVol);
+            this.pnlVEHSeguroVoluntario.Controls.Add(this.txtUsoVol);
+            this.pnlVEHSeguroVoluntario.Controls.Add(this.txtModeloVol);
+            this.pnlVEHSeguroVoluntario.Controls.Add(this.txtCategoriaVol);
+            this.pnlVEHSeguroVoluntario.Controls.Add(this.txtCarroceriaVol);
+            this.pnlVEHSeguroVoluntario.Controls.Add(this.txtCilindrosVol);
+            this.pnlVEHSeguroVoluntario.Controls.Add(this.txtMatriculaVol);
+            this.pnlVEHSeguroVoluntario.Controls.Add(this.txtMarcaVehiculoVol);
             this.pnlVEHSeguroVoluntario.Controls.Add(this.label33);
             this.pnlVEHSeguroVoluntario.Controls.Add(this.label35);
             this.pnlVEHSeguroVoluntario.Controls.Add(this.label36);
+            this.pnlVEHSeguroVoluntario.Controls.Add(this.label30);
             this.pnlVEHSeguroVoluntario.Controls.Add(this.label37);
             this.pnlVEHSeguroVoluntario.Controls.Add(this.label38);
             this.pnlVEHSeguroVoluntario.Controls.Add(this.label39);
             this.pnlVEHSeguroVoluntario.Controls.Add(this.label40);
             this.pnlVEHSeguroVoluntario.Controls.Add(this.label87);
             this.pnlVEHSeguroVoluntario.Controls.Add(this.lblCerrarSV);
-            this.pnlVEHSeguroVoluntario.Controls.Add(this.label41);
+            this.pnlVEHSeguroVoluntario.Controls.Add(this.lblSeguroVoluntario);
             this.pnlVEHSeguroVoluntario.Location = new System.Drawing.Point(482, 28);
             this.pnlVEHSeguroVoluntario.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlVEHSeguroVoluntario.Name = "pnlVEHSeguroVoluntario";
-            this.pnlVEHSeguroVoluntario.Size = new System.Drawing.Size(842, 411);
+            this.pnlVEHSeguroVoluntario.Size = new System.Drawing.Size(125, 411);
             this.pnlVEHSeguroVoluntario.TabIndex = 6;
             this.pnlVEHSeguroVoluntario.Visible = false;
             // 
@@ -339,7 +351,7 @@
             this.btnSIGUIENTEpnlVEHSeguroVoluntario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSIGUIENTEpnlVEHSeguroVoluntario.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSIGUIENTEpnlVEHSeguroVoluntario.ForeColor = System.Drawing.Color.Crimson;
-            this.btnSIGUIENTEpnlVEHSeguroVoluntario.Location = new System.Drawing.Point(633, 339);
+            this.btnSIGUIENTEpnlVEHSeguroVoluntario.Location = new System.Drawing.Point(671, 342);
             this.btnSIGUIENTEpnlVEHSeguroVoluntario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSIGUIENTEpnlVEHSeguroVoluntario.Name = "btnSIGUIENTEpnlVEHSeguroVoluntario";
             this.btnSIGUIENTEpnlVEHSeguroVoluntario.Size = new System.Drawing.Size(157, 49);
@@ -348,61 +360,69 @@
             this.btnSIGUIENTEpnlVEHSeguroVoluntario.UseVisualStyleBackColor = false;
             this.btnSIGUIENTEpnlVEHSeguroVoluntario.Click += new System.EventHandler(this.btnSIGUIENTEpnlVEHSeguroVoluntario_Click);
             // 
-            // textBox19
+            // txtAnoVol
             // 
-            this.textBox19.Location = new System.Drawing.Point(198, 347);
-            this.textBox19.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(200, 33);
-            this.textBox19.TabIndex = 41;
+            this.txtAnoVol.Location = new System.Drawing.Point(198, 347);
+            this.txtAnoVol.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtAnoVol.Name = "txtAnoVol";
+            this.txtAnoVol.Size = new System.Drawing.Size(200, 33);
+            this.txtAnoVol.TabIndex = 41;
             // 
-            // textBox20
+            // txtUsoVol
             // 
-            this.textBox20.Location = new System.Drawing.Point(198, 283);
-            this.textBox20.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(200, 33);
-            this.textBox20.TabIndex = 42;
+            this.txtUsoVol.Location = new System.Drawing.Point(198, 283);
+            this.txtUsoVol.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtUsoVol.Name = "txtUsoVol";
+            this.txtUsoVol.Size = new System.Drawing.Size(200, 33);
+            this.txtUsoVol.TabIndex = 42;
             // 
-            // textBox21
+            // txtModeloVol
             // 
-            this.textBox21.Location = new System.Drawing.Point(424, 220);
-            this.textBox21.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(217, 33);
-            this.textBox21.TabIndex = 43;
+            this.txtModeloVol.Location = new System.Drawing.Point(427, 220);
+            this.txtModeloVol.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtModeloVol.Name = "txtModeloVol";
+            this.txtModeloVol.Size = new System.Drawing.Size(217, 33);
+            this.txtModeloVol.TabIndex = 43;
             // 
-            // textBox22
+            // txtCategoriaVol
             // 
-            this.textBox22.Location = new System.Drawing.Point(424, 283);
-            this.textBox22.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(217, 33);
-            this.textBox22.TabIndex = 40;
+            this.txtCategoriaVol.Location = new System.Drawing.Point(424, 284);
+            this.txtCategoriaVol.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCategoriaVol.Name = "txtCategoriaVol";
+            this.txtCategoriaVol.Size = new System.Drawing.Size(217, 33);
+            this.txtCategoriaVol.TabIndex = 43;
             // 
-            // textBox23
+            // txtCarroceriaVol
             // 
-            this.textBox23.Location = new System.Drawing.Point(424, 157);
-            this.textBox23.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(217, 33);
-            this.textBox23.TabIndex = 39;
+            this.txtCarroceriaVol.Location = new System.Drawing.Point(424, 347);
+            this.txtCarroceriaVol.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCarroceriaVol.Name = "txtCarroceriaVol";
+            this.txtCarroceriaVol.Size = new System.Drawing.Size(217, 33);
+            this.txtCarroceriaVol.TabIndex = 40;
             // 
-            // textBox24
+            // txtCilindrosVol
             // 
-            this.textBox24.Location = new System.Drawing.Point(198, 220);
-            this.textBox24.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(200, 33);
-            this.textBox24.TabIndex = 38;
+            this.txtCilindrosVol.Location = new System.Drawing.Point(424, 157);
+            this.txtCilindrosVol.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCilindrosVol.Name = "txtCilindrosVol";
+            this.txtCilindrosVol.Size = new System.Drawing.Size(217, 33);
+            this.txtCilindrosVol.TabIndex = 39;
             // 
-            // textBox25
+            // txtMatriculaVol
             // 
-            this.textBox25.Location = new System.Drawing.Point(198, 157);
-            this.textBox25.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(200, 33);
-            this.textBox25.TabIndex = 29;
+            this.txtMatriculaVol.Location = new System.Drawing.Point(198, 220);
+            this.txtMatriculaVol.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtMatriculaVol.Name = "txtMatriculaVol";
+            this.txtMatriculaVol.Size = new System.Drawing.Size(200, 33);
+            this.txtMatriculaVol.TabIndex = 38;
+            // 
+            // txtMarcaVehiculoVol
+            // 
+            this.txtMarcaVehiculoVol.Location = new System.Drawing.Point(198, 157);
+            this.txtMarcaVehiculoVol.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtMarcaVehiculoVol.Name = "txtMarcaVehiculoVol";
+            this.txtMarcaVehiculoVol.Size = new System.Drawing.Size(200, 33);
+            this.txtMarcaVehiculoVol.TabIndex = 29;
             // 
             // label33
             // 
@@ -422,9 +442,9 @@
             this.label35.Location = new System.Drawing.Point(198, 320);
             this.label35.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(66, 24);
+            this.label35.Size = new System.Drawing.Size(57, 24);
             this.label35.TabIndex = 31;
-            this.label35.Text = "Nota:";
+            this.label35.Text = "Año:";
             // 
             // label36
             // 
@@ -437,11 +457,22 @@
             this.label36.TabIndex = 32;
             this.label36.Text = "Uso";
             // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.ForeColor = System.Drawing.Color.Firebrick;
+            this.label30.Location = new System.Drawing.Point(425, 193);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(95, 24);
+            this.label30.TabIndex = 33;
+            this.label30.Text = "Modelo:";
+            // 
             // label37
             // 
             this.label37.AutoSize = true;
             this.label37.ForeColor = System.Drawing.Color.Firebrick;
-            this.label37.Location = new System.Drawing.Point(422, 193);
+            this.label37.Location = new System.Drawing.Point(422, 257);
             this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(120, 24);
@@ -455,15 +486,15 @@
             this.label38.Location = new System.Drawing.Point(198, 193);
             this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(57, 24);
+            this.label38.Size = new System.Drawing.Size(112, 24);
             this.label38.TabIndex = 34;
-            this.label38.Text = "Año:";
+            this.label38.Text = "Matrícula:";
             // 
             // label39
             // 
             this.label39.AutoSize = true;
             this.label39.ForeColor = System.Drawing.Color.Firebrick;
-            this.label39.Location = new System.Drawing.Point(424, 256);
+            this.label39.Location = new System.Drawing.Point(424, 320);
             this.label39.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(125, 24);
@@ -505,17 +536,17 @@
             this.lblCerrarSV.Text = "X";
             this.lblCerrarSV.Click += new System.EventHandler(this.lblCerrarSV_Click);
             // 
-            // label41
+            // lblSeguroVoluntario
             // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.label41.ForeColor = System.Drawing.Color.Firebrick;
-            this.label41.Location = new System.Drawing.Point(297, 15);
-            this.label41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(217, 28);
-            this.label41.TabIndex = 0;
-            this.label41.Text = "Seguro Voluntario";
+            this.lblSeguroVoluntario.AutoSize = true;
+            this.lblSeguroVoluntario.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
+            this.lblSeguroVoluntario.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblSeguroVoluntario.Location = new System.Drawing.Point(297, 15);
+            this.lblSeguroVoluntario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSeguroVoluntario.Name = "lblSeguroVoluntario";
+            this.lblSeguroVoluntario.Size = new System.Drawing.Size(217, 28);
+            this.lblSeguroVoluntario.TabIndex = 0;
+            this.lblSeguroVoluntario.Text = "Seguro Voluntario";
             // 
             // btnVehiculo
             // 
@@ -654,30 +685,73 @@
             // 
             this.pnlVEHSeguroTodoRiesgo.BackColor = System.Drawing.Color.White;
             this.pnlVEHSeguroTodoRiesgo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.txtModeloTR);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label32);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label28);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label29);
             this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo);
-            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.textBox1);
-            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.textBox2);
-            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.textBox3);
-            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.textBox5);
-            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.textBox7);
-            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.textBox8);
-            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.textBox10);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.txtAnoTR);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.txtUsoTR);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.txtCategoriaTR);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.txtCarroceriaTR);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.txtCilindrosTR);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.txtMatriculaTR);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.txtMarcaVehiculoTR);
             this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label16);
-            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label17);
             this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label18);
             this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label19);
-            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label20);
             this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label21);
             this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label24);
             this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label78);
             this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.lblCerrarTodoRiesgo);
-            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label34);
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.lblSeguroTodoRiesgo);
             this.pnlVEHSeguroTodoRiesgo.Location = new System.Drawing.Point(482, 27);
             this.pnlVEHSeguroTodoRiesgo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlVEHSeguroTodoRiesgo.Name = "pnlVEHSeguroTodoRiesgo";
-            this.pnlVEHSeguroTodoRiesgo.Size = new System.Drawing.Size(842, 412);
+            this.pnlVEHSeguroTodoRiesgo.Size = new System.Drawing.Size(153, 412);
             this.pnlVEHSeguroTodoRiesgo.TabIndex = 6;
             this.pnlVEHSeguroTodoRiesgo.Visible = false;
+            // 
+            // txtModeloTR
+            // 
+            this.txtModeloTR.Location = new System.Drawing.Point(427, 221);
+            this.txtModeloTR.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtModeloTR.Name = "txtModeloTR";
+            this.txtModeloTR.Size = new System.Drawing.Size(217, 33);
+            this.txtModeloTR.TabIndex = 45;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.ForeColor = System.Drawing.Color.Firebrick;
+            this.label32.Location = new System.Drawing.Point(425, 194);
+            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(95, 24);
+            this.label32.TabIndex = 44;
+            this.label32.Text = "Modelo:";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.ForeColor = System.Drawing.Color.Firebrick;
+            this.label28.Location = new System.Drawing.Point(198, 322);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(57, 24);
+            this.label28.TabIndex = 35;
+            this.label28.Text = "Año:";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.ForeColor = System.Drawing.Color.Firebrick;
+            this.label29.Location = new System.Drawing.Point(198, 195);
+            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(112, 24);
+            this.label29.TabIndex = 36;
+            this.label29.Text = "Matrícula:";
             // 
             // btnSIGUIENTEpnlVEHSeguroTodoRiesgo
             // 
@@ -686,7 +760,7 @@
             this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.ForeColor = System.Drawing.Color.Crimson;
-            this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.Location = new System.Drawing.Point(633, 340);
+            this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.Location = new System.Drawing.Point(671, 339);
             this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.Name = "btnSIGUIENTEpnlVEHSeguroTodoRiesgo";
             this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.Size = new System.Drawing.Size(157, 49);
@@ -695,61 +769,61 @@
             this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.UseVisualStyleBackColor = false;
             this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.Click += new System.EventHandler(this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo_Click);
             // 
-            // textBox1
+            // txtAnoTR
             // 
-            this.textBox1.Location = new System.Drawing.Point(198, 348);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 33);
-            this.textBox1.TabIndex = 24;
+            this.txtAnoTR.Location = new System.Drawing.Point(198, 348);
+            this.txtAnoTR.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtAnoTR.Name = "txtAnoTR";
+            this.txtAnoTR.Size = new System.Drawing.Size(200, 33);
+            this.txtAnoTR.TabIndex = 24;
             // 
-            // textBox2
+            // txtUsoTR
             // 
-            this.textBox2.Location = new System.Drawing.Point(198, 284);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 33);
-            this.textBox2.TabIndex = 25;
+            this.txtUsoTR.Location = new System.Drawing.Point(198, 284);
+            this.txtUsoTR.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtUsoTR.Name = "txtUsoTR";
+            this.txtUsoTR.Size = new System.Drawing.Size(200, 33);
+            this.txtUsoTR.TabIndex = 25;
             // 
-            // textBox3
+            // txtCategoriaTR
             // 
-            this.textBox3.Location = new System.Drawing.Point(424, 221);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(217, 33);
-            this.textBox3.TabIndex = 26;
+            this.txtCategoriaTR.Location = new System.Drawing.Point(424, 285);
+            this.txtCategoriaTR.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCategoriaTR.Name = "txtCategoriaTR";
+            this.txtCategoriaTR.Size = new System.Drawing.Size(217, 33);
+            this.txtCategoriaTR.TabIndex = 26;
             // 
-            // textBox5
+            // txtCarroceriaTR
             // 
-            this.textBox5.Location = new System.Drawing.Point(424, 284);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(217, 33);
-            this.textBox5.TabIndex = 23;
+            this.txtCarroceriaTR.Location = new System.Drawing.Point(424, 348);
+            this.txtCarroceriaTR.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCarroceriaTR.Name = "txtCarroceriaTR";
+            this.txtCarroceriaTR.Size = new System.Drawing.Size(217, 33);
+            this.txtCarroceriaTR.TabIndex = 23;
             // 
-            // textBox7
+            // txtCilindrosTR
             // 
-            this.textBox7.Location = new System.Drawing.Point(424, 158);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(217, 33);
-            this.textBox7.TabIndex = 22;
+            this.txtCilindrosTR.Location = new System.Drawing.Point(424, 158);
+            this.txtCilindrosTR.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCilindrosTR.Name = "txtCilindrosTR";
+            this.txtCilindrosTR.Size = new System.Drawing.Size(217, 33);
+            this.txtCilindrosTR.TabIndex = 22;
             // 
-            // textBox8
+            // txtMatriculaTR
             // 
-            this.textBox8.Location = new System.Drawing.Point(198, 221);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(200, 33);
-            this.textBox8.TabIndex = 21;
+            this.txtMatriculaTR.Location = new System.Drawing.Point(198, 221);
+            this.txtMatriculaTR.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtMatriculaTR.Name = "txtMatriculaTR";
+            this.txtMatriculaTR.Size = new System.Drawing.Size(200, 33);
+            this.txtMatriculaTR.TabIndex = 21;
             // 
-            // textBox10
+            // txtMarcaVehiculoTR
             // 
-            this.textBox10.Location = new System.Drawing.Point(198, 158);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(200, 33);
-            this.textBox10.TabIndex = 12;
+            this.txtMarcaVehiculoTR.Location = new System.Drawing.Point(198, 158);
+            this.txtMarcaVehiculoTR.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtMarcaVehiculoTR.Name = "txtMarcaVehiculoTR";
+            this.txtMarcaVehiculoTR.Size = new System.Drawing.Size(200, 33);
+            this.txtMarcaVehiculoTR.TabIndex = 12;
             // 
             // label16
             // 
@@ -761,17 +835,6 @@
             this.label16.Size = new System.Drawing.Size(98, 24);
             this.label16.TabIndex = 13;
             this.label16.Text = "Cilindros:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.ForeColor = System.Drawing.Color.Firebrick;
-            this.label17.Location = new System.Drawing.Point(198, 321);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(66, 24);
-            this.label17.TabIndex = 14;
-            this.label17.Text = "Nota:";
             // 
             // label18
             // 
@@ -788,29 +851,18 @@
             // 
             this.label19.AutoSize = true;
             this.label19.ForeColor = System.Drawing.Color.Firebrick;
-            this.label19.Location = new System.Drawing.Point(422, 194);
+            this.label19.Location = new System.Drawing.Point(422, 258);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(120, 24);
             this.label19.TabIndex = 16;
             this.label19.Text = "Categoría:";
             // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.ForeColor = System.Drawing.Color.Firebrick;
-            this.label20.Location = new System.Drawing.Point(198, 194);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(57, 24);
-            this.label20.TabIndex = 17;
-            this.label20.Text = "Año:";
-            // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.ForeColor = System.Drawing.Color.Firebrick;
-            this.label21.Location = new System.Drawing.Point(424, 257);
+            this.label21.Location = new System.Drawing.Point(424, 321);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(125, 24);
@@ -852,46 +904,89 @@
             this.lblCerrarTodoRiesgo.Text = "X";
             this.lblCerrarTodoRiesgo.Click += new System.EventHandler(this.lblCerrarTodoRiesgo_Click);
             // 
-            // label34
+            // lblSeguroTodoRiesgo
             // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.label34.ForeColor = System.Drawing.Color.Firebrick;
-            this.label34.Location = new System.Drawing.Point(282, 16);
-            this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(239, 28);
-            this.label34.TabIndex = 0;
-            this.label34.Text = "Seguro Todo Riesgo";
+            this.lblSeguroTodoRiesgo.AutoSize = true;
+            this.lblSeguroTodoRiesgo.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
+            this.lblSeguroTodoRiesgo.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblSeguroTodoRiesgo.Location = new System.Drawing.Point(282, 16);
+            this.lblSeguroTodoRiesgo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSeguroTodoRiesgo.Name = "lblSeguroTodoRiesgo";
+            this.lblSeguroTodoRiesgo.Size = new System.Drawing.Size(239, 28);
+            this.lblSeguroTodoRiesgo.TabIndex = 0;
+            this.lblSeguroTodoRiesgo.Text = "Seguro Todo Riesgo";
             // 
             // pnlVEHSeguroObligatorio
             // 
             this.pnlVEHSeguroObligatorio.BackColor = System.Drawing.Color.White;
             this.pnlVEHSeguroObligatorio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.txtModeloObl);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.label34);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.label17);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.label20);
             this.pnlVEHSeguroObligatorio.Controls.Add(this.btnSiguientepnlVEHSeguroObligatorio);
             this.pnlVEHSeguroObligatorio.Controls.Add(this.lblCerrarSeguroOb);
-            this.pnlVEHSeguroObligatorio.Controls.Add(this.textBox11);
-            this.pnlVEHSeguroObligatorio.Controls.Add(this.textBox12);
-            this.pnlVEHSeguroObligatorio.Controls.Add(this.textBox14);
-            this.pnlVEHSeguroObligatorio.Controls.Add(this.textBox18);
-            this.pnlVEHSeguroObligatorio.Controls.Add(this.textBox26);
-            this.pnlVEHSeguroObligatorio.Controls.Add(this.textBox27);
-            this.pnlVEHSeguroObligatorio.Controls.Add(this.textBox28);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.txtAnoObl);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.txtUsoObl);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.txtCategoriaObl);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.txtCarroceriaObl);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.txtCilindrosObl);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.txtMatriculaObl);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.txtMarcaVehiculoObl);
             this.pnlVEHSeguroObligatorio.Controls.Add(this.label43);
-            this.pnlVEHSeguroObligatorio.Controls.Add(this.label44);
             this.pnlVEHSeguroObligatorio.Controls.Add(this.label45);
             this.pnlVEHSeguroObligatorio.Controls.Add(this.label46);
-            this.pnlVEHSeguroObligatorio.Controls.Add(this.label47);
             this.pnlVEHSeguroObligatorio.Controls.Add(this.label48);
             this.pnlVEHSeguroObligatorio.Controls.Add(this.label49);
             this.pnlVEHSeguroObligatorio.Controls.Add(this.label4);
-            this.pnlVEHSeguroObligatorio.Controls.Add(this.label50);
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.lblSeguroObligatorio);
             this.pnlVEHSeguroObligatorio.Location = new System.Drawing.Point(481, 26);
             this.pnlVEHSeguroObligatorio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlVEHSeguroObligatorio.Name = "pnlVEHSeguroObligatorio";
             this.pnlVEHSeguroObligatorio.Size = new System.Drawing.Size(843, 413);
             this.pnlVEHSeguroObligatorio.TabIndex = 6;
             this.pnlVEHSeguroObligatorio.Visible = false;
+            // 
+            // txtModeloObl
+            // 
+            this.txtModeloObl.Location = new System.Drawing.Point(408, 215);
+            this.txtModeloObl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtModeloObl.Name = "txtModeloObl";
+            this.txtModeloObl.Size = new System.Drawing.Size(217, 33);
+            this.txtModeloObl.TabIndex = 45;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.ForeColor = System.Drawing.Color.Firebrick;
+            this.label34.Location = new System.Drawing.Point(406, 188);
+            this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(95, 24);
+            this.label34.TabIndex = 44;
+            this.label34.Text = "Modelo:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.ForeColor = System.Drawing.Color.Firebrick;
+            this.label17.Location = new System.Drawing.Point(182, 317);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(57, 24);
+            this.label17.TabIndex = 35;
+            this.label17.Text = "Año:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.ForeColor = System.Drawing.Color.Firebrick;
+            this.label20.Location = new System.Drawing.Point(182, 190);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(112, 24);
+            this.label20.TabIndex = 36;
+            this.label20.Text = "Matrícula:";
             // 
             // btnSiguientepnlVEHSeguroObligatorio
             // 
@@ -900,7 +995,7 @@
             this.btnSiguientepnlVEHSeguroObligatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSiguientepnlVEHSeguroObligatorio.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSiguientepnlVEHSeguroObligatorio.ForeColor = System.Drawing.Color.Crimson;
-            this.btnSiguientepnlVEHSeguroObligatorio.Location = new System.Drawing.Point(617, 335);
+            this.btnSiguientepnlVEHSeguroObligatorio.Location = new System.Drawing.Point(663, 334);
             this.btnSiguientepnlVEHSeguroObligatorio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSiguientepnlVEHSeguroObligatorio.Name = "btnSiguientepnlVEHSeguroObligatorio";
             this.btnSiguientepnlVEHSeguroObligatorio.Size = new System.Drawing.Size(157, 49);
@@ -921,61 +1016,61 @@
             this.lblCerrarSeguroOb.Text = "X";
             this.lblCerrarSeguroOb.Click += new System.EventHandler(this.lblCerrarSeguroOb_Click);
             // 
-            // textBox11
+            // txtAnoObl
             // 
-            this.textBox11.Location = new System.Drawing.Point(182, 343);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(200, 33);
-            this.textBox11.TabIndex = 4;
+            this.txtAnoObl.Location = new System.Drawing.Point(182, 343);
+            this.txtAnoObl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtAnoObl.Name = "txtAnoObl";
+            this.txtAnoObl.Size = new System.Drawing.Size(200, 33);
+            this.txtAnoObl.TabIndex = 4;
             // 
-            // textBox12
+            // txtUsoObl
             // 
-            this.textBox12.Location = new System.Drawing.Point(182, 279);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(200, 33);
-            this.textBox12.TabIndex = 4;
+            this.txtUsoObl.Location = new System.Drawing.Point(182, 279);
+            this.txtUsoObl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtUsoObl.Name = "txtUsoObl";
+            this.txtUsoObl.Size = new System.Drawing.Size(200, 33);
+            this.txtUsoObl.TabIndex = 4;
             // 
-            // textBox14
+            // txtCategoriaObl
             // 
-            this.textBox14.Location = new System.Drawing.Point(408, 216);
-            this.textBox14.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(217, 33);
-            this.textBox14.TabIndex = 4;
+            this.txtCategoriaObl.Location = new System.Drawing.Point(408, 279);
+            this.txtCategoriaObl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCategoriaObl.Name = "txtCategoriaObl";
+            this.txtCategoriaObl.Size = new System.Drawing.Size(217, 33);
+            this.txtCategoriaObl.TabIndex = 4;
             // 
-            // textBox18
+            // txtCarroceriaObl
             // 
-            this.textBox18.Location = new System.Drawing.Point(408, 279);
-            this.textBox18.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(217, 33);
-            this.textBox18.TabIndex = 3;
+            this.txtCarroceriaObl.Location = new System.Drawing.Point(408, 342);
+            this.txtCarroceriaObl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCarroceriaObl.Name = "txtCarroceriaObl";
+            this.txtCarroceriaObl.Size = new System.Drawing.Size(217, 33);
+            this.txtCarroceriaObl.TabIndex = 3;
             // 
-            // textBox26
+            // txtCilindrosObl
             // 
-            this.textBox26.Location = new System.Drawing.Point(408, 153);
-            this.textBox26.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(217, 33);
-            this.textBox26.TabIndex = 2;
+            this.txtCilindrosObl.Location = new System.Drawing.Point(408, 153);
+            this.txtCilindrosObl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCilindrosObl.Name = "txtCilindrosObl";
+            this.txtCilindrosObl.Size = new System.Drawing.Size(217, 33);
+            this.txtCilindrosObl.TabIndex = 2;
             // 
-            // textBox27
+            // txtMatriculaObl
             // 
-            this.textBox27.Location = new System.Drawing.Point(182, 216);
-            this.textBox27.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(200, 33);
-            this.textBox27.TabIndex = 1;
+            this.txtMatriculaObl.Location = new System.Drawing.Point(182, 216);
+            this.txtMatriculaObl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtMatriculaObl.Name = "txtMatriculaObl";
+            this.txtMatriculaObl.Size = new System.Drawing.Size(200, 33);
+            this.txtMatriculaObl.TabIndex = 1;
             // 
-            // textBox28
+            // txtMarcaVehiculoObl
             // 
-            this.textBox28.Location = new System.Drawing.Point(182, 153);
-            this.textBox28.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(200, 33);
-            this.textBox28.TabIndex = 0;
+            this.txtMarcaVehiculoObl.Location = new System.Drawing.Point(182, 153);
+            this.txtMarcaVehiculoObl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtMarcaVehiculoObl.Name = "txtMarcaVehiculoObl";
+            this.txtMarcaVehiculoObl.Size = new System.Drawing.Size(200, 33);
+            this.txtMarcaVehiculoObl.TabIndex = 0;
             // 
             // label43
             // 
@@ -987,17 +1082,6 @@
             this.label43.Size = new System.Drawing.Size(98, 24);
             this.label43.TabIndex = 0;
             this.label43.Text = "Cilindros:";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.ForeColor = System.Drawing.Color.Firebrick;
-            this.label44.Location = new System.Drawing.Point(182, 316);
-            this.label44.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(66, 24);
-            this.label44.TabIndex = 0;
-            this.label44.Text = "Nota:";
             // 
             // label45
             // 
@@ -1014,29 +1098,18 @@
             // 
             this.label46.AutoSize = true;
             this.label46.ForeColor = System.Drawing.Color.Firebrick;
-            this.label46.Location = new System.Drawing.Point(406, 189);
+            this.label46.Location = new System.Drawing.Point(406, 252);
             this.label46.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(120, 24);
             this.label46.TabIndex = 0;
             this.label46.Text = "Categoría:";
             // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.ForeColor = System.Drawing.Color.Firebrick;
-            this.label47.Location = new System.Drawing.Point(182, 189);
-            this.label47.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(57, 24);
-            this.label47.TabIndex = 0;
-            this.label47.Text = "Año:";
-            // 
             // label48
             // 
             this.label48.AutoSize = true;
             this.label48.ForeColor = System.Drawing.Color.Firebrick;
-            this.label48.Location = new System.Drawing.Point(408, 252);
+            this.label48.Location = new System.Drawing.Point(408, 315);
             this.label48.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(125, 24);
@@ -1066,17 +1139,17 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Complete el formulario para continuar";
             // 
-            // label50
+            // lblSeguroObligatorio
             // 
-            this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.ForeColor = System.Drawing.Color.Firebrick;
-            this.label50.Location = new System.Drawing.Point(268, 13);
-            this.label50.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(230, 28);
-            this.label50.TabIndex = 0;
-            this.label50.Text = "Seguro Obligatorio";
+            this.lblSeguroObligatorio.AutoSize = true;
+            this.lblSeguroObligatorio.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeguroObligatorio.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblSeguroObligatorio.Location = new System.Drawing.Point(268, 13);
+            this.lblSeguroObligatorio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSeguroObligatorio.Name = "lblSeguroObligatorio";
+            this.lblSeguroObligatorio.Size = new System.Drawing.Size(230, 28);
+            this.lblSeguroObligatorio.TabIndex = 0;
+            this.lblSeguroObligatorio.Text = "Seguro Obligatorio";
             // 
             // pnlMueblesInmEdificaciones
             // 
@@ -1111,7 +1184,7 @@
             this.pnlMueblesInmEdificaciones.Location = new System.Drawing.Point(482, 28);
             this.pnlMueblesInmEdificaciones.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlMueblesInmEdificaciones.Name = "pnlMueblesInmEdificaciones";
-            this.pnlMueblesInmEdificaciones.Size = new System.Drawing.Size(835, 513);
+            this.pnlMueblesInmEdificaciones.Size = new System.Drawing.Size(59, 513);
             this.pnlMueblesInmEdificaciones.TabIndex = 6;
             this.pnlMueblesInmEdificaciones.Visible = false;
             // 
@@ -1399,18 +1472,22 @@
             // 
             this.pnlMueblesInmContenido.BackColor = System.Drawing.Color.White;
             this.pnlMueblesInmContenido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlMueblesInmContenido.Controls.Add(this.comboBox5);
-            this.pnlMueblesInmContenido.Controls.Add(this.comboBox4);
-            this.pnlMueblesInmContenido.Controls.Add(this.cmbSiNo);
+            this.pnlMueblesInmContenido.Controls.Add(this.cmbViviendaAlquiladaCont);
+            this.pnlMueblesInmContenido.Controls.Add(this.cmbViviendaHabitualCont);
+            this.pnlMueblesInmContenido.Controls.Add(this.cmbDeshabitada3MesesAnoCont);
             this.pnlMueblesInmContenido.Controls.Add(this.btnSIGUIENTEpnlMueblesInmContenido);
-            this.pnlMueblesInmContenido.Controls.Add(this.textBox84);
-            this.pnlMueblesInmContenido.Controls.Add(this.textBox83);
-            this.pnlMueblesInmContenido.Controls.Add(this.textBox39);
-            this.pnlMueblesInmContenido.Controls.Add(this.textBox40);
-            this.pnlMueblesInmContenido.Controls.Add(this.textBox41);
-            this.pnlMueblesInmContenido.Controls.Add(this.textBox42);
+            this.pnlMueblesInmContenido.Controls.Add(this.txtM2ViviendaCont);
+            this.pnlMueblesInmContenido.Controls.Add(this.txtValorMuebles);
+            this.pnlMueblesInmContenido.Controls.Add(this.txtDescripcionMueblesCont);
+            this.pnlMueblesInmContenido.Controls.Add(this.txtAnoConstruccionCont);
+            this.pnlMueblesInmContenido.Controls.Add(this.txtCodigoPostalCont);
+            this.pnlMueblesInmContenido.Controls.Add(this.txtSituacionCont);
+            this.pnlMueblesInmContenido.Controls.Add(this.txtPropietarioCont);
+            this.pnlMueblesInmContenido.Controls.Add(this.txtTipoViviendaCont);
             this.pnlMueblesInmContenido.Controls.Add(this.label61);
             this.pnlMueblesInmContenido.Controls.Add(this.label115);
+            this.pnlMueblesInmContenido.Controls.Add(this.label27);
+            this.pnlMueblesInmContenido.Controls.Add(this.label26);
             this.pnlMueblesInmContenido.Controls.Add(this.label114);
             this.pnlMueblesInmContenido.Controls.Add(this.label62);
             this.pnlMueblesInmContenido.Controls.Add(this.label63);
@@ -1420,52 +1497,52 @@
             this.pnlMueblesInmContenido.Controls.Add(this.label67);
             this.pnlMueblesInmContenido.Controls.Add(this.label96);
             this.pnlMueblesInmContenido.Controls.Add(this.lblCerrarInmContenido);
-            this.pnlMueblesInmContenido.Controls.Add(this.label68);
+            this.pnlMueblesInmContenido.Controls.Add(this.lblSeguroContenido);
             this.pnlMueblesInmContenido.Location = new System.Drawing.Point(481, 28);
             this.pnlMueblesInmContenido.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlMueblesInmContenido.Name = "pnlMueblesInmContenido";
-            this.pnlMueblesInmContenido.Size = new System.Drawing.Size(843, 464);
+            this.pnlMueblesInmContenido.Size = new System.Drawing.Size(95, 513);
             this.pnlMueblesInmContenido.TabIndex = 6;
             this.pnlMueblesInmContenido.Visible = false;
             // 
-            // comboBox5
+            // cmbViviendaAlquiladaCont
             // 
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
+            this.cmbViviendaAlquiladaCont.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbViviendaAlquiladaCont.FormattingEnabled = true;
+            this.cmbViviendaAlquiladaCont.Items.AddRange(new object[] {
             "Sí",
             "No"});
-            this.comboBox5.Location = new System.Drawing.Point(514, 248);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboBox5.Size = new System.Drawing.Size(216, 32);
-            this.comboBox5.TabIndex = 63;
+            this.cmbViviendaAlquiladaCont.Location = new System.Drawing.Point(514, 248);
+            this.cmbViviendaAlquiladaCont.Name = "cmbViviendaAlquiladaCont";
+            this.cmbViviendaAlquiladaCont.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmbViviendaAlquiladaCont.Size = new System.Drawing.Size(216, 32);
+            this.cmbViviendaAlquiladaCont.TabIndex = 63;
             // 
-            // comboBox4
+            // cmbViviendaHabitualCont
             // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.cmbViviendaHabitualCont.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbViviendaHabitualCont.FormattingEnabled = true;
+            this.cmbViviendaHabitualCont.Items.AddRange(new object[] {
             "Sí",
             "No"});
-            this.comboBox4.Location = new System.Drawing.Point(297, 248);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboBox4.Size = new System.Drawing.Size(187, 32);
-            this.comboBox4.TabIndex = 63;
+            this.cmbViviendaHabitualCont.Location = new System.Drawing.Point(297, 248);
+            this.cmbViviendaHabitualCont.Name = "cmbViviendaHabitualCont";
+            this.cmbViviendaHabitualCont.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmbViviendaHabitualCont.Size = new System.Drawing.Size(187, 32);
+            this.cmbViviendaHabitualCont.TabIndex = 63;
             // 
-            // cmbSiNo
+            // cmbDeshabitada3MesesAnoCont
             // 
-            this.cmbSiNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSiNo.FormattingEnabled = true;
-            this.cmbSiNo.Items.AddRange(new object[] {
+            this.cmbDeshabitada3MesesAnoCont.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDeshabitada3MesesAnoCont.FormattingEnabled = true;
+            this.cmbDeshabitada3MesesAnoCont.Items.AddRange(new object[] {
             "Sí",
             "No"});
-            this.cmbSiNo.Location = new System.Drawing.Point(474, 342);
-            this.cmbSiNo.Name = "cmbSiNo";
-            this.cmbSiNo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmbSiNo.Size = new System.Drawing.Size(194, 32);
-            this.cmbSiNo.TabIndex = 63;
+            this.cmbDeshabitada3MesesAnoCont.Location = new System.Drawing.Point(474, 342);
+            this.cmbDeshabitada3MesesAnoCont.Name = "cmbDeshabitada3MesesAnoCont";
+            this.cmbDeshabitada3MesesAnoCont.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmbDeshabitada3MesesAnoCont.Size = new System.Drawing.Size(194, 32);
+            this.cmbDeshabitada3MesesAnoCont.TabIndex = 63;
             // 
             // btnSIGUIENTEpnlMueblesInmContenido
             // 
@@ -1474,7 +1551,7 @@
             this.btnSIGUIENTEpnlMueblesInmContenido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSIGUIENTEpnlMueblesInmContenido.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSIGUIENTEpnlMueblesInmContenido.ForeColor = System.Drawing.Color.Crimson;
-            this.btnSIGUIENTEpnlMueblesInmContenido.Location = new System.Drawing.Point(645, 398);
+            this.btnSIGUIENTEpnlMueblesInmContenido.Location = new System.Drawing.Point(652, 455);
             this.btnSIGUIENTEpnlMueblesInmContenido.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSIGUIENTEpnlMueblesInmContenido.Name = "btnSIGUIENTEpnlMueblesInmContenido";
             this.btnSIGUIENTEpnlMueblesInmContenido.Size = new System.Drawing.Size(157, 49);
@@ -1483,53 +1560,75 @@
             this.btnSIGUIENTEpnlMueblesInmContenido.UseVisualStyleBackColor = false;
             this.btnSIGUIENTEpnlMueblesInmContenido.Click += new System.EventHandler(this.btnSIGUIENTEpnlMueblesInmContenido_Click);
             // 
-            // textBox84
+            // txtM2ViviendaCont
             // 
-            this.textBox84.Location = new System.Drawing.Point(269, 342);
-            this.textBox84.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox84.Name = "textBox84";
-            this.textBox84.Size = new System.Drawing.Size(177, 33);
-            this.textBox84.TabIndex = 59;
+            this.txtM2ViviendaCont.Location = new System.Drawing.Point(269, 342);
+            this.txtM2ViviendaCont.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtM2ViviendaCont.Name = "txtM2ViviendaCont";
+            this.txtM2ViviendaCont.Size = new System.Drawing.Size(177, 33);
+            this.txtM2ViviendaCont.TabIndex = 59;
+            this.txtM2ViviendaCont.TextChanged += new System.EventHandler(this.txtM2ViviendaCont_TextChanged);
             // 
-            // textBox83
+            // txtValorMuebles
             // 
-            this.textBox83.Location = new System.Drawing.Point(61, 342);
-            this.textBox83.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox83.Name = "textBox83";
-            this.textBox83.Size = new System.Drawing.Size(200, 33);
-            this.textBox83.TabIndex = 59;
+            this.txtValorMuebles.Location = new System.Drawing.Point(481, 414);
+            this.txtValorMuebles.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtValorMuebles.Name = "txtValorMuebles";
+            this.txtValorMuebles.Size = new System.Drawing.Size(199, 33);
+            this.txtValorMuebles.TabIndex = 59;
+            this.txtValorMuebles.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtValorMuebles.TextChanged += new System.EventHandler(this.txtValorMuebles_TextChanged);
             // 
-            // textBox39
+            // txtDescripcionMueblesCont
             // 
-            this.textBox39.Location = new System.Drawing.Point(67, 248);
-            this.textBox39.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox39.Name = "textBox39";
-            this.textBox39.Size = new System.Drawing.Size(217, 33);
-            this.textBox39.TabIndex = 58;
+            this.txtDescripcionMueblesCont.Location = new System.Drawing.Point(67, 414);
+            this.txtDescripcionMueblesCont.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtDescripcionMueblesCont.Multiline = true;
+            this.txtDescripcionMueblesCont.Name = "txtDescripcionMueblesCont";
+            this.txtDescripcionMueblesCont.Size = new System.Drawing.Size(379, 90);
+            this.txtDescripcionMueblesCont.TabIndex = 59;
             // 
-            // textBox40
+            // txtAnoConstruccionCont
             // 
-            this.textBox40.Location = new System.Drawing.Point(286, 159);
-            this.textBox40.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox40.Name = "textBox40";
-            this.textBox40.Size = new System.Drawing.Size(217, 33);
-            this.textBox40.TabIndex = 57;
+            this.txtAnoConstruccionCont.Location = new System.Drawing.Point(61, 342);
+            this.txtAnoConstruccionCont.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtAnoConstruccionCont.Name = "txtAnoConstruccionCont";
+            this.txtAnoConstruccionCont.Size = new System.Drawing.Size(200, 33);
+            this.txtAnoConstruccionCont.TabIndex = 59;
+            this.txtAnoConstruccionCont.TextChanged += new System.EventHandler(this.txtAnoConstruccionCont_TextChanged);
             // 
-            // textBox41
+            // txtCodigoPostalCont
             // 
-            this.textBox41.Location = new System.Drawing.Point(509, 159);
-            this.textBox41.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox41.Name = "textBox41";
-            this.textBox41.Size = new System.Drawing.Size(200, 33);
-            this.textBox41.TabIndex = 56;
+            this.txtCodigoPostalCont.Location = new System.Drawing.Point(67, 248);
+            this.txtCodigoPostalCont.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCodigoPostalCont.Name = "txtCodigoPostalCont";
+            this.txtCodigoPostalCont.Size = new System.Drawing.Size(217, 33);
+            this.txtCodigoPostalCont.TabIndex = 58;
+            this.txtCodigoPostalCont.TextChanged += new System.EventHandler(this.txtCodigoPostalCont_TextChanged);
             // 
-            // textBox42
+            // txtSituacionCont
             // 
-            this.textBox42.Location = new System.Drawing.Point(67, 159);
-            this.textBox42.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox42.Name = "textBox42";
-            this.textBox42.Size = new System.Drawing.Size(200, 33);
-            this.textBox42.TabIndex = 47;
+            this.txtSituacionCont.Location = new System.Drawing.Point(286, 159);
+            this.txtSituacionCont.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtSituacionCont.Name = "txtSituacionCont";
+            this.txtSituacionCont.Size = new System.Drawing.Size(217, 33);
+            this.txtSituacionCont.TabIndex = 57;
+            // 
+            // txtPropietarioCont
+            // 
+            this.txtPropietarioCont.Location = new System.Drawing.Point(509, 159);
+            this.txtPropietarioCont.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtPropietarioCont.Name = "txtPropietarioCont";
+            this.txtPropietarioCont.Size = new System.Drawing.Size(200, 33);
+            this.txtPropietarioCont.TabIndex = 56;
+            // 
+            // txtTipoViviendaCont
+            // 
+            this.txtTipoViviendaCont.Location = new System.Drawing.Point(67, 159);
+            this.txtTipoViviendaCont.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtTipoViviendaCont.Name = "txtTipoViviendaCont";
+            this.txtTipoViviendaCont.Size = new System.Drawing.Size(200, 33);
+            this.txtTipoViviendaCont.TabIndex = 47;
             // 
             // label61
             // 
@@ -1552,6 +1651,28 @@
             this.label115.Size = new System.Drawing.Size(195, 48);
             this.label115.TabIndex = 49;
             this.label115.Text = "Metros cuadrados\r\nde la Vivienda:";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.ForeColor = System.Drawing.Color.Firebrick;
+            this.label27.Location = new System.Drawing.Point(457, 387);
+            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(299, 24);
+            this.label27.TabIndex = 49;
+            this.label27.Text = "Valor estimado de muebles:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.ForeColor = System.Drawing.Color.Firebrick;
+            this.label26.Location = new System.Drawing.Point(63, 387);
+            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(261, 24);
+            this.label26.TabIndex = 49;
+            this.label26.Text = "Descripcion de Muebles:";
             // 
             // label114
             // 
@@ -1654,17 +1775,17 @@
             this.lblCerrarInmContenido.Text = "X";
             this.lblCerrarInmContenido.Click += new System.EventHandler(this.lblCerrarInmContenido_Click);
             // 
-            // label68
+            // lblSeguroContenido
             // 
-            this.label68.AutoSize = true;
-            this.label68.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.label68.ForeColor = System.Drawing.Color.Firebrick;
-            this.label68.Location = new System.Drawing.Point(278, 8);
-            this.label68.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(220, 28);
-            this.label68.TabIndex = 0;
-            this.label68.Text = "Seguro Contenido";
+            this.lblSeguroContenido.AutoSize = true;
+            this.lblSeguroContenido.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
+            this.lblSeguroContenido.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblSeguroContenido.Location = new System.Drawing.Point(278, 8);
+            this.lblSeguroContenido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSeguroContenido.Name = "lblSeguroContenido";
+            this.lblSeguroContenido.Size = new System.Drawing.Size(220, 28);
+            this.lblSeguroContenido.TabIndex = 0;
+            this.lblSeguroContenido.Text = "Seguro Contenido";
             // 
             // pnlNegociosEmpresas
             // 
@@ -2072,7 +2193,7 @@
             this.pnlInmuebles.Controls.Add(this.btnInmContenido);
             this.pnlInmuebles.Location = new System.Drawing.Point(664, 148);
             this.pnlInmuebles.Name = "pnlInmuebles";
-            this.pnlInmuebles.Size = new System.Drawing.Size(592, 272);
+            this.pnlInmuebles.Size = new System.Drawing.Size(584, 272);
             this.pnlInmuebles.TabIndex = 9;
             this.pnlInmuebles.Visible = false;
             // 
@@ -2146,6 +2267,7 @@
             this.chkSoloId.TabIndex = 108;
             this.chkSoloId.Text = "solo Id";
             this.chkSoloId.UseVisualStyleBackColor = false;
+            this.chkSoloId.CheckedChanged += new System.EventHandler(this.chkSoloId_CheckedChanged);
             // 
             // lblCerrar
             // 
@@ -2192,6 +2314,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(249, 33);
             this.txtBuscar.TabIndex = 103;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // label5
             // 
@@ -2540,9 +2663,9 @@
             // 
             this.pnlPicImagen.Controls.Add(this.lblCerrarPicPreview);
             this.pnlPicImagen.Controls.Add(this.picPreviewImg);
-            this.pnlPicImagen.Location = new System.Drawing.Point(21, 103);
+            this.pnlPicImagen.Location = new System.Drawing.Point(21, 100);
             this.pnlPicImagen.Name = "pnlPicImagen";
-            this.pnlPicImagen.Size = new System.Drawing.Size(459, 586);
+            this.pnlPicImagen.Size = new System.Drawing.Size(459, 589);
             this.pnlPicImagen.TabIndex = 108;
             this.pnlPicImagen.Visible = false;
             // 
@@ -2628,7 +2751,7 @@
         private System.Windows.Forms.Label lblCedula;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel pnlVEHSeguroVoluntario;
-        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label lblSeguroVoluntario;
         private System.Windows.Forms.Button btnVehiculo;
         private System.Windows.Forms.Button btnMueblesEInmuebles;
         private System.Windows.Forms.Button btnNegocioEmpresa;
@@ -2641,30 +2764,28 @@
         private System.Windows.Forms.Label lblCerrarSV;
         private System.Windows.Forms.Panel pnlVEHSeguroTodoRiesgo;
         private System.Windows.Forms.Label lblCerrarTodoRiesgo;
-        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label lblSeguroTodoRiesgo;
         private System.Windows.Forms.Panel pnlVEHSeguroObligatorio;
         private System.Windows.Forms.Label lblCerrarSeguroOb;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.TextBox textBox28;
+        private System.Windows.Forms.TextBox txtAnoObl;
+        private System.Windows.Forms.TextBox txtUsoObl;
+        private System.Windows.Forms.TextBox txtCategoriaObl;
+        private System.Windows.Forms.TextBox txtCarroceriaObl;
+        private System.Windows.Forms.TextBox txtCilindrosObl;
+        private System.Windows.Forms.TextBox txtMatriculaObl;
+        private System.Windows.Forms.TextBox txtMarcaVehiculoObl;
         private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label lblSeguroObligatorio;
         private System.Windows.Forms.Panel pnlMueblesInmEdificaciones;
         private System.Windows.Forms.Label lblCerrarSegInmEdif;
         private System.Windows.Forms.Label lblEdificaciones;
         private System.Windows.Forms.Panel pnlMueblesInmContenido;
         private System.Windows.Forms.Label lblCerrarInmContenido;
-        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Label lblSeguroContenido;
         private System.Windows.Forms.Panel pnlNegociosEmpresas;
         private System.Windows.Forms.Label lblCerrarNegocioEmp;
         private System.Windows.Forms.Label lblSeguroNEmpresa;
@@ -2675,29 +2796,27 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSiguientepnlVEHSeguroObligatorio;
         private System.Windows.Forms.Button btnSIGUIENTEpnlVEHSeguroTodoRiesgo;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtAnoTR;
+        private System.Windows.Forms.TextBox txtUsoTR;
+        private System.Windows.Forms.TextBox txtCategoriaTR;
+        private System.Windows.Forms.TextBox txtCarroceriaTR;
+        private System.Windows.Forms.TextBox txtCilindrosTR;
+        private System.Windows.Forms.TextBox txtMatriculaTR;
+        private System.Windows.Forms.TextBox txtMarcaVehiculoTR;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label78;
         private System.Windows.Forms.Button btnSIGUIENTEpnlVEHSeguroVoluntario;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.TextBox txtAnoVol;
+        private System.Windows.Forms.TextBox txtUsoVol;
+        private System.Windows.Forms.TextBox txtCategoriaVol;
+        private System.Windows.Forms.TextBox txtCarroceriaVol;
+        private System.Windows.Forms.TextBox txtCilindrosVol;
+        private System.Windows.Forms.TextBox txtMatriculaVol;
+        private System.Windows.Forms.TextBox txtMarcaVehiculoVol;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label36;
@@ -2707,12 +2826,12 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label87;
         private System.Windows.Forms.Button btnSIGUIENTEpnlMueblesInmContenido;
-        private System.Windows.Forms.TextBox textBox84;
-        private System.Windows.Forms.TextBox textBox83;
-        private System.Windows.Forms.TextBox textBox39;
-        private System.Windows.Forms.TextBox textBox40;
-        private System.Windows.Forms.TextBox textBox41;
-        private System.Windows.Forms.TextBox textBox42;
+        private System.Windows.Forms.TextBox txtM2ViviendaCont;
+        private System.Windows.Forms.TextBox txtAnoConstruccionCont;
+        private System.Windows.Forms.TextBox txtCodigoPostalCont;
+        private System.Windows.Forms.TextBox txtSituacionCont;
+        private System.Windows.Forms.TextBox txtPropietarioCont;
+        private System.Windows.Forms.TextBox txtTipoViviendaCont;
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.Label label115;
         private System.Windows.Forms.Label label114;
@@ -2723,9 +2842,9 @@
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.Label label96;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox cmbSiNo;
+        private System.Windows.Forms.ComboBox cmbViviendaAlquiladaCont;
+        private System.Windows.Forms.ComboBox cmbViviendaHabitualCont;
+        private System.Windows.Forms.ComboBox cmbDeshabitada3MesesAnoCont;
         private System.Windows.Forms.ComboBox cmbViviendaAlquilada;
         private System.Windows.Forms.ComboBox cmbViviendaHabitual;
         private System.Windows.Forms.ComboBox cmbDeshabitada3MesesAno;
@@ -2814,5 +2933,19 @@
         private System.Windows.Forms.Button btnVERCopiaCedulaPresidente_RepresAut;
         private System.Windows.Forms.Button btnVERCopiaActaAsignacionRNC;
         private System.Windows.Forms.PictureBox picImagen1;
+        private System.Windows.Forms.TextBox txtValorMuebles;
+        private System.Windows.Forms.TextBox txtDescripcionMueblesCont;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtModeloVol;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox txtModeloTR;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox txtModeloObl;
+        private System.Windows.Forms.Label label34;
     }
 }

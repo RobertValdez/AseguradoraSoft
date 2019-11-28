@@ -52,6 +52,7 @@
     <Compile Include="SeguroVida\E_SeguroVida.cs" />
     <Compile Include="Siniestro\E_Siniestro.cs" />
     <Compile Include="Usuarios\E_Usuarios.cs" />
+    <Compile Include="Vehiculo\E_Vehiculo.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

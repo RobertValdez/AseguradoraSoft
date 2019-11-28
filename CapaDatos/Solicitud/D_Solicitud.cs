@@ -38,5 +38,59 @@ namespace CapaDatos.Solicitud
             int rsp = Convert.ToInt32(cmd.ExecuteScalar());
             return rsp;
         }
+
+        public int D_Cargar_id_detalleSeguroContenido()
+        {
+            SqlConnection strcon = new SqlConnection();
+            strcon.ConnectionString = Conexion.Conexion.SqlConex;
+            strcon.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = strcon;
+            cmd.CommandText = "CargarId_detalleSeguroContenido";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            int rsp = Convert.ToInt32(cmd.ExecuteScalar());
+            return rsp;
+        }
+        public int D_Cargar_id_detalleSeguroVehiculoVoluntario()
+        {
+            SqlConnection strcon = new SqlConnection();
+            strcon.ConnectionString = Conexion.Conexion.SqlConex;
+            strcon.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = strcon;
+            cmd.CommandText = "CargarId_detalleSeguroVoluntario";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            int rsp = Convert.ToInt32(cmd.ExecuteScalar());
+            return rsp;
+        }
+
+        public int D_Cargar_id_detalleSeguroVehiculoTodoRiesgo()
+        {
+            SqlConnection strcon = new SqlConnection();
+            strcon.ConnectionString = Conexion.Conexion.SqlConex;
+            strcon.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = strcon;
+            cmd.CommandText = "CargarId_detalleSeguroTodoRiesgo";
+            cmd.CommandType = CommandType.StoredProcedure;
+            
+            int rsp = Convert.ToInt32(cmd.ExecuteScalar());
+            return rsp;
+        }
+        public int D_Cargar_id_detalleSeguroVehiculoObligatorio()
+        {
+            SqlConnection strcon = new SqlConnection();
+            strcon.ConnectionString = Conexion.Conexion.SqlConex;
+            strcon.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = strcon;
+            cmd.CommandText = "CargarId_detalleSeguroObligatorio";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            int rsp = Convert.ToInt32(cmd.ExecuteScalar());
+            return rsp;
+        }
     }
 }
