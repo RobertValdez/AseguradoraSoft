@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvEmpleados = new System.Windows.Forms.DataGridView();
+            this.dgvMostrarSolicitudes = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnCrearCuenta = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAprobarSolicitud = new System.Windows.Forms.Button();
+            this.btnRechazarSolicitud = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,21 +41,21 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarSolicitudes)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvEmpleados
+            // dgvMostrarSolicitudes
             // 
-            this.dgvEmpleados.AllowUserToAddRows = false;
-            this.dgvEmpleados.AllowUserToDeleteRows = false;
-            this.dgvEmpleados.BackgroundColor = System.Drawing.Color.LightPink;
-            this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Location = new System.Drawing.Point(20, 146);
-            this.dgvEmpleados.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.dgvEmpleados.Name = "dgvEmpleados";
-            this.dgvEmpleados.ReadOnly = true;
-            this.dgvEmpleados.Size = new System.Drawing.Size(895, 481);
-            this.dgvEmpleados.TabIndex = 26;
+            this.dgvMostrarSolicitudes.AllowUserToAddRows = false;
+            this.dgvMostrarSolicitudes.AllowUserToDeleteRows = false;
+            this.dgvMostrarSolicitudes.BackgroundColor = System.Drawing.Color.LightPink;
+            this.dgvMostrarSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMostrarSolicitudes.Location = new System.Drawing.Point(20, 146);
+            this.dgvMostrarSolicitudes.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.dgvMostrarSolicitudes.Name = "dgvMostrarSolicitudes";
+            this.dgvMostrarSolicitudes.ReadOnly = true;
+            this.dgvMostrarSolicitudes.Size = new System.Drawing.Size(895, 481);
+            this.dgvMostrarSolicitudes.TabIndex = 26;
             // 
             // label10
             // 
@@ -82,35 +82,35 @@
             this.comboBox1.Size = new System.Drawing.Size(384, 32);
             this.comboBox1.TabIndex = 29;
             // 
-            // btnCrearCuenta
+            // btnAprobarSolicitud
             // 
-            this.btnCrearCuenta.BackColor = System.Drawing.Color.Crimson;
-            this.btnCrearCuenta.FlatAppearance.BorderSize = 0;
-            this.btnCrearCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrearCuenta.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnCrearCuenta.ForeColor = System.Drawing.Color.White;
-            this.btnCrearCuenta.Location = new System.Drawing.Point(924, 201);
-            this.btnCrearCuenta.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnCrearCuenta.Name = "btnCrearCuenta";
-            this.btnCrearCuenta.Size = new System.Drawing.Size(199, 57);
-            this.btnCrearCuenta.TabIndex = 30;
-            this.btnCrearCuenta.Text = "Aprobar solicitud";
-            this.btnCrearCuenta.UseVisualStyleBackColor = false;
+            this.btnAprobarSolicitud.BackColor = System.Drawing.Color.Crimson;
+            this.btnAprobarSolicitud.FlatAppearance.BorderSize = 0;
+            this.btnAprobarSolicitud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAprobarSolicitud.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnAprobarSolicitud.ForeColor = System.Drawing.Color.White;
+            this.btnAprobarSolicitud.Location = new System.Drawing.Point(924, 201);
+            this.btnAprobarSolicitud.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnAprobarSolicitud.Name = "btnAprobarSolicitud";
+            this.btnAprobarSolicitud.Size = new System.Drawing.Size(199, 57);
+            this.btnAprobarSolicitud.TabIndex = 30;
+            this.btnAprobarSolicitud.Text = "Aprobar solicitud";
+            this.btnAprobarSolicitud.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnRechazarSolicitud
             // 
-            this.button1.BackColor = System.Drawing.Color.Crimson;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(924, 281);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(199, 57);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "Rechazar solicitud";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnRechazarSolicitud.BackColor = System.Drawing.Color.Crimson;
+            this.btnRechazarSolicitud.FlatAppearance.BorderSize = 0;
+            this.btnRechazarSolicitud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRechazarSolicitud.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRechazarSolicitud.ForeColor = System.Drawing.Color.White;
+            this.btnRechazarSolicitud.Location = new System.Drawing.Point(924, 281);
+            this.btnRechazarSolicitud.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnRechazarSolicitud.Name = "btnRechazarSolicitud";
+            this.btnRechazarSolicitud.Size = new System.Drawing.Size(199, 57);
+            this.btnRechazarSolicitud.TabIndex = 30;
+            this.btnRechazarSolicitud.Text = "Rechazar solicitud";
+            this.btnRechazarSolicitud.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
@@ -209,10 +209,10 @@
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnCrearCuenta);
+            this.Controls.Add(this.btnRechazarSolicitud);
+            this.Controls.Add(this.btnAprobarSolicitud);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dgvEmpleados);
+            this.Controls.Add(this.dgvMostrarSolicitudes);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -224,18 +224,19 @@
             this.MaximizeBox = false;
             this.Name = "frmConfirmacionSolicitud";
             this.Text = "Confirmación Solicitud";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
+            this.Load += new System.EventHandler(this.frmConfirmacionSolicitud_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarSolicitudes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dgvEmpleados;
+        private System.Windows.Forms.DataGridView dgvMostrarSolicitudes;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button btnCrearCuenta;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAprobarSolicitud;
+        private System.Windows.Forms.Button btnRechazarSolicitud;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label1;
