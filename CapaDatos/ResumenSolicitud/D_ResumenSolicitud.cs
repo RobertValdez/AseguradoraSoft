@@ -607,5 +607,113 @@ namespace CapaDatos.ResumenSolicitud
             strcon.Close();
             return a;
         }
+
+        public int CrearSolicitudVEHobligatorio(E_Vehiculo eVo)
+        {
+            SqlConnection strcon = new SqlConnection();
+            strcon.ConnectionString = Conexion.Conexion.SqlConex;
+            strcon.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = strcon;
+            cmd.CommandText = "CrearSolicitudSeguroVEH_Obligatorio";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter parIdCliente = new SqlParameter();
+            parIdCliente.ParameterName = "@IdCliente";
+            parIdCliente.SqlDbType = SqlDbType.Int;
+            parIdCliente.Value = eVo.IdCliente;
+            cmd.Parameters.Add(parIdCliente);
+
+            SqlParameter parIdEmpleado = new SqlParameter();
+            parIdEmpleado.ParameterName = "@idEmpleado";
+            parIdEmpleado.SqlDbType = SqlDbType.Int;
+            parIdEmpleado.Value = eVo.IdEmpleado;
+            cmd.Parameters.Add(parIdEmpleado);
+
+            SqlParameter parTotal = new SqlParameter();
+            parTotal.ParameterName = "@Total";
+            parTotal.SqlDbType = SqlDbType.Decimal;
+            parTotal.Size = 18;
+            parTotal.Value = eVo.Total;
+            cmd.Parameters.Add(parTotal);
+
+            SqlParameter parFecha = new SqlParameter();
+            parFecha.ParameterName = "@Fecha";
+            parFecha.SqlDbType = SqlDbType.Date;
+            parFecha.Value = eVo.Fecha;
+            cmd.Parameters.Add(parFecha);
+
+
+            SqlParameter parMarcaVehiculo = new SqlParameter();
+            parMarcaVehiculo.ParameterName = "@MarcaVehiculo";
+            parMarcaVehiculo.SqlDbType = SqlDbType.VarChar;
+            parMarcaVehiculo.Size = 20;
+            parMarcaVehiculo.Value = eVo.MarcaVehiculo;
+            cmd.Parameters.Add(parMarcaVehiculo);
+
+            SqlParameter parModelo = new SqlParameter();
+            parModelo.ParameterName = "@Modelo";
+            parModelo.SqlDbType = SqlDbType.VarChar;
+            parModelo.Size = 20;
+            parModelo.Value = eVo.Modelo;
+            cmd.Parameters.Add(parModelo);
+
+            SqlParameter parMatricula = new SqlParameter();
+            parMatricula.ParameterName = "@Matricula";
+            parMatricula.SqlDbType = SqlDbType.VarChar;
+            parMatricula.Size = 20;
+            parMatricula.Value = eVo.Matricula;
+            cmd.Parameters.Add(parMatricula);
+
+            SqlParameter parAno = new SqlParameter();
+            parAno.ParameterName = "@Ano";
+            parAno.SqlDbType = SqlDbType.Int;
+            parAno.Value = eVo.Ano;
+            cmd.Parameters.Add(parAno);
+
+            SqlParameter parCilindros = new SqlParameter();
+            parCilindros.ParameterName = "@Cilindros";
+            parCilindros.SqlDbType = SqlDbType.Int;
+            parCilindros.Value = eVo.Cilindros;
+            cmd.Parameters.Add(parCilindros);
+
+            SqlParameter parCarroceria = new SqlParameter();
+            parCarroceria.ParameterName = "@Carroceria";
+            parCarroceria.SqlDbType = SqlDbType.VarChar;
+            parCarroceria.Size = 20;
+            parCarroceria.Value = eVo.Carroceria;
+            cmd.Parameters.Add(parCarroceria);
+
+            SqlParameter parCategoria = new SqlParameter();
+            parCategoria.ParameterName = "@Categoria";
+            parCategoria.SqlDbType = SqlDbType.VarChar;
+            parCategoria.Size = 50;
+            parCategoria.Value = eVo.Categoria;
+            cmd.Parameters.Add(parCategoria);
+
+            SqlParameter parUso = new SqlParameter();
+            parUso.ParameterName = "@Uso";
+            parUso.SqlDbType = SqlDbType.VarChar;
+            parUso.Size = 20;
+            parUso.Value = eVo.Uso;
+            cmd.Parameters.Add(parUso);
+
+            SqlParameter parFechaHora = new SqlParameter();
+            parFechaHora.ParameterName = "@FechaHora";
+            parFechaHora.SqlDbType = SqlDbType.DateTime;
+            parFechaHora.Value = eVo.FechaHora;
+            cmd.Parameters.Add(parFechaHora);
+
+            SqlParameter parTipo = new SqlParameter();
+            parTipo.ParameterName = "@Tipo";
+            parTipo.SqlDbType = SqlDbType.VarChar;
+            parTipo.Size = 50;
+            parTipo.Value = eVo.Tipo;
+            cmd.Parameters.Add(parTipo);
+
+            int a = cmd.ExecuteNonQuery();
+            strcon.Close();
+            return a;
+        }
     }
 }

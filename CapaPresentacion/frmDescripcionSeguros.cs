@@ -45,11 +45,20 @@ namespace CapaPresentacion
         }
 
         string strBotonSelected = "";
+        bool blBotonSelected = false;
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            FrmSeguroVida();
-            FrmSolicitud();
+            if (!blBotonSelected)
+            {
+                MessageBox.Show("Seleccione un Tipo de seguro y vuelva a intentarlo.",
+                        "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                FrmSeguroVida();
+                FrmSolicitud();
+            }
         }
 
         public void FrmSeguroVida()
@@ -157,6 +166,8 @@ namespace CapaPresentacion
 
         public void ResetPanls()
         {
+            blBotonSelected = true;
+
             pnlBasico.BackColor = Color.White;
             BasicoA.BackColor = Color.White;
             BasicoB.BackColor = Color.White;

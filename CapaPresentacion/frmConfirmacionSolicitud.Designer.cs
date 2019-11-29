@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConfirmacionSolicitud));
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
-            this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtBuscarEmpleado = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnCrearCuenta = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -42,6 +39,8 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,17 +57,6 @@
             this.dgvEmpleados.Size = new System.Drawing.Size(895, 481);
             this.dgvEmpleados.TabIndex = 26;
             // 
-            // label12
-            // 
-            this.label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label12.Image = ((System.Drawing.Image)(resources.GetObject("label12.Image")));
-            this.label12.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label12.Location = new System.Drawing.Point(-3, 43);
-            this.label12.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(106, 84);
-            this.label12.TabIndex = 27;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -81,15 +69,6 @@
             this.label10.TabIndex = 25;
             this.label10.Text = "Confirmación de las Solicitudes";
             // 
-            // txtBuscarEmpleado
-            // 
-            this.txtBuscarEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscarEmpleado.Location = new System.Drawing.Point(109, 104);
-            this.txtBuscarEmpleado.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.txtBuscarEmpleado.Name = "txtBuscarEmpleado";
-            this.txtBuscarEmpleado.Size = new System.Drawing.Size(407, 33);
-            this.txtBuscarEmpleado.TabIndex = 24;
-            // 
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -98,9 +77,9 @@
             "Muebles e Inmuebles",
             "Empresas y negocios",
             "Vehiculos"});
-            this.comboBox1.Location = new System.Drawing.Point(109, 70);
+            this.comboBox1.Location = new System.Drawing.Point(293, 107);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(270, 32);
+            this.comboBox1.Size = new System.Drawing.Size(384, 32);
             this.comboBox1.TabIndex = 29;
             // 
             // btnCrearCuenta
@@ -179,7 +158,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.ForeColor = System.Drawing.Color.Firebrick;
-            this.radioButton1.Location = new System.Drawing.Point(526, 109);
+            this.radioButton1.Location = new System.Drawing.Point(146, 109);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(141, 28);
             this.radioButton1.TabIndex = 32;
@@ -191,13 +170,35 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.ForeColor = System.Drawing.Color.Firebrick;
-            this.radioButton2.Location = new System.Drawing.Point(526, 77);
+            this.radioButton2.Location = new System.Drawing.Point(146, 77);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(140, 28);
             this.radioButton2.TabIndex = 32;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Pendientes";
             this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox3.Location = new System.Drawing.Point(924, 413);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(216, 214);
+            this.textBox3.TabIndex = 24;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Firebrick;
+            this.label2.Location = new System.Drawing.Point(924, 381);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 25);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "Nota:";
             // 
             // frmConfirmacionSolicitud
             // 
@@ -213,10 +214,10 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dgvEmpleados);
             this.Controls.Add(this.label10);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.txtBuscarEmpleado);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
@@ -231,9 +232,7 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dgvEmpleados;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtBuscarEmpleado;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btnCrearCuenta;
         private System.Windows.Forms.Button button1;
@@ -243,5 +242,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label2;
     }
 }

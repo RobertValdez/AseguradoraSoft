@@ -276,8 +276,8 @@ namespace CapaPresentacion
             QuitarErrorProviderCliente();
             ValidarCamposCliente();
             //------------------------//
-            ValidarCamposVehiculoSeguroObligatorio();
             QuitarErrorProviderVehiculoSeguroObligatorio();
+            ValidarCamposVehiculoSeguroObligatorio();
 
             try
             {
@@ -325,14 +325,14 @@ namespace CapaPresentacion
                     frmFac.txtTotalA_Pagar.Text = Precio.ToString();
 
 
-                    frmFac.strMarcaVehiculoTR = txtMarcaVehiculoTR.Text;
-                    frmFac.strModeloTR = txtModeloTR.Text;
-                    frmFac.strMatriculaTR = txtMatriculaTR.Text;
-                    frmFac.intAnoTR = Convert.ToInt32(txtAnoTR.Text);
-                    frmFac.intCilindrosTR = Convert.ToInt32(txtCilindrosTR.Text);
-                    frmFac.strCarroceriaTR = txtCarroceriaTR.Text;
-                    frmFac.strCategoriaTR = txtCategoriaTR.Text;
-                    frmFac.strUsoTR = txtUsoTR.Text;
+                    frmFac.strMarcaVehiculoObl = txtMarcaVehiculoObl.Text;
+                    frmFac.strModeloObl = txtModeloObl.Text;
+                    frmFac.strMatriculaObl = txtMatriculaObl.Text;
+                    frmFac.intAnoObl = Convert.ToInt32(txtAnoObl.Text);
+                    frmFac.intCilindrosObl = Convert.ToInt32(txtCilindrosObl.Text);
+                    frmFac.strCarroceriaObl = txtCarroceriaObl.Text;
+                    frmFac.strCategoriaObl = txtCategoriaObl.Text;
+                    frmFac.strUsoObl = txtUsoObl.Text;
 
 
                     frmFac.varIdEmpleado = varIdEmpleado;
@@ -1580,6 +1580,7 @@ namespace CapaPresentacion
             Cargar_idCodigo_detalleSeguroContenido();
             Cargar_idCodigo_detalleSeguroVehiculoVoluntario();
             Cargar_idCodigo_detalleSeguroVehiculoTodoRiesgo();
+            Cargar_idCodigo_detalleSeguroVehiculoObligatorio();
 
 
             CargarSegurosDePoliza();

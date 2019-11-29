@@ -340,7 +340,7 @@
             this.pnlVEHSeguroVoluntario.Location = new System.Drawing.Point(482, 28);
             this.pnlVEHSeguroVoluntario.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlVEHSeguroVoluntario.Name = "pnlVEHSeguroVoluntario";
-            this.pnlVEHSeguroVoluntario.Size = new System.Drawing.Size(125, 411);
+            this.pnlVEHSeguroVoluntario.Size = new System.Drawing.Size(842, 411);
             this.pnlVEHSeguroVoluntario.TabIndex = 6;
             this.pnlVEHSeguroVoluntario.Visible = false;
             // 
@@ -708,7 +708,7 @@
             this.pnlVEHSeguroTodoRiesgo.Location = new System.Drawing.Point(482, 27);
             this.pnlVEHSeguroTodoRiesgo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlVEHSeguroTodoRiesgo.Name = "pnlVEHSeguroTodoRiesgo";
-            this.pnlVEHSeguroTodoRiesgo.Size = new System.Drawing.Size(153, 412);
+            this.pnlVEHSeguroTodoRiesgo.Size = new System.Drawing.Size(842, 412);
             this.pnlVEHSeguroTodoRiesgo.TabIndex = 6;
             this.pnlVEHSeguroTodoRiesgo.Visible = false;
             // 
@@ -1184,7 +1184,7 @@
             this.pnlMueblesInmEdificaciones.Location = new System.Drawing.Point(482, 28);
             this.pnlMueblesInmEdificaciones.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlMueblesInmEdificaciones.Name = "pnlMueblesInmEdificaciones";
-            this.pnlMueblesInmEdificaciones.Size = new System.Drawing.Size(59, 513);
+            this.pnlMueblesInmEdificaciones.Size = new System.Drawing.Size(842, 513);
             this.pnlMueblesInmEdificaciones.TabIndex = 6;
             this.pnlMueblesInmEdificaciones.Visible = false;
             // 
@@ -1501,7 +1501,7 @@
             this.pnlMueblesInmContenido.Location = new System.Drawing.Point(481, 28);
             this.pnlMueblesInmContenido.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlMueblesInmContenido.Name = "pnlMueblesInmContenido";
-            this.pnlMueblesInmContenido.Size = new System.Drawing.Size(95, 513);
+            this.pnlMueblesInmContenido.Size = new System.Drawing.Size(843, 513);
             this.pnlMueblesInmContenido.TabIndex = 6;
             this.pnlMueblesInmContenido.Visible = false;
             // 
@@ -1823,7 +1823,7 @@
             this.pnlNegociosEmpresas.Location = new System.Drawing.Point(482, 27);
             this.pnlNegociosEmpresas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlNegociosEmpresas.Name = "pnlNegociosEmpresas";
-            this.pnlNegociosEmpresas.Size = new System.Drawing.Size(28, 514);
+            this.pnlNegociosEmpresas.Size = new System.Drawing.Size(841, 514);
             this.pnlNegociosEmpresas.TabIndex = 6;
             this.pnlNegociosEmpresas.Visible = false;
             // 

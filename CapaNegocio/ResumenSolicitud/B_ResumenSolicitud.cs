@@ -38,5 +38,10 @@ namespace CapaNegocio.ResumenSolicitud
         {
             return D_ResumenSolicitud.CrearSolicitudVEHtodoRiesgo(eVr);
         }
+
+        public int B_CrearSolicitudVEHobligatorio(E_Vehiculo eVo)
+        {
+            return D_ResumenSolicitud.CrearSolicitudVEHobligatorio(eVo);
+        }
     }
 }

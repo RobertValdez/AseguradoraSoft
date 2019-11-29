@@ -311,3 +311,65 @@ insert into detalleSeguroTodoRiesgo(id_ctVehiculo
       @FechaHora,
       @Tipo)
 
+
+
+go
+	  
+	  
+create proc CrearSolicitudSeguroVEH_Obligatorio
+
+@IdCliente int,
+
+@idEmpleado int,
+@Total decimal(18,2),       
+@Fecha date,		
+
+----------------
+
+@MarcaVehiculo varchar(20),
+      @Modelo varchar(20),
+      @Matricula varchar(20),
+      @Ano int,
+      @Cilindros int,
+      @Carroceria varchar(20),
+      @Categoria varchar(20),
+      @Uso varchar(20),
+
+      @FechaHora datetime,
+      @Tipo varchar(50)
+
+
+as
+
+insert into ctVehiculo(id_Cliente, id_Empleado, Total, idEstado, Fecha)
+values (@IdCliente, @idEmpleado, @Total, 3, @FechaHora)
+
+
+declare @id_ctVehiculo int
+set @id_ctVehiculo = SCOPE_IDENTITY()
+
+insert into detalleSeguroObligatorio(id_ctVehiculo
+      ,[Marca de Vehiculo]
+      ,[Modelo]
+      ,[Matricula]
+      ,[Ano]
+      ,[Cilindros]
+      ,[Carroceria]
+      ,[Categoria]
+      ,[Uso]
+	  ,[Estado]
+      ,[FechaHora]
+      ,[Tipo]) values (@id_ctVehiculo,
+	  @MarcaVehiculo,
+      @Modelo,
+      @Matricula,
+      @Ano,
+      @Cilindros,
+      @Carroceria,
+      @Categoria,
+      @Uso,
+      3,
+
+      @FechaHora,
+      @Tipo)
+

@@ -107,9 +107,73 @@ namespace CapaPresentacion
                 {
                     SolicitarVEHtodoRiesgo();
                 }
+                else if (txtSeguroA_Adquirir.Text == "Seguro Obligatorio")
+                {
+                    SolicitarVEHobligatorio();
+                }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
+
+
+
+
+
+        public string strMarcaVehiculoObl;
+        public string strModeloObl;
+        public string strMatriculaObl;
+        public int intAnoObl;
+        public int intCilindrosObl;
+        public string strCarroceriaObl;
+        public string strCategoriaObl;
+        public string strUsoObl;
+
+        private void SolicitarVEHobligatorio()
+        {
+            E_Vehiculo.IdCliente = Convert.ToInt32(txtId.Text);
+            E_Vehiculo.IdEmpleado = varIdEmpleado;
+            E_Vehiculo.Total = Convert.ToDecimal(txtTotalA_Pagar.Text);
+            E_Vehiculo.Fecha = DateTime.Now.Date;
+
+            E_Vehiculo.MarcaVehiculo = strMarcaVehiculoObl;
+            E_Vehiculo.Modelo = strModeloObl;
+            E_Vehiculo.Matricula = strMatriculaObl;
+            E_Vehiculo.Ano = intAnoObl;
+            E_Vehiculo.Cilindros = intCilindrosObl;
+            E_Vehiculo.Carroceria = strCarroceriaObl;
+            E_Vehiculo.Categoria = strCategoriaObl;
+            E_Vehiculo.Uso = strUsoObl;
+
+            E_Vehiculo.FechaHora = DateTime.Now;
+            E_Vehiculo.Tipo = txtCategoria.Text;
+
+
+            if (MessageBox.Show("Se creará una solicitud para el cliente actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (B_ResumenSolicitud.B_CrearSolicitudVEHobligatorio(E_Vehiculo) == 2)
+                {
+                    MessageBox.Show("Solicitud creada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error inesperado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
