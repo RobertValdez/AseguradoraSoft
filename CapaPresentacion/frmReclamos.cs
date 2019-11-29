@@ -210,6 +210,8 @@ namespace CapaPresentacion
         
         private void GuardarReclamacion()
         {
+            try
+            {
             E_RegistroReclamos.Area = strArea;
 
             E_RegistroReclamos.IdCliente = idCliente;
@@ -224,6 +226,10 @@ namespace CapaPresentacion
             if (B_RegistroReclamos.B_GuardarReclamo(E_RegistroReclamos) == 1)
             {
                 MessageBox.Show("Reclamo guardado satisfactoriamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+             }
+            }
+            catch (Exception)
+            {
             }
         }
 

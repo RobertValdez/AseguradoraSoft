@@ -14,6 +14,12 @@ alter proc CrearSolicitud
 @Total decimal(18,2),       
 @Fecha date,		
 
+@idSolicitud int,
+@idSeguro int,
+@T_Pago varchar(25),
+@PagoParcial decimal(18,2),   
+@Descuento decimal(18,2),
+
 ----------------
  
 @NombreEmpresa varchar(80),
@@ -47,6 +53,19 @@ insert into detalleSeguroEmpresaNegocio(id_ctEmpresasNegocios, [Nombre Empresa],
 , [Estado], [FechaHora], [Tipo]) values (@id_ctEmpresasNegocios,
 @NombreEmpresa, @CopiaEstatutos, @CopiaActaAsignacionRNC, @CopiaCedulaPres_RepreAut, @TelefonoEntAutorizada,
  @CorreoElectronicoEntAutorizada, 'Pendiente', 3, @FechaHora, @Tipo)
+
+insert into Facturas 
+      ([id_Empleado]
+	  ,[id_Solicitud]
+      ,[id_Seguro]
+      ,[Precio]
+      ,[T_Pago]
+      ,[Pago Parcial]
+      ,[SubTotal]
+      ,[Descuento]
+      ,[FechaHora]) values (@idEmpleado, @idSolicitud, @idSeguro,
+	  @Total, @T_Pago, @PagoParcial, @Total,
+	  @Descuento, @FechaHora) 
 
 insert into imagenesCotenidoInspSeguroEmpresas(id_detallesSeguroEmpresasN, Imagen)
  values (@id_ctEmpresasNegocios, @Imagen1),

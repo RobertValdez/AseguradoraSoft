@@ -340,7 +340,7 @@
             this.pnlVEHSeguroVoluntario.Location = new System.Drawing.Point(482, 28);
             this.pnlVEHSeguroVoluntario.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlVEHSeguroVoluntario.Name = "pnlVEHSeguroVoluntario";
-            this.pnlVEHSeguroVoluntario.Size = new System.Drawing.Size(842, 411);
+            this.pnlVEHSeguroVoluntario.Size = new System.Drawing.Size(841, 411);
             this.pnlVEHSeguroVoluntario.TabIndex = 6;
             this.pnlVEHSeguroVoluntario.Visible = false;
             // 
@@ -367,6 +367,7 @@
             this.txtAnoVol.Name = "txtAnoVol";
             this.txtAnoVol.Size = new System.Drawing.Size(200, 33);
             this.txtAnoVol.TabIndex = 41;
+            this.txtAnoVol.TextChanged += new System.EventHandler(this.txtAnoVol_TextChanged);
             // 
             // txtUsoVol
             // 
@@ -407,6 +408,7 @@
             this.txtCilindrosVol.Name = "txtCilindrosVol";
             this.txtCilindrosVol.Size = new System.Drawing.Size(217, 33);
             this.txtCilindrosVol.TabIndex = 39;
+            this.txtCilindrosVol.TextChanged += new System.EventHandler(this.txtCilindrosVol_TextChanged);
             // 
             // txtMatriculaVol
             // 
@@ -708,7 +710,7 @@
             this.pnlVEHSeguroTodoRiesgo.Location = new System.Drawing.Point(482, 27);
             this.pnlVEHSeguroTodoRiesgo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlVEHSeguroTodoRiesgo.Name = "pnlVEHSeguroTodoRiesgo";
-            this.pnlVEHSeguroTodoRiesgo.Size = new System.Drawing.Size(842, 412);
+            this.pnlVEHSeguroTodoRiesgo.Size = new System.Drawing.Size(841, 412);
             this.pnlVEHSeguroTodoRiesgo.TabIndex = 6;
             this.pnlVEHSeguroTodoRiesgo.Visible = false;
             // 
@@ -776,6 +778,7 @@
             this.txtAnoTR.Name = "txtAnoTR";
             this.txtAnoTR.Size = new System.Drawing.Size(200, 33);
             this.txtAnoTR.TabIndex = 24;
+            this.txtAnoTR.TextChanged += new System.EventHandler(this.txtAnoTR_TextChanged);
             // 
             // txtUsoTR
             // 
@@ -808,6 +811,7 @@
             this.txtCilindrosTR.Name = "txtCilindrosTR";
             this.txtCilindrosTR.Size = new System.Drawing.Size(217, 33);
             this.txtCilindrosTR.TabIndex = 22;
+            this.txtCilindrosTR.TextChanged += new System.EventHandler(this.txtCilindrosTR_TextChanged);
             // 
             // txtMatriculaTR
             // 
@@ -1023,6 +1027,7 @@
             this.txtAnoObl.Name = "txtAnoObl";
             this.txtAnoObl.Size = new System.Drawing.Size(200, 33);
             this.txtAnoObl.TabIndex = 4;
+            this.txtAnoObl.TextChanged += new System.EventHandler(this.txtAnoObl_TextChanged);
             // 
             // txtUsoObl
             // 
@@ -1055,6 +1060,7 @@
             this.txtCilindrosObl.Name = "txtCilindrosObl";
             this.txtCilindrosObl.Size = new System.Drawing.Size(217, 33);
             this.txtCilindrosObl.TabIndex = 2;
+            this.txtCilindrosObl.TextChanged += new System.EventHandler(this.txtCilindrosObl_TextChanged);
             // 
             // txtMatriculaObl
             // 
@@ -1823,7 +1829,7 @@
             this.pnlNegociosEmpresas.Location = new System.Drawing.Point(482, 27);
             this.pnlNegociosEmpresas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlNegociosEmpresas.Name = "pnlNegociosEmpresas";
-            this.pnlNegociosEmpresas.Size = new System.Drawing.Size(841, 514);
+            this.pnlNegociosEmpresas.Size = new System.Drawing.Size(842, 514);
             this.pnlNegociosEmpresas.TabIndex = 6;
             this.pnlNegociosEmpresas.Visible = false;
             // 
@@ -2178,12 +2184,12 @@
             this.lblSeguroNEmpresa.AutoSize = true;
             this.lblSeguroNEmpresa.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
             this.lblSeguroNEmpresa.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblSeguroNEmpresa.Location = new System.Drawing.Point(251, 14);
+            this.lblSeguroNEmpresa.Location = new System.Drawing.Point(233, 14);
             this.lblSeguroNEmpresa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSeguroNEmpresa.Name = "lblSeguroNEmpresa";
-            this.lblSeguroNEmpresa.Size = new System.Drawing.Size(329, 28);
+            this.lblSeguroNEmpresa.Size = new System.Drawing.Size(350, 28);
             this.lblSeguroNEmpresa.TabIndex = 0;
-            this.lblSeguroNEmpresa.Text = "Seguro Negocios Empresas";
+            this.lblSeguroNEmpresa.Text = "Seguro Negocios y Empresas";
             // 
             // pnlInmuebles
             // 

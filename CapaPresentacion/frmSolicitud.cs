@@ -2002,5 +2002,59 @@ namespace CapaPresentacion
                 _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
             };
         }
+
+        private void txtCilindrosVol_TextChanged(object sender, EventArgs e)
+        {
+            txtCilindrosVol.TextChanged += delegate (System.Object o, System.EventArgs r)
+            {
+                TextBox _tbox = o as TextBox;
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+            };
+        }
+
+        private void txtAnoVol_TextChanged(object sender, EventArgs e)
+        {
+            txtCilindrosVol.TextChanged += delegate (System.Object o, System.EventArgs r)
+            {
+                TextBox _tbox = o as TextBox;
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+            };
+        }
+
+        private void txtCilindrosTR_TextChanged(object sender, EventArgs e)
+        {
+            txtCilindrosTR.TextChanged += delegate (System.Object o, System.EventArgs r)
+             {
+                 TextBox _tbox = o as TextBox;
+                 _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+             };
+        }
+
+        private void txtAnoTR_TextChanged(object sender, EventArgs e)
+        {
+            txtAnoTR.TextChanged += delegate (System.Object o, System.EventArgs r)
+             {
+                 TextBox _tbox = o as TextBox;
+                 _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+             };
+        }
+
+        private void txtCilindrosObl_TextChanged(object sender, EventArgs e)
+        {
+            txtCilindrosObl.TextChanged += delegate (System.Object o, System.EventArgs r)
+             {
+                 TextBox _tbox = o as TextBox;
+                 _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+             };
+        }
+
+        private void txtAnoObl_TextChanged(object sender, EventArgs e)
+        {
+            txtCilindrosObl.TextChanged += delegate (System.Object o, System.EventArgs r)
+             {
+                 TextBox _tbox = o as TextBox;
+                 _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+             };
+        }
     }
 }

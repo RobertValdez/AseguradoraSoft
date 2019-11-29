@@ -14,7 +14,7 @@ dSV.Ano as "Año", dSV.Cilindros, dSV.Carroceria, dSV.Categoria, dSV.Uso, dSV.Not
 
  go
  
-create proc MostrarDetalleSeguroTodoRiesgo
+alter proc MostrarDetalleSeguroTodoRiesgo
 as
 select C.Id, C.Nombre, C.Apellido, C.Direccion, C.Cedula, C.Nacionalidad, C.Telefono,
 C.[Correo Electronico], C.Sexo, C.RNC, dSV.[Marca de Vehiculo], dSV.Modelo, dSV.Matricula,
@@ -23,10 +23,21 @@ dSV.Ano as "Año", dSV.Cilindros, dSV.Carroceria, dSV.Categoria, dSV.Uso, dSV.Not
 
  go
 
- create proc MostrarDetalleSeguroObligatorio
+ alter proc MostrarDetalleSeguroObligatorio
 as
 select C.Id, C.Nombre, C.Apellido, C.Direccion, C.Cedula, C.Nacionalidad, C.Telefono,
 C.[Correo Electronico], C.Sexo, C.RNC, dSV.[Marca de Vehiculo], dSV.Modelo, dSV.Matricula,
 dSV.Ano as "Año", dSV.Cilindros, dSV.Carroceria, dSV.Categoria, dSV.Uso, dSV.Nota, cE.Estado, dSV.Tipo, dSV.FechaHora from Cliente C join ctVehiculo ctv on C.Id = ctv.id_Cliente
  join detalleSeguroObligatorio dSV on ctv.id = dSV.id_ctVehiculo join cEstado cE on dSV.Estado = cE.idEstado
 
+
+  create proc MostrarDetalleSeguroEdificaciones
+as
+select C.Id, C.Nombre, C.Apellido, C.Direccion, C.Cedula, C.Nacionalidad, C.Telefono,
+C.[Correo Electronico], C.Sexo, C.RNC, dSV.[Tipo de Vivienda], dSV.Situacion, dSV.Propietario,
+dSV.[Vivienda habitual], dSV.[Vivienda Alquilada], dSV.[Codigo Postal], dSV.[Deshabitada por mas de tres meses al ano],
+dSV.[Ano de Construccion], dSV.[M2 de la Vivienda], dSV.[M2 de edificaciones anexas],
+dSV.[Capital de otras instalaciones], dSV.Nota, dSV.Tipo, cE.Estado, dSV.Tipo, dSV.FechaHora from Cliente C join ctVehiculo ctv on C.Id = ctv.id_Cliente
+ join detalleEdificaciones dSV on ctv.id = dSV.id_ctMueblesInmuebles join cEstado cE on dSV.Estado = cE.idEstado
+
+ select * from detalleEdificaciones

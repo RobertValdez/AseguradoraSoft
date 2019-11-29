@@ -8,6 +8,12 @@ namespace PerlaDelSur_Entity.ResumenSolicitud
 {
     public class E_ResumenSolicitud
     {
+        private int _idSolicitud;
+        private int _idSeguro;
+        private string _T_Pago;
+        private decimal _PagoParcial;
+        private decimal _Descuento;
+
         private int _idCliente;
         private int _idEmpleado;
         private decimal _Total;
@@ -47,6 +53,11 @@ namespace PerlaDelSur_Entity.ResumenSolicitud
         public byte[] Imagen4 { get => _Imagen4; set => _Imagen4 = value; }
         public byte[] Imagen5 { get => _Imagen5; set => _Imagen5 = value; }
 
+        public int IdSolicitud { get => _idSolicitud; set => _idSolicitud = value; }
+        public int IdSeguro { get => _idSeguro; set => _idSeguro = value; }
+        public string T_Pago { get => _T_Pago; set => _T_Pago = value; }
+        public decimal PagoParcial { get => _PagoParcial; set => _PagoParcial = value; }
+        public decimal Descuento { get => _Descuento; set => _Descuento = value; }
 
         public E_ResumenSolicitud()
         {
@@ -59,7 +70,7 @@ namespace PerlaDelSur_Entity.ResumenSolicitud
             byte[] CopiaCedulaPres_RepreAutorizado, string TelefonoEntidadAutorizada, 
             string CorreoElectronicoEntidadAutorizada, DateTime FechaHora,
             string Tipo, byte[] Imagen1, byte[] Imagen2, byte[] Imagen3, byte[] Imagen4,
-            byte[] Imagen5)
+            byte[] Imagen5, int idSolicitud, int idSeguro, string T_Pago, decimal PagoParcial, decimal Descuento)
         {
             _idCliente = idCliente;
             _idEmpleado = idEmpleado;
@@ -79,6 +90,12 @@ namespace PerlaDelSur_Entity.ResumenSolicitud
             _Imagen3 = Imagen3;
             _Imagen4 = Imagen4;
             _Imagen5 = Imagen5;
+
+            _idSolicitud = idSolicitud;
+            _idSeguro = idSeguro;
+            _T_Pago = T_Pago;
+            _PagoParcial = PagoParcial;
+            _Descuento = Descuento;
         }
     }
 }

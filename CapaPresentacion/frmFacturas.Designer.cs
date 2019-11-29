@@ -70,7 +70,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblCerrar = new System.Windows.Forms.Label();
-            this.mskParcial = new System.Windows.Forms.MaskedTextBox();
+            this.txtParcial = new System.Windows.Forms.TextBox();
             this.pnlResumenSolicitud.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -79,7 +79,7 @@
             // pnlResumenSolicitud
             // 
             this.pnlResumenSolicitud.BackColor = System.Drawing.Color.White;
-            this.pnlResumenSolicitud.Controls.Add(this.mskParcial);
+            this.pnlResumenSolicitud.Controls.Add(this.txtParcial);
             this.pnlResumenSolicitud.Controls.Add(this.lblParcial);
             this.pnlResumenSolicitud.Controls.Add(this.groupBox1);
             this.pnlResumenSolicitud.Controls.Add(this.btnImprimir);
@@ -561,15 +561,14 @@
             this.lblCerrar.Text = "X";
             this.lblCerrar.Click += new System.EventHandler(this.lblCerrar_Click);
             // 
-            // mskParcial
+            // txtParcial
             // 
-            this.mskParcial.Location = new System.Drawing.Point(682, 268);
-            this.mskParcial.Mask = "999999999";
-            this.mskParcial.Name = "mskParcial";
-            this.mskParcial.Size = new System.Drawing.Size(135, 33);
-            this.mskParcial.TabIndex = 109;
-            this.mskParcial.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.mskParcial.ValidatingType = typeof(int);
+            this.txtParcial.Location = new System.Drawing.Point(683, 268);
+            this.txtParcial.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtParcial.Name = "txtParcial";
+            this.txtParcial.Size = new System.Drawing.Size(134, 33);
+            this.txtParcial.TabIndex = 1;
+            this.txtParcial.TextChanged += new System.EventHandler(this.txtParcial_TextChanged);
             // 
             // frmFacturas
             // 
@@ -645,6 +644,6 @@
         public System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.TextBox txtCliente;
-        private System.Windows.Forms.MaskedTextBox mskParcial;
+        public System.Windows.Forms.TextBox txtParcial;
     }
 }

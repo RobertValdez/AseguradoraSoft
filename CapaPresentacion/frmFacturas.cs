@@ -12,6 +12,7 @@ using System.Runtime.InteropServices;
 using PerlaDelSur_Entity.Vehiculo;
 using PerlaDelSur_Entity.ResumenSolicitud;
 using CapaNegocio.ResumenSolicitud;
+using System.Globalization;
 
 namespace CapaPresentacion
 {
@@ -62,9 +63,24 @@ namespace CapaPresentacion
 
         private void btnDescontar_Click(object sender, EventArgs e)
         {
-        }
+            try
+            {
 
-        private void txtDescontar_Validating(object sender, CancelEventArgs e)
+                string strA;
+                decimal A = Convert.ToDecimal(txtSubTotal.Text);
+
+                strA = "0." + txtDescontar.Text;
+                decimal B = decimal.Parse(strA, CultureInfo.InvariantCulture);
+
+                decimal C = A * B;
+              //  decimal P = A - C;
+
+                txtDescuento.Text = C.ToString();
+            }
+            catch (Exception)
+            { }
+        }
+    private void txtDescontar_Validating(object sender, CancelEventArgs e)
         {
 
         }
@@ -74,12 +90,12 @@ namespace CapaPresentacion
             if (cmbTipoPago.Text == "Parcial")
             {
                 lblParcial.Visible = true;
-                mskParcial.Visible = true;
+                txtParcial.Visible = true;
             }
             else
             {
                 lblParcial.Visible = false;
-                mskParcial.Visible = false;
+                txtParcial.Visible = false;
             }
         }
 
@@ -457,6 +473,18 @@ namespace CapaPresentacion
             E_ResumenSolicitud.Imagen4 = imgImagen4;
             E_ResumenSolicitud.Imagen5 = imgImagen5;
 
+            E_ResumenSolicitud.IdSolicitud = Convert.ToInt32(txtCodigo.Text);
+            E_ResumenSolicitud.IdSeguro = Convert.ToInt32(txtIdSeguro.Text);
+            E_ResumenSolicitud.T_Pago = cmbTipoPago.Text;
+            E_ResumenSolicitud.PagoParcial = Convert.ToDecimal(txtParcial.Text);
+            E_ResumenSolicitud.Descuento = Convert.ToDecimal(txtDescuento.Text);
+
+            //_idSolicitud = idSolicitud;
+            //_idSeguro = idSeguro;
+            //_T_Pago = T_Pago;
+            //_PagoParcial = PagoParcial;
+            //_Descuento = Descuento;
+
             if (MessageBox.Show("Se creará una solicitud para el cliente actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if (B_ResumenSolicitud.B_CrearSolicitud(E_ResumenSolicitud) >= 3)
@@ -468,6 +496,15 @@ namespace CapaPresentacion
                     MessageBox.Show("Ocurrió un error inesperado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+
+        private void txtParcial_TextChanged(object sender, EventArgs e)
+        {
+            txtParcial.TextChanged += delegate (System.Object o, System.EventArgs r)
+            {
+                TextBox _tbox = o as TextBox;
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+            };
         }
     }
 }
