@@ -55,7 +55,8 @@ insert into detalleSeguroEmpresaNegocio(id_ctEmpresasNegocios, [Nombre Empresa],
  @CorreoElectronicoEntAutorizada, 'Pendiente', 3, @FechaHora, @Tipo)
 
 insert into Facturas 
-      ([id_Empleado]
+      ([id_Cliente]
+	  ,[id_Empleado]
 	  ,[id_Solicitud]
       ,[id_Seguro]
       ,[Precio]
@@ -63,7 +64,7 @@ insert into Facturas
       ,[Pago Parcial]
       ,[SubTotal]
       ,[Descuento]
-      ,[FechaHora]) values (@idEmpleado, @idSolicitud, @idSeguro,
+      ,[FechaHora]) values (@IdCliente, @idEmpleado, @idSolicitud, @idSeguro,
 	  @Total, @T_Pago, @PagoParcial, @Total,
 	  @Descuento, @FechaHora) 
 
@@ -84,6 +85,13 @@ alter proc CrearSolicitudSeguroEdificaciones
 @idEmpleado int,
 @Total decimal(18,2),       
 @Fecha date,		
+----------------
+
+@idSolicitud int,
+@idSeguro int,
+@T_Pago varchar(25),
+@PagoParcial decimal(18,2),   
+@Descuento decimal(18,2),
 ----------------
 @TipoVivienda varchar(50),
 @Situacion varchar(50),
@@ -138,18 +146,37 @@ insert into detalleEdificaciones( id_ctMueblesInmuebles,
 	@FechaHora,
 	@Tipo)
 
-
+	insert into Facturas 
+      ([id_Cliente]
+	  ,[id_Empleado]
+	  ,[id_Solicitud]
+      ,[id_Seguro]
+      ,[Precio]
+      ,[T_Pago]
+      ,[Pago Parcial]
+      ,[SubTotal]
+      ,[Descuento]
+      ,[FechaHora]) values (@IdCliente, @idEmpleado, @idSolicitud, @idSeguro,
+	  @Total, @T_Pago, @PagoParcial, @Total,
+	  @Descuento, @FechaHora) 
       
 
 	  go
 	  
-Create proc CrearSolicitudSeguroContenido
+alter proc CrearSolicitudSeguroContenido
 
 @IdCliente int,
 
 @idEmpleado int,
 @Total decimal(18,2),       
 @Fecha date,		
+----------------
+
+@idSolicitud int,
+@idSeguro int,
+@T_Pago varchar(25),
+@PagoParcial decimal(18,2),   
+@Descuento decimal(18,2),
 ----------------
 @TipoVivienda varchar(50),
 @Situacion varchar(50),
@@ -204,6 +231,20 @@ insert into detalleSeguroContenido( id_ctMueblesInmuebles,
 	@FechaHora,
 	@Tipo)
 
+	insert into Facturas 
+      ([id_Cliente]
+	  ,[id_Empleado]
+	  ,[id_Solicitud]
+      ,[id_Seguro]
+      ,[Precio]
+      ,[T_Pago]
+      ,[Pago Parcial]
+      ,[SubTotal]
+      ,[Descuento]
+      ,[FechaHora]) values (@IdCliente, @idEmpleado, @idSolicitud, @idSeguro,
+	  @Total, @T_Pago, @PagoParcial, @Total,
+	  @Descuento, @FechaHora) 
+      
 
 
 
@@ -222,6 +263,12 @@ alter proc CrearSolicitudSeguroVEH_Voluntario
 
 ----------------
 
+@idSolicitud int,
+@idSeguro int,
+@T_Pago varchar(25),
+@PagoParcial decimal(18,2),   
+@Descuento decimal(18,2),
+----------------
 @MarcaVehiculo varchar(20),
       @Modelo varchar(20),
       @Matricula varchar(20),
@@ -265,10 +312,23 @@ insert into detalleSeguroVoluntario(id_ctVehiculo
       @Categoria,
       @Uso,
       3,
-
       @FechaHora,
       @Tipo)
 
+	  
+	insert into Facturas 
+      ([id_Cliente]
+	  ,[id_Empleado]
+	  ,[id_Solicitud]
+      ,[id_Seguro]
+      ,[Precio]
+      ,[T_Pago]
+      ,[Pago Parcial]
+      ,[SubTotal]
+      ,[Descuento]
+      ,[FechaHora]) values (@IdCliente, @idEmpleado, @idSolicitud, @idSeguro,
+	  @Total, @T_Pago, @PagoParcial, @Total,
+	  @Descuento, @FechaHora) 
 go
 
 
@@ -283,6 +343,12 @@ alter proc CrearSolicitudSeguroVEH_TodoRiesgo
 
 ----------------
 
+@idSolicitud int,
+@idSeguro int,
+@T_Pago varchar(25),
+@PagoParcial decimal(18,2),   
+@Descuento decimal(18,2),
+----------------
 @MarcaVehiculo varchar(20),
       @Modelo varchar(20),
       @Matricula varchar(20),
@@ -331,11 +397,24 @@ insert into detalleSeguroTodoRiesgo(id_ctVehiculo
       @Tipo)
 
 
+	insert into Facturas 
+      ([id_Cliente]
+	  ,[id_Empleado]
+	  ,[id_Solicitud]
+      ,[id_Seguro]
+      ,[Precio]
+      ,[T_Pago]
+      ,[Pago Parcial]
+      ,[SubTotal]
+      ,[Descuento]
+      ,[FechaHora]) values (@IdCliente, @idEmpleado, @idSolicitud, @idSeguro,
+	  @Total, @T_Pago, @PagoParcial, @Total,
+	  @Descuento, @FechaHora) 
 
 go
 	  
 	  
-create proc CrearSolicitudSeguroVEH_Obligatorio
+alter proc CrearSolicitudSeguroVEH_Obligatorio
 
 @IdCliente int,
 
@@ -345,6 +424,12 @@ create proc CrearSolicitudSeguroVEH_Obligatorio
 
 ----------------
 
+@idSolicitud int,
+@idSeguro int,
+@T_Pago varchar(25),
+@PagoParcial decimal(18,2),   
+@Descuento decimal(18,2),
+----------------
 @MarcaVehiculo varchar(20),
       @Modelo varchar(20),
       @Matricula varchar(20),
@@ -392,3 +477,16 @@ insert into detalleSeguroObligatorio(id_ctVehiculo
       @FechaHora,
       @Tipo)
 
+	  insert into Facturas 
+      ([id_Cliente]
+	  ,[id_Empleado]
+	  ,[id_Solicitud]
+      ,[id_Seguro]
+      ,[Precio]
+      ,[T_Pago]
+      ,[Pago Parcial]
+      ,[SubTotal]
+      ,[Descuento]
+      ,[FechaHora]) values (@IdCliente, @idEmpleado, @idSolicitud, @idSeguro,
+	  @Total, @T_Pago, @PagoParcial, @Total,
+	  @Descuento, @FechaHora) 

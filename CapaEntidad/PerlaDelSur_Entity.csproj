@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clientes\E_Clientes.cs" />
+    <Compile Include="ConfirmacionSolicitud\E_ConfirmacionSolicitud.cs" />
     <Compile Include="Empleados\E_Empleados.cs" />
     <Compile Include="Poliza\E_Poliza.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

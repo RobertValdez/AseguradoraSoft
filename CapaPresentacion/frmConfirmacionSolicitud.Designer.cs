@@ -30,16 +30,16 @@
         {
             this.dgvMostrarSolicitudes = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbSeguros = new System.Windows.Forms.ComboBox();
             this.btnAprobarSolicitud = new System.Windows.Forms.Button();
             this.btnRechazarSolicitud = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtIdSolicitud = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.rbAprobados = new System.Windows.Forms.RadioButton();
+            this.rbPendientes = new System.Windows.Forms.RadioButton();
+            this.txtNota = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarSolicitudes)).BeginInit();
             this.SuspendLayout();
@@ -48,6 +48,8 @@
             // 
             this.dgvMostrarSolicitudes.AllowUserToAddRows = false;
             this.dgvMostrarSolicitudes.AllowUserToDeleteRows = false;
+            this.dgvMostrarSolicitudes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvMostrarSolicitudes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvMostrarSolicitudes.BackgroundColor = System.Drawing.Color.LightPink;
             this.dgvMostrarSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMostrarSolicitudes.Location = new System.Drawing.Point(20, 146);
@@ -56,6 +58,7 @@
             this.dgvMostrarSolicitudes.ReadOnly = true;
             this.dgvMostrarSolicitudes.Size = new System.Drawing.Size(895, 481);
             this.dgvMostrarSolicitudes.TabIndex = 26;
+            this.dgvMostrarSolicitudes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMostrarSolicitudes_CellClick);
             // 
             // label10
             // 
@@ -69,18 +72,18 @@
             this.label10.TabIndex = 25;
             this.label10.Text = "Confirmación de las Solicitudes";
             // 
-            // comboBox1
+            // cmbSeguros
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbSeguros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSeguros.FormattingEnabled = true;
+            this.cmbSeguros.Items.AddRange(new object[] {
             "Muebles e Inmuebles",
             "Empresas y negocios",
             "Vehiculos"});
-            this.comboBox1.Location = new System.Drawing.Point(293, 107);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(384, 32);
-            this.comboBox1.TabIndex = 29;
+            this.cmbSeguros.Location = new System.Drawing.Point(293, 107);
+            this.cmbSeguros.Name = "cmbSeguros";
+            this.cmbSeguros.Size = new System.Drawing.Size(384, 32);
+            this.cmbSeguros.TabIndex = 29;
             // 
             // btnAprobarSolicitud
             // 
@@ -96,6 +99,7 @@
             this.btnAprobarSolicitud.TabIndex = 30;
             this.btnAprobarSolicitud.Text = "Aprobar solicitud";
             this.btnAprobarSolicitud.UseVisualStyleBackColor = false;
+            this.btnAprobarSolicitud.Click += new System.EventHandler(this.btnAprobarSolicitud_Click);
             // 
             // btnRechazarSolicitud
             // 
@@ -111,22 +115,23 @@
             this.btnRechazarSolicitud.TabIndex = 30;
             this.btnRechazarSolicitud.Text = "Rechazar solicitud";
             this.btnRechazarSolicitud.UseVisualStyleBackColor = false;
+            this.btnRechazarSolicitud.Click += new System.EventHandler(this.btnRechazarSolicitud_Click);
             // 
-            // textBox1
+            // txtIdSolicitud
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(1024, 88);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(116, 33);
-            this.textBox1.TabIndex = 24;
+            this.txtIdSolicitud.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdSolicitud.Location = new System.Drawing.Point(1004, 88);
+            this.txtIdSolicitud.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.txtIdSolicitud.Name = "txtIdSolicitud";
+            this.txtIdSolicitud.ReadOnly = true;
+            this.txtIdSolicitud.Size = new System.Drawing.Size(136, 33);
+            this.txtIdSolicitud.TabIndex = 24;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.Firebrick;
-            this.label11.Location = new System.Drawing.Point(838, 77);
+            this.label11.Location = new System.Drawing.Point(825, 77);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(175, 48);
@@ -137,56 +142,56 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Firebrick;
-            this.label1.Location = new System.Drawing.Point(942, 140);
+            this.label1.Location = new System.Drawing.Point(917, 139);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 24);
             this.label1.TabIndex = 31;
             this.label1.Text = "Estado:";
             // 
-            // textBox2
+            // txtEstado
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(1024, 137);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(116, 33);
-            this.textBox2.TabIndex = 24;
+            this.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEstado.Location = new System.Drawing.Point(1004, 137);
+            this.txtEstado.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.ReadOnly = true;
+            this.txtEstado.Size = new System.Drawing.Size(136, 33);
+            this.txtEstado.TabIndex = 24;
             // 
-            // radioButton1
+            // rbAprobados
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.ForeColor = System.Drawing.Color.Firebrick;
-            this.radioButton1.Location = new System.Drawing.Point(146, 109);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(141, 28);
-            this.radioButton1.TabIndex = 32;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Aprobados";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbAprobados.AutoSize = true;
+            this.rbAprobados.ForeColor = System.Drawing.Color.Firebrick;
+            this.rbAprobados.Location = new System.Drawing.Point(146, 109);
+            this.rbAprobados.Name = "rbAprobados";
+            this.rbAprobados.Size = new System.Drawing.Size(141, 28);
+            this.rbAprobados.TabIndex = 32;
+            this.rbAprobados.TabStop = true;
+            this.rbAprobados.Text = "Aprobados";
+            this.rbAprobados.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbPendientes
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.ForeColor = System.Drawing.Color.Firebrick;
-            this.radioButton2.Location = new System.Drawing.Point(146, 77);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(140, 28);
-            this.radioButton2.TabIndex = 32;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Pendientes";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbPendientes.AutoSize = true;
+            this.rbPendientes.ForeColor = System.Drawing.Color.Firebrick;
+            this.rbPendientes.Location = new System.Drawing.Point(146, 77);
+            this.rbPendientes.Name = "rbPendientes";
+            this.rbPendientes.Size = new System.Drawing.Size(140, 28);
+            this.rbPendientes.TabIndex = 32;
+            this.rbPendientes.TabStop = true;
+            this.rbPendientes.Text = "Pendientes";
+            this.rbPendientes.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // txtNota
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(924, 413);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(216, 214);
-            this.textBox3.TabIndex = 24;
+            this.txtNota.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNota.Location = new System.Drawing.Point(924, 413);
+            this.txtNota.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.txtNota.Multiline = true;
+            this.txtNota.Name = "txtNota";
+            this.txtNota.Size = new System.Drawing.Size(216, 214);
+            this.txtNota.TabIndex = 24;
             // 
             // label2
             // 
@@ -206,17 +211,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1156, 635);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rbPendientes);
+            this.Controls.Add(this.rbAprobados);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btnRechazarSolicitud);
             this.Controls.Add(this.btnAprobarSolicitud);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbSeguros);
             this.Controls.Add(this.dgvMostrarSolicitudes);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNota);
+            this.Controls.Add(this.txtEstado);
+            this.Controls.Add(this.txtIdSolicitud);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Century Gothic", 15.75F);
@@ -234,16 +239,16 @@
         #endregion
         private System.Windows.Forms.DataGridView dgvMostrarSolicitudes;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbSeguros;
         private System.Windows.Forms.Button btnAprobarSolicitud;
         private System.Windows.Forms.Button btnRechazarSolicitud;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtIdSolicitud;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtEstado;
+        private System.Windows.Forms.RadioButton rbAprobados;
+        private System.Windows.Forms.RadioButton rbPendientes;
+        private System.Windows.Forms.TextBox txtNota;
         private System.Windows.Forms.Label label2;
     }
 }

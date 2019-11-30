@@ -37,7 +37,6 @@
             this.txtCedulaMod = new System.Windows.Forms.MaskedTextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.btnEliminarMod = new System.Windows.Forms.Button();
             this.btnGuardarCambiosMod = new System.Windows.Forms.Button();
             this.txtCargoMod = new System.Windows.Forms.TextBox();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
@@ -103,7 +102,6 @@
             this.groupBox2.Controls.Add(this.txtCedulaMod);
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.label21);
-            this.groupBox2.Controls.Add(this.btnEliminarMod);
             this.groupBox2.Controls.Add(this.btnGuardarCambiosMod);
             this.groupBox2.Controls.Add(this.txtCargoMod);
             this.groupBox2.Controls.Add(this.dgvEmpleados);
@@ -199,22 +197,6 @@
             this.label21.Size = new System.Drawing.Size(114, 36);
             this.label21.TabIndex = 20;
             this.label21.Text = "Cargo:";
-            // 
-            // btnEliminarMod
-            // 
-            this.btnEliminarMod.BackColor = System.Drawing.Color.White;
-            this.btnEliminarMod.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
-            this.btnEliminarMod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarMod.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarMod.ForeColor = System.Drawing.Color.Crimson;
-            this.btnEliminarMod.Location = new System.Drawing.Point(826, 507);
-            this.btnEliminarMod.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnEliminarMod.Name = "btnEliminarMod";
-            this.btnEliminarMod.Size = new System.Drawing.Size(118, 49);
-            this.btnEliminarMod.TabIndex = 7;
-            this.btnEliminarMod.Text = "Eliminar";
-            this.btnEliminarMod.UseVisualStyleBackColor = false;
-            this.btnEliminarMod.Click += new System.EventHandler(this.btnEliminarMod_Click);
             // 
             // btnGuardarCambiosMod
             // 
@@ -727,7 +709,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Button btnEliminarMod;
         private System.Windows.Forms.Button btnGuardarCambiosMod;
         private System.Windows.Forms.TextBox txtCargoMod;
         private System.Windows.Forms.DataGridView dgvEmpleados;

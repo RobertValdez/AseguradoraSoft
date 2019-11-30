@@ -142,5 +142,29 @@ namespace CapaPresentacion
         {
             sdfsdfToolStripMenuItem.ForeColor = Color.Black;
         }
+
+        private void verSiniestrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVerSiniestros vs = new frmVerSiniestros();
+            vs.Show();
+        }
+
+        private void verReclamosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVerReclamos vr = new frmVerReclamos();
+            vr.Show();
+        }
+
+        private void verFacturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVerFacturasSolicitud vf = new frmVerFacturasSolicitud();
+            vf.Show();
+        }
+
+        private void verPolizasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVerPolizas vp = new frmVerPolizas();
+            vp.Show();
+        }
     }
 }

@@ -11,6 +11,12 @@ ALTER proc CrearPoliza
 @Estado_ctVida int,         -------
 @FechaHora datetime,		-------
 
+@idSolicitud int,
+@idSeguro int,
+@T_Pago varchar(25),
+@PagoParcial decimal(18,2),   
+@Descuento decimal(18,2),
+----------------
  --
 @InstitutoDondeLabora varchar(50),
 @AntecedentesPersonales varchar(MAX),
@@ -38,6 +44,20 @@ insert into detalleSeguroSalud(id_ctVida, InstitucionDondeLabora,
 
 insert into vdPoliza(Id_Cliente, Poliza, Estado,
 FechaHora, Vencimiento) values (@IdCliente,@Poliza, @EstadoPoliza, @FechaHora, @Vencimiento)
+
+insert into Facturas 
+      ([id_Cliente]
+	  ,[id_Empleado]
+	  ,[id_Solicitud]
+      ,[id_Seguro]
+      ,[Precio]
+      ,[T_Pago]
+      ,[Pago Parcial]
+      ,[SubTotal]
+      ,[Descuento]
+      ,[FechaHora]) values (@IdCliente, @idEmpleado, @idSolicitud, @idSeguro,
+	  @Total, @T_Pago, @PagoParcial, @Total,
+	  @Descuento, @FechaHora) 
 
 END	
  exec CrearPoliza  1,1, 1.0, 1, '10-10-2019', /**/'qwedasdasd','sdfsdf', '10-10-2019', 'eqwr',

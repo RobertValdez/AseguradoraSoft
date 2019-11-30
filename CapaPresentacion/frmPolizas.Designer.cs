@@ -180,7 +180,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 33);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1155, 535);
+            this.tabPage1.Size = new System.Drawing.Size(1151, 535);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nueva";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -328,9 +328,9 @@
             this.label60.Location = new System.Drawing.Point(66, 223);
             this.label60.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(147, 28);
+            this.label60.Size = new System.Drawing.Size(156, 28);
             this.label60.TabIndex = 187;
-            this.label60.Text = "No. Factura";
+            this.label60.Text = "No. Solicitud";
             // 
             // label51
             // 
