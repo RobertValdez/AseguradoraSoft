@@ -8,6 +8,12 @@ namespace PerlaDelSur_Entity.ResumenVentaPoliza
 {
     public class E_ResumenVentaPoliza
     {
+        private int _idSolicitud;
+        private int _idSeguro;
+        private string _T_Pago;
+        private decimal _PagoParcial;
+        private decimal _Descuento;
+
         private int _idCliente;
         private int _idEmpleado;
         private decimal _Total;                      // Entidad: ctVida
@@ -41,6 +47,11 @@ namespace PerlaDelSur_Entity.ResumenVentaPoliza
         public string Poliza { get => _Poliza; set => _Poliza = value; }
         public int EstadoPoliza { get => _EstadoPoliza; set => _EstadoPoliza = value; }
         public DateTime Vencimiento { get => _Vencimiento; set => _Vencimiento = value; }
+        public int IdSolicitud { get => _idSolicitud; set => _idSolicitud = value; }
+        public int IdSeguro { get => _idSeguro; set => _idSeguro = value; }
+        public string T_Pago { get => _T_Pago; set => _T_Pago = value; }
+        public decimal PagoParcial { get => _PagoParcial; set => _PagoParcial = value; }
+        public decimal Descuento { get => _Descuento; set => _Descuento = value; }
 
         public E_ResumenVentaPoliza()
         {
@@ -57,9 +68,16 @@ namespace PerlaDelSur_Entity.ResumenVentaPoliza
         }
 
         public E_ResumenVentaPoliza( string InstitutoDondeLabora,
-            string AntecedentesPersonales, DateTime Fecha, string Tipo)
+            string AntecedentesPersonales, DateTime Fecha, string Tipo, int idSolicitud, int idSeguro, string T_Pago, decimal PagoParcial, decimal Descuento)
         {
-           // _id_ctVida = Id_ctVida;
+            
+            _idSolicitud = idSolicitud;
+            _idSeguro = idSeguro;
+            _T_Pago = T_Pago;
+            _PagoParcial = PagoParcial;
+            _Descuento = Descuento;
+
+            // _id_ctVida = Id_ctVida;
             _InstitutoDondeLabora = InstitutoDondeLabora;
             _AntecedentesPersonales = AntecedentesPersonales;
             _Fecha = Fecha;

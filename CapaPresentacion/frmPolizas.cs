@@ -273,7 +273,7 @@ namespace CapaPresentacion
             txtPagoParcial_Renovar.TextChanged += delegate (System.Object o, System.EventArgs r)
             {
                 TextBox _tbox = o as TextBox;
-                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c))).ToArray());
             };
 
             if (txtPagoParcial_Renovar.Text == "")

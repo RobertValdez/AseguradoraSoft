@@ -8,6 +8,12 @@ namespace PerlaDelSur_Entity.Vehiculo
 {
     public class E_Vehiculo
     {
+        private int _idSolicitud;
+        private int _idSeguro;
+        private string _T_Pago;
+        private decimal _PagoParcial;
+        private decimal _Descuento;
+
         private int _IdCliente;
         private int _idEmpleado;
         private decimal _Total;
@@ -40,6 +46,12 @@ namespace PerlaDelSur_Entity.Vehiculo
         public DateTime FechaHora { get => _FechaHora; set => _FechaHora = value; }
         public string Tipo { get => _Tipo; set => _Tipo = value; }
 
+        public int IdSolicitud { get => _idSolicitud; set => _idSolicitud = value; }
+        public int IdSeguro { get => _idSeguro; set => _idSeguro = value; }
+        public string T_Pago { get => _T_Pago; set => _T_Pago = value; }
+        public decimal PagoParcial { get => _PagoParcial; set => _PagoParcial = value; }
+        public decimal Descuento { get => _Descuento; set => _Descuento = value; }
+
         public E_Vehiculo()
         {
 
@@ -48,8 +60,14 @@ namespace PerlaDelSur_Entity.Vehiculo
         public E_Vehiculo(int IdCliente, int idEmpleado, decimal Total, DateTime Fecha,
             string MarcaVehiculo, string Modelo, string Matricula, int Ano, int Cilindros,
             string Carroceria, string Categoria, string Uso, DateTime FechaHora,
-            string Tipo)
+            string Tipo, int idSolicitud, int idSeguro, string T_Pago, decimal PagoParcial, decimal Descuento)
         {
+            _idSolicitud = idSolicitud;
+            _idSeguro = idSeguro;
+            _T_Pago = T_Pago;
+            _PagoParcial = PagoParcial;
+            _Descuento = Descuento;
+
             _IdCliente = IdCliente;
             _idEmpleado = idEmpleado;
             _Total = Total;

@@ -16,26 +16,25 @@ namespace CapaPresentacion
 {
     public partial class frmResumenVentaPoliza : Form
     {
-        string DatosYContratoDePolizaDeSeguro = "lkuaewhfcneufgslkfgesl gsdflkgsf hgdfhgdf" +
-            "hg fgt" +
-            "hj dt" +
-            "hj d" +
-            " hj" +
-            "hj d" +
-            " hjdfhg df" +
-            "hg df" +
-            "hg df" +
-            "hg dfhg" +
-            "dfh g" +
-            "df" +
-            "hg dfhgdf" +
-            "hg dfhg df " +                     /// Simulación de la Descripcion
-            "hdfhg " +
-            "dfs fgsfd gsdf g+sdf gs" +
-            "df g" +
-            "sd gfsdf" +
-            "g" +
-            "sdf g";
+        string DatosYContratoDePolizaDeSeguro = " Le mostramos a continuación, a modo de ejemplo, una poliza de Seguro de Vida Individual, incluyendo las Condiciones Generales y Especiales."
++ "ENTIDAD ASEGURADORA ……………………………………."
++ "NOTA INFORMATIVA AL TOMADOR DEL SEGURO(ASEGURADO)"
++ "La información que se contiene en este documento se ofrece en cumplimiento de lo dispuesto en la Ley Orgánica 6/2004 de Ordenación y Supervisión de los Seguros Privados y de los artículos 104 a 107 de su Reglamento de desarrollo, aprobado por Real Decreto 2486/1998."
++ "LEGISLACIÓN APLICABLE AL CONTRATO DE SEGURO"
++ "Ley 50/1980, de 8 de octubre, de Contrato de Seguro; Ley Orgánica 6/2004 de Ordenación y Supervisión de los Seguros Privados y su Reglamento de desarrollo(Real Decreto nº 2486/1998, de 20 de noviembre). Condiciones Generales, Especiales y Particulares del Contrato."
++ "ENTIDAD ASEGURADORA"
++ "Denominación Social: ………………………………. es el nombre comercial de ……………………………………………………………………………………………………………….. con N.I.F.: ………………………………., con domicilio en ……………………………….."
++ "Corresponde a la Dirección General de Seguros, dependiente del Ministerio de Economía y Hacienda, el control y supervisión de la actividad de dicha Entidad Aseguradora."
+
++ "INSTANCIAS DE RECLAMACIÓN ………………………………."
++ " 1) Servicio de Atención al Cliente cuyo reglamento se encuentra a disposición de los interesados en las oficinas de ……………………………….."
++ "2) Con carácter general los conflictos se resolverán por los jueces y tribunales competentes."
++ "3) Asimismo puede acudirse, para resolver las controversias que puedan plantearse, al procedimiento administrativo de reclamación ante la Dirección General de Seguros para el cual está legitimado el tomador, asegurado, beneficiario, tercero perjudicado o derechohabiente de cualquiera de ellos."
++ "CONDICIONES GENERALES DEL SEGURO DE VIDA INDIVIDUAL"
++ "El presente contrato de seguro de vida se rige por lo dispuesto en la Ley 50/1980, de 8 de octubre, de contrato de Seguro, T.R de Ordenación y Supervisión de los Seguros Privados, R.D.Leg 6/2004, R.D. 2486/1998 de 20 de Noviembre y por lo convenido en las Condiciones Generales, Especiales y Particulares de este contrato, sin que tengan validez las cláusulas limitativas de los derechos de los asegurados que no sean específicamente aceptadas por el tomador de la póliza.No requerirán dicha aceptación las meras transcripciones o referencias a preceptos legales."
++ "El control de la actividad que desarrolla la Entidad Aseguradora, le corresponde al Ministerio de Economía y Hacienda del Estado español, que lo ejerce a través de la Dirección General de Seguros y Fondos de Pensiones."
++ "ARTÍCULO PRELIMINAR. DEFINICIONES."
++ "Para los efectos de este contrato se entenderá por:";
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -66,7 +65,7 @@ namespace CapaPresentacion
 
         private void frmResumenVentaPoliza_Load(object sender, EventArgs e)
         {
-            cmbTipo_Pago.SelectedIndex = 0;
+            cmbTipoPago.SelectedIndex = 0;
         }
 
         private void frmResumenVentaPoliza_MouseDown(object sender, MouseEventArgs e)
@@ -77,23 +76,56 @@ namespace CapaPresentacion
 
         private void cmbTipo_Pago_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbTipo_Pago.Text == "Parcial")
+            if (cmbTipoPago.Text == "Parcial")
             {
                 lblParcial.Visible = true;
-                mskParcial.Visible = true;
+                txtParcial.Visible = true;
             }
             else
             {
                 lblParcial.Visible = false;
-                mskParcial.Visible = false;
+                txtParcial.Visible = false;
             }
+        }
+
+
+        private bool ValueParcial()
+        {
+            bool value = true;
+
+            if (cmbTipoPago.Text == "Parcial")
+            {
+                if (!string.IsNullOrEmpty(txtParcial.Text) ||
+                    !string.IsNullOrWhiteSpace(txtParcial.Text))
+                {
+                    decimal Total = Convert.ToDecimal(txtTotalA_Pagar.Text);
+                    decimal Parcial = Convert.ToDecimal(txtParcial.Text);
+                    if (Parcial > Total)
+                    {
+                        MessageBox.Show("No se puede pagar de manera parcial un valor igual o mayor que el precio total."
+                            + " Por favor, intentelo de nuevo.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        value = false;
+                        txtParcial.Text = "";
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Completar el campo Parcial.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    value = false;
+                }
+            }
+
+            return value;
         }
 
         private void btnPagarCrearPoliza_Click(object sender, EventArgs e)
         {
             try
             {
-                Pagar_y_CrearPoliza();
+                if (ValueParcial())
+                {
+                    Pagar_y_CrearPoliza();
+                }
             }
             catch (Exception ex)
             {
@@ -105,7 +137,7 @@ namespace CapaPresentacion
         {
             E_ResumenVentaPoliza.IdCliente = Convert.ToInt32(txtId.Text);
             E_ResumenVentaPoliza.IdEmpleado = varIdEmpleado;
-            E_ResumenVentaPoliza.Total = Convert.ToDecimal(txtTotal_A_Pagar.Text);
+            E_ResumenVentaPoliza.Total = Convert.ToDecimal(txtTotalA_Pagar.Text);
 
             E_ResumenVentaPoliza.InstitutoDondeLabora = strInstitutoDondeLabora;
             E_ResumenVentaPoliza.FechaHora = DateTime.Now;
@@ -115,11 +147,35 @@ namespace CapaPresentacion
             E_ResumenVentaPoliza.Poliza = DatosYContratoDePolizaDeSeguro;
             E_ResumenVentaPoliza.EstadoPoliza = 1;
 
+            E_ResumenVentaPoliza.IdSolicitud = Convert.ToInt32(txtCodigo.Text);
+            E_ResumenVentaPoliza.IdSeguro = Convert.ToInt32(txtIdSeguro.Text);
+            E_ResumenVentaPoliza.T_Pago = cmbTipoPago.Text;
+
+
+            if (string.IsNullOrEmpty(txtParcial.Text) ||
+                    string.IsNullOrWhiteSpace(txtParcial.Text))
+            {
+                E_ResumenVentaPoliza.PagoParcial = 0.0m;
+            }
+            else
+            {
+                E_ResumenVentaPoliza.PagoParcial = Convert.ToDecimal(txtParcial.Text);
+            }
+            if (string.IsNullOrEmpty(txtDescuento.Text) ||
+                string.IsNullOrWhiteSpace(txtDescuento.Text))
+            {
+                E_ResumenVentaPoliza.Descuento = 0.0m;
+            }
+            else
+            {
+                E_ResumenVentaPoliza.Descuento = Convert.ToDecimal(txtDescuento.Text);
+            }
+
             E_ResumenVentaPoliza.Vencimiento = DateTime.Parse("13-05-2020");
 
             if (MessageBox.Show("¿Está seguro que desea realizar el pago y crear una póliza de seguro para el cliente actual?","", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (B_ResumenVentaPoliza.CrearPoliza(E_ResumenVentaPoliza) == 3)
+                if (B_ResumenVentaPoliza.CrearPoliza(E_ResumenVentaPoliza) >= 3)
                 {
                     MessageBox.Show("Poliza creada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -137,6 +193,53 @@ namespace CapaPresentacion
 
             return fecha = fecha.AddDays(180);
 
+        }
+
+        private void btnDescontar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(txtDescontar.Text) ||
+                    !string.IsNullOrWhiteSpace(txtDescontar.Text))
+                {
+                    string strPorCiento = "";
+
+                    decimal CantidadTotal = Convert.ToDecimal(txtSubTotal.Text);
+
+                    strPorCiento = "0." + txtDescontar.Text;
+                    decimal PorCiento = Convert.ToDecimal(strPorCiento, CultureInfo.InvariantCulture);
+
+                    decimal C = CantidadTotal * PorCiento;
+
+                    decimal P = CantidadTotal - C;
+
+                    decimal Round_A = Math.Round(C, 2);
+                    txtDescuento.Text = Round_A.ToString();
+
+
+                    txtTotalA_Pagar.Text = Math.Round(P, 2).ToString();
+                }
+            }
+            catch (Exception)
+            { }
+        }
+
+        private void txtDescontar_TextChanged(object sender, EventArgs e)
+        {
+            txtDescontar.TextChanged += delegate (System.Object o, System.EventArgs r)
+            {
+                TextBox _tbox = o as TextBox;
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c))).ToArray());
+            };
+        }
+
+        private void txtParcial_TextChanged(object sender, EventArgs e)
+        {
+            txtParcial.TextChanged += delegate (System.Object o, System.EventArgs r)
+            {
+                TextBox _tbox = o as TextBox;
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c))).ToArray());
+            };
         }
     }
 }

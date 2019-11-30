@@ -336,7 +336,7 @@ namespace CapaPresentacion
 
                     frmFac.txtCodigo.Text = idCodigo.ToString();
                     frmFac.txtSubTotal.Text = Precio.ToString();
-                    frmFac.txtTotal_A_Pagar.Text = Precio.ToString();
+                    frmFac.txtTotalA_Pagar.Text = Precio.ToString();
 
 
                     frmFac.strInstitutoDondeLabora = txtInstitutoDondeLabora.Text.Trim();

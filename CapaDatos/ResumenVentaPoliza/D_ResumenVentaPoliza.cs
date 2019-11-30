@@ -54,6 +54,38 @@ namespace CapaDatos.ResumenVentaPoliza
             parFechaHora.Value = rVPoliza.FechaHora;
             cmd.Parameters.Add(parFechaHora);
 
+            SqlParameter parIdSolicitud = new SqlParameter();
+            parIdSolicitud.ParameterName = "@idSolicitud";
+            parIdSolicitud.SqlDbType = SqlDbType.Int;
+            parIdSolicitud.Value = rVPoliza.IdSolicitud;
+            cmd.Parameters.Add(parIdSolicitud);
+
+            SqlParameter parIdSeguro = new SqlParameter();
+            parIdSeguro.ParameterName = "@idSeguro";
+            parIdSeguro.SqlDbType = SqlDbType.Int;
+            parIdSeguro.Value = rVPoliza.IdSeguro;
+            cmd.Parameters.Add(parIdSeguro);
+
+            SqlParameter parT_Pago = new SqlParameter();
+            parT_Pago.ParameterName = "@T_Pago";
+            parT_Pago.SqlDbType = SqlDbType.VarChar;
+            parT_Pago.Size = 25;
+            parT_Pago.Value = rVPoliza.T_Pago;
+            cmd.Parameters.Add(parT_Pago);
+
+            SqlParameter parPagoParcial = new SqlParameter();
+            parPagoParcial.ParameterName = "@PagoParcial";
+            parPagoParcial.SqlDbType = SqlDbType.Decimal;
+            parPagoParcial.Size = 18;
+            parPagoParcial.Value = rVPoliza.PagoParcial;
+            cmd.Parameters.Add(parPagoParcial);
+
+            SqlParameter parDescuento = new SqlParameter();
+            parDescuento.ParameterName = "@Descuento";
+            parDescuento.SqlDbType = SqlDbType.Decimal;
+            parDescuento.Size = 18;
+            parDescuento.Value = rVPoliza.Descuento;
+            cmd.Parameters.Add(parDescuento);
 
             SqlParameter parInstitutoDondeLabora = new SqlParameter();
             parInstitutoDondeLabora.ParameterName = "@InstitutoDondeLabora";

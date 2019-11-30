@@ -49,6 +49,46 @@ namespace CapaDatos.ResumenSolicitud
             cmd.Parameters.Add(parFecha);
 
 
+
+            SqlParameter parIdSolicitud = new SqlParameter();
+            parIdSolicitud.ParameterName = "@idSolicitud";
+            parIdSolicitud.SqlDbType = SqlDbType.Int;
+            parIdSolicitud.Value = eSol.IdSolicitud;
+            cmd.Parameters.Add(parIdSolicitud);
+
+            SqlParameter parIdSeguro = new SqlParameter();
+            parIdSeguro.ParameterName = "@idSeguro";
+            parIdSeguro.SqlDbType = SqlDbType.Int;
+            parIdSeguro.Value = eSol.IdSeguro;
+            cmd.Parameters.Add(parIdSeguro);
+
+            SqlParameter parT_Pago = new SqlParameter();
+            parT_Pago.ParameterName = "@T_Pago";
+            parT_Pago.SqlDbType = SqlDbType.VarChar;
+            parT_Pago.Size = 25;
+            parT_Pago.Value = eSol.T_Pago;
+            cmd.Parameters.Add(parT_Pago);
+
+            SqlParameter parPagoParcial = new SqlParameter();
+            parPagoParcial.ParameterName = "@PagoParcial";
+            parPagoParcial.SqlDbType = SqlDbType.Decimal;
+            parPagoParcial.Size = 18;
+            parPagoParcial.Value = eSol.PagoParcial;
+            cmd.Parameters.Add(parPagoParcial);
+
+            SqlParameter parDescuento = new SqlParameter();
+            parDescuento.ParameterName = "@Descuento";
+            parDescuento.SqlDbType = SqlDbType.Decimal;
+            parDescuento.Size = 18;
+            parDescuento.Value = eSol.Descuento;
+            cmd.Parameters.Add(parDescuento);
+            //_idSolicitud = idSolicitud;
+            //_idSeguro = idSeguro;
+            //_T_Pago = T_Pago;
+            //_PagoParcial = PagoParcial;
+            //_Descuento = Descuento;
+
+
             SqlParameter parNombreEmpresa = new SqlParameter();
             parNombreEmpresa.ParameterName = "@NombreEmpresa";
             parNombreEmpresa.SqlDbType = SqlDbType.VarChar;
@@ -170,6 +210,40 @@ namespace CapaDatos.ResumenSolicitud
             parFecha.SqlDbType = SqlDbType.Date;
             parFecha.Value = eSd.Fecha;
             cmd.Parameters.Add(parFecha);
+
+
+            SqlParameter parIdSolicitud = new SqlParameter();
+            parIdSolicitud.ParameterName = "@idSolicitud";
+            parIdSolicitud.SqlDbType = SqlDbType.Int;
+            parIdSolicitud.Value = eSd.IdSolicitud;
+            cmd.Parameters.Add(parIdSolicitud);
+
+            SqlParameter parIdSeguro = new SqlParameter();
+            parIdSeguro.ParameterName = "@idSeguro";
+            parIdSeguro.SqlDbType = SqlDbType.Int;
+            parIdSeguro.Value = eSd.IdSeguro;
+            cmd.Parameters.Add(parIdSeguro);
+
+            SqlParameter parT_Pago = new SqlParameter();
+            parT_Pago.ParameterName = "@T_Pago";
+            parT_Pago.SqlDbType = SqlDbType.VarChar;
+            parT_Pago.Size = 25;
+            parT_Pago.Value = eSd.T_Pago;
+            cmd.Parameters.Add(parT_Pago);
+
+            SqlParameter parPagoParcial = new SqlParameter();
+            parPagoParcial.ParameterName = "@PagoParcial";
+            parPagoParcial.SqlDbType = SqlDbType.Decimal;
+            parPagoParcial.Size = 18;
+            parPagoParcial.Value = eSd.PagoParcial;
+            cmd.Parameters.Add(parPagoParcial);
+
+            SqlParameter parDescuento = new SqlParameter();
+            parDescuento.ParameterName = "@Descuento";
+            parDescuento.SqlDbType = SqlDbType.Decimal;
+            parDescuento.Size = 18;
+            parDescuento.Value = eSd.Descuento;
+            cmd.Parameters.Add(parDescuento);
 
 
             SqlParameter parTipoVivienda = new SqlParameter();
@@ -299,6 +373,38 @@ namespace CapaDatos.ResumenSolicitud
             parFecha.Value = eSc.Fecha;
             cmd.Parameters.Add(parFecha);
 
+            SqlParameter parIdSolicitud = new SqlParameter();
+            parIdSolicitud.ParameterName = "@idSolicitud";
+            parIdSolicitud.SqlDbType = SqlDbType.Int;
+            parIdSolicitud.Value = eSc.IdSolicitud;
+            cmd.Parameters.Add(parIdSolicitud);
+
+            SqlParameter parIdSeguro = new SqlParameter();
+            parIdSeguro.ParameterName = "@idSeguro";
+            parIdSeguro.SqlDbType = SqlDbType.Int;
+            parIdSeguro.Value = eSc.IdSeguro;
+            cmd.Parameters.Add(parIdSeguro);
+
+            SqlParameter parT_Pago = new SqlParameter();
+            parT_Pago.ParameterName = "@T_Pago";
+            parT_Pago.SqlDbType = SqlDbType.VarChar;
+            parT_Pago.Size = 25;
+            parT_Pago.Value = eSc.T_Pago;
+            cmd.Parameters.Add(parT_Pago);
+
+            SqlParameter parPagoParcial = new SqlParameter();
+            parPagoParcial.ParameterName = "@PagoParcial";
+            parPagoParcial.SqlDbType = SqlDbType.Decimal;
+            parPagoParcial.Size = 18;
+            parPagoParcial.Value = eSc.PagoParcial;
+            cmd.Parameters.Add(parPagoParcial);
+
+            SqlParameter parDescuento = new SqlParameter();
+            parDescuento.ParameterName = "@Descuento";
+            parDescuento.SqlDbType = SqlDbType.Decimal;
+            parDescuento.Size = 18;
+            parDescuento.Value = eSc.Descuento;
+            cmd.Parameters.Add(parDescuento);
 
             SqlParameter parTipoVivienda = new SqlParameter();
             parTipoVivienda.ParameterName = "@TipoVivienda";
@@ -427,6 +533,38 @@ namespace CapaDatos.ResumenSolicitud
             parFecha.Value = eVv.Fecha;
             cmd.Parameters.Add(parFecha);
 
+            SqlParameter parIdSolicitud = new SqlParameter();
+            parIdSolicitud.ParameterName = "@idSolicitud";
+            parIdSolicitud.SqlDbType = SqlDbType.Int;
+            parIdSolicitud.Value = eVv.IdSolicitud;
+            cmd.Parameters.Add(parIdSolicitud);
+
+            SqlParameter parIdSeguro = new SqlParameter();
+            parIdSeguro.ParameterName = "@idSeguro";
+            parIdSeguro.SqlDbType = SqlDbType.Int;
+            parIdSeguro.Value = eVv.IdSeguro;
+            cmd.Parameters.Add(parIdSeguro);
+
+            SqlParameter parT_Pago = new SqlParameter();
+            parT_Pago.ParameterName = "@T_Pago";
+            parT_Pago.SqlDbType = SqlDbType.VarChar;
+            parT_Pago.Size = 25;
+            parT_Pago.Value = eVv.T_Pago;
+            cmd.Parameters.Add(parT_Pago);
+
+            SqlParameter parPagoParcial = new SqlParameter();
+            parPagoParcial.ParameterName = "@PagoParcial";
+            parPagoParcial.SqlDbType = SqlDbType.Decimal;
+            parPagoParcial.Size = 18;
+            parPagoParcial.Value = eVv.PagoParcial;
+            cmd.Parameters.Add(parPagoParcial);
+
+            SqlParameter parDescuento = new SqlParameter();
+            parDescuento.ParameterName = "@Descuento";
+            parDescuento.SqlDbType = SqlDbType.Decimal;
+            parDescuento.Size = 18;
+            parDescuento.Value = eVv.Descuento;
+            cmd.Parameters.Add(parDescuento);
 
             SqlParameter parMarcaVehiculo = new SqlParameter();
             parMarcaVehiculo.ParameterName = "@MarcaVehiculo";
@@ -535,6 +673,38 @@ namespace CapaDatos.ResumenSolicitud
             parFecha.Value = eVr.Fecha;
             cmd.Parameters.Add(parFecha);
 
+            SqlParameter parIdSolicitud = new SqlParameter();
+            parIdSolicitud.ParameterName = "@idSolicitud";
+            parIdSolicitud.SqlDbType = SqlDbType.Int;
+            parIdSolicitud.Value = eVr.IdSolicitud;
+            cmd.Parameters.Add(parIdSolicitud);
+
+            SqlParameter parIdSeguro = new SqlParameter();
+            parIdSeguro.ParameterName = "@idSeguro";
+            parIdSeguro.SqlDbType = SqlDbType.Int;
+            parIdSeguro.Value = eVr.IdSeguro;
+            cmd.Parameters.Add(parIdSeguro);
+
+            SqlParameter parT_Pago = new SqlParameter();
+            parT_Pago.ParameterName = "@T_Pago";
+            parT_Pago.SqlDbType = SqlDbType.VarChar;
+            parT_Pago.Size = 25;
+            parT_Pago.Value = eVr.T_Pago;
+            cmd.Parameters.Add(parT_Pago);
+
+            SqlParameter parPagoParcial = new SqlParameter();
+            parPagoParcial.ParameterName = "@PagoParcial";
+            parPagoParcial.SqlDbType = SqlDbType.Decimal;
+            parPagoParcial.Size = 18;
+            parPagoParcial.Value = eVr.PagoParcial;
+            cmd.Parameters.Add(parPagoParcial);
+
+            SqlParameter parDescuento = new SqlParameter();
+            parDescuento.ParameterName = "@Descuento";
+            parDescuento.SqlDbType = SqlDbType.Decimal;
+            parDescuento.Size = 18;
+            parDescuento.Value = eVr.Descuento;
+            cmd.Parameters.Add(parDescuento);
 
             SqlParameter parMarcaVehiculo = new SqlParameter();
             parMarcaVehiculo.ParameterName = "@MarcaVehiculo";
@@ -643,6 +813,38 @@ namespace CapaDatos.ResumenSolicitud
             parFecha.Value = eVo.Fecha;
             cmd.Parameters.Add(parFecha);
 
+            SqlParameter parIdSolicitud = new SqlParameter();
+            parIdSolicitud.ParameterName = "@idSolicitud";
+            parIdSolicitud.SqlDbType = SqlDbType.Int;
+            parIdSolicitud.Value = eVo.IdSolicitud;
+            cmd.Parameters.Add(parIdSolicitud);
+
+            SqlParameter parIdSeguro = new SqlParameter();
+            parIdSeguro.ParameterName = "@idSeguro";
+            parIdSeguro.SqlDbType = SqlDbType.Int;
+            parIdSeguro.Value = eVo.IdSeguro;
+            cmd.Parameters.Add(parIdSeguro);
+
+            SqlParameter parT_Pago = new SqlParameter();
+            parT_Pago.ParameterName = "@T_Pago";
+            parT_Pago.SqlDbType = SqlDbType.VarChar;
+            parT_Pago.Size = 25;
+            parT_Pago.Value = eVo.T_Pago;
+            cmd.Parameters.Add(parT_Pago);
+
+            SqlParameter parPagoParcial = new SqlParameter();
+            parPagoParcial.ParameterName = "@PagoParcial";
+            parPagoParcial.SqlDbType = SqlDbType.Decimal;
+            parPagoParcial.Size = 18;
+            parPagoParcial.Value = eVo.PagoParcial;
+            cmd.Parameters.Add(parPagoParcial);
+
+            SqlParameter parDescuento = new SqlParameter();
+            parDescuento.ParameterName = "@Descuento";
+            parDescuento.SqlDbType = SqlDbType.Decimal;
+            parDescuento.Size = 18;
+            parDescuento.Value = eVo.Descuento;
+            cmd.Parameters.Add(parDescuento);
 
             SqlParameter parMarcaVehiculo = new SqlParameter();
             parMarcaVehiculo.ParameterName = "@MarcaVehiculo";

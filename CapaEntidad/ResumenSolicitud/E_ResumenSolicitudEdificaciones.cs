@@ -8,6 +8,12 @@ namespace PerlaDelSur_Entity.ResumenSolicitud
 {
     public class E_ResumenSolicitudEdificaciones
     {
+        private int _idSolicitud;
+        private int _idSeguro;
+        private string _T_Pago;
+        private decimal _PagoParcial;
+        private decimal _Descuento;
+
         private int _idCliente;
         private int _idEmpleado;
         private decimal _Total;
@@ -52,6 +58,11 @@ namespace PerlaDelSur_Entity.ResumenSolicitud
 
         public string DescripcionMuebles { get => _DescripcionMuebles; set => _DescripcionMuebles = value; }
         public int ValorEstimadoMuebles { get => _ValorEstimadoMuebles; set => _ValorEstimadoMuebles = value; }
+        public int IdSolicitud { get => _idSolicitud; set => _idSolicitud = value; }
+        public int IdSeguro { get => _idSeguro; set => _idSeguro = value; }
+        public string T_Pago { get => _T_Pago; set => _T_Pago = value; }
+        public decimal PagoParcial { get => _PagoParcial; set => _PagoParcial = value; }
+        public decimal Descuento { get => _Descuento; set => _Descuento = value; }
 
         public E_ResumenSolicitudEdificaciones()
         {
@@ -64,8 +75,14 @@ namespace PerlaDelSur_Entity.ResumenSolicitud
             string ViviendaHabitual, string ViviendaAlquilada, string CodigoPostal,
             string DeshabitadaPor3MesesAlAno, int AnoDeCostruccion, decimal M2Vivienda,
             decimal M2EdificacionesAnexas, string CapitalOtrasInstalaciones, DateTime fechaHora,
-            string tipo)
+            string tipo, int idSolicitud, int idSeguro, string T_Pago, decimal PagoParcial, decimal Descuento)
         {
+            _idSolicitud = idSolicitud;
+            _idSeguro = idSeguro;
+            _T_Pago = T_Pago;
+            _PagoParcial = PagoParcial;
+            _Descuento = Descuento;
+
             _idCliente = idCliente;
             _idEmpleado = idEmpleado;
             _Total = Total;
@@ -90,8 +107,15 @@ namespace PerlaDelSur_Entity.ResumenSolicitud
            string ViviendaHabitual, string ViviendaAlquilada, string CodigoPostal,
            string DeshabitadaPor3MesesAlAno, int AnoDeCostruccion, decimal M2Vivienda,
            string DescripcionMuebles, int ValorEstimadoMuebles, DateTime fechaHora,
-           string tipo)
+           string tipo, int idSolicitud, int idSeguro, string T_Pago, decimal PagoParcial, decimal Descuento)
         {
+            _idSolicitud = idSolicitud;
+            _idSeguro = idSeguro;
+            _T_Pago = T_Pago;
+            _PagoParcial = PagoParcial;
+            _Descuento = Descuento;
+
+
             _idCliente = idCliente;
             _idEmpleado = idEmpleado;
             _Total = Total;
@@ -112,6 +136,5 @@ namespace PerlaDelSur_Entity.ResumenSolicitud
             _FechaHora = fechaHora;
             _Tipo = tipo;
         }
-
     }
 }

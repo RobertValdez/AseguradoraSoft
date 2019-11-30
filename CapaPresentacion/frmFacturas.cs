@@ -65,22 +65,31 @@ namespace CapaPresentacion
         {
             try
             {
+                if (!string.IsNullOrEmpty(txtDescontar.Text) ||
+                    !string.IsNullOrWhiteSpace(txtDescontar.Text))
+                {
+                    string strPorCiento = "";
 
-                string strA;
-                decimal A = Convert.ToDecimal(txtSubTotal.Text);
+                    decimal CantidadTotal = Convert.ToDecimal(txtSubTotal.Text);
 
-                strA = "0." + txtDescontar.Text;
-                decimal B = decimal.Parse(strA, CultureInfo.InvariantCulture);
+                    strPorCiento = "0." + txtDescontar.Text;
+                    decimal PorCiento = Convert.ToDecimal(strPorCiento, CultureInfo.InvariantCulture);
 
-                decimal C = A * B;
-              //  decimal P = A - C;
+                    decimal C = CantidadTotal * PorCiento;
 
-                txtDescuento.Text = C.ToString();
+                    decimal P = CantidadTotal - C;
+
+                    decimal Round_A = Math.Round(C, 2);
+                    txtDescuento.Text = Round_A.ToString();
+
+
+                    txtTotalA_Pagar.Text = Math.Round(P, 2).ToString();
+                }
             }
             catch (Exception)
             { }
         }
-    private void txtDescontar_Validating(object sender, CancelEventArgs e)
+        private void txtDescontar_Validating(object sender, CancelEventArgs e)
         {
 
         }
@@ -103,27 +112,27 @@ namespace CapaPresentacion
         {
             try
             {
-                if (txtSeguroA_Adquirir.Text == "Seguro Negocios y Empresas")
+                if (txtSeguroA_Adquirir.Text == "Seguro Negocios y Empresas" && ValueParcial() == true)
                 {
                     SolicitarEmpresasNegocios();
                 }
-                else if (txtSeguroA_Adquirir.Text == "Seguro Edificaciones")
+                else if (txtSeguroA_Adquirir.Text == "Seguro Edificaciones" && ValueParcial() == true)
                 {
                     SolicitarEdificaciones();
                 }
-                else if (txtSeguroA_Adquirir.Text == "Seguro Contenido")
+                else if (txtSeguroA_Adquirir.Text == "Seguro Contenido" && ValueParcial() == true)
                 {
                     SolicitarContenido();
                 }
-                else if (txtSeguroA_Adquirir.Text == "Seguro Voluntario")
+                else if (txtSeguroA_Adquirir.Text == "Seguro Voluntario" && ValueParcial() == true)
                 {
                     SolicitarVEHvoluntario();
                 }
-                else if (txtSeguroA_Adquirir.Text == "Seguro Todo Riesgo")
+                else if (txtSeguroA_Adquirir.Text == "Seguro Todo Riesgo" && ValueParcial() == true)
                 {
                     SolicitarVEHtodoRiesgo();
                 }
-                else if (txtSeguroA_Adquirir.Text == "Seguro Obligatorio")
+                else if (txtSeguroA_Adquirir.Text == "Seguro Obligatorio" && ValueParcial() == true)
                 {
                     SolicitarVEHobligatorio();
                 }
@@ -160,13 +169,37 @@ namespace CapaPresentacion
             E_Vehiculo.Categoria = strCategoriaObl;
             E_Vehiculo.Uso = strUsoObl;
 
+            E_Vehiculo.IdSolicitud = Convert.ToInt32(txtCodigo.Text);
+            E_Vehiculo.IdSeguro = Convert.ToInt32(txtIdSeguro.Text);
+            E_Vehiculo.T_Pago = cmbTipoPago.Text;
+
+
+            if (string.IsNullOrEmpty(txtParcial.Text) ||
+                    string.IsNullOrWhiteSpace(txtParcial.Text))
+            {
+                E_Vehiculo.PagoParcial = 0.0m;
+            }
+            else
+            {
+                E_Vehiculo.PagoParcial = Convert.ToDecimal(txtParcial.Text);
+            }
+            if (string.IsNullOrEmpty(txtDescuento.Text) ||
+                string.IsNullOrWhiteSpace(txtDescuento.Text))
+            {
+                E_Vehiculo.Descuento = 0.0m;
+            }
+            else
+            {
+                E_Vehiculo.Descuento = Convert.ToDecimal(txtDescuento.Text);
+            }
+
             E_Vehiculo.FechaHora = DateTime.Now;
             E_Vehiculo.Tipo = txtCategoria.Text;
 
 
             if (MessageBox.Show("Se creará una solicitud para el cliente actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (B_ResumenSolicitud.B_CrearSolicitudVEHobligatorio(E_Vehiculo) == 2)
+                if (B_ResumenSolicitud.B_CrearSolicitudVEHobligatorio(E_Vehiculo) >= 2)
                 {
                     MessageBox.Show("Solicitud creada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -218,13 +251,38 @@ namespace CapaPresentacion
             E_Vehiculo.Categoria = strCategoriaTR;
             E_Vehiculo.Uso = strUsoTR;
 
+            E_Vehiculo.IdSolicitud = Convert.ToInt32(txtCodigo.Text);
+            E_Vehiculo.IdSeguro = Convert.ToInt32(txtIdSeguro.Text);
+            E_Vehiculo.T_Pago = cmbTipoPago.Text;
+
+
+
+            if (string.IsNullOrEmpty(txtParcial.Text) ||
+                    string.IsNullOrWhiteSpace(txtParcial.Text))
+            {
+                E_Vehiculo.PagoParcial = 0.0m;
+            }
+            else
+            {
+                E_Vehiculo.PagoParcial = Convert.ToDecimal(txtParcial.Text);
+            }
+            if (string.IsNullOrEmpty(txtDescuento.Text) ||
+                string.IsNullOrWhiteSpace(txtDescuento.Text))
+            {
+                E_Vehiculo.Descuento = 0.0m;
+            }
+            else
+            {
+                E_Vehiculo.Descuento = Convert.ToDecimal(txtDescuento.Text);
+            }
+
             E_Vehiculo.FechaHora = DateTime.Now;
             E_Vehiculo.Tipo = txtCategoria.Text;
 
 
             if (MessageBox.Show("Se creará una solicitud para el cliente actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (B_ResumenSolicitud.B_CrearSolicitudVEHtodoRiesgo(E_Vehiculo) == 2)
+                if (B_ResumenSolicitud.B_CrearSolicitudVEHtodoRiesgo(E_Vehiculo) >= 2)
                 {
                     MessageBox.Show("Solicitud creada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -279,13 +337,38 @@ namespace CapaPresentacion
             E_Vehiculo.Categoria = strCategoriaVol;
             E_Vehiculo.Uso = strUsoVol;
 
+            E_Vehiculo.IdSolicitud = Convert.ToInt32(txtCodigo.Text);
+            E_Vehiculo.IdSeguro = Convert.ToInt32(txtIdSeguro.Text);
+            E_Vehiculo.T_Pago = cmbTipoPago.Text;
+
+
+
+            if (string.IsNullOrEmpty(txtParcial.Text) ||
+                    string.IsNullOrWhiteSpace(txtParcial.Text))
+            {
+                E_Vehiculo.PagoParcial = 0.0m;
+            }
+            else
+            {
+                E_Vehiculo.PagoParcial = Convert.ToDecimal(txtParcial.Text);
+            }
+            if (string.IsNullOrEmpty(txtDescuento.Text) ||
+                string.IsNullOrWhiteSpace(txtDescuento.Text))
+            {
+                E_Vehiculo.Descuento = 0.0m;
+            }
+            else
+            {
+                E_Vehiculo.Descuento = Convert.ToDecimal(txtDescuento.Text);
+            }
+
             E_Vehiculo.FechaHora = DateTime.Now;
             E_Vehiculo.Tipo = txtCategoria.Text;
 
 
             if (MessageBox.Show("Se creará una solicitud para el cliente actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (B_ResumenSolicitud.B_CrearSolicitudVEHvoluntario(E_Vehiculo) == 2)
+                if (B_ResumenSolicitud.B_CrearSolicitudVEHvoluntario(E_Vehiculo) >= 2)
                 {
                     MessageBox.Show("Solicitud creada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -345,13 +428,39 @@ namespace CapaPresentacion
             E_ResumenSolicitudEdificaciones.DescripcionMuebles = strDescripcionMueblesCont;
             E_ResumenSolicitudEdificaciones.ValorEstimadoMuebles = strValorEstimadoMueblesCont;
 
+            E_ResumenSolicitudEdificaciones.IdSolicitud = Convert.ToInt32(txtCodigo.Text);
+            E_ResumenSolicitudEdificaciones.IdSeguro = Convert.ToInt32(txtIdSeguro.Text);
+            E_ResumenSolicitudEdificaciones.T_Pago = cmbTipoPago.Text;
+
+
+
+            if (string.IsNullOrEmpty(txtParcial.Text) ||
+                    string.IsNullOrWhiteSpace(txtParcial.Text))
+            {
+                E_ResumenSolicitudEdificaciones.PagoParcial = 0.0m;
+            }
+            else
+            {
+                E_ResumenSolicitudEdificaciones.PagoParcial = Convert.ToDecimal(txtParcial.Text);
+            }
+            if (string.IsNullOrEmpty(txtDescuento.Text) ||
+                string.IsNullOrWhiteSpace(txtDescuento.Text))
+            {
+                E_ResumenSolicitudEdificaciones.Descuento = 0.0m;
+            }
+            else
+            {
+                E_ResumenSolicitudEdificaciones.Descuento = Convert.ToDecimal(txtDescuento.Text);
+            }
+
+
             E_ResumenSolicitudEdificaciones.FechaHora = DateTime.Now;
             E_ResumenSolicitudEdificaciones.Tipo = txtCategoria.Text;
 
 
             if (MessageBox.Show("Se creará una solicitud para el cliente actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (B_ResumenSolicitud.B_CrearSolicitudContendio(E_ResumenSolicitudEdificaciones) == 2)
+                if (B_ResumenSolicitud.B_CrearSolicitudContendio(E_ResumenSolicitudEdificaciones) >= 2)
                 {
                     MessageBox.Show("Solicitud creada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -410,13 +519,39 @@ namespace CapaPresentacion
             E_ResumenSolicitudEdificaciones.M2EdificacionesAnexas = decM2EdificacionesAnexas;
             E_ResumenSolicitudEdificaciones.CapitalOtrasInstalaciones = strCapitalOtrasInstalaciones;
 
+            E_ResumenSolicitudEdificaciones.IdSolicitud = Convert.ToInt32(txtCodigo.Text);
+            E_ResumenSolicitudEdificaciones.IdSeguro = Convert.ToInt32(txtIdSeguro.Text);
+            E_ResumenSolicitudEdificaciones.T_Pago = cmbTipoPago.Text;
+
+
+
+            if (string.IsNullOrEmpty(txtParcial.Text) ||
+                    string.IsNullOrWhiteSpace(txtParcial.Text))
+            {
+                E_ResumenSolicitudEdificaciones.PagoParcial = 0.0m;
+            }
+            else
+            {
+                E_ResumenSolicitudEdificaciones.PagoParcial = Convert.ToDecimal(txtParcial.Text);
+            }
+            if (string.IsNullOrEmpty(txtDescuento.Text) ||
+                string.IsNullOrWhiteSpace(txtDescuento.Text))
+            {
+                E_ResumenSolicitudEdificaciones.Descuento = 0.0m;
+            }
+            else
+            {
+                E_ResumenSolicitudEdificaciones.Descuento = Convert.ToDecimal(txtDescuento.Text);
+            }
+
+
             E_ResumenSolicitudEdificaciones.FechaHora = DateTime.Now;
             E_ResumenSolicitudEdificaciones.Tipo = txtCategoria.Text;
 
 
             if (MessageBox.Show("Se creará una solicitud para el cliente actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if ( B_ResumenSolicitud.B_CrearSolicitudEdificaciones(E_ResumenSolicitudEdificaciones) == 2)
+                if ( B_ResumenSolicitud.B_CrearSolicitudEdificaciones(E_ResumenSolicitudEdificaciones) >= 2)
                 {
                     MessageBox.Show("Solicitud creada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -476,8 +611,28 @@ namespace CapaPresentacion
             E_ResumenSolicitud.IdSolicitud = Convert.ToInt32(txtCodigo.Text);
             E_ResumenSolicitud.IdSeguro = Convert.ToInt32(txtIdSeguro.Text);
             E_ResumenSolicitud.T_Pago = cmbTipoPago.Text;
-            E_ResumenSolicitud.PagoParcial = Convert.ToDecimal(txtParcial.Text);
-            E_ResumenSolicitud.Descuento = Convert.ToDecimal(txtDescuento.Text);
+
+
+
+            if (string.IsNullOrEmpty(txtParcial.Text) ||
+                    string.IsNullOrWhiteSpace(txtParcial.Text))
+            {
+                E_ResumenSolicitud.PagoParcial = 0.0m;
+            }
+            else
+            {
+                E_ResumenSolicitud.PagoParcial = Convert.ToDecimal(txtParcial.Text);
+            }
+                if (string.IsNullOrEmpty(txtDescuento.Text) ||
+                    string.IsNullOrWhiteSpace(txtDescuento.Text))
+            {
+                E_ResumenSolicitud.Descuento = 0.0m;
+            }
+            else
+            {
+                E_ResumenSolicitud.Descuento = Convert.ToDecimal(txtDescuento.Text);
+            }
+           
 
             //_idSolicitud = idSolicitud;
             //_idSeguro = idSeguro;
@@ -497,13 +652,49 @@ namespace CapaPresentacion
                 }
             }
         }
+        private bool ValueParcial()
+        {
+            bool value = true;
 
+            if (cmbTipoPago.Text == "Parcial")
+            {
+                if (!string.IsNullOrEmpty(txtParcial.Text) ||
+                    !string.IsNullOrWhiteSpace(txtParcial.Text))
+                {
+                    decimal Total = Convert.ToDecimal(txtTotalA_Pagar.Text);
+                    decimal Parcial = Convert.ToDecimal(txtParcial.Text);
+                    if (Parcial > Total)
+                    {
+                        MessageBox.Show("No se puede pagar de manera parcial un valor igual o mayor que el precio total."
+                            + " Por favor, intentelo de nuevo.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        value = false;
+                        txtParcial.Text = "";
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Completar el campo Parcial.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    value = false;
+                }
+            }
+            
+            return value;
+        }
         private void txtParcial_TextChanged(object sender, EventArgs e)
         {
             txtParcial.TextChanged += delegate (System.Object o, System.EventArgs r)
             {
                 TextBox _tbox = o as TextBox;
-                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c))).ToArray());
+            };
+        }
+
+        private void txtDescontar_TextChanged(object sender, EventArgs e)
+        {
+            txtDescontar.TextChanged += delegate (System.Object o, System.EventArgs r)
+            {
+                TextBox _tbox = o as TextBox;
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c))).ToArray());
             };
         }
     }

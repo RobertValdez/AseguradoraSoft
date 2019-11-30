@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFacturas));
             this.pnlResumenSolicitud = new System.Windows.Forms.Panel();
+            this.txtParcial = new System.Windows.Forms.TextBox();
             this.lblParcial = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -70,7 +71,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblCerrar = new System.Windows.Forms.Label();
-            this.txtParcial = new System.Windows.Forms.TextBox();
             this.pnlResumenSolicitud.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -105,6 +105,17 @@
             this.pnlResumenSolicitud.Size = new System.Drawing.Size(829, 550);
             this.pnlResumenSolicitud.TabIndex = 7;
             this.pnlResumenSolicitud.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlResumenSolicitud_MouseDown);
+            // 
+            // txtParcial
+            // 
+            this.txtParcial.Location = new System.Drawing.Point(683, 268);
+            this.txtParcial.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtParcial.MaxLength = 20;
+            this.txtParcial.Name = "txtParcial";
+            this.txtParcial.Size = new System.Drawing.Size(134, 33);
+            this.txtParcial.TabIndex = 1;
+            this.txtParcial.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtParcial.TextChanged += new System.EventHandler(this.txtParcial_TextChanged);
             // 
             // lblParcial
             // 
@@ -343,9 +354,12 @@
             // 
             this.txtDescontar.Location = new System.Drawing.Point(35, 52);
             this.txtDescontar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtDescontar.MaxLength = 2;
             this.txtDescontar.Name = "txtDescontar";
             this.txtDescontar.Size = new System.Drawing.Size(144, 33);
             this.txtDescontar.TabIndex = 1;
+            this.txtDescontar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDescontar.TextChanged += new System.EventHandler(this.txtDescontar_TextChanged);
             this.txtDescontar.Validating += new System.ComponentModel.CancelEventHandler(this.txtDescontar_Validating);
             // 
             // btnDescontar
@@ -560,15 +574,6 @@
             this.lblCerrar.TabIndex = 108;
             this.lblCerrar.Text = "X";
             this.lblCerrar.Click += new System.EventHandler(this.lblCerrar_Click);
-            // 
-            // txtParcial
-            // 
-            this.txtParcial.Location = new System.Drawing.Point(683, 268);
-            this.txtParcial.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtParcial.Name = "txtParcial";
-            this.txtParcial.Size = new System.Drawing.Size(134, 33);
-            this.txtParcial.TabIndex = 1;
-            this.txtParcial.TextChanged += new System.EventHandler(this.txtParcial_TextChanged);
             // 
             // frmFacturas
             // 

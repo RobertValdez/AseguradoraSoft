@@ -1892,7 +1892,7 @@ namespace CapaPresentacion
             txtAnoConstruccion.TextChanged += delegate (System.Object o, System.EventArgs r)
             {
                 TextBox _tbox = o as TextBox;
-                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c))).ToArray());
             };
         }
 
@@ -1901,7 +1901,7 @@ namespace CapaPresentacion
             txtM2Vivienda.TextChanged += delegate (System.Object o, System.EventArgs r)
             {
                 TextBox _tbox = o as TextBox;
-                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c))).ToArray());
             };
         }
 
@@ -1910,7 +1910,7 @@ namespace CapaPresentacion
             txtM2EdificacionesAnexas.TextChanged += delegate (System.Object o, System.EventArgs r)
             {
                 TextBox _tbox = o as TextBox;
-                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c))).ToArray());
             };
         }
 
@@ -1919,7 +1919,7 @@ namespace CapaPresentacion
             txtCodigoPostal.TextChanged += delegate (System.Object o, System.EventArgs r)
             {
                 TextBox _tbox = o as TextBox;
-                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c))).ToArray());
             };
         }
 
@@ -1972,7 +1972,7 @@ namespace CapaPresentacion
             txtCodigoPostalCont.TextChanged += delegate (System.Object o, System.EventArgs r)
             {
                 TextBox _tbox = o as TextBox;
-                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c))).ToArray());
             };
         }
 
@@ -1981,7 +1981,7 @@ namespace CapaPresentacion
             txtAnoConstruccionCont.TextChanged += delegate (System.Object o, System.EventArgs r)
             {
                 TextBox _tbox = o as TextBox;
-                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c))).ToArray());
             };
         }
 
@@ -1990,7 +1990,7 @@ namespace CapaPresentacion
             txtM2ViviendaCont.TextChanged += delegate (System.Object o, System.EventArgs r)
             {
                 TextBox _tbox = o as TextBox;
-                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c))).ToArray());
             };
         }
 
@@ -1999,7 +1999,7 @@ namespace CapaPresentacion
             txtValorMuebles.TextChanged += delegate (System.Object o, System.EventArgs r)
             {
                 TextBox _tbox = o as TextBox;
-                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c))).ToArray());
             };
         }
 
@@ -2008,7 +2008,7 @@ namespace CapaPresentacion
             txtCilindrosVol.TextChanged += delegate (System.Object o, System.EventArgs r)
             {
                 TextBox _tbox = o as TextBox;
-                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c))).ToArray());
             };
         }
 
@@ -2017,7 +2017,7 @@ namespace CapaPresentacion
             txtCilindrosVol.TextChanged += delegate (System.Object o, System.EventArgs r)
             {
                 TextBox _tbox = o as TextBox;
-                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c))).ToArray());
             };
         }
 
@@ -2026,7 +2026,7 @@ namespace CapaPresentacion
             txtCilindrosTR.TextChanged += delegate (System.Object o, System.EventArgs r)
              {
                  TextBox _tbox = o as TextBox;
-                 _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+                 _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c))).ToArray());
              };
         }
 
@@ -2035,7 +2035,7 @@ namespace CapaPresentacion
             txtAnoTR.TextChanged += delegate (System.Object o, System.EventArgs r)
              {
                  TextBox _tbox = o as TextBox;
-                 _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+                 _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c))).ToArray());
              };
         }
 
@@ -2044,7 +2044,7 @@ namespace CapaPresentacion
             txtCilindrosObl.TextChanged += delegate (System.Object o, System.EventArgs r)
              {
                  TextBox _tbox = o as TextBox;
-                 _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+                 _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c))).ToArray());
              };
         }
 
@@ -2053,7 +2053,7 @@ namespace CapaPresentacion
             txtCilindrosObl.TextChanged += delegate (System.Object o, System.EventArgs r)
              {
                  TextBox _tbox = o as TextBox;
-                 _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c)) || (c == '.')).ToArray());
+                 _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c))).ToArray());
              };
         }
     }
