@@ -39,14 +39,14 @@ namespace CapaDatos.Solicitud
             return rsp;
         }
 
-        public int D_Cargar_id_detalleSeguroContenido()
+        public int D_CargarId_Factura()
         {
             SqlConnection strcon = new SqlConnection();
             strcon.ConnectionString = Conexion.Conexion.SqlConex;
             strcon.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = strcon;
-            cmd.CommandText = "CargarId_detalleSeguroContenido";
+            cmd.CommandText = "CargarId_Factura";
             cmd.CommandType = CommandType.StoredProcedure;
 
             int rsp = Convert.ToInt32(cmd.ExecuteScalar());

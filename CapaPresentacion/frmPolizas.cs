@@ -13,16 +13,29 @@ using CapaNegocio.VerPoliza;
 using CapaNegocio.Empleados;
 using CapaNegocio.SeguroVida;
 using PerlaDelSur_Entity.Poliza;
+using CapaNegocio.Clientes;
+using CapaNegocio.Consultas;
 
 namespace CapaPresentacion
 {
     public partial class frmPolizas : Form
     {
+        DataTable dtSeguroContenido = new DataTable();
+        DataTable dtSeguroEdificaciones = new DataTable();
+        DataTable dtSeguroEmpresasNegocios = new DataTable();
+        DataTable dtSeguroTodoRiesgo = new DataTable();
+        DataTable dtSeguroObligatorio = new DataTable();
+        DataTable dtSeguroVoluntario = new DataTable();
+
         clSoloNumero cs = new clSoloNumero();
+
+        B_Clientes B_Clientes = new B_Clientes();
 
         private E_Poliza E_Poliza = new E_Poliza();
         private B_VerPoliza B_VerPolizas = new B_VerPoliza();
         private B_Poliza B_Poliza = new B_Poliza();
+
+        B_SeguroVida B_PolizasSeguro = new B_SeguroVida();
 
         int idEmpleado = 1;
 
@@ -30,7 +43,19 @@ namespace CapaPresentacion
         int idCliente_C = 0;
         DataTable dtMostrarPolizas = new DataTable();
 
+        DataTable dtCargarPolizasDeSeguro = new DataTable();
+
         string Poliza = "";
+        string _Categoria;
+        private string idFactura;
+        private decimal Precio;
+        int idProductoSeguro;
+
+        decimal Descuento = 0;
+        string T_Pago;
+        private decimal PagoParcial;
+        int IdCliente_N = 0;
+        int EstadoPoliza_N = 0;
 
         bool blParcial = false;
         public frmPolizas()
@@ -77,7 +102,32 @@ namespace CapaPresentacion
         private void frmPolizas_Load(object sender, EventArgs e)
         {
             MostrarPolizas();
+            MostrarClientes();
+            MostrarDetalles();
         }
+
+        private void MostrarDetalles()
+        {
+            dtSeguroContenido = B_Poliza.B_MostrarSeguroContenido();
+            dtSeguroEdificaciones = B_Poliza.B_MostrarSeguroEdificaciones();
+            dtSeguroEmpresasNegocios = B_Poliza.B_MostrarSeguroEmpresasNegocios();
+            dtSeguroTodoRiesgo = B_Poliza.B_MostrarSeguroTodoRiesgo();
+            dtSeguroObligatorio = B_Poliza.B_MostrarSeguroObligatorio();
+            dtSeguroVoluntario = B_Poliza.B_MostrarSeguroVoluntario();
+
+            //CargarPolizaDeSeguros();
+        }
+
+        public void MostrarClientes()
+        {
+            dgvBuscarClientes.DataSource = B_Clientes.B_MostrarClientes();
+        }
+
+        private void CargarPolizaDeSeguros()
+        {
+
+        }
+
         private void MostrarPolizas()
         {
             dtMostrarPolizas = B_VerPolizas.B_vd_VerPoliza();
@@ -217,13 +267,26 @@ namespace CapaPresentacion
 }
         public string strPoliza()
         {
-         return Poliza = "ffffffffffffffffffffgsfhgsrlkyjreskwl;hjrs;lkhjdflhjd;flhjfd;lkhgdfkhgdfkhgdfg" +
-            "dghdr;oghkdr'tlkhe;lhtrd;lhter';tlkhret;lkher;hk;erhtdr'lkhdf;lh,gdl,hdf;'h;lgdf" + txtCedulaCliente_Renovar.Text +
-            "ffffffffffffffffffffgsfhgsrlkyjreskwl;hjrs;lkhjdflhjd;flhjfd;lkhgdfkhgdfkhgdfg" + txtNumPoliza_Renovar.Text+
-            "dghdr;oghkdr'tlkhe;lhtrd;lhter';tlkhret;lkher;hk;erhtdr'lkhdf;lh,gdl,hdf;'h;lgdf" + txtTotalAPagar_Renovar.Text +
-            "aslkdfj;slarjgs;lgkfdhj;lfdkhgjfdl;khfdhj;lfdhj;ldfkhjl;kdfhj;lkdfhkdfhkdfhglkdfjh" + 
-            "sldkfjgsdhj;ldkfjgl;fdkhj;lfj;lfdhj;lfdhj;lfdhj;lkfdhj;lfdhj;lkfdhj;lfdhjl;dkfjh";
-    }
+         return Poliza = " Le mostramos a continuación, a modo de ejemplo, una poliza de Seguro de Vida Individual, incluyendo las Condiciones Generales y Especiales."
++ "ENTIDAD ASEGURADORA ……………………………………."
++ "NOTA INFORMATIVA AL TOMADOR DEL SEGURO(ASEGURADO)"
++ "La información que se contiene en este documento se ofrece en cumplimiento de lo dispuesto en la Ley Orgánica 6/2004 de Ordenación y Supervisión de los Seguros Privados y de los artículos 104 a 107 de su Reglamento de desarrollo, aprobado por Real Decreto 2486/1998."
++ "LEGISLACIÓN APLICABLE AL CONTRATO DE SEGURO"
++ "Ley 50/1980, de 8 de octubre, de Contrato de Seguro; Ley Orgánica 6/2004 de Ordenación y Supervisión de los Seguros Privados y su Reglamento de desarrollo(Real Decreto nº 2486/1998, de 20 de noviembre). Condiciones Generales, Especiales y Particulares del Contrato."
++ "ENTIDAD ASEGURADORA"
++ "Denominación Social: ………………………………. es el nombre comercial de ……………………………………………………………………………………………………………….. con N.I.F.: ………………………………., con domicilio en ……………………………….."
++ "Corresponde a la Dirección General de Seguros, dependiente del Ministerio de Economía y Hacienda, el control y supervisión de la actividad de dicha Entidad Aseguradora."
+
++ "INSTANCIAS DE RECLAMACIÓN ………………………………."
++ " 1) Servicio de Atención al Cliente cuyo reglamento se encuentra a disposición de los interesados en las oficinas de ……………………………….."
++ "2) Con carácter general los conflictos se resolverán por los jueces y tribunales competentes."
++ "3) Asimismo puede acudirse, para resolver las controversias que puedan plantearse, al procedimiento administrativo de reclamación ante la Dirección General de Seguros para el cual está legitimado el tomador, asegurado, beneficiario, tercero perjudicado o derechohabiente de cualquiera de ellos."
++ "CONDICIONES GENERALES DEL SEGURO DE VIDA INDIVIDUAL"
++ "El presente contrato de seguro de vida se rige por lo dispuesto en la Ley 50/1980, de 8 de octubre, de contrato de Seguro, T.R de Ordenación y Supervisión de los Seguros Privados, R.D.Leg 6/2004, R.D. 2486/1998 de 20 de Noviembre y por lo convenido en las Condiciones Generales, Especiales y Particulares de este contrato, sin que tengan validez las cláusulas limitativas de los derechos de los asegurados que no sean específicamente aceptadas por el tomador de la póliza.No requerirán dicha aceptación las meras transcripciones o referencias a preceptos legales."
++ "El control de la actividad que desarrolla la Entidad Aseguradora, le corresponde al Ministerio de Economía y Hacienda del Estado español, que lo ejerce a través de la Dirección General de Seguros y Fondos de Pensiones."
++ "ARTÍCULO PRELIMINAR. DEFINICIONES."
++ "Para los efectos de este contrato se entenderá por:";
+        }
         public decimal Parcial(string parcial)
         {
             decimal value = 0.00m;
@@ -319,6 +382,249 @@ namespace CapaPresentacion
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            BuscarClientes();
+        }
+        public void BuscarClientes()
+        {
+            try
+            {
+                if (chkSoloId.Checked)
+                {
+                    BindingSource bs = new BindingSource();
+                    bs.DataSource = dgvBuscarClientes.DataSource;
+                    bs.Filter = "CONVERT(id, 'System.String') like '%" + txtBuscar.Text + "%'";
+                    dgvBuscarClientes.DataSource = bs;
+                }
+                else
+                {
+                    BindingSource bs = new BindingSource();
+                    bs.DataSource = dgvBuscarClientes.DataSource;
+                    bs.Filter = "CONVERT(id, 'System.String') like '%" + txtBuscar.Text + "%' OR Nombre like '%" +
+                        txtBuscar.Text + "%' OR Apellido like '%" + txtBuscar.Text +
+                        "%' OR Direccion like '%" + txtBuscar.Text + "%' OR Cedula like '%" + txtBuscar.Text +
+                        "%' OR Telefono like '%" + txtBuscar.Text + "%' OR [Correo Electronico] like '%" + txtBuscar.Text + "%'";
+                    dgvBuscarClientes.DataSource = bs;
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void chkSoloId_CheckedChanged(object sender, EventArgs e)
+        {
+            BuscarClientes();
+            if (chkSoloId.Checked)
+            {
+                chkSoloId.BackColor = Color.DarkViolet;
+                chkSoloId.ForeColor = Color.White;
+            }
+            else
+            {
+                chkSoloId.BackColor = Color.White;
+                chkSoloId.ForeColor = Color.Crimson;
+            }
+        }
+
+        private void btnBuscarCliente_Click(object sender, EventArgs e)
+        {
+            pnlBuscarCliente.Visible = true;
+        }
+
+        private void lblCerrar_Click(object sender, EventArgs e)
+        {
+            pnlBuscarCliente.Visible = false;
+        }
+
+        private void dgvBuscarClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var row = dgvBuscarClientes.CurrentRow;
+
+            IdCliente_N = Convert.ToInt32(row.Cells[0].Value.ToString());
+            SolicitudCliente();
+
+            txtCliente.Text = row.Cells[1].Value.ToString() +" "+ row.Cells[2].Value.ToString();
+            txtCedula.Text = row.Cells[4].Value.ToString();
+            pnlBuscarCliente.Visible = false;
+        }
+
+        private void txtBuscarDetalles_TextChanged(object sender, EventArgs e)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dgvSolicitudes.DataSource;
+            bs.Filter = "CONVERT(id, 'System.String') like '%" + txtBuscar.Text + "%' OR Nombre like '%" +
+                txtBuscar.Text + "%' OR Apellido like '%" + txtBuscar.Text +
+                "%' OR Direccion like '%" + txtBuscar.Text + "%' OR Cedula like '%" + txtBuscar.Text +
+                "%' OR Telefono like '%" + txtBuscar.Text + "%' OR [Correo Electronico] like '%" + txtBuscar.Text + "%'";
+            dgvSolicitudes.DataSource = bs;
+        }
+
+
+        private void dgvSolicitudes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                var row = dgvSolicitudes.CurrentRow;
+
+                dgvSolicitudes.Rows[row.Index].Selected = true;
+                txtNoSolicitud.Text = row.Cells[1].Value.ToString();
+
+                _Categoria = row.Cells[18].Value.ToString();
+                idFactura = row.Cells[2].Value.ToString();
+
+                Precio = Convert.ToDecimal(row.Cells[14].Value.ToString());
+                T_Pago = row.Cells[15].Value.ToString();
+                PagoParcial = Convert.ToDecimal(row.Cells[16].Value.ToString());
+                Descuento = Convert.ToDecimal(row.Cells[17].Value.ToString());
+
+                idProductoSeguro = Convert.ToInt32(row.Cells[13].Value.ToString());
+
+                IdCliente_N = Convert.ToInt32(row.Cells[0].Value.ToString());
+                CargarSeguro();
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+        private void SolicitudCliente()
+        {
+            if (!txtCliente.Text.Equals(""))
+            {
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dgvSolicitudes.DataSource;
+                bs.Filter = "CONVERT(id_Cliente, 'System.String') like '%" + IdCliente_N + "%'";
+                dgvSolicitudes.DataSource = bs;
+            }
+        }
+        B_Consultas B_Consultas = new B_Consultas();
+        string Area;
+        private void CargarSeguro()
+        {
+            DataTable dt = B_PolizasSeguro.B_MostrarSegurosDePolizas();
+            DataView dv = new DataView(dt);
+
+            dv.RowFilter = "[id] = '" + idProductoSeguro + "'";
+
+            Area = dv[0]["Area"].ToString();
+        }
+
+        private void btnProcesoPago_Click(object sender, EventArgs e)
+        {
+            ProcesoPago();
+        }
+        private void ProcesoPago()
+        {
+            try
+            {
+                frmResumenVentaPoliza ReFac = new frmResumenVentaPoliza();
+
+                ReFac.strPoliza = strPoliza();
+                ReFac.txtId.Text = Convert.ToString(IdCliente_N);
+                ReFac.Vencimiento = strVencimiento();
+
+                ReFac.txtCliente.Text = txtCliente.Text;
+
+                ReFac.txtTotalA_Pagar.Text = totalA_pagar().ToString();
+                ReFac.txtSeguroA_Adquirir.Text = cmbSeguros.Text;
+
+                if (Area == "Vehiculo")
+                {
+                    ReFac.txtEfectoA_Asegurar.Text = "Vehiculo";
+                }
+                else if (Area == "Vida")
+                {
+                    ReFac.txtEfectoA_Asegurar.Text = "Vida";
+                }
+                else if (Area == "Muebles e Inmuebles")
+                {
+                    ReFac.txtEfectoA_Asegurar.Text = "Muebles e Inmuebles";
+                }
+                else if (Area == "Negocios e Empresas")
+                {
+                    ReFac.txtEfectoA_Asegurar.Text = "Negocios e Empresas";
+                }
+
+                ReFac.txtCedula.Text = txtCedula.Text;
+                ReFac.txtIdSeguro.Text = idProductoSeguro.ToString();
+                ReFac.txtCategoria.Text = _Categoria;
+
+                ReFac.txtSubTotal.Text = Precio.ToString();
+                ReFac.txtDescuento.Text = Descuento.ToString();
+
+                ReFac.gbxDescontar.Visible = false;
+                ReFac.cmbTipoPago.Visible = false;
+                ReFac.lbltipodePago.Visible = false;
+
+                ReFac.formValue = false;
+                ReFac.ShowDialog();
+
+            }
+            catch (Exception ex){ MessageBox.Show(ex.Message); }
+        }
+
+        private DateTime strVencimiento()
+        {
+            DateTime dt = DateTime.Now.Date;
+            dt = dt.AddMonths(6);
+            return dt;
+        }
+
+        private void cmbSeguros_DropDownClosed(object sender, EventArgs e)
+        {
+            switch (cmbSeguros.Text)
+            {
+                case "Seguro Contenido":
+                    dgvSolicitudes.DataSource = dtSeguroContenido;
+                    SolicitudCliente();
+                    break;
+                case "Seguro Edificaciones":
+                    dgvSolicitudes.DataSource = dtSeguroEdificaciones;
+                    SolicitudCliente();
+                    break;
+                case "Seguro para Empresas y Negocios":
+                    dgvSolicitudes.DataSource = dtSeguroEmpresasNegocios;
+                    SolicitudCliente();
+                    break;
+                case "Seguro a Todo Riesgo":
+                    dgvSolicitudes.DataSource = dtSeguroTodoRiesgo;
+                    SolicitudCliente();
+                    break;
+                case "Seguro Obligatorio":
+                    dgvSolicitudes.DataSource = dtSeguroObligatorio;
+                    SolicitudCliente();
+                    break;
+                case "Seguro Voluntario":
+                    dgvSolicitudes.DataSource = dtSeguroVoluntario;
+                    SolicitudCliente();
+                    break;
+                default:
+                    break;
+            }
+
+        }
+        private decimal totalA_pagar()
+        {
+            decimal precioTotal = 0.0m;
+            if (T_Pago == "Al contado")
+            {
+                if (Descuento > 0)
+                {
+                    precioTotal = Precio - Descuento;
+                }
+            }
+            else if (T_Pago == "Parcial")
+            {
+                if (Descuento > 0)
+                {
+                    precioTotal = Precio - Descuento;
+                    precioTotal -= PagoParcial;
+                }
+                else
+                {
+                    precioTotal -= PagoParcial;
+                }
+            }
+            return precioTotal;
         }
     }
 }

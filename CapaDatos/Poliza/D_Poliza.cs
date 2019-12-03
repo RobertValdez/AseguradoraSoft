@@ -13,6 +13,8 @@ namespace CapaDatos.Poliza
 {
     public class D_Poliza
     {
+       
+
         public int RenovarPoliza(E_Poliza ePol)
         {
 
@@ -114,6 +116,319 @@ namespace CapaDatos.Poliza
             int rsp = cmd.ExecuteNonQuery();
             strcon.Close();
             return rsp;
+        }
+
+        public int CrearPolizaSeguroContenido(E_Poliza ePol)
+        {
+            SqlConnection strcon = new SqlConnection();
+            strcon.ConnectionString = Conexion.Conexion.SqlConex;
+            strcon.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = strcon;
+            cmd.CommandText = "CrearPolizaSeguroContenido";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter parIdCliente = new SqlParameter();
+            parIdCliente.ParameterName = "@IdCliente";
+            parIdCliente.SqlDbType = SqlDbType.Int;
+            parIdCliente.Value = ePol.IdCliente;
+            cmd.Parameters.Add(parIdCliente);
+
+            SqlParameter parPoliza = new SqlParameter();
+            parPoliza.ParameterName = "@Poliza";
+            parPoliza.SqlDbType = SqlDbType.VarChar;
+            parPoliza.Value = ePol.Poliza;
+            cmd.Parameters.Add(parPoliza);
+
+            SqlParameter parFechaHora = new SqlParameter();
+            parFechaHora.ParameterName = "@FechaHora";
+            parFechaHora.SqlDbType = SqlDbType.DateTime;
+            parFechaHora.Value = ePol.FechaHora;
+            cmd.Parameters.Add(parFechaHora);
+
+            SqlParameter parVencimiento = new SqlParameter();
+            parVencimiento.ParameterName = "@Vencimiento";
+            parVencimiento.SqlDbType = SqlDbType.Date;
+            parVencimiento.Value = ePol.Vencimiento;
+            cmd.Parameters.Add(parVencimiento);
+
+            int rsp = cmd.ExecuteNonQuery();
+            strcon.Close();
+            return rsp;
+        }
+
+        public int CrearPolizaSeguroEdificaciones(E_Poliza ePol)
+        {
+            SqlConnection strcon = new SqlConnection();
+            strcon.ConnectionString = Conexion.Conexion.SqlConex;
+            strcon.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = strcon;
+            cmd.CommandText = "CrearPolizaSeguroEdificaciones";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter parIdCliente = new SqlParameter();
+            parIdCliente.ParameterName = "@IdCliente";
+            parIdCliente.SqlDbType = SqlDbType.Int;
+            parIdCliente.Value = ePol.IdCliente;
+            cmd.Parameters.Add(parIdCliente);
+
+            SqlParameter parPoliza = new SqlParameter();
+            parPoliza.ParameterName = "@Poliza";
+            parPoliza.SqlDbType = SqlDbType.VarChar;
+            parPoliza.Value = ePol.Poliza;
+            cmd.Parameters.Add(parPoliza);
+
+            SqlParameter parFechaHora = new SqlParameter();
+            parFechaHora.ParameterName = "@FechaHora";
+            parFechaHora.SqlDbType = SqlDbType.DateTime;
+            parFechaHora.Value = ePol.FechaHora;
+            cmd.Parameters.Add(parFechaHora);
+
+            SqlParameter parVencimiento = new SqlParameter();
+            parVencimiento.ParameterName = "@Vencimiento";
+            parVencimiento.SqlDbType = SqlDbType.Date;
+            parVencimiento.Value = ePol.Vencimiento;
+            cmd.Parameters.Add(parVencimiento);
+
+            int rsp = cmd.ExecuteNonQuery();
+            strcon.Close();
+            return rsp;
+        }
+
+        public int CrearPolizaSeguroEmpresasNegocios(E_Poliza ePol)
+        {
+            SqlConnection strcon = new SqlConnection();
+            strcon.ConnectionString = Conexion.Conexion.SqlConex;
+            strcon.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = strcon;
+            cmd.CommandText = "CrearPolizaSeguroEmpresasNegocios";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter parIdCliente = new SqlParameter();
+            parIdCliente.ParameterName = "@IdCliente";
+            parIdCliente.SqlDbType = SqlDbType.Int;
+            parIdCliente.Value = ePol.IdCliente;
+            cmd.Parameters.Add(parIdCliente);
+
+            SqlParameter parPoliza = new SqlParameter();
+            parPoliza.ParameterName = "@Poliza";
+            parPoliza.SqlDbType = SqlDbType.VarChar;
+            parPoliza.Value = ePol.Poliza;
+            cmd.Parameters.Add(parPoliza);
+
+            SqlParameter parFechaHora = new SqlParameter();
+            parFechaHora.ParameterName = "@FechaHora";
+            parFechaHora.SqlDbType = SqlDbType.DateTime;
+            parFechaHora.Value = ePol.FechaHora;
+            cmd.Parameters.Add(parFechaHora);
+
+            SqlParameter parVencimiento = new SqlParameter();
+            parVencimiento.ParameterName = "@Vencimiento";
+            parVencimiento.SqlDbType = SqlDbType.Date;
+            parVencimiento.Value = ePol.Vencimiento;
+            cmd.Parameters.Add(parVencimiento);
+
+            int rsp = cmd.ExecuteNonQuery();
+            strcon.Close();
+            return rsp;
+        } 
+
+        public int CrearPolizaSeguroTodoRiesgo(E_Poliza ePol)
+        {
+            SqlConnection strcon = new SqlConnection();
+            strcon.ConnectionString = Conexion.Conexion.SqlConex;
+            strcon.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = strcon;
+            cmd.CommandText = "CrearPolizaSeguroTodoRiesgo";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter parIdCliente = new SqlParameter();
+            parIdCliente.ParameterName = "@IdCliente";
+            parIdCliente.SqlDbType = SqlDbType.Int;
+            parIdCliente.Value = ePol.IdCliente;
+            cmd.Parameters.Add(parIdCliente);
+
+            SqlParameter parPoliza = new SqlParameter();
+            parPoliza.ParameterName = "@Poliza";
+            parPoliza.SqlDbType = SqlDbType.VarChar;
+            parPoliza.Value = ePol.Poliza;
+            cmd.Parameters.Add(parPoliza);
+
+            SqlParameter parFechaHora = new SqlParameter();
+            parFechaHora.ParameterName = "@FechaHora";
+            parFechaHora.SqlDbType = SqlDbType.DateTime;
+            parFechaHora.Value = ePol.FechaHora;
+            cmd.Parameters.Add(parFechaHora);
+
+            SqlParameter parVencimiento = new SqlParameter();
+            parVencimiento.ParameterName = "@Vencimiento";
+            parVencimiento.SqlDbType = SqlDbType.Date;
+            parVencimiento.Value = ePol.Vencimiento;
+            cmd.Parameters.Add(parVencimiento);
+
+            int rsp = cmd.ExecuteNonQuery();
+            strcon.Close();
+            return rsp;
+        }
+
+        public int CrearPolizaSeguroObligatorio(E_Poliza ePol)
+        {
+            SqlConnection strcon = new SqlConnection();
+            strcon.ConnectionString = Conexion.Conexion.SqlConex;
+            strcon.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = strcon;
+            cmd.CommandText = "CrearPolizaSeguroObligatorio";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter parIdCliente = new SqlParameter();
+            parIdCliente.ParameterName = "@IdCliente";
+            parIdCliente.SqlDbType = SqlDbType.Int;
+            parIdCliente.Value = ePol.IdCliente;
+            cmd.Parameters.Add(parIdCliente);
+
+            SqlParameter parPoliza = new SqlParameter();
+            parPoliza.ParameterName = "@Poliza";
+            parPoliza.SqlDbType = SqlDbType.VarChar;
+            parPoliza.Value = ePol.Poliza;
+            cmd.Parameters.Add(parPoliza);
+
+            SqlParameter parFechaHora = new SqlParameter();
+            parFechaHora.ParameterName = "@FechaHora";
+            parFechaHora.SqlDbType = SqlDbType.DateTime;
+            parFechaHora.Value = ePol.FechaHora;
+            cmd.Parameters.Add(parFechaHora);
+
+            SqlParameter parVencimiento = new SqlParameter();
+            parVencimiento.ParameterName = "@Vencimiento";
+            parVencimiento.SqlDbType = SqlDbType.Date;
+            parVencimiento.Value = ePol.Vencimiento;
+            cmd.Parameters.Add(parVencimiento);
+
+            int rsp = cmd.ExecuteNonQuery();
+            strcon.Close();
+            return rsp;
+        }
+
+        public int CrearPolizaSeguroVoluntario(E_Poliza ePol)
+        {
+            SqlConnection strcon = new SqlConnection();
+            strcon.ConnectionString = Conexion.Conexion.SqlConex;
+            strcon.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = strcon;
+            cmd.CommandText = "CrearPolizaSeguroVoluntario";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter parIdCliente = new SqlParameter();
+            parIdCliente.ParameterName = "@IdCliente";
+            parIdCliente.SqlDbType = SqlDbType.Int;
+            parIdCliente.Value = ePol.IdCliente;
+            cmd.Parameters.Add(parIdCliente);
+
+            SqlParameter parIdSeguro = new SqlParameter();
+            parIdSeguro.ParameterName = "@IdPolizaSeguro";
+            parIdSeguro.SqlDbType = SqlDbType.Int;
+            parIdSeguro.Value = ePol.IdPolizaSeguro;
+            cmd.Parameters.Add(parIdSeguro);
+
+            SqlParameter parPoliza = new SqlParameter();
+            parPoliza.ParameterName = "@Poliza";
+            parPoliza.SqlDbType = SqlDbType.VarChar;
+            parPoliza.Value = ePol.Poliza;
+            cmd.Parameters.Add(parPoliza);
+
+            SqlParameter parFechaHora = new SqlParameter();
+            parFechaHora.ParameterName = "@FechaHora";
+            parFechaHora.SqlDbType = SqlDbType.DateTime;
+            parFechaHora.Value = ePol.FechaHora;
+            cmd.Parameters.Add(parFechaHora);
+
+            SqlParameter parVencimiento = new SqlParameter();
+            parVencimiento.ParameterName = "@Vencimiento";
+            parVencimiento.SqlDbType = SqlDbType.Date;
+            parVencimiento.Value = ePol.Vencimiento;
+            cmd.Parameters.Add(parVencimiento);
+
+            int rsp = cmd.ExecuteNonQuery();
+            strcon.Close();
+            return rsp;
+        }
+
+        public DataTable D_MostrarSeguroContenido()
+        {
+            SqlConnection strCon = new SqlConnection();
+            strCon.ConnectionString = Conexion.Conexion.SqlConex;
+            SqlCommand cmd = new SqlCommand("SeguroContenido", strCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            strCon.Close();
+            return dt;
+        }
+        public DataTable D_MostrarSeguroEdificaciones()
+        {
+            SqlConnection strCon = new SqlConnection();
+            strCon.ConnectionString = Conexion.Conexion.SqlConex;
+            SqlCommand cmd = new SqlCommand("SeguroEdificaciones", strCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            strCon.Close();
+            return dt;
+        }
+        public DataTable D_MostrarSeguroEmpresasNegocios()
+        {
+            SqlConnection strCon = new SqlConnection();
+            strCon.ConnectionString = Conexion.Conexion.SqlConex;
+            SqlCommand cmd = new SqlCommand("SeguroEmpresasNegocios", strCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            strCon.Close();
+            return dt;
+        }
+        public DataTable D_MostrarSeguroTodoRiesgo()
+        {
+            SqlConnection strCon = new SqlConnection();
+            strCon.ConnectionString = Conexion.Conexion.SqlConex;
+            SqlCommand cmd = new SqlCommand("SeguroTodoRiesgo", strCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            strCon.Close();
+            return dt;
+        }
+        public DataTable D_MostrarSeguroObligatorio()
+        {
+            SqlConnection strCon = new SqlConnection();
+            strCon.ConnectionString = Conexion.Conexion.SqlConex;
+            SqlCommand cmd = new SqlCommand("SeguroObligatorio", strCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            strCon.Close();
+            return dt;
+        }
+        public DataTable D_MostrarSeguroVoluntario()
+        {
+            SqlConnection strCon = new SqlConnection();
+            strCon.ConnectionString = Conexion.Conexion.SqlConex;
+            SqlCommand cmd = new SqlCommand("SeguroVoluntario", strCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            strCon.Close();
+            return dt;
         }
     }
 }

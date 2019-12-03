@@ -82,6 +82,7 @@ namespace PerlaDelSur_Entity.Vehiculo
             _Uso = Uso;
             _FechaHora = FechaHora;
             _Tipo = Tipo;
+
         }
     }
 }

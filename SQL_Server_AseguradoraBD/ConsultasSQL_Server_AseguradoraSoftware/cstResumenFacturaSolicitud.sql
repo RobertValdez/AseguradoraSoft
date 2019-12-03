@@ -6,6 +6,7 @@ use AseguradoraBD
 
 go
 
+
 alter proc CrearSolicitud
 
 @IdCliente int,
@@ -23,9 +24,9 @@ alter proc CrearSolicitud
 ----------------
  
 @NombreEmpresa varchar(80),
-@CopiaEstatutos image,
-@CopiaActaAsignacionRNC image,
-@CopiaCedulaPres_RepreAut image,
+@CopiaEstatutos varbinary(max),
+@CopiaActaAsignacionRNC varbinary(max),
+@CopiaCedulaPres_RepreAut varbinary(max),
 @TelefonoEntAutorizada varchar(30),
 @CorreoElectronicoEntAutorizada varchar(50),
 
@@ -33,11 +34,11 @@ alter proc CrearSolicitud
 @Tipo varchar(50),
 
 ---------------------
-@Imagen1 image,
-@Imagen2 image,
-@Imagen3 image,
-@Imagen4 image,
-@Imagen5 image
+@Imagen1 varbinary(max),
+@Imagen2 varbinary(max),
+@Imagen3 varbinary(max),
+@Imagen4 varbinary(max),
+@Imagen5 varbinary(max)
 as
 
 insert into ctEmpresasNegocios(id_Cliente, id_Empleado, Total, idEstado, Fecha)
@@ -50,9 +51,12 @@ set @id_ctEmpresasNegocios = SCOPE_IDENTITY()
 insert into detalleSeguroEmpresaNegocio(id_ctEmpresasNegocios, [Nombre Empresa],
 [Copia de los Estatutos], [Copia Acta Asignacion RNC], [Copia Cedula Presidente y Representante autorizado]
 , [Telefono de Entidad Autorizada], [Correo electronico de Entidad Autorizada], [Inspeccion del Local]
-, [Estado], [FechaHora], [Tipo]) values (@id_ctEmpresasNegocios,
+, [Estado], [FechaHora], [Tipo], idFactura) values (@id_ctEmpresasNegocios,
 @NombreEmpresa, @CopiaEstatutos, @CopiaActaAsignacionRNC, @CopiaCedulaPres_RepreAut, @TelefonoEntAutorizada,
- @CorreoElectronicoEntAutorizada, 'Pendiente', 3, @FechaHora, @Tipo)
+ @CorreoElectronicoEntAutorizada, 'Pendiente', 3, @FechaHora, @Tipo, @idSolicitud)
+
+declare @id_detalleSeguroEmpresaNegocio int
+set @id_detalleSeguroEmpresaNegocio = SCOPE_IDENTITY()
 
 insert into Facturas 
       ([id_Cliente]
@@ -69,11 +73,11 @@ insert into Facturas
 	  @Descuento, @FechaHora) 
 
 insert into imagenesCotenidoInspSeguroEmpresas(id_detallesSeguroEmpresasN, Imagen)
- values (@id_ctEmpresasNegocios, @Imagen1),
-		(@id_ctEmpresasNegocios, @Imagen2),
-		(@id_ctEmpresasNegocios, @Imagen3),
-		(@id_ctEmpresasNegocios, @Imagen4),
-		(@id_ctEmpresasNegocios, @Imagen5)
+ values (@id_detalleSeguroEmpresaNegocio, @Imagen1),
+		(@id_detalleSeguroEmpresaNegocio, @Imagen2),
+		(@id_detalleSeguroEmpresaNegocio, @Imagen3),
+		(@id_detalleSeguroEmpresaNegocio, @Imagen4),
+		(@id_detalleSeguroEmpresaNegocio, @Imagen5)
 
 
 go
@@ -130,7 +134,7 @@ insert into detalleEdificaciones( id_ctMueblesInmuebles,
       ,[Capital de otras instalaciones]
 	  ,[Estado]
       ,[FechaHora]
-      ,[Tipo]) values (@id_ctMueblesInmuebles,
+      ,[Tipo], idFactura) values (@id_ctMueblesInmuebles,
     @TipoVivienda,
 	@Situacion,
 	@Propietario,
@@ -144,7 +148,7 @@ insert into detalleEdificaciones( id_ctMueblesInmuebles,
 	@CapitalOtrasInstalaciones,
 	3,
 	@FechaHora,
-	@Tipo)
+	@Tipo, @idSolicitud)
 
 	insert into Facturas 
       ([id_Cliente]
@@ -215,7 +219,7 @@ insert into detalleSeguroContenido( id_ctMueblesInmuebles,
 	  ,ValorEstimadoMuebles
 	  ,[Estado]
       ,[FechaHora]
-      ,[Tipo]) values (@id_ctMueblesInmuebles,
+      ,[Tipo], idFactura) values (@id_ctMueblesInmuebles,
     @TipoVivienda,
 	@Situacion,
 	@Propietario,
@@ -229,7 +233,7 @@ insert into detalleSeguroContenido( id_ctMueblesInmuebles,
 	@ValorEstimadoMuebles,
 	3,
 	@FechaHora,
-	@Tipo)
+	@Tipo, @idSolicitud)
 
 	insert into Facturas 
       ([id_Cliente]
@@ -302,7 +306,7 @@ insert into detalleSeguroVoluntario(id_ctVehiculo
       ,[Uso]
 	  ,[Estado]
       ,[FechaHora]
-      ,[Tipo]) values (@id_ctVehiculo,
+      ,[Tipo], idFactura) values (@id_ctVehiculo,
 	  @MarcaVehiculo,
       @Modelo,
       @Matricula,
@@ -313,7 +317,7 @@ insert into detalleSeguroVoluntario(id_ctVehiculo
       @Uso,
       3,
       @FechaHora,
-      @Tipo)
+      @Tipo, @idSolicitud)
 
 	  
 	insert into Facturas 
@@ -382,7 +386,7 @@ insert into detalleSeguroTodoRiesgo(id_ctVehiculo
       ,[Uso]
 	  ,[Estado]
       ,[FechaHora]
-      ,[Tipo]) values (@id_ctVehiculo,
+      ,[Tipo], idFactura) values (@id_ctVehiculo,
 	  @MarcaVehiculo,
       @Modelo,
       @Matricula,
@@ -394,7 +398,7 @@ insert into detalleSeguroTodoRiesgo(id_ctVehiculo
       3,
 
       @FechaHora,
-      @Tipo)
+      @Tipo, @idSolicitud)
 
 
 	insert into Facturas 
@@ -463,7 +467,7 @@ insert into detalleSeguroObligatorio(id_ctVehiculo
       ,[Uso]
 	  ,[Estado]
       ,[FechaHora]
-      ,[Tipo]) values (@id_ctVehiculo,
+      ,[Tipo], idFactura) values (@id_ctVehiculo,
 	  @MarcaVehiculo,
       @Modelo,
       @Matricula,
@@ -475,7 +479,7 @@ insert into detalleSeguroObligatorio(id_ctVehiculo
       3,
 
       @FechaHora,
-      @Tipo)
+      @Tipo, @idSolicitud)
 
 	  insert into Facturas 
       ([id_Cliente]

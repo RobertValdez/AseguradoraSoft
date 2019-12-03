@@ -35,7 +35,7 @@ namespace CapaPresentacion
 
         int idCodigoEdif = 0;
 
-        int idCodigoCont = 0;
+        int idCodigoFact = 0;
 
         int idCodigoVol = 0;
 
@@ -319,7 +319,7 @@ namespace CapaPresentacion
 
                     frmFac.txtIdSeguro.Text = idProductoSeguro.ToString();
 
-                    frmFac.txtCodigo.Text = idCodigoObl.ToString();
+                    frmFac.txtCodigo.Text = idCodigoFact.ToString();
 
                     frmFac.txtSubTotal.Text = Precio.ToString();
                     frmFac.txtTotalA_Pagar.Text = Precio.ToString();
@@ -404,7 +404,7 @@ namespace CapaPresentacion
 
                     frmFac.txtIdSeguro.Text = idProductoSeguro.ToString();
 
-                    frmFac.txtCodigo.Text = idCodigoTR.ToString();
+                    frmFac.txtCodigo.Text = idCodigoFact.ToString();
 
                     frmFac.txtSubTotal.Text = Precio.ToString();
                     frmFac.txtTotalA_Pagar.Text = Precio.ToString();
@@ -486,7 +486,7 @@ namespace CapaPresentacion
 
                     frmFac.txtIdSeguro.Text = idProductoSeguro.ToString();
 
-                    frmFac.txtCodigo.Text = idCodigoVol.ToString();
+                    frmFac.txtCodigo.Text = idCodigoFact.ToString();
 
                     frmFac.txtSubTotal.Text = Precio.ToString();
                     frmFac.txtTotalA_Pagar.Text = Precio.ToString();
@@ -577,7 +577,7 @@ namespace CapaPresentacion
                     frmFac.txtCategoria.Text = _Categoria;
                     frmFac.txtIdSeguro.Text = idProductoSeguro.ToString();
 
-                    frmFac.txtCodigo.Text = idCodigoCont.ToString();
+                    frmFac.txtCodigo.Text = idCodigoFact.ToString();
 
                     frmFac.txtSubTotal.Text = Precio.ToString();
                     frmFac.txtTotalA_Pagar.Text = Precio.ToString();
@@ -666,7 +666,7 @@ namespace CapaPresentacion
                     frmFac.txtCategoria.Text = _Categoria;
                     frmFac.txtIdSeguro.Text = idProductoSeguro.ToString();
 
-                    frmFac.txtCodigo.Text = idCodigoEdif.ToString();
+                    frmFac.txtCodigo.Text = idCodigoFact.ToString();
 
                     frmFac.txtSubTotal.Text = Precio.ToString();
                     frmFac.txtTotalA_Pagar.Text = Precio.ToString();
@@ -744,7 +744,7 @@ namespace CapaPresentacion
                     frmFac.txtCategoria.Text = _Categoria;
                     frmFac.txtIdSeguro.Text = idProductoSeguro.ToString();
 
-                    frmFac.txtCodigo.Text = idCodigoEm.ToString();
+                    frmFac.txtCodigo.Text = idCodigoFact.ToString();
                     frmFac.txtSubTotal.Text = Precio.ToString();
                     frmFac.txtTotalA_Pagar.Text = Precio.ToString();
 
@@ -1575,12 +1575,12 @@ namespace CapaPresentacion
 
         private void frmSolicitud_Load(object sender, EventArgs e)
         {
-            Cargar_idCodigo_detalleEmpresaNegocio();
-            Cargar_idCodigo_detalleSeguroEdificaciones();
-            Cargar_idCodigo_detalleSeguroContenido();
-            Cargar_idCodigo_detalleSeguroVehiculoVoluntario();
-            Cargar_idCodigo_detalleSeguroVehiculoTodoRiesgo();
-            Cargar_idCodigo_detalleSeguroVehiculoObligatorio();
+            //    Cargar_idCodigo_detalleEmpresaNegocio();
+            //    Cargar_idCodigo_detalleSeguroEdificaciones();
+            Cargar_CargarId_Factura();
+            //Cargar_idCodigo_detalleSeguroVehiculoVoluntario();
+            //Cargar_idCodigo_detalleSeguroVehiculoTodoRiesgo();
+            //Cargar_idCodigo_detalleSeguroVehiculoObligatorio();
 
 
             CargarSegurosDePoliza();
@@ -1623,11 +1623,11 @@ namespace CapaPresentacion
             }
         }
 
-        private void Cargar_idCodigo_detalleSeguroContenido()
+        private void Cargar_CargarId_Factura()
         {
             try
             {
-                idCodigoCont = B_Solicitud.B_CargarIdDetalleSeguroContenido();
+                idCodigoFact = B_Solicitud.B_CargarId_Factura();
             }
             catch (Exception ex)
             {

@@ -33,14 +33,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.btnPagarCrearPoliza = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbxDescontar = new System.Windows.Forms.GroupBox();
+            this.txtDescontar = new System.Windows.Forms.TextBox();
+            this.btnDescontar = new System.Windows.Forms.Button();
             this.txtTotalA_Pagar = new System.Windows.Forms.TextBox();
             this.txtDescuento = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.txtSubTotal = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
+            this.lbltipodePago = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
@@ -64,11 +66,9 @@
             this.txtEfectoA_Asegurar = new System.Windows.Forms.TextBox();
             this.txtCategoria = new System.Windows.Forms.TextBox();
             this.lblParcial = new System.Windows.Forms.Label();
-            this.txtDescontar = new System.Windows.Forms.TextBox();
-            this.btnDescontar = new System.Windows.Forms.Button();
             this.cmbTipoPago = new System.Windows.Forms.ComboBox();
             this.txtParcial = new System.Windows.Forms.TextBox();
-            this.groupBox2.SuspendLayout();
+            this.gbxDescontar.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,19 +121,46 @@
             this.btnPagarCrearPoliza.UseVisualStyleBackColor = false;
             this.btnPagarCrearPoliza.Click += new System.EventHandler(this.btnPagarCrearPoliza_Click);
             // 
-            // groupBox2
+            // gbxDescontar
             // 
-            this.groupBox2.Controls.Add(this.txtDescontar);
-            this.groupBox2.Controls.Add(this.btnDescontar);
-            this.groupBox2.ForeColor = System.Drawing.Color.Firebrick;
-            this.groupBox2.Location = new System.Drawing.Point(766, 57);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox2.Size = new System.Drawing.Size(188, 165);
-            this.groupBox2.TabIndex = 250;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Descontar:";
+            this.gbxDescontar.Controls.Add(this.txtDescontar);
+            this.gbxDescontar.Controls.Add(this.btnDescontar);
+            this.gbxDescontar.ForeColor = System.Drawing.Color.Firebrick;
+            this.gbxDescontar.Location = new System.Drawing.Point(766, 57);
+            this.gbxDescontar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.gbxDescontar.Name = "gbxDescontar";
+            this.gbxDescontar.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.gbxDescontar.Size = new System.Drawing.Size(188, 165);
+            this.gbxDescontar.TabIndex = 250;
+            this.gbxDescontar.TabStop = false;
+            this.gbxDescontar.Text = "Descontar:";
+            // 
+            // txtDescontar
+            // 
+            this.txtDescontar.Location = new System.Drawing.Point(9, 41);
+            this.txtDescontar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.txtDescontar.MaxLength = 2;
+            this.txtDescontar.Name = "txtDescontar";
+            this.txtDescontar.Size = new System.Drawing.Size(167, 33);
+            this.txtDescontar.TabIndex = 1;
+            this.txtDescontar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDescontar.TextChanged += new System.EventHandler(this.txtDescontar_TextChanged);
+            // 
+            // btnDescontar
+            // 
+            this.btnDescontar.BackColor = System.Drawing.Color.White;
+            this.btnDescontar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnDescontar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDescontar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDescontar.ForeColor = System.Drawing.Color.Crimson;
+            this.btnDescontar.Location = new System.Drawing.Point(9, 83);
+            this.btnDescontar.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnDescontar.Name = "btnDescontar";
+            this.btnDescontar.Size = new System.Drawing.Size(168, 48);
+            this.btnDescontar.TabIndex = 12;
+            this.btnDescontar.Text = "Descontar";
+            this.btnDescontar.UseVisualStyleBackColor = false;
+            this.btnDescontar.Click += new System.EventHandler(this.btnDescontar_Click);
             // 
             // txtTotalA_Pagar
             // 
@@ -202,15 +229,15 @@
             this.label22.TabIndex = 241;
             this.label22.Text = "SubTotal:";
             // 
-            // label27
+            // lbltipodePago
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(792, 225);
-            this.label27.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(150, 24);
-            this.label27.TabIndex = 242;
-            this.label27.Text = "Tipo de pago:";
+            this.lbltipodePago.AutoSize = true;
+            this.lbltipodePago.Location = new System.Drawing.Point(792, 225);
+            this.lbltipodePago.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lbltipodePago.Name = "lbltipodePago";
+            this.lbltipodePago.Size = new System.Drawing.Size(150, 24);
+            this.lbltipodePago.TabIndex = 242;
+            this.lbltipodePago.Text = "Tipo de pago:";
             // 
             // label23
             // 
@@ -468,33 +495,6 @@
             this.lblParcial.Text = "Parcial:";
             this.lblParcial.Visible = false;
             // 
-            // txtDescontar
-            // 
-            this.txtDescontar.Location = new System.Drawing.Point(9, 41);
-            this.txtDescontar.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.txtDescontar.MaxLength = 2;
-            this.txtDescontar.Name = "txtDescontar";
-            this.txtDescontar.Size = new System.Drawing.Size(167, 33);
-            this.txtDescontar.TabIndex = 1;
-            this.txtDescontar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtDescontar.TextChanged += new System.EventHandler(this.txtDescontar_TextChanged);
-            // 
-            // btnDescontar
-            // 
-            this.btnDescontar.BackColor = System.Drawing.Color.White;
-            this.btnDescontar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
-            this.btnDescontar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDescontar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDescontar.ForeColor = System.Drawing.Color.Crimson;
-            this.btnDescontar.Location = new System.Drawing.Point(9, 83);
-            this.btnDescontar.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnDescontar.Name = "btnDescontar";
-            this.btnDescontar.Size = new System.Drawing.Size(168, 48);
-            this.btnDescontar.TabIndex = 12;
-            this.btnDescontar.Text = "Descontar";
-            this.btnDescontar.UseVisualStyleBackColor = false;
-            this.btnDescontar.Click += new System.EventHandler(this.btnDescontar_Click);
-            // 
             // cmbTipoPago
             // 
             this.cmbTipoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -535,7 +535,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btnPagarCrearPoliza);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.gbxDescontar);
             this.Controls.Add(this.cmbTipoPago);
             this.Controls.Add(this.txtTotalA_Pagar);
             this.Controls.Add(this.txtDescuento);
@@ -543,7 +543,7 @@
             this.Controls.Add(this.txtSubTotal);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label22);
-            this.Controls.Add(this.label27);
+            this.Controls.Add(this.lbltipodePago);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.label30);
@@ -557,8 +557,8 @@
             this.Text = "frmResumenVentaPoliza";
             this.Load += new System.EventHandler(this.frmResumenVentaPoliza_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmResumenVentaPoliza_MouseDown);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gbxDescontar.ResumeLayout(false);
+            this.gbxDescontar.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -571,11 +571,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnPagarCrearPoliza;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtDescuento;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
@@ -598,13 +595,16 @@
         public System.Windows.Forms.TextBox txtCategoria;
         public System.Windows.Forms.TextBox txtIdSeguro;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblParcial;
         public System.Windows.Forms.TextBox txtTotalA_Pagar;
         public System.Windows.Forms.TextBox txtSubTotal;
         public System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtDescontar;
         private System.Windows.Forms.Button btnDescontar;
-        private System.Windows.Forms.ComboBox cmbTipoPago;
         public System.Windows.Forms.TextBox txtParcial;
+        public System.Windows.Forms.GroupBox gbxDescontar;
+        public System.Windows.Forms.Label lbltipodePago;
+        public System.Windows.Forms.Label lblParcial;
+        public System.Windows.Forms.ComboBox cmbTipoPago;
+        public System.Windows.Forms.TextBox txtDescuento;
     }
 }

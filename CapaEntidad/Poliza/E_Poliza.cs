@@ -8,6 +8,7 @@ namespace PerlaDelSur_Entity.Poliza
 {
     public class E_Poliza
     {
+        private int _idPolizaSeguro;
         private int _IdPoliza;
         private int _IdCliente;
         private int _IdEmpleado;
@@ -29,6 +30,7 @@ namespace PerlaDelSur_Entity.Poliza
         public DateTime FechaHora { get => _FechaHora; set => _FechaHora = value; }
         public DateTime Vencimiento { get => _Vencimiento; set => _Vencimiento = value; }
         public string Nota { get => _Nota; set => _Nota = value; }
+        public int IdPolizaSeguro { get => _idPolizaSeguro; set => _idPolizaSeguro = value; }
 
         public E_Poliza()
         {
@@ -37,7 +39,7 @@ namespace PerlaDelSur_Entity.Poliza
 
         public E_Poliza(int IdPoliza, int IdCliente, int IdEmpleado,
             string Poliza, decimal Precio, decimal TPago, decimal Parcial, DateTime FechaHora,
-            DateTime Vencimiento, string Nota)
+            DateTime Vencimiento, string Nota, int idSeguro)
         {
             _IdPoliza = IdPoliza;
             _IdCliente = IdCliente;
@@ -49,6 +51,7 @@ namespace PerlaDelSur_Entity.Poliza
             _FechaHora = FechaHora;
             _Vencimiento = Vencimiento;
             _Nota = Nota;
+            _idPolizaSeguro = idSeguro;
         }
     }
 }

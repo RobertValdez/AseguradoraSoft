@@ -36,16 +36,23 @@
             this.tabGestionarPolizas = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlBuscarCliente = new System.Windows.Forms.Panel();
+            this.chkSoloId = new System.Windows.Forms.CheckBox();
+            this.lblCerrar = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.dgvBuscarClientes = new System.Windows.Forms.DataGridView();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.btnCrearCuenta = new System.Windows.Forms.Button();
+            this.cmbSeguros = new System.Windows.Forms.ComboBox();
+            this.dgvSolicitudes = new System.Windows.Forms.DataGridView();
+            this.btnProcesoPago = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox80 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox79 = new System.Windows.Forms.TextBox();
-            this.textBox78 = new System.Windows.Forms.TextBox();
+            this.txtBuscarDetalles = new System.Windows.Forms.TextBox();
+            this.txtNoSolicitud = new System.Windows.Forms.TextBox();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
+            this.txtCedula = new System.Windows.Forms.TextBox();
+            this.txtCliente = new System.Windows.Forms.TextBox();
             this.label60 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
@@ -90,11 +97,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label17 = new System.Windows.Forms.Label();
             this.pnlPagoPolizas.SuspendLayout();
             this.tabGestionarPolizas.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.pnlBuscarCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBuscarClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.pnlGestionarPolizas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarPoliza_Cancelar)).BeginInit();
@@ -187,79 +197,168 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.pnlBuscarCliente);
             this.panel3.Controls.Add(this.label14);
-            this.panel3.Controls.Add(this.comboBox1);
-            this.panel3.Controls.Add(this.dataGridView4);
-            this.panel3.Controls.Add(this.btnCrearCuenta);
+            this.panel3.Controls.Add(this.cmbSeguros);
+            this.panel3.Controls.Add(this.dgvSolicitudes);
+            this.panel3.Controls.Add(this.btnProcesoPago);
             this.panel3.Controls.Add(this.label30);
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Controls.Add(this.textBox80);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.textBox79);
-            this.panel3.Controls.Add(this.textBox78);
+            this.panel3.Controls.Add(this.txtBuscarDetalles);
+            this.panel3.Controls.Add(this.txtNoSolicitud);
+            this.panel3.Controls.Add(this.btnBuscarCliente);
+            this.panel3.Controls.Add(this.txtCedula);
+            this.panel3.Controls.Add(this.txtCliente);
             this.panel3.Controls.Add(this.label60);
+            this.panel3.Controls.Add(this.label17);
             this.panel3.Controls.Add(this.label51);
             this.panel3.Controls.Add(this.label42);
             this.panel3.Location = new System.Drawing.Point(6, 1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1143, 534);
+            this.panel3.Size = new System.Drawing.Size(1143, 513);
             this.panel3.TabIndex = 25;
+            // 
+            // pnlBuscarCliente
+            // 
+            this.pnlBuscarCliente.Controls.Add(this.chkSoloId);
+            this.pnlBuscarCliente.Controls.Add(this.lblCerrar);
+            this.pnlBuscarCliente.Controls.Add(this.label15);
+            this.pnlBuscarCliente.Controls.Add(this.dgvBuscarClientes);
+            this.pnlBuscarCliente.Controls.Add(this.txtBuscar);
+            this.pnlBuscarCliente.Controls.Add(this.label16);
+            this.pnlBuscarCliente.Location = new System.Drawing.Point(3, 5);
+            this.pnlBuscarCliente.Name = "pnlBuscarCliente";
+            this.pnlBuscarCliente.Size = new System.Drawing.Size(164, 491);
+            this.pnlBuscarCliente.TabIndex = 209;
+            this.pnlBuscarCliente.Visible = false;
+            // 
+            // chkSoloId
+            // 
+            this.chkSoloId.AutoSize = true;
+            this.chkSoloId.BackColor = System.Drawing.Color.White;
+            this.chkSoloId.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkSoloId.ForeColor = System.Drawing.Color.Crimson;
+            this.chkSoloId.Location = new System.Drawing.Point(335, 43);
+            this.chkSoloId.Name = "chkSoloId";
+            this.chkSoloId.Size = new System.Drawing.Size(108, 32);
+            this.chkSoloId.TabIndex = 108;
+            this.chkSoloId.Text = "solo Id";
+            this.chkSoloId.UseVisualStyleBackColor = false;
+            this.chkSoloId.CheckedChanged += new System.EventHandler(this.chkSoloId_CheckedChanged);
+            // 
+            // lblCerrar
+            // 
+            this.lblCerrar.AutoSize = true;
+            this.lblCerrar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblCerrar.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCerrar.Location = new System.Drawing.Point(461, -4);
+            this.lblCerrar.Name = "lblCerrar";
+            this.lblCerrar.Size = new System.Drawing.Size(35, 36);
+            this.lblCerrar.TabIndex = 107;
+            this.lblCerrar.Text = "X";
+            this.lblCerrar.Click += new System.EventHandler(this.lblCerrar_Click);
+            // 
+            // label15
+            // 
+            this.label15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label15.Image = ((System.Drawing.Image)(resources.GetObject("label15.Image")));
+            this.label15.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.label15.Location = new System.Drawing.Point(13, 33);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(62, 56);
+            this.label15.TabIndex = 104;
+            // 
+            // dgvBuscarClientes
+            // 
+            this.dgvBuscarClientes.AllowUserToAddRows = false;
+            this.dgvBuscarClientes.AllowUserToDeleteRows = false;
+            this.dgvBuscarClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvBuscarClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvBuscarClientes.BackgroundColor = System.Drawing.Color.LightPink;
+            this.dgvBuscarClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBuscarClientes.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvBuscarClientes.Location = new System.Drawing.Point(0, 105);
+            this.dgvBuscarClientes.Name = "dgvBuscarClientes";
+            this.dgvBuscarClientes.ReadOnly = true;
+            this.dgvBuscarClientes.Size = new System.Drawing.Size(164, 386);
+            this.dgvBuscarClientes.TabIndex = 0;
+            this.dgvBuscarClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscarClientes_CellDoubleClick);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(82, 43);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(249, 33);
+            this.txtBuscar.TabIndex = 103;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Firebrick;
+            this.label16.Location = new System.Drawing.Point(23, 3);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(157, 25);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Buscar Cliente";
             // 
             // label14
             // 
             this.label14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label14.Image = ((System.Drawing.Image)(resources.GetObject("label14.Image")));
             this.label14.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label14.Location = new System.Drawing.Point(561, 42);
+            this.label14.Location = new System.Drawing.Point(595, 17);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(62, 56);
             this.label14.TabIndex = 208;
             // 
-            // comboBox1
+            // cmbSeguros
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Seguro de Riesgo de Muerte",
-            "Seguro de Salud",
-            "Seguro de Riesgos Laborales",
+            this.cmbSeguros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSeguros.FormattingEnabled = true;
+            this.cmbSeguros.Items.AddRange(new object[] {
             "Seguro Contenido",
             "Seguro Edificaciones",
             "Seguro para Empresas y Negocios",
             "Seguro a Todo Riesgo",
             "Seguro Obligatorio",
             "Seguro Voluntario"});
-            this.comboBox1.Location = new System.Drawing.Point(630, 33);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(412, 32);
-            this.comboBox1.TabIndex = 207;
+            this.cmbSeguros.Location = new System.Drawing.Point(71, 239);
+            this.cmbSeguros.Name = "cmbSeguros";
+            this.cmbSeguros.Size = new System.Drawing.Size(395, 32);
+            this.cmbSeguros.TabIndex = 207;
+            this.cmbSeguros.DropDownClosed += new System.EventHandler(this.cmbSeguros_DropDownClosed);
             // 
-            // dataGridView4
+            // dgvSolicitudes
             // 
-            this.dataGridView4.AllowUserToAddRows = false;
-            this.dataGridView4.AllowUserToDeleteRows = false;
-            this.dataGridView4.BackgroundColor = System.Drawing.Color.LightPink;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(495, 110);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.Size = new System.Drawing.Size(627, 363);
-            this.dataGridView4.TabIndex = 206;
+            this.dgvSolicitudes.AllowUserToAddRows = false;
+            this.dgvSolicitudes.AllowUserToDeleteRows = false;
+            this.dgvSolicitudes.BackgroundColor = System.Drawing.Color.LightPink;
+            this.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSolicitudes.Location = new System.Drawing.Point(495, 82);
+            this.dgvSolicitudes.Name = "dgvSolicitudes";
+            this.dgvSolicitudes.ReadOnly = true;
+            this.dgvSolicitudes.Size = new System.Drawing.Size(627, 414);
+            this.dgvSolicitudes.TabIndex = 206;
+            this.dgvSolicitudes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSolicitudes_CellClick);
             // 
-            // btnCrearCuenta
+            // btnProcesoPago
             // 
-            this.btnCrearCuenta.BackColor = System.Drawing.Color.Crimson;
-            this.btnCrearCuenta.FlatAppearance.BorderSize = 0;
-            this.btnCrearCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrearCuenta.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearCuenta.ForeColor = System.Drawing.Color.White;
-            this.btnCrearCuenta.Location = new System.Drawing.Point(71, 416);
-            this.btnCrearCuenta.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnCrearCuenta.Name = "btnCrearCuenta";
-            this.btnCrearCuenta.Size = new System.Drawing.Size(395, 57);
-            this.btnCrearCuenta.TabIndex = 205;
-            this.btnCrearCuenta.Text = "Proceso de pago";
-            this.btnCrearCuenta.UseVisualStyleBackColor = false;
+            this.btnProcesoPago.BackColor = System.Drawing.Color.Crimson;
+            this.btnProcesoPago.FlatAppearance.BorderSize = 0;
+            this.btnProcesoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProcesoPago.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProcesoPago.ForeColor = System.Drawing.Color.White;
+            this.btnProcesoPago.Location = new System.Drawing.Point(71, 416);
+            this.btnProcesoPago.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnProcesoPago.Name = "btnProcesoPago";
+            this.btnProcesoPago.Size = new System.Drawing.Size(395, 57);
+            this.btnProcesoPago.TabIndex = 205;
+            this.btnProcesoPago.Text = "Proceso de pago";
+            this.btnProcesoPago.UseVisualStyleBackColor = false;
+            this.btnProcesoPago.Click += new System.EventHandler(this.btnProcesoPago_Click);
             // 
             // label30
             // 
@@ -272,60 +371,62 @@
             this.label30.TabIndex = 185;
             this.label30.Text = "Buscar Solicitud de Póliza";
             // 
-            // textBox1
+            // txtBuscarDetalles
             // 
-            this.textBox1.Location = new System.Drawing.Point(630, 71);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(293, 33);
-            this.textBox1.TabIndex = 191;
+            this.txtBuscarDetalles.Location = new System.Drawing.Point(664, 30);
+            this.txtBuscarDetalles.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtBuscarDetalles.Name = "txtBuscarDetalles";
+            this.txtBuscarDetalles.Size = new System.Drawing.Size(317, 33);
+            this.txtBuscarDetalles.TabIndex = 191;
+            this.txtBuscarDetalles.TextChanged += new System.EventHandler(this.txtBuscarDetalles_TextChanged);
             // 
-            // textBox80
+            // txtNoSolicitud
             // 
-            this.textBox80.Location = new System.Drawing.Point(71, 254);
-            this.textBox80.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox80.Name = "textBox80";
-            this.textBox80.ReadOnly = true;
-            this.textBox80.Size = new System.Drawing.Size(395, 33);
-            this.textBox80.TabIndex = 191;
+            this.txtNoSolicitud.Location = new System.Drawing.Point(71, 328);
+            this.txtNoSolicitud.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtNoSolicitud.Name = "txtNoSolicitud";
+            this.txtNoSolicitud.ReadOnly = true;
+            this.txtNoSolicitud.Size = new System.Drawing.Size(395, 33);
+            this.txtNoSolicitud.TabIndex = 191;
             // 
-            // button3
+            // btnBuscarCliente
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Crimson;
-            this.button3.Location = new System.Drawing.Point(265, 162);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(201, 27);
-            this.button3.TabIndex = 165;
-            this.button3.Text = "Buscar Cliente";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarCliente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarCliente.ForeColor = System.Drawing.Color.Crimson;
+            this.btnBuscarCliente.Location = new System.Drawing.Point(265, 162);
+            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(201, 27);
+            this.btnBuscarCliente.TabIndex = 165;
+            this.btnBuscarCliente.Text = "Buscar Cliente";
+            this.btnBuscarCliente.UseVisualStyleBackColor = false;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
-            // textBox79
+            // txtCedula
             // 
-            this.textBox79.Location = new System.Drawing.Point(187, 121);
-            this.textBox79.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox79.Name = "textBox79";
-            this.textBox79.ReadOnly = true;
-            this.textBox79.Size = new System.Drawing.Size(279, 33);
-            this.textBox79.TabIndex = 192;
+            this.txtCedula.Location = new System.Drawing.Point(187, 121);
+            this.txtCedula.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.ReadOnly = true;
+            this.txtCedula.Size = new System.Drawing.Size(279, 33);
+            this.txtCedula.TabIndex = 192;
             // 
-            // textBox78
+            // txtCliente
             // 
-            this.textBox78.Location = new System.Drawing.Point(187, 82);
-            this.textBox78.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox78.Name = "textBox78";
-            this.textBox78.ReadOnly = true;
-            this.textBox78.Size = new System.Drawing.Size(279, 33);
-            this.textBox78.TabIndex = 193;
+            this.txtCliente.Location = new System.Drawing.Point(187, 82);
+            this.txtCliente.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.ReadOnly = true;
+            this.txtCliente.Size = new System.Drawing.Size(279, 33);
+            this.txtCliente.TabIndex = 193;
             // 
             // label60
             // 
             this.label60.AutoSize = true;
             this.label60.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label60.ForeColor = System.Drawing.Color.Firebrick;
-            this.label60.Location = new System.Drawing.Point(66, 223);
+            this.label60.Location = new System.Drawing.Point(66, 297);
             this.label60.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(156, 28);
@@ -362,7 +463,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1151, 535);
+            this.tabPage2.Size = new System.Drawing.Size(1145, 535);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Cancelación";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -833,12 +934,24 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.label17.ForeColor = System.Drawing.Color.Firebrick;
+            this.label17.Location = new System.Drawing.Point(75, 212);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(234, 24);
+            this.label17.TabIndex = 188;
+            this.label17.Text = "Seguro de la Solicitud:";
+            // 
             // frmPolizas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1181, 672);
+            this.ClientSize = new System.Drawing.Size(1181, 677);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlPagoPolizas);
@@ -856,7 +969,10 @@
             this.tabPage1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.pnlBuscarCliente.ResumeLayout(false);
+            this.pnlBuscarCliente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBuscarClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.pnlGestionarPolizas.ResumeLayout(false);
             this.pnlGestionarPolizas.PerformLayout();
@@ -907,13 +1023,13 @@
         private System.Windows.Forms.DataGridView dgvMostrarPoliza_Cancelar;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.Button btnCrearCuenta;
+        private System.Windows.Forms.DataGridView dgvSolicitudes;
+        private System.Windows.Forms.Button btnProcesoPago;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox textBox80;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox79;
-        private System.Windows.Forms.TextBox textBox78;
+        private System.Windows.Forms.TextBox txtNoSolicitud;
+        private System.Windows.Forms.Button btnBuscarCliente;
+        private System.Windows.Forms.TextBox txtCedula;
+        private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label42;
@@ -925,8 +1041,16 @@
         private System.Windows.Forms.Button btnVerPoliza_Renovar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TextBox txtPagoParcial_Renovar;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cmbSeguros;
+        private System.Windows.Forms.TextBox txtBuscarDetalles;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Panel pnlBuscarCliente;
+        private System.Windows.Forms.CheckBox chkSoloId;
+        private System.Windows.Forms.Label lblCerrar;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DataGridView dgvBuscarClientes;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
     }
 }

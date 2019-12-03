@@ -25,9 +25,9 @@ namespace CapaNegocio.Solicitud
             return D_Solicitud.D_Cargar_id_detalleSeguroEdificaciones();
         }
 
-        public int B_CargarIdDetalleSeguroContenido()
+        public int B_CargarId_Factura()
         {
-            return D_Solicitud.D_Cargar_id_detalleSeguroContenido();
+            return D_Solicitud.D_CargarId_Factura();
         }
 
         public int B_CargarIdDetalleSeguroVehiculoVoluntario()

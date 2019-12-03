@@ -1,4 +1,6 @@
 ﻿using CapaNegocio.B_ResumenVentaPoliza;
+using CapaNegocio.Poliza;
+using PerlaDelSur_Entity.Poliza;
 using PerlaDelSur_Entity.ResumenVentaPoliza;
 using System;
 using System.Collections.Generic;
@@ -48,6 +50,8 @@ namespace CapaPresentacion
         public int varIdEmpleado;
         public string strInstitutoDondeLabora = "";
         public string strAntecedentesPersonales = "";
+
+        public bool formValue = true;
         public frmResumenVentaPoliza()
         {
             InitializeComponent();
@@ -122,9 +126,13 @@ namespace CapaPresentacion
         {
             try
             {
-                if (ValueParcial())
+                if (ValueParcial() && formValue)
                 {
                     Pagar_y_CrearPoliza();
+                }
+                if (!formValue)
+                {
+                    CrearPolizaSolicitud();
                 }
             }
             catch (Exception ex)
@@ -240,6 +248,84 @@ namespace CapaPresentacion
                 TextBox _tbox = o as TextBox;
                 _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c))).ToArray());
             };
+        }
+
+        E_Poliza E_Poliza = new E_Poliza();
+        B_Poliza B_Poliza = new B_Poliza();
+
+        public string strPoliza;
+        public DateTime Vencimiento;
+
+
+        private void CrearPolizaSolicitud()
+        {
+            E_Poliza.IdCliente = Convert.ToInt32(txtId.Text);
+            E_Poliza.Poliza = strPoliza;
+            E_Poliza.IdPolizaSeguro = Convert.ToInt32(txtIdSeguro.Text);
+            E_Poliza.FechaHora = DateTime.Now;
+            E_Poliza.Vencimiento = Vencimiento;
+
+
+            switch (txtSeguroA_Adquirir.Text)
+            {
+                case "Seguro Contenido":
+                    if (MessageBox.Show("Se creará una Póliza del Seguro para el Cliente y la Solicitud actual." + Environment.NewLine + "Desea continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        if (B_Poliza.B_CrearPolizaContenido(E_Poliza) == 1)
+                        {
+                            MessageBox.Show("Se ha creado la Póliza de Seguro satisfactoriamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    break;
+                case "Seguro Edificaciones":
+                    if (MessageBox.Show("Se creará una Póliza del Seguro para el Cliente y la Solicitud actual.", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        if (B_Poliza.B_CrearPolizaEdificaciones(E_Poliza) == 1)
+                        {
+                            MessageBox.Show("Se ha creado la Póliza de Seguro satisfactoriamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    break;
+                case "Seguro para Empresas y Negocios":
+                    if (MessageBox.Show("Se creará una Póliza del Seguro para el Cliente y la Solicitud actual.", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        if (B_Poliza.B_CrearPolizaSeguroEmpresasNegocio(E_Poliza) == 1)
+                        {
+                            MessageBox.Show("Se ha creado la Póliza de Seguro satisfactoriamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    break;
+                case "Seguro a Todo Riesgo":
+                    if (MessageBox.Show("Se creará una Póliza del Seguro para el Cliente y la Solicitud actual.", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        if (B_Poliza.B_CrearPolizaSeguroTodoRiesgo(E_Poliza) == 1)
+                        {
+                            MessageBox.Show("Se ha creado la Póliza de Seguro satisfactoriamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    break;
+                case "Seguro Obligatorio":
+                    if (MessageBox.Show("Se creará una Póliza del Seguro para el Cliente y la Solicitud actual.", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        if (B_Poliza.B_CrearPolizaSeguroObligatorio(E_Poliza) == 1)
+                        {
+                            MessageBox.Show("Se ha creado la Póliza de Seguro satisfactoriamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    break;
+                case "Seguro Voluntario":
+                    if (MessageBox.Show("Se creará una Póliza del Seguro para el Cliente y la Solicitud actual.", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        if (B_Poliza.B_CrearPolizaSeguroVoluntario(E_Poliza) == 1)
+                        {
+                            MessageBox.Show("Se ha creado la Póliza de Seguro satisfactoriamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 }

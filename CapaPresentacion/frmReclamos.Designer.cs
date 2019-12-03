@@ -59,13 +59,13 @@
             this.btnIdSiniestro = new System.Windows.Forms.Button();
             this.btnBuscarPoliza = new System.Windows.Forms.Button();
             this.pnlBuscarDatos = new System.Windows.Forms.Panel();
+            this.chkSoloId = new System.Windows.Forms.CheckBox();
+            this.txtBuscarPoliza = new System.Windows.Forms.TextBox();
+            this.txtBuscarSiniestro = new System.Windows.Forms.TextBox();
             this.txtBuscarCliente = new System.Windows.Forms.TextBox();
             this.lblCerrar = new System.Windows.Forms.Label();
             this.dgvBuscarDatos = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtBuscarSiniestro = new System.Windows.Forms.TextBox();
-            this.txtBuscarPoliza = new System.Windows.Forms.TextBox();
-            this.chkSoloId = new System.Windows.Forms.CheckBox();
             this.pnlRegistroReclamos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPreviewImg)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -80,11 +80,12 @@
             this.pnlRegistroReclamos.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlRegistroReclamos.Location = new System.Drawing.Point(13, 12);
             this.pnlRegistroReclamos.Name = "pnlRegistroReclamos";
-            this.pnlRegistroReclamos.Size = new System.Drawing.Size(1025, 668);
+            this.pnlRegistroReclamos.Size = new System.Drawing.Size(1013, 668);
             this.pnlRegistroReclamos.TabIndex = 22;
             // 
             // picPreviewImg
             // 
+            this.picPreviewImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picPreviewImg.Location = new System.Drawing.Point(611, 13);
             this.picPreviewImg.Name = "picPreviewImg";
             this.picPreviewImg.Size = new System.Drawing.Size(390, 644);
@@ -464,6 +465,39 @@
             this.pnlBuscarDatos.TabIndex = 23;
             this.pnlBuscarDatos.Visible = false;
             // 
+            // chkSoloId
+            // 
+            this.chkSoloId.AutoSize = true;
+            this.chkSoloId.BackColor = System.Drawing.Color.White;
+            this.chkSoloId.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkSoloId.ForeColor = System.Drawing.Color.Crimson;
+            this.chkSoloId.Location = new System.Drawing.Point(436, 24);
+            this.chkSoloId.Name = "chkSoloId";
+            this.chkSoloId.Size = new System.Drawing.Size(108, 32);
+            this.chkSoloId.TabIndex = 110;
+            this.chkSoloId.Text = "solo Id";
+            this.chkSoloId.UseVisualStyleBackColor = false;
+            // 
+            // txtBuscarPoliza
+            // 
+            this.txtBuscarPoliza.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBuscarPoliza.Location = new System.Drawing.Point(136, 23);
+            this.txtBuscarPoliza.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBuscarPoliza.Name = "txtBuscarPoliza";
+            this.txtBuscarPoliza.Size = new System.Drawing.Size(273, 33);
+            this.txtBuscarPoliza.TabIndex = 15;
+            this.txtBuscarPoliza.TextChanged += new System.EventHandler(this.txtBuscarPoliza_TextChanged);
+            // 
+            // txtBuscarSiniestro
+            // 
+            this.txtBuscarSiniestro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBuscarSiniestro.Location = new System.Drawing.Point(136, 23);
+            this.txtBuscarSiniestro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBuscarSiniestro.Name = "txtBuscarSiniestro";
+            this.txtBuscarSiniestro.Size = new System.Drawing.Size(273, 33);
+            this.txtBuscarSiniestro.TabIndex = 15;
+            this.txtBuscarSiniestro.TextChanged += new System.EventHandler(this.txtBuscarSiniestro_TextChanged);
+            // 
             // txtBuscarCliente
             // 
             this.txtBuscarCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -510,45 +544,12 @@
             this.label6.Size = new System.Drawing.Size(62, 56);
             this.label6.TabIndex = 14;
             // 
-            // txtBuscarSiniestro
-            // 
-            this.txtBuscarSiniestro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscarSiniestro.Location = new System.Drawing.Point(136, 23);
-            this.txtBuscarSiniestro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtBuscarSiniestro.Name = "txtBuscarSiniestro";
-            this.txtBuscarSiniestro.Size = new System.Drawing.Size(273, 33);
-            this.txtBuscarSiniestro.TabIndex = 15;
-            this.txtBuscarSiniestro.TextChanged += new System.EventHandler(this.txtBuscarSiniestro_TextChanged);
-            // 
-            // txtBuscarPoliza
-            // 
-            this.txtBuscarPoliza.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscarPoliza.Location = new System.Drawing.Point(136, 23);
-            this.txtBuscarPoliza.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtBuscarPoliza.Name = "txtBuscarPoliza";
-            this.txtBuscarPoliza.Size = new System.Drawing.Size(273, 33);
-            this.txtBuscarPoliza.TabIndex = 15;
-            this.txtBuscarPoliza.TextChanged += new System.EventHandler(this.txtBuscarPoliza_TextChanged);
-            // 
-            // chkSoloId
-            // 
-            this.chkSoloId.AutoSize = true;
-            this.chkSoloId.BackColor = System.Drawing.Color.White;
-            this.chkSoloId.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkSoloId.ForeColor = System.Drawing.Color.Crimson;
-            this.chkSoloId.Location = new System.Drawing.Point(436, 24);
-            this.chkSoloId.Name = "chkSoloId";
-            this.chkSoloId.Size = new System.Drawing.Size(108, 32);
-            this.chkSoloId.TabIndex = 110;
-            this.chkSoloId.Text = "solo Id";
-            this.chkSoloId.UseVisualStyleBackColor = false;
-            // 
             // frmRegistroDeReclamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1050, 681);
+            this.ClientSize = new System.Drawing.Size(1038, 681);
             this.Controls.Add(this.pnlBuscarDatos);
             this.Controls.Add(this.pnlRegistroReclamos);
             this.Font = new System.Drawing.Font("Century Gothic", 12F);
