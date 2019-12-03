@@ -64,23 +64,110 @@ namespace CapaPresentacion
 
                         E_Confirmacion.Nota = txtNota.Text;
 
-                        if (MessageBox.Show("Se confirmará la aprobación de la solicitud actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        switch (cmbSeguros.Text)
                         {
-                            if (B_ConfirmacionSolicitud.B_AprobarSolicitudSeguroVoluntario(E_Confirmacion) > 1)
-                            {
-                                MessageBox.Show("Confirmación de solicitud aprobada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                MostrarDetalleVoluntario();
-                            }
+                            case "Seguro Contenido":
+                                dgvMostrarSolicitudes.DataSource = dtSeguroContenido;
+                                break;
+                            case "Seguro Edificaciones":
+                                dgvMostrarSolicitudes.DataSource = dtSeguroEdificaciones;
+                                break;
+                            case "Seguro para Empresas y Negocios":
+                                dgvMostrarSolicitudes.DataSource = dtSeguroEmpresasNegocios;
+                                break;
+                            case "Seguro a Todo Riesgo":
+                                dgvMostrarSolicitudes.DataSource = dtSeguroTodoRiesgo;
+                                break;
+                            case "Seguro Obligatorio":
+                                dgvMostrarSolicitudes.DataSource = dtSeguroObligatorio;
+                                break;
+                            case "Seguro Voluntario":
+                                dgvMostrarSolicitudes.DataSource = dtSeguroVoluntario;
+                                break;
+                            default:
+                                break;
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Seleccione una solicitud En proceso para continuar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Seleccione una solicitud En Proceso para continuar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void AprobarSeguroVoluntario()
+        {
+            if (MessageBox.Show("Se confirmará la aprobación de la solicitud actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (B_ConfirmacionSolicitud.B_AprobarSolicitudSeguroVoluntario(E_Confirmacion) > 1)
+                {
+                    MessageBox.Show("Confirmación de solicitud aprobada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    MostrarDetalleVoluntario();
+                }
+            }
+        }
+        private void AprobarSeguroEdificaciones()
+        {
+            if (MessageBox.Show("Se confirmará la aprobación de la solicitud actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (B_ConfirmacionSolicitud.B_AprobarSolicitudEdificaciones(E_Confirmacion) > 1)
+                {
+                    MessageBox.Show("Confirmación de solicitud aprobada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    MostrarDetalleVoluntario();
+                }
+            }
+        }
+        private void AprobarEmpresasNegocios()
+        {
+            if (MessageBox.Show("Se confirmará la aprobación de la solicitud actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (B_ConfirmacionSolicitud.B_AprobarSolicitudEmpresasNegocio(E_Confirmacion) > 1)
+                {
+                    MessageBox.Show("Confirmación de solicitud aprobada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    MostrarDetalleVoluntario();
+                }
+            }
+        }
+        private void AprobarTodoRiesgo()
+        {
+            if (MessageBox.Show("Se confirmará la aprobación de la solicitud actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (B_ConfirmacionSolicitud.B_AprobarSolicitudTodoRiesgo(E_Confirmacion) > 1)
+                {
+                    MessageBox.Show("Confirmación de solicitud aprobada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    MostrarDetalleVoluntario();
+                }
+            }
+        }
+        private void AprobarSeguroObligatorio()
+        {
+            if (MessageBox.Show("Se confirmará la aprobación de la solicitud actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (B_ConfirmacionSolicitud.B_AprobarSolicitudObligatorio(E_Confirmacion) > 1)
+                {
+                    MessageBox.Show("Confirmación de solicitud aprobada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    MostrarDetalleVoluntario();
+                }
+            }
+        }
+        private void AprobarSeguroContenido()
+        {
+            if (MessageBox.Show("Se confirmará la aprobación de la solicitud actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (B_ConfirmacionSolicitud.B_AprobarSolicitudContenido(E_Confirmacion) > 1)
+                {
+                    MessageBox.Show("Confirmación de solicitud aprobada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    MostrarDetalleVoluntario();
+                }
+            }
         }
 
         private void btnRechazarSolicitud_Click(object sender, EventArgs e)
@@ -102,14 +189,28 @@ namespace CapaPresentacion
 
                         E_Confirmacion.Nota = txtNota.Text;
 
-                        if (MessageBox.Show("Está a punto de rechazar la solicitud actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        switch (cmbSeguros.Text)
                         {
-                            if (B_ConfirmacionSolicitud.B_RechazarSolicitudSeguroVoluntario(E_Confirmacion) > 1)
-                            {
-                                MessageBox.Show("Solicitud rechazada correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                MostrarDetalleVoluntario();
-                            }
+                            case "Seguro Contenido":
+                                dgvMostrarSolicitudes.DataSource = dtSeguroContenido;
+                                break;
+                            case "Seguro Edificaciones":
+                                dgvMostrarSolicitudes.DataSource = dtSeguroEdificaciones;
+                                break;
+                            case "Seguro para Empresas y Negocios":
+                                dgvMostrarSolicitudes.DataSource = dtSeguroEmpresasNegocios;
+                                break;
+                            case "Seguro a Todo Riesgo":
+                                dgvMostrarSolicitudes.DataSource = dtSeguroTodoRiesgo;
+                                break;
+                            case "Seguro Obligatorio":
+                                dgvMostrarSolicitudes.DataSource = dtSeguroObligatorio;
+                                break;
+                            case "Seguro Voluntario":
+                                dgvMostrarSolicitudes.DataSource = dtSeguroVoluntario;
+                                break;
+                            default:
+                                break;
                         }
                     }
                     else
@@ -119,6 +220,79 @@ namespace CapaPresentacion
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void RechazarSeguroVoluntario()
+        {
+            if (MessageBox.Show("Está a punto de rechazar la solicitud actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (B_ConfirmacionSolicitud.B_RechazarSolicitudSeguroVoluntario(E_Confirmacion) > 1)
+                {
+                    MessageBox.Show("Solicitud rechazada correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    MostrarDetalleVoluntario();
+                }
+            }
+        }
+        private void RechazarSeguroEdificaciones()
+        {
+            if (MessageBox.Show("Está a punto de rechazar la solicitud actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (B_ConfirmacionSolicitud.B_RechazarSolicitudEdificaciones(E_Confirmacion) > 1)
+                {
+                    MessageBox.Show("Solicitud rechazada correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    MostrarDetalleVoluntario();
+                }
+            }
+        }
+        private void RechazarEmpresasNegocios()
+        {
+            if (MessageBox.Show("Está a punto de rechazar la solicitud actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (B_ConfirmacionSolicitud.B_RechazarSolicitudEmpresasNegocio(E_Confirmacion) > 1)
+                {
+                    MessageBox.Show("Solicitud rechazada correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    MostrarDetalleVoluntario();
+                }
+            }
+        }
+        private void RechazarrSeguroObligatorio()
+        {
+            if (MessageBox.Show("Está a punto de rechazar la solicitud actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (B_ConfirmacionSolicitud.B_RechazarSolicitudObligatorio(E_Confirmacion) > 1)
+                {
+                    MessageBox.Show("Solicitud rechazada correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    MostrarDetalleVoluntario();
+                }
+            }
+        }
+        private void RechazarContenido()
+        {
+            if (MessageBox.Show("Está a punto de rechazar la solicitud actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (B_ConfirmacionSolicitud.B_RechazarSolicitudContenido(E_Confirmacion) > 1)
+                {
+                    MessageBox.Show("Solicitud rechazada correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    MostrarDetalleVoluntario();
+                }
+            }
+        }
+        private void RechazarTodoRiesgo()
+        {
+            if (MessageBox.Show("Está a punto de rechazar la solicitud actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (B_ConfirmacionSolicitud.B_RechazarSolicitudTodoRiesgo(E_Confirmacion) > 1)
+                {
+                    MessageBox.Show("Solicitud rechazada correctamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    MostrarDetalleVoluntario();
+                }
+            }
         }
 
         private void dgvMostrarSolicitudes_CellClick(object sender, DataGridViewCellEventArgs e)

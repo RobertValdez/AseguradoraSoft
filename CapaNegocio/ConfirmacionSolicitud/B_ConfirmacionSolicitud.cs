@@ -52,5 +52,61 @@ namespace CapaNegocio.ConfirmacionSolicitud
         {
             return D_ConfirmacionSolicitud.D_RechazarSolicitudSolicitudSeguroVoluntario(eCon);
         }
+
+
+
+        public int B_AprobarSolicitudContenido(E_ConfirmacionSolicitud eCon)
+        {
+            return D_ConfirmacionSolicitud.D_AprobarSolicitudContenido(eCon);
+        }
+
+        public int B_RechazarSolicitudContenido(E_ConfirmacionSolicitud eCon)
+        {
+            return D_ConfirmacionSolicitud.D_RechazarSolicitudContenido(eCon);
+        }
+
+
+        public int B_AprobarSolicitudEdificaciones(E_ConfirmacionSolicitud eCon)
+        {
+            return D_ConfirmacionSolicitud.D_AprobarSolicitudEdificaciones(eCon);
+        }
+
+        public int B_RechazarSolicitudEdificaciones(E_ConfirmacionSolicitud eCon)
+        {
+            return D_ConfirmacionSolicitud.D_RechazarSolicitudEdificaciones(eCon);
+        }
+
+
+        public int B_AprobarSolicitudEmpresasNegocio(E_ConfirmacionSolicitud eCon)
+        {
+            return D_ConfirmacionSolicitud.D_AprobarSolicitudEmpresasNegocio(eCon);
+        }
+
+        public int B_RechazarSolicitudEmpresasNegocio(E_ConfirmacionSolicitud eCon)
+        {
+            return D_ConfirmacionSolicitud.D_RechazarSolicitudEmpresasNegocio(eCon);
+        }
+
+
+        public int B_AprobarSolicitudTodoRiesgo(E_ConfirmacionSolicitud eCon)
+        {
+            return D_ConfirmacionSolicitud.D_AprobarSolicitudTodoRiesgo(eCon);
+        }
+
+        public int B_RechazarSolicitudTodoRiesgo(E_ConfirmacionSolicitud eCon)
+        {
+            return D_ConfirmacionSolicitud.D_RechazarSolicitudTodoRiesgo(eCon);
+        }
+
+
+        public int B_AprobarSolicitudObligatorio(E_ConfirmacionSolicitud eCon)
+        {
+            return D_ConfirmacionSolicitud.D_AprobarSolicitudObligatorio(eCon);
+        }
+
+        public int B_RechazarSolicitudObligatorio(E_ConfirmacionSolicitud eCon)
+        {
+            return D_ConfirmacionSolicitud.D_RechazarSolicitudObligatorio(eCon);
+        }
     }
 }

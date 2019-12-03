@@ -194,7 +194,7 @@ namespace CapaDatos.ConfirmacionSolicitud
             strcon.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = strcon;
-            cmd.CommandText = "RechazarSolicitud";
+            cmd.CommandText = "RechazarSolicitudContenido";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter paridSolicitud = new SqlParameter();
@@ -222,14 +222,14 @@ namespace CapaDatos.ConfirmacionSolicitud
 
 
 
-        public int D_AprobarSolicitudSeguroVoluntario(E_ConfirmacionSolicitud eCon)
+        public int D_AprobarSolicitudEdificaciones(E_ConfirmacionSolicitud eCon)
         {
             SqlConnection strcon = new SqlConnection();
             strcon.ConnectionString = Conexion.Conexion.SqlConex;
             strcon.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = strcon;
-            cmd.CommandText = "AprobarSolicitud";
+            cmd.CommandText = "AprobarSolicitudEdificaciones";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter paridSolicitud = new SqlParameter();
@@ -255,14 +255,14 @@ namespace CapaDatos.ConfirmacionSolicitud
             return rsp;
         }
 
-        public int D_RechazarSolicitudSolicitudSeguroVoluntario(E_ConfirmacionSolicitud eCon)
+        public int D_RechazarSolicitudEdificaciones(E_ConfirmacionSolicitud eCon)
         {
             SqlConnection strcon = new SqlConnection();
             strcon.ConnectionString = Conexion.Conexion.SqlConex;
             strcon.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = strcon;
-            cmd.CommandText = "RechazarSolicitud";
+            cmd.CommandText = "RechazarSolicitudEdificaciones";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter paridSolicitud = new SqlParameter();
@@ -290,14 +290,14 @@ namespace CapaDatos.ConfirmacionSolicitud
 
 
 
-        public int D_AprobarSolicitudSeguroVoluntario(E_ConfirmacionSolicitud eCon)
+        public int D_AprobarSolicitudEmpresasNegocio(E_ConfirmacionSolicitud eCon)
         {
             SqlConnection strcon = new SqlConnection();
             strcon.ConnectionString = Conexion.Conexion.SqlConex;
             strcon.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = strcon;
-            cmd.CommandText = "AprobarSolicitud";
+            cmd.CommandText = "AprobarSolicitudEmpresasNegocio";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter paridSolicitud = new SqlParameter();
@@ -323,14 +323,14 @@ namespace CapaDatos.ConfirmacionSolicitud
             return rsp;
         }
 
-        public int D_RechazarSolicitudSolicitudSeguroVoluntario(E_ConfirmacionSolicitud eCon)
+        public int D_RechazarSolicitudEmpresasNegocio(E_ConfirmacionSolicitud eCon)
         {
             SqlConnection strcon = new SqlConnection();
             strcon.ConnectionString = Conexion.Conexion.SqlConex;
             strcon.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = strcon;
-            cmd.CommandText = "RechazarSolicitud";
+            cmd.CommandText = "RechazarSolicitudEmpresasNegocio";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter paridSolicitud = new SqlParameter();
@@ -358,14 +358,14 @@ namespace CapaDatos.ConfirmacionSolicitud
 
 
 
-        public int D_AprobarSolicitudSeguroVoluntario(E_ConfirmacionSolicitud eCon)
+        public int D_AprobarSolicitudTodoRiesgo(E_ConfirmacionSolicitud eCon)
         {
             SqlConnection strcon = new SqlConnection();
             strcon.ConnectionString = Conexion.Conexion.SqlConex;
             strcon.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = strcon;
-            cmd.CommandText = "AprobarSolicitud";
+            cmd.CommandText = "AprobarSolicitudTodoRiesgo";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter paridSolicitud = new SqlParameter();
@@ -391,14 +391,14 @@ namespace CapaDatos.ConfirmacionSolicitud
             return rsp;
         }
 
-        public int D_RechazarSolicitudSolicitudSeguroVoluntario(E_ConfirmacionSolicitud eCon)
+        public int D_RechazarSolicitudTodoRiesgo(E_ConfirmacionSolicitud eCon)
         {
             SqlConnection strcon = new SqlConnection();
             strcon.ConnectionString = Conexion.Conexion.SqlConex;
             strcon.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = strcon;
-            cmd.CommandText = "RechazarSolicitud";
+            cmd.CommandText = "RechazarSolicitudTodoRiesgo";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter paridSolicitud = new SqlParameter();
@@ -426,14 +426,14 @@ namespace CapaDatos.ConfirmacionSolicitud
 
 
 
-        public int D_AprobarSolicitudSeguroVoluntario(E_ConfirmacionSolicitud eCon)
+        public int D_AprobarSolicitudObligatorio(E_ConfirmacionSolicitud eCon)
         {
             SqlConnection strcon = new SqlConnection();
             strcon.ConnectionString = Conexion.Conexion.SqlConex;
             strcon.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = strcon;
-            cmd.CommandText = "AprobarSolicitud";
+            cmd.CommandText = "AprobarSolicitudObligatorio";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter paridSolicitud = new SqlParameter();
@@ -459,14 +459,14 @@ namespace CapaDatos.ConfirmacionSolicitud
             return rsp;
         }
 
-        public int D_RechazarSolicitudSolicitudSeguroVoluntario(E_ConfirmacionSolicitud eCon)
+        public int D_RechazarSolicitudObligatorio(E_ConfirmacionSolicitud eCon)
         {
             SqlConnection strcon = new SqlConnection();
             strcon.ConnectionString = Conexion.Conexion.SqlConex;
             strcon.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = strcon;
-            cmd.CommandText = "RechazarSolicitud";
+            cmd.CommandText = "RechazarSolicitudObligatorio";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter paridSolicitud = new SqlParameter();
@@ -491,74 +491,5 @@ namespace CapaDatos.ConfirmacionSolicitud
             strcon.Close();
             return rsp;
         }
-
-
-
-        public int D_AprobarSolicitudSeguroVoluntario(E_ConfirmacionSolicitud eCon)
-        {
-            SqlConnection strcon = new SqlConnection();
-            strcon.ConnectionString = Conexion.Conexion.SqlConex;
-            strcon.Open();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = strcon;
-            cmd.CommandText = "AprobarSolicitud";
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            SqlParameter paridSolicitud = new SqlParameter();
-            paridSolicitud.ParameterName = "@idSolicitud";
-            paridSolicitud.SqlDbType = SqlDbType.Int;
-            paridSolicitud.Value = eCon.IdSolicitud;
-            cmd.Parameters.Add(paridSolicitud);
-
-            SqlParameter parEstado = new SqlParameter();
-            parEstado.ParameterName = "@Estado";
-            parEstado.SqlDbType = SqlDbType.Int;
-            parEstado.Value = eCon.Estado;
-            cmd.Parameters.Add(parEstado);
-
-            SqlParameter parNota = new SqlParameter();
-            parNota.ParameterName = "@Nota";
-            parNota.SqlDbType = SqlDbType.VarChar;
-            parNota.Value = eCon.Nota;
-            cmd.Parameters.Add(parNota);
-
-            int rsp = cmd.ExecuteNonQuery();
-            strcon.Close();
-            return rsp;
-        }
-
-        public int D_RechazarSolicitudSolicitudSeguroVoluntario(E_ConfirmacionSolicitud eCon)
-        {
-            SqlConnection strcon = new SqlConnection();
-            strcon.ConnectionString = Conexion.Conexion.SqlConex;
-            strcon.Open();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = strcon;
-            cmd.CommandText = "RechazarSolicitud";
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            SqlParameter paridSolicitud = new SqlParameter();
-            paridSolicitud.ParameterName = "@idSolicitud";
-            paridSolicitud.SqlDbType = SqlDbType.Int;
-            paridSolicitud.Value = eCon.IdSolicitud;
-            cmd.Parameters.Add(paridSolicitud);
-
-            SqlParameter parEstado = new SqlParameter();
-            parEstado.ParameterName = "@Estado";
-            parEstado.SqlDbType = SqlDbType.Int;
-            parEstado.Value = eCon.Estado;
-            cmd.Parameters.Add(parEstado);
-
-            SqlParameter parNota = new SqlParameter();
-            parNota.ParameterName = "@Nota";
-            parNota.SqlDbType = SqlDbType.VarChar;
-            parNota.Value = eCon.Nota;
-            cmd.Parameters.Add(parNota);
-
-            int rsp = cmd.ExecuteNonQuery();
-            strcon.Close();
-            return rsp;
-        }
-
     }
 }
