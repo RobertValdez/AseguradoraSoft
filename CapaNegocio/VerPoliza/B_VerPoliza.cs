@@ -18,5 +18,17 @@ namespace CapaNegocio.VerPoliza
         {
             return D_VerPoliza.D_vd_MostrarPolizas();
         }
+        public DataTable B_em_MostrarPolizas()
+        {
+            return D_VerPoliza.D_em_MostrarPolizas();
+        }
+        public DataTable B_in_MostrarPolizas()
+        {
+            return D_VerPoliza.D_in_MostrarPolizas();
+        }
+        public DataTable B_vh_MostrarPolizas()
+        {
+            return D_VerPoliza.D_vh_MostrarPolizas();
+        }
     }
 }

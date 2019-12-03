@@ -54,20 +54,21 @@
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.label60 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pnlGestionarPolizas = new System.Windows.Forms.Panel();
+            this.txtCliente_Cancelar = new System.Windows.Forms.TextBox();
+            this.cmbPolizasC = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtCliente_Cancelar = new System.Windows.Forms.TextBox();
             this.txtNota_Cancelar = new System.Windows.Forms.TextBox();
             this.txtEstado_Cancelar = new System.Windows.Forms.TextBox();
             this.txtNumPoliza_Cancelar = new System.Windows.Forms.TextBox();
             this.btnCancelarPoliza = new System.Windows.Forms.Button();
-            this.cmbSeguro_CancelarP = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBusscarCancelarP = new System.Windows.Forms.TextBox();
             this.dgvMostrarPoliza_Cancelar = new System.Windows.Forms.DataGridView();
@@ -87,17 +88,16 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbSegurosRenovar = new System.Windows.Forms.ComboBox();
             this.txtPagoParcial_Renovar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPrecio_Renovar = new System.Windows.Forms.TextBox();
             this.txtTotalAPagar_Renovar = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtBuscarPolizasRenovar = new System.Windows.Forms.TextBox();
             this.dgvMostrarPolizas_Renovar = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label17 = new System.Windows.Forms.Label();
             this.pnlPagoPolizas.SuspendLayout();
             this.tabGestionarPolizas.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -160,12 +160,12 @@
             this.pnlPagoPolizas.Controls.Add(this.label12);
             this.pnlPagoPolizas.Controls.Add(this.label3);
             this.pnlPagoPolizas.Controls.Add(this.label11);
-            this.pnlPagoPolizas.Controls.Add(this.comboBox2);
+            this.pnlPagoPolizas.Controls.Add(this.cmbSegurosRenovar);
             this.pnlPagoPolizas.Controls.Add(this.txtPagoParcial_Renovar);
             this.pnlPagoPolizas.Controls.Add(this.label1);
             this.pnlPagoPolizas.Controls.Add(this.txtPrecio_Renovar);
             this.pnlPagoPolizas.Controls.Add(this.txtTotalAPagar_Renovar);
-            this.pnlPagoPolizas.Controls.Add(this.textBox10);
+            this.pnlPagoPolizas.Controls.Add(this.txtBuscarPolizasRenovar);
             this.pnlPagoPolizas.Controls.Add(this.dgvMostrarPolizas_Renovar);
             this.pnlPagoPolizas.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.pnlPagoPolizas.Location = new System.Drawing.Point(-3, 104);
@@ -177,10 +177,10 @@
             // 
             this.tabGestionarPolizas.Controls.Add(this.tabPage1);
             this.tabGestionarPolizas.Controls.Add(this.tabPage2);
-            this.tabGestionarPolizas.Location = new System.Drawing.Point(9, 14);
+            this.tabGestionarPolizas.Location = new System.Drawing.Point(15, 14);
             this.tabGestionarPolizas.Name = "tabGestionarPolizas";
             this.tabGestionarPolizas.SelectedIndex = 0;
-            this.tabGestionarPolizas.Size = new System.Drawing.Size(1159, 572);
+            this.tabGestionarPolizas.Size = new System.Drawing.Size(1153, 572);
             this.tabGestionarPolizas.TabIndex = 187;
             this.tabGestionarPolizas.Visible = false;
             // 
@@ -190,7 +190,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 33);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1151, 535);
+            this.tabPage1.Size = new System.Drawing.Size(1145, 535);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nueva";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -227,7 +227,7 @@
             this.pnlBuscarCliente.Controls.Add(this.label16);
             this.pnlBuscarCliente.Location = new System.Drawing.Point(3, 5);
             this.pnlBuscarCliente.Name = "pnlBuscarCliente";
-            this.pnlBuscarCliente.Size = new System.Drawing.Size(164, 491);
+            this.pnlBuscarCliente.Size = new System.Drawing.Size(486, 491);
             this.pnlBuscarCliente.TabIndex = 209;
             this.pnlBuscarCliente.Visible = false;
             // 
@@ -279,7 +279,7 @@
             this.dgvBuscarClientes.Location = new System.Drawing.Point(0, 105);
             this.dgvBuscarClientes.Name = "dgvBuscarClientes";
             this.dgvBuscarClientes.ReadOnly = true;
-            this.dgvBuscarClientes.Size = new System.Drawing.Size(164, 386);
+            this.dgvBuscarClientes.Size = new System.Drawing.Size(486, 386);
             this.dgvBuscarClientes.TabIndex = 0;
             this.dgvBuscarClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscarClientes_CellDoubleClick);
             // 
@@ -433,6 +433,18 @@
             this.label60.TabIndex = 187;
             this.label60.Text = "No. Solicitud";
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.label17.ForeColor = System.Drawing.Color.Firebrick;
+            this.label17.Location = new System.Drawing.Point(75, 212);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(234, 24);
+            this.label17.TabIndex = 188;
+            this.label17.Text = "Seguro de la Solicitud:";
+            // 
             // label51
             // 
             this.label51.AutoSize = true;
@@ -470,24 +482,49 @@
             // 
             // pnlGestionarPolizas
             // 
+            this.pnlGestionarPolizas.Controls.Add(this.txtCliente_Cancelar);
+            this.pnlGestionarPolizas.Controls.Add(this.cmbPolizasC);
             this.pnlGestionarPolizas.Controls.Add(this.label4);
             this.pnlGestionarPolizas.Controls.Add(this.label10);
             this.pnlGestionarPolizas.Controls.Add(this.label8);
             this.pnlGestionarPolizas.Controls.Add(this.label9);
-            this.pnlGestionarPolizas.Controls.Add(this.txtCliente_Cancelar);
             this.pnlGestionarPolizas.Controls.Add(this.txtNota_Cancelar);
             this.pnlGestionarPolizas.Controls.Add(this.txtEstado_Cancelar);
             this.pnlGestionarPolizas.Controls.Add(this.txtNumPoliza_Cancelar);
             this.pnlGestionarPolizas.Controls.Add(this.btnCancelarPoliza);
-            this.pnlGestionarPolizas.Controls.Add(this.cmbSeguro_CancelarP);
             this.pnlGestionarPolizas.Controls.Add(this.label2);
             this.pnlGestionarPolizas.Controls.Add(this.txtBusscarCancelarP);
             this.pnlGestionarPolizas.Controls.Add(this.dgvMostrarPoliza_Cancelar);
+            this.pnlGestionarPolizas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlGestionarPolizas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlGestionarPolizas.Location = new System.Drawing.Point(6, 3);
+            this.pnlGestionarPolizas.Location = new System.Drawing.Point(3, 3);
             this.pnlGestionarPolizas.Name = "pnlGestionarPolizas";
-            this.pnlGestionarPolizas.Size = new System.Drawing.Size(1145, 476);
+            this.pnlGestionarPolizas.Size = new System.Drawing.Size(1139, 529);
             this.pnlGestionarPolizas.TabIndex = 25;
+            // 
+            // txtCliente_Cancelar
+            // 
+            this.txtCliente_Cancelar.Location = new System.Drawing.Point(912, 89);
+            this.txtCliente_Cancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCliente_Cancelar.Name = "txtCliente_Cancelar";
+            this.txtCliente_Cancelar.ReadOnly = true;
+            this.txtCliente_Cancelar.Size = new System.Drawing.Size(203, 33);
+            this.txtCliente_Cancelar.TabIndex = 181;
+            // 
+            // cmbPolizasC
+            // 
+            this.cmbPolizasC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPolizasC.FormattingEnabled = true;
+            this.cmbPolizasC.Items.AddRange(new object[] {
+            "Vida",
+            "Vehiculo",
+            "Negocios e Empresas",
+            "Muebles e Inmuebles"});
+            this.cmbPolizasC.Location = new System.Drawing.Point(222, 6);
+            this.cmbPolizasC.Name = "cmbPolizasC";
+            this.cmbPolizasC.Size = new System.Drawing.Size(297, 32);
+            this.cmbPolizasC.TabIndex = 187;
+            this.cmbPolizasC.DropDownClosed += new System.EventHandler(this.cmbPolizasC_DropDownClosed);
             // 
             // label4
             // 
@@ -537,22 +574,13 @@
             this.label9.TabIndex = 186;
             this.label9.Text = "Núm. Póliza:";
             // 
-            // txtCliente_Cancelar
-            // 
-            this.txtCliente_Cancelar.Location = new System.Drawing.Point(912, 89);
-            this.txtCliente_Cancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtCliente_Cancelar.Name = "txtCliente_Cancelar";
-            this.txtCliente_Cancelar.ReadOnly = true;
-            this.txtCliente_Cancelar.Size = new System.Drawing.Size(209, 33);
-            this.txtCliente_Cancelar.TabIndex = 181;
-            // 
             // txtNota_Cancelar
             // 
             this.txtNota_Cancelar.Location = new System.Drawing.Point(833, 215);
             this.txtNota_Cancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtNota_Cancelar.Multiline = true;
             this.txtNota_Cancelar.Name = "txtNota_Cancelar";
-            this.txtNota_Cancelar.Size = new System.Drawing.Size(288, 145);
+            this.txtNota_Cancelar.Size = new System.Drawing.Size(282, 145);
             this.txtNota_Cancelar.TabIndex = 182;
             // 
             // txtEstado_Cancelar
@@ -561,7 +589,7 @@
             this.txtEstado_Cancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtEstado_Cancelar.Name = "txtEstado_Cancelar";
             this.txtEstado_Cancelar.ReadOnly = true;
-            this.txtEstado_Cancelar.Size = new System.Drawing.Size(209, 33);
+            this.txtEstado_Cancelar.Size = new System.Drawing.Size(203, 33);
             this.txtEstado_Cancelar.TabIndex = 182;
             // 
             // txtNumPoliza_Cancelar
@@ -570,7 +598,7 @@
             this.txtNumPoliza_Cancelar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtNumPoliza_Cancelar.Name = "txtNumPoliza_Cancelar";
             this.txtNumPoliza_Cancelar.ReadOnly = true;
-            this.txtNumPoliza_Cancelar.Size = new System.Drawing.Size(209, 33);
+            this.txtNumPoliza_Cancelar.Size = new System.Drawing.Size(203, 33);
             this.txtNumPoliza_Cancelar.TabIndex = 183;
             // 
             // btnCancelarPoliza
@@ -589,25 +617,6 @@
             this.btnCancelarPoliza.UseVisualStyleBackColor = false;
             this.btnCancelarPoliza.Click += new System.EventHandler(this.btnCancelarPoliza_Click);
             // 
-            // cmbSeguro_CancelarP
-            // 
-            this.cmbSeguro_CancelarP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSeguro_CancelarP.FormattingEnabled = true;
-            this.cmbSeguro_CancelarP.Items.AddRange(new object[] {
-            "Seguro de Riesgo de Muerte",
-            "Seguro de Salud",
-            "Seguro de Riesgos Laborales",
-            "Seguro Contenido",
-            "Seguro Edificaciones",
-            "Seguro para Empresas y Negocios",
-            "Seguro a Todo Riesgo",
-            "Seguro Obligatorio",
-            "Seguro Voluntario"});
-            this.cmbSeguro_CancelarP.Location = new System.Drawing.Point(222, 8);
-            this.cmbSeguro_CancelarP.Name = "cmbSeguro_CancelarP";
-            this.cmbSeguro_CancelarP.Size = new System.Drawing.Size(297, 32);
-            this.cmbSeguro_CancelarP.TabIndex = 164;
-            // 
             // label2
             // 
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -625,6 +634,7 @@
             this.txtBusscarCancelarP.Name = "txtBusscarCancelarP";
             this.txtBusscarCancelarP.Size = new System.Drawing.Size(434, 33);
             this.txtBusscarCancelarP.TabIndex = 162;
+            this.txtBusscarCancelarP.TextChanged += new System.EventHandler(this.txtBusscarCancelarP_TextChanged);
             // 
             // dgvMostrarPoliza_Cancelar
             // 
@@ -830,24 +840,20 @@
             this.label11.TabIndex = 165;
             this.label11.Text = "Tipo de Pago:";
             // 
-            // comboBox2
+            // cmbSegurosRenovar
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Seguro de Riesgo de Muerte",
-            "Seguro de Salud",
-            "Seguro de Riesgos Laborales",
-            "Seguro Contenido",
-            "Seguro Edificaciones",
-            "Seguro para Empresas y Negocios",
-            "Seguro a Todo Riesgo",
-            "Seguro Obligatorio",
-            "Seguro Voluntario"});
-            this.comboBox2.Location = new System.Drawing.Point(222, 28);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(297, 32);
-            this.comboBox2.TabIndex = 164;
+            this.cmbSegurosRenovar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSegurosRenovar.FormattingEnabled = true;
+            this.cmbSegurosRenovar.Items.AddRange(new object[] {
+            "Vida",
+            "Vehiculo",
+            "Negocios e Empresas",
+            "Muebles e Inmuebles"});
+            this.cmbSegurosRenovar.Location = new System.Drawing.Point(222, 28);
+            this.cmbSegurosRenovar.Name = "cmbSegurosRenovar";
+            this.cmbSegurosRenovar.Size = new System.Drawing.Size(297, 32);
+            this.cmbSegurosRenovar.TabIndex = 164;
+            this.cmbSegurosRenovar.DropDownClosed += new System.EventHandler(this.cmbSegurosRenovar_DropDownClosed);
             // 
             // txtPagoParcial_Renovar
             // 
@@ -891,13 +897,14 @@
             this.txtTotalAPagar_Renovar.TabIndex = 162;
             this.txtTotalAPagar_Renovar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox10
+            // txtBuscarPolizasRenovar
             // 
-            this.textBox10.Location = new System.Drawing.Point(222, 64);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(434, 33);
-            this.textBox10.TabIndex = 162;
+            this.txtBuscarPolizasRenovar.Location = new System.Drawing.Point(222, 64);
+            this.txtBuscarPolizasRenovar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtBuscarPolizasRenovar.Name = "txtBuscarPolizasRenovar";
+            this.txtBuscarPolizasRenovar.Size = new System.Drawing.Size(434, 33);
+            this.txtBuscarPolizasRenovar.TabIndex = 162;
+            this.txtBuscarPolizasRenovar.TextChanged += new System.EventHandler(this.txtBuscarPolizasRenovar_TextChanged);
             // 
             // dgvMostrarPolizas_Renovar
             // 
@@ -934,24 +941,12 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.label17.ForeColor = System.Drawing.Color.Firebrick;
-            this.label17.Location = new System.Drawing.Point(75, 212);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(234, 24);
-            this.label17.TabIndex = 188;
-            this.label17.Text = "Seguro de la Solicitud:";
-            // 
             // frmPolizas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1181, 677);
+            this.ClientSize = new System.Drawing.Size(1185, 650);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlPagoPolizas);
@@ -987,10 +982,10 @@
         private System.Windows.Forms.Button btnPagoP;
         private System.Windows.Forms.Button btnGestionarP;
         private System.Windows.Forms.Panel pnlPagoPolizas;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbSegurosRenovar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTotalAPagar_Renovar;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtBuscarPolizasRenovar;
         private System.Windows.Forms.DataGridView dgvMostrarPolizas_Renovar;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmbTPago;
@@ -1017,7 +1012,6 @@
         private System.Windows.Forms.TextBox txtEstado_Cancelar;
         private System.Windows.Forms.TextBox txtNumPoliza_Cancelar;
         private System.Windows.Forms.Button btnCancelarPoliza;
-        private System.Windows.Forms.ComboBox cmbSeguro_CancelarP;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBusscarCancelarP;
         private System.Windows.Forms.DataGridView dgvMostrarPoliza_Cancelar;
@@ -1052,5 +1046,6 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox cmbPolizasC;
     }
 }

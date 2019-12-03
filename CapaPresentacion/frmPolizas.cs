@@ -27,6 +27,12 @@ namespace CapaPresentacion
         DataTable dtSeguroObligatorio = new DataTable();
         DataTable dtSeguroVoluntario = new DataTable();
 
+        DataTable dt_vdPoliza = new DataTable();
+        DataTable dt_vhPoliza = new DataTable();
+        DataTable dt_inPoliza = new DataTable();
+        DataTable dt_emPoliza = new DataTable();
+
+
         clSoloNumero cs = new clSoloNumero();
 
         B_Clientes B_Clientes = new B_Clientes();
@@ -96,17 +102,17 @@ namespace CapaPresentacion
                 txtPagoParcial_Renovar.Visible = true;
                 blParcial = true;
             }
-            
+
         }
 
         private void frmPolizas_Load(object sender, EventArgs e)
         {
-            MostrarPolizas();
+            CargarPolizas();
             MostrarClientes();
-            MostrarDetalles();
+            CargarDetalles();
         }
 
-        private void MostrarDetalles()
+        private void CargarDetalles()
         {
             dtSeguroContenido = B_Poliza.B_MostrarSeguroContenido();
             dtSeguroEdificaciones = B_Poliza.B_MostrarSeguroEdificaciones();
@@ -114,8 +120,6 @@ namespace CapaPresentacion
             dtSeguroTodoRiesgo = B_Poliza.B_MostrarSeguroTodoRiesgo();
             dtSeguroObligatorio = B_Poliza.B_MostrarSeguroObligatorio();
             dtSeguroVoluntario = B_Poliza.B_MostrarSeguroVoluntario();
-
-            //CargarPolizaDeSeguros();
         }
 
         public void MostrarClientes()
@@ -123,16 +127,12 @@ namespace CapaPresentacion
             dgvBuscarClientes.DataSource = B_Clientes.B_MostrarClientes();
         }
 
-        private void CargarPolizaDeSeguros()
+        private void CargarPolizas()
         {
-
-        }
-
-        private void MostrarPolizas()
-        {
-            dtMostrarPolizas = B_VerPolizas.B_vd_VerPoliza();
-            dgvMostrarPolizas_Renovar.DataSource = dtMostrarPolizas;
-            dgvMostrarPoliza_Cancelar.DataSource = dtMostrarPolizas;
+            dt_vdPoliza = B_VerPolizas.B_vd_VerPoliza();
+            dt_vhPoliza = B_VerPolizas.B_vh_MostrarPolizas();
+            dt_inPoliza = B_VerPolizas.B_in_MostrarPolizas();
+            dt_emPoliza = B_VerPolizas.B_em_MostrarPolizas();
         }
 
         string Nombre_C = "";
@@ -156,11 +156,11 @@ namespace CapaPresentacion
                 Cedula_C = row.Cells[11].Value.ToString();
 
                 txtEstado_Cancelar.Text = row.Cells[6].Value.ToString();
-               
+
                 BtnPagarEnableEstado_C();
 
             }
-            catch (Exception){ }
+            catch (Exception) { }
         }
 
         private void BtnPagarEnableEstado_C()
@@ -191,7 +191,7 @@ namespace CapaPresentacion
                 txtCedulaCliente_Renovar.Text = row.Cells[11].Value.ToString();
                 txtNumPoliza_Renovar.Text = row.Cells[1].Value.ToString();
 
-                
+
                 txtEstado_Renovar.Text = row.Cells[6].Value.ToString();
                 txtPrecio_Renovar.Text = row.Cells[5].Value.ToString();
                 txtTotalAPagar_Renovar.Text = row.Cells[5].Value.ToString();
@@ -223,7 +223,7 @@ namespace CapaPresentacion
 
         public void CargarEmpleado()
         {
-           idEmpleado = 1;
+            idEmpleado = 1;
 
         }
 
@@ -250,7 +250,7 @@ namespace CapaPresentacion
                     E_Poliza.Poliza = strPoliza();
                     E_Poliza.Precio = Convert.ToDecimal(txtPrecio_Renovar.Text);
                     E_Poliza.TPago = Convert.ToDecimal(txtTotalAPagar_Renovar.Text);
-                    
+
                     E_Poliza.Parcial = Parcial(txtPagoParcial_Renovar.Text);
                     E_Poliza.FechaHora = DateTime.Now;
                     E_Poliza.Vencimiento = DateTime.Now.Date;
@@ -258,34 +258,34 @@ namespace CapaPresentacion
                     if (B_Poliza.B_RenovarPoliza(E_Poliza) >= 2)
                     {
                         MessageBox.Show("Todo Correcto");
-                        MostrarPolizas();
+                        CargarPolizas();
                     }
-                    
+
                 }
-        }
+            }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
-}
+        }
         public string strPoliza()
         {
-         return Poliza = " Le mostramos a continuación, a modo de ejemplo, una poliza de Seguro de Vida Individual, incluyendo las Condiciones Generales y Especiales."
-+ "ENTIDAD ASEGURADORA ……………………………………."
-+ "NOTA INFORMATIVA AL TOMADOR DEL SEGURO(ASEGURADO)"
-+ "La información que se contiene en este documento se ofrece en cumplimiento de lo dispuesto en la Ley Orgánica 6/2004 de Ordenación y Supervisión de los Seguros Privados y de los artículos 104 a 107 de su Reglamento de desarrollo, aprobado por Real Decreto 2486/1998."
-+ "LEGISLACIÓN APLICABLE AL CONTRATO DE SEGURO"
-+ "Ley 50/1980, de 8 de octubre, de Contrato de Seguro; Ley Orgánica 6/2004 de Ordenación y Supervisión de los Seguros Privados y su Reglamento de desarrollo(Real Decreto nº 2486/1998, de 20 de noviembre). Condiciones Generales, Especiales y Particulares del Contrato."
-+ "ENTIDAD ASEGURADORA"
-+ "Denominación Social: ………………………………. es el nombre comercial de ……………………………………………………………………………………………………………….. con N.I.F.: ………………………………., con domicilio en ……………………………….."
-+ "Corresponde a la Dirección General de Seguros, dependiente del Ministerio de Economía y Hacienda, el control y supervisión de la actividad de dicha Entidad Aseguradora."
+            return Poliza = " Le mostramos a continuación, a modo de ejemplo, una poliza de Seguro de Vida Individual, incluyendo las Condiciones Generales y Especiales."
+   + "ENTIDAD ASEGURADORA ……………………………………."
+   + "NOTA INFORMATIVA AL TOMADOR DEL SEGURO(ASEGURADO)"
+   + "La información que se contiene en este documento se ofrece en cumplimiento de lo dispuesto en la Ley Orgánica 6/2004 de Ordenación y Supervisión de los Seguros Privados y de los artículos 104 a 107 de su Reglamento de desarrollo, aprobado por Real Decreto 2486/1998."
+   + "LEGISLACIÓN APLICABLE AL CONTRATO DE SEGURO"
+   + "Ley 50/1980, de 8 de octubre, de Contrato de Seguro; Ley Orgánica 6/2004 de Ordenación y Supervisión de los Seguros Privados y su Reglamento de desarrollo(Real Decreto nº 2486/1998, de 20 de noviembre). Condiciones Generales, Especiales y Particulares del Contrato."
+   + "ENTIDAD ASEGURADORA"
+   + "Denominación Social: ………………………………. es el nombre comercial de ……………………………………………………………………………………………………………….. con N.I.F.: ………………………………., con domicilio en ……………………………….."
+   + "Corresponde a la Dirección General de Seguros, dependiente del Ministerio de Economía y Hacienda, el control y supervisión de la actividad de dicha Entidad Aseguradora."
 
-+ "INSTANCIAS DE RECLAMACIÓN ………………………………."
-+ " 1) Servicio de Atención al Cliente cuyo reglamento se encuentra a disposición de los interesados en las oficinas de ……………………………….."
-+ "2) Con carácter general los conflictos se resolverán por los jueces y tribunales competentes."
-+ "3) Asimismo puede acudirse, para resolver las controversias que puedan plantearse, al procedimiento administrativo de reclamación ante la Dirección General de Seguros para el cual está legitimado el tomador, asegurado, beneficiario, tercero perjudicado o derechohabiente de cualquiera de ellos."
-+ "CONDICIONES GENERALES DEL SEGURO DE VIDA INDIVIDUAL"
-+ "El presente contrato de seguro de vida se rige por lo dispuesto en la Ley 50/1980, de 8 de octubre, de contrato de Seguro, T.R de Ordenación y Supervisión de los Seguros Privados, R.D.Leg 6/2004, R.D. 2486/1998 de 20 de Noviembre y por lo convenido en las Condiciones Generales, Especiales y Particulares de este contrato, sin que tengan validez las cláusulas limitativas de los derechos de los asegurados que no sean específicamente aceptadas por el tomador de la póliza.No requerirán dicha aceptación las meras transcripciones o referencias a preceptos legales."
-+ "El control de la actividad que desarrolla la Entidad Aseguradora, le corresponde al Ministerio de Economía y Hacienda del Estado español, que lo ejerce a través de la Dirección General de Seguros y Fondos de Pensiones."
-+ "ARTÍCULO PRELIMINAR. DEFINICIONES."
-+ "Para los efectos de este contrato se entenderá por:";
+   + "INSTANCIAS DE RECLAMACIÓN ………………………………."
+   + " 1) Servicio de Atención al Cliente cuyo reglamento se encuentra a disposición de los interesados en las oficinas de ……………………………….."
+   + "2) Con carácter general los conflictos se resolverán por los jueces y tribunales competentes."
+   + "3) Asimismo puede acudirse, para resolver las controversias que puedan plantearse, al procedimiento administrativo de reclamación ante la Dirección General de Seguros para el cual está legitimado el tomador, asegurado, beneficiario, tercero perjudicado o derechohabiente de cualquiera de ellos."
+   + "CONDICIONES GENERALES DEL SEGURO DE VIDA INDIVIDUAL"
+   + "El presente contrato de seguro de vida se rige por lo dispuesto en la Ley 50/1980, de 8 de octubre, de contrato de Seguro, T.R de Ordenación y Supervisión de los Seguros Privados, R.D.Leg 6/2004, R.D. 2486/1998 de 20 de Noviembre y por lo convenido en las Condiciones Generales, Especiales y Particulares de este contrato, sin que tengan validez las cláusulas limitativas de los derechos de los asegurados que no sean específicamente aceptadas por el tomador de la póliza.No requerirán dicha aceptación las meras transcripciones o referencias a preceptos legales."
+   + "El control de la actividad que desarrolla la Entidad Aseguradora, le corresponde al Ministerio de Economía y Hacienda del Estado español, que lo ejerce a través de la Dirección General de Seguros y Fondos de Pensiones."
+   + "ARTÍCULO PRELIMINAR. DEFINICIONES."
+   + "Para los efectos de este contrato se entenderá por:";
         }
         public decimal Parcial(string parcial)
         {
@@ -372,7 +372,7 @@ namespace CapaPresentacion
                         if (B_Poliza.B_CancelarPoliza(E_Poliza) == 1)
                         {
                             MessageBox.Show("Se ha Cancelado la Poliza Correctamente", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            MostrarPolizas();
+                            CargarPolizas();
                         }
                     }
                 }
@@ -445,20 +445,24 @@ namespace CapaPresentacion
             IdCliente_N = Convert.ToInt32(row.Cells[0].Value.ToString());
             SolicitudCliente();
 
-            txtCliente.Text = row.Cells[1].Value.ToString() +" "+ row.Cells[2].Value.ToString();
+            txtCliente.Text = row.Cells[1].Value.ToString() + " " + row.Cells[2].Value.ToString();
             txtCedula.Text = row.Cells[4].Value.ToString();
             pnlBuscarCliente.Visible = false;
         }
 
         private void txtBuscarDetalles_TextChanged(object sender, EventArgs e)
         {
-            BindingSource bs = new BindingSource();
-            bs.DataSource = dgvSolicitudes.DataSource;
-            bs.Filter = "CONVERT(id, 'System.String') like '%" + txtBuscar.Text + "%' OR Nombre like '%" +
-                txtBuscar.Text + "%' OR Apellido like '%" + txtBuscar.Text +
-                "%' OR Direccion like '%" + txtBuscar.Text + "%' OR Cedula like '%" + txtBuscar.Text +
-                "%' OR Telefono like '%" + txtBuscar.Text + "%' OR [Correo Electronico] like '%" + txtBuscar.Text + "%'";
-            dgvSolicitudes.DataSource = bs;
+            try
+            {
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dgvSolicitudes.DataSource;
+                bs.Filter = "CONVERT([id_Cliente], 'System.String') like '%" + txtBuscarDetalles.Text + "%' OR CONVERT([id Factura], 'System.String') like '%" +
+                    txtBuscarDetalles.Text + "%' OR Matricula like '%" + txtBuscarDetalles.Text +
+                    "%'";
+
+                dgvSolicitudes.DataSource = bs;
+            }
+            catch (Exception ex) {  MessageBox.Show(ex.Message);}
         }
 
 
@@ -510,12 +514,18 @@ namespace CapaPresentacion
 
         private void btnProcesoPago_Click(object sender, EventArgs e)
         {
-            ProcesoPago();
+            QuitarErrorProviderNuevo();
+            if (ValidarCamposNuevo())
+            {
+                ProcesoPago();
+            }
         }
         private void ProcesoPago()
         {
             try
             {
+                QuitarErrorProviderNuevo();
+
                 frmResumenVentaPoliza ReFac = new frmResumenVentaPoliza();
 
                 ReFac.strPoliza = strPoliza();
@@ -559,7 +569,43 @@ namespace CapaPresentacion
                 ReFac.ShowDialog();
 
             }
-            catch (Exception ex){ MessageBox.Show(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private bool ValidarCamposNuevo()
+        {
+            bool ok = true;
+
+            if (string.IsNullOrEmpty(txtCliente.Text) || string.IsNullOrWhiteSpace(txtCliente.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCliente, "Campo obligatorio");
+            }
+
+            if (string.IsNullOrEmpty(txtCedula.Text) || string.IsNullOrWhiteSpace(txtCedula.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCedula, "Campo obligatorio");
+            }
+            if (string.IsNullOrEmpty(cmbSeguros.Text) || string.IsNullOrWhiteSpace(cmbSeguros.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(cmbSeguros, "Campo obligatorio");
+            }
+            if (string.IsNullOrEmpty(txtNoSolicitud.Text) || string.IsNullOrWhiteSpace(txtNoSolicitud.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtNoSolicitud, "Campo obligatorio");
+            }
+
+            return ok;
+        }
+        private void QuitarErrorProviderNuevo()
+        {
+            errorProvider1.SetError(txtCliente, "");
+            errorProvider1.SetError(txtCedula, "");
+            errorProvider1.SetError(cmbSeguros, "");
+            errorProvider1.SetError(txtNoSolicitud, "");
         }
 
         private DateTime strVencimiento()
@@ -600,7 +646,6 @@ namespace CapaPresentacion
                 default:
                     break;
             }
-
         }
         private decimal totalA_pagar()
         {
@@ -625,6 +670,91 @@ namespace CapaPresentacion
                 }
             }
             return precioTotal;
+        }
+
+        private void cmbSegurosRenovar_DropDownClosed(object sender, EventArgs e)
+        {
+            switch (cmbSegurosRenovar.Text)
+            {
+                case "Muebles e Inmuebles":
+                    dgvMostrarPolizas_Renovar.DataSource = dt_inPoliza;
+                    break;
+                case "Negocios e Empresas":
+                    dgvMostrarPolizas_Renovar.DataSource = dt_emPoliza;
+                    break;
+                case "Vehiculo":
+                    dgvMostrarPolizas_Renovar.DataSource = dt_vhPoliza;
+                    break;
+                case "Vida":
+                    dgvMostrarPolizas_Renovar.DataSource = dt_vdPoliza;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        //private void PolizaPorSeguro()
+        //{
+        //    if (!cmbSegurosRenovar.Text.Equals(""))
+        //    {
+        //        BindingSource bs = new BindingSource();
+        //        bs.DataSource = dgvMostrarPolizas_Renovar.DataSource;
+        //        bs.Filter = "[Nombre del Seguro]  like '%" + cmbSegurosRenovar.Text + "%'";
+        //        dgvMostrarPolizas_Renovar.DataSource = bs;
+        //    }
+        //}
+
+        private void txtBuscarPolizasRenovar_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dgvMostrarPolizas_Renovar.DataSource;
+                bs.Filter = "CONVERT([id Cliente], 'System.String') like '%" + txtBuscarPolizasRenovar.Text + "%' OR Nombre like '%" +
+                    txtBuscarPolizasRenovar.Text + "%' OR Apellido like '%" + txtBuscarPolizasRenovar.Text +
+                    "%' OR Cédula like '%" + txtBuscarPolizasRenovar.Text +
+                    "%' OR Teléfono like '%" + txtBuscarPolizasRenovar.Text + "%' OR [Nombre del Seguro]  like '%" + txtBuscarPolizasRenovar.Text + "%'";
+               
+                dgvMostrarPolizas_Renovar.DataSource = bs;
+            }
+            catch (Exception ex){ MessageBox.Show(ex.Message); }
+        }
+
+        private void cmbPolizasC_DropDownClosed(object sender, EventArgs e)
+        {
+            switch (cmbPolizasC.Text)
+            {
+                case "Muebles e Inmuebles":
+                    dgvMostrarPoliza_Cancelar.DataSource = dt_inPoliza;
+                    break;
+                case "Negocios e Empresas":
+                    dgvMostrarPoliza_Cancelar.DataSource = dt_emPoliza;
+                    break;
+                case "Vehiculo":
+                    dgvMostrarPoliza_Cancelar.DataSource = dt_vhPoliza;
+                    break;
+                case "Vida":
+                    dgvMostrarPoliza_Cancelar.DataSource = dt_vdPoliza;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void txtBusscarCancelarP_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dgvMostrarPoliza_Cancelar.DataSource;
+                bs.Filter = "CONVERT([id Cliente], 'System.String') like '%" + txtBusscarCancelarP.Text + "%' OR Nombre like '%" +
+                    txtBusscarCancelarP.Text + "%' OR Apellido like '%" + txtBusscarCancelarP.Text +
+                    "%' OR Cédula like '%" + txtBusscarCancelarP.Text +
+                    "%' OR Teléfono like '%" + txtBusscarCancelarP.Text + "%' OR [Nombre del Seguro]  like '%" + txtBusscarCancelarP.Text + "%'";
+
+                dgvMostrarPoliza_Cancelar.DataSource = bs;
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
     }
 }

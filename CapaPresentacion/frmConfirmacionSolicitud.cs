@@ -15,6 +15,13 @@ namespace CapaPresentacion
 {
     public partial class frmConfirmacionSolicitud : Form
     {
+        DataTable dtSeguroContenido = new DataTable();
+        DataTable dtSeguroEdificaciones = new DataTable();
+        DataTable dtSeguroEmpresasNegocios = new DataTable();
+        DataTable dtSeguroTodoRiesgo = new DataTable();
+        DataTable dtSeguroObligatorio = new DataTable();
+        DataTable dtSeguroVoluntario = new DataTable();
+
         E_ConfirmacionSolicitud E_Confirmacion = new E_ConfirmacionSolicitud();
         B_ConfirmacionSolicitud B_ConfirmacionSolicitud = new B_ConfirmacionSolicitud();
 
@@ -30,7 +37,12 @@ namespace CapaPresentacion
 
         private void MostrarDetalleVoluntario()
         {
-           dgvMostrarSolicitudes.DataSource = B_ConfirmacionSolicitud.B_MostrarSeguroVoluntario();
+            dtSeguroContenido = B_ConfirmacionSolicitud.B_MostrarSeguroContenido();
+            dtSeguroEdificaciones = B_ConfirmacionSolicitud.B_MostrarSeguroEdificaciones();
+            dtSeguroEmpresasNegocios = B_ConfirmacionSolicitud.B_MostrarSeguroEmpresaNegocios();
+            dtSeguroTodoRiesgo = B_ConfirmacionSolicitud.B_MostrarSeguroTodoRiesgo();
+            dtSeguroObligatorio = B_ConfirmacionSolicitud.B_MostrarSeguroSeguroObligatorio();
+            dtSeguroVoluntario = B_ConfirmacionSolicitud.B_MostrarSeguroVoluntario();
         }
 
         private void btnAprobarSolicitud_Click(object sender, EventArgs e)
@@ -68,7 +80,7 @@ namespace CapaPresentacion
                     }
                 }
             }
-            catch (Exception ex)  { MessageBox.Show(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void btnRechazarSolicitud_Click(object sender, EventArgs e)
@@ -80,7 +92,7 @@ namespace CapaPresentacion
             try
             {
                 if (!string.IsNullOrEmpty(txtIdSolicitud.Text)
-                  || !string.IsNullOrWhiteSpace(txtIdSolicitud.Text) )
+                  || !string.IsNullOrWhiteSpace(txtIdSolicitud.Text))
                 {
                     if (txtEstado.Text == "En proceso")
                     {
@@ -113,9 +125,74 @@ namespace CapaPresentacion
         {
             var row = dgvMostrarSolicitudes.CurrentRow;
 
-            txtIdSolicitud.Text = row.Cells[1].Value.ToString();
-            txtEstado.Text = row.Cells[20].Value.ToString();
-            txtNota.Text = row.Cells[19].Value.ToString();
+            txtIdSolicitud.Text = row.Cells["Id Solicitud"].Value.ToString();
+            txtEstado.Text = row.Cells["Estado"].Value.ToString();
+            txtNota.Text = row.Cells["Nota"].Value.ToString();
+        }
+
+        private void cmbSeguros_DropDownClosed_1(object sender, EventArgs e)
+        {
+            switch (cmbSeguros.Text)
+            {
+                case "Seguro Contenido":
+                    dgvMostrarSolicitudes.DataSource = dtSeguroContenido;
+                    break;
+                case "Seguro Edificaciones":
+                    dgvMostrarSolicitudes.DataSource = dtSeguroEdificaciones;
+                    break;
+                case "Seguro para Empresas y Negocios":
+                    dgvMostrarSolicitudes.DataSource = dtSeguroEmpresasNegocios;
+                    break;
+                case "Seguro a Todo Riesgo":
+                    dgvMostrarSolicitudes.DataSource = dtSeguroTodoRiesgo;
+                    break;
+                case "Seguro Obligatorio":
+                    dgvMostrarSolicitudes.DataSource = dtSeguroObligatorio;
+                    break;
+                case "Seguro Voluntario":
+                    dgvMostrarSolicitudes.DataSource = dtSeguroVoluntario;
+                    break;
+                default:
+                    break;
+            }
+            Filtrar();
+        }
+
+        private void rbEnProceso_CheckedChanged(object sender, EventArgs e)
+        {
+            Filtrar();
+        }
+        private void rbAprobados_CheckedChanged(object sender, EventArgs e)
+        {
+            Filtrar();
+        }
+
+        private void Filtrar()
+        {
+            try
+            {
+                if (rbAceptada.Checked)
+                {
+                    if (!cmbSeguros.Text.Equals(""))
+                    {
+                        BindingSource bs = new BindingSource();
+                        bs.DataSource = dgvMostrarSolicitudes.DataSource;
+                        bs.Filter = "Estado like '%" + rbAceptada.Text + "%'";
+                        dgvMostrarSolicitudes.DataSource = bs;
+                    }
+                }
+                else if (rbEnProceso.Checked)
+                {
+                    if (!cmbSeguros.Text.Equals(""))
+                    {
+                        BindingSource bs = new BindingSource();
+                        bs.DataSource = dgvMostrarSolicitudes.DataSource;
+                        bs.Filter = "Estado like '%" + rbEnProceso.Text + "%'";
+                        dgvMostrarSolicitudes.DataSource = bs;
+                    }
+                }
+            }
+            catch (Exception ex){ MessageBox.Show(ex.Message); }
         }
     }
 }

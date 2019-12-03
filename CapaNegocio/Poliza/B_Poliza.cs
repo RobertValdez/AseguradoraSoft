@@ -48,6 +48,7 @@ namespace CapaNegocio.Poliza
         {
             return D_Poliza.D_MostrarSeguroVoluntario();
         }
+        
 
 
         public int B_CrearPolizaContenido(E_Poliza ePol)

@@ -1,7 +1,7 @@
 
 
 use AseguradoraBD
-
+go
 
 alter proc vd_MostrarPolizas
 as
@@ -15,17 +15,29 @@ join cEstado on vdPoliza.Estado = cEstado.idEstado
 
 
 
-create proc in_MostrarPolizas
+alter proc in_MostrarPolizas
 as
-select * from inPoliza
+select Pol.Id_Cliente AS "Id Cliente", Pol.id AS "Núm. Póliza", ps.[Nombre del Seguro], Pol.Poliza, ps.Area, ps.Precio, cE.Validacion AS "Estado", Pol.FechaHora AS "Fecha Hora",
+ Pol.Vencimiento, Cliente.Nombre, Cliente.Apellido,
+ Cliente.Cedula AS "Cédula", Cliente.Telefono AS "Teléfono", Cliente.Sexo, Pol.Nota
+  from inPoliza Pol join PolizaDeSeguros ps on Pol.idPolizaDeSeguro = ps.id  join Cliente on Pol.Id_Cliente = Cliente.Id
+join cEstado cE on Pol.Estado = cE.idEstado 
 
-create proc vh_MostrarPolizas
+alter proc vh_MostrarPolizas
 as
-select * from vhPoliza
+select Pol.Id_Cliente AS "Id Cliente", Pol.id AS "Núm. Póliza", ps.[Nombre del Seguro], Pol.Poliza, ps.Area, ps.Precio, cE.Validacion AS "Estado", Pol.FechaHora AS "Fecha Hora",
+ Pol.Vencimiento, Cliente.Nombre, Cliente.Apellido,
+ Cliente.Cedula AS "Cédula", Cliente.Telefono AS "Teléfono", Cliente.Sexo, Pol.Nota
+  from vhPoliza Pol join PolizaDeSeguros ps on Pol.idPolizaDeSeguro = ps.id  join Cliente on Pol.Id_Cliente = Cliente.Id
+join cEstado cE on Pol.Estado = cE.idEstado 
 
-create proc em_MostrarPolizas
+alter proc em_MostrarPolizas
 as
-select * from emPoliza
+select Pol.Id_Cliente AS "Id Cliente", Pol.id AS "Núm. Póliza", ps.[Nombre del Seguro], Pol.Poliza, ps.Area, ps.Precio, cE.Validacion AS "Estado", Pol.FechaHora AS "Fecha Hora",
+ Pol.Vencimiento, Cliente.Nombre, Cliente.Apellido,
+ Cliente.Cedula AS "Cédula", Cliente.Telefono AS "Teléfono", Cliente.Sexo, Pol.Nota
+  from emPoliza Pol join PolizaDeSeguros ps on Pol.idPolizaDeSeguro = ps.id  join Cliente on Pol.Id_Cliente = Cliente.Id
+join cEstado cE on Pol.Estado = cE.idEstado 
 
 
 Alter proc RenovacionPoliza

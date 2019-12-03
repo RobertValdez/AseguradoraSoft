@@ -18,6 +18,31 @@ namespace CapaNegocio.ConfirmacionSolicitud
         {
             return D_ConfirmacionSolicitud.D_MostrarSeguroVoluntario();
         }
+        public DataTable B_MostrarSeguroTodoRiesgo()
+        {
+            return D_ConfirmacionSolicitud.D_MostrarSeguroTodoRiesgo();
+        }
+        public DataTable B_MostrarSeguroSeguroObligatorio()
+        {
+            return D_ConfirmacionSolicitud.D_MostrarSeguroSeguroObligatorio();
+        }
+        public DataTable B_MostrarSeguroContenido()
+        {
+            return D_ConfirmacionSolicitud.D_MostrarSeguroContenido();
+        }
+        public DataTable B_MostrarSeguroEdificaciones()
+        {
+            return D_ConfirmacionSolicitud.D_MostrarSeguroEdificaciones();
+        }
+        public DataTable B_MostrarSeguroEmpresaNegocios()
+        {
+            return D_ConfirmacionSolicitud.D_MostrarSeguroEmpresaNegocios();
+        }
+
+
+
+
+
         public int B_AprobarSolicitudSeguroVoluntario(E_ConfirmacionSolicitud eCon)
         {
             return D_ConfirmacionSolicitud.D_AprobarSolicitudSeguroVoluntario(eCon);

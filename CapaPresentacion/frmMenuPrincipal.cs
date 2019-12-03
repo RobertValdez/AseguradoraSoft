@@ -95,13 +95,6 @@ namespace CapaPresentacion
             dv.Show();
         }
 
-        private void polizasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmPolizas p = new frmPolizas();
-            p.MdiParent = this;
-            p.Show();
-        }
-
         private void seguroParaEmpresasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmSeguroEmpresas sEmp = new frmSeguroEmpresas();
@@ -165,6 +158,13 @@ namespace CapaPresentacion
         {
             frmVerPolizas vp = new frmVerPolizas();
             vp.Show();
+        }
+
+        private void polizasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPolizas p = new frmPolizas();
+            p.MdiParent = this;
+            p.Show();
         }
     }
 }

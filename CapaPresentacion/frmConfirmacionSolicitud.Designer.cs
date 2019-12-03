@@ -30,17 +30,17 @@
         {
             this.dgvMostrarSolicitudes = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
-            this.cmbSeguros = new System.Windows.Forms.ComboBox();
             this.btnAprobarSolicitud = new System.Windows.Forms.Button();
             this.btnRechazarSolicitud = new System.Windows.Forms.Button();
             this.txtIdSolicitud = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtEstado = new System.Windows.Forms.TextBox();
-            this.rbAprobados = new System.Windows.Forms.RadioButton();
-            this.rbPendientes = new System.Windows.Forms.RadioButton();
+            this.rbAceptada = new System.Windows.Forms.RadioButton();
+            this.rbEnProceso = new System.Windows.Forms.RadioButton();
             this.txtNota = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.cmbSeguros = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarSolicitudes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,19 +71,6 @@
             this.label10.Size = new System.Drawing.Size(502, 38);
             this.label10.TabIndex = 25;
             this.label10.Text = "Confirmación de las Solicitudes";
-            // 
-            // cmbSeguros
-            // 
-            this.cmbSeguros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSeguros.FormattingEnabled = true;
-            this.cmbSeguros.Items.AddRange(new object[] {
-            "Muebles e Inmuebles",
-            "Empresas y negocios",
-            "Vehiculos"});
-            this.cmbSeguros.Location = new System.Drawing.Point(293, 107);
-            this.cmbSeguros.Name = "cmbSeguros";
-            this.cmbSeguros.Size = new System.Drawing.Size(384, 32);
-            this.cmbSeguros.TabIndex = 29;
             // 
             // btnAprobarSolicitud
             // 
@@ -159,29 +146,31 @@
             this.txtEstado.Size = new System.Drawing.Size(136, 33);
             this.txtEstado.TabIndex = 24;
             // 
-            // rbAprobados
+            // rbAceptada
             // 
-            this.rbAprobados.AutoSize = true;
-            this.rbAprobados.ForeColor = System.Drawing.Color.Firebrick;
-            this.rbAprobados.Location = new System.Drawing.Point(146, 109);
-            this.rbAprobados.Name = "rbAprobados";
-            this.rbAprobados.Size = new System.Drawing.Size(141, 28);
-            this.rbAprobados.TabIndex = 32;
-            this.rbAprobados.TabStop = true;
-            this.rbAprobados.Text = "Aprobados";
-            this.rbAprobados.UseVisualStyleBackColor = true;
+            this.rbAceptada.AutoSize = true;
+            this.rbAceptada.ForeColor = System.Drawing.Color.Firebrick;
+            this.rbAceptada.Location = new System.Drawing.Point(146, 109);
+            this.rbAceptada.Name = "rbAceptada";
+            this.rbAceptada.Size = new System.Drawing.Size(134, 28);
+            this.rbAceptada.TabIndex = 32;
+            this.rbAceptada.TabStop = true;
+            this.rbAceptada.Text = "Aceptada";
+            this.rbAceptada.UseVisualStyleBackColor = true;
+            this.rbAceptada.CheckedChanged += new System.EventHandler(this.rbAprobados_CheckedChanged);
             // 
-            // rbPendientes
+            // rbEnProceso
             // 
-            this.rbPendientes.AutoSize = true;
-            this.rbPendientes.ForeColor = System.Drawing.Color.Firebrick;
-            this.rbPendientes.Location = new System.Drawing.Point(146, 77);
-            this.rbPendientes.Name = "rbPendientes";
-            this.rbPendientes.Size = new System.Drawing.Size(140, 28);
-            this.rbPendientes.TabIndex = 32;
-            this.rbPendientes.TabStop = true;
-            this.rbPendientes.Text = "Pendientes";
-            this.rbPendientes.UseVisualStyleBackColor = true;
+            this.rbEnProceso.AutoSize = true;
+            this.rbEnProceso.ForeColor = System.Drawing.Color.Firebrick;
+            this.rbEnProceso.Location = new System.Drawing.Point(146, 77);
+            this.rbEnProceso.Name = "rbEnProceso";
+            this.rbEnProceso.Size = new System.Drawing.Size(140, 28);
+            this.rbEnProceso.TabIndex = 32;
+            this.rbEnProceso.TabStop = true;
+            this.rbEnProceso.Text = "En Proceso";
+            this.rbEnProceso.UseVisualStyleBackColor = true;
+            this.rbEnProceso.CheckedChanged += new System.EventHandler(this.rbEnProceso_CheckedChanged);
             // 
             // txtNota
             // 
@@ -205,18 +194,35 @@
             this.label2.TabIndex = 31;
             this.label2.Text = "Nota:";
             // 
+            // cmbSeguros
+            // 
+            this.cmbSeguros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSeguros.FormattingEnabled = true;
+            this.cmbSeguros.Items.AddRange(new object[] {
+            "Seguro Contenido",
+            "Seguro Edificaciones",
+            "Seguro para Empresas y Negocios",
+            "Seguro a Todo Riesgo",
+            "Seguro Obligatorio",
+            "Seguro Voluntario"});
+            this.cmbSeguros.Location = new System.Drawing.Point(293, 105);
+            this.cmbSeguros.Name = "cmbSeguros";
+            this.cmbSeguros.Size = new System.Drawing.Size(395, 32);
+            this.cmbSeguros.TabIndex = 208;
+            this.cmbSeguros.DropDownClosed += new System.EventHandler(this.cmbSeguros_DropDownClosed_1);
+            // 
             // frmConfirmacionSolicitud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1156, 635);
-            this.Controls.Add(this.rbPendientes);
-            this.Controls.Add(this.rbAprobados);
+            this.Controls.Add(this.cmbSeguros);
+            this.Controls.Add(this.rbEnProceso);
+            this.Controls.Add(this.rbAceptada);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btnRechazarSolicitud);
             this.Controls.Add(this.btnAprobarSolicitud);
-            this.Controls.Add(this.cmbSeguros);
             this.Controls.Add(this.dgvMostrarSolicitudes);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtNota);
@@ -239,16 +245,16 @@
         #endregion
         private System.Windows.Forms.DataGridView dgvMostrarSolicitudes;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox cmbSeguros;
         private System.Windows.Forms.Button btnAprobarSolicitud;
         private System.Windows.Forms.Button btnRechazarSolicitud;
         private System.Windows.Forms.TextBox txtIdSolicitud;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtEstado;
-        private System.Windows.Forms.RadioButton rbAprobados;
-        private System.Windows.Forms.RadioButton rbPendientes;
+        private System.Windows.Forms.RadioButton rbAceptada;
+        private System.Windows.Forms.RadioButton rbEnProceso;
         private System.Windows.Forms.TextBox txtNota;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbSeguros;
     }
 }
