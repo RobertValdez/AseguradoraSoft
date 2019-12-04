@@ -67,22 +67,22 @@ namespace CapaPresentacion
                         switch (cmbSeguros.Text)
                         {
                             case "Seguro Contenido":
-                                dgvMostrarSolicitudes.DataSource = dtSeguroContenido;
+                                AprobarSeguroContenido();
                                 break;
                             case "Seguro Edificaciones":
-                                dgvMostrarSolicitudes.DataSource = dtSeguroEdificaciones;
+                                AprobarSeguroEdificaciones();
                                 break;
                             case "Seguro para Empresas y Negocios":
-                                dgvMostrarSolicitudes.DataSource = dtSeguroEmpresasNegocios;
+                                AprobarEmpresasNegocios();
                                 break;
                             case "Seguro a Todo Riesgo":
-                                dgvMostrarSolicitudes.DataSource = dtSeguroTodoRiesgo;
+                                AprobarTodoRiesgo();
                                 break;
                             case "Seguro Obligatorio":
-                                dgvMostrarSolicitudes.DataSource = dtSeguroObligatorio;
+                                AprobarSeguroObligatorio();
                                 break;
                             case "Seguro Voluntario":
-                                dgvMostrarSolicitudes.DataSource = dtSeguroVoluntario;
+                                AprobarSeguroVoluntario();
                                 break;
                             default:
                                 break;
@@ -192,22 +192,22 @@ namespace CapaPresentacion
                         switch (cmbSeguros.Text)
                         {
                             case "Seguro Contenido":
-                                dgvMostrarSolicitudes.DataSource = dtSeguroContenido;
+                                RechazarContenido();
                                 break;
                             case "Seguro Edificaciones":
-                                dgvMostrarSolicitudes.DataSource = dtSeguroEdificaciones;
+                                RechazarSeguroEdificaciones();
                                 break;
                             case "Seguro para Empresas y Negocios":
-                                dgvMostrarSolicitudes.DataSource = dtSeguroEmpresasNegocios;
+                                RechazarEmpresasNegocios();
                                 break;
                             case "Seguro a Todo Riesgo":
-                                dgvMostrarSolicitudes.DataSource = dtSeguroTodoRiesgo;
+                                RechazarTodoRiesgo();
                                 break;
                             case "Seguro Obligatorio":
-                                dgvMostrarSolicitudes.DataSource = dtSeguroObligatorio;
+                                RechazarrSeguroObligatorio();
                                 break;
                             case "Seguro Voluntario":
-                                dgvMostrarSolicitudes.DataSource = dtSeguroVoluntario;
+                                RechazarSeguroVoluntario();
                                 break;
                             default:
                                 break;

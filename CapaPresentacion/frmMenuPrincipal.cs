@@ -150,7 +150,7 @@ namespace CapaPresentacion
 
         private void verFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmVerFacturasSolicitud vf = new frmVerFacturasSolicitud();
+            frmVerFacturas vf = new frmVerFacturas();
             vf.Show();
         }
 

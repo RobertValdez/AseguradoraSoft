@@ -179,7 +179,7 @@ namespace CapaPresentacion
                 E_ResumenVentaPoliza.Descuento = Convert.ToDecimal(txtDescuento.Text);
             }
 
-            E_ResumenVentaPoliza.Vencimiento = DateTime.Parse("13-05-2020");
+            E_ResumenVentaPoliza.Vencimiento = strVencimiento();
 
             if (MessageBox.Show("¿Está seguro que desea realizar el pago y crear una póliza de seguro para el cliente actual?","", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -193,14 +193,11 @@ namespace CapaPresentacion
                 }  
             }
         }
-        public DateTime FechaA_Vencer(DateTime FechaActual)
+        private DateTime strVencimiento()
         {
-
-            string strFechaActual = Convert.ToString(FechaActual);
-            DateTime fecha = Convert.ToDateTime(strFechaActual, new CultureInfo("es-ES"));
-
-            return fecha = fecha.AddDays(180);
-
+            DateTime dt = DateTime.Now.Date;
+            dt = dt.AddMonths(6);
+            return dt;
         }
 
         private void btnDescontar_Click(object sender, EventArgs e)

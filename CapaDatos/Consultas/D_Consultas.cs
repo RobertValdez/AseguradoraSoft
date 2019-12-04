@@ -49,6 +49,5 @@ namespace CapaDatos.Consultas
             strCon.Close();
             return dt;
         }
-
     }
 }

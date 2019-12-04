@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class frmVerFacturasSolicitud
+    partial class frmVerFacturas
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVerFacturas));
             this.dgvVer = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox15 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,33 +44,69 @@
             this.dgvVer.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvVer.BackgroundColor = System.Drawing.Color.LightPink;
             this.dgvVer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvVer.Location = new System.Drawing.Point(0, 0);
+            this.dgvVer.Location = new System.Drawing.Point(0, 147);
             this.dgvVer.Margin = new System.Windows.Forms.Padding(23, 22, 23, 22);
             this.dgvVer.Name = "dgvVer";
             this.dgvVer.ReadOnly = true;
-            this.dgvVer.Size = new System.Drawing.Size(912, 556);
+            this.dgvVer.Size = new System.Drawing.Size(912, 409);
             this.dgvVer.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Crimson;
+            this.label1.Location = new System.Drawing.Point(207, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(478, 44);
+            this.label1.TabIndex = 176;
+            this.label1.Text = "Buscar Polizas de Seguros";
+            // 
+            // label16
+            // 
+            this.label16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label16.Image = ((System.Drawing.Image)(resources.GetObject("label16.Image")));
+            this.label16.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.label16.Location = new System.Drawing.Point(196, 72);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(62, 56);
+            this.label16.TabIndex = 174;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(265, 79);
+            this.textBox15.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(434, 43);
+            this.textBox15.TabIndex = 173;
             // 
             // frmVerFacturasSolicitud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(912, 556);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.textBox15);
             this.Controls.Add(this.dgvVer);
             this.Font = new System.Drawing.Font("Century Gothic", 21.75F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.Margin = new System.Windows.Forms.Padding(8);
             this.Name = "frmVerFacturasSolicitud";
             this.Text = "frmVerFacturasSolicitud";
             this.Load += new System.EventHandler(this.frmVerFacturasSolicitud_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVer)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dgvVer;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBox15;
     }
 }

@@ -12,10 +12,10 @@ using CapaNegocio.Consultas;
 
 namespace CapaPresentacion
 {
-    public partial class frmVerFacturasSolicitud : Form
+    public partial class frmVerFacturas : Form
     {
         B_Consultas B_Consultas = new B_Consultas();
-        public frmVerFacturasSolicitud()
+        public frmVerFacturas()
         {
             InitializeComponent();
         }

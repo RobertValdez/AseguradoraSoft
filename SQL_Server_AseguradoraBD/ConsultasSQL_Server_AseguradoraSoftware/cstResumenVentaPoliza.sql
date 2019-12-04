@@ -42,8 +42,8 @@ insert into detalleSeguroSalud(id_ctVida, InstitucionDondeLabora,
 
 
 
-insert into vdPoliza(Id_Cliente, Poliza, Estado,
-FechaHora, Vencimiento) values (@IdCliente,@Poliza, @EstadoPoliza, @FechaHora, @Vencimiento)
+insert into vdPoliza(Id_Cliente, Poliza, IdPolizaDeSeguro, Estado,
+FechaHora, Vencimiento) values (@IdCliente, @Poliza, @idSeguro, @EstadoPoliza, @FechaHora, @Vencimiento)
 
 insert into Facturas 
       ([id_Cliente]
@@ -65,8 +65,12 @@ END
 
  --16
 
- select * from ctVida
- select * from detalleSeguroSalud
- select * from vdPoliza
+ select * from ctVida where id_Cliente = 15
+ select * from detalleSeguroSalud c join ctVida on ctVida.id = c.id_ctVida where ctVida.id_Cliente = 46
+ select * from vdPoliza where Id_Cliente = 46
+ select * from Facturas where id_Cliente = 15
+ select * from Cliente where id = 15
+ select * from PolizaDeSeguros where id = 2
+ 
 
  select Cliente.Nombre from Cliente where Id = 32

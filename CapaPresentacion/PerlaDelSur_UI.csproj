@@ -127,17 +127,29 @@
     <Compile Include="frmMenuPrincipal.Designer.cs">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmVerFacturasSolicitud.cs">
+    <Compile Include="frmVerClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmVerFacturasSolicitud.Designer.cs">
-      <DependentUpon>frmVerFacturasSolicitud.cs</DependentUpon>
+    <Compile Include="frmVerClientes.Designer.cs">
+      <DependentUpon>frmVerClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVerFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerFacturas.Designer.cs">
+      <DependentUpon>frmVerFacturas.cs</DependentUpon>
     </Compile>
     <Compile Include="frmVerPolizas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmVerPolizas.Designer.cs">
       <DependentUpon>frmVerPolizas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVerPolizasDisponibles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerPolizasDisponibles.Designer.cs">
+      <DependentUpon>frmVerPolizasDisponibles.cs</DependentUpon>
     </Compile>
     <Compile Include="frmVerReclamos.cs">
       <SubType>Form</SubType>
@@ -177,6 +189,12 @@
     </Compile>
     <Compile Include="frmVerFotosConfirmacionSolicitud.Designer.cs">
       <DependentUpon>frmVerFotosConfirmacionSolicitud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerDetallesDeSolicitudes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerDetallesDeSolicitudes.Designer.cs">
+      <DependentUpon>VerDetallesDeSolicitudes.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmDescripcionSeguros.resx">
       <DependentUpon>frmDescripcionSeguros.cs</DependentUpon>
@@ -220,14 +238,20 @@
     <EmbeddedResource Include="frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmVerFacturasSolicitud.resx">
-      <DependentUpon>frmVerFacturasSolicitud.cs</DependentUpon>
+    <EmbeddedResource Include="frmVerClientes.resx">
+      <DependentUpon>frmVerClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerFacturas.resx">
+      <DependentUpon>frmVerFacturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVerFotosConfirmacionSolicitud.resx">
       <DependentUpon>frmVerFotosConfirmacionSolicitud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVerPolizas.resx">
       <DependentUpon>frmVerPolizas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerPolizasDisponibles.resx">
+      <DependentUpon>frmVerPolizasDisponibles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVerReclamos.resx">
       <DependentUpon>frmVerReclamos.cs</DependentUpon>
@@ -249,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerDetallesDeSolicitudes.resx">
+      <DependentUpon>VerDetallesDeSolicitudes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
