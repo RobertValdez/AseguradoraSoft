@@ -32,7 +32,7 @@
             this.dgvVer = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,11 +56,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Crimson;
-            this.label1.Location = new System.Drawing.Point(207, 9);
+            this.label1.Location = new System.Drawing.Point(257, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(478, 44);
+            this.label1.Size = new System.Drawing.Size(300, 44);
             this.label1.TabIndex = 176;
-            this.label1.Text = "Buscar Polizas de Seguros";
+            this.label1.Text = "Buscar Facturas";
             // 
             // label16
             // 
@@ -72,15 +72,16 @@
             this.label16.Size = new System.Drawing.Size(62, 56);
             this.label16.TabIndex = 174;
             // 
-            // textBox15
+            // txtBuscar
             // 
-            this.textBox15.Location = new System.Drawing.Point(265, 79);
-            this.textBox15.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(434, 43);
-            this.textBox15.TabIndex = 173;
+            this.txtBuscar.Location = new System.Drawing.Point(265, 79);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(434, 43);
+            this.txtBuscar.TabIndex = 173;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
-            // frmVerFacturasSolicitud
+            // frmVerFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -88,12 +89,12 @@
             this.ClientSize = new System.Drawing.Size(912, 556);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.textBox15);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.dgvVer);
             this.Font = new System.Drawing.Font("Century Gothic", 21.75F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(8);
-            this.Name = "frmVerFacturasSolicitud";
+            this.Name = "frmVerFacturas";
             this.Text = "frmVerFacturasSolicitud";
             this.Load += new System.EventHandler(this.frmVerFacturasSolicitud_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVer)).EndInit();
@@ -107,6 +108,6 @@
         private System.Windows.Forms.DataGridView dgvVer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }

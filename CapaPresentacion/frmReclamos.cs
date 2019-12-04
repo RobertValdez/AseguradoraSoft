@@ -31,6 +31,7 @@ namespace CapaPresentacion
         int BusquedaDatos = 0;
         int idCliente = 0;
         string strArea = "";
+        int Area = 0;
 
         byte[] imgActaPolicial = null;
         byte[] imgCopiaMatricula = null;
@@ -46,9 +47,9 @@ namespace CapaPresentacion
             lblRegistroReclamos.Text = "Buscar Cliente";
             BusquedaDatos = 1;
 
+            lblBuscar.Visible = true;
             txtBuscarCliente.Visible = true;
             txtBuscarPoliza.Visible = false;
-            txtBuscarSiniestro.Visible = false;
 
             BuscarDatos();
             pnlBuscarDatos.Visible = true;
@@ -100,14 +101,14 @@ namespace CapaPresentacion
                 pnlBuscarDatos.Visible = false;
                 lblRegistroReclamos.Text = "Registro de Reclamos";
             }
-
         }
 
         private void btnBuscarPoliza_Click(object sender, EventArgs e)
         {
+            lblBuscar.Visible = true;
             txtBuscarPoliza.Visible = true;
-            txtBuscarSiniestro.Visible = false;
             txtBuscarCliente.Visible = false;
+            chkSoloId.Visible = true;
 
             BuscarPoliza();
         }
@@ -135,28 +136,56 @@ namespace CapaPresentacion
             else
             {
                 MessageBox.Show("Seleccione un Cliente para poder mostrar sus polizas activas", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
             }
         }
 
         private void btnIdSiniestro_Click(object sender, EventArgs e)
         {
             BusquedaDatos = 3;
-            lblRegistroReclamos.Text = "Buscar Póliza";
+            lblRegistroReclamos.Text = "Registro de Siniestro";
 
-            txtBuscarSiniestro.Visible = true;
             txtBuscarPoliza.Visible = false;
             txtBuscarCliente.Visible = false;
+            chkSoloId.Visible = false;
+            lblBuscar.Visible = false;
 
             BuscarSiniestro();
 
         }
         private void BuscarSiniestro()
         {
-            dgvBuscarDatos.DataSource = null;
+            try
+            {
+                if (!idCliente.Equals(0))
+                {
+                    dgvBuscarDatos.DataSource = null;
 
-            dgvBuscarDatos.DataSource = B_Siniestro.B_MostrarSiniestro();
-            pnlBuscarDatos.Visible = true;
+                    dgvBuscarDatos.DataSource = B_Siniestro.B_MostrarSiniestro();
+                    SiniestroFiltrar();
+
+                    if (dgvBuscarDatos.Rows.Count > 0)
+                    {
+                        pnlBuscarDatos.Visible = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("El Cliente seleccionado no tiene siniestros registrados", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un Cliente para poder mostrar sus siniestros registrados", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+        private void SiniestroFiltrar()
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dgvBuscarDatos.DataSource;
+            bs.Filter = "CONVERT([id Cliente], 'System.String') like '%" + idCliente + "%'";
+            dgvBuscarDatos.DataSource = bs;
         }
 
         private void btnBuscar_ftcCopiaActaPolicial_Click_1(object sender, EventArgs e)
@@ -207,30 +236,126 @@ namespace CapaPresentacion
         {
             GuardarReclamacion();
         }
-        
+
         private void GuardarReclamacion()
         {
             try
             {
-            E_RegistroReclamos.Area = strArea;
+                QuitarErrorProvider();
+                ValidarCampos();
+                if (string.IsNullOrEmpty(txtIdSinietro.Text)
+                || string.IsNullOrWhiteSpace(txtIdSinietro.Text)
+                || (string.IsNullOrEmpty(txtNumPoliza.Text)
+                || string.IsNullOrWhiteSpace(txtNumPoliza.Text))
+                || string.IsNullOrEmpty(txtActaPolicial.Text)
+                || string.IsNullOrWhiteSpace(txtActaPolicial.Text)
+                || (string.IsNullOrEmpty(txtCopiaCedula.Text)
+                || string.IsNullOrWhiteSpace(txtCopiaCedula.Text))
+                || (string.IsNullOrEmpty(txtCopiaMatricula.Text)
+                || string.IsNullOrWhiteSpace(txtCopiaMatricula.Text))
+                || (string.IsNullOrEmpty(txtCedula.Text)
+                || string.IsNullOrWhiteSpace(txtCedula.Text)))
+                {
+                    MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (ValidarCampos())
+                {
+                    switch (strArea)
+                    {
+                        case "Vida":
+                            Area = 1;
+                            break;
+                        case "Vehiculo":
+                            Area = 2;
+                            break;
+                        case "Negocios e Empresas":
+                            Area = 1;
+                            break;
+                        case "Muebles e Inmuebles":
+                            Area = 1;
+                            break;
+                        default:
+                            break;
+                    }
+                    E_RegistroReclamos.Area = Area;
 
-            E_RegistroReclamos.IdCliente = idCliente;
-            E_RegistroReclamos.IdSiniestro = Convert.ToInt32(txtIdSinietro.Text);
-            E_RegistroReclamos.IdPoliza = Convert.ToInt32(txtNumPoliza.Text);
-            E_RegistroReclamos.ActaPolicial = imgActaPolicial;
-            E_RegistroReclamos.CopiaMatricula = imgCopiaMatricula;
-            E_RegistroReclamos.CopiaCedula = imgCopiaCedula;
-            E_RegistroReclamos.CostoEstimado = CostoEstimado(txtCostoEstimado.Text);
-            E_RegistroReclamos.FechaHora = DateTime.Now;
+                    E_RegistroReclamos.IdCliente = idCliente;
+                    E_RegistroReclamos.IdSiniestro = Convert.ToInt32(txtIdSinietro.Text);
+                    E_RegistroReclamos.IdPoliza = Convert.ToInt32(txtNumPoliza.Text);
+                    E_RegistroReclamos.ActaPolicial = imgActaPolicial;
+                    E_RegistroReclamos.CopiaMatricula = imgCopiaMatricula;
+                    E_RegistroReclamos.CopiaCedula = imgCopiaCedula;
+                    E_RegistroReclamos.CostoEstimado = CostoEstimado(txtCostoEstimado.Text);
+                    E_RegistroReclamos.FechaHora = DateTime.Now;
 
-            if (B_RegistroReclamos.B_GuardarReclamo(E_RegistroReclamos) == 1)
-            {
-                MessageBox.Show("Reclamo guardado satisfactoriamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-             }
+                    if (B_RegistroReclamos.B_GuardarReclamo(E_RegistroReclamos) >= 1)
+                    {
+                        MessageBox.Show("Reclamo guardado satisfactoriamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
             }
-            catch (Exception)
+            catch (Exception ex) { MessageBox.Show(ex.Message); } 
+        }
+        private bool ValidarCampos()
+        {
+            bool ok = true;
+
+            if (string.IsNullOrEmpty(txtCedula.Text)
+                || string.IsNullOrWhiteSpace(txtCedula.Text))
             {
+                ok = false;
+                errorProvider1.SetError(txtCedula, "Campo obligatorio");
+                txtCedula.Text = "";
             }
+
+            if (string.IsNullOrEmpty(txtIdSinietro.Text)
+                || string.IsNullOrWhiteSpace(txtIdSinietro.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtIdSinietro, "Campo obligatorio");
+                txtIdSinietro.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtNumPoliza.Text)
+                || string.IsNullOrWhiteSpace(txtNumPoliza.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtNumPoliza, "Campo obligatorio");
+                txtNumPoliza.Text = "";
+            }
+            if (string.IsNullOrEmpty(txtActaPolicial.Text)
+               || string.IsNullOrWhiteSpace(txtActaPolicial.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtActaPolicial, "Campo obligatorio");
+                txtActaPolicial.Text = "";
+            }
+            if (string.IsNullOrEmpty(txtCopiaCedula.Text)
+              || string.IsNullOrWhiteSpace(txtCopiaCedula.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCopiaCedula, "Campo obligatorio");
+                txtCopiaCedula.Text = "";
+            }
+            if (string.IsNullOrEmpty(txtCopiaMatricula.Text)
+             || string.IsNullOrWhiteSpace(txtCopiaMatricula.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCopiaMatricula, "Campo obligatorio");
+                txtCopiaMatricula.Text = "";
+            }
+
+            return ok;
+        }
+
+        private void QuitarErrorProvider()
+        {
+            errorProvider1.SetError(txtCedula, "");
+            errorProvider1.SetError(txtIdSinietro, "");
+            errorProvider1.SetError(txtNumPoliza, "");
+            errorProvider1.SetError(txtActaPolicial, "");
+            errorProvider1.SetError(txtCopiaCedula, "");
+            errorProvider1.SetError(txtCopiaMatricula, "");
         }
 
         private decimal CostoEstimado(string costEstimado)
@@ -253,12 +378,6 @@ namespace CapaPresentacion
             return img;
         }
 
-       
-
-        private void txtBuscarSiniestro_TextChanged(object sender, EventArgs e)
-        {
-            BuscarSiniestroB();
-        }
 
         private void txtBuscarPoliza_TextChanged(object sender, EventArgs e)
         {
@@ -294,30 +413,6 @@ namespace CapaPresentacion
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        public void BuscarSiniestroB()
-        {
-            try
-            {
-                if (chkSoloId.Checked)
-                {
-                    BindingSource bs = new BindingSource();
-                    bs.DataSource = dgvBuscarDatos.DataSource;
-                    bs.Filter = "CONVERT(id, 'System.String') like '%" + txtBuscarSiniestro.Text + "%'";
-                    dgvBuscarDatos.DataSource = bs;
-                }
-                else
-                {
-                    BindingSource bs = new BindingSource();
-                    bs.DataSource = dgvBuscarDatos.DataSource;
-                    bs.Filter = "CONVERT(id, 'System.String') like '%" + txtBuscarSiniestro.Text + "%' OR CONVERT(id_Cliente, 'System.String') like '%" +
-                        txtBuscarSiniestro.Text + "%' OR CONVERT(id_Empleado, 'System.String') like '%" + txtBuscarSiniestro.Text +
-                        "%' OR Siniestro like '%" + txtBuscarSiniestro.Text + "%' OR CONVERT(FechaHora, 'System.String') like '%" + txtBuscarSiniestro.Text +
-                        "%'";
-                    dgvBuscarDatos.DataSource = bs;
-                }
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
-        }
 
         public void BuscarPolizaB()
         {
@@ -327,7 +422,7 @@ namespace CapaPresentacion
                 {
                     BindingSource bs = new BindingSource();
                     bs.DataSource = dgvBuscarDatos.DataSource;
-                    bs.Filter = "CONVERT(id, 'System.String') like '%" + txtBuscarPoliza.Text + "%'";
+                    bs.Filter = "CONVERT([Núm Poliza], 'System.String') like '%" + txtBuscarPoliza.Text + "%'";
                     dgvBuscarDatos.DataSource = bs;
                 }
                 else

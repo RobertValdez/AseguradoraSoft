@@ -32,7 +32,7 @@
             this.dgvVer = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,13 +73,14 @@
             this.label16.Size = new System.Drawing.Size(62, 56);
             this.label16.TabIndex = 174;
             // 
-            // textBox15
+            // txtBuscar
             // 
-            this.textBox15.Location = new System.Drawing.Point(308, 66);
-            this.textBox15.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(434, 43);
-            this.textBox15.TabIndex = 173;
+            this.txtBuscar.Location = new System.Drawing.Point(308, 66);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(434, 43);
+            this.txtBuscar.TabIndex = 173;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // frmVerReclamos
             // 
@@ -89,7 +90,7 @@
             this.ClientSize = new System.Drawing.Size(996, 596);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.textBox15);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.dgvVer);
             this.Font = new System.Drawing.Font("Century Gothic", 21.75F);
             this.Margin = new System.Windows.Forms.Padding(8);
@@ -107,6 +108,6 @@
         private System.Windows.Forms.DataGridView dgvVer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }

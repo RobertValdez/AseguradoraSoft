@@ -49,5 +49,17 @@ namespace CapaDatos.Consultas
             strCon.Close();
             return dt;
         }
+        public DataTable D_ConsultaPolizasDisponibles()
+        {
+            SqlConnection strCon = new SqlConnection();
+            strCon.ConnectionString = Conexion.Conexion.SqlConex;
+            SqlCommand cmd = new SqlCommand("ConsultaPolizasDisponibles", strCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            strCon.Close();
+            return dt;
+        }
     }
 }

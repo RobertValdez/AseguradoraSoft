@@ -32,7 +32,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblSeguro = new System.Windows.Forms.Label();
             this.lblCerrar = new System.Windows.Forms.Label();
-            this.lblDescripcion = new System.Windows.Forms.Label();
             this.BasicoA = new System.Windows.Forms.Button();
             this.BasicoB = new System.Windows.Forms.Button();
             this.BasicoC = new System.Windows.Forms.Button();
@@ -50,6 +49,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.pnlBasico.SuspendLayout();
             this.pnlSemiFull.SuspendLayout();
             this.pnlFull.SuspendLayout();
@@ -99,17 +99,6 @@
             this.lblCerrar.TabIndex = 111;
             this.lblCerrar.Text = "X";
             this.lblCerrar.Click += new System.EventHandler(this.lblCerrar_Click);
-            // 
-            // lblDescripcion
-            // 
-            this.lblDescripcion.BackColor = System.Drawing.Color.Snow;
-            this.lblDescripcion.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblDescripcion.Location = new System.Drawing.Point(182, 75);
-            this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(734, 390);
-            this.lblDescripcion.TabIndex = 112;
-            this.lblDescripcion.Text = "Descripción del Seguro";
-            this.lblDescripcion.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblDescripcion_MouseDown);
             // 
             // BasicoA
             // 
@@ -355,17 +344,30 @@
             this.label2.TabIndex = 110;
             this.label2.Text = "Categorías";
             // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.BackColor = System.Drawing.Color.MistyRose;
+            this.txtDescripcion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.ForeColor = System.Drawing.Color.DarkRed;
+            this.txtDescripcion.Location = new System.Drawing.Point(192, 78);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.ReadOnly = true;
+            this.txtDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtDescripcion.Size = new System.Drawing.Size(733, 384);
+            this.txtDescripcion.TabIndex = 121;
+            // 
             // frmDescripcionSeguros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
             this.ClientSize = new System.Drawing.Size(981, 550);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.pnlFull);
             this.Controls.Add(this.pnlSemiFull);
             this.Controls.Add(this.pnlBasico);
-            this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblSeguro);
             this.Controls.Add(this.panel2);
@@ -393,9 +395,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblSeguro;
         private System.Windows.Forms.Label lblCerrar;
-        private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Button BasicoA;
         private System.Windows.Forms.Button BasicoB;
         private System.Windows.Forms.Button BasicoC;
@@ -413,5 +413,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSiguiente;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox txtDescripcion;
+        public System.Windows.Forms.Label lblSeguro;
     }
 }

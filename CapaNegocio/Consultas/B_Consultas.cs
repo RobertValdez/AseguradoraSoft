@@ -26,5 +26,9 @@ namespace CapaNegocio.Consultas
             return D_Consultas.D_Siniestros();
         }
 
+        public DataTable B_ConsultaPolizasDisponibles()
+        {
+            return D_Consultas.D_ConsultaPolizasDisponibles();
+        }
     }
 }

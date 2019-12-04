@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistroDeReclamos));
             this.pnlRegistroReclamos = new System.Windows.Forms.Panel();
             this.picPreviewImg = new System.Windows.Forms.PictureBox();
@@ -61,16 +62,17 @@
             this.pnlBuscarDatos = new System.Windows.Forms.Panel();
             this.chkSoloId = new System.Windows.Forms.CheckBox();
             this.txtBuscarPoliza = new System.Windows.Forms.TextBox();
-            this.txtBuscarSiniestro = new System.Windows.Forms.TextBox();
             this.txtBuscarCliente = new System.Windows.Forms.TextBox();
             this.lblCerrar = new System.Windows.Forms.Label();
             this.dgvBuscarDatos = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblBuscar = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlRegistroReclamos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPreviewImg)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.pnlBuscarDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscarDatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlRegistroReclamos
@@ -148,10 +150,10 @@
             this.btnBuscar_ftcCopiaDeLaMatricula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar_ftcCopiaDeLaMatricula.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar_ftcCopiaDeLaMatricula.ForeColor = System.Drawing.Color.Crimson;
-            this.btnBuscar_ftcCopiaDeLaMatricula.Location = new System.Drawing.Point(321, 448);
+            this.btnBuscar_ftcCopiaDeLaMatricula.Location = new System.Drawing.Point(335, 448);
             this.btnBuscar_ftcCopiaDeLaMatricula.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBuscar_ftcCopiaDeLaMatricula.Name = "btnBuscar_ftcCopiaDeLaMatricula";
-            this.btnBuscar_ftcCopiaDeLaMatricula.Size = new System.Drawing.Size(228, 33);
+            this.btnBuscar_ftcCopiaDeLaMatricula.Size = new System.Drawing.Size(214, 33);
             this.btnBuscar_ftcCopiaDeLaMatricula.TabIndex = 23;
             this.btnBuscar_ftcCopiaDeLaMatricula.Text = "Buscar Fotocopia";
             this.btnBuscar_ftcCopiaDeLaMatricula.UseVisualStyleBackColor = false;
@@ -164,10 +166,10 @@
             this.btnBuscar_ftcCopiaCedula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar_ftcCopiaCedula.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar_ftcCopiaCedula.ForeColor = System.Drawing.Color.Crimson;
-            this.btnBuscar_ftcCopiaCedula.Location = new System.Drawing.Point(321, 383);
+            this.btnBuscar_ftcCopiaCedula.Location = new System.Drawing.Point(335, 383);
             this.btnBuscar_ftcCopiaCedula.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBuscar_ftcCopiaCedula.Name = "btnBuscar_ftcCopiaCedula";
-            this.btnBuscar_ftcCopiaCedula.Size = new System.Drawing.Size(228, 33);
+            this.btnBuscar_ftcCopiaCedula.Size = new System.Drawing.Size(214, 33);
             this.btnBuscar_ftcCopiaCedula.TabIndex = 23;
             this.btnBuscar_ftcCopiaCedula.Text = "Buscar Fotocopia";
             this.btnBuscar_ftcCopiaCedula.UseVisualStyleBackColor = false;
@@ -180,10 +182,10 @@
             this.btnBuscar_ftcCopiaActaPolicial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar_ftcCopiaActaPolicial.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar_ftcCopiaActaPolicial.ForeColor = System.Drawing.Color.Crimson;
-            this.btnBuscar_ftcCopiaActaPolicial.Location = new System.Drawing.Point(321, 312);
+            this.btnBuscar_ftcCopiaActaPolicial.Location = new System.Drawing.Point(335, 312);
             this.btnBuscar_ftcCopiaActaPolicial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBuscar_ftcCopiaActaPolicial.Name = "btnBuscar_ftcCopiaActaPolicial";
-            this.btnBuscar_ftcCopiaActaPolicial.Size = new System.Drawing.Size(228, 33);
+            this.btnBuscar_ftcCopiaActaPolicial.Size = new System.Drawing.Size(214, 33);
             this.btnBuscar_ftcCopiaActaPolicial.TabIndex = 23;
             this.btnBuscar_ftcCopiaActaPolicial.Text = "Buscar Fotocopia";
             this.btnBuscar_ftcCopiaActaPolicial.UseVisualStyleBackColor = false;
@@ -424,10 +426,10 @@
             this.btnIdSiniestro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIdSiniestro.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIdSiniestro.ForeColor = System.Drawing.Color.Crimson;
-            this.btnIdSiniestro.Location = new System.Drawing.Point(321, 179);
+            this.btnIdSiniestro.Location = new System.Drawing.Point(335, 179);
             this.btnIdSiniestro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnIdSiniestro.Name = "btnIdSiniestro";
-            this.btnIdSiniestro.Size = new System.Drawing.Size(228, 33);
+            this.btnIdSiniestro.Size = new System.Drawing.Size(214, 33);
             this.btnIdSiniestro.TabIndex = 23;
             this.btnIdSiniestro.Text = "Buscar Siniestro";
             this.btnIdSiniestro.UseVisualStyleBackColor = false;
@@ -440,10 +442,10 @@
             this.btnBuscarPoliza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarPoliza.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarPoliza.ForeColor = System.Drawing.Color.Crimson;
-            this.btnBuscarPoliza.Location = new System.Drawing.Point(321, 247);
+            this.btnBuscarPoliza.Location = new System.Drawing.Point(335, 247);
             this.btnBuscarPoliza.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBuscarPoliza.Name = "btnBuscarPoliza";
-            this.btnBuscarPoliza.Size = new System.Drawing.Size(228, 34);
+            this.btnBuscarPoliza.Size = new System.Drawing.Size(214, 34);
             this.btnBuscarPoliza.TabIndex = 23;
             this.btnBuscarPoliza.Text = "Buscar Póliza";
             this.btnBuscarPoliza.UseVisualStyleBackColor = false;
@@ -453,15 +455,14 @@
             // 
             this.pnlBuscarDatos.Controls.Add(this.chkSoloId);
             this.pnlBuscarDatos.Controls.Add(this.txtBuscarPoliza);
-            this.pnlBuscarDatos.Controls.Add(this.txtBuscarSiniestro);
             this.pnlBuscarDatos.Controls.Add(this.txtBuscarCliente);
             this.pnlBuscarDatos.Controls.Add(this.lblCerrar);
             this.pnlBuscarDatos.Controls.Add(this.dgvBuscarDatos);
-            this.pnlBuscarDatos.Controls.Add(this.label6);
+            this.pnlBuscarDatos.Controls.Add(this.lblBuscar);
             this.pnlBuscarDatos.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlBuscarDatos.Location = new System.Drawing.Point(12, 60);
             this.pnlBuscarDatos.Name = "pnlBuscarDatos";
-            this.pnlBuscarDatos.Size = new System.Drawing.Size(600, 603);
+            this.pnlBuscarDatos.Size = new System.Drawing.Size(606, 603);
             this.pnlBuscarDatos.TabIndex = 23;
             this.pnlBuscarDatos.Visible = false;
             // 
@@ -471,7 +472,7 @@
             this.chkSoloId.BackColor = System.Drawing.Color.White;
             this.chkSoloId.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkSoloId.ForeColor = System.Drawing.Color.Crimson;
-            this.chkSoloId.Location = new System.Drawing.Point(436, 24);
+            this.chkSoloId.Location = new System.Drawing.Point(445, 24);
             this.chkSoloId.Name = "chkSoloId";
             this.chkSoloId.Size = new System.Drawing.Size(108, 32);
             this.chkSoloId.TabIndex = 110;
@@ -481,30 +482,20 @@
             // txtBuscarPoliza
             // 
             this.txtBuscarPoliza.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscarPoliza.Location = new System.Drawing.Point(136, 23);
+            this.txtBuscarPoliza.Location = new System.Drawing.Point(195, 23);
             this.txtBuscarPoliza.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBuscarPoliza.Name = "txtBuscarPoliza";
-            this.txtBuscarPoliza.Size = new System.Drawing.Size(273, 33);
+            this.txtBuscarPoliza.Size = new System.Drawing.Size(223, 33);
             this.txtBuscarPoliza.TabIndex = 15;
             this.txtBuscarPoliza.TextChanged += new System.EventHandler(this.txtBuscarPoliza_TextChanged);
-            // 
-            // txtBuscarSiniestro
-            // 
-            this.txtBuscarSiniestro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscarSiniestro.Location = new System.Drawing.Point(136, 23);
-            this.txtBuscarSiniestro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtBuscarSiniestro.Name = "txtBuscarSiniestro";
-            this.txtBuscarSiniestro.Size = new System.Drawing.Size(273, 33);
-            this.txtBuscarSiniestro.TabIndex = 15;
-            this.txtBuscarSiniestro.TextChanged += new System.EventHandler(this.txtBuscarSiniestro_TextChanged);
             // 
             // txtBuscarCliente
             // 
             this.txtBuscarCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBuscarCliente.Location = new System.Drawing.Point(136, 23);
+            this.txtBuscarCliente.Location = new System.Drawing.Point(195, 23);
             this.txtBuscarCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBuscarCliente.Name = "txtBuscarCliente";
-            this.txtBuscarCliente.Size = new System.Drawing.Size(273, 33);
+            this.txtBuscarCliente.Size = new System.Drawing.Size(223, 33);
             this.txtBuscarCliente.TabIndex = 15;
             this.txtBuscarCliente.TextChanged += new System.EventHandler(this.txtBuscarCliente_TextChanged);
             // 
@@ -530,19 +521,23 @@
             this.dgvBuscarDatos.Location = new System.Drawing.Point(0, 72);
             this.dgvBuscarDatos.Name = "dgvBuscarDatos";
             this.dgvBuscarDatos.ReadOnly = true;
-            this.dgvBuscarDatos.Size = new System.Drawing.Size(600, 531);
+            this.dgvBuscarDatos.Size = new System.Drawing.Size(606, 531);
             this.dgvBuscarDatos.TabIndex = 0;
             this.dgvBuscarDatos.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBuscarClientes_CellMouseDoubleClick);
             // 
-            // label6
+            // lblBuscar
             // 
-            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
-            this.label6.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label6.Location = new System.Drawing.Point(67, 13);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 56);
-            this.label6.TabIndex = 14;
+            this.lblBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblBuscar.Image = ((System.Drawing.Image)(resources.GetObject("lblBuscar.Image")));
+            this.lblBuscar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.lblBuscar.Location = new System.Drawing.Point(126, 10);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(62, 56);
+            this.lblBuscar.TabIndex = 14;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmRegistroDeReclamos
             // 
@@ -566,6 +561,7 @@
             this.pnlBuscarDatos.ResumeLayout(false);
             this.pnlBuscarDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscarDatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -584,7 +580,7 @@
         private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.Panel pnlBuscarDatos;
         private System.Windows.Forms.DataGridView dgvBuscarDatos;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtCopiaMatricula;
@@ -607,7 +603,7 @@
         private System.Windows.Forms.Button btnIdSiniestro;
         private System.Windows.Forms.PictureBox picPreviewImg;
         private System.Windows.Forms.TextBox txtBuscarPoliza;
-        private System.Windows.Forms.TextBox txtBuscarSiniestro;
         private System.Windows.Forms.CheckBox chkSoloId;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

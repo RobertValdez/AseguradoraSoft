@@ -24,5 +24,25 @@ namespace CapaPresentacion
         {
             dgvVer.DataSource = B_Consultas.B_ConsultaSol();
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            Buscar();
+        }
+        private void Buscar()
+        {
+            try
+            {
+                BindingSource bs = new BindingSource();
+                bs.DataSource = dgvVer.DataSource;
+                bs.Filter = "Nombre like '%" +
+                    txtBuscar.Text + "%' OR Apellido like '%" + txtBuscar.Text +
+                    "%' OR [Nombre del Seguro] like '%" + txtBuscar.Text + "%' OR Cedula like '%" + txtBuscar.Text +
+                    "%'";
+                dgvVer.DataSource = bs;
+
+            }
+            catch (Exception) { }
+        }
     }
 }

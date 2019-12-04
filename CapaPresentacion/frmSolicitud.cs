@@ -98,17 +98,28 @@ namespace CapaPresentacion
             pnlVehiculo.Visible = false;
             _DescrepcionValue = false;
 
-            if (!cancelarDescripcionSeguros())
+            if (!cancelarDescripcionSeguros(lblSeguroVoluntario.Text))
             {
                 DataView dv = new DataView(dtPolizaDeSeguros);
 
                 dv.RowFilter = "[Nombre del Seguro] = 'Seguro Voluntario'";
+
 
                 idProductoSeguro = (int)dv[0]["id"];
                 Precio = (decimal)dv[0]["Precio"];
 
                 pnlVEHSeguroVoluntario.Visible = true;
             }
+        }
+
+        private string LlenarDescripcion()
+        {
+            DataView dv = new DataView(dtPolizaDeSeguros);
+
+            dv.RowFilter = "[Nombre del Seguro] = 'Seguro Voluntario'";
+
+
+           return (string)dv[0]["Descripcion"];
         }
 
         private void btnSeguroObligatorio_Click(object sender, EventArgs e)
@@ -118,7 +129,7 @@ namespace CapaPresentacion
                 pnlVehiculo.Visible = false;
                 _DescrepcionValue = false;
 
-                if (!cancelarDescripcionSeguros()) 
+                if (!cancelarDescripcionSeguros(lblSeguroObligatorio.Text)) 
                 {
                     DataView dv = new DataView(dtPolizaDeSeguros);
 
@@ -140,7 +151,7 @@ namespace CapaPresentacion
                 pnlVehiculo.Visible = false;
                 _DescrepcionValue = false;
 
-                if (!cancelarDescripcionSeguros())
+                if (!cancelarDescripcionSeguros(lblSeguroTodoRiesgo.Text))
                 {
                     DataView dv = new DataView(dtPolizaDeSeguros);
 
@@ -171,7 +182,7 @@ namespace CapaPresentacion
                 pnlInmuebles.Visible = false;
                 _DescrepcionValue = false;
 
-                if (!cancelarDescripcionSeguros())
+                if (!cancelarDescripcionSeguros(lblSeguroContenido.Text))
                 {
                     DataView dv = new DataView(dtPolizaDeSeguros);
 
@@ -193,7 +204,7 @@ namespace CapaPresentacion
                 pnlInmuebles.Visible = false;
                 _DescrepcionValue = false;
 
-                if (!cancelarDescripcionSeguros())
+                if (!cancelarDescripcionSeguros(lblEdificaciones.Text))
                 {
                     DataView dv = new DataView(dtPolizaDeSeguros);
 
@@ -231,7 +242,7 @@ namespace CapaPresentacion
         {
             try
             {
-                if (!cancelarDescripcionSeguros())
+                if (!cancelarDescripcionSeguros(lblSeguroNEmpresa.Text))
                 {
                     DataView dv = new DataView(dtPolizaDeSeguros);
 
@@ -1560,10 +1571,14 @@ namespace CapaPresentacion
             _Categoria = Categoria; 
         }
 
-        public bool cancelarDescripcionSeguros()
+        public bool cancelarDescripcionSeguros(string nombreSeguro)
         {
             bool value = false;
             frmDescripcionSeguros frm = new frmDescripcionSeguros();
+
+            frm.lblSeguro.Text = nombreSeguro;
+            frm.txtDescripcion.Text = LlenarDescripcion();
+
             frm.ShowDialog();
 
             if (_DescrepcionValue.Equals(true))

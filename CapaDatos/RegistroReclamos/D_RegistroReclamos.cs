@@ -47,7 +47,7 @@ namespace CapaDatos.RegistroReclamos
 
             SqlParameter par_Area = new SqlParameter();
             par_Area.ParameterName = "@_Area";
-            par_Area.SqlDbType = SqlDbType.VarChar;
+            par_Area.SqlDbType = SqlDbType.Int;
             par_Area.Value = eReg.Area;
             cmd.Parameters.Add(par_Area);
 
