@@ -33,5 +33,15 @@ namespace CapaNegocio.Empleados
         {
             return D_Empleados.EliminarEmpleado(eEmpl);
         }
+
+        public int InssertarCargo(E_Empleados eCa)
+        {
+            return D_Empleados.InsertarCargos(eCa);
+        }
+
+        public DataTable B_CargarCargos()
+        {
+            return D_Empleados.D_CargarCargos();
+        }
     }
 }

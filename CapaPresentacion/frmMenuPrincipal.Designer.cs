@@ -38,6 +38,7 @@
             this.reclamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.devolucionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.siniestrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.polizasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sdfsdfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,8 +56,12 @@
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.lblFechaHora = new System.Windows.Forms.Label();
             this.FechaHora = new System.Windows.Forms.Timer(this.components);
-            this.polizasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verPólizasALaVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.siniestrosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -154,6 +159,15 @@
             this.siniestrosToolStripMenuItem.Text = "Siniestros";
             this.siniestrosToolStripMenuItem.Click += new System.EventHandler(this.siniestrosToolStripMenuItem_Click);
             // 
+            // polizasToolStripMenuItem
+            // 
+            this.polizasToolStripMenuItem.BackColor = System.Drawing.Color.Crimson;
+            this.polizasToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.polizasToolStripMenuItem.Name = "polizasToolStripMenuItem";
+            this.polizasToolStripMenuItem.Size = new System.Drawing.Size(199, 24);
+            this.polizasToolStripMenuItem.Text = "Polizas";
+            this.polizasToolStripMenuItem.Click += new System.EventHandler(this.polizasToolStripMenuItem_Click);
+            // 
             // sdfsdfToolStripMenuItem
             // 
             this.sdfsdfToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -184,8 +198,9 @@
             this.cargoToolStripMenuItem.BackColor = System.Drawing.Color.Crimson;
             this.cargoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.cargoToolStripMenuItem.Name = "cargoToolStripMenuItem";
-            this.cargoToolStripMenuItem.Size = new System.Drawing.Size(127, 24);
+            this.cargoToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.cargoToolStripMenuItem.Text = "Cargo";
+            this.cargoToolStripMenuItem.Click += new System.EventHandler(this.cargoToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem1
             // 
@@ -211,7 +226,8 @@
             this.verSiniestrosToolStripMenuItem,
             this.verReclamosToolStripMenuItem,
             this.verFacturaToolStripMenuItem,
-            this.verPolizasToolStripMenuItem});
+            this.verPolizasToolStripMenuItem,
+            this.verPólizasALaVentaToolStripMenuItem});
             this.toolStripMenuItem1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.toolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -224,7 +240,7 @@
             this.verSiniestrosToolStripMenuItem.BackColor = System.Drawing.Color.Crimson;
             this.verSiniestrosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.verSiniestrosToolStripMenuItem.Name = "verSiniestrosToolStripMenuItem";
-            this.verSiniestrosToolStripMenuItem.Size = new System.Drawing.Size(184, 24);
+            this.verSiniestrosToolStripMenuItem.Size = new System.Drawing.Size(243, 24);
             this.verSiniestrosToolStripMenuItem.Text = "Ver Siniestros";
             this.verSiniestrosToolStripMenuItem.Click += new System.EventHandler(this.verSiniestrosToolStripMenuItem_Click);
             // 
@@ -233,7 +249,7 @@
             this.verReclamosToolStripMenuItem.BackColor = System.Drawing.Color.Crimson;
             this.verReclamosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.verReclamosToolStripMenuItem.Name = "verReclamosToolStripMenuItem";
-            this.verReclamosToolStripMenuItem.Size = new System.Drawing.Size(184, 24);
+            this.verReclamosToolStripMenuItem.Size = new System.Drawing.Size(243, 24);
             this.verReclamosToolStripMenuItem.Text = "Ver Reclamos";
             this.verReclamosToolStripMenuItem.Click += new System.EventHandler(this.verReclamosToolStripMenuItem_Click);
             // 
@@ -242,7 +258,7 @@
             this.verFacturaToolStripMenuItem.BackColor = System.Drawing.Color.Crimson;
             this.verFacturaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.verFacturaToolStripMenuItem.Name = "verFacturaToolStripMenuItem";
-            this.verFacturaToolStripMenuItem.Size = new System.Drawing.Size(184, 24);
+            this.verFacturaToolStripMenuItem.Size = new System.Drawing.Size(243, 24);
             this.verFacturaToolStripMenuItem.Text = "Ver Factura";
             this.verFacturaToolStripMenuItem.Click += new System.EventHandler(this.verFacturaToolStripMenuItem_Click);
             // 
@@ -251,12 +267,15 @@
             this.verPolizasToolStripMenuItem.BackColor = System.Drawing.Color.Crimson;
             this.verPolizasToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.verPolizasToolStripMenuItem.Name = "verPolizasToolStripMenuItem";
-            this.verPolizasToolStripMenuItem.Size = new System.Drawing.Size(184, 24);
+            this.verPolizasToolStripMenuItem.Size = new System.Drawing.Size(243, 24);
             this.verPolizasToolStripMenuItem.Text = "Ver Polizas";
             this.verPolizasToolStripMenuItem.Click += new System.EventHandler(this.verPolizasToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
+            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.facturasToolStripMenuItem,
+            this.siniestrosToolStripMenuItem1});
             this.toolStripMenuItem2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem2.ForeColor = System.Drawing.Color.White;
             this.toolStripMenuItem2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -281,7 +300,7 @@
             this.usuariosToolStripMenuItem.BackColor = System.Drawing.Color.Crimson;
             this.usuariosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
@@ -326,14 +345,45 @@
             // 
             this.FechaHora.Tick += new System.EventHandler(this.FechaHora_Tick);
             // 
-            // polizasToolStripMenuItem
+            // verPólizasALaVentaToolStripMenuItem
             // 
-            this.polizasToolStripMenuItem.BackColor = System.Drawing.Color.Crimson;
-            this.polizasToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.polizasToolStripMenuItem.Name = "polizasToolStripMenuItem";
-            this.polizasToolStripMenuItem.Size = new System.Drawing.Size(199, 24);
-            this.polizasToolStripMenuItem.Text = "Polizas";
-            this.polizasToolStripMenuItem.Click += new System.EventHandler(this.polizasToolStripMenuItem_Click);
+            this.verPólizasALaVentaToolStripMenuItem.BackColor = System.Drawing.Color.Crimson;
+            this.verPólizasALaVentaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.verPólizasALaVentaToolStripMenuItem.Name = "verPólizasALaVentaToolStripMenuItem";
+            this.verPólizasALaVentaToolStripMenuItem.Size = new System.Drawing.Size(243, 24);
+            this.verPólizasALaVentaToolStripMenuItem.Text = "Ver Pólizas a la Venta";
+            this.verPólizasALaVentaToolStripMenuItem.Click += new System.EventHandler(this.verPólizasALaVentaToolStripMenuItem_Click);
+            // 
+            // facturasToolStripMenuItem
+            // 
+            this.facturasToolStripMenuItem.BackColor = System.Drawing.Color.Crimson;
+            this.facturasToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
+            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.facturasToolStripMenuItem.Text = "Facturas";
+            this.facturasToolStripMenuItem.Click += new System.EventHandler(this.facturasToolStripMenuItem_Click);
+            // 
+            // siniestrosToolStripMenuItem1
+            // 
+            this.siniestrosToolStripMenuItem1.BackColor = System.Drawing.Color.Crimson;
+            this.siniestrosToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
+            this.siniestrosToolStripMenuItem1.Name = "siniestrosToolStripMenuItem1";
+            this.siniestrosToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.siniestrosToolStripMenuItem1.Text = "Pólizas";
+            this.siniestrosToolStripMenuItem1.Click += new System.EventHandler(this.siniestrosToolStripMenuItem1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 39);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1354, 569);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // frmMenuPrincipal
             // 
@@ -344,6 +394,7 @@
             this.Controls.Add(this.lblFechaHora);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
@@ -355,6 +406,7 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MenuPrincipal_MouseDown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,5 +440,9 @@
         private System.Windows.Forms.ToolStripMenuItem verFacturaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verPolizasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem polizasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verPólizasALaVentaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem facturasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem siniestrosToolStripMenuItem1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

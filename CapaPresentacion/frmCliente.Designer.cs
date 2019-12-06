@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCliente));
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
@@ -45,13 +46,13 @@
             this.txtCorreoElectronico = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNacionalidad = new System.Windows.Forms.ComboBox();
+            this.mskTelefono = new System.Windows.Forms.MaskedTextBox();
             this.cmbSexo = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtNacionalidad = new System.Windows.Forms.TextBox();
             this.pnlModificar = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chkSoloId = new System.Windows.Forms.CheckBox();
@@ -72,9 +73,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtNacionalidadMod = new System.Windows.Forms.TextBox();
             this.txtCorreoElectronicoMod = new System.Windows.Forms.TextBox();
-            this.txtTelefonoMod = new System.Windows.Forms.TextBox();
             this.txtDireccionMod = new System.Windows.Forms.TextBox();
             this.txtApellidoMod = new System.Windows.Forms.TextBox();
             this.txtNombreMod = new System.Windows.Forms.TextBox();
@@ -82,17 +81,21 @@
             this.label18 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtTelefonoMod = new System.Windows.Forms.MaskedTextBox();
+            this.txtNacionalidadMod = new System.Windows.Forms.ComboBox();
             this.pnlNuevo.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.pnlModificar.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtDireccion
             // 
             this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDireccion.Location = new System.Drawing.Point(140, 162);
+            this.txtDireccion.Location = new System.Drawing.Point(126, 130);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(433, 33);
@@ -101,7 +104,7 @@
             // txtApellido
             // 
             this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtApellido.Location = new System.Drawing.Point(232, 122);
+            this.txtApellido.Location = new System.Drawing.Point(218, 90);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(341, 33);
@@ -110,7 +113,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(28, 165);
+            this.label8.Location = new System.Drawing.Point(14, 133);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(112, 24);
@@ -120,7 +123,7 @@
             // txtNombre
             // 
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombre.Location = new System.Drawing.Point(28, 122);
+            this.txtNombre.Location = new System.Drawing.Point(14, 90);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(193, 33);
@@ -129,7 +132,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(228, 96);
+            this.label7.Location = new System.Drawing.Point(214, 64);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(99, 24);
@@ -143,7 +146,7 @@
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrar.Location = new System.Drawing.Point(378, 371);
+            this.btnRegistrar.Location = new System.Drawing.Point(364, 339);
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(194, 60);
@@ -155,7 +158,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 96);
+            this.label6.Location = new System.Drawing.Point(14, 64);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 24);
@@ -177,23 +180,6 @@
             // 
             // pnlNuevo
             // 
-            this.pnlNuevo.Controls.Add(this.mskCedula);
-            this.pnlNuevo.Controls.Add(this.label3);
-            this.pnlNuevo.Controls.Add(this.label6);
-            this.pnlNuevo.Controls.Add(this.txtLimpiar);
-            this.pnlNuevo.Controls.Add(this.btnRegistrar);
-            this.pnlNuevo.Controls.Add(this.txtRNC);
-            this.pnlNuevo.Controls.Add(this.txtCorreoElectronico);
-            this.pnlNuevo.Controls.Add(this.txtDireccion);
-            this.pnlNuevo.Controls.Add(this.label9);
-            this.pnlNuevo.Controls.Add(this.label2);
-            this.pnlNuevo.Controls.Add(this.label7);
-            this.pnlNuevo.Controls.Add(this.txtTelefono);
-            this.pnlNuevo.Controls.Add(this.label4);
-            this.pnlNuevo.Controls.Add(this.txtApellido);
-            this.pnlNuevo.Controls.Add(this.label1);
-            this.pnlNuevo.Controls.Add(this.txtNombre);
-            this.pnlNuevo.Controls.Add(this.label8);
             this.pnlNuevo.Controls.Add(this.groupBox1);
             this.pnlNuevo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlNuevo.Location = new System.Drawing.Point(12, 86);
@@ -203,16 +189,17 @@
             // 
             // mskCedula
             // 
-            this.mskCedula.Location = new System.Drawing.Point(127, 203);
+            this.mskCedula.Location = new System.Drawing.Point(113, 171);
             this.mskCedula.Mask = "000-0000000-0";
             this.mskCedula.Name = "mskCedula";
             this.mskCedula.Size = new System.Drawing.Size(142, 33);
             this.mskCedula.TabIndex = 14;
+            this.mskCedula.Validating += new System.ComponentModel.CancelEventHandler(this.mskCedula_Validating);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 209);
+            this.label3.Location = new System.Drawing.Point(14, 177);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 24);
@@ -227,27 +214,29 @@
             this.txtLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txtLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLimpiar.ForeColor = System.Drawing.Color.White;
-            this.txtLimpiar.Location = new System.Drawing.Point(176, 371);
+            this.txtLimpiar.Location = new System.Drawing.Point(162, 339);
             this.txtLimpiar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtLimpiar.Name = "txtLimpiar";
             this.txtLimpiar.Size = new System.Drawing.Size(194, 60);
             this.txtLimpiar.TabIndex = 7;
             this.txtLimpiar.Text = "Limpiar";
             this.txtLimpiar.UseVisualStyleBackColor = false;
+            this.txtLimpiar.Click += new System.EventHandler(this.txtLimpiar_Click);
             // 
             // txtRNC
             // 
             this.txtRNC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtRNC.Location = new System.Drawing.Point(371, 319);
+            this.txtRNC.Location = new System.Drawing.Point(357, 287);
             this.txtRNC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtRNC.Name = "txtRNC";
             this.txtRNC.Size = new System.Drawing.Size(202, 33);
             this.txtRNC.TabIndex = 4;
+            this.txtRNC.Visible = false;
             // 
             // txtCorreoElectronico
             // 
             this.txtCorreoElectronico.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCorreoElectronico.Location = new System.Drawing.Point(238, 241);
+            this.txtCorreoElectronico.Location = new System.Drawing.Point(224, 209);
             this.txtCorreoElectronico.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCorreoElectronico.Name = "txtCorreoElectronico";
             this.txtCorreoElectronico.Size = new System.Drawing.Size(335, 33);
@@ -256,7 +245,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(28, 325);
+            this.label9.Location = new System.Drawing.Point(14, 293);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 24);
@@ -266,36 +255,28 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(276, 209);
+            this.label2.Location = new System.Drawing.Point(262, 177);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 24);
             this.label2.TabIndex = 9;
             this.label2.Text = "Teléfono:";
             // 
-            // txtTelefono
-            // 
-            this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTelefono.Location = new System.Drawing.Point(380, 203);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(193, 33);
-            this.txtTelefono.TabIndex = 5;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(309, 325);
+            this.label4.Location = new System.Drawing.Point(295, 293);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 24);
             this.label4.TabIndex = 8;
             this.label4.Text = "RNC:";
+            this.label4.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 247);
+            this.label1.Location = new System.Drawing.Point(14, 215);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(210, 24);
@@ -304,10 +285,27 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cmbSexo);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.mskCedula);
             this.groupBox1.Controls.Add(this.txtNacionalidad);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.mskTelefono);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.cmbSexo);
+            this.groupBox1.Controls.Add(this.txtLimpiar);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.btnRegistrar);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.txtRNC);
+            this.groupBox1.Controls.Add(this.txtDireccion);
+            this.groupBox1.Controls.Add(this.txtCorreoElectronico);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtApellido);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
@@ -317,12 +315,36 @@
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             // 
+            // txtNacionalidad
+            // 
+            this.txtNacionalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtNacionalidad.FormattingEnabled = true;
+            this.txtNacionalidad.Items.AddRange(new object[] {
+            "dominicana",
+            "extranjero",
+            " "});
+            this.txtNacionalidad.Location = new System.Drawing.Point(175, 249);
+            this.txtNacionalidad.Name = "txtNacionalidad";
+            this.txtNacionalidad.Size = new System.Drawing.Size(384, 32);
+            this.txtNacionalidad.TabIndex = 20;
+            // 
+            // mskTelefono
+            // 
+            this.mskTelefono.Location = new System.Drawing.Point(364, 171);
+            this.mskTelefono.Mask = "(000)-000-0000";
+            this.mskTelefono.Name = "mskTelefono";
+            this.mskTelefono.Size = new System.Drawing.Size(195, 33);
+            this.mskTelefono.TabIndex = 14;
+            this.mskTelefono.Validating += new System.ComponentModel.CancelEventHandler(this.txtTelefono_Validating);
+            // 
             // cmbSexo
             // 
+            this.cmbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSexo.FormattingEnabled = true;
             this.cmbSexo.Items.AddRange(new object[] {
             "Masculino",
-            "Femenino"});
+            "Femenino",
+            " "});
             this.cmbSexo.Location = new System.Drawing.Point(84, 287);
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Size = new System.Drawing.Size(171, 32);
@@ -338,21 +360,12 @@
             this.label11.TabIndex = 9;
             this.label11.Text = "Nacionalidad:";
             // 
-            // txtNacionalidad
-            // 
-            this.txtNacionalidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNacionalidad.Location = new System.Drawing.Point(175, 248);
-            this.txtNacionalidad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtNacionalidad.Name = "txtNacionalidad";
-            this.txtNacionalidad.Size = new System.Drawing.Size(383, 33);
-            this.txtNacionalidad.TabIndex = 5;
-            // 
             // pnlModificar
             // 
             this.pnlModificar.Controls.Add(this.groupBox2);
             this.pnlModificar.Location = new System.Drawing.Point(15, 86);
             this.pnlModificar.Name = "pnlModificar";
-            this.pnlModificar.Size = new System.Drawing.Size(1161, 582);
+            this.pnlModificar.Size = new System.Drawing.Size(1163, 582);
             this.pnlModificar.TabIndex = 12;
             this.pnlModificar.Visible = false;
             // 
@@ -361,7 +374,9 @@
             this.groupBox2.Controls.Add(this.chkSoloId);
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.txtIdMod);
+            this.groupBox2.Controls.Add(this.txtNacionalidadMod);
             this.groupBox2.Controls.Add(this.cmbSexoMod);
+            this.groupBox2.Controls.Add(this.txtTelefonoMod);
             this.groupBox2.Controls.Add(this.mskCedulaMod);
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.label21);
@@ -376,9 +391,7 @@
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.txtNacionalidadMod);
             this.groupBox2.Controls.Add(this.txtCorreoElectronicoMod);
-            this.groupBox2.Controls.Add(this.txtTelefonoMod);
             this.groupBox2.Controls.Add(this.txtDireccionMod);
             this.groupBox2.Controls.Add(this.txtApellidoMod);
             this.groupBox2.Controls.Add(this.txtNombreMod);
@@ -431,6 +444,7 @@
             // 
             // cmbSexoMod
             // 
+            this.cmbSexoMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSexoMod.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbSexoMod.FormattingEnabled = true;
             this.cmbSexoMod.Items.AddRange(new object[] {
@@ -459,6 +473,7 @@
             this.label19.Size = new System.Drawing.Size(85, 36);
             this.label19.TabIndex = 18;
             this.label19.Text = "RNC:";
+            this.label19.Visible = false;
             // 
             // label21
             // 
@@ -479,6 +494,7 @@
             this.txtRNC_Mod.Name = "txtRNC_Mod";
             this.txtRNC_Mod.Size = new System.Drawing.Size(374, 43);
             this.txtRNC_Mod.TabIndex = 9;
+            this.txtRNC_Mod.Visible = false;
             // 
             // btnGuardarCambiosMod
             // 
@@ -592,18 +608,9 @@
             this.label10.Location = new System.Drawing.Point(216, 0);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(389, 36);
+            this.label10.Size = new System.Drawing.Size(265, 36);
             this.label10.TabIndex = 11;
-            this.label10.Text = "Modificar/Eliminar Cliente";
-            // 
-            // txtNacionalidadMod
-            // 
-            this.txtNacionalidadMod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNacionalidadMod.Location = new System.Drawing.Point(883, 264);
-            this.txtNacionalidadMod.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtNacionalidadMod.Name = "txtNacionalidadMod";
-            this.txtNacionalidadMod.Size = new System.Drawing.Size(240, 43);
-            this.txtNacionalidadMod.TabIndex = 6;
+            this.label10.Text = "Modificar Cliente";
             // 
             // txtCorreoElectronicoMod
             // 
@@ -613,15 +620,6 @@
             this.txtCorreoElectronicoMod.Name = "txtCorreoElectronicoMod";
             this.txtCorreoElectronicoMod.Size = new System.Drawing.Size(460, 43);
             this.txtCorreoElectronicoMod.TabIndex = 7;
-            // 
-            // txtTelefonoMod
-            // 
-            this.txtTelefonoMod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTelefonoMod.Location = new System.Drawing.Point(808, 215);
-            this.txtTelefonoMod.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtTelefonoMod.Name = "txtTelefonoMod";
-            this.txtTelefonoMod.Size = new System.Drawing.Size(315, 43);
-            this.txtTelefonoMod.TabIndex = 5;
             // 
             // txtDireccionMod
             // 
@@ -699,9 +697,34 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(246, 64);
             this.btnModificar.TabIndex = 7;
-            this.btnModificar.Text = "Modificar/Eliminar";
+            this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // txtTelefonoMod
+            // 
+            this.txtTelefonoMod.Location = new System.Drawing.Point(802, 214);
+            this.txtTelefonoMod.Mask = "(000)-000-0000";
+            this.txtTelefonoMod.Name = "txtTelefonoMod";
+            this.txtTelefonoMod.Size = new System.Drawing.Size(321, 43);
+            this.txtTelefonoMod.TabIndex = 4;
+            // 
+            // txtNacionalidadMod
+            // 
+            this.txtNacionalidadMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtNacionalidadMod.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.txtNacionalidadMod.FormattingEnabled = true;
+            this.txtNacionalidadMod.Items.AddRange(new object[] {
+            "dominicana",
+            "extranjero"});
+            this.txtNacionalidadMod.Location = new System.Drawing.Point(882, 263);
+            this.txtNacionalidadMod.Name = "txtNacionalidadMod";
+            this.txtNacionalidadMod.Size = new System.Drawing.Size(241, 44);
+            this.txtNacionalidadMod.TabIndex = 8;
             // 
             // frmCliente
             // 
@@ -720,13 +743,13 @@
             this.Text = "Cliente";
             this.Load += new System.EventHandler(this.frmCliente_Load);
             this.pnlNuevo.ResumeLayout(false);
-            this.pnlNuevo.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.pnlModificar.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -746,7 +769,6 @@
         private System.Windows.Forms.TextBox txtCorreoElectronico;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlModificar;
@@ -761,7 +783,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtBuscarCliente;
         private System.Windows.Forms.TextBox txtCorreoElectronicoMod;
-        private System.Windows.Forms.TextBox txtTelefonoMod;
         private System.Windows.Forms.TextBox txtDireccionMod;
         private System.Windows.Forms.TextBox txtApellidoMod;
         private System.Windows.Forms.TextBox txtNombreMod;
@@ -780,11 +801,14 @@
         private System.Windows.Forms.ComboBox cmbSexoMod;
         private System.Windows.Forms.ComboBox cmbSexo;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtNacionalidad;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtIdMod;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox txtNacionalidadMod;
         private System.Windows.Forms.CheckBox chkSoloId;
+        private System.Windows.Forms.ComboBox txtNacionalidad;
+        private System.Windows.Forms.MaskedTextBox mskTelefono;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.MaskedTextBox txtTelefonoMod;
+        private System.Windows.Forms.ComboBox txtNacionalidadMod;
     }
 }

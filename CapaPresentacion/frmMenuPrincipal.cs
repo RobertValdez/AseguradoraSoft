@@ -166,5 +166,33 @@ namespace CapaPresentacion
             p.MdiParent = this;
             p.Show();
         }
+
+        private void verPólizasALaVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVerPolizasDisponibles fd = new frmVerPolizasDisponibles();
+            fd.MdiParent = this;
+            fd.Show();
+        }
+
+        private void facturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rptFacturasDelMes ef = new rptFacturasDelMes();
+            ef.MdiParent = this;
+            ef.Show();
+        }
+
+        private void siniestrosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            rptPolizasMensuales eP = new rptPolizasMensuales();
+            eP.MdiParent = this;
+            eP.Show();
+        }
+
+        private void cargoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cargos c = new Cargos();
+            c.MdiParent = this;
+            c.Show();
+        }
     }
 }

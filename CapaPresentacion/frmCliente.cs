@@ -56,24 +56,48 @@ namespace CapaPresentacion
         {
             try
             {
-                if (txtNombre.Text == "" || txtApellido.Text == "" || txtDireccion.Text == "" || mskCedula.Text == "" || txtTelefono.Text == "" || txtCorreoElectronico.Text == "" || txtNacionalidad.Text == "" || cmbSexo.Text == "")
+                QuitarErrorProviderCliente();
+
+                mskTelefonoValidar();
+                mskCedulaValidar();
+                ValidarCamposCliente();
+
+                if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrWhiteSpace(txtNombre.Text)
+                     || string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrWhiteSpace(txtApellido.Text)
+                     || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || mskCedula.MaskFull == false || mskTelefono.MaskFull == false
+                     || string.IsNullOrEmpty(txtCorreoElectronico.Text) || string.IsNullOrWhiteSpace(txtCorreoElectronico.Text)
+                     || string.IsNullOrEmpty(txtNacionalidad.Text) || string.IsNullOrWhiteSpace(txtNacionalidad.Text)
+                     || string.IsNullOrEmpty(cmbSexo.Text) || string.IsNullOrWhiteSpace(cmbSexo.Text))
                 {
                     MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
+                    string strSexo = "";
+                    switch (cmbSexo.Text)
+                    {
+                        case "Masculino":
+                            strSexo = "M";
+                            break;
+
+                        case "Femenino":
+                            strSexo = "F";
+                            break;
+                    }
+
                     E_Clientes.Nombre = txtNombre.Text;
                     E_Clientes.Apellido = txtApellido.Text;
                     E_Clientes.Cedula = mskCedula.Text;
                     E_Clientes.Direccion = txtDireccion.Text;
-                    E_Clientes.Telefono = txtTelefono.Text;
+                    E_Clientes.Telefono = mskTelefono.Text;
                     E_Clientes.Nacionalidad = txtNacionalidad.Text;
                     E_Clientes.CorreoElectronico = txtCorreoElectronico.Text;
-                    E_Clientes.Sexo = cmbSexo.Text;
+                    E_Clientes.Sexo = strSexo;
                     E_Clientes.RNC = txtRNC.Text;
                     E_Clientes.FechaHora = DateTime.Now;
 
-                    if (B_Clientes.B_InsertarCliente(E_Clientes) == 1)
+
+                    if (B_Clientes.B_InsertarCliente(E_Clientes) >= 1)
                     {
                         MessageBox.Show("Se ha añadido el Cliente correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -123,7 +147,13 @@ namespace CapaPresentacion
         {
             try
             {
-                if (txtNombreMod.Text == "" || txtApellidoMod.Text == "" || txtDireccionMod.Text == "" || mskCedulaMod.Text == "" || txtTelefonoMod.Text == "" || txtCorreoElectronicoMod.Text == "" || txtNacionalidadMod.Text == "" || cmbSexoMod.Text == "")
+
+                if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrWhiteSpace(txtNombre.Text)
+                     || string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrWhiteSpace(txtApellido.Text)
+                     || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || mskCedula.MaskFull == false || mskTelefono.MaskFull == false
+                     || string.IsNullOrEmpty(txtCorreoElectronico.Text) || string.IsNullOrWhiteSpace(txtCorreoElectronico.Text)
+                     || string.IsNullOrEmpty(txtNacionalidad.Text) || string.IsNullOrWhiteSpace(txtNacionalidad.Text)
+                     || string.IsNullOrEmpty(cmbSexo.Text) || string.IsNullOrWhiteSpace(cmbSexo.Text))
                 {
                     MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -154,6 +184,8 @@ namespace CapaPresentacion
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
+
+
         private void btnEliminarMod_Click(object sender, EventArgs e)
         {
             try
@@ -174,7 +206,7 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo eliminar el Cliente.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se puede añadir varios clientes con una misma cédula.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -220,6 +252,106 @@ namespace CapaPresentacion
                 chkSoloId.BackColor = Color.White;
                 chkSoloId.ForeColor = Color.Crimson;
             }
+        }
+
+        private void txtTelefono_Validating(object sender, CancelEventArgs e)
+        {
+            mskTelefonoValidar();
+        }
+        private bool mskTelefonoValidar()
+        {
+            bool valor = false;
+
+            if (mskTelefono.MaskFull == false)
+            {
+                valor = false;
+                errorProvider1.SetError(mskTelefono, "Complete el Telefono");
+            }
+            else
+            {
+                valor = true;
+            }
+            return valor;
+        }
+
+        private void mskCedula_Validating(object sender, CancelEventArgs e)
+        {
+            mskCedulaValidar();
+        }
+        private bool mskCedulaValidar()
+        {
+            bool valor = false;
+            if (mskCedula.MaskFull == false)
+            {
+                valor = false;
+                errorProvider1.SetError(mskCedula, "Complete la Cédula");
+            }
+            else
+            {
+                valor = true;
+            }
+            return valor;
+        }
+        private bool ValidarCamposCliente()
+        {
+            bool ok = true;
+
+            if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtNombre, "Escriba el Nombre");
+            }
+
+            if (string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrWhiteSpace(txtApellido.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtApellido, "Escriba el Apellido");
+            }
+            if (string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtDireccion, "Escriba la Dirección");
+            }
+
+            if (string.IsNullOrEmpty(txtNacionalidad.Text) || string.IsNullOrWhiteSpace(txtNacionalidad.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtNacionalidad, "Escriba la Nacionalidad");
+            }
+            if (string.IsNullOrEmpty(txtCorreoElectronico.Text) || string.IsNullOrWhiteSpace(txtCorreoElectronico.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCorreoElectronico, "Escriba el Correo Electrónico");
+            }
+            if (string.IsNullOrEmpty(cmbSexo.Text) || string.IsNullOrWhiteSpace(cmbSexo.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(cmbSexo, "Indique el Sexo");
+            }
+
+            return ok;
+        }
+        private void QuitarErrorProviderCliente()
+        {
+            errorProvider1.SetError(txtNombre, "");
+            errorProvider1.SetError(txtApellido, "");
+            errorProvider1.SetError(txtDireccion, "");
+            errorProvider1.SetError(txtCorreoElectronico, "");
+            errorProvider1.SetError(cmbSexo, "");
+            errorProvider1.SetError(mskCedula, "");
+            errorProvider1.SetError(mskTelefono, "");
+            errorProvider1.SetError(txtNacionalidad, "");
+        }
+
+        private void txtLimpiar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                csLimpiar l = new csLimpiar();
+                l.BorrarCamposGBx(groupBox1);
+            }
+            catch (Exception) { }
         }
     }
 }

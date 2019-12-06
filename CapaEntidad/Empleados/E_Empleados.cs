@@ -8,6 +8,8 @@ namespace CapaEntidad.Empleados
 {
     public class E_Empleados
     {
+        private string _NombreCargo;
+
         private int _id;
         private string _Nombre;
         private string _Apellido;
@@ -29,7 +31,8 @@ namespace CapaEntidad.Empleados
         public int IdCargo { get => _idCargo; set => _idCargo = value; }
         public string Sexo { get => _Sexo; set => _Sexo = value; }
         public DateTime Fecha { get => _Fecha; set => _Fecha = value; }
-        
+
+        public string Cargo { get => _NombreCargo; set => _NombreCargo = value; }
 
         public E_Empleados()
         {
@@ -48,6 +51,11 @@ namespace CapaEntidad.Empleados
             _idCargo = IdCargo;
             _Sexo = Sexo;
             _Fecha = Fecha;
+        }
+
+        public E_Empleados(string NombreCargo)
+        {
+            _NombreCargo = NombreCargo;
         }
     }
 }

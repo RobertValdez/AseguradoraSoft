@@ -1402,12 +1402,12 @@
             // 
             this.lblCedula.AutoSize = true;
             this.lblCedula.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCedula.Location = new System.Drawing.Point(280, 55);
+            this.lblCedula.Location = new System.Drawing.Point(303, 55);
             this.lblCedula.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCedula.Name = "lblCedula";
-            this.lblCedula.Size = new System.Drawing.Size(121, 22);
+            this.lblCedula.Size = new System.Drawing.Size(76, 22);
             this.lblCedula.TabIndex = 1;
-            this.lblCedula.Text = "000-00000-0";
+            this.lblCedula.Text = "000000";
             // 
             // label25
             // 

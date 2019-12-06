@@ -284,10 +284,10 @@ namespace CapaPresentacion
 
         private void SIGUIENTEpnlVEHSeguroObligatorio()
         {
+            QuitarErrorProviderCliente();
+
             mskTelefonoValidar();
             mskCedulaValidar();
-
-            QuitarErrorProviderCliente();
             ValidarCamposCliente();
             //------------------------//
             QuitarErrorProviderVehiculoSeguroObligatorio();
@@ -298,7 +298,7 @@ namespace CapaPresentacion
 
                 if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrWhiteSpace(txtNombre.Text)
                     || string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrWhiteSpace(txtApellido.Text)
-                    || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || mskCedula.Text == "   -       -" || mskTelefono.Text == ""
+                    || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || mskCedula.MaskFull == false || mskTelefono.MaskFull == false
                     || string.IsNullOrEmpty(txtCorreoElectronico.Text) || string.IsNullOrWhiteSpace(txtCorreoElectronico.Text)
                     || string.IsNullOrEmpty(cmbNacionalidad.Text) || string.IsNullOrWhiteSpace(cmbNacionalidad.Text)
                     || string.IsNullOrEmpty(cmbSexo.Text) || string.IsNullOrWhiteSpace(cmbSexo.Text)
@@ -372,10 +372,10 @@ namespace CapaPresentacion
 
         private void SIGUIENTEpnlVEHSeguroTodoRiesgo()
         {
+            QuitarErrorProviderCliente();
+
             mskTelefonoValidar();
             mskCedulaValidar();
-
-            QuitarErrorProviderCliente();
             ValidarCamposCliente();
             //------------------------//
             QuitarErrorProviderSegVehiculoTodoRiesgo();
@@ -386,7 +386,7 @@ namespace CapaPresentacion
 
                 if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrWhiteSpace(txtNombre.Text)
                     || string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrWhiteSpace(txtApellido.Text)
-                    || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || mskCedula.Text == "   -       -" || mskTelefono.Text == ""
+                    || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || mskCedula.MaskFull == false || mskTelefono.MaskFull == false
                     || string.IsNullOrEmpty(txtCorreoElectronico.Text) || string.IsNullOrWhiteSpace(txtCorreoElectronico.Text)
                     || string.IsNullOrEmpty(cmbNacionalidad.Text) || string.IsNullOrWhiteSpace(cmbNacionalidad.Text)
                     || string.IsNullOrEmpty(cmbSexo.Text) || string.IsNullOrWhiteSpace(cmbSexo.Text)
@@ -457,10 +457,10 @@ namespace CapaPresentacion
 
         private void SIGUIENTEpnlVEHSeguroVoluntario()
         {
+            QuitarErrorProviderCliente();
+
             mskTelefonoValidar();
             mskCedulaValidar();
-
-            QuitarErrorProviderCliente();
             ValidarCamposCliente();
             //------------------------//
             QuitarErrorProviderSegVehiculoVoluntario();
@@ -471,7 +471,7 @@ namespace CapaPresentacion
 
                 if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrWhiteSpace(txtNombre.Text)
                     || string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrWhiteSpace(txtApellido.Text)
-                    || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || mskCedula.Text == "   -       -" || mskTelefono.Text == ""
+                    || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || mskCedula.MaskFull == false || mskTelefono.MaskFull == false
                     || string.IsNullOrEmpty(txtCorreoElectronico.Text) || string.IsNullOrWhiteSpace(txtCorreoElectronico.Text)
                     || string.IsNullOrEmpty(cmbNacionalidad.Text) || string.IsNullOrWhiteSpace(cmbNacionalidad.Text)
                     || string.IsNullOrEmpty(cmbSexo.Text) || string.IsNullOrWhiteSpace(cmbSexo.Text)
@@ -546,11 +546,10 @@ namespace CapaPresentacion
         {
             try
             {
+                QuitarErrorProviderCliente();
 
                 mskTelefonoValidar();
                 mskCedulaValidar();
-                
-                QuitarErrorProviderCliente();
                 ValidarCamposCliente();
                 //------------------------//
                 QuitarErrorProviderSegContendio();
@@ -558,7 +557,7 @@ namespace CapaPresentacion
 
                 if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrWhiteSpace(txtNombre.Text)
                         || string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrWhiteSpace(txtApellido.Text)
-                        || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || mskCedula.Text == "   -       -" || mskTelefono.Text == ""
+                        || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || mskCedula.MaskFull == false || mskTelefono.MaskFull == false
                         || string.IsNullOrEmpty(txtCorreoElectronico.Text) || string.IsNullOrWhiteSpace(txtCorreoElectronico.Text)
                         || string.IsNullOrEmpty(cmbNacionalidad.Text) || string.IsNullOrWhiteSpace(cmbNacionalidad.Text)
                         || string.IsNullOrEmpty(cmbSexo.Text) || string.IsNullOrWhiteSpace(cmbSexo.Text)
@@ -636,10 +635,10 @@ namespace CapaPresentacion
         {
             try
             {
+                QuitarErrorProviderCliente();
+
                 mskTelefonoValidar();
                 mskCedulaValidar();
-
-                QuitarErrorProviderCliente();
                 ValidarCamposCliente();
                 //------------------------//
                 QuitarErrorProviderSegEdificaciones();
@@ -647,7 +646,7 @@ namespace CapaPresentacion
 
                 if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrWhiteSpace(txtNombre.Text)
                         || string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrWhiteSpace(txtApellido.Text)
-                        || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || mskCedula.Text == "   -       -" || mskTelefono.Text == ""
+                        || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || mskCedula.MaskFull == false || mskTelefono.MaskFull == false
                         || string.IsNullOrEmpty(txtCorreoElectronico.Text) || string.IsNullOrWhiteSpace(txtCorreoElectronico.Text)
                         || string.IsNullOrEmpty(cmbNacionalidad.Text) || string.IsNullOrWhiteSpace(cmbNacionalidad.Text)
                         || string.IsNullOrEmpty(cmbSexo.Text) || string.IsNullOrWhiteSpace(cmbSexo.Text)
@@ -725,10 +724,10 @@ namespace CapaPresentacion
         {
             try
             {
+                QuitarErrorProviderCliente();
+
                 mskTelefonoValidar();
                 mskCedulaValidar();
-
-                QuitarErrorProviderCliente();
                 ValidarCamposCliente();
                 //------------------------//
                 QuitarErrorProviderSegEmprNegocios();
@@ -736,7 +735,7 @@ namespace CapaPresentacion
 
                 if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrWhiteSpace(txtNombre.Text)
                     || string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrWhiteSpace(txtApellido.Text)
-                    || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || mskCedula.Text == "   -       -" || mskTelefono.Text == ""
+                    || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || mskCedula.MaskFull == false || mskTelefono.MaskFull == false
                     || string.IsNullOrEmpty(txtCorreoElectronico.Text) || string.IsNullOrWhiteSpace(txtCorreoElectronico.Text)
                     || string.IsNullOrEmpty(cmbNacionalidad.Text) || string.IsNullOrWhiteSpace(cmbNacionalidad.Text)
                     || string.IsNullOrEmpty(cmbSexo.Text) || string.IsNullOrWhiteSpace(cmbSexo.Text)
@@ -746,8 +745,8 @@ namespace CapaPresentacion
                     || string.IsNullOrWhiteSpace(txtCopiaActaAsignacionRNC.Text))
                     || (string.IsNullOrEmpty(txtCopiaCedulaPresidente_RepresAut.Text)
                     || string.IsNullOrWhiteSpace(txtCopiaCedulaPresidente_RepresAut.Text))
-                    || (string.IsNullOrEmpty(txtTelefonoEntAut.Text)
-                    || string.IsNullOrWhiteSpace(txtTelefonoEntAut.Text))
+                    || (string.IsNullOrEmpty(mskTelefonoEntAut.Text)
+                    || string.IsNullOrWhiteSpace(mskTelefonoEntAut.Text))
                     || (picImagen1.Image == null))
                 {
                     MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -774,7 +773,7 @@ namespace CapaPresentacion
                     frmFac.imgCopiaActaAsignacionRNC = imgCopiaActaAsignacionRNC;
 
                     frmFac.imgCopiaCedulaPresidente_RepresAut = imgCopiaPresidenteReprAut;
-                    frmFac.strTelefonoEntAut = txtTelefonoEntAut.Text;
+                    frmFac.strTelefonoEntAut = mskTelefonoEntAut.Text;
 
                     frmFac.CorreoElectronicoEntidadAutorizada = txtCorreoElectronicoEntAutorizada.Text;
                     
@@ -1286,12 +1285,12 @@ namespace CapaPresentacion
                 txtCopiaCedulaPresidente_RepresAut.Text = "";
             }
 
-            if (string.IsNullOrEmpty(txtTelefonoEntAut.Text)
-                || string.IsNullOrWhiteSpace(txtTelefonoEntAut.Text))
+            if (string.IsNullOrEmpty(mskTelefonoEntAut.Text)
+                || string.IsNullOrWhiteSpace(mskTelefonoEntAut.Text))
             {
                 ok = false;
-                errorProvider1.SetError(txtTelefonoEntAut, "Campo obligatorio");
-                txtTelefonoEntAut.Text = "";
+                errorProvider1.SetError(mskTelefonoEntAut, "Campo obligatorio");
+                mskTelefonoEntAut.Text = "";
             }
 
             if (picImagen1.Image == null)
@@ -1317,7 +1316,7 @@ namespace CapaPresentacion
             errorProvider1.SetError(txtCopiaEstatutos, "");
             errorProvider1.SetError(txtCopiaActaAsignacionRNC, "");
             errorProvider1.SetError(txtCopiaCedulaPresidente_RepresAut, "");
-            errorProvider1.SetError(txtTelefonoEntAut, "");
+            errorProvider1.SetError(mskTelefonoEntAut, "");
             errorProvider1.SetError(picImagen5, "");
             errorProvider1.SetError(txtCorreoElectronicoEntAutorizada, "");
         }
@@ -1447,11 +1446,11 @@ namespace CapaPresentacion
                 {
                     MessageBox.Show("El Cliente ya existe. Haga clic en Nuevo para añadir a otro cliente.", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else
+                else     
                 {
                     if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrWhiteSpace(txtNombre.Text)
                     || string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrWhiteSpace(txtApellido.Text)
-                    || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || !mskTelefonoValidar() || !mskCedulaValidar()
+                    || string.IsNullOrEmpty(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || mskCedula.MaskFull == false || mskTelefono.MaskFull == false
                     || string.IsNullOrEmpty(txtCorreoElectronico.Text) || string.IsNullOrWhiteSpace(txtCorreoElectronico.Text)
                     || string.IsNullOrEmpty(cmbNacionalidad.Text) || string.IsNullOrWhiteSpace(cmbNacionalidad.Text)
                     || string.IsNullOrEmpty(cmbSexo.Text) || string.IsNullOrWhiteSpace(cmbSexo.Text))
@@ -1496,7 +1495,7 @@ namespace CapaPresentacion
         private bool mskCedulaValidar()
         {
             bool valor = false;
-            if (!mskCedula.Text.Length.Equals(13))
+            if (mskCedula.MaskFull == false)
             {
                 valor = false;
                 errorProvider1.SetError(mskCedula, "Complete la Cédula");
@@ -1518,7 +1517,7 @@ namespace CapaPresentacion
         {
             bool valor = false;
 
-            if (!mskTelefono.Text.Length.Equals(14))
+            if (mskTelefono.MaskFull == false)
             {
                 valor = false;
                 errorProvider1.SetError(mskTelefono, "Complete el Telefono");
@@ -1599,23 +1598,21 @@ namespace CapaPresentacion
 
         private void frmSolicitud_Load(object sender, EventArgs e)
         {
-            //    Cargar_idCodigo_detalleEmpresaNegocio();
-            //    Cargar_idCodigo_detalleSeguroEdificaciones();
-            Cargar_CargarId_Factura();
-            //Cargar_idCodigo_detalleSeguroVehiculoVoluntario();
-            //Cargar_idCodigo_detalleSeguroVehiculoTodoRiesgo();
-            //Cargar_idCodigo_detalleSeguroVehiculoObligatorio();
+            try
+            {
+                Cargar_CargarId_Factura();
 
-
-            CargarSegurosDePoliza();
-            CargarEmpleado();
-            MostrarClientes();
+                CargarSegurosDePoliza();
+                CargarEmpleado();
+                MostrarClientes();
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void CargarEmpleado()
         {
-            E_SegVida.Id = 1;
-            varIdEmpleado = 1; /////
+            E_SegVida.Id = 893659;
+            varIdEmpleado = 893659; /////
 
             B_SeguroVida.B_CargarNombreEmpleado(E_SegVida);
 
@@ -2038,7 +2035,7 @@ namespace CapaPresentacion
 
         private void txtAnoVol_TextChanged(object sender, EventArgs e)
         {
-            txtCilindrosVol.TextChanged += delegate (System.Object o, System.EventArgs r)
+            txtAnoVol.TextChanged += delegate (System.Object o, System.EventArgs r)
             {
                 TextBox _tbox = o as TextBox;
                 _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c))).ToArray());
@@ -2079,6 +2076,26 @@ namespace CapaPresentacion
                  TextBox _tbox = o as TextBox;
                  _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c))).ToArray());
              };
+        }
+
+        private void mskTelefonoEntAut_Validating(object sender, CancelEventArgs e)
+        {
+            mskTelefonoEntAutValidar();
+        }
+        private bool mskTelefonoEntAutValidar()
+        {
+            bool valor = false;
+
+            if (mskTelefonoEntAut.MaskFull == false)
+            {
+                valor = false;
+                errorProvider1.SetError(mskTelefonoEntAut, "Complete el Telefono");
+            }
+            else
+            {
+                valor = true;
+            }
+            return valor;
         }
     }
 }

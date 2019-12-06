@@ -203,5 +203,38 @@ namespace CapaDatos.Empleados
             strcon.Close();
             return rsp;
         }
+        public int InsertarCargos(E_Empleados eCa)
+        {
+            SqlConnection strcon = new SqlConnection();
+            strcon.ConnectionString = Conexion.Conexion.SqlConex;
+            strcon.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = strcon;
+            cmd.CommandText = "InsertarCargo";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter parCargo = new SqlParameter();
+            parCargo.ParameterName = "@Cargo";
+            parCargo.SqlDbType = SqlDbType.VarChar;
+            parCargo.Size = 100;
+            parCargo.Value = eCa.Cargo;
+            cmd.Parameters.Add(parCargo);
+
+            int rsp = cmd.ExecuteNonQuery();
+            strcon.Close();
+            return rsp;
+        }
+        public DataTable D_CargarCargos()
+        {
+            SqlConnection strCon = new SqlConnection();
+            strCon.ConnectionString = Conexion.Conexion.SqlConex;
+            SqlCommand cmd = new SqlCommand("CargarCargos", strCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            strCon.Close();
+            return dt;
+        }
     }
 }

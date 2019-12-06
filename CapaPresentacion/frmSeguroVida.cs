@@ -179,19 +179,23 @@ namespace CapaPresentacion
 
         private void frmSeguroVida_Load(object sender, EventArgs e)
         {
-            Cargar_idCodigo_detalleSeguroSalud();
-            CargarSegurosDePoliza();
-            CargarEmpleado();
-            MostrarClientes();
+            try
+            {
+                Cargar_idCodigo_detalleSeguroSalud();
+                CargarSegurosDePoliza();
+                CargarEmpleado();
+                MostrarClientes();
+            }
+            catch (Exception ex){ MessageBox.Show(ex.Message); }
         }
-        
         public void Cargar_idCodigo_detalleSeguroSalud()
         {
             try
             {
                 idCodigo = B_SeguroVida.B_Cargar_id_detalleSeguroSalud(E_SegVida);
             }
-            catch (Exception  ex){
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
             }
         }
@@ -210,8 +214,8 @@ namespace CapaPresentacion
 
         public void CargarEmpleado()
         {
-            E_SegVida.Id = 1;
-            varIdEmpleado = 1; /////
+            E_SegVida.Id = 893659;
+            varIdEmpleado = 893659; /////
 
             B_SeguroVida.B_CargarNombreEmpleado(E_SegVida);
 

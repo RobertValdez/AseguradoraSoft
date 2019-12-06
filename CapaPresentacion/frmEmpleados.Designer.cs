@@ -40,7 +40,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.btnGuardarCambiosMod = new System.Windows.Forms.Button();
-            this.txtCargoMod = new System.Windows.Forms.TextBox();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -75,17 +74,20 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtCargo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cmbCargo = new System.Windows.Forms.ComboBox();
+            this.aseguradoraBDDataSet = new CapaPresentacion.AseguradoraBDDataSet();
+            this.cmbCargoMod = new System.Windows.Forms.ComboBox();
             this.pnlModificar.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.pnlNuevo.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aseguradoraBDDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlModificar
@@ -104,10 +106,10 @@
             this.groupBox2.Controls.Add(this.cmbSexoMod);
             this.groupBox2.Controls.Add(this.txtTelefonoMod);
             this.groupBox2.Controls.Add(this.txtCedulaMod);
+            this.groupBox2.Controls.Add(this.cmbCargoMod);
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.label21);
             this.groupBox2.Controls.Add(this.btnGuardarCambiosMod);
-            this.groupBox2.Controls.Add(this.txtCargoMod);
             this.groupBox2.Controls.Add(this.dgvEmpleados);
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.label17);
@@ -160,6 +162,7 @@
             // 
             // cmbSexoMod
             // 
+            this.cmbSexoMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSexoMod.FormattingEnabled = true;
             this.cmbSexoMod.Items.AddRange(new object[] {
             "Masculino",
@@ -176,6 +179,7 @@
             this.txtTelefonoMod.Name = "txtTelefonoMod";
             this.txtTelefonoMod.Size = new System.Drawing.Size(316, 43);
             this.txtTelefonoMod.TabIndex = 3;
+            this.txtTelefonoMod.Validating += new System.ComponentModel.CancelEventHandler(this.txtTelefonoMod_Validating);
             // 
             // txtCedulaMod
             // 
@@ -184,6 +188,7 @@
             this.txtCedulaMod.Name = "txtCedulaMod";
             this.txtCedulaMod.Size = new System.Drawing.Size(331, 43);
             this.txtCedulaMod.TabIndex = 21;
+            this.txtCedulaMod.Validating += new System.ComponentModel.CancelEventHandler(this.txtCedulaMod_Validating);
             // 
             // label19
             // 
@@ -224,15 +229,6 @@
             this.btnGuardarCambiosMod.Text = "Guardar cambios";
             this.btnGuardarCambiosMod.UseVisualStyleBackColor = false;
             this.btnGuardarCambiosMod.Click += new System.EventHandler(this.btnGuardarCambiosMod_Click);
-            // 
-            // txtCargoMod
-            // 
-            this.txtCargoMod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCargoMod.Location = new System.Drawing.Point(778, 383);
-            this.txtCargoMod.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCargoMod.Name = "txtCargoMod";
-            this.txtCargoMod.Size = new System.Drawing.Size(345, 43);
-            this.txtCargoMod.TabIndex = 16;
             // 
             // dgvEmpleados
             // 
@@ -339,9 +335,9 @@
             this.label10.Location = new System.Drawing.Point(216, 0);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(434, 36);
+            this.label10.Size = new System.Drawing.Size(310, 36);
             this.label10.TabIndex = 11;
-            this.label10.Text = "Modificar/Eliminar Empleado";
+            this.label10.Text = "Modificar Empleado";
             // 
             // txtCorreoElectronicoMod
             // 
@@ -405,7 +401,7 @@
             this.pnlNuevo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlNuevo.Location = new System.Drawing.Point(15, 88);
             this.pnlNuevo.Name = "pnlNuevo";
-            this.pnlNuevo.Size = new System.Drawing.Size(685, 568);
+            this.pnlNuevo.Size = new System.Drawing.Size(699, 568);
             this.pnlNuevo.TabIndex = 21;
             // 
             // groupBox1
@@ -415,6 +411,7 @@
             this.groupBox1.Controls.Add(this.mskCedula);
             this.groupBox1.Controls.Add(this.mskTelefono);
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.cmbCargo);
             this.groupBox1.Controls.Add(this.cmbSexo);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -427,7 +424,6 @@
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtApellido);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtCargo);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -506,7 +502,7 @@
             this.cmbSexo.Items.AddRange(new object[] {
             "Masculino",
             "Femenino"});
-            this.cmbSexo.Location = new System.Drawing.Point(260, 352);
+            this.cmbSexo.Location = new System.Drawing.Point(444, 354);
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Size = new System.Drawing.Size(178, 38);
             this.cmbSexo.TabIndex = 0;
@@ -619,21 +615,12 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Crimson;
-            this.label4.Location = new System.Drawing.Point(264, 317);
+            this.label4.Location = new System.Drawing.Point(448, 319);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 30);
             this.label4.TabIndex = 8;
             this.label4.Text = "Sexo:";
-            // 
-            // txtCargo
-            // 
-            this.txtCargo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCargo.Location = new System.Drawing.Point(18, 353);
-            this.txtCargo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Size = new System.Drawing.Size(216, 37);
-            this.txtCargo.TabIndex = 6;
             // 
             // label7
             // 
@@ -674,7 +661,7 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(246, 64);
             this.btnModificar.TabIndex = 23;
-            this.btnModificar.Text = "Modificar/Eliminar";
+            this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
@@ -682,12 +669,35 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // cmbCargo
+            // 
+            this.cmbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCargo.FormattingEnabled = true;
+            this.cmbCargo.Location = new System.Drawing.Point(18, 351);
+            this.cmbCargo.Name = "cmbCargo";
+            this.cmbCargo.Size = new System.Drawing.Size(420, 38);
+            this.cmbCargo.TabIndex = 0;
+            // 
+            // aseguradoraBDDataSet
+            // 
+            this.aseguradoraBDDataSet.DataSetName = "AseguradoraBDDataSet";
+            this.aseguradoraBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cmbCargoMod
+            // 
+            this.cmbCargoMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCargoMod.FormattingEnabled = true;
+            this.cmbCargoMod.Location = new System.Drawing.Point(777, 385);
+            this.cmbCargoMod.Name = "cmbCargoMod";
+            this.cmbCargoMod.Size = new System.Drawing.Size(346, 44);
+            this.cmbCargoMod.TabIndex = 0;
+            // 
             // frmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1218, 693);
+            this.ClientSize = new System.Drawing.Size(1216, 662);
             this.Controls.Add(this.pnlNuevo);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnModificar);
@@ -706,6 +716,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aseguradoraBDDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -717,7 +728,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btnGuardarCambiosMod;
-        private System.Windows.Forms.TextBox txtCargoMod;
         private System.Windows.Forms.DataGridView dgvEmpleados;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
@@ -741,7 +751,6 @@
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtCargo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtApellido;
@@ -762,5 +771,8 @@
         private System.Windows.Forms.MaskedTextBox mskTelefono;
         private System.Windows.Forms.MaskedTextBox txtTelefonoMod;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ComboBox cmbCargo;
+        private AseguradoraBDDataSet aseguradoraBDDataSet;
+        private System.Windows.Forms.ComboBox cmbCargoMod;
     }
 }

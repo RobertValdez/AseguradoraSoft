@@ -59,6 +59,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AseguradoraBDDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AseguradoraBDDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AseguradoraBDDataSetCargos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AseguradoraBDDataSetCargos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cargos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cargos.Designer.cs">
+      <DependentUpon>Cargos.cs</DependentUpon>
+    </Compile>
     <Compile Include="clSoloNumero.cs" />
     <Compile Include="csLimpiar.cs" />
     <Compile Include="DSPolizasEmitidasPorMes.Designer.cs">
@@ -106,6 +122,12 @@
     </Compile>
     <Compile Include="frmPolizas.Designer.cs">
       <DependentUpon>frmPolizas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPreviewFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPreviewFactura.Designer.cs">
+      <DependentUpon>frmPreviewFactura.cs</DependentUpon>
     </Compile>
     <Compile Include="frmResumenVentaPoliza.cs">
       <SubType>Form</SubType>
@@ -231,6 +253,9 @@
     <Compile Include="VerDetallesDeSolicitudes.Designer.cs">
       <DependentUpon>VerDetallesDeSolicitudes.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Cargos.resx">
+      <DependentUpon>Cargos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDescripcionSeguros.resx">
       <DependentUpon>frmDescripcionSeguros.cs</DependentUpon>
     </EmbeddedResource>
@@ -248,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPolizas.resx">
       <DependentUpon>frmPolizas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPreviewFactura.resx">
+      <DependentUpon>frmPreviewFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReclamos.resx">
       <DependentUpon>frmReclamos.cs</DependentUpon>
@@ -320,6 +348,28 @@
     <EmbeddedResource Include="VerDetallesDeSolicitudes.resx">
       <DependentUpon>VerDetallesDeSolicitudes.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="AseguradoraBDDataSet.xsc">
+      <DependentUpon>AseguradoraBDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AseguradoraBDDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AseguradoraBDDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AseguradoraBDDataSet.xss">
+      <DependentUpon>AseguradoraBDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AseguradoraBDDataSetCargos.xsc">
+      <DependentUpon>AseguradoraBDDataSetCargos.xsd</DependentUpon>
+    </None>
+    <None Include="AseguradoraBDDataSetCargos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AseguradoraBDDataSetCargos.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AseguradoraBDDataSetCargos.xss">
+      <DependentUpon>AseguradoraBDDataSetCargos.xsd</DependentUpon>
+    </None>
     <None Include="DSPolizasEmitidasPorMes.xsc">
       <DependentUpon>DSPolizasEmitidasPorMes.xsd</DependentUpon>
     </None>
@@ -354,7 +404,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaEntidad\PerlaDelSur_Entity.csproj">

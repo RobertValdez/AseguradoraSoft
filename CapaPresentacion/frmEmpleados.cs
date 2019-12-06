@@ -27,7 +27,7 @@ namespace CapaPresentacion
         {
             pnlNuevo.Visible = true;
             pnlModificar.Visible = false;
-            Size = new Size(640, 578);
+            Size = new Size(715, 701);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -35,15 +35,47 @@ namespace CapaPresentacion
             pnlNuevo.Visible = false;
             pnlModificar.Visible = true;
             this.Size = new Size(1234, 732);
+
         }
 
         private void frmEmpleados_Load(object sender, EventArgs e)
         {
-            Size = new Size(640, 578);
+            Size = new Size(715, 701);
 
             MostrarEmpleados();
+            CargarCargos();
+            CargarCargosMod();
         }
 
+        private void CargarCargos()
+        {
+            dtCargos = B_Empleados.B_CargarCargos();
+
+            List<string> list = new List<string>();
+
+            foreach (DataRow dr in dtCargos.Rows)
+            {
+                list.Add(dr[1].ToString());
+            }
+
+            cmbCargo.DataSource = list;
+        }
+
+        private void CargarCargosMod()
+        {
+            dtCargos = B_Empleados.B_CargarCargos();
+
+            List<string> list = new List<string>();
+
+            foreach (DataRow dr in dtCargos.Rows)
+            {
+                list.Add(dr[1].ToString());
+            }
+
+            cmbCargoMod.DataSource = list;
+        }
+
+        DataTable dtCargos = new DataTable();
         public void MostrarEmpleados()
         {
             dgvEmpleados.DataSource = B_Empleados.B_MostrarEmpleados();
@@ -74,8 +106,8 @@ namespace CapaPresentacion
               || string.IsNullOrWhiteSpace(txtDireccion.Text))
               || (string.IsNullOrEmpty(txtCorreoElectronico.Text)
               || string.IsNullOrWhiteSpace(txtCorreoElectronico.Text))
-              || (string.IsNullOrEmpty(txtCargo.Text)
-              || string.IsNullOrWhiteSpace(txtCargo.Text))
+              || (string.IsNullOrEmpty(cmbCargo.Text)
+              || string.IsNullOrWhiteSpace(cmbCargo.Text))
               || (string.IsNullOrEmpty(cmbSexo.Text)
               || string.IsNullOrWhiteSpace(cmbSexo.Text)))
             {
@@ -83,6 +115,12 @@ namespace CapaPresentacion
             }
             else
             {
+                DataView dv = new DataView(dtCargos);
+
+                dv.RowFilter = "[Cargo] = '"+cmbCargo.Text+"'";
+
+               int idCargos = (int)dv[0]["id"];
+
                 string strSexo = "";
                 switch (cmbSexo.Text)
                 {
@@ -101,7 +139,7 @@ namespace CapaPresentacion
                 E_Empleados.Cedula = mskCedula.Text;
                 E_Empleados.Telefono = mskTelefono.Text;
                 E_Empleados.CorreoElectronico = txtCorreoElectronico.Text;
-                E_Empleados.IdCargo = Convert.ToInt32(txtCargo.Text);
+                E_Empleados.IdCargo = idCargos;
                 E_Empleados.Sexo = strSexo;
                 E_Empleados.Fecha = DateTime.Now.Date;
 
@@ -148,12 +186,12 @@ namespace CapaPresentacion
                 txtCorreoElectronicoMod.Text = "";
             }
 
-            if (string.IsNullOrEmpty(txtCargoMod.Text)
-                || string.IsNullOrWhiteSpace(txtCargoMod.Text))
+            if (string.IsNullOrEmpty(cmbCargoMod.Text)
+                || string.IsNullOrWhiteSpace(cmbCargoMod.Text))
             {
                 ok = false;
-                errorProvider1.SetError(txtCargoMod, "Campo obligatorio");
-                txtCargoMod.Text = "";
+                errorProvider1.SetError(cmbCargoMod, "Campo obligatorio");
+                cmbCargoMod.Text = "";
             }
 
             if (string.IsNullOrEmpty(cmbSexoMod.Text)
@@ -174,7 +212,7 @@ namespace CapaPresentacion
             errorProvider1.SetError(txtApellido, "");
             errorProvider1.SetError(txtDireccion, "");
             errorProvider1.SetError(txtCorreoElectronico, "");
-            errorProvider1.SetError(txtCargo, "");
+            errorProvider1.SetError(cmbCargo, "");
             errorProvider1.SetError(cmbSexo, "");
             errorProvider1.SetError(mskCedula, "");
             errorProvider1.SetError(mskTelefono, "");
@@ -258,12 +296,12 @@ namespace CapaPresentacion
                 txtCorreoElectronico.Text = "";
             }
 
-            if (string.IsNullOrEmpty(txtCargo.Text)
-                || string.IsNullOrWhiteSpace(txtCargo.Text))
+            if (string.IsNullOrEmpty(cmbCargo.Text)
+                || string.IsNullOrWhiteSpace(cmbCargo.Text))
             {
                 ok = false;
-                errorProvider1.SetError(txtCargo, "Campo obligatorio");
-                txtCargo.Text = "";
+                errorProvider1.SetError(cmbCargo, "Campo obligatorio");
+                cmbCargo.Text = "";
             }
 
             if (string.IsNullOrEmpty(cmbSexo.Text)
@@ -284,7 +322,7 @@ namespace CapaPresentacion
             errorProvider1.SetError(txtApellidoMod, "");
             errorProvider1.SetError(txtDireccionMod, "");
             errorProvider1.SetError(txtCorreoElectronicoMod, "");
-            errorProvider1.SetError(txtCargoMod, "");
+            errorProvider1.SetError(cmbCargoMod, "");
             errorProvider1.SetError(cmbSexoMod, "");
         }
 
@@ -300,15 +338,35 @@ namespace CapaPresentacion
         }
         public void ModificarEmpleado()
         {
-            QuitarErrorProviderNuevo();
-            if (!ValidarCamposNuevo())
+            QuitarErrorProviderMod();
+            ValidarCamposMod();
+            mskCedulaModValidar();
+            mskTelefonoModValidar();
+
+            if (string.IsNullOrEmpty(txtNombreMod.Text) || txtCedulaMod.MaskFull == false || txtTelefonoMod.MaskFull == false
+              || string.IsNullOrWhiteSpace(txtNombreMod.Text)
+              || (string.IsNullOrEmpty(txtApellidoMod.Text)
+              || string.IsNullOrWhiteSpace(txtApellidoMod.Text))
+              || (string.IsNullOrEmpty(txtDireccionMod.Text)
+              || string.IsNullOrWhiteSpace(txtDireccionMod.Text))
+              || (string.IsNullOrEmpty(txtCorreoElectronicoMod.Text)
+              || string.IsNullOrWhiteSpace(txtCorreoElectronicoMod.Text))
+              || (string.IsNullOrEmpty(cmbCargoMod.Text)
+              || string.IsNullOrWhiteSpace(cmbCargoMod.Text))
+              || (string.IsNullOrEmpty(cmbSexoMod.Text)
+              || string.IsNullOrWhiteSpace(cmbSexoMod.Text)))
             {
                 MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
-            { 
-            
-            string strSexo = "";
+            {
+                DataView dv = new DataView(dtCargos);
+
+                dv.RowFilter = "[Cargo] = '" + cmbCargoMod.Text + "'";
+
+                int idCargos = (int)dv[0]["id"];
+
+                string strSexo = "";
             switch (cmbSexoMod.Text)
             {
                 case "Masculino":
@@ -327,7 +385,7 @@ namespace CapaPresentacion
             E_Empleados.Cedula = txtCedulaMod.Text;
             E_Empleados.Telefono = txtTelefonoMod.Text;
             E_Empleados.CorreoElectronico = txtCorreoElectronicoMod.Text;
-            E_Empleados.IdCargo = Convert.ToInt32(txtCargoMod.Text);
+            E_Empleados.IdCargo = idCargos;
             E_Empleados.Sexo = strSexo;
             E_Empleados.Fecha = DateTime.Now.Date;
 
@@ -348,7 +406,14 @@ namespace CapaPresentacion
             txtCedulaMod.Text = row.Cells[4].Value.ToString();
             txtTelefonoMod.Text = row.Cells[5].Value.ToString();
             txtCorreoElectronicoMod.Text = row.Cells[6].Value.ToString();
-            txtCargoMod.Text = row.Cells[7].Value.ToString();
+
+            dtCargos = B_Empleados.B_CargarCargos();
+            DataView dv = new DataView(dtCargos);
+
+            dv.RowFilter = "id = '" + row.Cells[7].Value.ToString() + "'";
+            string strCargos = (string)dv[0]["Cargo"];
+
+            cmbCargoMod.Text = strCargos;
 
             string strSexo = "";
             switch (row.Cells[8].Value.ToString())
@@ -431,6 +496,46 @@ namespace CapaPresentacion
                     MessageBox.Show("No se pudo eliminar el Empleado.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void txtCedulaMod_Validating(object sender, CancelEventArgs e)
+        {
+            mskCedulaModValidar();
+        }
+        private bool mskCedulaModValidar()
+        {
+            bool valor = false;
+            if (txtCedulaMod.MaskFull == false)
+            {
+                valor = false;
+                errorProvider1.SetError(txtCedulaMod, "Complete la Cédula");
+            }
+            else
+            {
+                valor = true;
+            }
+
+            return valor;
+        }
+
+        private void txtTelefonoMod_Validating(object sender, CancelEventArgs e)
+        {
+            mskTelefonoModValidar();
+        }
+        private bool mskTelefonoModValidar()
+        {
+            bool valor = false;
+
+            if (txtTelefonoMod.MaskFull == false)
+            {
+                valor = false;
+                errorProvider1.SetError(txtTelefonoMod, "Complete el Telefono");
+            }
+            else
+            {
+                valor = true;
+            }
+            return valor;
         }
     }
 }

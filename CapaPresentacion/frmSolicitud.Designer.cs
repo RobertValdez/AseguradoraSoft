@@ -162,6 +162,7 @@
             this.lblCerrarInmContenido = new System.Windows.Forms.Label();
             this.lblSeguroContenido = new System.Windows.Forms.Label();
             this.pnlNegociosEmpresas = new System.Windows.Forms.Panel();
+            this.mskTelefonoEntAut = new System.Windows.Forms.MaskedTextBox();
             this.picImagen5 = new System.Windows.Forms.PictureBox();
             this.picImagen1 = new System.Windows.Forms.PictureBox();
             this.picImagen4 = new System.Windows.Forms.PictureBox();
@@ -177,7 +178,6 @@
             this.btnSIGUIENTEpnlNegociosEmpresas = new System.Windows.Forms.Button();
             this.txtNombreEmpresa = new System.Windows.Forms.TextBox();
             this.txtCorreoElectronicoEntAutorizada = new System.Windows.Forms.TextBox();
-            this.txtTelefonoEntAut = new System.Windows.Forms.TextBox();
             this.txtCopiaActaAsignacionRNC = new System.Windows.Forms.TextBox();
             this.txtCopiaCedulaPresidente_RepresAut = new System.Windows.Forms.TextBox();
             this.txtCopiaEstatutos = new System.Windows.Forms.TextBox();
@@ -293,12 +293,12 @@
             // 
             this.lblCedula.AutoSize = true;
             this.lblCedula.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCedula.Location = new System.Drawing.Point(317, 55);
+            this.lblCedula.Location = new System.Drawing.Point(330, 55);
             this.lblCedula.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCedula.Name = "lblCedula";
-            this.lblCedula.Size = new System.Drawing.Size(121, 22);
+            this.lblCedula.Size = new System.Drawing.Size(76, 22);
             this.lblCedula.TabIndex = 1;
-            this.lblCedula.Text = "000-00000-0";
+            this.lblCedula.Text = "000000";
             // 
             // groupBox1
             // 
@@ -1507,7 +1507,7 @@
             this.pnlMueblesInmContenido.Location = new System.Drawing.Point(481, 28);
             this.pnlMueblesInmContenido.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlMueblesInmContenido.Name = "pnlMueblesInmContenido";
-            this.pnlMueblesInmContenido.Size = new System.Drawing.Size(843, 513);
+            this.pnlMueblesInmContenido.Size = new System.Drawing.Size(842, 513);
             this.pnlMueblesInmContenido.TabIndex = 6;
             this.pnlMueblesInmContenido.Visible = false;
             // 
@@ -1797,6 +1797,7 @@
             // 
             this.pnlNegociosEmpresas.BackColor = System.Drawing.Color.White;
             this.pnlNegociosEmpresas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlNegociosEmpresas.Controls.Add(this.mskTelefonoEntAut);
             this.pnlNegociosEmpresas.Controls.Add(this.picImagen5);
             this.pnlNegociosEmpresas.Controls.Add(this.picImagen1);
             this.pnlNegociosEmpresas.Controls.Add(this.picImagen4);
@@ -1812,7 +1813,6 @@
             this.pnlNegociosEmpresas.Controls.Add(this.btnSIGUIENTEpnlNegociosEmpresas);
             this.pnlNegociosEmpresas.Controls.Add(this.txtNombreEmpresa);
             this.pnlNegociosEmpresas.Controls.Add(this.txtCorreoElectronicoEntAutorizada);
-            this.pnlNegociosEmpresas.Controls.Add(this.txtTelefonoEntAut);
             this.pnlNegociosEmpresas.Controls.Add(this.txtCopiaActaAsignacionRNC);
             this.pnlNegociosEmpresas.Controls.Add(this.txtCopiaCedulaPresidente_RepresAut);
             this.pnlNegociosEmpresas.Controls.Add(this.txtCopiaEstatutos);
@@ -1832,6 +1832,15 @@
             this.pnlNegociosEmpresas.Size = new System.Drawing.Size(842, 514);
             this.pnlNegociosEmpresas.TabIndex = 6;
             this.pnlNegociosEmpresas.Visible = false;
+            // 
+            // mskTelefonoEntAut
+            // 
+            this.mskTelefonoEntAut.Location = new System.Drawing.Point(460, 163);
+            this.mskTelefonoEntAut.Mask = "(000)-000-0000";
+            this.mskTelefonoEntAut.Name = "mskTelefonoEntAut";
+            this.mskTelefonoEntAut.Size = new System.Drawing.Size(348, 33);
+            this.mskTelefonoEntAut.TabIndex = 108;
+            this.mskTelefonoEntAut.Validating += new System.ComponentModel.CancelEventHandler(this.mskTelefonoEntAut_Validating);
             // 
             // picImagen5
             // 
@@ -2039,14 +2048,6 @@
             this.txtCorreoElectronicoEntAutorizada.Name = "txtCorreoElectronicoEntAutorizada";
             this.txtCorreoElectronicoEntAutorizada.Size = new System.Drawing.Size(347, 33);
             this.txtCorreoElectronicoEntAutorizada.TabIndex = 103;
-            // 
-            // txtTelefonoEntAut
-            // 
-            this.txtTelefonoEntAut.Location = new System.Drawing.Point(461, 163);
-            this.txtTelefonoEntAut.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtTelefonoEntAut.Name = "txtTelefonoEntAut";
-            this.txtTelefonoEntAut.Size = new System.Drawing.Size(347, 33);
-            this.txtTelefonoEntAut.TabIndex = 103;
             // 
             // txtCopiaActaAsignacionRNC
             // 
@@ -2257,7 +2258,7 @@
             this.pnlBuscarCliente.Controls.Add(this.label5);
             this.pnlBuscarCliente.Location = new System.Drawing.Point(21, 100);
             this.pnlBuscarCliente.Name = "pnlBuscarCliente";
-            this.pnlBuscarCliente.Size = new System.Drawing.Size(454, 589);
+            this.pnlBuscarCliente.Size = new System.Drawing.Size(123, 589);
             this.pnlBuscarCliente.TabIndex = 123;
             this.pnlBuscarCliente.Visible = false;
             // 
@@ -2309,7 +2310,7 @@
             this.dgvBuscarClientes.Location = new System.Drawing.Point(0, 93);
             this.dgvBuscarClientes.Name = "dgvBuscarClientes";
             this.dgvBuscarClientes.ReadOnly = true;
-            this.dgvBuscarClientes.Size = new System.Drawing.Size(454, 496);
+            this.dgvBuscarClientes.Size = new System.Drawing.Size(123, 496);
             this.dgvBuscarClientes.TabIndex = 0;
             this.dgvBuscarClientes.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBuscarClientes_CellMouseDoubleClick);
             // 
@@ -2471,6 +2472,7 @@
             this.txtRNC.Name = "txtRNC";
             this.txtRNC.Size = new System.Drawing.Size(251, 33);
             this.txtRNC.TabIndex = 11;
+            this.txtRNC.Visible = false;
             // 
             // txtCorreoElectronico
             // 
@@ -2535,6 +2537,7 @@
             this.label1.Size = new System.Drawing.Size(116, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "(opcional)";
+            this.label1.Visible = false;
             // 
             // label15
             // 
@@ -2546,6 +2549,7 @@
             this.label15.Size = new System.Drawing.Size(61, 24);
             this.label15.TabIndex = 0;
             this.label15.Text = "RNC:";
+            this.label15.Visible = false;
             // 
             // label6
             // 
@@ -2671,7 +2675,7 @@
             this.pnlPicImagen.Controls.Add(this.picPreviewImg);
             this.pnlPicImagen.Location = new System.Drawing.Point(21, 100);
             this.pnlPicImagen.Name = "pnlPicImagen";
-            this.pnlPicImagen.Size = new System.Drawing.Size(459, 589);
+            this.pnlPicImagen.Size = new System.Drawing.Size(45, 589);
             this.pnlPicImagen.TabIndex = 108;
             this.pnlPicImagen.Visible = false;
             // 
@@ -2876,7 +2880,6 @@
         private System.Windows.Forms.Label label116;
         private System.Windows.Forms.Label label117;
         private System.Windows.Forms.Button btnSIGUIENTEpnlNegociosEmpresas;
-        private System.Windows.Forms.TextBox txtTelefonoEntAut;
         private System.Windows.Forms.TextBox txtCopiaActaAsignacionRNC;
         private System.Windows.Forms.TextBox txtCopiaCedulaPresidente_RepresAut;
         private System.Windows.Forms.TextBox txtCopiaEstatutos;
@@ -2953,5 +2956,6 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox txtModeloObl;
         private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.MaskedTextBox mskTelefonoEntAut;
     }
 }

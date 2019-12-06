@@ -67,7 +67,7 @@ namespace CapaDatos.SeguroVida
             parCedula.Size = 30;
             parCedula.Direction = ParameterDirection.Output;
             cmd.Parameters.Add(parCedula);
-
+            
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -75,7 +75,7 @@ namespace CapaDatos.SeguroVida
             DataRow dr = dt.Rows[0];
 
             eSegVida.NombreEmpleado = dr[1].ToString();
-            eSegVida.Cedula = dr[2].ToString();
+            eSegVida.Cedula = dr[0].ToString();
             strCon.Close();
         }
     }
