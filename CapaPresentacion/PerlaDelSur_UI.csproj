@@ -33,6 +33,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -49,6 +61,16 @@
   <ItemGroup>
     <Compile Include="clSoloNumero.cs" />
     <Compile Include="csLimpiar.cs" />
+    <Compile Include="DSPolizasEmitidasPorMes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSPolizasEmitidasPorMes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FacturasMensuales.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FacturasMensuales.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmDescripcionSeguros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +205,19 @@
     <Compile Include="frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="rptFacturasDelMes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptFacturasDelMes.Designer.cs">
+      <DependentUpon>rptFacturasDelMes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptPolizasMensuales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptPolizasMensuales.Designer.cs">
+      <DependentUpon>rptPolizasMensuales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Validacion.cs" />
     <Compile Include="frmVerFotosConfirmacionSolicitud.cs">
       <SubType>Form</SubType>
@@ -274,9 +309,40 @@
     <EmbeddedResource Include="frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReporteMensual.rdlc" />
+    <EmbeddedResource Include="ReporteMensualPolizas.rdlc" />
+    <EmbeddedResource Include="rptFacturasDelMes.resx">
+      <DependentUpon>rptFacturasDelMes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptPolizasMensuales.resx">
+      <DependentUpon>rptPolizasMensuales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VerDetallesDeSolicitudes.resx">
       <DependentUpon>VerDetallesDeSolicitudes.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DSPolizasEmitidasPorMes.xsc">
+      <DependentUpon>DSPolizasEmitidasPorMes.xsd</DependentUpon>
+    </None>
+    <None Include="DSPolizasEmitidasPorMes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSPolizasEmitidasPorMes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSPolizasEmitidasPorMes.xss">
+      <DependentUpon>DSPolizasEmitidasPorMes.xsd</DependentUpon>
+    </None>
+    <None Include="FacturasMensuales.xsc">
+      <DependentUpon>FacturasMensuales.xsd</DependentUpon>
+    </None>
+    <None Include="FacturasMensuales.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FacturasMensuales.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="FacturasMensuales.xss">
+      <DependentUpon>FacturasMensuales.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -299,6 +365,21 @@
       <Project>{ff66c60e-43d1-4bc8-b7e3-c719be2e5c41}</Project>
       <Name>PerlaDelSur_BLL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
