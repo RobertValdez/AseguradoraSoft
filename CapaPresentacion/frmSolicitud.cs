@@ -284,6 +284,9 @@ namespace CapaPresentacion
 
         private void SIGUIENTEpnlVEHSeguroObligatorio()
         {
+            mskTelefonoValidar();
+            mskCedulaValidar();
+
             QuitarErrorProviderCliente();
             ValidarCamposCliente();
             //------------------------//
@@ -369,6 +372,9 @@ namespace CapaPresentacion
 
         private void SIGUIENTEpnlVEHSeguroTodoRiesgo()
         {
+            mskTelefonoValidar();
+            mskCedulaValidar();
+
             QuitarErrorProviderCliente();
             ValidarCamposCliente();
             //------------------------//
@@ -451,6 +457,9 @@ namespace CapaPresentacion
 
         private void SIGUIENTEpnlVEHSeguroVoluntario()
         {
+            mskTelefonoValidar();
+            mskCedulaValidar();
+
             QuitarErrorProviderCliente();
             ValidarCamposCliente();
             //------------------------//

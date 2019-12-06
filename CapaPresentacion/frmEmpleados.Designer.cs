@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEmpleados));
             this.pnlModificar = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chkSoloId = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.cmbSexoMod = new System.Windows.Forms.ComboBox();
+            this.txtTelefonoMod = new System.Windows.Forms.MaskedTextBox();
             this.txtCedulaMod = new System.Windows.Forms.MaskedTextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -49,40 +51,41 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtCorreoElectronicoMod = new System.Windows.Forms.TextBox();
-            this.txtTelefonoMod = new System.Windows.Forms.TextBox();
             this.txtDireccionMod = new System.Windows.Forms.TextBox();
             this.txtApellidoMod = new System.Windows.Forms.TextBox();
             this.txtIdMod = new System.Windows.Forms.TextBox();
             this.txtNombreMod = new System.Windows.Forms.TextBox();
             this.txtBuscarEmpleado = new System.Windows.Forms.TextBox();
             this.pnlNuevo = new System.Windows.Forms.Panel();
-            this.txtCedula = new System.Windows.Forms.MaskedTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.txtCorreoElectronico = new System.Windows.Forms.TextBox();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.mskCedula = new System.Windows.Forms.MaskedTextBox();
+            this.mskTelefono = new System.Windows.Forms.MaskedTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbSexo = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtCorreoElectronico = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtCargo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbSexo = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlModificar.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.pnlNuevo.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlModificar
@@ -99,6 +102,7 @@
             this.groupBox2.Controls.Add(this.chkSoloId);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.cmbSexoMod);
+            this.groupBox2.Controls.Add(this.txtTelefonoMod);
             this.groupBox2.Controls.Add(this.txtCedulaMod);
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.label21);
@@ -114,7 +118,6 @@
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtCorreoElectronicoMod);
-            this.groupBox2.Controls.Add(this.txtTelefonoMod);
             this.groupBox2.Controls.Add(this.txtDireccionMod);
             this.groupBox2.Controls.Add(this.txtApellidoMod);
             this.groupBox2.Controls.Add(this.txtIdMod);
@@ -165,6 +168,14 @@
             this.cmbSexoMod.Name = "cmbSexoMod";
             this.cmbSexoMod.Size = new System.Drawing.Size(372, 44);
             this.cmbSexoMod.TabIndex = 22;
+            // 
+            // txtTelefonoMod
+            // 
+            this.txtTelefonoMod.Location = new System.Drawing.Point(807, 236);
+            this.txtTelefonoMod.Mask = "(000)-000-0000";
+            this.txtTelefonoMod.Name = "txtTelefonoMod";
+            this.txtTelefonoMod.Size = new System.Drawing.Size(316, 43);
+            this.txtTelefonoMod.TabIndex = 3;
             // 
             // txtCedulaMod
             // 
@@ -341,15 +352,6 @@
             this.txtCorreoElectronicoMod.Size = new System.Drawing.Size(460, 43);
             this.txtCorreoElectronicoMod.TabIndex = 6;
             // 
-            // txtTelefonoMod
-            // 
-            this.txtTelefonoMod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTelefonoMod.Location = new System.Drawing.Point(808, 241);
-            this.txtTelefonoMod.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtTelefonoMod.Name = "txtTelefonoMod";
-            this.txtTelefonoMod.Size = new System.Drawing.Size(315, 43);
-            this.txtTelefonoMod.TabIndex = 6;
-            // 
             // txtDireccionMod
             // 
             this.txtDireccionMod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -399,61 +401,42 @@
             // 
             // pnlNuevo
             // 
-            this.pnlNuevo.Controls.Add(this.txtCedula);
-            this.pnlNuevo.Controls.Add(this.label3);
-            this.pnlNuevo.Controls.Add(this.label6);
-            this.pnlNuevo.Controls.Add(this.button1);
-            this.pnlNuevo.Controls.Add(this.btnGuardar);
-            this.pnlNuevo.Controls.Add(this.txtCorreoElectronico);
-            this.pnlNuevo.Controls.Add(this.txtDireccion);
-            this.pnlNuevo.Controls.Add(this.label9);
-            this.pnlNuevo.Controls.Add(this.label2);
-            this.pnlNuevo.Controls.Add(this.txtCargo);
-            this.pnlNuevo.Controls.Add(this.label7);
-            this.pnlNuevo.Controls.Add(this.txtTelefono);
-            this.pnlNuevo.Controls.Add(this.label4);
-            this.pnlNuevo.Controls.Add(this.txtApellido);
-            this.pnlNuevo.Controls.Add(this.label1);
-            this.pnlNuevo.Controls.Add(this.txtNombre);
-            this.pnlNuevo.Controls.Add(this.label8);
             this.pnlNuevo.Controls.Add(this.groupBox1);
             this.pnlNuevo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlNuevo.Location = new System.Drawing.Point(15, 88);
             this.pnlNuevo.Name = "pnlNuevo";
-            this.pnlNuevo.Size = new System.Drawing.Size(618, 466);
+            this.pnlNuevo.Size = new System.Drawing.Size(685, 568);
             this.pnlNuevo.TabIndex = 21;
             // 
-            // txtCedula
+            // groupBox1
             // 
-            this.txtCedula.Location = new System.Drawing.Point(124, 203);
-            this.txtCedula.Mask = "000-0000000-0";
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(145, 33);
-            this.txtCedula.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Crimson;
-            this.label3.Location = new System.Drawing.Point(28, 209);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 24);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Cédula:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Crimson;
-            this.label6.Location = new System.Drawing.Point(28, 96);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 24);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Nombre:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnGuardar);
+            this.groupBox1.Controls.Add(this.mskCedula);
+            this.groupBox1.Controls.Add(this.mskTelefono);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.cmbSexo);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.txtCorreoElectronico);
+            this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Controls.Add(this.txtDireccion);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.txtApellido);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txtCargo);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
+            this.groupBox1.Location = new System.Drawing.Point(14, 32);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(668, 525);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
             // 
             // button1
             // 
@@ -462,7 +445,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(176, 359);
+            this.button1.Location = new System.Drawing.Point(226, 443);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(194, 60);
@@ -477,7 +460,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(378, 359);
+            this.btnGuardar.Location = new System.Drawing.Point(428, 443);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(194, 60);
@@ -486,138 +469,35 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // txtCorreoElectronico
+            // mskCedula
             // 
-            this.txtCorreoElectronico.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCorreoElectronico.Location = new System.Drawing.Point(238, 243);
-            this.txtCorreoElectronico.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCorreoElectronico.Name = "txtCorreoElectronico";
-            this.txtCorreoElectronico.Size = new System.Drawing.Size(335, 33);
-            this.txtCorreoElectronico.TabIndex = 5;
+            this.mskCedula.Location = new System.Drawing.Point(129, 187);
+            this.mskCedula.Mask = "000-0000000-0";
+            this.mskCedula.Name = "mskCedula";
+            this.mskCedula.Size = new System.Drawing.Size(171, 37);
+            this.mskCedula.TabIndex = 3;
+            this.mskCedula.Validating += new System.ComponentModel.CancelEventHandler(this.mskCedula_Validating_1);
             // 
-            // txtDireccion
+            // mskTelefono
             // 
-            this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDireccion.Location = new System.Drawing.Point(140, 162);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(433, 33);
-            this.txtDireccion.TabIndex = 2;
+            this.mskTelefono.Location = new System.Drawing.Point(450, 183);
+            this.mskTelefono.Mask = "(000)-000-0000";
+            this.mskTelefono.Name = "mskTelefono";
+            this.mskTelefono.Size = new System.Drawing.Size(172, 37);
+            this.mskTelefono.TabIndex = 3;
+            this.mskTelefono.Validating += new System.ComponentModel.CancelEventHandler(this.mskTelefono_Validating);
             // 
-            // label9
+            // label3
             // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.Crimson;
-            this.label9.Location = new System.Drawing.Point(28, 290);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 24);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "Cargo:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Crimson;
-            this.label2.Location = new System.Drawing.Point(276, 209);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 24);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Teléfono:";
-            // 
-            // txtCargo
-            // 
-            this.txtCargo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCargo.Location = new System.Drawing.Point(108, 284);
-            this.txtCargo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Size = new System.Drawing.Size(216, 33);
-            this.txtCargo.TabIndex = 6;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Crimson;
-            this.label7.Location = new System.Drawing.Point(228, 96);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 24);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Apellido:";
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTelefono.Location = new System.Drawing.Point(380, 203);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(193, 33);
-            this.txtTelefono.TabIndex = 4;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Crimson;
-            this.label4.Location = new System.Drawing.Point(324, 290);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 24);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Sexo:";
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtApellido.Location = new System.Drawing.Point(232, 122);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(341, 33);
-            this.txtApellido.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Crimson;
-            this.label1.Location = new System.Drawing.Point(28, 249);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(210, 24);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Correo electrónico:";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombre.Location = new System.Drawing.Point(28, 122);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(193, 33);
-            this.txtNombre.TabIndex = 0;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Crimson;
-            this.label8.Location = new System.Drawing.Point(28, 165);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(112, 24);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Dirección:";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.cmbSexo);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 21.75F);
-            this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(14, 32);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(572, 409);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Crimson;
+            this.label3.Location = new System.Drawing.Point(13, 190);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 30);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Cédula:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // cmbSexo
             // 
@@ -626,10 +506,22 @@
             this.cmbSexo.Items.AddRange(new object[] {
             "Masculino",
             "Femenino"});
-            this.cmbSexo.Location = new System.Drawing.Point(380, 255);
+            this.cmbSexo.Location = new System.Drawing.Point(260, 352);
             this.cmbSexo.Name = "cmbSexo";
-            this.cmbSexo.Size = new System.Drawing.Size(178, 44);
+            this.cmbSexo.Size = new System.Drawing.Size(178, 38);
             this.cmbSexo.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Crimson;
+            this.label6.Location = new System.Drawing.Point(18, 51);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(117, 30);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Nombre:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
             // 
@@ -642,6 +534,117 @@
             this.label5.Size = new System.Drawing.Size(265, 36);
             this.label5.TabIndex = 11;
             this.label5.Text = "Nuevo Empleado";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Crimson;
+            this.label2.Location = new System.Drawing.Point(319, 190);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(124, 30);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Teléfono:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Crimson;
+            this.label8.Location = new System.Drawing.Point(13, 141);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(136, 30);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Dirección:";
+            // 
+            // txtCorreoElectronico
+            // 
+            this.txtCorreoElectronico.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCorreoElectronico.Location = new System.Drawing.Point(18, 272);
+            this.txtCorreoElectronico.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCorreoElectronico.Name = "txtCorreoElectronico";
+            this.txtCorreoElectronico.Size = new System.Drawing.Size(604, 37);
+            this.txtCorreoElectronico.TabIndex = 5;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNombre.Location = new System.Drawing.Point(18, 90);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(203, 37);
+            this.txtNombre.TabIndex = 0;
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDireccion.Location = new System.Drawing.Point(157, 139);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(465, 37);
+            this.txtDireccion.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Crimson;
+            this.label1.Location = new System.Drawing.Point(13, 231);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(247, 30);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Correo electrónico:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Crimson;
+            this.label9.Location = new System.Drawing.Point(13, 318);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(95, 30);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "Cargo:";
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtApellido.Location = new System.Drawing.Point(238, 90);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(384, 37);
+            this.txtApellido.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Crimson;
+            this.label4.Location = new System.Drawing.Point(264, 317);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(76, 30);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Sexo:";
+            // 
+            // txtCargo
+            // 
+            this.txtCargo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCargo.Location = new System.Drawing.Point(18, 353);
+            this.txtCargo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCargo.Name = "txtCargo";
+            this.txtCargo.Size = new System.Drawing.Size(216, 37);
+            this.txtCargo.TabIndex = 6;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Crimson;
+            this.label7.Location = new System.Drawing.Point(246, 51);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(119, 30);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Apellido:";
             // 
             // btnNuevo
             // 
@@ -675,6 +678,10 @@
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -696,9 +703,9 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             this.pnlNuevo.ResumeLayout(false);
-            this.pnlNuevo.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -721,7 +728,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtCorreoElectronicoMod;
-        private System.Windows.Forms.TextBox txtTelefonoMod;
         private System.Windows.Forms.TextBox txtDireccionMod;
         private System.Windows.Forms.TextBox txtApellidoMod;
         private System.Windows.Forms.TextBox txtNombreMod;
@@ -737,7 +743,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCargo;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label label1;
@@ -747,12 +752,15 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.MaskedTextBox txtCedula;
+        private System.Windows.Forms.MaskedTextBox mskCedula;
         private System.Windows.Forms.MaskedTextBox txtCedulaMod;
         private System.Windows.Forms.ComboBox cmbSexo;
         private System.Windows.Forms.ComboBox cmbSexoMod;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtIdMod;
         private System.Windows.Forms.CheckBox chkSoloId;
+        private System.Windows.Forms.MaskedTextBox mskTelefono;
+        private System.Windows.Forms.MaskedTextBox txtTelefonoMod;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

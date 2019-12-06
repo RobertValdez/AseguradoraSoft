@@ -60,7 +60,24 @@ namespace CapaPresentacion
         }
         public void GuardarEmpleado()
         {
-            if (txtNombre.Text == "" || txtApellido.Text == "" || txtDireccion.Text == "" || txtCedula.Text == "" || txtTelefono.Text == "" || txtCorreoElectronico.Text == "" || txtCargo.Text == "" || cmbSexo.Text == "")
+            QuitarErrorProviderNuevo();
+
+            mskTelefonoValidar();
+            mskCedulaValidar();
+            ValidarCamposNuevo();
+
+            if (string.IsNullOrEmpty(txtNombre.Text) || mskCedula.MaskFull == false || mskTelefono.MaskFull == false
+              || string.IsNullOrWhiteSpace(txtNombre.Text)
+              || (string.IsNullOrEmpty(txtApellido.Text)
+              || string.IsNullOrWhiteSpace(txtApellido.Text))
+              || (string.IsNullOrEmpty(txtDireccion.Text)
+              || string.IsNullOrWhiteSpace(txtDireccion.Text))
+              || (string.IsNullOrEmpty(txtCorreoElectronico.Text)
+              || string.IsNullOrWhiteSpace(txtCorreoElectronico.Text))
+              || (string.IsNullOrEmpty(txtCargo.Text)
+              || string.IsNullOrWhiteSpace(txtCargo.Text))
+              || (string.IsNullOrEmpty(cmbSexo.Text)
+              || string.IsNullOrWhiteSpace(cmbSexo.Text)))
             {
                 MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -81,8 +98,8 @@ namespace CapaPresentacion
                 E_Empleados.Nombre = txtNombre.Text;
                 E_Empleados.Apellido = txtApellido.Text;
                 E_Empleados.Direccion = txtDireccion.Text;
-                E_Empleados.Cedula = txtCedula.Text;
-                E_Empleados.Telefono = txtTelefono.Text;
+                E_Empleados.Cedula = mskCedula.Text;
+                E_Empleados.Telefono = mskTelefono.Text;
                 E_Empleados.CorreoElectronico = txtCorreoElectronico.Text;
                 E_Empleados.IdCargo = Convert.ToInt32(txtCargo.Text);
                 E_Empleados.Sexo = strSexo;
@@ -95,6 +112,183 @@ namespace CapaPresentacion
             }
         }
 
+        private bool ValidarCamposMod()
+        {
+            bool ok = true;
+
+            if (string.IsNullOrEmpty(txtNombreMod.Text)
+               || string.IsNullOrWhiteSpace(txtNombreMod.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtNombreMod, "Campo obligatorio");
+                txtNombreMod.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtApellidoMod.Text)
+                || string.IsNullOrWhiteSpace(txtApellidoMod.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtApellidoMod, "Campo obligatorio");
+                txtApellidoMod.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtDireccionMod.Text)
+                || string.IsNullOrWhiteSpace(txtDireccionMod.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtDireccionMod, "Campo obligatorio");
+                txtDireccionMod.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtCorreoElectronicoMod.Text)
+                || string.IsNullOrWhiteSpace(txtCorreoElectronicoMod.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCorreoElectronicoMod, "Campo obligatorio");
+                txtCorreoElectronicoMod.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtCargoMod.Text)
+                || string.IsNullOrWhiteSpace(txtCargoMod.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCargoMod, "Campo obligatorio");
+                txtCargoMod.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(cmbSexoMod.Text)
+               || string.IsNullOrWhiteSpace(cmbSexoMod.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(cmbSexoMod, "Campo obligatorio");
+                cmbSexoMod.Text = "";
+            }
+
+            return ok;
+        }
+
+
+        private void QuitarErrorProviderNuevo()
+        {
+            errorProvider1.SetError(txtNombre, "");
+            errorProvider1.SetError(txtApellido, "");
+            errorProvider1.SetError(txtDireccion, "");
+            errorProvider1.SetError(txtCorreoElectronico, "");
+            errorProvider1.SetError(txtCargo, "");
+            errorProvider1.SetError(cmbSexo, "");
+            errorProvider1.SetError(mskCedula, "");
+            errorProvider1.SetError(mskTelefono, "");
+        }
+
+        private void mskCedula_Validating_1(object sender, CancelEventArgs e)
+        {
+            mskCedulaValidar();
+        }
+
+        private bool mskCedulaValidar() 
+        {
+            bool valor = false;
+            if (mskCedula.MaskFull == false)
+            {
+                valor = false;
+                errorProvider1.SetError(mskCedula, "Complete la Cédula");
+            }
+            else
+            {
+                valor = true;
+            }
+
+            return valor;
+        }
+
+        private void mskTelefono_Validating(object sender, CancelEventArgs e)
+        {
+            mskTelefonoValidar();
+        }
+
+        private bool mskTelefonoValidar()
+        {
+            bool valor = false;
+
+            if (mskTelefono.MaskFull == false)
+            {
+                valor = false;
+                errorProvider1.SetError(mskTelefono, "Complete el Telefono");
+            }
+            else
+            {
+                valor = true;
+            }
+            return valor;
+        }
+
+        private bool ValidarCamposNuevo()
+        {
+            bool ok = true;
+
+            if (string.IsNullOrEmpty(txtNombre.Text)
+               || string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtNombre, "Campo obligatorio");
+                txtNombre.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtApellido.Text)
+                || string.IsNullOrWhiteSpace(txtApellido.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtApellido, "Campo obligatorio");
+                txtApellido.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtDireccion.Text)
+                || string.IsNullOrWhiteSpace(txtDireccion.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtDireccion, "Campo obligatorio");
+                txtDireccion.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtCorreoElectronico.Text)
+                || string.IsNullOrWhiteSpace(txtCorreoElectronico.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCorreoElectronico, "Campo obligatorio");
+                txtCorreoElectronico.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(txtCargo.Text)
+                || string.IsNullOrWhiteSpace(txtCargo.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(txtCargo, "Campo obligatorio");
+                txtCargo.Text = "";
+            }
+
+            if (string.IsNullOrEmpty(cmbSexo.Text)
+               || string.IsNullOrWhiteSpace(cmbSexo.Text))
+            {
+                ok = false;
+                errorProvider1.SetError(cmbSexo, "Campo obligatorio");
+                cmbSexo.Text = "";
+            }
+
+            return ok;
+        }
+
+
+        private void QuitarErrorProviderMod()
+        {
+            errorProvider1.SetError(txtNombreMod, "");
+            errorProvider1.SetError(txtApellidoMod, "");
+            errorProvider1.SetError(txtDireccionMod, "");
+            errorProvider1.SetError(txtCorreoElectronicoMod, "");
+            errorProvider1.SetError(txtCargoMod, "");
+            errorProvider1.SetError(cmbSexoMod, "");
+        }
+
+
         private void btnGuardarCambiosMod_Click(object sender, EventArgs e)
         {
             try
@@ -106,7 +300,8 @@ namespace CapaPresentacion
         }
         public void ModificarEmpleado()
         {
-            if (txtNombreMod.Text == "" || txtApellidoMod.Text == "" || txtDireccionMod.Text == "" || txtCedulaMod.Text == "" || txtTelefonoMod.Text == "" || txtCorreoElectronicoMod.Text == "" || txtCargoMod.Text == "" || cmbSexoMod.Text == "")
+            QuitarErrorProviderNuevo();
+            if (!ValidarCamposNuevo())
             {
                 MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
