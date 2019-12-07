@@ -483,7 +483,7 @@ namespace CapaDatos.Poliza
             strcon.Open();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = strcon;
-            cmd.CommandText = "CrearPolizaSeguroEdificaciones";
+            cmd.CommandText = "CrearPolizaEdificaciones";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter parIdCliente = new SqlParameter();

@@ -33,7 +33,7 @@
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.dgvVerPolizas = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbPolizas = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVerPolizas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,14 +42,14 @@
             this.label16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label16.Image = ((System.Drawing.Image)(resources.GetObject("label16.Image")));
             this.label16.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label16.Location = new System.Drawing.Point(167, 73);
+            this.label16.Location = new System.Drawing.Point(99, 61);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(62, 56);
             this.label16.TabIndex = 170;
             // 
             // textBox15
             // 
-            this.textBox15.Location = new System.Drawing.Point(236, 89);
+            this.textBox15.Location = new System.Drawing.Point(168, 77);
             this.textBox15.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(338, 33);
@@ -81,14 +81,20 @@
             this.label1.TabIndex = 172;
             this.label1.Text = "Buscar Polizas de Seguros";
             // 
-            // comboBox1
+            // cmbPolizas
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(581, 89);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(209, 32);
-            this.comboBox1.TabIndex = 173;
+            this.cmbPolizas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPolizas.FormattingEnabled = true;
+            this.cmbPolizas.Items.AddRange(new object[] {
+            "Vida",
+            "Vehiculo",
+            "Negocios e Empresas",
+            "Muebles e Inmuebles"});
+            this.cmbPolizas.Location = new System.Drawing.Point(513, 77);
+            this.cmbPolizas.Name = "cmbPolizas";
+            this.cmbPolizas.Size = new System.Drawing.Size(297, 32);
+            this.cmbPolizas.TabIndex = 188;
+            this.cmbPolizas.SelectedIndexChanged += new System.EventHandler(this.cmbPolizas_SelectedIndexChanged);
             // 
             // frmVerPolizas
             // 
@@ -96,7 +102,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(899, 521);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbPolizas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.textBox15);
@@ -118,6 +124,6 @@
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.DataGridView dgvVerPolizas;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbPolizas;
     }
 }
