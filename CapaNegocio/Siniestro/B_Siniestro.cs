@@ -30,5 +30,10 @@ namespace CapaNegocio.Siniestro
         {
             return D_Siniestro.CargarPolizasDeSeguros();
         }
+
+        public DataTable B_CargarPolizasDeSegurosDev(E_Siniestro eSin)
+        {
+            return D_Siniestro.CargarPolizasActivasDev(eSin);
+        }
     }
 }

@@ -194,5 +194,12 @@ namespace CapaPresentacion
             c.MdiParent = this;
             c.Show();
         }
+
+        private void confirmaciónSolicitudToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConfirmacionSolicitud cs = new frmConfirmacionSolicitud();
+            cs.MdiParent = this;
+            cs.Show();
+        }
     }
 }

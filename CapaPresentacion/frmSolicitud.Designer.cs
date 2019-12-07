@@ -2258,7 +2258,7 @@
             this.pnlBuscarCliente.Controls.Add(this.label5);
             this.pnlBuscarCliente.Location = new System.Drawing.Point(21, 100);
             this.pnlBuscarCliente.Name = "pnlBuscarCliente";
-            this.pnlBuscarCliente.Size = new System.Drawing.Size(123, 589);
+            this.pnlBuscarCliente.Size = new System.Drawing.Size(454, 589);
             this.pnlBuscarCliente.TabIndex = 123;
             this.pnlBuscarCliente.Visible = false;
             // 
@@ -2310,7 +2310,7 @@
             this.dgvBuscarClientes.Location = new System.Drawing.Point(0, 93);
             this.dgvBuscarClientes.Name = "dgvBuscarClientes";
             this.dgvBuscarClientes.ReadOnly = true;
-            this.dgvBuscarClientes.Size = new System.Drawing.Size(123, 496);
+            this.dgvBuscarClientes.Size = new System.Drawing.Size(454, 496);
             this.dgvBuscarClientes.TabIndex = 0;
             this.dgvBuscarClientes.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBuscarClientes_CellMouseDoubleClick);
             // 
@@ -2675,7 +2675,7 @@
             this.pnlPicImagen.Controls.Add(this.picPreviewImg);
             this.pnlPicImagen.Location = new System.Drawing.Point(21, 100);
             this.pnlPicImagen.Name = "pnlPicImagen";
-            this.pnlPicImagen.Size = new System.Drawing.Size(45, 589);
+            this.pnlPicImagen.Size = new System.Drawing.Size(454, 589);
             this.pnlPicImagen.TabIndex = 108;
             this.pnlPicImagen.Visible = false;
             // 

@@ -93,6 +93,7 @@ namespace CapaPresentacion
         {
             if (cmbTPago.Text == "Al contado")
             {
+                blParcial = false;
                 lblParcial.Visible = false;
                 txtPagoParcial_Renovar.Visible = false;
             }
@@ -229,9 +230,25 @@ namespace CapaPresentacion
 
         private void btnPagar_Renovar_Click(object sender, EventArgs e)
         {
-            RenovarPoliza();
+            switch (cmbSegurosRenovar.Text)
+            {
+                case "Muebles e Inmuebles":
+                    RenovarPolizaInmueble();
+                    break;
+                case "Negocios e Empresas":
+                    RenovarPolizaEmpresaNegocio();
+                    break;
+                case "Vehiculo":
+                    RenovarPolizaVehiculo();
+                    break;
+                case "Vida":
+                    RenovarPolizaVida();
+                    break;
+                default:
+                    break;
+            }
         }
-        public void RenovarPoliza()
+        public void RenovarPolizaVida()
         {
             try
             {
@@ -244,27 +261,147 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                    E_Poliza.IdPoliza = Convert.ToInt32(txtNumPoliza_Renovar.Text);
-                    E_Poliza.IdCliente = idCliente_R;
-                    E_Poliza.IdEmpleado = idEmpleado;
-                    E_Poliza.Poliza = strPoliza();
-                    E_Poliza.Precio = Convert.ToDecimal(txtPrecio_Renovar.Text);
-                    E_Poliza.TPago = Convert.ToDecimal(txtTotalAPagar_Renovar.Text);
-
-                    E_Poliza.Parcial = Parcial(txtPagoParcial_Renovar.Text);
-                    E_Poliza.FechaHora = DateTime.Now;
-                    E_Poliza.Vencimiento = DateTime.Now.Date;
-
-                    if (B_Poliza.B_RenovarPoliza(E_Poliza) >= 2)
+                    if (MessageBox.Show("Está a punto de realizar un pago a la Poliza actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        MessageBox.Show("Todo Correcto");
-                        CargarPolizas();
-                    }
+                        E_Poliza.IdPoliza = Convert.ToInt32(txtNumPoliza_Renovar.Text);
+                        E_Poliza.IdCliente = idCliente_R;
+                        E_Poliza.IdEmpleado = idEmpleado;
+                        E_Poliza.Poliza = strPoliza();
+                        E_Poliza.Precio = Convert.ToDecimal(txtPrecio_Renovar.Text);
+                        E_Poliza.TPago = Convert.ToDecimal(txtTotalAPagar_Renovar.Text);
 
+                        E_Poliza.Parcial = Parcial(txtPagoParcial_Renovar.Text);
+                        E_Poliza.FechaHora = DateTime.Now;
+                        E_Poliza.Vencimiento = DateTime.Now.Date;
+
+                        if (B_Poliza.B_RenovarPoliza(E_Poliza) >= 2)
+                        {
+                            MessageBox.Show("Pago realizado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            CargarPolizas();
+                        }
+                    }
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
+
+        public void RenovarPolizaEmpresaNegocio()
+        {
+            try
+            {
+                if ((string.IsNullOrEmpty(txtCedulaCliente_Renovar.Text) || string.IsNullOrWhiteSpace(txtCedulaCliente_Renovar.Text))
+                    || ((string.IsNullOrEmpty(txtNumPoliza_Renovar.Text) || string.IsNullOrWhiteSpace(txtNumPoliza_Renovar.Text)))
+                    || (string.IsNullOrEmpty(cmbTPago.Text) || string.IsNullOrWhiteSpace(cmbTPago.Text)) || (blParcial == true))
+                {
+                    MessageBox.Show("Seleccione una Poliza de Seguro para preceder a su pago y renovación.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    ValidarCamposPagar();
+                }
+                else
+                {
+                    if (MessageBox.Show("Está a punto de realizar un pago a la Poliza actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        E_Poliza.IdPoliza = Convert.ToInt32(txtNumPoliza_Renovar.Text);
+                        E_Poliza.IdCliente = idCliente_R;
+                        E_Poliza.IdEmpleado = idEmpleado;
+                        E_Poliza.Poliza = strPoliza();
+                        E_Poliza.Precio = Convert.ToDecimal(txtPrecio_Renovar.Text);
+                        E_Poliza.TPago = Convert.ToDecimal(txtTotalAPagar_Renovar.Text);
+
+                        E_Poliza.Parcial = Parcial(txtPagoParcial_Renovar.Text);
+                        E_Poliza.FechaHora = DateTime.Now;
+                        E_Poliza.Vencimiento = DateTime.Now.Date;
+
+                        if (B_Poliza.B_RenovarPolizaEmpresaNegocio(E_Poliza) >= 2)
+                        {
+                            MessageBox.Show("Pago realizado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            CargarPolizas();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        public void RenovarPolizaVehiculo()
+        {
+            try
+            {
+                if ((string.IsNullOrEmpty(txtCedulaCliente_Renovar.Text) || string.IsNullOrWhiteSpace(txtCedulaCliente_Renovar.Text))
+                    || ((string.IsNullOrEmpty(txtNumPoliza_Renovar.Text) || string.IsNullOrWhiteSpace(txtNumPoliza_Renovar.Text)))
+                    || (string.IsNullOrEmpty(cmbTPago.Text) || string.IsNullOrWhiteSpace(cmbTPago.Text)) || (blParcial == true))
+                {
+                    MessageBox.Show("Seleccione una Poliza de Seguro para preceder a su pago y renovación.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    ValidarCamposPagar();
+                }
+                else
+                {
+                    if (MessageBox.Show("Está a punto de realizar un pago a la Poliza actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        E_Poliza.IdPoliza = Convert.ToInt32(txtNumPoliza_Renovar.Text);
+                        E_Poliza.IdCliente = idCliente_R;
+                        E_Poliza.IdEmpleado = idEmpleado;
+                        E_Poliza.Poliza = strPoliza();
+                        E_Poliza.Precio = Convert.ToDecimal(txtPrecio_Renovar.Text);
+                        E_Poliza.TPago = Convert.ToDecimal(txtTotalAPagar_Renovar.Text);
+
+                        E_Poliza.Parcial = Parcial(txtPagoParcial_Renovar.Text);
+                        E_Poliza.FechaHora = DateTime.Now;
+                        E_Poliza.Vencimiento = DateTime.Now.Date;
+
+                        if (B_Poliza.B_RenovarPolizaVehiculo(E_Poliza) >= 2)
+                        {
+                            MessageBox.Show("Pago realizado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            CargarPolizas();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        public void RenovarPolizaInmueble()
+        {
+            try
+            {
+                if ((string.IsNullOrEmpty(txtCedulaCliente_Renovar.Text) || string.IsNullOrWhiteSpace(txtCedulaCliente_Renovar.Text))
+                    || ((string.IsNullOrEmpty(txtNumPoliza_Renovar.Text) || string.IsNullOrWhiteSpace(txtNumPoliza_Renovar.Text)))
+                    || (string.IsNullOrEmpty(cmbTPago.Text) || string.IsNullOrWhiteSpace(cmbTPago.Text)) || (blParcial == true))
+                {
+                    MessageBox.Show("Seleccione una Poliza de Seguro para preceder a su pago y renovación.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    ValidarCamposPagar();
+                }
+                else
+                {
+                    if (MessageBox.Show("Está a punto de realizar un pago a la Poliza actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        E_Poliza.IdPoliza = Convert.ToInt32(txtNumPoliza_Renovar.Text);
+                        E_Poliza.IdCliente = idCliente_R;
+                        E_Poliza.IdEmpleado = idEmpleado;
+                        E_Poliza.Poliza = strPoliza();
+                        E_Poliza.Precio = Convert.ToDecimal(txtPrecio_Renovar.Text);
+                        E_Poliza.TPago = Convert.ToDecimal(txtTotalAPagar_Renovar.Text);
+
+                        E_Poliza.Parcial = Parcial(txtPagoParcial_Renovar.Text);
+                        E_Poliza.FechaHora = DateTime.Now;
+                        E_Poliza.Vencimiento = DateTime.Now.Date;
+
+                        if (B_Poliza.B_RenovarPolizaInmuebles(E_Poliza) >= 2)
+                        {
+                            MessageBox.Show("Pago realizado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            CargarPolizas();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+
+
+
+
+
+
         public string strPoliza()
         {
             return Poliza = " Le mostramos a continuación, a modo de ejemplo, una poliza de Seguro de Vida Individual, incluyendo las Condiciones Generales y Especiales."
@@ -369,11 +506,24 @@ namespace CapaPresentacion
                         E_Poliza.FechaHora = DateTime.Now;
                         E_Poliza.Nota = txtNota_Cancelar.Text;
 
-                        if (B_Poliza.B_CancelarPoliza(E_Poliza) == 1)
+                        switch (cmbPolizasC.Text)
                         {
-                            MessageBox.Show("Se ha Cancelado la Poliza Correctamente", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            CargarPolizas();
+                            case "Vida":
+                                CancelarPolizaVida();
+                                break;
+                            case "Muebles e Inmuebles":
+                                CancelarPolizaInmuebles();
+                                break;
+                            case "Negocios e Empresas":
+                                CancelarPolizaEmpresaNegocio();
+                                break;
+                            case "Vehiculo":
+                                CancelarPolizaVehiculo();
+                                break;
+                            default:
+                                break;
                         }
+                        CargarPolizas();
                     }
                 }
                 else
@@ -383,6 +533,44 @@ namespace CapaPresentacion
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
+
+        private void CancelarPolizaVida()
+        {
+            if (B_Poliza.B_CancelarPoliza(E_Poliza) >= 1)
+            {
+                MessageBox.Show("Se ha Cancelado la Poliza Correctamente", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarPolizas();
+            }
+        }
+
+        private void CancelarPolizaEmpresaNegocio()
+        {
+            if (B_Poliza.B_CancelarPolizaEmpresaNegocio(E_Poliza) >= 1)
+            {
+                MessageBox.Show("Se ha Cancelado la Poliza Correctamente", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarPolizas();
+            }
+        }
+
+        private void CancelarPolizaVehiculo()
+        {
+            if (B_Poliza.B_CancelarPolizaVehiculo(E_Poliza) >= 1)
+            {
+                MessageBox.Show("Se ha Cancelado la Poliza Correctamente", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarPolizas();
+            }
+        }
+
+        private void CancelarPolizaInmuebles()
+        {
+            if (B_Poliza.B_CancelarPolizaInmuebles(E_Poliza) >= 1)
+            {
+                MessageBox.Show("Se ha Cancelado la Poliza Correctamente", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarPolizas();
+            }
+        }
+
+
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
@@ -470,26 +658,117 @@ namespace CapaPresentacion
         {
             try
             {
-                var row = dgvSolicitudes.CurrentRow;
-
-                dgvSolicitudes.Rows[row.Index].Selected = true;
-                txtNoSolicitud.Text = row.Cells[1].Value.ToString();
-
-                _Categoria = row.Cells[18].Value.ToString();
-                idFactura = row.Cells[2].Value.ToString();
-
-                Precio = Convert.ToDecimal(row.Cells[14].Value.ToString());
-                T_Pago = row.Cells[15].Value.ToString();
-                PagoParcial = Convert.ToDecimal(row.Cells[16].Value.ToString());
-                Descuento = Convert.ToDecimal(row.Cells[17].Value.ToString());
-
-                idProductoSeguro = Convert.ToInt32(row.Cells[13].Value.ToString());
-
-                IdCliente_N = Convert.ToInt32(row.Cells[0].Value.ToString());
-                CargarSeguro();
+                switch (cmbSeguros.Text)
+                {
+                    case "Seguro Contenido":
+                        LeerFilaContenido();
+                        break;
+                    case "Seguro Edificaciones":
+                        LeerFilaEdificaciones();
+                        break;
+                    case "Seguro para Empresas y Negocios":
+                        LeerFilaEmpresasNegocios();
+                        break;
+                    case "Seguro a Todo Riesgo":
+                        LeerFilaVehiculo();
+                        break;
+                    case "Seguro Obligatorio":
+                        LeerFilaVehiculo();
+                        break;
+                    case "Seguro Voluntario":
+                        LeerFilaVehiculo();
+                        break;
+                    default:
+                        break;
+                }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
+
+        private void LeerFilaContenido()
+        {
+            var row = dgvSolicitudes.CurrentRow;
+
+            dgvSolicitudes.Rows[row.Index].Selected = true;
+            txtNoSolicitud.Text = row.Cells[1].Value.ToString();
+
+            _Categoria = row.Cells[20].Value.ToString();
+            idFactura = row.Cells[2].Value.ToString();
+
+            Precio = Convert.ToDecimal(row.Cells[16].Value.ToString());
+            T_Pago = row.Cells[17].Value.ToString();
+            PagoParcial = Convert.ToDecimal(row.Cells[18].Value.ToString());
+            Descuento = Convert.ToDecimal(row.Cells[19].Value.ToString());
+
+            idProductoSeguro = Convert.ToInt32(row.Cells[15].Value.ToString());
+
+            IdCliente_N = Convert.ToInt32(row.Cells[0].Value.ToString());
+            CargarSeguro();
+        }
+
+        private void LeerFilaEdificaciones()
+        {
+            var row = dgvSolicitudes.CurrentRow;
+
+            dgvSolicitudes.Rows[row.Index].Selected = true;
+            txtNoSolicitud.Text = row.Cells[1].Value.ToString();
+
+            _Categoria = row.Cells[20].Value.ToString();
+            idFactura = row.Cells[2].Value.ToString();
+
+            Precio = Convert.ToDecimal(row.Cells[16].Value.ToString());
+            T_Pago = row.Cells[17].Value.ToString();
+            PagoParcial = Convert.ToDecimal(row.Cells[18].Value.ToString());
+            Descuento = Convert.ToDecimal(row.Cells[19].Value.ToString());
+
+            idProductoSeguro = Convert.ToInt32(row.Cells[15].Value.ToString());
+
+            IdCliente_N = Convert.ToInt32(row.Cells[0].Value.ToString());//
+            CargarSeguro();
+        }
+
+        private void LeerFilaEmpresasNegocios()
+        {
+            var row = dgvSolicitudes.CurrentRow;
+
+            dgvSolicitudes.Rows[row.Index].Selected = true;
+            txtNoSolicitud.Text = row.Cells[1].Value.ToString();
+
+            _Categoria = row.Cells[15].Value.ToString();
+            idFactura = row.Cells[2].Value.ToString();
+
+            Precio = Convert.ToDecimal(row.Cells[11].Value.ToString());
+            T_Pago = row.Cells[12].Value.ToString();
+            PagoParcial = Convert.ToDecimal(row.Cells[13].Value.ToString());
+            Descuento = Convert.ToDecimal(row.Cells[14].Value.ToString());
+
+            idProductoSeguro = Convert.ToInt32(row.Cells[10].Value.ToString());
+
+            IdCliente_N = Convert.ToInt32(row.Cells[0].Value.ToString());//
+            CargarSeguro();
+        }
+
+        private void LeerFilaVehiculo()
+        {
+            var row = dgvSolicitudes.CurrentRow;
+
+            dgvSolicitudes.Rows[row.Index].Selected = true;
+            txtNoSolicitud.Text = row.Cells[1].Value.ToString();
+
+            _Categoria = row.Cells[18].Value.ToString();
+            idFactura = row.Cells[2].Value.ToString();
+
+            Precio = Convert.ToDecimal(row.Cells[14].Value.ToString());
+            T_Pago = row.Cells[15].Value.ToString();
+            PagoParcial = Convert.ToDecimal(row.Cells[16].Value.ToString());
+            Descuento = Convert.ToDecimal(row.Cells[17].Value.ToString());
+
+            idProductoSeguro = Convert.ToInt32(row.Cells[13].Value.ToString());
+
+            IdCliente_N = Convert.ToInt32(row.Cells[0].Value.ToString());//
+            CargarSeguro();
+        }
+
         private void SolicitudCliente()
         {
             if (!txtCliente.Text.Equals(""))
@@ -534,7 +813,7 @@ namespace CapaPresentacion
 
                 ReFac.txtCliente.Text = txtCliente.Text;
 
-                ReFac.txtTotalA_Pagar.Text = totalA_pagar().ToString();
+                ReFac.txtTotalA_Pagar.Text = Precio.ToString();
                 ReFac.txtSeguroA_Adquirir.Text = cmbSeguros.Text;
 
                 if (Area == "Vehiculo")
@@ -564,6 +843,12 @@ namespace CapaPresentacion
                 ReFac.gbxDescontar.Visible = false;
                 ReFac.cmbTipoPago.Visible = false;
                 ReFac.lbltipodePago.Visible = false;
+
+                ReFac.lblCodigo.Visible = false;
+                ReFac.txtCodigo.Visible = false;
+
+                ReFac.lblDescuento.Visible = false;
+                ReFac.txtDescuento.Visible = false;
 
                 ReFac.formValue = false;
                 ReFac.ShowDialog();

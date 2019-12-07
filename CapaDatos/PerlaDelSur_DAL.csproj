@@ -46,6 +46,7 @@
     <Compile Include="Conexion\Conexion.cs" />
     <Compile Include="ConfirmacionSolicitud\D_ConfirmacionSolicitud.cs" />
     <Compile Include="Consultas\D_Consultas.cs" />
+    <Compile Include="Devoluciones\D_Devoluciones.cs" />
     <Compile Include="Empleados\D_Empleados.cs" />
     <Compile Include="Poliza\D_Poliza.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

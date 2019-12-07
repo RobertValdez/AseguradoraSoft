@@ -50,6 +50,7 @@ namespace CapaDatos.Siniestro
             return strPolizas;
         }
 
+
         public int GuardarSiniestro(E_Siniestro eSin)
         {
             SqlConnection strcon = new SqlConnection();
@@ -125,6 +126,29 @@ namespace CapaDatos.Siniestro
             strcon.Close();
             
             return strPolizas;
+        }
+
+        public DataTable CargarPolizasActivasDev(E_Siniestro eSin)
+        {
+            SqlConnection strcon = new SqlConnection();
+            strcon.ConnectionString = Conexion.Conexion.SqlConex;
+            strcon.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = strcon;
+            cmd.CommandText = "CargarPolizasActivasDev";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter parId_Cliente = new SqlParameter();
+            parId_Cliente.ParameterName = "@IdCliente";
+            parId_Cliente.SqlDbType = SqlDbType.Int;
+            parId_Cliente.Value = eSin.IdCliente;
+            cmd.Parameters.Add(parId_Cliente);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            strcon.Close();
+            return dt;
         }
     }
 }

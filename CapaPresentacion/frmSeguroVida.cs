@@ -42,7 +42,7 @@ namespace CapaPresentacion
         private void btnRiesgoMuerte_Click(object sender, EventArgs e)
         {
             _DescrepcionValue = false;
-            if (!cancelarDescripcionSeguros())
+            if (!cancelarDescripcionSeguros(lblSeguroRiesgoMuerte.Text))
             {
                 pnlVidaRiesgoMuerte.Visible = true;
             }
@@ -51,7 +51,7 @@ namespace CapaPresentacion
         private void btnRiesgosLaborales_Click(object sender, EventArgs e)
         {
             _DescrepcionValue = false;
-            if (!cancelarDescripcionSeguros())
+            if (!cancelarDescripcionSeguros(lblSeguroRiesgosLaborales.Text))
             {
                 pnlVidaRiesgosLaborales.Visible = true;
             }
@@ -60,7 +60,7 @@ namespace CapaPresentacion
         private void btnSeguroSalud_Click(object sender, EventArgs e)
         {
             _DescrepcionValue = false;
-            if (!cancelarDescripcionSeguros())
+            if (!cancelarDescripcionSeguros(lblSeguroSalud.Text))
             {
                 DataView dv = new DataView(dtPolizaDeSeguros);
 
@@ -76,7 +76,7 @@ namespace CapaPresentacion
         private void btnDependientes_Click(object sender, EventArgs e)
         {
             _DescrepcionValue = false;
-            if (!cancelarDescripcionSeguros())
+            if (!cancelarDescripcionSeguros(lblSeguroDependientesSalud.Text))
             {
                 pnlVidaSaludDependientes.Visible = true;
             }
@@ -282,10 +282,25 @@ namespace CapaPresentacion
             _Categoria = Categoria;
         }
 
-        public bool cancelarDescripcionSeguros()
+        private string LlenarDescripcion()
+        {
+            DataView dv = new DataView(dtPolizaDeSeguros);
+
+            dv.RowFilter = "[Nombre del Seguro] = 'Seguro Voluntario'";
+
+
+            return (string)dv[0]["Descripcion"];
+        }
+
+        public bool cancelarDescripcionSeguros(string nombreSeguro)
         {
             bool value = false;
             frmDescripcionSeguros frm = new frmDescripcionSeguros();
+
+            frm.lblSeguro.Text = nombreSeguro;
+            frm.txtDescripcion.Text = LlenarDescripcion();
+
+
             frm.ShowDialog();
 
             if (_DescrepcionValue.Equals(true))

@@ -39,19 +39,22 @@
             this.label13 = new System.Windows.Forms.Label();
             this.lblDevoluciones = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCedula = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.txtADevolver = new System.Windows.Forms.TextBox();
+            this.txtMotivo = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtidPoliza = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbPolizasC = new System.Windows.Forms.ComboBox();
             this.pnlBuscarClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscarClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlBuscarClientes
@@ -62,7 +65,7 @@
             this.pnlBuscarClientes.Controls.Add(this.label6);
             this.pnlBuscarClientes.Location = new System.Drawing.Point(12, 56);
             this.pnlBuscarClientes.Name = "pnlBuscarClientes";
-            this.pnlBuscarClientes.Size = new System.Drawing.Size(715, 461);
+            this.pnlBuscarClientes.Size = new System.Drawing.Size(714, 461);
             this.pnlBuscarClientes.TabIndex = 24;
             this.pnlBuscarClientes.Visible = false;
             // 
@@ -72,7 +75,7 @@
             this.lblCerrar.AutoSize = true;
             this.lblCerrar.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblCerrar.Font = new System.Drawing.Font("Century Gothic", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCerrar.Location = new System.Drawing.Point(676, 2);
+            this.lblCerrar.Location = new System.Drawing.Point(675, 2);
             this.lblCerrar.Name = "lblCerrar";
             this.lblCerrar.Size = new System.Drawing.Size(35, 36);
             this.lblCerrar.TabIndex = 16;
@@ -83,14 +86,17 @@
             // 
             this.dgvBuscarClientes.AllowUserToAddRows = false;
             this.dgvBuscarClientes.AllowUserToDeleteRows = false;
+            this.dgvBuscarClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvBuscarClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvBuscarClientes.BackgroundColor = System.Drawing.Color.LightPink;
             this.dgvBuscarClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBuscarClientes.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvBuscarClientes.Location = new System.Drawing.Point(0, 81);
             this.dgvBuscarClientes.Name = "dgvBuscarClientes";
             this.dgvBuscarClientes.ReadOnly = true;
-            this.dgvBuscarClientes.Size = new System.Drawing.Size(715, 380);
+            this.dgvBuscarClientes.Size = new System.Drawing.Size(714, 380);
             this.dgvBuscarClientes.TabIndex = 0;
+            this.dgvBuscarClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscarClientes_CellDoubleClick);
             // 
             // textBox7
             // 
@@ -175,15 +181,15 @@
             this.label4.TabIndex = 27;
             this.label4.Text = "Cédula del Cliente:";
             // 
-            // textBox3
+            // txtCedula
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(412, 117);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(314, 33);
-            this.textBox3.TabIndex = 25;
+            this.txtCedula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCedula.Location = new System.Drawing.Point(412, 117);
+            this.txtCedula.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.ReadOnly = true;
+            this.txtCedula.Size = new System.Drawing.Size(314, 33);
+            this.txtCedula.TabIndex = 25;
             // 
             // label14
             // 
@@ -206,37 +212,40 @@
             this.txtApellido.Size = new System.Drawing.Size(295, 33);
             this.txtApellido.TabIndex = 26;
             // 
-            // dataGridView2
+            // dgvDatos
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.LightPink;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 170);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(714, 347);
-            this.dataGridView2.TabIndex = 33;
+            this.dgvDatos.AllowUserToAddRows = false;
+            this.dgvDatos.AllowUserToDeleteRows = false;
+            this.dgvDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvDatos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvDatos.BackgroundColor = System.Drawing.Color.LightPink;
+            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatos.Location = new System.Drawing.Point(12, 170);
+            this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.ReadOnly = true;
+            this.dgvDatos.Size = new System.Drawing.Size(714, 347);
+            this.dgvDatos.TabIndex = 33;
+            this.dgvDatos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatos_CellDoubleClick);
             // 
-            // textBox1
+            // txtADevolver
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(824, 174);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(223, 33);
-            this.textBox1.TabIndex = 25;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtADevolver.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtADevolver.Location = new System.Drawing.Point(824, 174);
+            this.txtADevolver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtADevolver.Name = "txtADevolver";
+            this.txtADevolver.Size = new System.Drawing.Size(223, 33);
+            this.txtADevolver.TabIndex = 25;
+            this.txtADevolver.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox2
+            // txtMotivo
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(734, 242);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(314, 205);
-            this.textBox2.TabIndex = 25;
+            this.txtMotivo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMotivo.Location = new System.Drawing.Point(734, 242);
+            this.txtMotivo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMotivo.Multiline = true;
+            this.txtMotivo.Name = "txtMotivo";
+            this.txtMotivo.Size = new System.Drawing.Size(314, 205);
+            this.txtMotivo.TabIndex = 25;
             // 
             // btnGuardar
             // 
@@ -252,6 +261,7 @@
             this.btnGuardar.TabIndex = 17;
             this.btnGuardar.Text = "Desembolsar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label1
             // 
@@ -286,25 +296,65 @@
             this.label3.TabIndex = 27;
             this.label3.Text = "RD$";
             // 
+            // txtidPoliza
+            // 
+            this.txtidPoliza.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtidPoliza.Location = new System.Drawing.Point(888, 43);
+            this.txtidPoliza.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtidPoliza.Name = "txtidPoliza";
+            this.txtidPoliza.ReadOnly = true;
+            this.txtidPoliza.Size = new System.Drawing.Size(166, 33);
+            this.txtidPoliza.TabIndex = 25;
+            this.txtidPoliza.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Crimson;
+            this.label5.Location = new System.Drawing.Point(783, 45);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 24);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Id Poliza:";
+            // 
+            // cmbPolizasC
+            // 
+            this.cmbPolizasC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPolizasC.FormattingEnabled = true;
+            this.cmbPolizasC.Items.AddRange(new object[] {
+            "Vida",
+            "Vehiculo",
+            "Negocios e Empresas",
+            "Muebles e Inmuebles"});
+            this.cmbPolizasC.Location = new System.Drawing.Point(751, 90);
+            this.cmbPolizasC.Name = "cmbPolizasC";
+            this.cmbPolizasC.Size = new System.Drawing.Size(297, 32);
+            this.cmbPolizasC.TabIndex = 188;
+            this.cmbPolizasC.SelectedIndexChanged += new System.EventHandler(this.cmbPolizasC_SelectedIndexChanged);
+            // 
             // frmDevoluciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1067, 529);
+            this.Controls.Add(this.cmbPolizasC);
             this.Controls.Add(this.pnlBuscarClientes);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnBuscarCliente);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.lblDevoluciones);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtMotivo);
+            this.Controls.Add(this.txtidPoliza);
+            this.Controls.Add(this.txtADevolver);
+            this.Controls.Add(this.txtCedula);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.btnGuardar);
@@ -318,7 +368,7 @@
             this.pnlBuscarClientes.ResumeLayout(false);
             this.pnlBuscarClientes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscarClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,15 +386,18 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lblDevoluciones;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtApellido;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DataGridView dgvDatos;
+        private System.Windows.Forms.TextBox txtADevolver;
+        private System.Windows.Forms.TextBox txtMotivo;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtidPoliza;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbPolizasC;
     }
 }

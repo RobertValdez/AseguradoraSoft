@@ -43,12 +43,10 @@
             this.dgvBuscarClientes = new System.Windows.Forms.DataGridView();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.cmbSeguros = new System.Windows.Forms.ComboBox();
             this.dgvSolicitudes = new System.Windows.Forms.DataGridView();
             this.btnProcesoPago = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
-            this.txtBuscarDetalles = new System.Windows.Forms.TextBox();
             this.txtNoSolicitud = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.txtCedula = new System.Windows.Forms.TextBox();
@@ -98,6 +96,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtBuscarDetalles = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.pnlPagoPolizas.SuspendLayout();
             this.tabGestionarPolizas.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -198,7 +198,6 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.pnlBuscarCliente);
-            this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.cmbSeguros);
             this.panel3.Controls.Add(this.dgvSolicitudes);
             this.panel3.Controls.Add(this.btnProcesoPago);
@@ -212,6 +211,7 @@
             this.panel3.Controls.Add(this.label17);
             this.panel3.Controls.Add(this.label51);
             this.panel3.Controls.Add(this.label42);
+            this.panel3.Controls.Add(this.label14);
             this.panel3.Location = new System.Drawing.Point(6, 1);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1143, 513);
@@ -304,16 +304,6 @@
             this.label16.TabIndex = 0;
             this.label16.Text = "Buscar Cliente";
             // 
-            // label14
-            // 
-            this.label14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label14.Image = ((System.Drawing.Image)(resources.GetObject("label14.Image")));
-            this.label14.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.label14.Location = new System.Drawing.Point(595, 17);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(62, 56);
-            this.label14.TabIndex = 208;
-            // 
             // cmbSeguros
             // 
             this.cmbSeguros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -337,10 +327,10 @@
             this.dgvSolicitudes.AllowUserToDeleteRows = false;
             this.dgvSolicitudes.BackgroundColor = System.Drawing.Color.LightPink;
             this.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSolicitudes.Location = new System.Drawing.Point(495, 82);
+            this.dgvSolicitudes.Location = new System.Drawing.Point(495, 8);
             this.dgvSolicitudes.Name = "dgvSolicitudes";
             this.dgvSolicitudes.ReadOnly = true;
-            this.dgvSolicitudes.Size = new System.Drawing.Size(627, 414);
+            this.dgvSolicitudes.Size = new System.Drawing.Size(627, 488);
             this.dgvSolicitudes.TabIndex = 206;
             this.dgvSolicitudes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSolicitudes_CellClick);
             // 
@@ -370,15 +360,6 @@
             this.label30.Size = new System.Drawing.Size(344, 32);
             this.label30.TabIndex = 185;
             this.label30.Text = "Buscar Solicitud de Póliza";
-            // 
-            // txtBuscarDetalles
-            // 
-            this.txtBuscarDetalles.Location = new System.Drawing.Point(664, 30);
-            this.txtBuscarDetalles.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtBuscarDetalles.Name = "txtBuscarDetalles";
-            this.txtBuscarDetalles.Size = new System.Drawing.Size(317, 33);
-            this.txtBuscarDetalles.TabIndex = 191;
-            this.txtBuscarDetalles.TextChanged += new System.EventHandler(this.txtBuscarDetalles_TextChanged);
             // 
             // txtNoSolicitud
             // 
@@ -941,6 +922,27 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // txtBuscarDetalles
+            // 
+            this.txtBuscarDetalles.Location = new System.Drawing.Point(664, 30);
+            this.txtBuscarDetalles.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtBuscarDetalles.Name = "txtBuscarDetalles";
+            this.txtBuscarDetalles.Size = new System.Drawing.Size(317, 33);
+            this.txtBuscarDetalles.TabIndex = 191;
+            this.txtBuscarDetalles.Visible = false;
+            this.txtBuscarDetalles.TextChanged += new System.EventHandler(this.txtBuscarDetalles_TextChanged);
+            // 
+            // label14
+            // 
+            this.label14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label14.Image = ((System.Drawing.Image)(resources.GetObject("label14.Image")));
+            this.label14.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.label14.Location = new System.Drawing.Point(595, 17);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(62, 56);
+            this.label14.TabIndex = 208;
+            this.label14.Visible = false;
+            // 
             // frmPolizas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -1036,8 +1038,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TextBox txtPagoParcial_Renovar;
         private System.Windows.Forms.ComboBox cmbSeguros;
-        private System.Windows.Forms.TextBox txtBuscarDetalles;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel pnlBuscarCliente;
         private System.Windows.Forms.CheckBox chkSoloId;
         private System.Windows.Forms.Label lblCerrar;
@@ -1047,5 +1047,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox cmbPolizasC;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtBuscarDetalles;
     }
 }

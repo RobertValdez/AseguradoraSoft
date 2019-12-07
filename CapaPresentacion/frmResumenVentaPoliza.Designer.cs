@@ -38,13 +38,13 @@
             this.btnDescontar = new System.Windows.Forms.Button();
             this.txtTotalA_Pagar = new System.Windows.Forms.TextBox();
             this.txtDescuento = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
+            this.lblDescuento = new System.Windows.Forms.Label();
             this.txtSubTotal = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.lbltipodePago = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
+            this.lblCodigo = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -186,16 +186,16 @@
             this.txtDescuento.TabIndex = 246;
             this.txtDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // label28
+            // lblDescuento
             // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(688, 438);
-            this.label28.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(126, 25);
-            this.label28.TabIndex = 240;
-            this.label28.Text = "Descuento:";
+            this.lblDescuento.AutoSize = true;
+            this.lblDescuento.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescuento.Location = new System.Drawing.Point(688, 438);
+            this.lblDescuento.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblDescuento.Name = "lblDescuento";
+            this.lblDescuento.Size = new System.Drawing.Size(126, 25);
+            this.lblDescuento.TabIndex = 240;
+            this.lblDescuento.Text = "Descuento:";
             // 
             // txtSubTotal
             // 
@@ -250,15 +250,15 @@
             this.label23.TabIndex = 243;
             this.label23.Text = "Total a pagar:";
             // 
-            // label29
+            // lblCodigo
             // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(618, 30);
-            this.label29.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(91, 24);
-            this.label29.TabIndex = 244;
-            this.label29.Text = "Código:";
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(618, 30);
+            this.lblCodigo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(91, 24);
+            this.lblCodigo.TabIndex = 244;
+            this.lblCodigo.Text = "Código:";
             // 
             // label30
             // 
@@ -539,13 +539,13 @@
             this.Controls.Add(this.cmbTipoPago);
             this.Controls.Add(this.txtTotalA_Pagar);
             this.Controls.Add(this.txtDescuento);
-            this.Controls.Add(this.label28);
+            this.Controls.Add(this.lblDescuento);
             this.Controls.Add(this.txtSubTotal);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.lbltipodePago);
             this.Controls.Add(this.label23);
-            this.Controls.Add(this.label29);
+            this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.label30);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
@@ -571,10 +571,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnPagarCrearPoliza;
-        private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
@@ -606,5 +604,7 @@
         public System.Windows.Forms.Label lblParcial;
         public System.Windows.Forms.ComboBox cmbTipoPago;
         public System.Windows.Forms.TextBox txtDescuento;
+        public System.Windows.Forms.Label lblDescuento;
+        public System.Windows.Forms.Label lblCodigo;
     }
 }

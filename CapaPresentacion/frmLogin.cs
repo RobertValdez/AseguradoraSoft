@@ -55,7 +55,9 @@ namespace CapaPresentacion
 
             try
             {
-                if (txtUsuario.Text != "" && txtContrasena.Text != "")
+                errorProvider1.SetError(txtUsuario, "");
+                errorProvider1.SetError(txtContrasena, "");
+                if (!string.IsNullOrEmpty(txtUsuario.Text) || !string.IsNullOrWhiteSpace(txtContrasena.Text))
                 {
                     E_Usuarios.NombreUsuario = txtUsuario.Text;
                     E_Usuarios.Contrasena = txtContrasena.Text;
@@ -75,6 +77,11 @@ namespace CapaPresentacion
                         txtContrasena.Text = "";
                         txtUsuario.Focus();
                     }
+                }
+               else
+                {
+                    errorProvider1.SetError(txtUsuario, "Complete los campos faltantes");
+                    errorProvider1.SetError(txtContrasena, "Complete los campos faltantes");
                 }
             }catch(Exception ex) { MessageBox.Show(ex.Message); }
 

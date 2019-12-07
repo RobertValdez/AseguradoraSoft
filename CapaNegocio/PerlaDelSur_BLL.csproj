@@ -45,6 +45,7 @@
     <Compile Include="Clientes\B_Clientes.cs" />
     <Compile Include="ConfirmacionSolicitud\B_ConfirmacionSolicitud.cs" />
     <Compile Include="Consultas\B_Consultas.cs" />
+    <Compile Include="Devoluciones\B_Devoluciones.cs" />
     <Compile Include="Empleados\B_Empleados.cs" />
     <Compile Include="Poliza\B_Poliza.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -23,6 +23,36 @@ namespace CapaNegocio.Poliza
             return D_Poliza.CancelarPoliza(ePol);
         }
 
+        public int B_RenovarPolizaEmpresaNegocio(E_Poliza ePol)
+        {
+            return D_Poliza.RenovarPolizaEmpresaNegocio(ePol);
+        }
+        public int B_CancelarPolizaEmpresaNegocio(E_Poliza ePol)
+        {
+            return D_Poliza.CancelarPolizaEmpresaNegocio(ePol);
+        }
+
+        public int B_RenovarPolizaVehiculo(E_Poliza ePol)
+        {
+            return D_Poliza.RenovarPolizaVehiculo(ePol);
+        }
+        public int B_CancelarPolizaVehiculo(E_Poliza ePol)
+        {
+            return D_Poliza.CancelarPolizaVehiculo(ePol);
+        }
+
+        public int B_RenovarPolizaInmuebles(E_Poliza ePol)
+        {
+            return D_Poliza.RenovarPolizaInmuebles(ePol);
+        }
+        public int B_CancelarPolizaInmuebles(E_Poliza ePol)
+        {
+            return D_Poliza.CancelarPolizaInmuebles(ePol);
+        }
+
+
+
+
 
         public DataTable B_MostrarSeguroContenido()
         {

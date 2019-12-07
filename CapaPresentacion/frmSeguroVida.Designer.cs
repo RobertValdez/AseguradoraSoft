@@ -37,7 +37,7 @@
             this.label86 = new System.Windows.Forms.Label();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.lblCerrarRiesgoMuerte = new System.Windows.Forms.Label();
-            this.label104 = new System.Windows.Forms.Label();
+            this.lblSeguroRiesgoMuerte = new System.Windows.Forms.Label();
             this.pnlVidaSalud = new System.Windows.Forms.Panel();
             this.btnSIGUIENTEpnlVidaSalud = new System.Windows.Forms.Button();
             this.lblCerrar_pnlVidaSalud = new System.Windows.Forms.Label();
@@ -50,7 +50,7 @@
             this.pnlVidaSaludDependientes = new System.Windows.Forms.Panel();
             this.btnSIGUIENTEpnlVidaSaludDependientes = new System.Windows.Forms.Button();
             this.lblCerrarSDepend = new System.Windows.Forms.Label();
-            this.label113 = new System.Windows.Forms.Label();
+            this.lblSeguroDependientesSalud = new System.Windows.Forms.Label();
             this.label83 = new System.Windows.Forms.Label();
             this.label79 = new System.Windows.Forms.Label();
             this.label82 = new System.Windows.Forms.Label();
@@ -162,7 +162,7 @@
             this.pnlVidaRiesgoMuerte.Controls.Add(this.label86);
             this.pnlVidaRiesgoMuerte.Controls.Add(this.textBox13);
             this.pnlVidaRiesgoMuerte.Controls.Add(this.lblCerrarRiesgoMuerte);
-            this.pnlVidaRiesgoMuerte.Controls.Add(this.label104);
+            this.pnlVidaRiesgoMuerte.Controls.Add(this.lblSeguroRiesgoMuerte);
             this.pnlVidaRiesgoMuerte.Location = new System.Drawing.Point(472, 74);
             this.pnlVidaRiesgoMuerte.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlVidaRiesgoMuerte.Name = "pnlVidaRiesgoMuerte";
@@ -236,17 +236,17 @@
             this.lblCerrarRiesgoMuerte.Text = "X";
             this.lblCerrarRiesgoMuerte.Click += new System.EventHandler(this.lblCerrarRiesgoMuerte_Click);
             // 
-            // label104
+            // lblSeguroRiesgoMuerte
             // 
-            this.label104.AutoSize = true;
-            this.label104.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label104.ForeColor = System.Drawing.Color.Firebrick;
-            this.label104.Location = new System.Drawing.Point(241, 14);
-            this.label104.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(265, 25);
-            this.label104.TabIndex = 0;
-            this.label104.Text = "Seguro Riesgo de Muerte";
+            this.lblSeguroRiesgoMuerte.AutoSize = true;
+            this.lblSeguroRiesgoMuerte.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeguroRiesgoMuerte.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblSeguroRiesgoMuerte.Location = new System.Drawing.Point(241, 14);
+            this.lblSeguroRiesgoMuerte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSeguroRiesgoMuerte.Name = "lblSeguroRiesgoMuerte";
+            this.lblSeguroRiesgoMuerte.Size = new System.Drawing.Size(298, 25);
+            this.lblSeguroRiesgoMuerte.TabIndex = 0;
+            this.lblSeguroRiesgoMuerte.Text = "Seguro de Riesgo de Muerte";
             // 
             // pnlVidaSalud
             // 
@@ -263,7 +263,7 @@
             this.pnlVidaSalud.Location = new System.Drawing.Point(473, 76);
             this.pnlVidaSalud.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlVidaSalud.Name = "pnlVidaSalud";
-            this.pnlVidaSalud.Size = new System.Drawing.Size(841, 335);
+            this.pnlVidaSalud.Size = new System.Drawing.Size(840, 335);
             this.pnlVidaSalud.TabIndex = 8;
             this.pnlVidaSalud.Visible = false;
             // 
@@ -297,15 +297,16 @@
             // 
             // txtAntecedentesPersonales
             // 
-            this.txtAntecedentesPersonales.Location = new System.Drawing.Point(20, 134);
+            this.txtAntecedentesPersonales.Location = new System.Drawing.Point(18, 196);
             this.txtAntecedentesPersonales.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtAntecedentesPersonales.Multiline = true;
             this.txtAntecedentesPersonales.Name = "txtAntecedentesPersonales";
-            this.txtAntecedentesPersonales.Size = new System.Drawing.Size(300, 33);
+            this.txtAntecedentesPersonales.Size = new System.Drawing.Size(565, 112);
             this.txtAntecedentesPersonales.TabIndex = 4;
             // 
             // txtInstitutoDondeLabora
             // 
-            this.txtInstitutoDondeLabora.Location = new System.Drawing.Point(19, 211);
+            this.txtInstitutoDondeLabora.Location = new System.Drawing.Point(18, 127);
             this.txtInstitutoDondeLabora.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtInstitutoDondeLabora.Name = "txtInstitutoDondeLabora";
             this.txtInstitutoDondeLabora.Size = new System.Drawing.Size(301, 33);
@@ -315,7 +316,7 @@
             // 
             this.label89.AutoSize = true;
             this.label89.ForeColor = System.Drawing.Color.Firebrick;
-            this.label89.Location = new System.Drawing.Point(20, 107);
+            this.label89.Location = new System.Drawing.Point(18, 169);
             this.label89.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(278, 24);
@@ -326,7 +327,7 @@
             // 
             this.label90.AutoSize = true;
             this.label90.ForeColor = System.Drawing.Color.Firebrick;
-            this.label90.Location = new System.Drawing.Point(20, 183);
+            this.label90.Location = new System.Drawing.Point(19, 99);
             this.label90.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label90.Name = "label90";
             this.label90.Size = new System.Drawing.Size(245, 24);
@@ -353,9 +354,9 @@
             this.lblSeguroSalud.Location = new System.Drawing.Point(298, 9);
             this.lblSeguroSalud.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSeguroSalud.Name = "lblSeguroSalud";
-            this.lblSeguroSalud.Size = new System.Drawing.Size(255, 28);
+            this.lblSeguroSalud.Size = new System.Drawing.Size(201, 28);
             this.lblSeguroSalud.TabIndex = 0;
-            this.lblSeguroSalud.Text = "Seguro para la Salud";
+            this.lblSeguroSalud.Text = "Seguro de Salud";
             // 
             // pnlVidaSaludDependientes
             // 
@@ -363,7 +364,7 @@
             this.pnlVidaSaludDependientes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlVidaSaludDependientes.Controls.Add(this.btnSIGUIENTEpnlVidaSaludDependientes);
             this.pnlVidaSaludDependientes.Controls.Add(this.lblCerrarSDepend);
-            this.pnlVidaSaludDependientes.Controls.Add(this.label113);
+            this.pnlVidaSaludDependientes.Controls.Add(this.lblSeguroDependientesSalud);
             this.pnlVidaSaludDependientes.Controls.Add(this.label83);
             this.pnlVidaSaludDependientes.Controls.Add(this.label79);
             this.pnlVidaSaludDependientes.Controls.Add(this.label82);
@@ -383,7 +384,7 @@
             this.pnlVidaSaludDependientes.Location = new System.Drawing.Point(473, 75);
             this.pnlVidaSaludDependientes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlVidaSaludDependientes.Name = "pnlVidaSaludDependientes";
-            this.pnlVidaSaludDependientes.Size = new System.Drawing.Size(840, 605);
+            this.pnlVidaSaludDependientes.Size = new System.Drawing.Size(841, 605);
             this.pnlVidaSaludDependientes.TabIndex = 9;
             this.pnlVidaSaludDependientes.Visible = false;
             // 
@@ -414,16 +415,17 @@
             this.lblCerrarSDepend.Text = "X";
             this.lblCerrarSDepend.Click += new System.EventHandler(this.lblCerrarSDepend_Click);
             // 
-            // label113
+            // lblSeguroDependientesSalud
             // 
-            this.label113.AutoSize = true;
-            this.label113.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label113.Location = new System.Drawing.Point(34, 10);
-            this.label113.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label113.Name = "label113";
-            this.label113.Size = new System.Drawing.Size(254, 23);
-            this.label113.TabIndex = 0;
-            this.label113.Text = "SeguroDependientesSalud";
+            this.lblSeguroDependientesSalud.AutoSize = true;
+            this.lblSeguroDependientesSalud.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeguroDependientesSalud.ForeColor = System.Drawing.Color.Crimson;
+            this.lblSeguroDependientesSalud.Location = new System.Drawing.Point(165, 10);
+            this.lblSeguroDependientesSalud.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSeguroDependientesSalud.Name = "lblSeguroDependientesSalud";
+            this.lblSeguroDependientesSalud.Size = new System.Drawing.Size(418, 32);
+            this.lblSeguroDependientesSalud.TabIndex = 0;
+            this.lblSeguroDependientesSalud.Text = "Seguro Dependientes de Salud";
             // 
             // label83
             // 
@@ -1503,7 +1505,7 @@
         private System.Windows.Forms.Label label86;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.Label lblCerrarRiesgoMuerte;
-        private System.Windows.Forms.Label label104;
+        private System.Windows.Forms.Label lblSeguroRiesgoMuerte;
         private System.Windows.Forms.Panel pnlVidaSalud;
         private System.Windows.Forms.Button btnSIGUIENTEpnlVidaSalud;
         private System.Windows.Forms.Label lblCerrar_pnlVidaSalud;
@@ -1516,7 +1518,7 @@
         private System.Windows.Forms.Panel pnlVidaSaludDependientes;
         private System.Windows.Forms.Button btnSIGUIENTEpnlVidaSaludDependientes;
         private System.Windows.Forms.Label lblCerrarSDepend;
-        private System.Windows.Forms.Label label113;
+        private System.Windows.Forms.Label lblSeguroDependientesSalud;
         private System.Windows.Forms.Label label83;
         private System.Windows.Forms.Label label79;
         private System.Windows.Forms.Label label82;
