@@ -52,7 +52,7 @@
             this.textBox15.Location = new System.Drawing.Point(168, 77);
             this.textBox15.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(338, 33);
+            this.textBox15.Size = new System.Drawing.Size(500, 33);
             this.textBox15.TabIndex = 169;
             // 
             // dgvVerPolizas
@@ -94,6 +94,7 @@
             this.cmbPolizas.Name = "cmbPolizas";
             this.cmbPolizas.Size = new System.Drawing.Size(297, 32);
             this.cmbPolizas.TabIndex = 188;
+            this.cmbPolizas.Visible = false;
             this.cmbPolizas.SelectedIndexChanged += new System.EventHandler(this.cmbPolizas_SelectedIndexChanged);
             // 
             // frmVerPolizas
@@ -102,11 +103,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(899, 521);
-            this.Controls.Add(this.cmbPolizas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.textBox15);
             this.Controls.Add(this.dgvVerPolizas);
+            this.Controls.Add(this.cmbPolizas);
             this.Font = new System.Drawing.Font("Century Gothic", 15.75F);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmVerPolizas";

@@ -37,9 +37,9 @@ namespace CapaPresentacion
 
         private void MostrarDetalleVoluntario()
         {
-            dtSeguroContenido = B_ConfirmacionSolicitud.B_MostrarSeguroContenido();
-            dtSeguroEdificaciones = B_ConfirmacionSolicitud.B_MostrarSeguroEdificaciones();
-            dtSeguroEmpresasNegocios = B_ConfirmacionSolicitud.B_MostrarSeguroEmpresaNegocios();
+            //dtSeguroContenido = B_ConfirmacionSolicitud.B_MostrarSeguroContenido();
+            //dtSeguroEdificaciones = B_ConfirmacionSolicitud.B_MostrarSeguroEdificaciones();
+            //dtSeguroEmpresasNegocios = B_ConfirmacionSolicitud.B_MostrarSeguroEmpresaNegocios();
             dtSeguroTodoRiesgo = B_ConfirmacionSolicitud.B_MostrarSeguroTodoRiesgo();
             dtSeguroObligatorio = B_ConfirmacionSolicitud.B_MostrarSeguroSeguroObligatorio();
             dtSeguroVoluntario = B_ConfirmacionSolicitud.B_MostrarSeguroVoluntario();
@@ -106,6 +106,7 @@ namespace CapaPresentacion
                     MessageBox.Show("Confirmación de solicitud aprobada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     MostrarDetalleVoluntario();
+                    cmbSeguros_DropDownClosed_1(null, null);
                 }
             }
         }
@@ -142,6 +143,7 @@ namespace CapaPresentacion
                     MessageBox.Show("Confirmación de solicitud aprobada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     MostrarDetalleVoluntario();
+                    cmbSeguros_DropDownClosed_1(null, null);
                 }
             }
         }
@@ -154,6 +156,7 @@ namespace CapaPresentacion
                     MessageBox.Show("Confirmación de solicitud aprobada satisfactoriamente.", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     MostrarDetalleVoluntario();
+                    cmbSeguros_DropDownClosed_1(null, null);
                 }
             }
         }

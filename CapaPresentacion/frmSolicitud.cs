@@ -75,7 +75,7 @@ namespace CapaPresentacion
 
         private void btnVehiculo_Click(object sender, EventArgs e)
         {
-            pnlVehiculo.Visible = true;
+            //pnlVehiculo.Visible = true;
         }
 
         private void btnSeguroVoluntario_Click(object sender, EventArgs e)
@@ -85,7 +85,7 @@ namespace CapaPresentacion
 
         private void lblCerrarVeh_Click(object sender, EventArgs e)
         {
-            pnlVehiculo.Visible = false;
+            //pnlVehiculo.Visible = false;
         }
 
         private void lblCerrarSV_Click(object sender, EventArgs e)
@@ -95,7 +95,7 @@ namespace CapaPresentacion
 
         private void btnSeguroVoluntario_Click_1(object sender, EventArgs e)
         {
-            pnlVehiculo.Visible = false;
+            //pnlVehiculo.Visible = false;
             _DescrepcionValue = false;
 
             if (!cancelarDescripcionSeguros(lblSeguroVoluntario.Text))
@@ -126,7 +126,7 @@ namespace CapaPresentacion
         {
             try
             {
-                pnlVehiculo.Visible = false;
+                //pnlVehiculo.Visible = false;
                 _DescrepcionValue = false;
 
                 if (!cancelarDescripcionSeguros(lblSeguroObligatorio.Text)) 
@@ -148,7 +148,7 @@ namespace CapaPresentacion
         {
             try
             {
-                pnlVehiculo.Visible = false;
+               // pnlVehiculo.Visible = false;
                 _DescrepcionValue = false;
 
                 if (!cancelarDescripcionSeguros(lblSeguroTodoRiesgo.Text))
@@ -2071,7 +2071,7 @@ namespace CapaPresentacion
 
         private void txtAnoObl_TextChanged(object sender, EventArgs e)
         {
-            txtCilindrosObl.TextChanged += delegate (System.Object o, System.EventArgs r)
+            txtAnoObl.TextChanged += delegate (System.Object o, System.EventArgs r)
              {
                  TextBox _tbox = o as TextBox;
                  _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c))).ToArray());

@@ -64,6 +64,8 @@ namespace CapaPresentacion
                 {
                     BindingSource bs = new BindingSource();
                     bs.DataSource = dgvBuscarClientes.DataSource;
+                    MessageBox.Show(bs.SupportsFiltering + "");
+
                     bs.Filter = "CONVERT(id, 'System.String') like '%" + txtBuscar.Text + "%'";
                     dgvBuscarClientes.DataSource = bs;
                 }

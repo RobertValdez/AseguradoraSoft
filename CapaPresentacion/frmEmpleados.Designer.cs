@@ -37,6 +37,7 @@
             this.cmbSexoMod = new System.Windows.Forms.ComboBox();
             this.txtTelefonoMod = new System.Windows.Forms.MaskedTextBox();
             this.txtCedulaMod = new System.Windows.Forms.MaskedTextBox();
+            this.cmbCargoMod = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.btnGuardarCambiosMod = new System.Windows.Forms.Button();
@@ -62,6 +63,7 @@
             this.mskCedula = new System.Windows.Forms.MaskedTextBox();
             this.mskTelefono = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.cmbCargo = new System.Windows.Forms.ComboBox();
             this.cmbSexo = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -78,9 +80,7 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cmbCargo = new System.Windows.Forms.ComboBox();
             this.aseguradoraBDDataSet = new CapaPresentacion.AseguradoraBDDataSet();
-            this.cmbCargoMod = new System.Windows.Forms.ComboBox();
             this.pnlModificar.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
@@ -189,6 +189,15 @@
             this.txtCedulaMod.Size = new System.Drawing.Size(331, 43);
             this.txtCedulaMod.TabIndex = 21;
             this.txtCedulaMod.Validating += new System.ComponentModel.CancelEventHandler(this.txtCedulaMod_Validating);
+            // 
+            // cmbCargoMod
+            // 
+            this.cmbCargoMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCargoMod.FormattingEnabled = true;
+            this.cmbCargoMod.Location = new System.Drawing.Point(777, 385);
+            this.cmbCargoMod.Name = "cmbCargoMod";
+            this.cmbCargoMod.Size = new System.Drawing.Size(346, 44);
+            this.cmbCargoMod.TabIndex = 0;
             // 
             // label19
             // 
@@ -495,6 +504,15 @@
             this.label3.Text = "Cédula:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // cmbCargo
+            // 
+            this.cmbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCargo.FormattingEnabled = true;
+            this.cmbCargo.Location = new System.Drawing.Point(18, 351);
+            this.cmbCargo.Name = "cmbCargo";
+            this.cmbCargo.Size = new System.Drawing.Size(420, 38);
+            this.cmbCargo.TabIndex = 0;
+            // 
             // cmbSexo
             // 
             this.cmbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -669,28 +687,10 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // cmbCargo
-            // 
-            this.cmbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCargo.FormattingEnabled = true;
-            this.cmbCargo.Location = new System.Drawing.Point(18, 351);
-            this.cmbCargo.Name = "cmbCargo";
-            this.cmbCargo.Size = new System.Drawing.Size(420, 38);
-            this.cmbCargo.TabIndex = 0;
-            // 
             // aseguradoraBDDataSet
             // 
             this.aseguradoraBDDataSet.DataSetName = "AseguradoraBDDataSet";
             this.aseguradoraBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cmbCargoMod
-            // 
-            this.cmbCargoMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCargoMod.FormattingEnabled = true;
-            this.cmbCargoMod.Location = new System.Drawing.Point(777, 385);
-            this.cmbCargoMod.Name = "cmbCargoMod";
-            this.cmbCargoMod.Size = new System.Drawing.Size(346, 44);
-            this.cmbCargoMod.TabIndex = 0;
             // 
             // frmEmpleados
             // 

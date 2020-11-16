@@ -199,9 +199,6 @@
             this.cmbSeguros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSeguros.FormattingEnabled = true;
             this.cmbSeguros.Items.AddRange(new object[] {
-            "Seguro Contenido",
-            "Seguro Edificaciones",
-            "Seguro para Empresas y Negocios",
             "Seguro a Todo Riesgo",
             "Seguro Obligatorio",
             "Seguro Voluntario"});

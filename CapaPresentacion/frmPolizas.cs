@@ -109,8 +109,17 @@ namespace CapaPresentacion
         private void frmPolizas_Load(object sender, EventArgs e)
         {
             CargarPolizas();
+            CargarPolizas_Cancelar();
+
             MostrarClientes();
             CargarDetalles();
+        }
+
+        private void CargarPolizas_Cancelar()
+        {
+            dt_vhPoliza = B_VerPolizas.B_vh_MostrarPolizas();
+            dgvMostrarPoliza_Cancelar.DataSource = dt_vhPoliza;
+            CargarPolizas();
         }
 
         private void CargarDetalles()
@@ -130,10 +139,14 @@ namespace CapaPresentacion
 
         private void CargarPolizas()
         {
-            dt_vdPoliza = B_VerPolizas.B_vd_VerPoliza();
+           // dt_vdPoliza = B_VerPolizas.B_vd_VerPoliza();
+
+            //Poliza de Vehiculo
             dt_vhPoliza = B_VerPolizas.B_vh_MostrarPolizas();
-            dt_inPoliza = B_VerPolizas.B_in_MostrarPolizas();
-            dt_emPoliza = B_VerPolizas.B_em_MostrarPolizas();
+            dgvMostrarPolizas_Renovar.DataSource = dt_vhPoliza;
+
+            //dt_inPoliza = B_VerPolizas.B_in_MostrarPolizas();
+            // dt_emPoliza = B_VerPolizas.B_em_MostrarPolizas();
         }
 
         string Nombre_C = "";
@@ -230,23 +243,25 @@ namespace CapaPresentacion
 
         private void btnPagar_Renovar_Click(object sender, EventArgs e)
         {
-            switch (cmbSegurosRenovar.Text)
-            {
-                case "Muebles e Inmuebles":
-                    RenovarPolizaInmueble();
-                    break;
-                case "Negocios e Empresas":
-                    RenovarPolizaEmpresaNegocio();
-                    break;
-                case "Vehiculo":
-                    RenovarPolizaVehiculo();
-                    break;
-                case "Vida":
-                    RenovarPolizaVida();
-                    break;
-                default:
-                    break;
-            }
+            RenovarPolizaVehiculo();
+
+            //switch (cmbSegurosRenovar.Text)
+            //{
+            //    case "Muebles e Inmuebles":
+            //        RenovarPolizaInmueble();
+            //        break;
+            //    case "Negocios e Empresas":
+            //        RenovarPolizaEmpresaNegocio();
+            //        break;
+            //    case "Vehiculo":
+            //        RenovarPolizaVehiculo();
+            //        break;
+            //    case "Vida":
+            //        RenovarPolizaVida();
+            //        break;
+            //    default:
+            //        break;
+            //}
         }
         public void RenovarPolizaVida()
         {
@@ -278,6 +293,7 @@ namespace CapaPresentacion
                         {
                             MessageBox.Show("Pago realizado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             CargarPolizas();
+                            CargarPolizas_Cancelar();
                         }
                     }
                 }
@@ -506,24 +522,27 @@ namespace CapaPresentacion
                         E_Poliza.FechaHora = DateTime.Now;
                         E_Poliza.Nota = txtNota_Cancelar.Text;
 
-                        switch (cmbPolizasC.Text)
-                        {
-                            case "Vida":
-                                CancelarPolizaVida();
-                                break;
-                            case "Muebles e Inmuebles":
-                                CancelarPolizaInmuebles();
-                                break;
-                            case "Negocios e Empresas":
-                                CancelarPolizaEmpresaNegocio();
-                                break;
-                            case "Vehiculo":
-                                CancelarPolizaVehiculo();
-                                break;
-                            default:
-                                break;
-                        }
-                        CargarPolizas();
+                        CancelarPolizaVehiculo();
+
+
+                        //switch (cmbPolizasC.Text)
+                        //{
+                        //    case "Vida":
+                        //        CancelarPolizaVida();
+                        //        break;
+                        //    case "Muebles e Inmuebles":
+                        //        CancelarPolizaInmuebles();
+                        //        break;
+                        //    case "Negocios e Empresas":
+                        //        CancelarPolizaEmpresaNegocio();
+                        //        break;
+                        //    case "Vehiculo":
+                        //        CancelarPolizaVehiculo();
+                        //        break;
+                        //    default:
+                        //        break;
+                        //}
+                        CargarPolizas_Cancelar();
                     }
                 }
                 else
@@ -556,6 +575,7 @@ namespace CapaPresentacion
         {
             if (B_Poliza.B_CancelarPolizaVehiculo(E_Poliza) >= 1)
             {
+                txtNota_Cancelar.Clear();
                 MessageBox.Show("Se ha Cancelado la Poliza Correctamente", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CargarPolizas();
             }
