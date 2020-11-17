@@ -31,5 +31,9 @@ namespace CapaNegocio.VerPoliza
         {
             return D_VerPoliza.D_vh_MostrarPolizas();
         }
+        public DataTable B_vh_MostrarPolizasCancel()
+        {
+            return D_VerPoliza.D_vh_MostrarPolizasCancel();
+        }
     }
 }

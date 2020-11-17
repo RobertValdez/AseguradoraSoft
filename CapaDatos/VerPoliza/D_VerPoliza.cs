@@ -36,6 +36,20 @@ namespace CapaDatos.VerPoliza
             strCon.Close();
             return dt;
         }
+
+        public DataTable D_vh_MostrarPolizasCancel()
+        {
+            SqlConnection strCon = new SqlConnection();
+            strCon.ConnectionString = Conexion.Conexion.SqlConex;
+            SqlCommand cmd = new SqlCommand("vh_MostrarPolizasCancel", strCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            strCon.Close();
+            return dt;
+        }
+
         public DataTable D_em_MostrarPolizas()
         {
             SqlConnection strCon = new SqlConnection();

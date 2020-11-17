@@ -117,7 +117,7 @@ namespace CapaPresentacion
 
         private void CargarPolizas_Cancelar()
         {
-            dt_vhPoliza = B_VerPolizas.B_vh_MostrarPolizas();
+            dt_vhPoliza = B_VerPolizas.B_vh_MostrarPolizasCancel();
             dgvMostrarPoliza_Cancelar.DataSource = dt_vhPoliza;
             CargarPolizas();
         }
@@ -179,17 +179,22 @@ namespace CapaPresentacion
 
         private void BtnPagarEnableEstado_C()
         {
+            txtNota_Cancelar.Clear();
+
             if (txtEstado_Cancelar.Text == "Activo")
             {
                 btnCancelarPoliza.Enabled = true;
+                txtNota_Cancelar.ReadOnly = false;
             }
             else if (txtEstado_Cancelar.Text == "Inactivo")
             {
                 btnCancelarPoliza.Enabled = false;
+                txtNota_Cancelar.ReadOnly = true;
             }
             else
             {
                 btnCancelarPoliza.Enabled = false;
+                txtNota_Cancelar.ReadOnly = true;
             }
         }
 
@@ -871,7 +876,9 @@ namespace CapaPresentacion
                 ReFac.txtDescuento.Visible = false;
 
                 ReFac.formValue = false;
+
                 ReFac.ShowDialog();
+                CargarPolizas_Cancelar();
 
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
