@@ -30,8 +30,6 @@ namespace CapaPresentacion
 
 
         int idCliente;
-        int idSolicitud;
-        int idPoliza;
 
         public frmDevoluciones()
         {
@@ -65,6 +63,9 @@ namespace CapaPresentacion
         {
             E_Siniestro.IdCliente = idCliente;
             dgvDatos.DataSource = B_siniestro.B_CargarPolizasDeSegurosDev(E_Siniestro);
+
+            E_Devoluciones.IdCliente = idCliente;
+            dgvReclamacion.DataSource = B_Devoluciones.B_ReclamacionesIdCliente(E_Devoluciones);
         }
 
         private void MostrarClientes()
@@ -92,27 +93,35 @@ namespace CapaPresentacion
         {
             try
             {
-                if ((string.IsNullOrEmpty(txtCedula.Text)
-                || string.IsNullOrWhiteSpace(txtCedula.Text)))
+                if (string.IsNullOrEmpty(txtCedula.Text)
+                || string.IsNullOrWhiteSpace(txtCedula.Text)
+                || string.IsNullOrEmpty(txtIdReclamaciones.Text)
+                || string.IsNullOrWhiteSpace(txtIdReclamaciones.Text)
+                || string.IsNullOrEmpty(txtidPoliza.Text)
+                || string.IsNullOrWhiteSpace(txtidPoliza.Text))
                 {
                     MessageBox.Show("Complete los campos faltantes.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    E_Devoluciones.IdCliente = idCliente;
-                    //E_Devoluciones.IdSolicitud = idSolicitud;
-                    E_Devoluciones.IdPoliza = idPoliza;
-                    E_Devoluciones.A_Devolver = Convert.ToDecimal(txtADevolver.Text);
-                    E_Devoluciones.Motivo = txtMotivo.Text;
-                    E_Devoluciones.FechaHora = DateTime.Now;
+                    if (MessageBox.Show("Está a punto de realizar una devolución al cliente actual."
+                        +Environment.NewLine+"Desea Continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    {
+                        E_Devoluciones.IdCliente = idCliente;
+                        E_Devoluciones.IdReclamaciones = Convert.ToInt32(txtIdReclamaciones.Text.Trim());
+                        E_Devoluciones.IdPoliza = Convert.ToInt32(txtidPoliza.Text.Trim());
+                        E_Devoluciones.A_Devolver = Convert.ToDecimal(txtADevolver.Text);
+                        E_Devoluciones.Motivo = txtMotivo.Text;
+                        E_Devoluciones.FechaHora = DateTime.Now;
 
-                    if (B_Devoluciones.B_Devoluviones(E_Devoluciones) >= 1)
-                    {
-                        MessageBox.Show("Se ha realizado la devolución correctamente.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se han insertado los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        if (B_Devoluciones.B_Devoluviones(E_Devoluciones) >= 1)
+                        {
+                            MessageBox.Show("Se ha realizado la devolución correctamente.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se han insertado los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                 }
             }
@@ -121,36 +130,53 @@ namespace CapaPresentacion
 
         List<string> list = new List<string>();
 
-        private void Cargar()
+        private void dgvDatos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            foreach (DataRow dr in dtPolizasSeguro.Rows)
-            {
-                list.Add(dr[2].ToString());
-            }
+            
         }
 
-        private void dgvDatos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        DataTable dtPolizasSeguro = new DataTable();
+
+        private void txtADevolver_TextChanged(object sender, EventArgs e)
+        {
+            txtADevolver.TextChanged += delegate (System.Object o, System.EventArgs r)
+            {
+                TextBox _tbox = o as TextBox;
+                _tbox.Text = new string(_tbox.Text.Where(c => (char.IsDigit(c))).ToArray());
+            };
+        }
+
+        private void dgvBuscarClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvDatos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var row = dgvDatos.CurrentRow;
 
             txtidPoliza.Text = row.Cells[0].Value.ToString();
         }
 
-        DataTable dtPolizasSeguro = new DataTable();
-
-        private void Filtrar()
+        private void dgvReclamacion_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataView dv = new DataView(dtPolizasSeguro);
+            var row = dgvReclamacion.CurrentRow;
 
-            dv.RowFilter = "[Cargo] = '" + cmbPolizasC + "'";
-
-            int idCargos = (int)dv[0]["id"];
-
+            txtIdReclamaciones.Text = row.Cells[0].Value.ToString();
         }
 
-        private void cmbPolizasC_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnLimpiar_Click(object sender, EventArgs e)
         {
+            dgvDatos.DataSource = null;
+            dgvReclamacion.DataSource = null;
 
+            foreach (var txt in Controls)
+            {
+                if (txt is TextBox)
+                {
+                    ((TextBox)txt).Clear();
+                }
+            }
         }
     }
 }

@@ -36,8 +36,8 @@
             this.lblCedula = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pnlVEHSeguroVoluntario = new System.Windows.Forms.Panel();
+            this.txtAnoVol = new System.Windows.Forms.DateTimePicker();
             this.btnSIGUIENTEpnlVEHSeguroVoluntario = new System.Windows.Forms.Button();
-            this.txtAnoVol = new System.Windows.Forms.TextBox();
             this.txtUsoVol = new System.Windows.Forms.TextBox();
             this.txtModeloVol = new System.Windows.Forms.TextBox();
             this.txtCategoriaVol = new System.Windows.Forms.TextBox();
@@ -66,12 +66,12 @@
             this.btnSeguroObligatorio = new System.Windows.Forms.Button();
             this.btnSeguroVoluntario = new System.Windows.Forms.Button();
             this.pnlVEHSeguroTodoRiesgo = new System.Windows.Forms.Panel();
+            this.txtAnoTR = new System.Windows.Forms.DateTimePicker();
             this.txtModeloTR = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo = new System.Windows.Forms.Button();
-            this.txtAnoTR = new System.Windows.Forms.TextBox();
             this.txtUsoTR = new System.Windows.Forms.TextBox();
             this.txtCategoriaTR = new System.Windows.Forms.TextBox();
             this.txtCarroceriaTR = new System.Windows.Forms.TextBox();
@@ -87,13 +87,13 @@
             this.lblCerrarTodoRiesgo = new System.Windows.Forms.Label();
             this.lblSeguroTodoRiesgo = new System.Windows.Forms.Label();
             this.pnlVEHSeguroObligatorio = new System.Windows.Forms.Panel();
+            this.txtAnoObl = new System.Windows.Forms.DateTimePicker();
             this.txtModeloObl = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.btnSiguientepnlVEHSeguroObligatorio = new System.Windows.Forms.Button();
             this.lblCerrarSeguroOb = new System.Windows.Forms.Label();
-            this.txtAnoObl = new System.Windows.Forms.TextBox();
             this.txtUsoObl = new System.Windows.Forms.TextBox();
             this.txtCategoriaObl = new System.Windows.Forms.TextBox();
             this.txtCarroceriaObl = new System.Windows.Forms.TextBox();
@@ -317,8 +317,8 @@
             // 
             this.pnlVEHSeguroVoluntario.BackColor = System.Drawing.Color.White;
             this.pnlVEHSeguroVoluntario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlVEHSeguroVoluntario.Controls.Add(this.btnSIGUIENTEpnlVEHSeguroVoluntario);
             this.pnlVEHSeguroVoluntario.Controls.Add(this.txtAnoVol);
+            this.pnlVEHSeguroVoluntario.Controls.Add(this.btnSIGUIENTEpnlVEHSeguroVoluntario);
             this.pnlVEHSeguroVoluntario.Controls.Add(this.txtUsoVol);
             this.pnlVEHSeguroVoluntario.Controls.Add(this.txtModeloVol);
             this.pnlVEHSeguroVoluntario.Controls.Add(this.txtCategoriaVol);
@@ -340,9 +340,21 @@
             this.pnlVEHSeguroVoluntario.Location = new System.Drawing.Point(482, 28);
             this.pnlVEHSeguroVoluntario.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlVEHSeguroVoluntario.Name = "pnlVEHSeguroVoluntario";
-            this.pnlVEHSeguroVoluntario.Size = new System.Drawing.Size(835, 411);
+            this.pnlVEHSeguroVoluntario.Size = new System.Drawing.Size(839, 411);
             this.pnlVEHSeguroVoluntario.TabIndex = 6;
             this.pnlVEHSeguroVoluntario.Visible = false;
+            // 
+            // txtAnoVol
+            // 
+            this.txtAnoVol.CustomFormat = "yyyy";
+            this.txtAnoVol.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtAnoVol.Location = new System.Drawing.Point(198, 348);
+            this.txtAnoVol.MaxDate = new System.DateTime(2007, 12, 31, 0, 0, 0, 0);
+            this.txtAnoVol.MinDate = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
+            this.txtAnoVol.Name = "txtAnoVol";
+            this.txtAnoVol.Size = new System.Drawing.Size(200, 33);
+            this.txtAnoVol.TabIndex = 48;
+            this.txtAnoVol.Value = new System.DateTime(2007, 12, 31, 0, 0, 0, 0);
             // 
             // btnSIGUIENTEpnlVEHSeguroVoluntario
             // 
@@ -359,15 +371,6 @@
             this.btnSIGUIENTEpnlVEHSeguroVoluntario.Text = "Siguiente >>";
             this.btnSIGUIENTEpnlVEHSeguroVoluntario.UseVisualStyleBackColor = false;
             this.btnSIGUIENTEpnlVEHSeguroVoluntario.Click += new System.EventHandler(this.btnSIGUIENTEpnlVEHSeguroVoluntario_Click);
-            // 
-            // txtAnoVol
-            // 
-            this.txtAnoVol.Location = new System.Drawing.Point(198, 347);
-            this.txtAnoVol.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtAnoVol.Name = "txtAnoVol";
-            this.txtAnoVol.Size = new System.Drawing.Size(200, 33);
-            this.txtAnoVol.TabIndex = 41;
-            this.txtAnoVol.TextChanged += new System.EventHandler(this.txtAnoVol_TextChanged);
             // 
             // txtUsoVol
             // 
@@ -690,12 +693,12 @@
             // 
             this.pnlVEHSeguroTodoRiesgo.BackColor = System.Drawing.Color.White;
             this.pnlVEHSeguroTodoRiesgo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.txtAnoTR);
             this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.txtModeloTR);
             this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label32);
             this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label28);
             this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.label29);
             this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo);
-            this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.txtAnoTR);
             this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.txtUsoTR);
             this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.txtCategoriaTR);
             this.pnlVEHSeguroTodoRiesgo.Controls.Add(this.txtCarroceriaTR);
@@ -716,6 +719,18 @@
             this.pnlVEHSeguroTodoRiesgo.Size = new System.Drawing.Size(835, 412);
             this.pnlVEHSeguroTodoRiesgo.TabIndex = 6;
             this.pnlVEHSeguroTodoRiesgo.Visible = false;
+            // 
+            // txtAnoTR
+            // 
+            this.txtAnoTR.CustomFormat = "yyyy";
+            this.txtAnoTR.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtAnoTR.Location = new System.Drawing.Point(198, 355);
+            this.txtAnoTR.MaxDate = new System.DateTime(2018, 12, 31, 0, 0, 0, 0);
+            this.txtAnoTR.MinDate = new System.DateTime(2008, 1, 1, 0, 0, 0, 0);
+            this.txtAnoTR.Name = "txtAnoTR";
+            this.txtAnoTR.Size = new System.Drawing.Size(200, 33);
+            this.txtAnoTR.TabIndex = 47;
+            this.txtAnoTR.Value = new System.DateTime(2018, 12, 31, 0, 0, 0, 0);
             // 
             // txtModeloTR
             // 
@@ -773,15 +788,6 @@
             this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.Text = "Siguiente >>";
             this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.UseVisualStyleBackColor = false;
             this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo.Click += new System.EventHandler(this.btnSIGUIENTEpnlVEHSeguroTodoRiesgo_Click);
-            // 
-            // txtAnoTR
-            // 
-            this.txtAnoTR.Location = new System.Drawing.Point(198, 348);
-            this.txtAnoTR.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtAnoTR.Name = "txtAnoTR";
-            this.txtAnoTR.Size = new System.Drawing.Size(200, 33);
-            this.txtAnoTR.TabIndex = 24;
-            this.txtAnoTR.TextChanged += new System.EventHandler(this.txtAnoTR_TextChanged);
             // 
             // txtUsoTR
             // 
@@ -927,13 +933,13 @@
             // 
             this.pnlVEHSeguroObligatorio.BackColor = System.Drawing.Color.White;
             this.pnlVEHSeguroObligatorio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlVEHSeguroObligatorio.Controls.Add(this.txtAnoObl);
             this.pnlVEHSeguroObligatorio.Controls.Add(this.txtModeloObl);
             this.pnlVEHSeguroObligatorio.Controls.Add(this.label34);
             this.pnlVEHSeguroObligatorio.Controls.Add(this.label17);
             this.pnlVEHSeguroObligatorio.Controls.Add(this.label20);
             this.pnlVEHSeguroObligatorio.Controls.Add(this.btnSiguientepnlVEHSeguroObligatorio);
             this.pnlVEHSeguroObligatorio.Controls.Add(this.lblCerrarSeguroOb);
-            this.pnlVEHSeguroObligatorio.Controls.Add(this.txtAnoObl);
             this.pnlVEHSeguroObligatorio.Controls.Add(this.txtUsoObl);
             this.pnlVEHSeguroObligatorio.Controls.Add(this.txtCategoriaObl);
             this.pnlVEHSeguroObligatorio.Controls.Add(this.txtCarroceriaObl);
@@ -953,6 +959,18 @@
             this.pnlVEHSeguroObligatorio.Size = new System.Drawing.Size(830, 413);
             this.pnlVEHSeguroObligatorio.TabIndex = 6;
             this.pnlVEHSeguroObligatorio.Visible = false;
+            // 
+            // txtAnoObl
+            // 
+            this.txtAnoObl.CustomFormat = "yyyy";
+            this.txtAnoObl.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtAnoObl.Location = new System.Drawing.Point(182, 351);
+            this.txtAnoObl.MaxDate = new System.DateTime(2000, 12, 31, 0, 0, 0, 0);
+            this.txtAnoObl.MinDate = new System.DateTime(1988, 1, 1, 0, 0, 0, 0);
+            this.txtAnoObl.Name = "txtAnoObl";
+            this.txtAnoObl.Size = new System.Drawing.Size(200, 33);
+            this.txtAnoObl.TabIndex = 46;
+            this.txtAnoObl.Value = new System.DateTime(2000, 12, 31, 0, 0, 0, 0);
             // 
             // txtModeloObl
             // 
@@ -1022,15 +1040,6 @@
             this.lblCerrarSeguroOb.TabIndex = 10;
             this.lblCerrarSeguroOb.Text = "X";
             this.lblCerrarSeguroOb.Click += new System.EventHandler(this.lblCerrarSeguroOb_Click);
-            // 
-            // txtAnoObl
-            // 
-            this.txtAnoObl.Location = new System.Drawing.Point(182, 343);
-            this.txtAnoObl.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtAnoObl.Name = "txtAnoObl";
-            this.txtAnoObl.Size = new System.Drawing.Size(200, 33);
-            this.txtAnoObl.TabIndex = 4;
-            this.txtAnoObl.TextChanged += new System.EventHandler(this.txtAnoObl_TextChanged);
             // 
             // txtUsoObl
             // 
@@ -1193,7 +1202,7 @@
             this.pnlMueblesInmEdificaciones.Location = new System.Drawing.Point(482, 28);
             this.pnlMueblesInmEdificaciones.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlMueblesInmEdificaciones.Name = "pnlMueblesInmEdificaciones";
-            this.pnlMueblesInmEdificaciones.Size = new System.Drawing.Size(839, 513);
+            this.pnlMueblesInmEdificaciones.Size = new System.Drawing.Size(53, 513);
             this.pnlMueblesInmEdificaciones.TabIndex = 6;
             this.pnlMueblesInmEdificaciones.Visible = false;
             // 
@@ -1510,7 +1519,7 @@
             this.pnlMueblesInmContenido.Location = new System.Drawing.Point(481, 28);
             this.pnlMueblesInmContenido.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlMueblesInmContenido.Name = "pnlMueblesInmContenido";
-            this.pnlMueblesInmContenido.Size = new System.Drawing.Size(836, 513);
+            this.pnlMueblesInmContenido.Size = new System.Drawing.Size(83, 513);
             this.pnlMueblesInmContenido.TabIndex = 6;
             this.pnlMueblesInmContenido.Visible = false;
             // 
@@ -1832,7 +1841,7 @@
             this.pnlNegociosEmpresas.Location = new System.Drawing.Point(482, 27);
             this.pnlNegociosEmpresas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlNegociosEmpresas.Name = "pnlNegociosEmpresas";
-            this.pnlNegociosEmpresas.Size = new System.Drawing.Size(839, 514);
+            this.pnlNegociosEmpresas.Size = new System.Drawing.Size(27, 514);
             this.pnlNegociosEmpresas.TabIndex = 6;
             this.pnlNegociosEmpresas.Visible = false;
             // 
@@ -2780,7 +2789,6 @@
         private System.Windows.Forms.Label lblSeguroTodoRiesgo;
         private System.Windows.Forms.Panel pnlVEHSeguroObligatorio;
         private System.Windows.Forms.Label lblCerrarSeguroOb;
-        private System.Windows.Forms.TextBox txtAnoObl;
         private System.Windows.Forms.TextBox txtUsoObl;
         private System.Windows.Forms.TextBox txtCategoriaObl;
         private System.Windows.Forms.TextBox txtCarroceriaObl;
@@ -2809,7 +2817,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSiguientepnlVEHSeguroObligatorio;
         private System.Windows.Forms.Button btnSIGUIENTEpnlVEHSeguroTodoRiesgo;
-        private System.Windows.Forms.TextBox txtAnoTR;
         private System.Windows.Forms.TextBox txtUsoTR;
         private System.Windows.Forms.TextBox txtCategoriaTR;
         private System.Windows.Forms.TextBox txtCarroceriaTR;
@@ -2823,7 +2830,6 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label78;
         private System.Windows.Forms.Button btnSIGUIENTEpnlVEHSeguroVoluntario;
-        private System.Windows.Forms.TextBox txtAnoVol;
         private System.Windows.Forms.TextBox txtUsoVol;
         private System.Windows.Forms.TextBox txtCategoriaVol;
         private System.Windows.Forms.TextBox txtCarroceriaVol;
@@ -2960,5 +2966,8 @@
         private System.Windows.Forms.TextBox txtModeloObl;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.MaskedTextBox mskTelefonoEntAut;
+        private System.Windows.Forms.DateTimePicker txtAnoObl;
+        private System.Windows.Forms.DateTimePicker txtAnoTR;
+        private System.Windows.Forms.DateTimePicker txtAnoVol;
     }
 }

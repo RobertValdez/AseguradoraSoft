@@ -335,6 +335,8 @@ namespace CapaPresentacion
 
                     frmFac.txtCodigo.Text = idCodigoFact.ToString();
 
+                    PreciosParaTipoSegurosVehiculo("Obligatorio");
+
                     frmFac.txtSubTotal.Text = Precio.ToString();
                     frmFac.txtTotalA_Pagar.Text = Precio.ToString();
 
@@ -423,6 +425,8 @@ namespace CapaPresentacion
 
                     frmFac.txtCodigo.Text = idCodigoFact.ToString();
 
+                    PreciosParaTipoSegurosVehiculo("Todo Riesgo");
+
                     frmFac.txtSubTotal.Text = Precio.ToString();
                     frmFac.txtTotalA_Pagar.Text = Precio.ToString();
 
@@ -448,6 +452,67 @@ namespace CapaPresentacion
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void PreciosParaTipoSegurosVehiculo(string tipoSeguro)
+        {
+            if (tipoSeguro.Equals("Todo Riesgo"))
+            {
+                if (_Categoria == "Semi Full")
+                {
+                    DataView dv = new DataView(dtPolizaDeSeguros);
+
+                    dv.RowFilter = "[Nombre del Seguro] = 'Seguro Todo Riesgo'";
+
+                    Precio = (decimal)dv[0]["Precio2"];
+                }
+                else if (_Categoria == "Full")
+                {
+                    DataView dv = new DataView(dtPolizaDeSeguros);
+
+                    dv.RowFilter = "[Nombre del Seguro] = 'Seguro Todo Riesgo'";
+
+                    Precio = (decimal)dv[0]["Precio3"];
+                }
+            }
+            else if(tipoSeguro.Equals("Voluntario"))
+            {
+                if (_Categoria == "Semi Full")
+                {
+                    DataView dv = new DataView(dtPolizaDeSeguros);
+
+                    dv.RowFilter = "[Nombre del Seguro] = 'Seguro Voluntario'";
+
+                    Precio = (decimal)dv[0]["Precio2"];
+                }
+                else if (_Categoria == "Full")
+                {
+                    DataView dv = new DataView(dtPolizaDeSeguros);
+
+                    dv.RowFilter = "[Nombre del Seguro] = 'Seguro Voluntario'";
+
+                    Precio = (decimal)dv[0]["Precio3"];
+                }
+            }
+            else if (tipoSeguro.Equals("Obligatorio"))
+            {
+                if (_Categoria == "Semi Full")
+                {
+                    DataView dv = new DataView(dtPolizaDeSeguros);
+
+                    dv.RowFilter = "[Nombre del Seguro] = 'Seguro Obligatorio'";
+
+                    Precio = (decimal)dv[0]["Precio2"];
+                }
+                else if (_Categoria == "Full")
+                {
+                    DataView dv = new DataView(dtPolizaDeSeguros);
+
+                    dv.RowFilter = "[Nombre del Seguro] = 'Seguro Obligatorio'";
+
+                    Precio = (decimal)dv[0]["Precio3"];
+                }
+            }
         }
 
         private void btnSIGUIENTEpnlVEHSeguroVoluntario_Click(object sender, EventArgs e)
@@ -507,6 +572,8 @@ namespace CapaPresentacion
                     frmFac.txtIdSeguro.Text = idProductoSeguro.ToString();
 
                     frmFac.txtCodigo.Text = idCodigoFact.ToString();
+
+                    PreciosParaTipoSegurosVehiculo("Voluntario");
 
                     frmFac.txtSubTotal.Text = Precio.ToString();
                     frmFac.txtTotalA_Pagar.Text = Precio.ToString();
@@ -1576,7 +1643,8 @@ namespace CapaPresentacion
 
         public frmSolicitud(string Categoria)
         {
-            _Categoria = Categoria; 
+            _Categoria = Categoria;
+            _Categoria = _Categoria.Substring(0, _Categoria.Length - 3).Trim();
         }
 
         public bool cancelarDescripcionSeguros(string nombreSeguro)

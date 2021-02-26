@@ -182,7 +182,9 @@ namespace CapaPresentacion
             try
             {
                 if (!string.IsNullOrEmpty(txtIdSolicitud.Text)
-                  || !string.IsNullOrWhiteSpace(txtIdSolicitud.Text))
+                  && !string.IsNullOrWhiteSpace(txtIdSolicitud.Text)
+                  &&  !string.IsNullOrEmpty(txtNota.Text)
+                  && !string.IsNullOrWhiteSpace(txtNota.Text))
                 {
                     if (txtEstado.Text == "En proceso")
                     {
@@ -220,6 +222,10 @@ namespace CapaPresentacion
                     {
                         MessageBox.Show("Seleccione una solicitud En proceso para continuar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Complete el campo Nota para continuar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -370,6 +376,48 @@ namespace CapaPresentacion
                 }
             }
             catch (Exception ex){ MessageBox.Show(ex.Message); }
+        }
+
+        private void dgvMostrarSolicitudes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                try
+                {
+                    var row = dgvMostrarSolicitudes.CurrentRow;
+                    frm_detalleConfirmarSolicitud dC = new frm_detalleConfirmarSolicitud();
+
+                    dC.txtIdMod.Text = row.Cells[1].Value.ToString();
+                    dC.txtIdSolicitud.Text = row.Cells[2].Value.ToString();
+                    dC.txtNombreMod.Text = row.Cells[3].Value.ToString();
+                    dC.txtApellidoMod.Text = row.Cells[4].Value.ToString();
+                    dC.txtDireccionMod.Text = row.Cells[5].Value.ToString();
+                    dC.mskCedulaMod.Text = row.Cells[6].Value.ToString();
+                    dC.txtNacionalidad.Text = row.Cells[7].Value.ToString();
+                    dC.txtTelefonoMod.Text = row.Cells[8].Value.ToString();
+                    dC.txtCorreoElectronicoMod.Text = row.Cells[9].Value.ToString();
+                    dC.txtSexo.Text = row.Cells[10].Value.ToString();
+                    dC.txtRNC_Mod.Text = row.Cells[11].Value.ToString();
+                    dC.txtMarcaVehiculoVol.Text = row.Cells[12].Value.ToString();
+                    dC.txtModeloVol.Text = row.Cells[13].Value.ToString();
+                    dC.txtMatriculaVol.Text = row.Cells[14].Value.ToString();
+                    dC.txtAnoVol.Text = row.Cells[15].Value.ToString();
+
+                    dC.txtCilindrosVol.Text = row.Cells[16].Value.ToString();
+                    dC.txtCarroceriaVol.Text = row.Cells[17].Value.ToString();
+
+                    dC.txtCategoriaVol.Text = row.Cells[18].Value.ToString();
+                    dC.txtUsoVol.Text = row.Cells[19].Value.ToString();
+
+                    dC.txtEstado.Text = row.Cells[21].Value.ToString();
+                    dC.txtTipo.Text = row.Cells[22].Value.ToString();
+                    dC.txtFechaHora.Text = row.Cells[23].Value.ToString();
+
+                    dC.ShowDialog();
+                }
+                catch (Exception) { }
+            }
+
         }
     }
 }

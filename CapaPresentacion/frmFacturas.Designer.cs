@@ -305,6 +305,7 @@
             this.btnImprimir.Size = new System.Drawing.Size(100, 57);
             this.btnImprimir.TabIndex = 107;
             this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Visible = false;
             // 
             // btnAtras
             // 

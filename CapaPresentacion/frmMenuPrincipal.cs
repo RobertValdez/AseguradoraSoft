@@ -40,6 +40,8 @@ namespace CapaPresentacion
             frmEmpleados frmEmpl = new frmEmpleados();
             frmEmpl.MdiParent = this;
             frmEmpl.Show();
+
+            sdfsdfToolStripMenuItem.ForeColor = Color.White;
         }
 
         private void menuStrip1_MouseDown(object sender, MouseEventArgs e)
@@ -50,6 +52,8 @@ namespace CapaPresentacion
 
         private void solicitudToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            btnCompras.ForeColor = Color.White;
+
             frmSolicitud com = new frmSolicitud();
             com.MdiParent = this;
             com.Show();
@@ -57,6 +61,8 @@ namespace CapaPresentacion
 
         private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            sdfsdfToolStripMenuItem.ForeColor = Color.White;
+
             frmCliente Clie = new frmCliente();
             Clie.MdiParent = this;
             Clie.Show();
@@ -83,6 +89,8 @@ namespace CapaPresentacion
 
         private void reclamosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            btnCompras.ForeColor = Color.White;
+
             frmRegistroDeReclamos RdR = new frmRegistroDeReclamos();
             RdR.MdiParent = this;
             RdR.Show();
@@ -90,6 +98,8 @@ namespace CapaPresentacion
 
         private void devolucionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            btnCompras.ForeColor = Color.White;
+
             frmDevoluciones dv = new frmDevoluciones();
             dv.MdiParent = this;
             dv.Show();
@@ -97,6 +107,8 @@ namespace CapaPresentacion
 
         private void seguroParaEmpresasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            sdfsdfToolStripMenuItem.ForeColor = Color.White;
+
             frmSeguroEmpresas sEmp = new frmSeguroEmpresas();
             sEmp.MdiParent = this;
             sEmp.Show();
@@ -104,6 +116,8 @@ namespace CapaPresentacion
 
         private void siniestrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            btnCompras.ForeColor = Color.White;
+
             frmSiniestro S = new frmSiniestro();
             S.MdiParent = this;
             S.Show();
@@ -138,30 +152,44 @@ namespace CapaPresentacion
 
         private void verSiniestrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            toolStripMenuItem1.ForeColor = Color.White;
+
             frmVerSiniestros vs = new frmVerSiniestros();
+            vs.MdiParent = this;
             vs.Show();
         }
 
         private void verReclamosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            toolStripMenuItem1.ForeColor = Color.White;
+
             frmVerReclamos vr = new frmVerReclamos();
+            vr.MdiParent = this;
             vr.Show();
         }
 
         private void verFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            toolStripMenuItem1.ForeColor = Color.White;
+
             frmVerFacturas vf = new frmVerFacturas();
+            vf.MdiParent = this;
             vf.Show();
         }
 
         private void verPolizasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            toolStripMenuItem1.ForeColor = Color.White;
+
             frmVerPolizas vp = new frmVerPolizas();
+            vp.MdiParent = this;
             vp.Show();
         }
 
         private void polizasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            btnCompras.ForeColor = Color.White;
+
             frmPolizas p = new frmPolizas();
             p.MdiParent = this;
             p.Show();
@@ -169,6 +197,8 @@ namespace CapaPresentacion
 
         private void verPólizasALaVentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            toolStripMenuItem1.ForeColor = Color.White;
+
             frmVerPolizasDisponibles fd = new frmVerPolizasDisponibles();
             fd.MdiParent = this;
             fd.Show();
@@ -176,6 +206,8 @@ namespace CapaPresentacion
 
         private void facturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            toolStripMenuItem2.ForeColor = Color.White;
+
             rptFacturasDelMes ef = new rptFacturasDelMes();
             ef.MdiParent = this;
             ef.Show();
@@ -183,6 +215,8 @@ namespace CapaPresentacion
 
         private void siniestrosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            toolStripMenuItem2.ForeColor = Color.White;
+
             rptPolizasMensuales eP = new rptPolizasMensuales();
             eP.MdiParent = this;
             eP.Show();
@@ -190,6 +224,8 @@ namespace CapaPresentacion
 
         private void cargoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            sdfsdfToolStripMenuItem.ForeColor = Color.White;
+
             Cargos c = new Cargos();
             c.MdiParent = this;
             c.Show();
@@ -197,9 +233,337 @@ namespace CapaPresentacion
 
         private void confirmaciónSolicitudToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            btnCompras.ForeColor = Color.White;
+
             frmConfirmacionSolicitud cs = new frmConfirmacionSolicitud();
             cs.MdiParent = this;
             cs.Show();
+        }
+
+        private void toolStripMenuItem2_DropDownOpening(object sender, EventArgs e)
+        {
+            toolStripMenuItem2.ForeColor = Color.Black;
+        }
+
+        private void toolStripMenuItem2_DropDownClosed(object sender, EventArgs e)
+        {
+            toolStripMenuItem2.ForeColor = Color.White;
+            if (!facturasToolStripMenuItem.Visible)
+            {
+                toolStripMenuItem2.ForeColor = Color.Black;
+            }
+        }
+
+        private void toolStripMenuItem2_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripMenuItem2.ForeColor = Color.Black;
+        }
+
+        private void toolStripMenuItem2_MouseLeave(object sender, EventArgs e)
+        {
+            if (!toolStripMenuItem2.Pressed)
+            {
+                toolStripMenuItem2.ForeColor = Color.White;
+            }
+        }
+
+
+        /// ---------
+        private void btnCompras_DropDownOpening(object sender, EventArgs e)
+        {
+            btnCompras.ForeColor = Color.Black;
+        }
+
+        private void btnCompras_DropDownClosed(object sender, EventArgs e)
+        {
+            btnCompras.ForeColor = Color.White;
+            if (!solicitudToolStripMenuItem.Visible)
+            {
+                btnCompras.ForeColor = Color.Black;
+            }
+        }
+
+        private void btnCompras_MouseEnter(object sender, EventArgs e)
+        {
+            btnCompras.ForeColor = Color.Black;
+        }
+
+        private void btnCompras_MouseLeave(object sender, EventArgs e)
+        {
+            if (!btnCompras.Pressed)
+            {
+                btnCompras.ForeColor = Color.White;
+            }
+        }
+
+        private void devolucionesToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            devolucionesToolStripMenuItem.ForeColor = Color.Black;
+        }
+
+        private void devolucionesToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            devolucionesToolStripMenuItem.ForeColor = Color.White;
+        }
+
+        private void solicitudToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            solicitudToolStripMenuItem.ForeColor = Color.Black;
+        }
+
+        private void solicitudToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            solicitudToolStripMenuItem.ForeColor = Color.White;
+        }
+
+        private void reclamosToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            reclamosToolStripMenuItem.ForeColor = Color.Black;
+        }
+
+        private void reclamosToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            reclamosToolStripMenuItem.ForeColor = Color.White;
+        }
+
+        private void siniestrosToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            siniestrosToolStripMenuItem.ForeColor = Color.Black;
+        }
+
+        private void siniestrosToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            siniestrosToolStripMenuItem.ForeColor = Color.White;
+        }
+
+        private void polizasToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            polizasToolStripMenuItem.ForeColor = Color.Black;
+        }
+
+        private void polizasToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            polizasToolStripMenuItem.ForeColor = Color.White;
+        }
+
+        private void confirmaciónSolicitudToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            confirmaciónSolicitudToolStripMenuItem.ForeColor = Color.Black;
+        }
+
+        private void confirmaciónSolicitudToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            confirmaciónSolicitudToolStripMenuItem.ForeColor = Color.White;
+        }
+
+        private void cargoToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            cargoToolStripMenuItem.ForeColor = Color.Black;
+        }
+
+        private void cargoToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            cargoToolStripMenuItem.ForeColor = Color.White;
+        }
+
+        private void empleadosToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            empleadosToolStripMenuItem.ForeColor = Color.Black;
+        }
+
+        private void empleadosToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            if (!cargoToolStripMenuItem.Visible)
+            {
+                empleadosToolStripMenuItem.ForeColor = Color.White;
+            }
+        }
+
+        private void clientesToolStripMenuItem1_MouseEnter(object sender, EventArgs e)
+        {
+            clientesToolStripMenuItem1.ForeColor = Color.Black;
+            empleadosToolStripMenuItem.ForeColor = Color.White;
+        }
+
+        private void clientesToolStripMenuItem1_MouseLeave(object sender, EventArgs e)
+        {
+            clientesToolStripMenuItem1.ForeColor = Color.White;
+        }
+
+        private void seguroParaEmpresasToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            seguroParaEmpresasToolStripMenuItem.ForeColor = Color.Black;
+        }
+
+        private void seguroParaEmpresasToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            seguroParaEmpresasToolStripMenuItem.ForeColor = Color.White;
+        }
+
+        private void verSiniestrosToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            verSiniestrosToolStripMenuItem.ForeColor = Color.Black;
+        }
+
+        private void verSiniestrosToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            verSiniestrosToolStripMenuItem.ForeColor = Color.White;
+        }
+
+        private void verReclamosToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            verReclamosToolStripMenuItem.ForeColor = Color.Black;
+        }
+
+        private void verReclamosToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            verReclamosToolStripMenuItem.ForeColor = Color.White;
+        }
+
+        private void verFacturaToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            verFacturaToolStripMenuItem.ForeColor = Color.Black;
+        }
+
+        private void verFacturaToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            verFacturaToolStripMenuItem.ForeColor = Color.White;
+        }
+
+        private void verPolizasToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            verPolizasToolStripMenuItem.ForeColor = Color.Black;
+        }
+
+        private void verPolizasToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            verPolizasToolStripMenuItem.ForeColor = Color.White;
+        }
+
+        private void verPólizasALaVentaToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            verPólizasALaVentaToolStripMenuItem.ForeColor = Color.Black;
+        }
+
+        private void verPólizasALaVentaToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            verPólizasALaVentaToolStripMenuItem.ForeColor = Color.White;
+        }
+
+        private void facturasToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            facturasToolStripMenuItem.ForeColor = Color.Black;
+        }
+
+        private void facturasToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            facturasToolStripMenuItem.ForeColor = Color.White;
+        }
+
+        private void siniestrosToolStripMenuItem1_MouseEnter(object sender, EventArgs e)
+        {
+            siniestrosToolStripMenuItem1.ForeColor = Color.Black;
+        }
+
+        private void siniestrosToolStripMenuItem1_MouseLeave(object sender, EventArgs e)
+        {
+            siniestrosToolStripMenuItem1.ForeColor = Color.White;
+        }
+
+        private void sdfsdfToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
+        {
+            sdfsdfToolStripMenuItem.ForeColor = Color.Black;
+            empleadosToolStripMenuItem_MouseLeave(null, null);
+        }
+
+        private void sdfsdfToolStripMenuItem_DropDownClosed(object sender, EventArgs e)
+        {
+            sdfsdfToolStripMenuItem.ForeColor = Color.White;
+            if (!empleadosToolStripMenuItem.Visible)
+            {
+                sdfsdfToolStripMenuItem.ForeColor = Color.Black;
+            }
+        }
+
+        private void sdfsdfToolStripMenuItem_MouseEnter_1(object sender, EventArgs e)
+        {
+            sdfsdfToolStripMenuItem.ForeColor = Color.Black;
+        }
+
+        private void sdfsdfToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            if (!sdfsdfToolStripMenuItem.Pressed)
+            {
+                sdfsdfToolStripMenuItem.ForeColor = Color.White;
+            }
+        }
+
+
+
+
+        private void toolStripMenuItem1_DropDownOpening(object sender, EventArgs e)
+        {
+            toolStripMenuItem1.ForeColor = Color.Black;
+        }
+
+        private void toolStripMenuItem1_DropDownClosed(object sender, EventArgs e)
+        {
+            toolStripMenuItem1.ForeColor = Color.White;
+            if (!verSiniestrosToolStripMenuItem.Visible)
+            {
+                toolStripMenuItem1.ForeColor = Color.Black;
+            }
+        }
+
+        private void toolStripMenuItem1_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripMenuItem1.ForeColor = Color.Black;
+        }
+
+        private void toolStripMenuItem1_MouseLeave(object sender, EventArgs e)
+        {
+            if (!toolStripMenuItem1.Pressed)
+            {
+                toolStripMenuItem1.ForeColor = Color.White;
+            }
+        }
+
+        private void ventasToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            ventasToolStripMenuItem.ForeColor = Color.Black;
+        }
+
+        private void ventasToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            ventasToolStripMenuItem.ForeColor = Color.White;
+        }
+
+        private void menuStrip1_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            
+        }
+
+        private void panel1_DoubleClick(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Maximized)
+            {
+                WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            //ReleaseCapture();
+            //SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

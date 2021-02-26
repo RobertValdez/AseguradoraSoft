@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using PerlaDelSur_Entity.Devoluciones;
 using CapaDatos.Devoluciones;
+using System.Data;
 
 namespace CapaNegocio.Devoluciones
 {
@@ -16,6 +17,11 @@ namespace CapaNegocio.Devoluciones
         public int B_Devoluviones(E_Devoluciones eD)
         {
             return D_Devoluciones.CrearDevolucion(eD);
+        }
+
+        public DataTable B_ReclamacionesIdCliente(E_Devoluciones eD)
+        {
+            return D_Devoluciones.CargarReclamacionesCliente(eD);
         }
     }
 }

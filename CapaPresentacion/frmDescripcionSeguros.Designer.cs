@@ -46,10 +46,10 @@
             this.FullA = new System.Windows.Forms.Button();
             this.FullB = new System.Windows.Forms.Button();
             this.FullC = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.pnlBasico.SuspendLayout();
             this.pnlSemiFull.SuspendLayout();
             this.pnlFull.SuspendLayout();
@@ -105,14 +105,14 @@
             this.BasicoA.BackColor = System.Drawing.Color.White;
             this.BasicoA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
             this.BasicoA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BasicoA.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BasicoA.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold);
             this.BasicoA.ForeColor = System.Drawing.Color.Crimson;
-            this.BasicoA.Location = new System.Drawing.Point(4, 44);
+            this.BasicoA.Location = new System.Drawing.Point(4, 5);
             this.BasicoA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BasicoA.Name = "BasicoA";
-            this.BasicoA.Size = new System.Drawing.Size(50, 33);
+            this.BasicoA.Size = new System.Drawing.Size(158, 72);
             this.BasicoA.TabIndex = 118;
-            this.BasicoA.Text = "A";
+            this.BasicoA.Text = "Básico";
             this.BasicoA.UseVisualStyleBackColor = false;
             this.BasicoA.Click += new System.EventHandler(this.BasicoA_Click);
             // 
@@ -130,6 +130,7 @@
             this.BasicoB.TabIndex = 118;
             this.BasicoB.Text = "B";
             this.BasicoB.UseVisualStyleBackColor = false;
+            this.BasicoB.Visible = false;
             this.BasicoB.Click += new System.EventHandler(this.BasicoB_Click);
             // 
             // BasicoC
@@ -146,6 +147,7 @@
             this.BasicoC.TabIndex = 118;
             this.BasicoC.Text = "C";
             this.BasicoC.UseVisualStyleBackColor = false;
+            this.BasicoC.Visible = false;
             this.BasicoC.Click += new System.EventHandler(this.BasicoC_Click);
             // 
             // pnlBasico
@@ -171,6 +173,7 @@
             this.label1.Size = new System.Drawing.Size(109, 36);
             this.label1.TabIndex = 110;
             this.label1.Text = "Básico";
+            this.label1.Visible = false;
             // 
             // pnlSemiFull
             // 
@@ -189,14 +192,14 @@
             this.SemiFullA.BackColor = System.Drawing.Color.White;
             this.SemiFullA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
             this.SemiFullA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SemiFullA.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SemiFullA.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold);
             this.SemiFullA.ForeColor = System.Drawing.Color.Crimson;
-            this.SemiFullA.Location = new System.Drawing.Point(4, 44);
+            this.SemiFullA.Location = new System.Drawing.Point(4, 5);
             this.SemiFullA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SemiFullA.Name = "SemiFullA";
-            this.SemiFullA.Size = new System.Drawing.Size(50, 33);
+            this.SemiFullA.Size = new System.Drawing.Size(156, 72);
             this.SemiFullA.TabIndex = 118;
-            this.SemiFullA.Text = "A";
+            this.SemiFullA.Text = "Semi Full";
             this.SemiFullA.UseVisualStyleBackColor = false;
             this.SemiFullA.Click += new System.EventHandler(this.SemiFullA_Click);
             // 
@@ -214,6 +217,7 @@
             this.SemiFullB.TabIndex = 118;
             this.SemiFullB.Text = "B";
             this.SemiFullB.UseVisualStyleBackColor = false;
+            this.SemiFullB.Visible = false;
             this.SemiFullB.Click += new System.EventHandler(this.SemiFullB_Click);
             // 
             // SemiFullC
@@ -230,6 +234,7 @@
             this.SemiFullC.TabIndex = 118;
             this.SemiFullC.Text = "C";
             this.SemiFullC.UseVisualStyleBackColor = false;
+            this.SemiFullC.Visible = false;
             this.SemiFullC.Click += new System.EventHandler(this.SemiFullC_Click);
             // 
             // label3
@@ -243,6 +248,7 @@
             this.label3.Size = new System.Drawing.Size(136, 36);
             this.label3.TabIndex = 110;
             this.label3.Text = "Semi Full";
+            this.label3.Visible = false;
             // 
             // pnlFull
             // 
@@ -261,14 +267,14 @@
             this.FullA.BackColor = System.Drawing.Color.White;
             this.FullA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
             this.FullA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FullA.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FullA.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold);
             this.FullA.ForeColor = System.Drawing.Color.Crimson;
-            this.FullA.Location = new System.Drawing.Point(4, 44);
+            this.FullA.Location = new System.Drawing.Point(4, 5);
             this.FullA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FullA.Name = "FullA";
-            this.FullA.Size = new System.Drawing.Size(50, 33);
+            this.FullA.Size = new System.Drawing.Size(156, 72);
             this.FullA.TabIndex = 118;
-            this.FullA.Text = "A";
+            this.FullA.Text = "Full";
             this.FullA.UseVisualStyleBackColor = false;
             this.FullA.Click += new System.EventHandler(this.FullA_Click);
             // 
@@ -286,6 +292,7 @@
             this.FullB.TabIndex = 118;
             this.FullB.Text = "B";
             this.FullB.UseVisualStyleBackColor = false;
+            this.FullB.Visible = false;
             this.FullB.Click += new System.EventHandler(this.FullB_Click);
             // 
             // FullC
@@ -302,19 +309,8 @@
             this.FullC.TabIndex = 118;
             this.FullC.Text = "C";
             this.FullC.UseVisualStyleBackColor = false;
+            this.FullC.Visible = false;
             this.FullC.Click += new System.EventHandler(this.FullC_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Crimson;
-            this.label4.Location = new System.Drawing.Point(45, 2);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 36);
-            this.label4.TabIndex = 110;
-            this.label4.Text = "Full";
             // 
             // btnSiguiente
             // 
@@ -356,6 +352,19 @@
             this.txtDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtDescripcion.Size = new System.Drawing.Size(733, 384);
             this.txtDescripcion.TabIndex = 121;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Crimson;
+            this.label4.Location = new System.Drawing.Point(45, 2);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 36);
+            this.label4.TabIndex = 110;
+            this.label4.Text = "Full";
+            this.label4.Visible = false;
             // 
             // frmDescripcionSeguros
             // 
@@ -410,10 +419,10 @@
         private System.Windows.Forms.Button FullA;
         private System.Windows.Forms.Button FullB;
         private System.Windows.Forms.Button FullC;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSiguiente;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox txtDescripcion;
         public System.Windows.Forms.Label lblSeguro;
+        private System.Windows.Forms.Label label4;
     }
 }

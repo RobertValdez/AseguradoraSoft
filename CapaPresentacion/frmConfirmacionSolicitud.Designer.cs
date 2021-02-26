@@ -41,6 +41,7 @@
             this.txtNota = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbSeguros = new System.Windows.Forms.ComboBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarSolicitudes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,6 +53,8 @@
             this.dgvMostrarSolicitudes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvMostrarSolicitudes.BackgroundColor = System.Drawing.Color.LightPink;
             this.dgvMostrarSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMostrarSolicitudes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
             this.dgvMostrarSolicitudes.Location = new System.Drawing.Point(20, 146);
             this.dgvMostrarSolicitudes.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dgvMostrarSolicitudes.Name = "dgvMostrarSolicitudes";
@@ -59,6 +62,7 @@
             this.dgvMostrarSolicitudes.Size = new System.Drawing.Size(895, 481);
             this.dgvMostrarSolicitudes.TabIndex = 26;
             this.dgvMostrarSolicitudes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMostrarSolicitudes_CellClick);
+            this.dgvMostrarSolicitudes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMostrarSolicitudes_CellContentClick);
             // 
             // label10
             // 
@@ -208,6 +212,15 @@
             this.cmbSeguros.TabIndex = 208;
             this.cmbSeguros.DropDownClosed += new System.EventHandler(this.cmbSeguros_DropDownClosed_1);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Ver detalles";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Text = "Ver detalles";
+            this.Column1.UseColumnTextForButtonValue = true;
+            this.Column1.Width = 138;
+            // 
             // frmConfirmacionSolicitud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
@@ -253,5 +266,6 @@
         private System.Windows.Forms.TextBox txtNota;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbSeguros;
+        private System.Windows.Forms.DataGridViewButtonColumn Column1;
     }
 }

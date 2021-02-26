@@ -517,11 +517,18 @@ namespace CapaPresentacion
         {
             try
             {
-                if (!string.IsNullOrEmpty(txtNumPoliza_Cancelar.Text) || !string.IsNullOrWhiteSpace(txtNumPoliza_Cancelar.Text))
+                if (string.IsNullOrEmpty(txtNumPoliza_Cancelar.Text)
+                    || string.IsNullOrWhiteSpace(txtNumPoliza_Cancelar.Text)
+                    || string.IsNullOrEmpty(txtNota_Cancelar.Text)
+                    || string.IsNullOrWhiteSpace(txtNota_Cancelar.Text))
+                {
+                    MessageBox.Show("Seleccione una póliza para continuar o complete el campo Nota.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
                 {
                     if (MessageBox.Show("Está a punto de Cancelar " + Environment.NewLine + "la Póliza de Seguro Número:    " + txtNumPoliza_Cancelar.Text + Environment.NewLine +
-                        "perteneciente al cliente: " + Environment.NewLine + Nombre_C + " " + Apellido_C + ".  De Cédula:   " + Cedula_C + "."
-                        + Environment.NewLine + "Desea continuar la cancelación?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                       "perteneciente al cliente: " + Environment.NewLine + Nombre_C + " " + Apellido_C + ".  De Cédula:   " + Cedula_C + "."
+                       + Environment.NewLine + "Desea continuar la cancelación?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         E_Poliza.IdPoliza = Convert.ToInt32(txtNumPoliza_Cancelar.Text);
                         E_Poliza.FechaHora = DateTime.Now;
@@ -549,10 +556,6 @@ namespace CapaPresentacion
                         //}
                         CargarPolizas_Cancelar();
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Seleccione una póliza para continuar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
