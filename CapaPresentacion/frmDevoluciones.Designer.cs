@@ -32,7 +32,7 @@
             this.pnlBuscarClientes = new System.Windows.Forms.Panel();
             this.lblCerrar = new System.Windows.Forms.Label();
             this.dgvBuscarClientes = new System.Windows.Forms.DataGridView();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
@@ -56,6 +56,7 @@
             this.txtIdReclamaciones = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.chkSoloId = new System.Windows.Forms.CheckBox();
             this.pnlBuscarClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscarClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
@@ -64,9 +65,10 @@
             // 
             // pnlBuscarClientes
             // 
+            this.pnlBuscarClientes.Controls.Add(this.chkSoloId);
             this.pnlBuscarClientes.Controls.Add(this.lblCerrar);
             this.pnlBuscarClientes.Controls.Add(this.dgvBuscarClientes);
-            this.pnlBuscarClientes.Controls.Add(this.textBox7);
+            this.pnlBuscarClientes.Controls.Add(this.txtBuscar);
             this.pnlBuscarClientes.Controls.Add(this.label6);
             this.pnlBuscarClientes.Location = new System.Drawing.Point(12, 56);
             this.pnlBuscarClientes.Name = "pnlBuscarClientes";
@@ -104,14 +106,15 @@
             this.dgvBuscarClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscarClientes_CellClick);
             this.dgvBuscarClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscarClientes_CellDoubleClick);
             // 
-            // textBox7
+            // txtBuscar
             // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Location = new System.Drawing.Point(186, 23);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(344, 33);
-            this.textBox7.TabIndex = 0;
+            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBuscar.Location = new System.Drawing.Point(186, 23);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(344, 33);
+            this.txtBuscar.TabIndex = 0;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label6
             // 
@@ -391,6 +394,20 @@
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
+            // chkSoloId
+            // 
+            this.chkSoloId.AutoSize = true;
+            this.chkSoloId.BackColor = System.Drawing.Color.White;
+            this.chkSoloId.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkSoloId.ForeColor = System.Drawing.Color.Crimson;
+            this.chkSoloId.Location = new System.Drawing.Point(537, 24);
+            this.chkSoloId.Name = "chkSoloId";
+            this.chkSoloId.Size = new System.Drawing.Size(108, 32);
+            this.chkSoloId.TabIndex = 110;
+            this.chkSoloId.Text = "solo Id";
+            this.chkSoloId.UseVisualStyleBackColor = false;
+            this.chkSoloId.CheckedChanged += new System.EventHandler(this.chkSoloId_CheckedChanged);
+            // 
             // frmDevoluciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
@@ -442,7 +459,7 @@
         private System.Windows.Forms.Panel pnlBuscarClientes;
         private System.Windows.Forms.Label lblCerrar;
         private System.Windows.Forms.DataGridView dgvBuscarClientes;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnBuscarCliente;
@@ -466,5 +483,6 @@
         private System.Windows.Forms.TextBox txtIdReclamaciones;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.CheckBox chkSoloId;
     }
 }

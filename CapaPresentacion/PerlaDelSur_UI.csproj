@@ -106,6 +106,14 @@
     </Compile>
     <Compile Include="clSoloNumero.cs" />
     <Compile Include="csLimpiar.cs" />
+    <Compile Include="DsFacturaPoliza.cs">
+      <DependentUpon>DsFacturaPoliza.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DsFacturaPoliza.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsFacturaPoliza.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DSPolizasEmitidasPorMes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -408,6 +416,17 @@
     </None>
     <None Include="AseguradoraBDDataSetCargos.xss">
       <DependentUpon>AseguradoraBDDataSetCargos.xsd</DependentUpon>
+    </None>
+    <None Include="DsFacturaPoliza.xsc">
+      <DependentUpon>DsFacturaPoliza.xsd</DependentUpon>
+    </None>
+    <None Include="DsFacturaPoliza.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsFacturaPoliza.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DsFacturaPoliza.xss">
+      <DependentUpon>DsFacturaPoliza.xsd</DependentUpon>
     </None>
     <None Include="DSPolizasEmitidasPorMes.xsc">
       <DependentUpon>DSPolizasEmitidasPorMes.xsd</DependentUpon>

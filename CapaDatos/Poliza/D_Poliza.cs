@@ -576,6 +576,11 @@ namespace CapaDatos.Poliza
             cmd.CommandText = "CrearPolizaSeguroTodoRiesgo";
             cmd.CommandType = CommandType.StoredProcedure;
 
+            SqlParameter parReturn = new SqlParameter();
+            parReturn.SqlDbType = SqlDbType.Int;
+            parReturn.Direction = ParameterDirection.ReturnValue;
+            cmd.Parameters.Add(parReturn);
+
             SqlParameter parIdCliente = new SqlParameter();
             parIdCliente.ParameterName = "@IdCliente";
             parIdCliente.SqlDbType = SqlDbType.Int;
@@ -607,6 +612,7 @@ namespace CapaDatos.Poliza
             cmd.Parameters.Add(parVencimiento);
 
             int rsp = cmd.ExecuteNonQuery();
+            rsp = Convert.ToInt32(parReturn.Value);
             strcon.Close();
             return rsp;
         }
@@ -621,6 +627,11 @@ namespace CapaDatos.Poliza
             cmd.CommandText = "CrearPolizaSeguroObligatorio";
             cmd.CommandType = CommandType.StoredProcedure;
 
+            SqlParameter parReturn = new SqlParameter();
+            parReturn.SqlDbType = SqlDbType.Int;
+            parReturn.Direction = ParameterDirection.ReturnValue;
+            cmd.Parameters.Add(parReturn);
+
             SqlParameter parIdCliente = new SqlParameter();
             parIdCliente.ParameterName = "@IdCliente";
             parIdCliente.SqlDbType = SqlDbType.Int;
@@ -652,6 +663,7 @@ namespace CapaDatos.Poliza
             cmd.Parameters.Add(parVencimiento);
 
             int rsp = cmd.ExecuteNonQuery();
+            rsp = Convert.ToInt32(parReturn.Value);
             strcon.Close();
             return rsp;
         }
@@ -665,6 +677,11 @@ namespace CapaDatos.Poliza
             cmd.Connection = strcon;
             cmd.CommandText = "CrearPolizaSeguroVoluntario";
             cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter parReturn = new SqlParameter();
+            parReturn.SqlDbType = SqlDbType.Int;
+            parReturn.Direction = ParameterDirection.ReturnValue;
+            cmd.Parameters.Add(parReturn);
 
             SqlParameter parIdCliente = new SqlParameter();
             parIdCliente.ParameterName = "@IdCliente";
@@ -697,7 +714,9 @@ namespace CapaDatos.Poliza
             cmd.Parameters.Add(parVencimiento);
 
             int rsp = cmd.ExecuteNonQuery();
+            rsp = Convert.ToInt32(parReturn.Value);
             strcon.Close();
+         
             return rsp;
         }
 

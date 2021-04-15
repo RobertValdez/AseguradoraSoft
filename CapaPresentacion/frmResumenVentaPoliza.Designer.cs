@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmResumenVentaPoliza));
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.btnPagarCrearPoliza = new System.Windows.Forms.Button();
             this.gbxDescontar = new System.Windows.Forms.GroupBox();
             this.txtDescontar = new System.Windows.Forms.TextBox();
@@ -90,20 +90,22 @@
             this.panel1.Size = new System.Drawing.Size(1825, 18);
             this.panel1.TabIndex = 112;
             // 
-            // button4
+            // btnImprimir
             // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Gray;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(290, 557);
-            this.button4.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 65);
-            this.button4.TabIndex = 252;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnImprimir.BackColor = System.Drawing.Color.White;
+            this.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.ForeColor = System.Drawing.Color.Gray;
+            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
+            this.btnImprimir.Location = new System.Drawing.Point(290, 557);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(120, 65);
+            this.btnImprimir.TabIndex = 252;
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Visible = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnPagarCrearPoliza
             // 
@@ -533,7 +535,7 @@
             this.Controls.Add(this.lblCerrar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnPagarCrearPoliza);
             this.Controls.Add(this.gbxDescontar);
             this.Controls.Add(this.cmbTipoPago);
@@ -569,7 +571,7 @@
         #endregion
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnPagarCrearPoliza;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;

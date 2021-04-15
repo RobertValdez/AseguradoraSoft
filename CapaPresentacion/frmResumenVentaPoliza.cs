@@ -122,6 +122,7 @@ namespace CapaPresentacion
             return value;
         }
 
+        bool PolizaCreada = false;
         private void btnPagarCrearPoliza_Click(object sender, EventArgs e)
         {
             try
@@ -132,7 +133,14 @@ namespace CapaPresentacion
                 }
                 if (!formValue)
                 {
-                    CrearPolizaSolicitud();
+                    if (PolizaCreada == false)
+                    {
+                        CrearPolizaSolicitud();
+                    }
+                    else
+                    {
+                        MessageBox.Show("La poliza actual ya ha sido creada.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
             catch (Exception ex)
@@ -254,6 +262,8 @@ namespace CapaPresentacion
         public DateTime Vencimiento;
 
 
+        int idPoliza = 0;
+
         private void CrearPolizaSolicitud()
         {
             E_Poliza.IdCliente = Convert.ToInt32(txtId.Text);
@@ -295,27 +305,36 @@ namespace CapaPresentacion
                 case "Seguro a Todo Riesgo":
                     if (MessageBox.Show("Se creará una Póliza del Seguro para el Cliente y la Solicitud actual.", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        if (B_Poliza.B_CrearPolizaSeguroTodoRiesgo(E_Poliza) == 1)
+                        idPoliza = B_Poliza.B_CrearPolizaSeguroTodoRiesgo(E_Poliza);
+                        if (idPoliza >= 1)
                         {
                             MessageBox.Show("Se ha creado la Póliza de Seguro satisfactoriamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            PolizaCreada = true;
+                            btnImprimir.Visible = true;
                         }
                     }
                     break;
                 case "Seguro Obligatorio":
                     if (MessageBox.Show("Se creará una Póliza del Seguro para el Cliente y la Solicitud actual.", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        if (B_Poliza.B_CrearPolizaSeguroObligatorio(E_Poliza) == 1)
+                        idPoliza = B_Poliza.B_CrearPolizaSeguroObligatorio(E_Poliza);
+                        if (idPoliza >= 1)
                         {
                             MessageBox.Show("Se ha creado la Póliza de Seguro satisfactoriamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            PolizaCreada = true;
+                            btnImprimir.Visible = true;
                         }
                     }
                     break;
                 case "Seguro Voluntario":
                     if (MessageBox.Show("Se creará una Póliza del Seguro para el Cliente y la Solicitud actual.", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        if (B_Poliza.B_CrearPolizaSeguroVoluntario(E_Poliza) == 1)
+                        idPoliza = B_Poliza.B_CrearPolizaSeguroVoluntario(E_Poliza);
+                        if (idPoliza >= 1)
                         {
                             MessageBox.Show("Se ha creado la Póliza de Seguro satisfactoriamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            PolizaCreada = true;
+                            btnImprimir.Visible = true;
                         }
                     }
                     break;
@@ -323,6 +342,15 @@ namespace CapaPresentacion
                 default:
                     break;
             }
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            frmPreviewFactura fP = new frmPreviewFactura();
+            fP.idCliente = Convert.ToInt32(txtId.Text);
+            fP.idPoliza = idPoliza;
+            fP.Total = Convert.ToDecimal(txtTotalA_Pagar.Text);
+            fP.ShowDialog();
         }
     }
 }

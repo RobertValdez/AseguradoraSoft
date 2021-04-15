@@ -147,6 +147,10 @@ namespace CapaPresentacion
 
             //dt_inPoliza = B_VerPolizas.B_in_MostrarPolizas();
             // dt_emPoliza = B_VerPolizas.B_em_MostrarPolizas();
+
+
+            dgvMostrarPolizas_Renovar.Columns[0].Visible = false;
+            dgvMostrarPolizas_Renovar.Columns[1].Visible = false;
         }
 
         string Nombre_C = "";
