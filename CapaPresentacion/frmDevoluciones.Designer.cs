@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDevoluciones));
             this.pnlBuscarClientes = new System.Windows.Forms.Panel();
+            this.chkSoloId = new System.Windows.Forms.CheckBox();
             this.lblCerrar = new System.Windows.Forms.Label();
             this.dgvBuscarClientes = new System.Windows.Forms.DataGridView();
             this.txtBuscar = new System.Windows.Forms.TextBox();
@@ -56,7 +57,6 @@
             this.txtIdReclamaciones = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.chkSoloId = new System.Windows.Forms.CheckBox();
             this.pnlBuscarClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscarClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
@@ -72,9 +72,23 @@
             this.pnlBuscarClientes.Controls.Add(this.label6);
             this.pnlBuscarClientes.Location = new System.Drawing.Point(12, 56);
             this.pnlBuscarClientes.Name = "pnlBuscarClientes";
-            this.pnlBuscarClientes.Size = new System.Drawing.Size(719, 468);
+            this.pnlBuscarClientes.Size = new System.Drawing.Size(819, 527);
             this.pnlBuscarClientes.TabIndex = 24;
             this.pnlBuscarClientes.Visible = false;
+            // 
+            // chkSoloId
+            // 
+            this.chkSoloId.AutoSize = true;
+            this.chkSoloId.BackColor = System.Drawing.Color.White;
+            this.chkSoloId.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkSoloId.ForeColor = System.Drawing.Color.Crimson;
+            this.chkSoloId.Location = new System.Drawing.Point(537, 24);
+            this.chkSoloId.Name = "chkSoloId";
+            this.chkSoloId.Size = new System.Drawing.Size(108, 32);
+            this.chkSoloId.TabIndex = 110;
+            this.chkSoloId.Text = "solo Id";
+            this.chkSoloId.UseVisualStyleBackColor = false;
+            this.chkSoloId.CheckedChanged += new System.EventHandler(this.chkSoloId_CheckedChanged);
             // 
             // lblCerrar
             // 
@@ -82,7 +96,7 @@
             this.lblCerrar.AutoSize = true;
             this.lblCerrar.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblCerrar.Font = new System.Drawing.Font("Century Gothic", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCerrar.Location = new System.Drawing.Point(680, 2);
+            this.lblCerrar.Location = new System.Drawing.Point(780, 2);
             this.lblCerrar.Name = "lblCerrar";
             this.lblCerrar.Size = new System.Drawing.Size(35, 36);
             this.lblCerrar.TabIndex = 16;
@@ -98,10 +112,10 @@
             this.dgvBuscarClientes.BackgroundColor = System.Drawing.Color.LightPink;
             this.dgvBuscarClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBuscarClientes.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvBuscarClientes.Location = new System.Drawing.Point(0, 88);
+            this.dgvBuscarClientes.Location = new System.Drawing.Point(0, 69);
             this.dgvBuscarClientes.Name = "dgvBuscarClientes";
             this.dgvBuscarClientes.ReadOnly = true;
-            this.dgvBuscarClientes.Size = new System.Drawing.Size(719, 380);
+            this.dgvBuscarClientes.Size = new System.Drawing.Size(819, 458);
             this.dgvBuscarClientes.TabIndex = 0;
             this.dgvBuscarClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscarClientes_CellClick);
             this.dgvBuscarClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscarClientes_CellDoubleClick);
@@ -232,7 +246,7 @@
             this.dgvDatos.Location = new System.Drawing.Point(12, 153);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
-            this.dgvDatos.Size = new System.Drawing.Size(714, 145);
+            this.dgvDatos.Size = new System.Drawing.Size(819, 179);
             this.dgvDatos.TabIndex = 33;
             this.dgvDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatos_CellClick);
             this.dgvDatos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatos_CellDoubleClick);
@@ -240,7 +254,7 @@
             // txtADevolver
             // 
             this.txtADevolver.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtADevolver.Location = new System.Drawing.Point(824, 161);
+            this.txtADevolver.Location = new System.Drawing.Point(953, 151);
             this.txtADevolver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtADevolver.MaxLength = 10;
             this.txtADevolver.Name = "txtADevolver";
@@ -252,7 +266,7 @@
             // txtMotivo
             // 
             this.txtMotivo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMotivo.Location = new System.Drawing.Point(734, 235);
+            this.txtMotivo.Location = new System.Drawing.Point(863, 225);
             this.txtMotivo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMotivo.Multiline = true;
             this.txtMotivo.Name = "txtMotivo";
@@ -266,7 +280,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(873, 464);
+            this.btnGuardar.Location = new System.Drawing.Point(1002, 523);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(174, 60);
@@ -279,7 +293,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Crimson;
-            this.label1.Location = new System.Drawing.Point(734, 206);
+            this.label1.Location = new System.Drawing.Point(863, 196);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(230, 24);
@@ -290,7 +304,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Crimson;
-            this.label2.Location = new System.Drawing.Point(805, 132);
+            this.label2.Location = new System.Drawing.Point(934, 122);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(242, 24);
@@ -301,7 +315,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Crimson;
-            this.label3.Location = new System.Drawing.Point(765, 163);
+            this.label3.Location = new System.Drawing.Point(894, 153);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 24);
@@ -311,7 +325,7 @@
             // txtidPoliza
             // 
             this.txtidPoliza.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtidPoliza.Location = new System.Drawing.Point(750, 89);
+            this.txtidPoliza.Location = new System.Drawing.Point(879, 79);
             this.txtidPoliza.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtidPoliza.Name = "txtidPoliza";
             this.txtidPoliza.ReadOnly = true;
@@ -323,7 +337,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Crimson;
-            this.label5.Location = new System.Drawing.Point(748, 60);
+            this.label5.Location = new System.Drawing.Point(877, 50);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 24);
@@ -338,10 +352,10 @@
             this.dgvReclamacion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvReclamacion.BackgroundColor = System.Drawing.Color.LightPink;
             this.dgvReclamacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReclamacion.Location = new System.Drawing.Point(15, 331);
+            this.dgvReclamacion.Location = new System.Drawing.Point(15, 364);
             this.dgvReclamacion.Name = "dgvReclamacion";
             this.dgvReclamacion.ReadOnly = true;
-            this.dgvReclamacion.Size = new System.Drawing.Size(714, 193);
+            this.dgvReclamacion.Size = new System.Drawing.Size(816, 219);
             this.dgvReclamacion.TabIndex = 33;
             this.dgvReclamacion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReclamacion_CellClick);
             // 
@@ -349,7 +363,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Crimson;
-            this.label7.Location = new System.Drawing.Point(135, 304);
+            this.label7.Location = new System.Drawing.Point(143, 335);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(294, 24);
@@ -359,7 +373,7 @@
             // txtIdReclamaciones
             // 
             this.txtIdReclamaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdReclamaciones.Location = new System.Drawing.Point(853, 89);
+            this.txtIdReclamaciones.Location = new System.Drawing.Point(982, 79);
             this.txtIdReclamaciones.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtIdReclamaciones.Name = "txtIdReclamaciones";
             this.txtIdReclamaciones.ReadOnly = true;
@@ -371,7 +385,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Crimson;
-            this.label8.Location = new System.Drawing.Point(851, 60);
+            this.label8.Location = new System.Drawing.Point(980, 50);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(179, 24);
@@ -385,7 +399,7 @@
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(738, 483);
+            this.btnLimpiar.Location = new System.Drawing.Point(867, 542);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(127, 41);
@@ -394,26 +408,12 @@
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // chkSoloId
-            // 
-            this.chkSoloId.AutoSize = true;
-            this.chkSoloId.BackColor = System.Drawing.Color.White;
-            this.chkSoloId.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkSoloId.ForeColor = System.Drawing.Color.Crimson;
-            this.chkSoloId.Location = new System.Drawing.Point(537, 24);
-            this.chkSoloId.Name = "chkSoloId";
-            this.chkSoloId.Size = new System.Drawing.Size(108, 32);
-            this.chkSoloId.TabIndex = 110;
-            this.chkSoloId.Text = "solo Id";
-            this.chkSoloId.UseVisualStyleBackColor = false;
-            this.chkSoloId.CheckedChanged += new System.EventHandler(this.chkSoloId_CheckedChanged);
-            // 
             // frmDevoluciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1067, 529);
+            this.ClientSize = new System.Drawing.Size(1190, 597);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.pnlBuscarClientes);
             this.Controls.Add(this.dgvReclamacion);

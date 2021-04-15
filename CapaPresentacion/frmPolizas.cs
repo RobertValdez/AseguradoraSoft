@@ -119,6 +119,9 @@ namespace CapaPresentacion
         {
             dt_vhPoliza = B_VerPolizas.B_vh_MostrarPolizasCancel();
             dgvMostrarPoliza_Cancelar.DataSource = dt_vhPoliza;
+            dgvMostrarPoliza_Cancelar.Columns[0].Visible = false;
+            dgvMostrarPoliza_Cancelar.Columns[1].Visible = false;
+
             CargarPolizas();
         }
 
@@ -952,14 +955,23 @@ namespace CapaPresentacion
                     break;
                 case "Seguro a Todo Riesgo":
                     dgvSolicitudes.DataSource = dtSeguroTodoRiesgo;
+                    dgvSolicitudes.Columns[0].Visible = false;
+                    dgvSolicitudes.Columns[1].Visible = false;
+                    dgvSolicitudes.Columns[2].Visible = false;
                     SolicitudCliente();
                     break;
                 case "Seguro Obligatorio":
                     dgvSolicitudes.DataSource = dtSeguroObligatorio;
+                    dgvSolicitudes.Columns[0].Visible = false;
+                    dgvSolicitudes.Columns[1].Visible = false;
+                    dgvSolicitudes.Columns[2].Visible = false;
                     SolicitudCliente();
                     break;
                 case "Seguro Voluntario":
                     dgvSolicitudes.DataSource = dtSeguroVoluntario;
+                    dgvSolicitudes.Columns[0].Visible = false;
+                    dgvSolicitudes.Columns[1].Visible = false;
+                    dgvSolicitudes.Columns[2].Visible = false;
                     SolicitudCliente();
                     break;
                 default:
