@@ -57,6 +57,7 @@
             this.txtIdReclamaciones = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.pnlBuscarClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscarClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
@@ -280,10 +281,10 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(1002, 523);
+            this.btnGuardar.Location = new System.Drawing.Point(959, 523);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(174, 60);
+            this.btnGuardar.Size = new System.Drawing.Size(217, 60);
             this.btnGuardar.TabIndex = 17;
             this.btnGuardar.Text = "Desembolsar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -399,7 +400,7 @@
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(867, 542);
+            this.btnLimpiar.Location = new System.Drawing.Point(1050, 474);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(127, 41);
@@ -408,12 +409,29 @@
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.Color.White;
+            this.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightPink;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.ForeColor = System.Drawing.Color.Gray;
+            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
+            this.btnImprimir.Location = new System.Drawing.Point(879, 526);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(71, 57);
+            this.btnImprimir.TabIndex = 254;
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
             // frmDevoluciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1190, 597);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.pnlBuscarClientes);
             this.Controls.Add(this.dgvReclamacion);
@@ -484,5 +502,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.CheckBox chkSoloId;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }

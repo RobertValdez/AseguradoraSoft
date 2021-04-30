@@ -474,7 +474,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1115, 535);
+            this.tabPage2.Size = new System.Drawing.Size(423, 535);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Cancelación";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -498,7 +498,7 @@
             this.pnlGestionarPolizas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlGestionarPolizas.Location = new System.Drawing.Point(3, 3);
             this.pnlGestionarPolizas.Name = "pnlGestionarPolizas";
-            this.pnlGestionarPolizas.Size = new System.Drawing.Size(1109, 529);
+            this.pnlGestionarPolizas.Size = new System.Drawing.Size(417, 529);
             this.pnlGestionarPolizas.TabIndex = 25;
             // 
             // txtCliente_Cancelar

@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AseguradoraBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="detalleSeguroObligatorio">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_ctVehiculo" Type="int" Nullable="false" />
+          <Property Name="Marca de Vehiculo" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Modelo" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Matricula" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Ano" Type="int" Nullable="false" />
+          <Property Name="Cilindros" Type="int" Nullable="false" />
+          <Property Name="Carroceria" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Categoria" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Uso" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nota" Type="varchar(max)" />
+          <Property Name="Estado" Type="int" Nullable="false" />
+          <Property Name="FechaHora" Type="datetime" Nullable="false" />
+          <Property Name="Tipo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idFactura" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="detalleSeguroTodoRiesgo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_ctVehiculo" Type="int" Nullable="false" />
+          <Property Name="Marca de Vehiculo" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Modelo" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Matricula" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Ano" Type="int" Nullable="false" />
+          <Property Name="Cilindros" Type="int" Nullable="false" />
+          <Property Name="Carroceria" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Categoria" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Uso" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nota" Type="varchar(max)" />
+          <Property Name="Estado" Type="int" Nullable="false" />
+          <Property Name="FechaHora" Type="datetime" Nullable="false" />
+          <Property Name="Tipo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idFactura" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="detalleSeguroVoluntario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_ctVehiculo" Type="int" Nullable="false" />
+          <Property Name="Marca de Vehiculo" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Modelo" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Matricula" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Ano" Type="int" Nullable="false" />
+          <Property Name="Cilindros" Type="int" Nullable="false" />
+          <Property Name="Carroceria" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Categoria" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Uso" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nota" Type="varchar(max)" />
+          <Property Name="Estado" Type="int" Nullable="false" />
+          <Property Name="FechaHora" Type="datetime" Nullable="false" />
+          <Property Name="Tipo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idFactura" Type="int" Nullable="false" />
+        </EntityType>
+        <Function Name="MostrarDetalleSegurosVehiculosCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idCliente" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="AseguradoraBDModelStoreContainer">
+          <EntitySet Name="detalleSeguroObligatorio" EntityType="Self.detalleSeguroObligatorio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="detalleSeguroTodoRiesgo" EntityType="Self.detalleSeguroTodoRiesgo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="detalleSeguroVoluntario" EntityType="Self.detalleSeguroVoluntario" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AseguradoraBDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="detalleSeguroObligatorio">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_ctVehiculo" Type="Int32" Nullable="false" />
+          <Property Name="Marca_de_Vehiculo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modelo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Matricula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ano" Type="Int32" Nullable="false" />
+          <Property Name="Cilindros" Type="Int32" Nullable="false" />
+          <Property Name="Carroceria" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Categoria" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Uso" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nota" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <Property Name="FechaHora" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idFactura" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="detalleSeguroTodoRiesgo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_ctVehiculo" Type="Int32" Nullable="false" />
+          <Property Name="Marca_de_Vehiculo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modelo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Matricula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ano" Type="Int32" Nullable="false" />
+          <Property Name="Cilindros" Type="Int32" Nullable="false" />
+          <Property Name="Carroceria" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Categoria" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Uso" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nota" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <Property Name="FechaHora" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idFactura" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="detalleSeguroVoluntario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_ctVehiculo" Type="Int32" Nullable="false" />
+          <Property Name="Marca_de_Vehiculo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modelo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Matricula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ano" Type="Int32" Nullable="false" />
+          <Property Name="Cilindros" Type="Int32" Nullable="false" />
+          <Property Name="Carroceria" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Categoria" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Uso" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nota" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <Property Name="FechaHora" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idFactura" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="AseguradoraBDEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="detalleSeguroObligatorio" EntityType="Self.detalleSeguroObligatorio" />
+          <EntitySet Name="detalleSeguroTodoRiesgo" EntityType="Self.detalleSeguroTodoRiesgo" />
+          <EntitySet Name="detalleSeguroVoluntario" EntityType="Self.detalleSeguroVoluntario" />
+          <FunctionImport Name="MostrarDetalleSegurosVehiculosCliente" ReturnType="Collection(AseguradoraBDModel.MostrarDetalleSegurosVehiculosCliente_Result)">
+            <Parameter Name="idCliente" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="MostrarDetalleSegurosVehiculosCliente_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Nombre_del_Seguro" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Marca_de_Vehiculo" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Modelo" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Matricula" Nullable="false" MaxLength="20" />
+          <Property Type="Int32" Name="Año" Nullable="false" />
+          <Property Type="Int32" Name="Cilindros" Nullable="false" />
+          <Property Type="String" Name="Carroceria" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Categoria" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Uso" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Nota" Nullable="true" />
+          <Property Type="String" Name="Estado" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Tipo" Nullable="false" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AseguradoraBDModelStoreContainer" CdmEntityContainer="AseguradoraBDEntities">
+          <EntitySetMapping Name="detalleSeguroObligatorio">
+            <EntityTypeMapping TypeName="AseguradoraBDModel.detalleSeguroObligatorio">
+              <MappingFragment StoreEntitySet="detalleSeguroObligatorio">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_ctVehiculo" ColumnName="id_ctVehiculo" />
+                <ScalarProperty Name="Marca_de_Vehiculo" ColumnName="Marca de Vehiculo" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+                <ScalarProperty Name="Ano" ColumnName="Ano" />
+                <ScalarProperty Name="Cilindros" ColumnName="Cilindros" />
+                <ScalarProperty Name="Carroceria" ColumnName="Carroceria" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Uso" ColumnName="Uso" />
+                <ScalarProperty Name="Nota" ColumnName="Nota" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="FechaHora" ColumnName="FechaHora" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="idFactura" ColumnName="idFactura" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="detalleSeguroTodoRiesgo">
+            <EntityTypeMapping TypeName="AseguradoraBDModel.detalleSeguroTodoRiesgo">
+              <MappingFragment StoreEntitySet="detalleSeguroTodoRiesgo">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_ctVehiculo" ColumnName="id_ctVehiculo" />
+                <ScalarProperty Name="Marca_de_Vehiculo" ColumnName="Marca de Vehiculo" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+                <ScalarProperty Name="Ano" ColumnName="Ano" />
+                <ScalarProperty Name="Cilindros" ColumnName="Cilindros" />
+                <ScalarProperty Name="Carroceria" ColumnName="Carroceria" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Uso" ColumnName="Uso" />
+                <ScalarProperty Name="Nota" ColumnName="Nota" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="FechaHora" ColumnName="FechaHora" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="idFactura" ColumnName="idFactura" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="detalleSeguroVoluntario">
+            <EntityTypeMapping TypeName="AseguradoraBDModel.detalleSeguroVoluntario">
+              <MappingFragment StoreEntitySet="detalleSeguroVoluntario">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="id_ctVehiculo" ColumnName="id_ctVehiculo" />
+                <ScalarProperty Name="Marca_de_Vehiculo" ColumnName="Marca de Vehiculo" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+                <ScalarProperty Name="Ano" ColumnName="Ano" />
+                <ScalarProperty Name="Cilindros" ColumnName="Cilindros" />
+                <ScalarProperty Name="Carroceria" ColumnName="Carroceria" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Uso" ColumnName="Uso" />
+                <ScalarProperty Name="Nota" ColumnName="Nota" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="FechaHora" ColumnName="FechaHora" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="idFactura" ColumnName="idFactura" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="MostrarDetalleSegurosVehiculosCliente" FunctionName="AseguradoraBDModel.Store.MostrarDetalleSegurosVehiculosCliente">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AseguradoraBDModel.MostrarDetalleSegurosVehiculosCliente_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre_del_Seguro" ColumnName="Nombre del Seguro" />
+                <ScalarProperty Name="Marca_de_Vehiculo" ColumnName="Marca de Vehiculo" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+                <ScalarProperty Name="Año" ColumnName="Año" />
+                <ScalarProperty Name="Cilindros" ColumnName="Cilindros" />
+                <ScalarProperty Name="Carroceria" ColumnName="Carroceria" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Uso" ColumnName="Uso" />
+                <ScalarProperty Name="Nota" ColumnName="Nota" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

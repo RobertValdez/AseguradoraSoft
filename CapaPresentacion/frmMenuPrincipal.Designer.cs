@@ -61,6 +61,7 @@
             this.lblFechaHora = new System.Windows.Forms.Label();
             this.FechaHora = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.vehiculosDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -204,7 +205,8 @@
             this.sdfsdfToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.empleadosToolStripMenuItem,
             this.clientesToolStripMenuItem1,
-            this.seguroParaEmpresasToolStripMenuItem});
+            this.seguroParaEmpresasToolStripMenuItem,
+            this.vehiculosDeClientesToolStripMenuItem});
             this.sdfsdfToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sdfsdfToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.sdfsdfToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sdfsdfToolStripMenuItem.Image")));
@@ -362,7 +364,7 @@
             this.facturasToolStripMenuItem.BackColor = System.Drawing.Color.Crimson;
             this.facturasToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
-            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(143, 24);
             this.facturasToolStripMenuItem.Text = "Facturas";
             this.facturasToolStripMenuItem.Click += new System.EventHandler(this.facturasToolStripMenuItem_Click);
             this.facturasToolStripMenuItem.MouseEnter += new System.EventHandler(this.facturasToolStripMenuItem_MouseEnter);
@@ -373,7 +375,7 @@
             this.siniestrosToolStripMenuItem1.BackColor = System.Drawing.Color.Crimson;
             this.siniestrosToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.siniestrosToolStripMenuItem1.Name = "siniestrosToolStripMenuItem1";
-            this.siniestrosToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.siniestrosToolStripMenuItem1.Size = new System.Drawing.Size(143, 24);
             this.siniestrosToolStripMenuItem1.Text = "Pólizas";
             this.siniestrosToolStripMenuItem1.Click += new System.EventHandler(this.siniestrosToolStripMenuItem1_Click);
             this.siniestrosToolStripMenuItem1.MouseEnter += new System.EventHandler(this.siniestrosToolStripMenuItem1_MouseEnter);
@@ -398,7 +400,7 @@
             this.usuariosToolStripMenuItem.BackColor = System.Drawing.Color.Crimson;
             this.usuariosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
@@ -458,6 +460,15 @@
             this.panel1.TabIndex = 7;
             this.panel1.DoubleClick += new System.EventHandler(this.panel1_DoubleClick);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // vehiculosDeClientesToolStripMenuItem
+            // 
+            this.vehiculosDeClientesToolStripMenuItem.BackColor = System.Drawing.Color.Crimson;
+            this.vehiculosDeClientesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.vehiculosDeClientesToolStripMenuItem.Name = "vehiculosDeClientesToolStripMenuItem";
+            this.vehiculosDeClientesToolStripMenuItem.Size = new System.Drawing.Size(251, 24);
+            this.vehiculosDeClientesToolStripMenuItem.Text = "Vehiculos de Clientes";
+            this.vehiculosDeClientesToolStripMenuItem.Click += new System.EventHandler(this.vehiculosDeClientesToolStripMenuItem_Click);
             // 
             // frmMenuPrincipal
             // 
@@ -519,5 +530,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem vehiculosDeClientesToolStripMenuItem;
     }
 }

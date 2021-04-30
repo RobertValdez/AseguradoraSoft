@@ -39,26 +39,28 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pnlNuevo = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.mskCedula = new System.Windows.Forms.MaskedTextBox();
+            this.txtNacionalidad = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.mskTelefono = new System.Windows.Forms.MaskedTextBox();
+            this.cmbSexo = new System.Windows.Forms.ComboBox();
             this.txtLimpiar = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.txtRNC = new System.Windows.Forms.TextBox();
             this.txtCorreoElectronico = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtNacionalidad = new System.Windows.Forms.ComboBox();
-            this.mskTelefono = new System.Windows.Forms.MaskedTextBox();
-            this.cmbSexo = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.pnlModificar = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chkSoloId = new System.Windows.Forms.CheckBox();
             this.label20 = new System.Windows.Forms.Label();
             this.txtIdMod = new System.Windows.Forms.TextBox();
+            this.txtNacionalidadMod = new System.Windows.Forms.ComboBox();
             this.cmbSexoMod = new System.Windows.Forms.ComboBox();
+            this.txtTelefonoMod = new System.Windows.Forms.MaskedTextBox();
             this.mskCedulaMod = new System.Windows.Forms.MaskedTextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -82,8 +84,6 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtTelefonoMod = new System.Windows.Forms.MaskedTextBox();
-            this.txtNacionalidadMod = new System.Windows.Forms.ComboBox();
             this.pnlNuevo.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.pnlModificar.SuspendLayout();
@@ -187,102 +187,6 @@
             this.pnlNuevo.Size = new System.Drawing.Size(626, 466);
             this.pnlNuevo.TabIndex = 12;
             // 
-            // mskCedula
-            // 
-            this.mskCedula.Location = new System.Drawing.Point(113, 171);
-            this.mskCedula.Mask = "000-0000000-0";
-            this.mskCedula.Name = "mskCedula";
-            this.mskCedula.Size = new System.Drawing.Size(142, 33);
-            this.mskCedula.TabIndex = 14;
-            this.mskCedula.Validating += new System.ComponentModel.CancelEventHandler(this.mskCedula_Validating);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 177);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 24);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Cédula:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtLimpiar
-            // 
-            this.txtLimpiar.BackColor = System.Drawing.Color.Crimson;
-            this.txtLimpiar.FlatAppearance.BorderSize = 0;
-            this.txtLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txtLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLimpiar.ForeColor = System.Drawing.Color.White;
-            this.txtLimpiar.Location = new System.Drawing.Point(162, 339);
-            this.txtLimpiar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtLimpiar.Name = "txtLimpiar";
-            this.txtLimpiar.Size = new System.Drawing.Size(194, 60);
-            this.txtLimpiar.TabIndex = 7;
-            this.txtLimpiar.Text = "Limpiar";
-            this.txtLimpiar.UseVisualStyleBackColor = false;
-            this.txtLimpiar.Click += new System.EventHandler(this.txtLimpiar_Click);
-            // 
-            // txtRNC
-            // 
-            this.txtRNC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtRNC.Location = new System.Drawing.Point(357, 287);
-            this.txtRNC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtRNC.Name = "txtRNC";
-            this.txtRNC.Size = new System.Drawing.Size(202, 33);
-            this.txtRNC.TabIndex = 4;
-            this.txtRNC.Visible = false;
-            // 
-            // txtCorreoElectronico
-            // 
-            this.txtCorreoElectronico.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCorreoElectronico.Location = new System.Drawing.Point(224, 209);
-            this.txtCorreoElectronico.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCorreoElectronico.Name = "txtCorreoElectronico";
-            this.txtCorreoElectronico.Size = new System.Drawing.Size(335, 33);
-            this.txtCorreoElectronico.TabIndex = 4;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(14, 293);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(63, 24);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "Sexo:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(262, 177);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 24);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Teléfono:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(295, 293);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 24);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "RNC:";
-            this.label4.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 215);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(210, 24);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Correo electrónico:";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.mskCedula);
@@ -315,6 +219,15 @@
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             // 
+            // mskCedula
+            // 
+            this.mskCedula.Location = new System.Drawing.Point(113, 171);
+            this.mskCedula.Mask = "000-0000000-0";
+            this.mskCedula.Name = "mskCedula";
+            this.mskCedula.Size = new System.Drawing.Size(142, 33);
+            this.mskCedula.TabIndex = 14;
+            this.mskCedula.Validating += new System.ComponentModel.CancelEventHandler(this.mskCedula_Validating);
+            // 
             // txtNacionalidad
             // 
             this.txtNacionalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -327,6 +240,17 @@
             this.txtNacionalidad.Name = "txtNacionalidad";
             this.txtNacionalidad.Size = new System.Drawing.Size(384, 32);
             this.txtNacionalidad.TabIndex = 20;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 177);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 24);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Cédula:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // mskTelefono
             // 
@@ -350,6 +274,22 @@
             this.cmbSexo.Size = new System.Drawing.Size(171, 32);
             this.cmbSexo.TabIndex = 19;
             // 
+            // txtLimpiar
+            // 
+            this.txtLimpiar.BackColor = System.Drawing.Color.Crimson;
+            this.txtLimpiar.FlatAppearance.BorderSize = 0;
+            this.txtLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txtLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLimpiar.ForeColor = System.Drawing.Color.White;
+            this.txtLimpiar.Location = new System.Drawing.Point(162, 339);
+            this.txtLimpiar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtLimpiar.Name = "txtLimpiar";
+            this.txtLimpiar.Size = new System.Drawing.Size(194, 60);
+            this.txtLimpiar.TabIndex = 7;
+            this.txtLimpiar.Text = "Limpiar";
+            this.txtLimpiar.UseVisualStyleBackColor = false;
+            this.txtLimpiar.Click += new System.EventHandler(this.txtLimpiar_Click);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -359,6 +299,66 @@
             this.label11.Size = new System.Drawing.Size(153, 24);
             this.label11.TabIndex = 9;
             this.label11.Text = "Nacionalidad:";
+            // 
+            // txtRNC
+            // 
+            this.txtRNC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRNC.Location = new System.Drawing.Point(357, 287);
+            this.txtRNC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtRNC.Name = "txtRNC";
+            this.txtRNC.Size = new System.Drawing.Size(202, 33);
+            this.txtRNC.TabIndex = 4;
+            this.txtRNC.Visible = false;
+            // 
+            // txtCorreoElectronico
+            // 
+            this.txtCorreoElectronico.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCorreoElectronico.Location = new System.Drawing.Point(224, 209);
+            this.txtCorreoElectronico.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCorreoElectronico.Name = "txtCorreoElectronico";
+            this.txtCorreoElectronico.Size = new System.Drawing.Size(335, 33);
+            this.txtCorreoElectronico.TabIndex = 4;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(14, 293);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(63, 24);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "Sexo:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 215);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(210, 24);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Correo electrónico:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(262, 177);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 24);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Teléfono:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(295, 293);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 24);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "RNC:";
+            this.label4.Visible = false;
             // 
             // pnlModificar
             // 
@@ -442,6 +442,19 @@
             this.txtIdMod.Size = new System.Drawing.Size(96, 43);
             this.txtIdMod.TabIndex = 1;
             // 
+            // txtNacionalidadMod
+            // 
+            this.txtNacionalidadMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtNacionalidadMod.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.txtNacionalidadMod.FormattingEnabled = true;
+            this.txtNacionalidadMod.Items.AddRange(new object[] {
+            "dominicana",
+            "extranjero"});
+            this.txtNacionalidadMod.Location = new System.Drawing.Point(882, 263);
+            this.txtNacionalidadMod.Name = "txtNacionalidadMod";
+            this.txtNacionalidadMod.Size = new System.Drawing.Size(241, 44);
+            this.txtNacionalidadMod.TabIndex = 8;
+            // 
             // cmbSexoMod
             // 
             this.cmbSexoMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -454,6 +467,14 @@
             this.cmbSexoMod.Name = "cmbSexoMod";
             this.cmbSexoMod.Size = new System.Drawing.Size(372, 44);
             this.cmbSexoMod.TabIndex = 8;
+            // 
+            // txtTelefonoMod
+            // 
+            this.txtTelefonoMod.Location = new System.Drawing.Point(802, 214);
+            this.txtTelefonoMod.Mask = "(000)-000-0000";
+            this.txtTelefonoMod.Name = "txtTelefonoMod";
+            this.txtTelefonoMod.Size = new System.Drawing.Size(321, 43);
+            this.txtTelefonoMod.TabIndex = 4;
             // 
             // mskCedulaMod
             // 
@@ -704,27 +725,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // txtTelefonoMod
-            // 
-            this.txtTelefonoMod.Location = new System.Drawing.Point(802, 214);
-            this.txtTelefonoMod.Mask = "(000)-000-0000";
-            this.txtTelefonoMod.Name = "txtTelefonoMod";
-            this.txtTelefonoMod.Size = new System.Drawing.Size(321, 43);
-            this.txtTelefonoMod.TabIndex = 4;
-            // 
-            // txtNacionalidadMod
-            // 
-            this.txtNacionalidadMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtNacionalidadMod.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.txtNacionalidadMod.FormattingEnabled = true;
-            this.txtNacionalidadMod.Items.AddRange(new object[] {
-            "dominicana",
-            "extranjero"});
-            this.txtNacionalidadMod.Location = new System.Drawing.Point(882, 263);
-            this.txtNacionalidadMod.Name = "txtNacionalidadMod";
-            this.txtNacionalidadMod.Size = new System.Drawing.Size(241, 44);
-            this.txtNacionalidadMod.TabIndex = 8;
             // 
             // frmCliente
             // 

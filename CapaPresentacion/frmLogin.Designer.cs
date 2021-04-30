@@ -135,11 +135,11 @@
             this.label4.Cursor = System.Windows.Forms.Cursors.Default;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Crimson;
-            this.label4.Location = new System.Drawing.Point(477, 55);
+            this.label4.Location = new System.Drawing.Point(447, 78);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(187, 72);
+            this.label4.Size = new System.Drawing.Size(282, 36);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Seguros\r\nPerla del Sur";
+            this.label4.Text = "Insurance Software";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // errorProvider1
