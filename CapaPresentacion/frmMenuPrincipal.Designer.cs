@@ -45,6 +45,7 @@
             this.cargoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.seguroParaEmpresasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vehiculosDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.verSiniestrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verReclamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,7 +62,6 @@
             this.lblFechaHora = new System.Windows.Forms.Label();
             this.FechaHora = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.vehiculosDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -266,6 +266,17 @@
             this.seguroParaEmpresasToolStripMenuItem.MouseEnter += new System.EventHandler(this.seguroParaEmpresasToolStripMenuItem_MouseEnter);
             this.seguroParaEmpresasToolStripMenuItem.MouseLeave += new System.EventHandler(this.seguroParaEmpresasToolStripMenuItem_MouseLeave);
             // 
+            // vehiculosDeClientesToolStripMenuItem
+            // 
+            this.vehiculosDeClientesToolStripMenuItem.BackColor = System.Drawing.Color.Crimson;
+            this.vehiculosDeClientesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.vehiculosDeClientesToolStripMenuItem.Name = "vehiculosDeClientesToolStripMenuItem";
+            this.vehiculosDeClientesToolStripMenuItem.Size = new System.Drawing.Size(251, 24);
+            this.vehiculosDeClientesToolStripMenuItem.Text = "Vehiculos de Clientes";
+            this.vehiculosDeClientesToolStripMenuItem.Click += new System.EventHandler(this.vehiculosDeClientesToolStripMenuItem_Click);
+            this.vehiculosDeClientesToolStripMenuItem.MouseEnter += new System.EventHandler(this.vehiculosDeClientesToolStripMenuItem_MouseEnter);
+            this.vehiculosDeClientesToolStripMenuItem.MouseLeave += new System.EventHandler(this.vehiculosDeClientesToolStripMenuItem_MouseLeave);
+            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -460,15 +471,6 @@
             this.panel1.TabIndex = 7;
             this.panel1.DoubleClick += new System.EventHandler(this.panel1_DoubleClick);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            // 
-            // vehiculosDeClientesToolStripMenuItem
-            // 
-            this.vehiculosDeClientesToolStripMenuItem.BackColor = System.Drawing.Color.Crimson;
-            this.vehiculosDeClientesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.vehiculosDeClientesToolStripMenuItem.Name = "vehiculosDeClientesToolStripMenuItem";
-            this.vehiculosDeClientesToolStripMenuItem.Size = new System.Drawing.Size(251, 24);
-            this.vehiculosDeClientesToolStripMenuItem.Text = "Vehiculos de Clientes";
-            this.vehiculosDeClientesToolStripMenuItem.Click += new System.EventHandler(this.vehiculosDeClientesToolStripMenuItem_Click);
             // 
             // frmMenuPrincipal
             // 

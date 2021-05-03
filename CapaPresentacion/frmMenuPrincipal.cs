@@ -572,5 +572,15 @@ namespace CapaPresentacion
             frmV.MdiParent = this;
             frmV.Show();
         }
+
+        private void vehiculosDeClientesToolStripMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            vehiculosDeClientesToolStripMenuItem.ForeColor = Color.White;
+        }
+
+        private void vehiculosDeClientesToolStripMenuItem_MouseEnter(object sender, EventArgs e)
+        {
+            vehiculosDeClientesToolStripMenuItem.ForeColor = Color.Black;
+        }
     }
 }

@@ -75,7 +75,6 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnVerPoliza_Renovar = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtCedulaCliente_Renovar = new System.Windows.Forms.TextBox();
@@ -147,7 +146,6 @@
             this.pnlPagoPolizas.Controls.Add(this.btnImprimir);
             this.pnlPagoPolizas.Controls.Add(this.label5);
             this.pnlPagoPolizas.Controls.Add(this.label7);
-            this.pnlPagoPolizas.Controls.Add(this.btnVerPoliza_Renovar);
             this.pnlPagoPolizas.Controls.Add(this.label13);
             this.pnlPagoPolizas.Controls.Add(this.label6);
             this.pnlPagoPolizas.Controls.Add(this.txtCedulaCliente_Renovar);
@@ -180,7 +178,7 @@
             this.tabGestionarPolizas.Location = new System.Drawing.Point(15, 14);
             this.tabGestionarPolizas.Name = "tabGestionarPolizas";
             this.tabGestionarPolizas.SelectedIndex = 0;
-            this.tabGestionarPolizas.Size = new System.Drawing.Size(1123, 572);
+            this.tabGestionarPolizas.Size = new System.Drawing.Size(1132, 572);
             this.tabGestionarPolizas.TabIndex = 187;
             this.tabGestionarPolizas.Visible = false;
             // 
@@ -190,7 +188,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 33);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1115, 535);
+            this.tabPage1.Size = new System.Drawing.Size(1124, 535);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nueva";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -474,7 +472,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(423, 535);
+            this.tabPage2.Size = new System.Drawing.Size(1118, 535);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Cancelación";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -498,7 +496,7 @@
             this.pnlGestionarPolizas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlGestionarPolizas.Location = new System.Drawing.Point(3, 3);
             this.pnlGestionarPolizas.Name = "pnlGestionarPolizas";
-            this.pnlGestionarPolizas.Size = new System.Drawing.Size(417, 529);
+            this.pnlGestionarPolizas.Size = new System.Drawing.Size(1112, 529);
             this.pnlGestionarPolizas.TabIndex = 25;
             // 
             // txtCliente_Cancelar
@@ -689,19 +687,6 @@
             this.label7.TabIndex = 173;
             this.label7.Text = "Vencimiento\r\nActual:";
             // 
-            // btnVerPoliza_Renovar
-            // 
-            this.btnVerPoliza_Renovar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerPoliza_Renovar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerPoliza_Renovar.ForeColor = System.Drawing.Color.Crimson;
-            this.btnVerPoliza_Renovar.Location = new System.Drawing.Point(1036, 136);
-            this.btnVerPoliza_Renovar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnVerPoliza_Renovar.Name = "btnVerPoliza_Renovar";
-            this.btnVerPoliza_Renovar.Size = new System.Drawing.Size(77, 33);
-            this.btnVerPoliza_Renovar.TabIndex = 165;
-            this.btnVerPoliza_Renovar.Text = "Ver";
-            this.btnVerPoliza_Renovar.UseVisualStyleBackColor = false;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -759,7 +744,7 @@
             this.txtNumPoliza_Renovar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtNumPoliza_Renovar.Name = "txtNumPoliza_Renovar";
             this.txtNumPoliza_Renovar.ReadOnly = true;
-            this.txtNumPoliza_Renovar.Size = new System.Drawing.Size(118, 33);
+            this.txtNumPoliza_Renovar.Size = new System.Drawing.Size(203, 33);
             this.txtNumPoliza_Renovar.TabIndex = 171;
             // 
             // btnPagar_Renovar
@@ -948,7 +933,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1185, 650);
+            this.ClientSize = new System.Drawing.Size(1185, 685);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlPagoPolizas);
@@ -1034,7 +1019,6 @@
         private System.Windows.Forms.TextBox txtPrecio_Renovar;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtEstado_Renovar;
-        private System.Windows.Forms.Button btnVerPoliza_Renovar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TextBox txtPagoParcial_Renovar;
         private System.Windows.Forms.ComboBox cmbSeguros;

@@ -222,7 +222,7 @@ namespace CapaDatos.Poliza
         }
 
 
-        public int RenovarPolizaVehiculo(E_Poliza ePol)
+        public int RenovarPolizaVehiculo(E_Poliza ePol, int IdPagoPoliza)
         {
 
             SqlConnection strcon = new SqlConnection();
@@ -232,6 +232,12 @@ namespace CapaDatos.Poliza
             cmd.Connection = strcon;
             cmd.CommandText = "RenovacionPolizaVehiculo";
             cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter parIdPagoPoliza = new SqlParameter();
+            parIdPagoPoliza.ParameterName = "@idPagoPoliza";
+            parIdPagoPoliza.SqlDbType = SqlDbType.Int;
+            parIdPagoPoliza.Value = IdPagoPoliza;
+            cmd.Parameters.Add(parIdPagoPoliza);
 
             SqlParameter parIdPoliza = new SqlParameter();
             parIdPoliza.ParameterName = "@IdPoliza";

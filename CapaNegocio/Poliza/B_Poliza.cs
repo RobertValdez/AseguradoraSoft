@@ -32,9 +32,9 @@ namespace CapaNegocio.Poliza
             return D_Poliza.CancelarPolizaEmpresaNegocio(ePol);
         }
 
-        public int B_RenovarPolizaVehiculo(E_Poliza ePol)
+        public int B_RenovarPolizaVehiculo(E_Poliza ePol, int IdPagoPoliza)
         {
-            return D_Poliza.RenovarPolizaVehiculo(ePol);
+            return D_Poliza.RenovarPolizaVehiculo(ePol, IdPagoPoliza);
         }
         public int B_CancelarPolizaVehiculo(E_Poliza ePol)
         {

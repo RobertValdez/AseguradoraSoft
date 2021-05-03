@@ -108,11 +108,13 @@ namespace CapaPresentacion
 
         private void frmPolizas_Load(object sender, EventArgs e)
         {
+            cmbTPago.SelectedIndex = 0;
             CargarPolizas();
             CargarPolizas_Cancelar();
 
             MostrarClientes();
             CargarDetalles();
+            dgvMostrarPolizas_Renovar.Columns[16].Visible = false;
         }
 
         private void CargarPolizas_Cancelar()
@@ -205,6 +207,7 @@ namespace CapaPresentacion
             }
         }
 
+        int IdPagoPoliza = 0;
         private void dgvMostrarPolizas_Pagar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -225,25 +228,39 @@ namespace CapaPresentacion
                 string strVenc = row.Cells[8].Value.ToString();
 
                 txtVencimiento_Renovar.Text = strVenc.Remove(11, 8);
-                BtnPagarEnableEstado_R();
 
+                DateTime FechaVencimiento = new DateTime();
+                FechaVencimiento = Convert.ToDateTime(strVenc);
+
+                if (row.Cells[15].Value.ToString() == "")
+                {
+                    cmbTPago.Enabled = true;
+                    IdPagoPoliza = 0;
+                }
+                else
+                {
+                    IdPagoPoliza = (int)row.Cells[16].Value;
+                    cmbTPago.SelectedIndex = 0;
+                    cmbTPago.Enabled = false;
+
+                    decimal Restante = Convert.ToDecimal(txtTotalAPagar_Renovar.Text) - Convert.ToDecimal(row.Cells[15].Value);
+                    txtTotalAPagar_Renovar.Text = Restante.ToString();
+                }
+
+                BtnPagarEnableEstado_R(FechaVencimiento);
             }
             catch (Exception) { }
         }
 
-        public void BtnPagarEnableEstado_R()
+        public void BtnPagarEnableEstado_R(DateTime fechaVencimiento)
         {
-            if (txtEstado_Renovar.Text == "Activo")
-            {
-                btnPagar_Renovar.Enabled = false;
-            }
-            else if (txtEstado_Renovar.Text == "Inactivo")
+            if (ComprobarVencimiento(fechaVencimiento))
             {
                 btnPagar_Renovar.Enabled = true;
             }
             else
             {
-                btnPagar_Renovar.Enabled = true;
+                btnPagar_Renovar.Enabled = false;
             }
         }
 
@@ -253,8 +270,21 @@ namespace CapaPresentacion
 
         }
 
+        private bool ComprobarVencimiento(DateTime fechaVencimiento)
+        {
+            if (DateTime.Now.Date > fechaVencimiento.Date)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         private void btnPagar_Renovar_Click(object sender, EventArgs e)
         {
+
             RenovarPolizaVehiculo();
 
             //switch (cmbSegurosRenovar.Text)
@@ -373,10 +403,19 @@ namespace CapaPresentacion
                         E_Poliza.TPago = Convert.ToDecimal(txtTotalAPagar_Renovar.Text);
 
                         E_Poliza.Parcial = Parcial(txtPagoParcial_Renovar.Text);
-                        E_Poliza.FechaHora = DateTime.Now;
-                        E_Poliza.Vencimiento = DateTime.Now.Date;
 
-                        if (B_Poliza.B_RenovarPolizaVehiculo(E_Poliza) >= 2)
+                        if (cmbTPago.Text == "Parcial")
+                        {
+                            E_Poliza.Vencimiento = Convert.ToDateTime(txtVencimiento_Renovar.Text);
+                        }
+                        else
+                        {
+                            E_Poliza.Vencimiento = DateTime.Now.Date;
+                        }
+
+                        E_Poliza.FechaHora = DateTime.Now;
+
+                        if (B_Poliza.B_RenovarPolizaVehiculo(E_Poliza, IdPagoPoliza) >= 2)
                         {
                             MessageBox.Show("Pago realizado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             CargarPolizas();
