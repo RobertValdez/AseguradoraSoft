@@ -13,3 +13,10 @@
         }
     }
 }
+
+namespace CapaPresentacion.DsFacturaPolizaTableAdapters {
+    
+    
+    public partial class ReporteDatosPolizaClienteTableAdapter {
+    }
+}

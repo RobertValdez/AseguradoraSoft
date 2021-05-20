@@ -399,8 +399,7 @@
             this.cmbTipoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoPago.FormattingEnabled = true;
             this.cmbTipoPago.Items.AddRange(new object[] {
-            "Al contado",
-            "Parcial"});
+            "Al contado"});
             this.cmbTipoPago.Location = new System.Drawing.Point(666, 211);
             this.cmbTipoPago.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cmbTipoPago.Name = "cmbTipoPago";

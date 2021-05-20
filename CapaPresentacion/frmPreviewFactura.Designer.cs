@@ -31,16 +31,31 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DsFacturaPoliza = new CapaPresentacion.DsFacturaPoliza();
             this.ReporteDatosPolizaClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ReporteDatosPolizaClienteTableAdapter = new CapaPresentacion.DsFacturaPolizaTableAdapters.ReporteDatosPolizaClienteTableAdapter();
+            this.DsFacturaPoliza = new CapaPresentacion.DsFacturaPoliza();
             this.ReporteDatosPolizaCliente_vhPolizaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.ReporteDatosPolizaClienteTableAdapter = new CapaPresentacion.DsFacturaPolizaTableAdapters.ReporteDatosPolizaClienteTableAdapter();
             this.ReporteDatosPolizaCliente_vhPolizaTableAdapter = new CapaPresentacion.DsFacturaPolizaTableAdapters.ReporteDatosPolizaCliente_vhPolizaTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DsFacturaPoliza)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReporteDatosPolizaClienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DsFacturaPoliza)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReporteDatosPolizaCliente_vhPolizaBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ReporteDatosPolizaClienteBindingSource
+            // 
+            this.ReporteDatosPolizaClienteBindingSource.DataMember = "ReporteDatosPolizaCliente";
+            this.ReporteDatosPolizaClienteBindingSource.DataSource = this.DsFacturaPoliza;
+            // 
+            // DsFacturaPoliza
+            // 
+            this.DsFacturaPoliza.DataSetName = "DsFacturaPoliza";
+            this.DsFacturaPoliza.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ReporteDatosPolizaCliente_vhPolizaBindingSource
+            // 
+            this.ReporteDatosPolizaCliente_vhPolizaBindingSource.DataMember = "ReporteDatosPolizaCliente_vhPoliza";
+            this.ReporteDatosPolizaCliente_vhPolizaBindingSource.DataSource = this.DsFacturaPoliza;
             // 
             // reportViewer1
             // 
@@ -58,24 +73,9 @@
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // DsFacturaPoliza
-            // 
-            this.DsFacturaPoliza.DataSetName = "DsFacturaPoliza";
-            this.DsFacturaPoliza.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ReporteDatosPolizaClienteBindingSource
-            // 
-            this.ReporteDatosPolizaClienteBindingSource.DataMember = "ReporteDatosPolizaCliente";
-            this.ReporteDatosPolizaClienteBindingSource.DataSource = this.DsFacturaPoliza;
-            // 
             // ReporteDatosPolizaClienteTableAdapter
             // 
             this.ReporteDatosPolizaClienteTableAdapter.ClearBeforeFill = true;
-            // 
-            // ReporteDatosPolizaCliente_vhPolizaBindingSource
-            // 
-            this.ReporteDatosPolizaCliente_vhPolizaBindingSource.DataMember = "ReporteDatosPolizaCliente_vhPoliza";
-            this.ReporteDatosPolizaCliente_vhPolizaBindingSource.DataSource = this.DsFacturaPoliza;
             // 
             // ReporteDatosPolizaCliente_vhPolizaTableAdapter
             // 
@@ -94,8 +94,8 @@
             this.Text = "Factura";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPreviewFactura_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DsFacturaPoliza)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReporteDatosPolizaClienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DsFacturaPoliza)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReporteDatosPolizaCliente_vhPolizaBindingSource)).EndInit();
             this.ResumeLayout(false);
 

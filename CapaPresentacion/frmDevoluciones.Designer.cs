@@ -190,9 +190,9 @@
             this.lblDevoluciones.Location = new System.Drawing.Point(370, 9);
             this.lblDevoluciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDevoluciones.Name = "lblDevoluciones";
-            this.lblDevoluciones.Size = new System.Drawing.Size(209, 36);
+            this.lblDevoluciones.Size = new System.Drawing.Size(200, 36);
             this.lblDevoluciones.TabIndex = 29;
-            this.lblDevoluciones.Text = "Devoluciones";
+            this.lblDevoluciones.Text = "Desembolsos";
             // 
             // label4
             // 
@@ -460,7 +460,7 @@
             this.MaximizeBox = false;
             this.Name = "frmDevoluciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Devoluciones";
+            this.Text = "Desembolsos";
             this.Load += new System.EventHandler(this.frmDevoluciones_Load);
             this.pnlBuscarClientes.ResumeLayout(false);
             this.pnlBuscarClientes.PerformLayout();
