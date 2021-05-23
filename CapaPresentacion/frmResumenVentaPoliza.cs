@@ -271,6 +271,7 @@ namespace CapaPresentacion
             E_Poliza.IdPolizaSeguro = Convert.ToInt32(txtIdSeguro.Text);
             E_Poliza.FechaHora = DateTime.Now;
             E_Poliza.Vencimiento = Vencimiento;
+           // E_Poliza.Parcial = Convert.ToDecimal(txtParcial.Text);
 
 
             switch (txtSeguroA_Adquirir.Text)
@@ -349,6 +350,7 @@ namespace CapaPresentacion
             frmPreviewFactura fP = new frmPreviewFactura();
             fP.idCliente = Convert.ToInt32(txtId.Text);
             fP.idPoliza = idPoliza;
+            fP.strTipoPago = cmbTipoPago.Text;
             fP.Total = Convert.ToDecimal(txtTotalA_Pagar.Text);
             fP.ShowDialog();
         }

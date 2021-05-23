@@ -18,6 +18,8 @@ namespace CapaPresentacion
 
         public decimal Total = 0;
 
+        public string strTipoPago = "";
+
         public frmPreviewFactura()
         {
             InitializeComponent();
@@ -168,6 +170,10 @@ namespace CapaPresentacion
             ReportParameterCollection parTotal = new ReportParameterCollection();
             parTotal.Add(new ReportParameter("parTotal", Total.ToString()));
             reportViewer1.LocalReport.SetParameters(parTotal);
+
+            ReportParameterCollection parAseguradoParcial = new ReportParameterCollection();
+            parAseguradoParcial.Add(new ReportParameter("parAseguradoParcial", strTipoPago));
+            reportViewer1.LocalReport.SetParameters(parAseguradoParcial);
 
             this.reportViewer1.RefreshReport();
         }

@@ -1713,7 +1713,7 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>CLIENTE ASEGURADO</Value>
+                        <Value>=Parameters!parAseguradoParcial.Value</Value>
                         <Style>
                           <FontFamily>century gothic</FontFamily>
                           <FontSize>18pt</FontSize>
@@ -1749,7 +1749,7 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>TOTAL A PAGAR:</Value>
+                        <Value>TOTAL PAGADO:</Value>
                         <Style>
                           <FontFamily>century gothic</FontFamily>
                           <FontSize>16pt</FontSize>
@@ -1966,6 +1966,10 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
+    <ReportParameter Name="parAseguradoParcial">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -1976,6 +1980,11 @@
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>parTotal</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>parAseguradoParcial</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

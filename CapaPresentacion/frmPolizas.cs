@@ -212,6 +212,7 @@ namespace CapaPresentacion
         {
             try
             {
+                btnImprimir.Visible = true;
                 var row = dgvMostrarPolizas_Renovar.CurrentRow;
                 dgvMostrarPolizas_Renovar.Rows[row.Index].Selected = true;
 
@@ -284,8 +285,30 @@ namespace CapaPresentacion
 
         private void btnPagar_Renovar_Click(object sender, EventArgs e)
         {
+            if (cmbTPago.Enabled == false)
+            {
+                var row = dgvMostrarPolizas_Renovar.CurrentRow;
 
-            RenovarPolizaVehiculo();
+                frmPagosParciales fp = new frmPagosParciales();
+
+                fp.txtCliente.Text = row.Cells[9].Value.ToString() +" "+ row.Cells[10].Value.ToString();
+                fp.mskCedula.Text = row.Cells[11].Value.ToString();
+                fp.txtFechaPrimerPago.Text = row.Cells[7].Value.ToString();
+                fp.txtTotalPagado.Text = row.Cells[15].Value.ToString();
+                fp.txtPrecioTotal.Text = txtPrecio_Renovar.Text;
+                fp.txtTotalAPagar.Text = txtTotalAPagar_Renovar.Text;
+
+                fp.ShowDialog();
+
+                if (fp.blConfirmacion)
+                {
+                    RenovarPolizaVehiculo(true);
+                }
+            }
+            else
+            {
+                RenovarPolizaVehiculo(false);
+            }
 
             //switch (cmbSegurosRenovar.Text)
             //{
@@ -380,7 +403,7 @@ namespace CapaPresentacion
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        public void RenovarPolizaVehiculo()
+        public void RenovarPolizaVehiculo(bool confirmarPagoParcial)
         {
             try
             {
@@ -393,7 +416,35 @@ namespace CapaPresentacion
                 }
                 else
                 {
-                    if (MessageBox.Show("Está a punto de realizar un pago a la Poliza actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (confirmarPagoParcial)
+                    {
+                        E_Poliza.IdPoliza = Convert.ToInt32(txtNumPoliza_Renovar.Text);
+                        E_Poliza.IdCliente = idCliente_R;
+                        E_Poliza.IdEmpleado = idEmpleado;
+                        E_Poliza.Poliza = strPoliza();
+                        E_Poliza.Precio = Convert.ToDecimal(txtPrecio_Renovar.Text);
+                        E_Poliza.TPago = Convert.ToDecimal(txtTotalAPagar_Renovar.Text);
+
+                        E_Poliza.Parcial = Parcial(txtPagoParcial_Renovar.Text);
+
+                        if (cmbTPago.Text == "Parcial")
+                        {
+                            E_Poliza.Vencimiento = Convert.ToDateTime(txtVencimiento_Renovar.Text);
+                        }
+                        else
+                        {
+                            E_Poliza.Vencimiento = DateTime.Now.Date;
+                        }
+
+                        E_Poliza.FechaHora = DateTime.Now;
+
+                        if (B_Poliza.B_RenovarPolizaVehiculo(E_Poliza, IdPagoPoliza) >= 2)
+                        {
+                            MessageBox.Show("Pago realizado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            CargarPolizas();
+                        }
+                    }
+                    else if (MessageBox.Show("Está a punto de realizar un pago a la Poliza actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         E_Poliza.IdPoliza = Convert.ToInt32(txtNumPoliza_Renovar.Text);
                         E_Poliza.IdCliente = idCliente_R;
@@ -1125,6 +1176,21 @@ namespace CapaPresentacion
                 dgvMostrarPoliza_Cancelar.DataSource = bs;
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            if (dgvMostrarPolizas_Renovar.Rows.Count > 0)
+            {
+                var row = dgvMostrarPolizas_Renovar.CurrentRow;
+
+                frmPreviewFactura fP = new frmPreviewFactura();
+                fP.idCliente = idCliente_R;
+                fP.idPoliza = (int)row.Cells[1].Value;
+                fP.strTipoPago = cmbTPago.Enabled ? cmbTPago.Text : "Parcial";
+                fP.Total = Convert.ToDecimal(txtTotalAPagar_Renovar.Text);
+                fP.ShowDialog();
+            }
         }
     }
 }

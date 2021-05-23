@@ -170,6 +170,12 @@
     <Compile Include="frmManteniminetoVehiculo.Designer.cs">
       <DependentUpon>frmManteniminetoVehiculo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPagosParciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPagosParciales.Designer.cs">
+      <DependentUpon>frmPagosParciales.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPolizas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -338,6 +344,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmManteniminetoVehiculo.resx">
       <DependentUpon>frmManteniminetoVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPagosParciales.resx">
+      <DependentUpon>frmPagosParciales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPolizas.resx">
       <DependentUpon>frmPolizas.cs</DependentUpon>

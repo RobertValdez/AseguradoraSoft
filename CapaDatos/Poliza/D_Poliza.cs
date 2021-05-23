@@ -617,6 +617,12 @@ namespace CapaDatos.Poliza
             parVencimiento.Value = ePol.Vencimiento;
             cmd.Parameters.Add(parVencimiento);
 
+            //SqlParameter parPagoParicial = new SqlParameter();
+            //parPagoParicial.ParameterName = "@PagoParcial";
+            //parPagoParicial.SqlDbType = SqlDbType.Decimal;
+            //parPagoParicial.Value = ePol.Parcial;
+            //cmd.Parameters.Add(parPagoParicial);
+
             int rsp = cmd.ExecuteNonQuery();
             rsp = Convert.ToInt32(parReturn.Value);
             strcon.Close();
@@ -668,6 +674,12 @@ namespace CapaDatos.Poliza
             parVencimiento.Value = ePol.Vencimiento;
             cmd.Parameters.Add(parVencimiento);
 
+            //SqlParameter parPagoParicial = new SqlParameter();
+            //parPagoParicial.ParameterName = "@PagoParcial";
+            //parPagoParicial.SqlDbType = SqlDbType.Decimal;
+            //parPagoParicial.Value = ePol.Parcial;
+            //cmd.Parameters.Add(parPagoParicial);
+
             int rsp = cmd.ExecuteNonQuery();
             rsp = Convert.ToInt32(parReturn.Value);
             strcon.Close();
@@ -718,6 +730,12 @@ namespace CapaDatos.Poliza
             parVencimiento.SqlDbType = SqlDbType.Date;
             parVencimiento.Value = ePol.Vencimiento;
             cmd.Parameters.Add(parVencimiento);
+
+            //SqlParameter parPagoParicial = new SqlParameter();
+            //parPagoParicial.ParameterName = "@PagoParcial";
+            //parPagoParicial.SqlDbType = SqlDbType.Decimal;
+            //parPagoParicial.Value = ePol.Parcial;
+            //cmd.Parameters.Add(parPagoParicial);
 
             int rsp = cmd.ExecuteNonQuery();
             rsp = Convert.ToInt32(parReturn.Value);

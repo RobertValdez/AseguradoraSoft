@@ -178,7 +178,7 @@
             this.tabGestionarPolizas.Location = new System.Drawing.Point(15, 14);
             this.tabGestionarPolizas.Name = "tabGestionarPolizas";
             this.tabGestionarPolizas.SelectedIndex = 0;
-            this.tabGestionarPolizas.Size = new System.Drawing.Size(1132, 572);
+            this.tabGestionarPolizas.Size = new System.Drawing.Size(209, 572);
             this.tabGestionarPolizas.TabIndex = 187;
             this.tabGestionarPolizas.Visible = false;
             // 
@@ -188,7 +188,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 33);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1124, 535);
+            this.tabPage1.Size = new System.Drawing.Size(201, 535);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nueva";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -472,7 +472,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1118, 535);
+            this.tabPage2.Size = new System.Drawing.Size(221, 535);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Cancelación";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -496,7 +496,7 @@
             this.pnlGestionarPolizas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlGestionarPolizas.Location = new System.Drawing.Point(3, 3);
             this.pnlGestionarPolizas.Name = "pnlGestionarPolizas";
-            this.pnlGestionarPolizas.Size = new System.Drawing.Size(1112, 529);
+            this.pnlGestionarPolizas.Size = new System.Drawing.Size(215, 529);
             this.pnlGestionarPolizas.TabIndex = 25;
             // 
             // txtCliente_Cancelar
@@ -662,6 +662,7 @@
             this.btnImprimir.TabIndex = 253;
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Visible = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // label5
             // 
