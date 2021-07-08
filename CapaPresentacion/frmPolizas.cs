@@ -215,8 +215,8 @@ namespace CapaPresentacion
         int IdPagoPoliza = 0;
         private void dgvMostrarPolizas_Pagar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 btnImprimir.Visible = true;
                 var row = dgvMostrarPolizas_Renovar.CurrentRow;
                 dgvMostrarPolizas_Renovar.Rows[row.Index].Selected = true;
@@ -267,9 +267,9 @@ namespace CapaPresentacion
                 }
 
                 BtnPagarEnableEstado_R(FechaVencimiento, blPagoInicial);
-            //}
-            //catch (Exception) { }
-       }
+            }
+            catch (Exception) { }
+        }
 
         public void BtnPagarEnableEstado_R(DateTime fechaVencimiento, bool blPagoInicial)
         {
@@ -457,7 +457,7 @@ namespace CapaPresentacion
                         }
                         else
                         {
-                            E_Poliza.Vencimiento = DateTime.Now.Date;
+                            E_Poliza.Vencimiento = strVencimiento();
                         }
 
                         E_Poliza.FechaHora = DateTime.Now;
@@ -466,6 +466,8 @@ namespace CapaPresentacion
                         {
                             MessageBox.Show("Pago realizado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             CargarPolizas();
+                            btnPagar_Renovar.Enabled = false;
+                            btnImprimir.Visible = false;
                         }
                     }
                     else if (MessageBox.Show("Está a punto de realizar un pago a la Poliza actual. Desea continuar?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -485,7 +487,7 @@ namespace CapaPresentacion
                         }
                         else
                         {
-                            E_Poliza.Vencimiento = DateTime.Now.Date;
+                            E_Poliza.Vencimiento = strVencimiento();
                         }
 
                         E_Poliza.FechaHora = DateTime.Now;
@@ -494,6 +496,8 @@ namespace CapaPresentacion
                         {
                             MessageBox.Show("Pago realizado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             CargarPolizas();
+                            btnPagar_Renovar.Enabled = false;
+                            btnImprimir.Visible = false;
                         }
                     }
                 }
@@ -1214,7 +1218,7 @@ namespace CapaPresentacion
                     fP.idCliente = idCliente_R;
                     fP.idPoliza = (int)row.Cells[1].Value;
                     fP.strTipoPago = cmbTPago.Enabled ? cmbTPago.Text : "Parcial";
-                    fP.Total = Convert.ToDecimal(txtTotalAPagar_Renovar.Text);
+                    fP.Total = cmbTPago.Enabled ? Convert.ToDecimal(txtTotalAPagar_Renovar.Text) : Convert.ToDecimal(txtPrecio_Renovar.Text) / 2;
                     fP.ShowDialog();
                 }
             }
