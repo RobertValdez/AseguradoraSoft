@@ -1,0 +1,4 @@
+﻿Archivo de modelo generado: ModelEF.edmx.
+La carga de los metadatos desde la base de datos tardó 00:00:00.5206651.
+La generación del modelo tardó 00:00:03.3838401.
+Se agregó la cadena de conexión al archivo App.Config.

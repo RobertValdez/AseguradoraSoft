@@ -228,17 +228,22 @@ namespace CapaPresentacion
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            frmVerImprimirReporteDevoluciones frmDR = new frmVerImprimirReporteDevoluciones();
+            try
+            {
+                frmVerImprimirReporteDevoluciones frmDR = new frmVerImprimirReporteDevoluciones();
 
-            frmDR.NumReclamo = Convert.ToInt32(txtIdReclamaciones.Text.Trim());
-            frmDR.NumPoliza = Convert.ToInt32(txtidPoliza.Text.Trim());
+                frmDR.NumReclamo = Convert.ToInt32(txtIdReclamaciones.Text.Trim());
+                frmDR.NumPoliza = Convert.ToInt32(txtidPoliza.Text.Trim());
 
-            frmDR.Descripcion = txtMotivo.Text;
-            frmDR.FechaDesembolso = DateTime.Now;
+                frmDR.Descripcion = txtMotivo.Text;
+                frmDR.FechaDesembolso = DateTime.Now;
 
-            frmDR.TotalDesembolso = Convert.ToDecimal(txtADevolver.Text);
+                frmDR.TotalDesembolso = Convert.ToDecimal(txtADevolver.Text);
 
-            frmDR.ShowDialog();
+                frmDR.ShowDialog();
+            }
+            catch (Exception)
+            { }
         }
     }
 }

@@ -142,7 +142,7 @@
           <EntitySet Name="detalleSeguroTodoRiesgo" EntityType="Self.detalleSeguroTodoRiesgo" />
           <EntitySet Name="detalleSeguroVoluntario" EntityType="Self.detalleSeguroVoluntario" />
           <FunctionImport Name="MostrarDetalleSegurosVehiculosCliente" ReturnType="Collection(AseguradoraBDModel.MostrarDetalleSegurosVehiculosCliente_Result)">
-            <Parameter Name="idCliente" Mode="In" Type="Int32" />
+          <Parameter Name="idCliente" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="MostrarDetalleSegurosVehiculosCliente_Result">

@@ -4,19 +4,12 @@
 
     partial class DsFacturaPoliza
     {
-        partial class ReporteDatosPolizaCliente_vhPolizaDataTable
+        partial class ReporteDatosPolizaCliente1DataTable
         {
         }
 
         partial class ReporteDatosPolizaClienteDataTable
         {
         }
-    }
-}
-
-namespace CapaPresentacion.DsFacturaPolizaTableAdapters {
-    
-    
-    public partial class ReporteDatosPolizaClienteTableAdapter {
     }
 }

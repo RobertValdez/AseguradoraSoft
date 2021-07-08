@@ -84,7 +84,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DsFacturaPoliza</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Robert\Source\Repos\AseguradoraSoft\CapaPresentacion\DsFacturaPoliza.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Rober\source\repos\AseguradoraSoft\CapaPresentacion\DsFacturaPoliza.xsd</rd:SchemaPath>
         <rd:TableName>ReporteDatosPolizaCliente</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -124,7 +124,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DsFacturaPoliza</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Robert\Source\Repos\AseguradoraSoft\CapaPresentacion\DsFacturaPoliza.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Rober\source\repos\AseguradoraSoft\CapaPresentacion\DsFacturaPoliza.xsd</rd:SchemaPath>
         <rd:TableName>ReporteDatosPolizaCliente_vhPoliza</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

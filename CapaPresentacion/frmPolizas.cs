@@ -102,6 +102,10 @@ namespace CapaPresentacion
                 lblParcial.Visible = true;
                 txtPagoParcial_Renovar.Visible = true;
                 blParcial = true;
+
+                decimal precio = Convert.ToDecimal(txtPrecio_Renovar.Text);
+                decimal pagoParcial = precio / 2;
+                txtPagoParcial_Renovar.Text = pagoParcial.ToString();
             }
 
         }
@@ -115,6 +119,7 @@ namespace CapaPresentacion
             MostrarClientes();
             CargarDetalles();
             dgvMostrarPolizas_Renovar.Columns[16].Visible = false;
+            dgvMostrarPolizas_Renovar.Columns[17].Visible = false;
         }
 
         private void CargarPolizas_Cancelar()
@@ -210,8 +215,8 @@ namespace CapaPresentacion
         int IdPagoPoliza = 0;
         private void dgvMostrarPolizas_Pagar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 btnImprimir.Visible = true;
                 var row = dgvMostrarPolizas_Renovar.CurrentRow;
                 dgvMostrarPolizas_Renovar.Rows[row.Index].Selected = true;
@@ -233,7 +238,20 @@ namespace CapaPresentacion
                 DateTime FechaVencimiento = new DateTime();
                 FechaVencimiento = Convert.ToDateTime(strVenc);
 
-                if (row.Cells[15].Value.ToString() == "")
+                bool blPagoInicial = false;
+                
+                if (row.Cells[17].Value.ToString() != "") //Pago Inicial
+                {
+                    cmbTPago.SelectedIndex = 0;
+                    cmbTPago.Enabled = false;
+                    IdPagoPoliza = 0;
+
+                    decimal Restante = Convert.ToDecimal(txtTotalAPagar_Renovar.Text) - Convert.ToDecimal(row.Cells[17].Value);
+                    txtTotalAPagar_Renovar.Text = Restante.ToString();
+
+                    blPagoInicial = true;
+                }
+                else if (row.Cells[15].Value.ToString() == "")
                 {
                     cmbTPago.Enabled = true;
                     IdPagoPoliza = 0;
@@ -248,12 +266,12 @@ namespace CapaPresentacion
                     txtTotalAPagar_Renovar.Text = Restante.ToString();
                 }
 
-                BtnPagarEnableEstado_R(FechaVencimiento);
-            }
-            catch (Exception) { }
-        }
+                BtnPagarEnableEstado_R(FechaVencimiento, blPagoInicial);
+            //}
+            //catch (Exception) { }
+       }
 
-        public void BtnPagarEnableEstado_R(DateTime fechaVencimiento)
+        public void BtnPagarEnableEstado_R(DateTime fechaVencimiento, bool blPagoInicial)
         {
             if (ComprobarVencimiento(fechaVencimiento))
             {
@@ -262,6 +280,11 @@ namespace CapaPresentacion
             else
             {
                 btnPagar_Renovar.Enabled = false;
+            }
+
+            if (blPagoInicial)
+            {
+                btnPagar_Renovar.Enabled = true;
             }
         }
 
@@ -283,6 +306,7 @@ namespace CapaPresentacion
             }
         }
 
+
         private void btnPagar_Renovar_Click(object sender, EventArgs e)
         {
             if (cmbTPago.Enabled == false)
@@ -294,7 +318,7 @@ namespace CapaPresentacion
                 fp.txtCliente.Text = row.Cells[9].Value.ToString() +" "+ row.Cells[10].Value.ToString();
                 fp.mskCedula.Text = row.Cells[11].Value.ToString();
                 fp.txtFechaPrimerPago.Text = row.Cells[7].Value.ToString();
-                fp.txtTotalPagado.Text = row.Cells[15].Value.ToString();
+                fp.txtTotalPagado.Text = row.Cells[15].Value.ToString().Equals("") ? row.Cells[17].Value.ToString() : row.Cells[15].Value.ToString();
                 fp.txtPrecioTotal.Text = txtPrecio_Renovar.Text;
                 fp.txtTotalAPagar.Text = txtTotalAPagar_Renovar.Text;
 
@@ -966,8 +990,8 @@ namespace CapaPresentacion
                 ReFac.txtDescuento.Text = Descuento.ToString();
 
                 ReFac.gbxDescontar.Visible = false;
-                ReFac.cmbTipoPago.Visible = false;
-                ReFac.lbltipodePago.Visible = false;
+                //ReFac.cmbTipoPago.Visible = false;
+                //ReFac.lbltipodePago.Visible = false;
 
                 ReFac.lblCodigo.Visible = false;
                 ReFac.txtCodigo.Visible = false;
@@ -1180,17 +1204,21 @@ namespace CapaPresentacion
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            if (dgvMostrarPolizas_Renovar.Rows.Count > 0)
+            try
             {
-                var row = dgvMostrarPolizas_Renovar.CurrentRow;
+                if (dgvMostrarPolizas_Renovar.Rows.Count > 0)
+                {
+                    var row = dgvMostrarPolizas_Renovar.CurrentRow;
 
-                frmPreviewFactura fP = new frmPreviewFactura();
-                fP.idCliente = idCliente_R;
-                fP.idPoliza = (int)row.Cells[1].Value;
-                fP.strTipoPago = cmbTPago.Enabled ? cmbTPago.Text : "Parcial";
-                fP.Total = Convert.ToDecimal(txtTotalAPagar_Renovar.Text);
-                fP.ShowDialog();
+                    frmPreviewFactura fP = new frmPreviewFactura();
+                    fP.idCliente = idCliente_R;
+                    fP.idPoliza = (int)row.Cells[1].Value;
+                    fP.strTipoPago = cmbTPago.Enabled ? cmbTPago.Text : "Parcial";
+                    fP.Total = Convert.ToDecimal(txtTotalAPagar_Renovar.Text);
+                    fP.ShowDialog();
+                }
             }
+            catch (Exception) {   }
         }
     }
 }

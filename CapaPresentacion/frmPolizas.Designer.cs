@@ -178,7 +178,7 @@
             this.tabGestionarPolizas.Location = new System.Drawing.Point(15, 14);
             this.tabGestionarPolizas.Name = "tabGestionarPolizas";
             this.tabGestionarPolizas.SelectedIndex = 0;
-            this.tabGestionarPolizas.Size = new System.Drawing.Size(209, 572);
+            this.tabGestionarPolizas.Size = new System.Drawing.Size(1126, 572);
             this.tabGestionarPolizas.TabIndex = 187;
             this.tabGestionarPolizas.Visible = false;
             // 
@@ -188,7 +188,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 33);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(201, 535);
+            this.tabPage1.Size = new System.Drawing.Size(1118, 535);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nueva";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -225,7 +225,7 @@
             this.pnlBuscarCliente.Controls.Add(this.label16);
             this.pnlBuscarCliente.Location = new System.Drawing.Point(3, 5);
             this.pnlBuscarCliente.Name = "pnlBuscarCliente";
-            this.pnlBuscarCliente.Size = new System.Drawing.Size(486, 491);
+            this.pnlBuscarCliente.Size = new System.Drawing.Size(491, 491);
             this.pnlBuscarCliente.TabIndex = 209;
             this.pnlBuscarCliente.Visible = false;
             // 
@@ -277,7 +277,8 @@
             this.dgvBuscarClientes.Location = new System.Drawing.Point(0, 105);
             this.dgvBuscarClientes.Name = "dgvBuscarClientes";
             this.dgvBuscarClientes.ReadOnly = true;
-            this.dgvBuscarClientes.Size = new System.Drawing.Size(486, 386);
+            this.dgvBuscarClientes.RowHeadersWidth = 51;
+            this.dgvBuscarClientes.Size = new System.Drawing.Size(491, 386);
             this.dgvBuscarClientes.TabIndex = 0;
             this.dgvBuscarClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscarClientes_CellDoubleClick);
             // 
@@ -325,6 +326,7 @@
             this.dgvSolicitudes.Location = new System.Drawing.Point(495, 8);
             this.dgvSolicitudes.Name = "dgvSolicitudes";
             this.dgvSolicitudes.ReadOnly = true;
+            this.dgvSolicitudes.RowHeadersWidth = 51;
             this.dgvSolicitudes.Size = new System.Drawing.Size(621, 488);
             this.dgvSolicitudes.TabIndex = 206;
             this.dgvSolicitudes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSolicitudes_CellClick);
@@ -472,7 +474,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(221, 535);
+            this.tabPage2.Size = new System.Drawing.Size(1118, 535);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Cancelación";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -496,7 +498,7 @@
             this.pnlGestionarPolizas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlGestionarPolizas.Location = new System.Drawing.Point(3, 3);
             this.pnlGestionarPolizas.Name = "pnlGestionarPolizas";
-            this.pnlGestionarPolizas.Size = new System.Drawing.Size(215, 529);
+            this.pnlGestionarPolizas.Size = new System.Drawing.Size(1112, 529);
             this.pnlGestionarPolizas.TabIndex = 25;
             // 
             // txtCliente_Cancelar
@@ -643,6 +645,7 @@
             this.dgvMostrarPoliza_Cancelar.Location = new System.Drawing.Point(15, 89);
             this.dgvMostrarPoliza_Cancelar.Name = "dgvMostrarPoliza_Cancelar";
             this.dgvMostrarPoliza_Cancelar.ReadOnly = true;
+            this.dgvMostrarPoliza_Cancelar.RowHeadersWidth = 51;
             this.dgvMostrarPoliza_Cancelar.Size = new System.Drawing.Size(735, 363);
             this.dgvMostrarPoliza_Cancelar.TabIndex = 0;
             this.dgvMostrarPoliza_Cancelar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMostrarPoliza_Cancelar_CellClick);
@@ -848,6 +851,7 @@
             this.txtPagoParcial_Renovar.Location = new System.Drawing.Point(919, 345);
             this.txtPagoParcial_Renovar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtPagoParcial_Renovar.Name = "txtPagoParcial_Renovar";
+            this.txtPagoParcial_Renovar.ReadOnly = true;
             this.txtPagoParcial_Renovar.Size = new System.Drawing.Size(196, 33);
             this.txtPagoParcial_Renovar.TabIndex = 162;
             this.txtPagoParcial_Renovar.Visible = false;
@@ -905,6 +909,7 @@
             this.dgvMostrarPolizas_Renovar.Location = new System.Drawing.Point(15, 109);
             this.dgvMostrarPolizas_Renovar.Name = "dgvMostrarPolizas_Renovar";
             this.dgvMostrarPolizas_Renovar.ReadOnly = true;
+            this.dgvMostrarPolizas_Renovar.RowHeadersWidth = 51;
             this.dgvMostrarPolizas_Renovar.Size = new System.Drawing.Size(735, 452);
             this.dgvMostrarPolizas_Renovar.TabIndex = 0;
             this.dgvMostrarPolizas_Renovar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMostrarPolizas_Pagar_CellClick);

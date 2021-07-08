@@ -167,6 +167,7 @@ namespace CapaPresentacion
             // TODO: esta línea de código carga datos en la tabla 'DsFacturaPoliza.ReporteDatosPolizaCliente_vhPoliza' Puede moverla o quitarla según sea necesario.
             this.ReporteDatosPolizaCliente_vhPolizaTableAdapter.Fill(this.DsFacturaPoliza.ReporteDatosPolizaCliente_vhPoliza, idPoliza);
 
+
             ReportParameterCollection parTotal = new ReportParameterCollection();
             parTotal.Add(new ReportParameter("parTotal", Total.ToString()));
             reportViewer1.LocalReport.SetParameters(parTotal);

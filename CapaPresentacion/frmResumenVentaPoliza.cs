@@ -82,6 +82,9 @@ namespace CapaPresentacion
         {
             if (cmbTipoPago.Text == "Parcial")
             {
+                decimal Restante = Convert.ToDecimal(txtTotalA_Pagar.Text) / 2;
+                txtParcial.Text = Restante.ToString();
+
                 lblParcial.Visible = true;
                 txtParcial.Visible = true;
             }
@@ -271,7 +274,14 @@ namespace CapaPresentacion
             E_Poliza.IdPolizaSeguro = Convert.ToInt32(txtIdSeguro.Text);
             E_Poliza.FechaHora = DateTime.Now;
             E_Poliza.Vencimiento = Vencimiento;
-           // E_Poliza.Parcial = Convert.ToDecimal(txtParcial.Text);
+            if (cmbTipoPago.Text == "Parcial")
+            {
+                E_Poliza.Parcial = Convert.ToDecimal(txtParcial.Text);
+            }
+            else
+            {
+                E_Poliza.Parcial = 0;
+            }
 
 
             switch (txtSeguroA_Adquirir.Text)
@@ -347,12 +357,16 @@ namespace CapaPresentacion
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            frmPreviewFactura fP = new frmPreviewFactura();
-            fP.idCliente = Convert.ToInt32(txtId.Text);
-            fP.idPoliza = idPoliza;
-            fP.strTipoPago = cmbTipoPago.Text;
-            fP.Total = Convert.ToDecimal(txtTotalA_Pagar.Text);
-            fP.ShowDialog();
+            try
+            {
+                frmPreviewFactura fP = new frmPreviewFactura();
+                fP.idCliente = Convert.ToInt32(txtId.Text);
+                fP.idPoliza = idPoliza;
+                fP.strTipoPago = cmbTipoPago.Text;
+                fP.Total = Convert.ToDecimal(txtTotalA_Pagar.Text);
+                fP.ShowDialog();
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
     }
 }
